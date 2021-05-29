@@ -64,7 +64,7 @@ export default {
       laravelSanctum: {
         provider: "laravel/sanctum",
         //  url: 'http://localhost:8000',
-        url: 'http://back.api.test:3001',
+        url: process.env.BASE_URL || "http://back.api.test",
         // url: "http://back.api.test",
         endpoints: {
           login: {
@@ -91,7 +91,7 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // baseURL: process.env.BASE_URL || "http://back.api.test",
-    baseURL: "http://back.api.test:3001",
+    baseURL: process.env.BASE_URL || "http://back.api.test",
     credentials: true
   },
 
