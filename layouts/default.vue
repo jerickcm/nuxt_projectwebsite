@@ -8,7 +8,6 @@
           </v-icon>
           <!-- <v-toolbar-title class="white--text"> -->
           - Project Websitesssssssss
-
           <!-- </v-toolbar-title> -->
           <v-icon color="white lighten-2">
             sign-out
