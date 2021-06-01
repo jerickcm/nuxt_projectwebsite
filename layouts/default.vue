@@ -7,7 +7,7 @@
             mdi-domain
           </v-icon>
           <!-- <v-toolbar-title class="white--text"> -->
-          - Project Websitesssssssss
+          - Project Website
           <!-- </v-toolbar-title> -->
           <v-icon color="white lighten-2">
             sign-out

@@ -10,6 +10,7 @@
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
+    "@engrjerickcmangalus/ckeditor-nuxt-custom-build-simpleuploader": "^4.0.10",
     "@nuxtjs/auth-next": "5.0.0-1620773067.c356fed",
     "@nuxtjs/axios": "^5.13.1",
     "core-js": "^3.9.1",
