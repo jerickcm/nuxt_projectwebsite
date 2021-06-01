@@ -10,7 +10,7 @@ services:
       # - "3000:3000"
       - "3000:3000"
     # command: "npm run dev"
-    command: "npm run dev"
+    command: "npm run start"
     networks:
       - nuxt-network
   web-server:

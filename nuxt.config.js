@@ -3,6 +3,7 @@ import colors from "vuetify/es5/util/colors";
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
+
     titleTemplate: "%s - Project",
     title: "Nuxt and Laravel",
     htmlAttrs: {
@@ -13,7 +14,14 @@ export default {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: "" }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    script: [
+      {
+        src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
+        'data-ad-client': 'pub-3213536425475125',
+        async: true
+      }
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
