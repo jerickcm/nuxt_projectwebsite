@@ -37,13 +37,18 @@
 </template>
 
 <script>
+var url = process.env.BASE_URL_AXIOS;
+var timezone = process.env.TIMEZONE;
+console.log(url);
 export default {
   middleware: "auth",
 
   data() {
     return {
+      url: null,
       form_content: "Text",
-      form_title: "Text"
+      form_title: "",
+      token: null
     };
   },
   components: {
@@ -51,15 +56,52 @@ export default {
       import("@engrjerickcmangalus/ckeditor-nuxt-custom-build-simpleuploader")
   },
   async created() {
+    this.$axios.$get("/sanctum/csrf-cookie").then(response => {});
+    this.url = url;
+    this.timezone = timezone;
     this.editorConfig = {
-      simpleUpload: {}
+      simpleUpload: {
+        uploadUrl: "http://back.api.test:3001/ckeditor",
+        // withCredentials: true,
+        headers: {
+          // "X-XSRF-TOKEN": this.$auth.$storage.getCookies()["XSRF-TOKEN"],
+          // "X-CSRF-TOKEN": this.$auth.$storage.getCookies()["XSRF-TOKEN"],
+          "XSRF-TOKEN": this.$auth.$storage.getCookies()["XSRF-TOKEN"],
+          // Authorization: "Bearer " + this.$auth.$storage.getCookies()["XSRF-TOKEN"],
+
+          Cookie: this.$auth.$storage.getCookies(),
+             Accept: "application/json",
+
+          //       'X-CSRF-TOKEN': 'CSRF-Token',
+          //       Authorization: 'Bearer <JSON Web Token>'
+
+          //   // X-XSRF-TOKEN:""
+          //   //
+        }
+      }
     };
   },
   computed: {},
   methods: {
     onSubmit() {
-      if (this.form_title && this.form_content) {
+      console.log(this.$auth.user);
+      console.log(this.$store.state.auth.loggedIn);
+      console.log(this.$auth.$storage.getCookies());
 
+      var test = this.$auth.$storage.getCookies();
+      console.log("test");
+      // console.log(test.__gads);
+      console.log(test["XSRF-TOKEN"]);
+      // for (let key in test) {
+      //   console.log(key, test[key]);
+      // }
+      // console.log(this.$auth.strategy.refreshToken.get());
+      // Access using $auth
+      // this.$auth.loggedIn
+
+      // Access using vuex
+
+      if (this.form_title && this.form_content) {
         // this.$axios.$get("/sanctum/csrf-cookie").then(response => {});
         let payload = new FormData();
 

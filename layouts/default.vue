@@ -111,6 +111,7 @@
 <script>
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
+import { mapGetters } from 'vuex';
 
 export default {
   loading: {
@@ -158,9 +159,14 @@ export default {
     rightDrawer: false,
     title: "Nuxt Laravel Project"
   }),
-   computed: {
 
+  computed: {
+    ...mapGetters({
+
+      profile: 'session/GET_PROFILE',
+    }),
   },
+
   methods: {
     menuItems() {
       return this.menu;
