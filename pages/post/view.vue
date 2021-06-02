@@ -3,7 +3,7 @@
     <v-sheet class="blue ligthen-3 pa-5 pt-10 pb-10" min-height="200vh">
       <v-card>
         <v-card-title>
-          Nutrition
+          Post Table
           <v-spacer></v-spacer>
           <v-text-field
             v-model="search"
@@ -37,16 +37,15 @@ export default {
       options: {},
       headers: [
         {
-          text: "Dessert (100g serving)",
+          text: "No",
           align: "start",
           sortable: false,
-          value: "name"
+          value: "no"
         },
-        { text: "Calories", value: "calories" },
-        { text: "Fat (g)", value: "fat" },
-        { text: "Carbs (g)", value: "carbs" },
-        { text: "Protein (g)", value: "protein" },
-        { text: "Iron (%)", value: "iron" }
+        { text: "Name", value: "name" },
+        { text: "Title", value: "title" },
+        { text: "Slug", value: "slug" },
+        { text: "Action", value: "", sortable: false }
       ]
     };
   },
@@ -64,11 +63,57 @@ export default {
   methods: {
     getDataFromApi() {
       this.loading = true;
-      this.fakeApiCall().then(data => {
-        this.desserts = data.items;
-        this.totalDesserts = data.total;
-        this.loading = false;
-      });
+      const { sortBy, sortDesc, page, itemsPerPage } = this.options;
+
+      let payload = new FormData();
+      payload.append("sortDesc", sortDesc);
+      payload.append("sortBy", sortBy);
+      payload.append("page", page);
+      payload.append("itemsPerPage", itemsPerPage);
+      payload.append("search", this.search);
+
+      this.$axios.$get("/sanctum/csrf-cookie").then(response => {});
+      this.$axios
+        .$post("api/post/datatable", payload)
+        .then(res => {
+
+
+          var data = [];
+          var rowcount =1;
+          if (page == 1) {
+            rowcount = 1;
+          }else{
+            rowcount =((page-1)*itemsPerPage) +1;
+
+          }
+console.log(rowcount);
+
+          for (const [key, value] of Object.entries(res.data)) {
+            data.push({
+              no: rowcount,
+              name: value.name,
+              id: value.id,
+              slug: value.slug,
+              title: value.title
+            });
+            rowcount++;
+          }
+          this.desserts = data;
+          this.totalDesserts = res.total;
+          this.loading = false;
+          console.log(data);
+           this.loading = false;
+        })
+        .catch(error => {})
+        .finally(() => {});
+
+      // this.loading = false;
+      // this.fakeApiCall().then(data => {
+      //   console.log(data);
+      //   this.desserts = data.items;
+      //   this.totalDesserts = data.total;
+      //   this.loading = false;
+      // });
     },
     /**
      * In a real application this would be a call to fetch() or axios.get()
