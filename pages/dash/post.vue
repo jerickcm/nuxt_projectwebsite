@@ -1,12 +1,10 @@
 <template>
-  <v-container fluid class="grey ligthen-3  pa-0 ma-0" min-height="800vh">
+  <v-container fluid class="grey ligthen-3 pa-0 ma-0" min-height="800vh">
     <v-sheet class="blue ligthen-3 pa-5 pt-10 pb-10" min-height="200vh">
       <form class="white pa-5" action="">
         <v-row
           ><v-col>
-            <v-btn color="primary" depressed>
-              POST
-            </v-btn>
+            <v-btn color="primary" depressed> POST </v-btn>
           </v-col></v-row
         >
         <v-row>
@@ -46,39 +44,32 @@ export default {
   data() {
     return {
       url: null,
-      form_content: "Text",
+      form_content: "",
       form_title: "",
-      token: null
+      token: null,
     };
   },
   components: {
     "ckeditor-nuxt": () =>
-      import("@engrjerickcmangalus/ckeditor-nuxt-custom-build-simpleuploader")
+      import("@engrjerickcmangalus/ckeditor-nuxt-custom-build-simpleuploader"),
   },
   async created() {
-    this.$axios.$get("/sanctum/csrf-cookie").then(response => {});
+    this.$axios.$get("/sanctum/csrf-cookie").then((response) => {});
     this.url = url;
     this.timezone = timezone;
     this.editorConfig = {
       simpleUpload: {
-        uploadUrl: "http://back.api.test:3001/ckeditor",
-        // withCredentials: true,
+        uploadUrl: "http://back.api.test:3001/api/ckeditor",
+        withCredentials: true,
         headers: {
-          // "X-XSRF-TOKEN": this.$auth.$storage.getCookies()["XSRF-TOKEN"],
-          // "X-CSRF-TOKEN": this.$auth.$storage.getCookies()["XSRF-TOKEN"],
-          "XSRF-TOKEN": this.$auth.$storage.getCookies()["XSRF-TOKEN"],
-          // Authorization: "Bearer " + this.$auth.$storage.getCookies()["XSRF-TOKEN"],
-
-          Cookie: this.$auth.$storage.getCookies(),
-             Accept: "application/json",
-
-          //       'X-CSRF-TOKEN': 'CSRF-Token',
-          //       Authorization: 'Bearer <JSON Web Token>'
-
-          //   // X-XSRF-TOKEN:""
-          //   //
-        }
-      }
+          Accept: "application/json",
+          Timezone: this.timezone,
+            // Authorization:"Bearer " + this.$auth.$storage.getCookies()["XSRF-TOKEN"],
+            "X-XSRF-TOKEN": this.$auth.$storage.getCookies()["XSRF-TOKEN"],
+            // "XSRF-TOKEN": this.$auth.$storage.getCookies()["XSRF-TOKEN"],
+            // "CSRF-TOKEN": this.$auth.$storage.getCookies()["XSRF-TOKEN"],
+        },
+      },
     };
   },
   computed: {},
@@ -110,15 +101,15 @@ export default {
         this.$axios
           .post("/api/create-post", payload, {
             headers: {
-              "Content-Type": "multipart/form-data"
-            }
+              "Content-Type": "multipart/form-data",
+            },
           })
-          .then(res => {})
-          .catch(error => {})
+          .then((res) => {})
+          .catch((error) => {})
           .finally(() => {});
       }
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>
