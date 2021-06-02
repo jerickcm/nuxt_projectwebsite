@@ -9,7 +9,20 @@
         >
         <v-row>
           <v-col>
-            <v-text-field v-model="form_title" label="Title"></v-text-field>
+            <v-text-field
+              v-model="form_title"
+              label="Title"
+              @blur="$v.form_title.$touch()"
+              @input="$v.form_title.$touch()"
+            ></v-text-field>
+            <template v-if="$v.form_title.$error">
+              <div
+                v-if="!$v.form_title.required"
+                class="errorMessage red--text"
+              >
+                Title is required.
+              </div>
+            </template>
           </v-col>
         </v-row>
 
@@ -17,10 +30,24 @@
           ><v-col>
             <label for class="black--text">Content</label> <br />
             <client-only placeholder="loading...">
-              <form action="">
-                <ckeditor-nuxt :config="editorConfig" v-model="form_content" />
-              </form> </client-only
-          ></v-col>
+              <ckeditor-nuxt
+                :config="editorConfig"
+                v-model="form_content"
+                @blur="$v.form_content.$touch()"
+                @input="$v.form_content.$touch()"
+                :error-messages="contentErrors"
+              />
+
+              <template v-if="$v.form_content.$error">
+                <div
+                  v-if="!$v.form_content.required"
+                  class="errorMessage red--text"
+                >
+                  Content is required.
+                </div>
+              </template>
+            </client-only></v-col
+          >
         </v-row>
         <v-row>
           <v-col>
@@ -35,27 +62,41 @@
 </template>
 
 <script>
+import Vue from "vue";
+import { Vuelidate, validationMixin } from "vuelidate";
+
+import {
+  required,
+  maxLength,
+  email,
+  minLength
+} from "vuelidate/lib/validators";
+
 var url = process.env.BASE_URL_AXIOS;
 var timezone = process.env.TIMEZONE;
-console.log(url);
+
 export default {
   middleware: "auth",
-
+  mixins: [validationMixin],
   data() {
     return {
       url: null,
       form_content: "",
       form_title: "",
-      token: null,
+      token: null
     };
+  },
+
+  validations: {
+    form_content: { required },
+    form_title: { required }
   },
   components: {
     "ckeditor-nuxt": () =>
-      import("@engrjerickcmangalus/ckeditor-nuxt-custom-build-simpleuploader"),
+      import("@engrjerickcmangalus/ckeditor-nuxt-custom-build-simpleuploader")
   },
   async created() {
-
-    this.$axios.$get("/sanctum/csrf-cookie").then((response) => {});
+    this.$axios.$get("/sanctum/csrf-cookie").then(response => {});
     this.url = url;
     this.timezone = timezone;
     this.editorConfig = {
@@ -65,36 +106,28 @@ export default {
         headers: {
           Accept: "application/json",
           Timezone: this.timezone,
-            // Authorization:"Bearer " + this.$auth.$storage.getCookies()["XSRF-TOKEN"],
-            "X-XSRF-TOKEN": this.$auth.$storage.getCookies()["XSRF-TOKEN"],
-            // "XSRF-TOKEN": this.$auth.$storage.getCookies()["XSRF-TOKEN"],
-            // "CSRF-TOKEN": this.$auth.$storage.getCookies()["XSRF-TOKEN"],
-        },
-      },
+          "X-XSRF-TOKEN": this.$auth.$storage.getCookies()["XSRF-TOKEN"]
+        }
+      }
     };
   },
-  computed: {},
+  computed: {
+    titleErrors() {
+      const errors = [];
+      if (!this.$v.form_title.$dirty) return errors;
+      !this.$v.form_title.required && errors.push("Title is required.");
+      return errors;
+    },
+    contentErrors() {
+      const errors = [];
+      if (!this.$v.form_content.$dirty) return errors;
+      !this.$v.form_content.required && errors.push("Content is required.");
+      return errors;
+    }
+  },
   methods: {
     onSubmit() {
-      console.log(this.$auth.user);
-      console.log(this.$store.state.auth.loggedIn);
-      console.log(this.$auth.$storage.getCookies());
-
-      var test = this.$auth.$storage.getCookies();
-      console.log("test");
-      // console.log(test.__gads);
-      console.log(test["XSRF-TOKEN"]);
-      // for (let key in test) {
-      //   console.log(key, test[key]);
-      // }
-      // console.log(this.$auth.strategy.refreshToken.get());
-      // Access using $auth
-      // this.$auth.loggedIn
-
-      // Access using vuex
-
       if (this.form_title && this.form_content) {
-        // this.$axios.$get("/sanctum/csrf-cookie").then(response => {});
         let payload = new FormData();
 
         payload.append("title", this.form_title);
@@ -102,15 +135,15 @@ export default {
         this.$axios
           .post("/api/create-post", payload, {
             headers: {
-              "Content-Type": "multipart/form-data",
-            },
+              "Content-Type": "multipart/form-data"
+            }
           })
-          .then((res) => {})
-          .catch((error) => {})
+          .then(res => {})
+          .catch(error => {})
           .finally(() => {});
       }
-    },
-  },
+    }
+  }
 };
 </script>
 <style scoped>

@@ -20,24 +20,9 @@
           :options.sync="options"
           :server-items-length="tabledata_total"
           :loading="loading"
+          :search="search"
           class="elevation-1"
-        >
-          <template v-slot:header.id="{ header }">
-            {{ header.text.toUpperCase() }}
-          </template>
-          <template v-slot:header.name="{ header }">
-            {{ header.text.toUpperCase() }}
-          </template>
-
-          <template v-slot:item.id="{ item }">
-            <v-icon small class="mr-2" @click="editItem(item)">
-              mdi-pencil
-            </v-icon>
-            <v-icon small @click="deleteItem(item)">
-              mdi-delete
-            </v-icon>
-          </template>
-        </v-data-table>
+        ></v-data-table>
       </v-card>
     </v-sheet>
   </v-container>
@@ -99,7 +84,6 @@ export default {
           } else {
             rowcount = (page - 1) * itemsPerPage + 1;
           }
-          console.log(rowcount);
 
           for (const [key, value] of Object.entries(res.data)) {
             data.push({
@@ -107,20 +91,19 @@ export default {
               name: value.name,
               id: value.id,
               slug: value.slug,
-              title: value.title
+              title: value.title,
+              id: value.id
             });
             rowcount++;
           }
           this.tabledata = data;
           this.tabledata_total = res.total;
           this.loading = false;
-        })
-        .catch(error => {
+
           this.loading = false;
         })
-        .finally(() => {
-          this.loading = false;
-        });
+        .catch(error => {})
+        .finally(() => {});
     }
   }
 };
