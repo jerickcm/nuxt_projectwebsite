@@ -54,6 +54,7 @@ export default {
       import("@engrjerickcmangalus/ckeditor-nuxt-custom-build-simpleuploader"),
   },
   async created() {
+
     this.$axios.$get("/sanctum/csrf-cookie").then((response) => {});
     this.url = url;
     this.timezone = timezone;
