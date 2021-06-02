@@ -2,6 +2,78 @@
   <v-container fluid class="grey ligthen-3  pa-0 ma-0" min-height="800vh">
     <v-sheet class="blue ligthen-3 pa-5 pt-10 pb-10" min-height="200vh">
       <v-card>
+        <v-dialog
+          v-model="dialog"
+          fullscreen
+          hide-overlay
+          transition="dialog-bottom-transition"
+          scrollable
+        >
+          <v-card tile>
+            <v-toolbar flat dark color="primary">
+              <v-btn icon dark @click="dialog = false">
+                <v-icon>mdi-close</v-icon>
+              </v-btn>
+              <v-toolbar-title>Settings</v-toolbar-title>
+              <v-spacer></v-spacer>
+              <v-toolbar-items>
+                <v-btn dark text @click="SaveEdited">
+                  <!-- dialog = false -->
+                  Save
+                </v-btn>
+              </v-toolbar-items>
+
+              <v-menu bottom right offset-y> </v-menu>
+            </v-toolbar>
+            <v-card-text>
+              <v-row>
+                <v-col>
+                  <v-text-field
+                    v-model="form_title"
+                    label="Title"
+                    @blur="$v.form_title.$touch()"
+                    @input="$v.form_title.$touch()"
+                  ></v-text-field>
+                  <template v-if="$v.form_title.$error">
+                    <div
+                      v-if="!$v.form_title.required"
+                      class="errorMessage red--text"
+                    >
+                      Title is required.
+                    </div>
+                  </template>
+                </v-col>
+              </v-row>
+
+              <v-row
+                ><v-col>
+                  <label for class="black--text">Content</label> <br />
+                  <client-only placeholder="loading...">
+                    <ckeditor-nuxt
+                      :config="editorConfig"
+                      v-model="form_content"
+                      @blur="$v.form_content.$touch()"
+                      @input="$v.form_content.$touch()"
+                      :error-messages="contentErrors"
+                    />
+
+                    <template v-if="$v.form_content.$error">
+                      <div
+                        v-if="!$v.form_content.required"
+                        class="errorMessage red--text"
+                      >
+                        Content is required.
+                      </div>
+                    </template>
+                  </client-only></v-col
+                >
+              </v-row>
+            </v-card-text>
+
+            <div style="flex: 1 1 auto;"></div>
+          </v-card>
+        </v-dialog>
+
         <v-card-title>
           Post Table
           <v-spacer></v-spacer>
@@ -22,6 +94,26 @@
           :loading="loading"
           class="elevation-1"
         >
+          <template v-slot:top>
+            <v-dialog v-model="dialogDelete" max-width="500px">
+              <v-card>
+                <v-card-title class="text-h5"
+                  >Are you sure you want to delete this item?</v-card-title
+                >
+                <v-card-actions>
+                  <v-spacer></v-spacer>
+                  <v-btn color="blue darken-1" text @click="closeDelete"
+                    >Cancel</v-btn
+                  >
+                  <v-btn color="blue darken-1" text @click="deleteItemConfirm"
+                    >OK</v-btn
+                  >
+                  <v-spacer></v-spacer>
+                </v-card-actions>
+              </v-card>
+            </v-dialog>
+          </template>
+
           <template v-slot:header.id="{ header }">
             {{ header.text.toUpperCase() }}
           </template>
@@ -34,6 +126,7 @@
               mdi-pencil
             </v-icon>
             <v-icon small @click="deleteItem(item)">
+              <!-- v-bind="attrs" v-on="on" -->
               mdi-delete
             </v-icon>
           </template>
@@ -43,14 +136,24 @@
   </v-container>
 </template>
 <script>
+import Vue from "vue";
+import { Vuelidate, validationMixin } from "vuelidate";
+import {
+  required,
+  maxLength,
+  email,
+  minLength
+} from "vuelidate/lib/validators";
+import NProgress from "nprogress";
+import "nprogress/nprogress.css";
+
+var url = process.env.BASE_URL_AXIOS;
+var timezone = process.env.TIMEZONE;
+
 export default {
+  mixins: [validationMixin],
   data() {
     return {
-      search: "",
-      tabledata: [],
-      tabledata_total: 0,
-      loading: true,
-      options: {},
       headers: [
         {
           text: "No",
@@ -62,8 +165,56 @@ export default {
         { text: "Title", value: "title" },
         { text: "Slug", value: "slug" },
         { text: "Action", value: "id", sortable: false }
-      ]
+      ],
+      form_content: "",
+      form_title: "",
+      dialog: false,
+      dialogDelete: false,
+      deletedialog: false,
+      editedIndex: -1,
+      search: "",
+      tabledata: [],
+      tabledata_total: 0,
+      loading: true,
+      options: {}
     };
+  },
+  validations: {
+    form_content: { required },
+    form_title: { required }
+  },
+  async created() {
+    this.url = url;
+    this.timezone = timezone;
+    this.editorConfig = {
+      simpleUpload: {
+        uploadUrl: "http://back.api.test:3001/api/ckeditor",
+        withCredentials: true,
+        headers: {
+          Accept: "application/json",
+          Timezone: this.timezone,
+          "X-XSRF-TOKEN": this.$auth.$storage.getCookies()["XSRF-TOKEN"]
+        }
+      }
+    };
+  },
+  components: {
+    "ckeditor-nuxt": () =>
+      import("@engrjerickcmangalus/ckeditor-nuxt-custom-build-simpleuploader")
+  },
+  computed: {
+    titleErrors() {
+      const errors = [];
+      if (!this.$v.form_title.$dirty) return errors;
+      !this.$v.form_title.required && errors.push("Title is required.");
+      return errors;
+    },
+    contentErrors() {
+      const errors = [];
+      if (!this.$v.form_content.$dirty) return errors;
+      !this.$v.form_content.required && errors.push("Content is required.");
+      return errors;
+    }
   },
   watch: {
     options: {
@@ -71,12 +222,82 @@ export default {
         this.getDataFromApi();
       },
       deep: true
+    },
+    dialog(val) {
+      val || this.close();
+    },
+    dialogDelete(val) {
+      val || this.closeDelete();
     }
   },
   mounted() {
     this.getDataFromApi();
   },
   methods: {
+    close() {
+      this.dialog = false;
+      this.$nextTick(() => {
+        this.editedItem = Object.assign({}, this.defaultItem);
+        this.editedIndex = -1;
+      });
+    },
+
+    closeDelete() {
+      this.dialogDelete = false;
+      this.$nextTick(() => {
+        this.editedItem = Object.assign({}, this.defaultItem);
+        this.editedIndex = -1;
+      });
+    },
+    editItem(item) {
+      console.log(item);
+      this.form_title = this.tabledata[this.tabledata.indexOf(item)].title;
+      this.form_content = this.tabledata[this.tabledata.indexOf(item)].content;
+      this.editedIndex = this.tabledata.indexOf(item);
+      this.dialog = true;
+    },
+
+    deleteItem(item) {
+      this.editedIndex = this.tabledata.indexOf(item);
+      this.editedItem = Object.assign({}, item);
+      this.dialogDelete = true;
+    },
+    SaveEdited() {
+      NProgress.start();
+      let payload = new FormData();
+
+      payload.append("post_id", this.tabledata[this.editedIndex].id);
+      payload.append("title", this.form_title);
+      payload.append("content", this.form_content);
+
+      try {
+        this.$axios
+          .$post("api/post/update", payload)
+          .then(res => {
+            this.tabledata[this.editedIndex].title = this.form_title;
+            this.tabledata[this.editedIndex].content = this.form_content;
+            this.dialog = false;
+            NProgress.done();
+          })
+          .catch(error => {
+            NProgress.done();
+          })
+          .finally(() => {});
+      } catch (error) {}
+    },
+    deleteItemConfirm() {
+      let payload = new FormData();
+      payload.append("post_id", this.tabledata[this.editedIndex].id);
+      try {
+        this.$axios
+          .$post("api/post/delete", payload)
+          .then(res => {})
+          .catch(error => {})
+          .finally(() => {});
+      } catch (error) {}
+      this.tabledata.splice(this.editedIndex, 1);
+      this.closeDelete();
+    },
     getDataFromApi() {
       this.loading = true;
       const { sortBy, sortDesc, page, itemsPerPage } = this.options;
@@ -99,7 +320,6 @@ export default {
           } else {
             rowcount = (page - 1) * itemsPerPage + 1;
           }
-          console.log(rowcount);
 
           for (const [key, value] of Object.entries(res.data)) {
             data.push({
@@ -107,7 +327,8 @@ export default {
               name: value.name,
               id: value.id,
               slug: value.slug,
-              title: value.title
+              title: value.title,
+              content: value.content
             });
             rowcount++;
           }
