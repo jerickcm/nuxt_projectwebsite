@@ -1,9 +1,14 @@
 <template>
-  <v-container fluid class="ma-0 pa-0">
-    <v-parallax class="ma-0 pa-0" height="900" src="/images/dash.jpg">
-      <div>Dashboard</div>
-      <v-btn to="dash/post">Dashboard</v-btn>
-    </v-parallax>
+  <v-container fluid class="grey ligthen-3  pa-0 ma-0" min-height="800vh">
+    <v-sheet class="blue ligthen-3 pa-5 pt-10 pb-10" min-height="200vh">
+
+      <h1>Dashboard</h1>
+
+      <v-btn to="post/create">Create Post</v-btn>
+      <v-btn to="post/view">View Post</v-btn>
+
+
+    </v-sheet>
   </v-container>
 </template>
 <script>
