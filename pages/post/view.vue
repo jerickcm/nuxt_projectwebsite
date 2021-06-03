@@ -347,7 +347,7 @@ export default {
       this.dialogDelete = true;
     },
     SaveEdited() {
-            this.$axios.$get("/sanctum/csrf-cookie").then((response) => {});
+      this.$axios.$get("/sanctum/csrf-cookie").then((response) => {});
       NProgress.start();
       let payload = new FormData();
 

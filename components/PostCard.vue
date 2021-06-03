@@ -94,7 +94,6 @@ export default {
       console.log("HELLO");
       NProgress.start();
       let payload = new FormData();
-
       payload.append("page", this.page);
       NProgress.inc();
       try {
