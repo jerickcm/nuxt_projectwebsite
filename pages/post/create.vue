@@ -10,19 +10,6 @@
 
         <v-row>
           <v-col>
-            <v-file-input
-              show-size
-              counter
-              @change="Preview_image"
-              v-model="image"
-              label="Image Select"
-            >
-            </v-file-input>
-            <v-img :src="image_url"></v-img>
-          </v-col>
-        </v-row>
-        <v-row>
-          <v-col>
             <v-text-field
               v-model="form_title"
               label="Title"
@@ -58,6 +45,28 @@
               </p>
             </template></v-col
           >
+        </v-row>
+        <v-row>
+          <v-col lg="4">
+            <input
+              type="file"
+              id="file"
+              ref="file"
+              v-on:change="handleFileUpload()"
+            />
+            <v-card>
+              <v-img v-if="image_preview" :src="image_preview"></v-img>
+            </v-card>
+
+            <label
+              v-if="this.image_preview != ''"
+              onclick="return false"
+              v-on:click="remove_image()"
+              class="red--text"
+              >Remove</label
+            >
+          </v-col>
+          <v-spacer></v-spacer>
         </v-row>
         <v-row
           ><v-col>
@@ -98,24 +107,16 @@
 import Vue from "vue";
 import { Vuelidate, validationMixin } from "vuelidate";
 Vue.use(Vuelidate);
-import {
-  required,
-  maxLength,
-  email,
-  minLength
-} from "vuelidate/lib/validators";
+import { required } from "vuelidate/lib/validators";
 
-var backendurl = process.env.BASE_URL_AXIOS;
 var timezone = process.env.TIMEZONE;
 var url = process.env.API_URL;
-console.log(backendurl);
+
 export default {
   middleware: "auth",
   mixins: [validationMixin],
   data() {
     return {
-      image_url: null,
-      image: null,
       url_backend: "",
       form_content: "",
       form_title: "",
@@ -124,24 +125,27 @@ export default {
       publishselection: [
         {
           value: 1,
-          text: "Draft"
+          text: "Draft",
         },
         {
           value: 2,
-          text: "Publish"
-        }
-      ]
+          text: "Publish",
+        },
+      ],
+      image: "",
+      image_preview: "",
+      image_name: "",
     };
   },
 
   validations: {
     form_content: { required },
     form_title: { required },
-    form_publish: { required }
+    form_publish: { required },
   },
   components: {
     "ckeditor-nuxt": () =>
-      import("@engrjerickcmangalus/ckeditor-nuxt-custom-build-simpleuploader")
+      import("@engrjerickcmangalus/ckeditor-nuxt-custom-build-simpleuploader"),
   },
   async created() {
     this.timezone = timezone;
@@ -152,9 +156,9 @@ export default {
         headers: {
           Accept: "application/json",
           Timezone: this.timezone,
-          "X-XSRF-TOKEN": this.$auth.$storage.getCookies()["XSRF-TOKEN"]
-        }
-      }
+          "X-XSRF-TOKEN": this.$auth.$storage.getCookies()["XSRF-TOKEN"],
+        },
+      },
     };
   },
   computed: {
@@ -169,26 +173,27 @@ export default {
       if (!this.$v.form_content.$dirty) return errors;
       !this.$v.form_content.required && errors.push("Content is required.");
       return errors;
-    }
+    },
   },
   methods: {
-    Preview_image() {
-      this.image_url= URL.createObjectURL(this.image)
-    },
     handleFileUpload(e) {
-      // this.icon_default = "";
       const file = this.$refs.file.files[0];
+      this.image_preview = URL.createObjectURL(file);
+      try {
+        this.image_name = this.$refs.file.files[0].name;
+        this.image = this.$refs.file.files[0];
+      } catch (err) {
+        console.log(err);
+      }
+    },
+    remove_image() {
+      console.log();
+      this.$refs.file.value = null;
+      this.image_name = "";
+           this.image = "";
+            this.image_preview = "";
 
-      console.log(file);
-      // this.url_preview = URL.createObjectURL(file);
-
-      // try {
-      //   this.icon_text = this.$refs.file.files[0].name;
-      //   this.icon = this.$refs.file.files[0];
-      //   // this.$refs.file.value = null;
-      // } catch (err) {
-      //   console.log(err);
-      // }
+      return false;
     },
     onSubmit() {
       if (this.form_title && this.form_content && this.form_publish) {
@@ -196,19 +201,21 @@ export default {
         payload.append("publish", this.form_publish);
         payload.append("title", this.form_title);
         payload.append("content", this.form_content);
+        payload.append("image", this.image);
+        payload.append("image_name", this.image_name);
         this.$axios
           .post("/api/create-post", payload, {
             headers: {
-              "Content-Type": "multipart/form-data"
-            }
+              "Content-Type": "multipart/form-data",
+            },
           })
-          .then(res => {})
-          .catch(error => {})
+          .then((res) => {})
+          .catch((error) => {})
           .finally(() => {});
       } else {
       }
-    }
-  }
+    },
+  },
 };
 </script>
 <style scoped>
