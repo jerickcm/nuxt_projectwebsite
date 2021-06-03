@@ -16,16 +16,11 @@
 
         <v-spacer></v-spacer>
 
-        <v-toolbar-items class="hidden-sm-and-down">
+        <v-toolbar-items class="hidden-sm-and-down mr-10">
           <v-btn depressed color="primary" to="/news">News </v-btn>
           <v-btn depressed color="primary" to="/posts">Posts </v-btn>
 
-          <v-btn
-            v-if="$auth.loggedIn"
-            depressed
-            color="green"
-            to="/dashboard"
-          >
+          <v-btn v-if="$auth.loggedIn" depressed color="green" to="/dashboard">
             [ {{ $auth.user.name }} -Dashboard ]
           </v-btn>
 
@@ -88,13 +83,18 @@
         <v-container fluid class="pa-0">
           <!-- :aspect-ratio="16 / 9" -->
           <!-- <v-responsive > -->
-            <nuxt />
+          <nuxt />
           <!-- </v-responsive> -->
         </v-container>
       </v-main>
     </v-app>
 
-    <v-footer :absolute="!fixed" app  class="white--text" color="green lighten-1">
+    <v-footer
+      :absolute="!fixed"
+      app
+      class="white--text"
+      color="green lighten-1"
+    >
       <span>&copy; {{ new Date().getFullYear() }}</span>
       <v-spacer></v-spacer>
       <v-btn depressed color="primary" to="/about">
@@ -112,7 +112,7 @@
 <script>
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
-import { mapGetters } from 'vuex';
+// import { mapGetters } from 'vuex';
 
 export default {
   loading: {
@@ -120,7 +120,6 @@ export default {
     height: "20px"
   },
   data: () => ({
-
     myitems: [
       // { title: "Logout" , link: "/logout"},
       { title: "Dashboard", link: "/dashboard" }
@@ -162,10 +161,9 @@ export default {
   }),
 
   computed: {
-    ...mapGetters({
-
-      profile: 'session/GET_PROFILE',
-    }),
+    // ...mapGetters({
+    //   profile: 'session/GET_PROFILE',
+    // }),
   },
 
   methods: {
@@ -178,14 +176,13 @@ export default {
       try {
         NProgress.inc();
         await this.$auth.logout();
+        NProgress.done();
       } catch (error) {
+        NProgress.done();
         console.log(error);
       }
-      NProgress.done();
     }
   }
 };
 </script>
-<style scoped>
-
-</style>
+<style scoped></style>

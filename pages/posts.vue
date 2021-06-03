@@ -1,44 +1,34 @@
 <template>
   <v-container fluid class="ma-0 pa-0">
-    <v-parallax class="ma-0 pa-0" height="900" src="/images/posts.jpg">
-      <v-btn color="primary" depressed>
-        Posts
-      </v-btn>
-    </v-parallax>
+    <v-row>
+      <v-col lg="3" class="grey">
+
+        </v-col>
+      <v-col lg="6" class="">
+        <PostCard />
+      </v-col>
+      <v-col lg="3" class="grey">
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
 <script>
-// const axios = require("axios");
-// const config = {
-//   headers: {
-//     Accept: "application/json"
-//   }
-// };
-
-const config = {
-  headers: {
-    Accept: "application/json"
-  }
-};
-
+// import PostCard from "@/components/PostCard";
 export default {
-  // auth: false,
   data: () => ({
     loading: false
   }),
+  mounted() {},
+  inject: {
+    theme: {
+      default: { isDark: false }
+    }
+  },
   components: {},
   watch: {},
-  async created() {
-    await this.$axios.$get("/sanctum/csrf-cookie").then(response => {});
-    // await this.$axios.$post("api/post", this.form);
 
-    try {
-      const response = await axios.post(url + "/api/list", config);
-    } catch (error) {
-      this.progressBar = false;
-    }
-  }
+  methods: {}
 };
 </script>
 <style scoped>

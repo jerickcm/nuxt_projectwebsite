@@ -7,6 +7,20 @@
             <v-btn color="primary" depressed> POST </v-btn>
           </v-col></v-row
         >
+
+        <v-row>
+          <v-col>
+            <v-file-input
+              show-size
+              counter
+              @change="Preview_image"
+              v-model="image"
+              label="Image Select"
+            >
+            </v-file-input>
+            <v-img :src="image_url"></v-img>
+          </v-col>
+        </v-row>
         <v-row>
           <v-col>
             <v-text-field
@@ -100,6 +114,8 @@ export default {
   mixins: [validationMixin],
   data() {
     return {
+      image_url: null,
+      image: null,
       url_backend: "",
       form_content: "",
       form_title: "",
@@ -156,6 +172,24 @@ export default {
     }
   },
   methods: {
+    Preview_image() {
+      this.image_url= URL.createObjectURL(this.image)
+    },
+    handleFileUpload(e) {
+      // this.icon_default = "";
+      const file = this.$refs.file.files[0];
+
+      console.log(file);
+      // this.url_preview = URL.createObjectURL(file);
+
+      // try {
+      //   this.icon_text = this.$refs.file.files[0].name;
+      //   this.icon = this.$refs.file.files[0];
+      //   // this.$refs.file.value = null;
+      // } catch (err) {
+      //   console.log(err);
+      // }
+    },
     onSubmit() {
       if (this.form_title && this.form_content && this.form_publish) {
         let payload = new FormData();
