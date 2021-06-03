@@ -25,7 +25,26 @@
             </template>
           </v-col>
         </v-row>
-
+        <v-row>
+          <v-col>
+            <v-select
+              v-model="form_publish"
+              :items="publishselection"
+              item-value="value"
+              item-text="text"
+              label="Publish"
+              @blur="$v.form_publish.$touch()"
+            />
+            <template v-if="$v.form_publish.$error">
+              <p
+                v-if="!$v.form_publish.required"
+                class="errorMessage red--text"
+              >
+                Select Publish is required.
+              </p>
+            </template></v-col
+          >
+        </v-row>
         <v-row
           ><v-col>
             <label for class="black--text">Content</label> <br />
@@ -64,7 +83,7 @@
 <script>
 import Vue from "vue";
 import { Vuelidate, validationMixin } from "vuelidate";
-
+Vue.use(Vuelidate);
 import {
   required,
   maxLength,
@@ -72,36 +91,47 @@ import {
   minLength
 } from "vuelidate/lib/validators";
 
-var url = process.env.BASE_URL_AXIOS;
+var backendurl = process.env.BASE_URL_AXIOS;
 var timezone = process.env.TIMEZONE;
-
+var url = process.env.API_URL;
+console.log(backendurl);
 export default {
   middleware: "auth",
   mixins: [validationMixin],
   data() {
     return {
-      url: null,
+      url_backend: "",
       form_content: "",
       form_title: "",
-      token: null
+      form_publish: "",
+      token: null,
+      publishselection: [
+        {
+          value: 1,
+          text: "Draft"
+        },
+        {
+          value: 2,
+          text: "Publish"
+        }
+      ]
     };
   },
 
   validations: {
     form_content: { required },
-    form_title: { required }
+    form_title: { required },
+    form_publish: { required }
   },
   components: {
     "ckeditor-nuxt": () =>
       import("@engrjerickcmangalus/ckeditor-nuxt-custom-build-simpleuploader")
   },
   async created() {
-    this.$axios.$get("/sanctum/csrf-cookie").then(response => {});
-    this.url = url;
     this.timezone = timezone;
     this.editorConfig = {
       simpleUpload: {
-        uploadUrl: "http://back.api.test:3001/api/ckeditor",
+        uploadUrl: url + "/" + "api/ckeditor",
         withCredentials: true,
         headers: {
           Accept: "application/json",
@@ -127,9 +157,9 @@ export default {
   },
   methods: {
     onSubmit() {
-      if (this.form_title && this.form_content) {
+      if (this.form_title && this.form_content && this.form_publish) {
         let payload = new FormData();
-
+        payload.append("publish", this.form_publish);
         payload.append("title", this.form_title);
         payload.append("content", this.form_content);
         this.$axios
@@ -141,6 +171,7 @@ export default {
           .then(res => {})
           .catch(error => {})
           .finally(() => {});
+      } else {
       }
     }
   }
@@ -150,5 +181,17 @@ export default {
 ul.clean {
   list-style: none !important;
   list-style-type: none !important;
+}
+.ck-editor__editable {
+  height: 350px;
+}
+.ck.ck-content.ck-editor__editable {
+  height: 350px;
+}
+.ck.ck-content.ck-editor__editable.ck-rounded-corners.ck-editor__editable_inline {
+  height: 350px;
+}
+.ck.ck-content.ck-editor__editable_inline {
+  height: 350px;
 }
 </style>

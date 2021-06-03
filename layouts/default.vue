@@ -86,13 +86,14 @@
 
       <v-main>
         <v-container fluid class="pa-0">
-          <v-responsive :aspect-ratio="16 / 9">
+          <!-- :aspect-ratio="16 / 9" -->
+          <!-- <v-responsive > -->
             <nuxt />
-          </v-responsive>
+          <!-- </v-responsive> -->
         </v-container>
       </v-main>
     </v-app>
-<!-- color="grey" -->
+
     <v-footer :absolute="!fixed" app  class="white--text" color="green lighten-1">
       <span>&copy; {{ new Date().getFullYear() }}</span>
       <v-spacer></v-spacer>

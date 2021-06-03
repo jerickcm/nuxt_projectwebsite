@@ -23,7 +23,9 @@ export default {
       }
     ],
   },
-
+  env: {
+    API_URL : process.env.API_URL || 'http://back.api.test:3001'
+  },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
 

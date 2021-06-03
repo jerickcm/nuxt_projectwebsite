@@ -19,6 +19,7 @@
     "vuelidate": "^0.7.6"
   },
   "devDependencies": {
+    "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/vuetify": "^1.11.3"
   }
 }

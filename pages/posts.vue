@@ -30,14 +30,14 @@ export default {
   components: {},
   watch: {},
   async created() {
-    // await this.$axios.$get("/sanctum/csrf-cookie").then(response => {});
+    await this.$axios.$get("/sanctum/csrf-cookie").then(response => {});
     // await this.$axios.$post("api/post", this.form);
-    // await this.$axios.$post("api/post/get", this.form);
-    // try {
-    //   const response = await axios.get(url + "/api/post", config);
-    // } catch (error) {
-    //   this.progressBar = false;
-    // }
+
+    try {
+      const response = await axios.post(url + "/api/list", config);
+    } catch (error) {
+      this.progressBar = false;
+    }
   }
 };
 </script>

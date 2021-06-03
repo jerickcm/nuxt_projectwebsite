@@ -1,6 +1,6 @@
 <template>
-  <v-container fluid class="grey ligthen-3  pa-0 ma-0" min-height="800vh">
-    <v-sheet class="blue ligthen-3 pa-5 pt-10 pb-10" min-height="200vh">
+  <v-container fluid class="grey ligthen-3  pa-0 ma-0" min-height="">
+    <v-sheet class="blue ligthen-3 pa-5 pt-10 pb-10" min-height="">
       <v-card>
         <v-dialog
           v-model="dialog"
@@ -10,7 +10,7 @@
           scrollable
         >
           <v-card tile>
-            <v-toolbar flat dark color="primary">
+            <v-toolbar flat dark color="primary" max-height="50vh">
               <v-btn icon dark @click="dialog = false">
                 <v-icon>mdi-close</v-icon>
               </v-btn>
@@ -18,12 +18,9 @@
               <v-spacer></v-spacer>
               <v-toolbar-items>
                 <v-btn dark text @click="SaveEdited">
-                  <!-- dialog = false -->
                   Save
                 </v-btn>
               </v-toolbar-items>
-
-              <v-menu bottom right offset-y> </v-menu>
             </v-toolbar>
             <v-card-text>
               <v-row>
@@ -44,9 +41,28 @@
                   </template>
                 </v-col>
               </v-row>
-
+              <v-row>
+                <v-col>
+                  <v-select
+                    v-model="form_publish"
+                    :items="publishselection"
+                    item-value="value"
+                    item-text="text"
+                    label="Publish"
+                    @blur="$v.form_publish.$touch()"
+                  />
+                  <template v-if="$v.form_publish.$error">
+                    <p
+                      v-if="!$v.form_publish.required"
+                      class="errorMessage red--text"
+                    >
+                      Select Publish is required.
+                    </p>
+                  </template></v-col
+                >
+              </v-row>
               <v-row
-                ><v-col>
+                ><v-col class="">
                   <label for class="black--text">Content</label> <br />
                   <client-only placeholder="loading...">
                     <ckeditor-nuxt
@@ -55,6 +71,8 @@
                       @blur="$v.form_content.$touch()"
                       @input="$v.form_content.$touch()"
                       :error-messages="contentErrors"
+                      class=""
+                      style="height:300px"
                     />
 
                     <template v-if="$v.form_content.$error">
@@ -93,6 +111,9 @@
           :server-items-length="tabledata_total"
           :loading="loading"
           class="elevation-1"
+          :footer-props="{
+            'items-per-page-options': [5, 10, 20, 30, 40, 50]
+          }"
         >
           <template v-slot:top>
             <v-dialog v-model="dialogDelete" max-width="500px">
@@ -149,7 +170,7 @@ import "nprogress/nprogress.css";
 
 var url = process.env.BASE_URL_AXIOS;
 var timezone = process.env.TIMEZONE;
-
+var url = process.env.API_URL;
 export default {
   mixins: [validationMixin],
   data() {
@@ -162,12 +183,15 @@ export default {
           value: "no"
         },
         { text: "Name", value: "name" },
+
         { text: "Title", value: "title" },
         { text: "Slug", value: "slug" },
+        { text: "Publish", value: "publish" },
         { text: "Action", value: "id", sortable: false }
       ],
       form_content: "",
       form_title: "",
+      form_publish: "",
       dialog: false,
       dialogDelete: false,
       deletedialog: false,
@@ -176,19 +200,30 @@ export default {
       tabledata: [],
       tabledata_total: 0,
       loading: true,
-      options: {}
+      options: {},
+
+      publishselection: [
+        {
+          value: 1,
+          text: "Draft"
+        },
+        {
+          value: 2,
+          text: "Publish"
+        }
+      ]
     };
   },
   validations: {
     form_content: { required },
-    form_title: { required }
+    form_title: { required },
+    form_publish: { required }
   },
   async created() {
-    this.url = url;
     this.timezone = timezone;
     this.editorConfig = {
       simpleUpload: {
-        uploadUrl: "http://back.api.test:3001/api/ckeditor",
+        uploadUrl: url + "/" + "api/ckeditor",
         withCredentials: true,
         headers: {
           Accept: "application/json",
@@ -253,6 +288,9 @@ export default {
       console.log(item);
       this.form_title = this.tabledata[this.tabledata.indexOf(item)].title;
       this.form_content = this.tabledata[this.tabledata.indexOf(item)].content;
+      this.form_publish = this.tabledata[
+        this.tabledata.indexOf(item)
+      ].publishvalue;
       this.editedIndex = this.tabledata.indexOf(item);
       this.dialog = true;
     },
@@ -269,13 +307,16 @@ export default {
       payload.append("post_id", this.tabledata[this.editedIndex].id);
       payload.append("title", this.form_title);
       payload.append("content", this.form_content);
-
+      payload.append("publish", this.form_publish);
       try {
         this.$axios
           .$post("api/post/update", payload)
           .then(res => {
             this.tabledata[this.editedIndex].title = this.form_title;
             this.tabledata[this.editedIndex].content = this.form_content;
+            this.tabledata[this.editedIndex].publish =
+              this.form_publish == 1 ? "Draft" : "Publish";
+            this.tabledata[this.editedIndex].publishvalue = this.form_publish;
             this.dialog = false;
             NProgress.done();
           })
@@ -328,7 +369,9 @@ export default {
               id: value.id,
               slug: value.slug,
               title: value.title,
-              content: value.content
+              content: value.content,
+              publish: value.publish == 1 ? "Draft" : "Publish",
+              publishvalue: value.publish
             });
             rowcount++;
           }
@@ -350,5 +393,17 @@ export default {
 ul.clean {
   list-style: none !important;
   list-style-type: none !important;
+}
+.ck-editor__editable {
+  height: 350px;
+}
+.ck.ck-content.ck-editor__editable {
+  height: 350px;
+}
+.ck.ck-content.ck-editor__editable.ck-rounded-corners.ck-editor__editable_inline {
+  height: 350px;
+}
+.ck.ck-content.ck-editor__editable_inline {
+  height: 350px;
 }
 </style>
