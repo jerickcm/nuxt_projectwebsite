@@ -11,21 +11,20 @@
 <script>
 export default {
   auth: false,
-
   data() {
     return {
       colors: [
-        "indigo",
-        "warning",
-        "pink darken-2",
-        "red lighten-1",
-        "deep-purple accent-4"
+        'indigo',
+        'warning',
+        'pink darken-2',
+        'red lighten-1',
+        'deep-purple accent-4'
       ],
-      slides: ["First"] //, "Second", "Third", "Fourth", "Fifth"
-    };
+      slides: ['First'] //, "Second", "Third", "Fourth", "Fifth"
+    }
   },
   computed: {}
-};
+}
 </script>
 <style scoped>
 ul.clean {

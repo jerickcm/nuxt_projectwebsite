@@ -1,0 +1,29 @@
+
+sarah.drasner
+
+vimport
+vif
+von
+vdata
+vprops
+
+Ctrl+Shift+p
+{
+    "vetur.validation.template":false,
+    "eslint.validate" : [{"language":"vue","autoFix":true,},{   "language":"html","autoFix":true, },{ "language":"javascript","autoFix":true,}],
+    "eslint.autoFixOnSave":true,
+    "vetur.completion.userScaffoldSnippets":false,
+    "editor.formatOnSave":true,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "[vue]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "terminal.integrated.tabs.enabled": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    }
+}
