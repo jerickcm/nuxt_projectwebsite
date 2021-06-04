@@ -57,23 +57,25 @@
       </v-btn> -->
       <v-spacer />
       <div class="hidden-sm-and-down ">
+
+
         <v-btn to="/" plain text tile class="white pa-1 ma-1 mr-10"
-          >Project Website</v-btn
+          > <v-icon>mdi-code-json</v-icon> - Project Website  <v-icon>mdi-laptop</v-icon></v-btn
         >
         <v-btn to="/news" plain text tile rounded class="white pa-1 ma-1"
-          >NEWS</v-btn
+          ><v-icon>mdi-newspaper-variant-multiple-outline</v-icon> - NEWS</v-btn
         >
         <v-btn to="/posts" plain text tile rounded class="white pa-1 ma-1"
-          >POST</v-btn
+          ><v-icon>mdi-post-outline</v-icon> POST</v-btn
         >
         <v-btn to="/blog" plain text tile rounded class="white pa-1 ma-1"
-          >BLOG</v-btn
+          ><v-icon>mdi-blogger</v-icon>BLOG</v-btn
         >
         <v-btn to="/technology" plain text tile rounded class="white pa-1 ma-1"
-          >TECHNOLOGY</v-btn
+          ><v-icon>mdi-cloud-check-outline</v-icon> TECHNOLOGY</v-btn
         >
         <v-btn to="/tutorials" plain text tile rounded class="white pa-1 ma-1"
-          >TUTORIALS</v-btn
+          ><v-icon>mdi-cast-education</v-icon> TUTORIALS</v-btn
         >
       </div>
 
@@ -87,7 +89,7 @@
           tile
           rounded
           class="white pa-1 ma-1"
-          >Login</v-btn
+          ><v-icon>mdi-login-variant</v-icon>Login</v-btn
         >
         <v-btn
           v-if="!$auth.loggedIn"
@@ -97,7 +99,7 @@
           tile
           rounded
           class="white pa-1 ma-1"
-          >Register</v-btn
+          ><v-icon>mdi-account-plus-outline </v-icon> - Register</v-btn
         >
 
         <v-btn
@@ -189,7 +191,7 @@
           tile
           rounded
           class="black lighten-2 pa-1 ma-1 white--text"
-          >ABOUT</v-btn
+          ><v-icon>mdi-information-variant</v-icon>  ABOUT</v-btn
         >
         <v-btn
           to="/contact-us"
@@ -198,7 +200,7 @@
           tile
           rounded
           class="black lighten-2 pa-1 ma-1 white--text"
-          >CONTACT US</v-btn
+          ><v-icon>mdi-human-greeting-proximity</v-icon>CONTACT US</v-btn
         >
       </div>
       <v-spacer></v-spacer>
