@@ -1,119 +1,203 @@
 <template>
-  <v-app blue>
-    <v-app id="inspire">
-      <v-app-bar app class="grey lighten-4" fixed>
-        <v-btn to="/" depressed color="primary">
-          <v-icon color="white lighten-2">
-            mdi-domain
-          </v-icon>
-          - Project Website
-
-          <v-icon color="white lighten-2">
-            sign-out
-          </v-icon>
-        </v-btn>
-        <v-spacer></v-spacer>
-
-        <v-toolbar-items
-          v-if="$auth.loggedIn && $auth.user['is_admin']"
-          class="hidden-sm-and-down mr-10"
+  <v-app dark>
+    <v-navigation-drawer
+      v-model="drawer"
+      :mini-variant="miniVariant"
+      :clipped="clipped"
+      fixed
+      app
+    >
+      <v-list>
+        <v-list-item
+          v-for="(item, i) in items"
+          :key="i"
+          :to="item.to"
+          router
+          exact
         >
-          <v-btn depressed color="primary" to="/admin" class="blue--text white"
-            >Admin
-          </v-btn>
-          <v-btn depressed color="primary" to="/users">Users </v-btn>
-        </v-toolbar-items>
+          <v-list-item-action>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-action>
 
-        <v-toolbar-items class="hidden-sm-and-down mr-10">
-          <v-btn depressed color="primary" to="/news">News </v-btn>
-          <v-btn depressed color="primary" to="/posts">Posts </v-btn>
+          <v-list-item-content>
+            <v-list-item-title v-text="item.title" />
+          </v-list-item-content>
+        </v-list-item>
 
-          <v-btn v-if="$auth.loggedIn" depressed color="green" to="/dashboard">
-            [ {{ $auth.user.name }} -Dashboard ]
-          </v-btn>
-
-          <v-btn v-if="!$auth.loggedIn" depressed color="primary" to="/login">
-            Login
-          </v-btn>
-          <v-btn
-            v-if="!$auth.loggedIn"
-            depressed
-            color="primary"
-            to="/register"
-          >
-            Register
-          </v-btn>
-          <v-btn
-            v-if="$auth.loggedIn"
-            depressed
-            color="primary"
-            @click.prevent="logout()"
-            >Logout
-
+        <v-list-item router exact @click.stop="fixed = !fixed">
+          <v-list-item-action>
             <v-icon>
-              sign-out-alt
+              mdi-page-layout-footer
             </v-icon>
-          </v-btn>
-        </v-toolbar-items>
-        <v-sheet color="primary" outlined class="hidden-md-and-up">
-          <v-menu>
-            <template v-slot:activator="{ on, attrs }">
-              <v-btn color="primary" dark v-bind="attrs" v-on="on">
-                Menu
-              </v-btn>
-            </template>
-            <v-list>
-              <v-list-item v-if="$auth.loggedIn" to="/dashboard">
-                <v-list-item-title>Dashboard</v-list-item-title>
-              </v-list-item>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title> Show/Hide Footer</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
 
-              <v-list-item v-if="!$auth.loggedIn" to="/login">
-                <v-list-item-title depressed color="primary"
-                  >Login</v-list-item-title
-                >
-              </v-list-item>
-              <v-list-item v-if="!$auth.loggedIn" to="/register">
-                <v-list-item-title depressed color="primary">
-                  Register
-                </v-list-item-title>
-              </v-list-item>
-              <v-list-item v-if="$auth.loggedIn" @click.prevent="logout()">
-                <v-list-item-title>
-                  Logout
-                </v-list-item-title>
-              </v-list-item>
-            </v-list>
-          </v-menu>
-        </v-sheet>
-      </v-app-bar>
+        <v-list-item router exact @click.stop="miniVariant = !miniVariant">
+          <v-list-item-action>
+            <v-icon
+              >mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon
+            >
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title> Toogle Left Sidebar</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
 
-      <v-main>
-        <v-container fluid class="pa-0">
-          <!-- :aspect-ratio="16 / 9" -->
-          <!-- <v-responsive > -->
-          <nuxt />
-          <!-- </v-responsive> -->
-        </v-container>
-      </v-main>
-    </v-app>
+    <v-app-bar :clipped-left="clipped" fixed app class="white">
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
 
-    <v-footer :absolute="!fixed" app class="white--text grey lighten-4">
-      <span>&copy; May 2021 - {{ new Date().getFullYear() }}</span>
-      <v-spacer></v-spacer>
-
-      <v-toolbar-items class="hidden-sm-and-down mr-10">
-        <v-btn depressed color="blue darken-3" to="/about" class="white--text">
-          About Us
-        </v-btn>
-        <v-btn
-          depressed
-          color="blue darken-3"
-          to="/contact-us"
-          class="white--text"
+      <!-- <v-btn icon @click.stop="clipped = !clipped">
+        <v-icon>mdi-application</v-icon>
+      </v-btn> -->
+      <v-spacer />
+      <div class="hidden-sm-and-down ">
+        <v-btn to="/" plain text tile class="white pa-1 ma-1 mr-10"
+          >Project Website</v-btn
         >
-          Contact Us
+        <v-btn to="/news" plain text tile rounded class="white pa-1 ma-1"
+          >NEWS</v-btn
+        >
+        <v-btn to="/posts" plain text tile rounded class="white pa-1 ma-1"
+          >POST</v-btn
+        >
+        <v-btn to="/blog" plain text tile rounded class="white pa-1 ma-1"
+          >BLOG</v-btn
+        >
+        <v-btn to="/blog" plain text tile rounded class="white pa-1 ma-1"
+          >TECHNOLOGY</v-btn
+        >
+      </div>
+
+      <v-spacer />
+      <div class="hidden-sm-and-down ">
+        <v-btn
+          v-if="!$auth.loggedIn"
+          to="/login"
+          plain
+          text
+          tile
+          rounded
+          class="white pa-1 ma-1"
+          >Login</v-btn
+        >
+        <v-btn
+          v-if="!$auth.loggedIn"
+          to="/register"
+          plain
+          text
+          tile
+          rounded
+          class="white pa-1 ma-1"
+          >Register</v-btn
+        >
+
+        <v-btn
+          v-if="$auth.loggedIn"
+          plain
+          text
+          tile
+          rounded
+          class="white pa-1 ma-1"
+          @click.stop="rightDrawer = !rightDrawer"
+        >
+          Dashboard</v-btn
+        >
+        <v-btn
+          v-if="$auth.loggedIn"
+          @click.prevent="logout()"
+          plain
+          text
+          tile
+          rounded
+          class="white pa-1 ma-1"
+        >
+          Logout</v-btn
+        >
+      </div>
+      <v-spacer />
+      <v-btn icon class="hidden-md-and-up">
+        <v-icon>mdi-menu</v-icon>
+      </v-btn>
+    </v-app-bar>
+
+    <v-main>
+      <v-container fluid class="pa-0">
+        <nuxt />
+      </v-container>
+    </v-main>
+
+    <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
+      <v-list>
+        <v-list-item to="/dashboard">
+          <v-list-item-action>
+            <v-icon>
+              mdi-page-layout-footer
+            </v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title> Dashboard</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
+        <v-list-item v-if="$auth.loggedIn" @click.prevent="logout()">
+          <v-list-item-action>
+            <v-icon>
+              mdi-page-layout-footer
+            </v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title> Logout</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
+        <!-- <v-list-item @click.native="right = !right">
+          <v-list-item-action>
+            <v-icon light> mdi-repeat </v-icon>
+          </v-list-item-action>
+          <v-list-item-title>Switch drawer (click me)</v-list-item-title>
+        </v-list-item> -->
+      </v-list>
+    </v-navigation-drawer>
+
+    <v-footer :absolute="!fixed" app class="black lighten-4">
+      <!-- min-height="10vh" -->
+      <v-spacer></v-spacer>
+      <div class="hidden-sm-and-down ">
+        <v-btn
+          plain
+          text
+          tile
+          rounded
+          class="black lighten-2 pa-1 ma-1 mr-10 white--text"
+        >
+          &copy; {{ new Date().getFullYear() }}
         </v-btn>
-      </v-toolbar-items>
+
+        <v-btn
+          to="/about"
+          plain
+          text
+          tile
+          rounded
+          class="black lighten-2 pa-1 ma-1 white--text"
+          >ABOUT</v-btn
+        >
+        <v-btn
+          to="/contact-us"
+          plain
+          text
+          tile
+          rounded
+          class="black lighten-2 pa-1 ma-1 white--text"
+          >CONTACT US</v-btn
+        >
+      </div>
+      <v-spacer></v-spacer>
     </v-footer>
   </v-app>
 </template>
@@ -123,15 +207,13 @@ import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 
 export default {
-  loading: {
-    color: 'blue',
-    height: '20px'
-  },
   data: () => ({
-    myitems: [
-      // { title: "Logout" , link: "/logout"},
-      { title: 'Dashboard', link: '/dashboard' }
-    ],
+    loading: {
+      color: 'blue',
+      height: '20px'
+    },
+    rightDrawer: false,
+    myitems: [{ title: 'Dashboard', link: '/dashboard' }],
     menu: [{ icon: 'Dashboard', title: 'Dashboard' }],
     top_nav: [
       { label: 'Main', link: '/' },
@@ -147,31 +229,18 @@ export default {
     fixed: false,
     items: [
       {
-        icon: 'mdi-apps',
-        title: 'Welcome',
+        icon: 'mdi-home-import-outline',
+        title: 'Home',
         to: '/'
-      },
-      // {
-      //   icon: 'mdi-chart-bubble',
-      //   title: 'Inspire',
-      //   to: '/inspire'
-      // },
-      {
-        icon: 'mdi-chart-bubble',
-        title: 'Login',
-        to: '/login'
       }
     ],
     miniVariant: false,
     right: true,
     rightDrawer: false,
-    title: 'Nuxt Laravel Project'
+    title: 'Project Website'
   }),
 
-  computed: {
-    //   profile: 'session/GET_PROFILE',
-    // }),
-  },
+  computed: {},
 
   methods: {
     menuItems() {
@@ -190,28 +259,12 @@ export default {
       }
     }
   },
-  async created() {
-    try {
-      // if ($auth.loggedIn) {
-      //   await this.$axios.$get('/sanctum/csrf-cookie').then(response => {})
-      //   try {
-      //     this.$axios
-      //       .$get('api/user')
-      //       .then(res => {
-      //         this.$auth.$storage.setState('admin', res['is_admin'])
-      //         let admin = this.$auth.$storage.getState('admin')
-      //         this.is_admin = admin
-      //       })
-      //       .catch(error => {})
-      //       .finally(() => {})
-      //   } catch (error) {
-      //     console.log('error')
-      //   }
-      // }
-    } catch (error) {
-      console.log('error')
-    }
-  }
+  async created() {}
 }
 </script>
-<style scoped></style>
+<style scoped>
+.transparent {
+  opacity: 0.25;
+  border-color: transparent !important;
+}
+</style>

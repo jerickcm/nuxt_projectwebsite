@@ -1,95 +1,102 @@
 <template>
-  <v-app>
-    <v-app-bar app class="grey lighten-4" fixed>
-      <v-btn to="/" depressed color="primary">
-        <v-icon color="white lighten-2">
-          mdi-domain
-        </v-icon>
-        - Project Website
+  <v-app blue>
+    <v-app id="inspire">
+      <v-app-bar app class="grey lighten-4" fixed>
+        <v-btn to="/" depressed color="primary">
+          <v-icon color="white lighten-2">
+            mdi-domain
+          </v-icon>
+          - Project Website
 
-        <v-icon color="white lighten-2">
-          sign-out
-        </v-icon>
-      </v-btn>
-      <v-spacer></v-spacer>
-
-      <v-toolbar-items class="hidden-sm-and-down mr-10">
-        <v-btn depressed color="primary" to="/news">News </v-btn>
-        <v-btn depressed color="primary" to="/posts">Posts </v-btn>
-
-        <v-btn v-if="$auth.loggedIn" depressed color="green" to="/dashboard">
-          [ {{ $auth.user.name }} -Dashboard ]
-        </v-btn>
-
-        <v-btn v-if="!$auth.loggedIn" depressed color="primary" to="/login">
-          Login
-        </v-btn>
-        <v-btn v-if="!$auth.loggedIn" depressed color="primary" to="/register">
-          Register
-        </v-btn>
-        <v-btn
-          v-if="$auth.loggedIn"
-          depressed
-          color="primary"
-          @click.prevent="logout()"
-          >Logout
-
-          <v-icon>
-            sign-out-alt
+          <v-icon color="white lighten-2">
+            sign-out
           </v-icon>
         </v-btn>
-      </v-toolbar-items>
-      <v-sheet color="primary" outlined class="hidden-md-and-up">
-        <v-menu>
-          <template v-slot:activator="{ on, attrs }">
-            <v-btn color="primary" dark v-bind="attrs" v-on="on">
-              Menu
-            </v-btn>
-          </template>
-          <v-list>
-            <v-list-item v-if="$auth.loggedIn" to="/dashboard">
-              <v-list-item-title>Dashboard</v-list-item-title>
-            </v-list-item>
 
-            <v-list-item v-if="!$auth.loggedIn" to="/login">
-              <v-list-item-title depressed color="primary"
-                >Login</v-list-item-title
-              >
-            </v-list-item>
-            <v-list-item v-if="!$auth.loggedIn" to="/register">
-              <v-list-item-title depressed color="primary">
-                Register
-              </v-list-item-title>
-            </v-list-item>
-            <v-list-item v-if="$auth.loggedIn" @click.prevent="logout()">
-              <v-list-item-title>
-                Logout
-              </v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-menu>
-      </v-sheet>
-    </v-app-bar>
+        <v-spacer></v-spacer>
 
-    <v-main>
-      <v-container fluid class="pa-0">
-        <!-- :aspect-ratio="16 / 9" -->
-        <!-- <v-responsive > -->
-        <nuxt />
-        <!-- </v-responsive> -->
-      </v-container>
-    </v-main>
+        <v-toolbar-items
+          v-if="$auth.loggedIn && $auth.user['is_admin']"
+          class="hidden-sm-and-down mr-10"
+        >
+          <v-btn depressed color="primary" to="/admin" class="blue--text white"
+            >Admin
+          </v-btn>
+          <v-btn depressed color="primary" to="/users">Users </v-btn>
+        </v-toolbar-items>
 
-    <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
-      <v-list>
-        <v-list-item @click.native="right = !right">
-          <v-list-item-action>
-            <v-icon light> mdi-repeat </v-icon>
-          </v-list-item-action>
-          <v-list-item-title>Switch drawer (click me)</v-list-item-title>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
+        <v-toolbar-items class="hidden-sm-and-down mr-10">
+          <v-btn depressed color="primary" to="/news">News </v-btn>
+          <v-btn depressed color="primary" to="/posts">Posts </v-btn>
+
+          <v-btn v-if="$auth.loggedIn" depressed color="green" to="/dashboard">
+            [ {{ $auth.user.name }} -Dashboard ]
+          </v-btn>
+
+          <v-btn v-if="!$auth.loggedIn" depressed color="primary" to="/login">
+            Login
+          </v-btn>
+          <v-btn
+            v-if="!$auth.loggedIn"
+            depressed
+            color="primary"
+            to="/register"
+          >
+            Register
+          </v-btn>
+          <v-btn
+            v-if="$auth.loggedIn"
+            depressed
+            color="primary"
+            @click.prevent="logout()"
+            >Logout
+
+            <v-icon>
+              sign-out-alt
+            </v-icon>
+          </v-btn>
+        </v-toolbar-items>
+        <v-sheet color="primary" outlined class="hidden-md-and-up">
+          <v-menu>
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn color="primary" dark v-bind="attrs" v-on="on">
+                Menu
+              </v-btn>
+            </template>
+            <v-list>
+              <v-list-item v-if="$auth.loggedIn" to="/dashboard">
+                <v-list-item-title>Dashboard</v-list-item-title>
+              </v-list-item>
+
+              <v-list-item v-if="!$auth.loggedIn" to="/login">
+                <v-list-item-title depressed color="primary"
+                  >Login</v-list-item-title
+                >
+              </v-list-item>
+              <v-list-item v-if="!$auth.loggedIn" to="/register">
+                <v-list-item-title depressed color="primary">
+                  Register
+                </v-list-item-title>
+              </v-list-item>
+              <v-list-item v-if="$auth.loggedIn" @click.prevent="logout()">
+                <v-list-item-title>
+                  Logout
+                </v-list-item-title>
+              </v-list-item>
+            </v-list>
+          </v-menu>
+        </v-sheet>
+      </v-app-bar>
+
+      <v-main>
+        <v-container fluid class="pa-0">
+          <!-- :aspect-ratio="16 / 9" -->
+          <!-- <v-responsive > -->
+          <nuxt />
+          <!-- </v-responsive> -->
+        </v-container>
+      </v-main>
+    </v-app>
 
     <v-footer :absolute="!fixed" app class="white--text grey lighten-4">
       <span>&copy; May 2021 - {{ new Date().getFullYear() }}</span>
@@ -122,7 +129,6 @@ export default {
     height: '20px'
   },
   data: () => ({
-    rightDrawer: false,
     myitems: [
       // { title: "Logout" , link: "/logout"},
       { title: 'Dashboard', link: '/dashboard' }

@@ -13,7 +13,7 @@
           min-height="200vh"
           class="grey lighten-5 pa-1 ma-1 pl-2 ml-2 mt-2 pt-2"
         >
-          <PostCard />
+          <!-- <PostCard /> -->
         </v-card>
       </v-col>
     </v-row>
@@ -27,7 +27,7 @@ import { validationMixin, Vuelidate } from 'vuelidate'
 import { required, email, minLength } from 'vuelidate/lib/validators'
 Vue.use(Vuelidate)
 export default {
-  layout: 'index',
+  layout: 'default',
   loading: {
     color: 'blue',
     height: '20px'
@@ -45,6 +45,26 @@ export default {
     })
   },
   data: () => ({
+    clipped: false,
+    drawer: false,
+    fixed: false,
+    items: [
+      {
+        icon: 'mdi-apps',
+        title: 'Welcome',
+        to: '/'
+      },
+      {
+        icon: 'mdi-chart-bubble',
+        title: 'Inspire',
+        to: '/inspire'
+      }
+    ],
+    miniVariant: false,
+    right: true,
+    rightDrawer: false,
+    title: 'Vuetify.js',
+
     alert: 'd-none',
     error_msg: '',
     loading: false,
