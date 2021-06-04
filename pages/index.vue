@@ -25,6 +25,9 @@ import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 import { validationMixin, Vuelidate } from 'vuelidate'
 import { required, email, minLength } from 'vuelidate/lib/validators'
+
+import { greetMixins } from '~/mixins/greeting.js';
+
 Vue.use(Vuelidate)
 export default {
   layout: 'default',
@@ -32,8 +35,7 @@ export default {
     color: 'blue',
     height: '20px'
   },
-
-  mixins: [validationMixin],
+  mixins: [greetMixins,validationMixin],
   validations: {
     email: { required, email },
     password: { required, minLength: minLength(6) }

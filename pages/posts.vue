@@ -1,9 +1,12 @@
 <template>
-  <v-container fluid class=" white">
+  <v-container fluid class="white">
     <v-row class="">
       <v-col lg="3" class="grey lighten-3" min-height="450vh">
         <v-sheet min-height="450vh" class="grey lighten-5">
-          <h2 class="pa-1 ma-1">News Post Coming Soon</h2>
+          <v-card class="pa-1 ma-1">
+            <v-card-title>News Post Coming Soon</v-card-title>
+            <v-card-text></v-card-text>
+          </v-card>
         </v-sheet>
       </v-col>
       <v-col lg="6" class="grey lighten-3" min-height="450vh">
@@ -11,7 +14,10 @@
       </v-col>
       <v-col lg="3" class="grey lighten-3" min-height="450vh">
         <v-sheet min-height="450vh" class="grey lighten-5">
-          <h2 class="pa-1 ma-1">Blogs Coming Soon</h2>
+          <v-card class="pa-1 ma-1">
+            <v-card-title>Blogs Coming Soon</v-card-title>
+            <v-card-text></v-card-text>
+          </v-card>
         </v-sheet>
       </v-col>
     </v-row>
@@ -19,20 +25,23 @@
 </template>
 
 <script>
-// import PostCard from "@/components/PostCard";
+
+import { greetMixins } from '~/mixins/greeting.js'
+
 export default {
+  mixins: [greetMixins],
   data: () => ({
-    loading: false
+    loading: false,
   }),
   mounted() {},
   inject: {
     theme: {
-      default: { isDark: false }
-    }
+      default: { isDark: false },
+    },
   },
   components: {},
   watch: {},
-  methods: {}
+  methods: {},
 }
 </script>
 <style scoped>
