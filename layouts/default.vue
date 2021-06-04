@@ -1,20 +1,29 @@
 <template>
   <v-app blue>
     <v-app id="inspire">
-      <v-app-bar app color="blue darken-3" fixed>
+      <v-app-bar app class="grey lighten-4" fixed>
+        <!-- color="blue darken-3" -->
         <v-btn to="/" depressed color="primary">
           <v-icon color="white lighten-2">
             mdi-domain
           </v-icon>
-          <!-- <v-toolbar-title class="white--text"> -->
           - Project Website
-          <!-- </v-toolbar-title> -->
+
           <v-icon color="white lighten-2">
             sign-out
           </v-icon>
         </v-btn>
-
         <v-spacer></v-spacer>
+
+        <v-toolbar-items
+          v-if="$auth.loggedIn && $auth.user['is_admin']"
+          class="hidden-sm-and-down mr-10"
+        >
+          <v-btn depressed color="primary" to="/admin" class="blue--text white"
+            >Admin
+          </v-btn>
+          <v-btn depressed color="primary" to="/users">Users </v-btn>
+        </v-toolbar-items>
 
         <v-toolbar-items class="hidden-sm-and-down mr-10">
           <v-btn depressed color="primary" to="/news">News </v-btn>
@@ -89,59 +98,59 @@
       </v-main>
     </v-app>
 
-    <v-footer
-      :absolute="!fixed"
-      app
-      class="white--text"
-      color="green lighten-1"
-    >
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+    <v-footer :absolute="!fixed" app class="white--text grey lighten-4">
+      <span>&copy; May 2021 - {{ new Date().getFullYear() }}</span>
       <v-spacer></v-spacer>
-      <v-btn depressed color="primary" to="/about">
-        About Us
-      </v-btn>
-      &nbsp; &nbsp; &nbsp; &nbsp;
 
-      <v-btn depressed color="primary" to="/contact-us">
-        Contact Us
-      </v-btn>
+      <v-toolbar-items class="hidden-sm-and-down mr-10">
+        <v-btn depressed color="blue darken-3" to="/about" class="white--text">
+          About Us
+        </v-btn>
+        <v-btn
+          depressed
+          color="blue darken-3"
+          to="/contact-us"
+          class="white--text"
+        >
+          Contact Us
+        </v-btn>
+      </v-toolbar-items>
     </v-footer>
   </v-app>
 </template>
 
 <script>
-import NProgress from "nprogress";
-import "nprogress/nprogress.css";
-// import { mapGetters } from 'vuex';
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 
 export default {
   loading: {
-    color: "blue",
-    height: "20px"
+    color: 'blue',
+    height: '20px'
   },
   data: () => ({
     myitems: [
       // { title: "Logout" , link: "/logout"},
-      { title: "Dashboard", link: "/dashboard" }
+      { title: 'Dashboard', link: '/dashboard' }
     ],
-    menu: [{ icon: "Dashboard", title: "Dashboard" }],
+    menu: [{ icon: 'Dashboard', title: 'Dashboard' }],
     top_nav: [
-      { label: "Main", link: "/" },
-      { label: "Dashboard", link: "dashboard" },
-      { label: "Login", link: "login" },
-      { label: "Register", link: "register" },
-      { label: "about", link: "about" },
-      { label: "contact", link: "contact" }
+      { label: 'Main', link: '/' },
+      { label: 'Dashboard', link: 'dashboard' },
+      { label: 'Login', link: 'login' },
+      { label: 'Register', link: 'register' },
+      { label: 'about', link: 'about' },
+      { label: 'contact', link: 'contact' }
     ],
-    value: "recent",
+    value: 'recent',
     clipped: false,
     drawer: false,
     fixed: false,
     items: [
       {
-        icon: "mdi-apps",
-        title: "Welcome",
-        to: "/"
+        icon: 'mdi-apps',
+        title: 'Welcome',
+        to: '/'
       },
       // {
       //   icon: 'mdi-chart-bubble',
@@ -149,40 +158,61 @@ export default {
       //   to: '/inspire'
       // },
       {
-        icon: "mdi-chart-bubble",
-        title: "Login",
-        to: "/login"
+        icon: 'mdi-chart-bubble',
+        title: 'Login',
+        to: '/login'
       }
     ],
     miniVariant: false,
     right: true,
     rightDrawer: false,
-    title: "Nuxt Laravel Project"
+    title: 'Nuxt Laravel Project'
   }),
 
   computed: {
-    // ...mapGetters({
     //   profile: 'session/GET_PROFILE',
     // }),
   },
 
   methods: {
     menuItems() {
-      return this.menu;
+      return this.menu
     },
 
     async logout() {
-      NProgress.start();
+      NProgress.start()
       try {
-        NProgress.inc();
-        await this.$auth.logout();
-        NProgress.done();
+        NProgress.inc()
+        await this.$auth.logout()
+        NProgress.done()
       } catch (error) {
-        NProgress.done();
-        console.log(error);
+        NProgress.done()
+        console.log(error)
       }
     }
+  },
+  async created() {
+    try {
+      // if ($auth.loggedIn) {
+      //   await this.$axios.$get('/sanctum/csrf-cookie').then(response => {})
+      //   try {
+      //     this.$axios
+      //       .$get('api/user')
+      //       .then(res => {
+      //         this.$auth.$storage.setState('admin', res['is_admin'])
+      //         let admin = this.$auth.$storage.getState('admin')
+      //         this.is_admin = admin
+      //       })
+      //       .catch(error => {})
+      //       .finally(() => {})
+      //   } catch (error) {
+      //     console.log('error')
+      //   }
+      // }
+    } catch (error) {
+      console.log('error')
+    }
   }
-};
+}
 </script>
 <style scoped></style>

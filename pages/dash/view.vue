@@ -49,17 +49,18 @@
 </template>
 <script>
 export default {
+  middleware: 'auth',
   data() {
     return {
       draw: 1,
       users: [],
-      searchQuery: "",
+      searchQuery: '',
       loading: true,
       pagination: {
         descending: true,
         page: 1,
         rowsPerPage: 10,
-        sortBy: "id",
+        sortBy: 'id',
         totalItems: 0
       },
       totalUsers: 0,
@@ -67,38 +68,38 @@ export default {
       columns: {},
       headers: [
         {
-          text: "Actions",
-          value: "actions",
+          text: 'Actions',
+          value: 'actions',
           sortable: false,
           searchable: false,
-          width: "210px"
+          width: '210px'
         },
         {
-          text: "ID",
-          value: "id",
-          name: "id",
+          text: 'ID',
+          value: 'id',
+          name: 'id',
           sortable: true,
           searchable: true,
-          width: "40px"
+          width: '40px'
         },
         {
-          text: "Name",
-          value: "name",
-          name: "name",
+          text: 'Name',
+          value: 'name',
+          name: 'name',
           sortable: true,
           searchable: true,
-          width: "250px"
+          width: '250px'
         },
         {
-          text: "Email",
-          value: "email",
+          text: 'Email',
+          value: 'email',
           sortable: true,
           searchable: true,
-          width: "80px"
+          width: '80px'
         }
       ],
       cancelSource: null
-    };
+    }
   },
 
   watch: {
@@ -106,12 +107,10 @@ export default {
     //
     params: {
       handler() {
-
         this.getDataFromApi().then(data => {
-          this.users = data.items;
-          this.totalUsers = data.total;
-        });
-
+          this.users = data.items
+          this.totalUsers = data.total
+        })
       },
 
       deep: true
@@ -127,16 +126,16 @@ export default {
       this.columns[i] = {
         data: this.headers[i].value,
         name:
-          typeof this.headers[i].name != "undefined"
+          typeof this.headers[i].name != 'undefined'
             ? this.headers[i].name
             : this.headers[i].value,
         searchable: this.headers[i].searchable,
         orderable: this.headers[i].sortable,
         search: {
-          value: "",
+          value: '',
           regex: false
         }
-      };
+      }
     }
   },
 
@@ -146,7 +145,7 @@ export default {
       return {
         ...this.pagination,
         query: this.searchQuery
-      };
+      }
     }
   },
 
@@ -154,31 +153,31 @@ export default {
     cancelRequest() {
       //Axios cancelSource to stop current search if new value is entered
       if (this.cancelSource) {
-        this.cancelSource.cancel("Start new search, stop active search");
+        this.cancelSource.cancel('Start new search, stop active search')
       }
     },
 
     getDataFromApi() {
       //show loading of Vuetify Table
-      this.loading = true;
+      this.loading = true
 
       return new Promise((resolve, reject) => {
-        this.cancelRequest();
+        this.cancelRequest()
 
-        this.cancelSource = axios.CancelToken.source();
+        this.cancelSource = axios.CancelToken.source()
 
         //copy current params to modify
-        let params = this.params;
+        let params = this.params
 
-        params.length = params.rowsPerPage; //set how many records to fecth per page
+        params.length = params.rowsPerPage //set how many records to fecth per page
         params.start =
-          params.page == 1 ? 0 : params.rowsPerPage * (params.page - 1); //set offset
+          params.page == 1 ? 0 : params.rowsPerPage * (params.page - 1) //set offset
         params.search = {
           value: params.query,
           regex: false
-        }; //our search query
+        } //our search query
 
-        params.draw = this.draw;
+        params.draw = this.draw
 
         //sorting and default to column 1 (ID)
         if (params.sortBy) {
@@ -187,54 +186,54 @@ export default {
               column: _.findIndex(this.headers, {
                 value: params.sortBy
               }),
-              dir: params.descending ? "desc" : "asc"
+              dir: params.descending ? 'desc' : 'asc'
             }
-          };
+          }
         } else {
           params.order = {
             0: {
               column: 1,
-              dir: "desc"
+              dir: 'desc'
             }
-          };
+          }
         }
 
-        params.columns = this.columns; //set our previously created columns
+        params.columns = this.columns //set our previously created columns
 
         //fecth data
         //I used here jQuery $.param() helper, becuase axios submits data as JSON Payload, and we need for data or Query params
         //This can be changed
-       this.$axios
-          .get("/api/users?" + $.param(params), {
+        this.$axios
+          .get('/api/users?' + $.param(params), {
             cancelToken: this.cancelSource.token
           })
           .then(res => {
-            this.draw++;
+            this.draw++
 
-            this.cancelSource = null;
+            this.cancelSource = null
 
-            let items = res.data.data;
-            let total = res.data.recordsFiltered;
+            let items = res.data.data
+            let total = res.data.recordsFiltered
 
             resolve({
               items,
               total
-            });
+            })
           })
           .catch(err => {
             if (axios.isCancel(err)) {
-              console.log("Request canceled", err.message);
+              console.log('Request canceled', err.message)
             } else {
-              reject(err);
+              reject(err)
             }
           })
           .always(() => {
-            this.loading = false;
-          });
-      });
+            this.loading = false
+          })
+      })
     }
   }
-};
+}
 </script>
 <style scoped>
 ul.clean {

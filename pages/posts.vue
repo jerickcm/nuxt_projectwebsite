@@ -1,14 +1,18 @@
 <template>
-  <v-container fluid class="ma-0 pa-0" >
-    <v-row>
-      <v-col lg="3" class="grey" min-height="100vh">
-        <v-sheet min-height="100vh"  class="grey"></v-sheet>
+  <v-container fluid class=" white">
+    <v-row class="">
+      <v-col lg="3" class="grey lighten-3" min-height="450vh">
+        <v-sheet min-height="450vh" class="grey lighten-5">
+          <h2 class="pa-1 ma-1">News Post Coming Soon</h2>
+        </v-sheet>
       </v-col>
-      <v-col lg="6" class="" min-height="100vh">
+      <v-col lg="6" class="grey lighten-3" min-height="450vh">
         <PostCard />
       </v-col>
-      <v-col lg="3" class="grey">
-         <v-sheet min-height="100vh"  class="grey"></v-sheet>
+      <v-col lg="3" class="grey lighten-3" min-height="450vh">
+        <v-sheet min-height="450vh" class="grey lighten-5">
+          <h2 class="pa-1 ma-1">Blogs Coming Soon</h2>
+        </v-sheet>
       </v-col>
     </v-row>
   </v-container>
@@ -29,7 +33,7 @@ export default {
   components: {},
   watch: {},
   methods: {}
-};
+}
 </script>
 <style scoped>
 ul.clean {

@@ -104,119 +104,118 @@
 </template>
 
 <script>
-import Vue from "vue";
-import { Vuelidate, validationMixin } from "vuelidate";
-Vue.use(Vuelidate);
-import { required } from "vuelidate/lib/validators";
+import Vue from 'vue'
+import { Vuelidate, validationMixin } from 'vuelidate'
+Vue.use(Vuelidate)
+import { required } from 'vuelidate/lib/validators'
 
-var timezone = process.env.TIMEZONE;
-var url = process.env.API_URL;
+var timezone = process.env.TIMEZONE
+var url = process.env.API_URL
 
 export default {
-  middleware: "auth",
+  middleware: 'auth',
   mixins: [validationMixin],
   data() {
     return {
-      url_backend: "",
-      form_content: "",
-      form_title: "",
-      form_publish: "",
+      url_backend: '',
+      form_content: '',
+      form_title: '',
+      form_publish: '',
       token: null,
       publishselection: [
         {
           value: 1,
-          text: "Draft",
+          text: 'Draft'
         },
         {
           value: 2,
-          text: "Publish",
-        },
+          text: 'Publish'
+        }
       ],
-      image: "",
-      image_preview: "",
-      image_name: "",
-    };
+      image: '',
+      image_preview: '',
+      image_name: ''
+    }
   },
 
   validations: {
     form_content: { required },
     form_title: { required },
-    form_publish: { required },
+    form_publish: { required }
   },
   components: {
-    "ckeditor-nuxt": () =>
-      import("@engrjerickcmangalus/ckeditor-nuxt-custom-build-simpleuploader"),
+    'ckeditor-nuxt': () =>
+      import('@engrjerickcmangalus/ckeditor-nuxt-custom-build-simpleuploader')
   },
   async created() {
-    this.timezone = timezone;
+    this.timezone = timezone
     this.editorConfig = {
       simpleUpload: {
-        uploadUrl: url + "/" + "api/ckeditor",
+        uploadUrl: url + '/' + 'api/ckeditor',
         withCredentials: true,
         headers: {
-          Accept: "application/json",
+          Accept: 'application/json',
           Timezone: this.timezone,
-          "X-XSRF-TOKEN": this.$auth.$storage.getCookies()["XSRF-TOKEN"],
-        },
-      },
-    };
+          'X-XSRF-TOKEN': this.$auth.$storage.getCookies()['XSRF-TOKEN']
+        }
+      }
+    }
   },
   computed: {
     titleErrors() {
-      const errors = [];
-      if (!this.$v.form_title.$dirty) return errors;
-      !this.$v.form_title.required && errors.push("Title is required.");
-      return errors;
+      const errors = []
+      if (!this.$v.form_title.$dirty) return errors
+      !this.$v.form_title.required && errors.push('Title is required.')
+      return errors
     },
     contentErrors() {
-      const errors = [];
-      if (!this.$v.form_content.$dirty) return errors;
-      !this.$v.form_content.required && errors.push("Content is required.");
-      return errors;
-    },
+      const errors = []
+      if (!this.$v.form_content.$dirty) return errors
+      !this.$v.form_content.required && errors.push('Content is required.')
+      return errors
+    }
   },
   methods: {
     handleFileUpload(e) {
-      const file = this.$refs.file.files[0];
-      this.image_preview = URL.createObjectURL(file);
+      const file = this.$refs.file.files[0]
+      this.image_preview = URL.createObjectURL(file)
       try {
-        this.image_name = this.$refs.file.files[0].name;
-        this.image = this.$refs.file.files[0];
+        this.image_name = this.$refs.file.files[0].name
+        this.image = this.$refs.file.files[0]
       } catch (err) {
-        console.log(err);
+        console.log(err)
       }
     },
     remove_image() {
-      console.log();
-      this.$refs.file.value = null;
-      this.image_name = "";
-           this.image = "";
-            this.image_preview = "";
+      this.$refs.file.value = null
+      this.image_name = ''
+      this.image = ''
+      this.image_preview = ''
 
-      return false;
+      return false
     },
     onSubmit() {
       if (this.form_title && this.form_content && this.form_publish) {
-        let payload = new FormData();
-        payload.append("publish", this.form_publish);
-        payload.append("title", this.form_title);
-        payload.append("content", this.form_content);
-        payload.append("image", this.image);
-        payload.append("image_name", this.image_name);
+        let payload = new FormData()
+        payload.append('publish', this.form_publish)
+        payload.append('title', this.form_title)
+        payload.append('content', this.form_content)
+        payload.append('image', this.image)
+        payload.append('image_name', this.image_name)
         this.$axios
-          .post("/api/create-post", payload, {
+          .post('/api/create-post', payload, {
             headers: {
-              "Content-Type": "multipart/form-data",
-            },
+              'Content-Type': 'multipart/form-data'
+            }
           })
-          .then((res) => {})
-          .catch((error) => {})
-          .finally(() => {});
+          .then(res => {})
+          .catch(error => {})
+          .finally(() => {})
       } else {
       }
-    },
-  },
-};
+    }
+  }
+}
 </script>
 <style scoped>
 ul.clean {

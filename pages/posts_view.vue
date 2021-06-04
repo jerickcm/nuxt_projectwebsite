@@ -1,54 +1,91 @@
 <template>
-  <v-container fluid class="ma-5 pa-5">
-    <v-sheet v-html="post" class="ck-content"></v-sheet>
+  <v-container fluid class="ma-0 pa-0">
+    <v-row>
+      <v-col>
+        <v-skeleton-loader
+          elevation="2"
+          outlined
+          shaped
+          tile
+          class="pa-2 ma-2"
+          type="card"
+          v-if="pageload"
+        ></v-skeleton-loader>
+        <v-card
+          v-else
+          elevation="2"
+          outlined
+          shaped
+          tile
+          class="pa-2 ma-2"
+          :class="charge"
+        >
+          <v-img height="250" :src="posts['image']"> </v-img>
+          <v-card-title>
+            <h2>Title : {{ posts['title'] }}</h2>
+          </v-card-title>
+          <v-card-text class="">
+            <span>Author : {{ posts['name'] }}</span> <br />
+            <span>Email : {{ posts['email'] }}</span
+            ><br />
+            <span>Date : {{ posts['human_date'] }}</span>
+            <v-sheet v-html="posts['content']" class="ck-content"></v-sheet>
+          </v-card-text>
+        </v-card>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
 <script>
-import NProgress from "nprogress";
-import "nprogress/nprogress.css";
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 export default {
   data: () => ({
-    post:'',
-    data: [],
+    posts: {
+      content: [],
+      image: '',
+      date: '',
+      author: ''
+    },
+    pageload: true
   }),
   mounted() {
-    console.log("mounted");
-    this.getposts();
+    console.log('mounted')
+    this.getposts()
   },
   async created() {
-    this.slug = this.$route.query.slug;
-    console.log(this.slug);
-    await this.$axios.$get("/sanctum/csrf-cookie").then((response) => {});
+    this.slug = this.$route.query.slug
+    console.log(this.slug)
+    await this.$axios.$get('/sanctum/csrf-cookie').then(response => {})
   },
   components: {},
   watch: {},
   methods: {
     getposts() {
-      NProgress.start();
-      let payload = new FormData();
-      payload.append("slug", this.$route.query.slug);
-      NProgress.inc();
+      NProgress.start()
+      let payload = new FormData()
+      payload.append('slug', this.$route.query.slug)
+      NProgress.inc()
       try {
         this.$axios
-          .$post("api/post/getbyslug", payload)
-          .then((res) => {
-            for (const [key, value] of Object.entries(res.data)) {
-              console.log(value.content);
-              this.post = value.content;
-            }
-            NProgress.done();
+          .$post('api/post/getbyslug', payload)
+          .then(res => {
+            this.posts = res.data[0]
+            NProgress.done()
+            this.pageload = false
           })
-          .catch((error) => {
-            NProgress.done();
+          .catch(error => {
+            NProgress.done()
+            this.pageload = false
           })
-          .finally(() => {});
+          .finally(() => {})
       } catch (error) {
-        console.log("error");
+        console.log('error')
       }
-    },
-  },
-};
+    }
+  }
+}
 </script>
 <style scoped>
 :root {
@@ -183,7 +220,7 @@ export default {
   border-left: solid 5px hsl(0, 0%, 80%);
 }
 /* ckeditor5-block-quote/theme/blockquote.css */
-.ck-content[dir="rtl"] blockquote {
+.ck-content[dir='rtl'] blockquote {
   border-left: 0;
   border-right: solid 5px hsl(0, 0%, 80%);
 }
@@ -213,11 +250,11 @@ export default {
   background: hsla(0, 0%, 0%, 5%);
 }
 /* ckeditor5-table/theme/table.css */
-.ck-content[dir="rtl"] .table th {
+.ck-content[dir='rtl'] .table th {
   text-align: right;
 }
 /* ckeditor5-table/theme/table.css */
-.ck-content[dir="ltr"] .table th {
+.ck-content[dir='ltr'] .table th {
   text-align: left;
 }
 /* ckeditor5-page-break/theme/pagebreak.css */
@@ -231,7 +268,7 @@ export default {
 }
 /* ckeditor5-page-break/theme/pagebreak.css */
 .ck-content .page-break::after {
-  content: "";
+  content: '';
   position: absolute;
   border-bottom: 2px dashed hsl(0, 0%, 77%);
   width: 100%;
@@ -294,7 +331,7 @@ export default {
   display: block;
   position: absolute;
   box-sizing: border-box;
-  content: "";
+  content: '';
   width: 100%;
   height: 100%;
   border: 1px solid hsl(0, 0%, 20%);
@@ -308,7 +345,7 @@ export default {
   position: absolute;
   box-sizing: content-box;
   pointer-events: none;
-  content: "";
+  content: '';
   left: calc(var(--ck-todo-list-checkmark-size) / 3);
   top: calc(var(--ck-todo-list-checkmark-size) / 5.3);
   width: calc(var(--ck-todo-list-checkmark-size) / 5.3);

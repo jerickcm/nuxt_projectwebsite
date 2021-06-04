@@ -1,7 +1,7 @@
 <template>
   <v-container fluid class="ma-0 pa-0">
     <v-parallax class="ma-0 pa-0" height="900" src="/images/bg1.jpeg">
-      <v-row center >
+      <v-row center>
         <v-col class="col-md-6 offset-md-3 pt-10" cols="12" sm="6">
           <!-- {{ errors }} -->
           <strong class="ma-2 pa-2 mt-10 pt-10 text-h6">Login : </strong>
@@ -54,7 +54,7 @@
               >
                 clear
               </v-btn>
-                      <v-btn
+              <v-btn
                 class="mr-4 ma-2"
                 @click.prevent="loginwithgoogle"
                 depressed
@@ -71,18 +71,18 @@
 </template>
 
 <script>
-import Vue from "vue";
-import NProgress from "nprogress";
-import "nprogress/nprogress.css";
-import { validationMixin, Vuelidate } from "vuelidate";
-import { required, email, minLength } from "vuelidate/lib/validators";
+import Vue from 'vue'
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
+import { validationMixin, Vuelidate } from 'vuelidate'
+import { required, email, minLength } from 'vuelidate/lib/validators'
 
-Vue.use(Vuelidate);
+Vue.use(Vuelidate)
 
 export default {
   loading: {
-    color: "blue",
-    height: "20px"
+    color: 'blue',
+    height: '20px'
   },
 
   mixins: [validationMixin],
@@ -92,94 +92,96 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
-      this.$nuxt.$loading.start();
-      setTimeout(() => this.$nuxt.$loading.finish(), 2000);
-    });
+      this.$nuxt.$loading.start()
+      setTimeout(() => this.$nuxt.$loading.finish(), 2000)
+    })
   },
   data: () => ({
-    alert: "d-none",
-    error_msg: "",
+    alert: 'd-none',
+    error_msg: '',
     loading: false,
     email: null,
-    password: "",
+    password: '',
     form: {
-      email: "",
-      password: ""
+      email: '',
+      password: ''
     },
 
     show1: false,
     rules: {
-      required: value => !!value || "Required.",
-      min: v => v.length >= 6 || "Min 6 characters"
+      required: value => !!value || 'Required.',
+      min: v => v.length >= 6 || 'Min 6 characters'
     }
   }),
   computed: {
     emailErrors() {
-      const errors = [];
-      if (!this.$v.email.$dirty) return errors;
-      !this.$v.email.email && errors.push("Must be valid e-mail");
-      !this.$v.email.required && errors.push("E-mail is required");
-      return errors;
+      const errors = []
+      if (!this.$v.email.$dirty) return errors
+      !this.$v.email.email && errors.push('Must be valid e-mail')
+      !this.$v.email.required && errors.push('E-mail is required')
+      return errors
     },
     passwordErrors() {
-      const passerrors = [];
-      if (!this.$v.password.$dirty) return passerrors;
-      !this.$v.email.required && passerrors.push("Password is required");
-      return passerrors;
+      const passerrors = []
+      if (!this.$v.password.$dirty) return passerrors
+      !this.$v.email.required && passerrors.push('Password is required')
+      return passerrors
     }
   },
-  middleware: ["guest"],
+  middleware: ['guest'],
   // auth: false,
   //  auth: 'guest',
   methods: {
-    loginwithgoogle(){
-      this.$auth.loginWith('google');
+    loginwithgoogle() {
+      this.$auth.loginWith('google')
     },
     clear() {
-      this.form.email = "";
-      this.form.password = "";
-      this.email = "";
-      this.password = "";
-      this.select = null;
-      this.alert = "d-none";
-      this.error_msg = "";
-      this.$v.$reset();
+      this.form.email = ''
+      this.form.password = ''
+      this.email = ''
+      this.password = ''
+      this.select = null
+      this.alert = 'd-none'
+      this.error_msg = ''
+      this.$v.$reset()
     },
     login() {
-      this.$v.email.$touch();
-      this.$v.password.$touch();
+      this.$v.email.$touch()
+      this.$v.password.$touch()
       if (!this.$v.$invalid) {
-        this.alert = "d-none";
-        this.loading = true;
-          // NProgress.configure({ parent: '#container' });
-        NProgress.start();
-        NProgress.configure({ showSpinner: false });
-        this.form.email = this.email;
-        this.form.password = this.password;
+        this.alert = 'd-none'
+        this.loading = true
+        // NProgress.configure({ parent: '#container' });
+        NProgress.start()
+        NProgress.configure({ showSpinner: false })
+        this.form.email = this.email
+        this.form.password = this.password
         try {
           this.$auth
-            .loginWith("laravelSanctum", {
+            .loginWith('laravelSanctum', {
               data: {
                 email: this.form.email,
                 password: this.form.password
               }
             })
             .then(response => {
-              console.log("Response is" + response);
-              this.loading = false;
+              console.log('Response is' + response)
+              console.log(response)
+              console.dir(response)
+              this.loading = false
 
-              NProgress.done();
+              NProgress.done()
             })
             .catch(error => {
-              console.log(error);
-              this.loading = false;
+              console.log(error)
+              this.loading = false
 
-              NProgress.done();
-              console.log("err onRejected");
+              NProgress.done()
+              console.log('err onRejected')
 
-              this.alert = "";
-              this.error_msg = error.response.data;
-            });
+              this.alert = ''
+              this.error_msg = error.response.data
+            })
 
           // .then(function (response) {
           //    console.log("Response is" + response)
@@ -201,16 +203,14 @@ export default {
           //   }
           // );
         } catch (error) {
-          this.alert = "";
-          this.error_msg = error.response.data;
-          console.log(error.response.data);
-          if (error.response.status === 422) console.log(error.response.data);
+          this.alert = ''
+          this.error_msg = error.response.data
+          console.log(error.response.data)
+          if (error.response.status === 422) console.log(error.response.data)
         }
       }
     }
   }
-};
+}
 </script>
-<style scoped>
-
-</style>
+<style scoped></style>

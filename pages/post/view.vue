@@ -3,6 +3,7 @@
     <v-sheet class="blue ligthen-3 pa-5 pt-10 pb-10" min-height="">
       <v-card>
         <v-dialog
+          persistent
           v-model="dialog"
           fullscreen
           hide-overlay
@@ -134,7 +135,7 @@
           :loading="loading"
           class="elevation-1"
           :footer-props="{
-            'items-per-page-options': [5, 10, 20, 30, 40, 50],
+            'items-per-page-options': [5, 10, 20, 30, 40, 50]
           }"
         >
           <template v-slot:top>
@@ -163,7 +164,9 @@
           <template v-slot:header.name="{ header }">
             {{ header.text.toUpperCase() }}
           </template>
-
+          <template v-slot:item.publish="{ item }">
+            {{ item.publish }}
+          </template>
           <template v-slot:item.id="{ item }">
             <v-icon small class="mr-2" @click="editItem(item)">
               mdi-pencil
@@ -179,46 +182,43 @@
   </v-container>
 </template>
 <script>
-import Vue from "vue";
-import { Vuelidate, validationMixin } from "vuelidate";
-import {
-  required,
-  maxLength,
-  email,
-  minLength,
-} from "vuelidate/lib/validators";
-import NProgress from "nprogress";
-import "nprogress/nprogress.css";
+import Vue from 'vue'
+import { Vuelidate, validationMixin } from 'vuelidate'
+import { required, maxLength, email, minLength } from 'vuelidate/lib/validators'
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 
-var url = process.env.BASE_URL_AXIOS;
-var timezone = process.env.TIMEZONE;
-var url = process.env.API_URL;
+var url = process.env.BASE_URL_AXIOS
+var timezone = process.env.TIMEZONE
+var url = process.env.API_URL
 export default {
+  middleware: 'auth',
   mixins: [validationMixin],
   data() {
     return {
       headers: [
         {
-          text: "No",
-          align: "start",
+          text: 'No',
+          align: 'start',
           sortable: false,
-          value: "no",
+          value: 'no'
         },
-        { text: "Name", value: "name" },
+        { text: 'Name', value: 'name' },
 
-        { text: "Title", value: "title" },
-        { text: "Slug", value: "slug" },
-        { text: "Publish", value: "publish" },
-        { text: "Action", value: "id", sortable: false },
+        { text: 'Title', value: 'title' },
+        { text: 'Slug', value: 'slug' },
+        { text: 'Publish', value: 'publish' },
+        { text: 'Date / Time', value: 'created_at' },
+        { text: 'Action', value: 'id', sortable: false }
       ],
-      form_content: "",
-      form_title: "",
-      form_publish: "",
+      form_content: '',
+      form_title: '',
+      form_publish: '',
       dialog: false,
       dialogDelete: false,
       deletedialog: false,
       editedIndex: -1,
-      search: "",
+      search: '',
       tabledata: [],
       tabledata_total: 0,
       loading: true,
@@ -227,205 +227,203 @@ export default {
       publishselection: [
         {
           value: 1,
-          text: "Draft",
+          text: 'Draft'
         },
         {
           value: 2,
-          text: "Publish",
-        },
+          text: 'Publish'
+        }
       ],
-      form_image: "",
+      form_image: '',
 
-      image: "",
-      image_preview: "",
-      image_name: "",
-    };
+      image: '',
+      image_preview: '',
+      image_name: ''
+    }
   },
   validations: {
     form_content: { required },
     form_title: { required },
-    form_publish: { required },
+    form_publish: { required }
   },
   async created() {
-    this.timezone = timezone;
+    this.timezone = timezone
     this.editorConfig = {
       simpleUpload: {
-        uploadUrl: url + "/" + "api/ckeditor",
+        uploadUrl: url + '/' + 'api/ckeditor',
         withCredentials: true,
         headers: {
-          Accept: "application/json",
+          Accept: 'application/json',
           Timezone: this.timezone,
-          "X-XSRF-TOKEN": this.$auth.$storage.getCookies()["XSRF-TOKEN"],
-        },
-      },
-    };
+          'X-XSRF-TOKEN': this.$auth.$storage.getCookies()['XSRF-TOKEN']
+        }
+      }
+    }
   },
   components: {
-    "ckeditor-nuxt": () =>
-      import("@engrjerickcmangalus/ckeditor-nuxt-custom-build-simpleuploader"),
+    'ckeditor-nuxt': () =>
+      import('@engrjerickcmangalus/ckeditor-nuxt-custom-build-simpleuploader')
   },
   computed: {
     titleErrors() {
-      const errors = [];
-      if (!this.$v.form_title.$dirty) return errors;
-      !this.$v.form_title.required && errors.push("Title is required.");
-      return errors;
+      const errors = []
+      if (!this.$v.form_title.$dirty) return errors
+      !this.$v.form_title.required && errors.push('Title is required.')
+      return errors
     },
     contentErrors() {
-      const errors = [];
-      if (!this.$v.form_content.$dirty) return errors;
-      !this.$v.form_content.required && errors.push("Content is required.");
-      return errors;
-    },
+      const errors = []
+      if (!this.$v.form_content.$dirty) return errors
+      !this.$v.form_content.required && errors.push('Content is required.')
+      return errors
+    }
   },
   watch: {
     options: {
       handler() {
-        this.getDataFromApi();
+        this.getDataFromApi()
       },
-      deep: true,
+      deep: true
     },
     dialog(val) {
-      val || this.close();
+      val || this.close()
     },
     dialogDelete(val) {
-      val || this.closeDelete();
-    },
+      val || this.closeDelete()
+    }
   },
   mounted() {
-    this.getDataFromApi();
+    this.getDataFromApi()
   },
   methods: {
     handleFileUpload(e) {
-      const file = this.$refs.file.files[0];
-      this.image_preview = URL.createObjectURL(file);
+      const file = this.$refs.file.files[0]
+      this.image_preview = URL.createObjectURL(file)
       try {
-        this.image_name = this.$refs.file.files[0].name;
-        this.form_image = this.$refs.file.files[0];
+        this.image_name = this.$refs.file.files[0].name
+        this.form_image = this.$refs.file.files[0]
       } catch (err) {
-        console.log(err);
+        console.log(err)
       }
     },
     remove_image() {
-      console.log();
-      this.$refs.file.value = null;
-      this.image_name = "";
-      this.image = "";
-      this.image_preview = "";
-      this.form_image = "";
-      return false;
+      this.$refs.file.value = null
+      this.image_name = ''
+      this.image = ''
+      this.image_preview = ''
+      this.form_image = ''
+      return false
     },
     close() {
-      this.dialog = false;
+      this.dialog = false
       this.$nextTick(() => {
-        this.editedItem = Object.assign({}, this.defaultItem);
-        this.editedIndex = -1;
-      });
+        this.editedItem = Object.assign({}, this.defaultItem)
+        this.editedIndex = -1
+      })
     },
 
     closeDelete() {
-      this.dialogDelete = false;
+      this.dialogDelete = false
       this.$nextTick(() => {
-        this.editedItem = Object.assign({}, this.defaultItem);
-        this.editedIndex = -1;
-      });
+        this.editedItem = Object.assign({}, this.defaultItem)
+        this.editedIndex = -1
+      })
     },
     editItem(item) {
-      this.form_title = this.tabledata[this.tabledata.indexOf(item)].title;
-      this.form_image = this.tabledata[this.tabledata.indexOf(item)].image;
-      this.form_content = this.tabledata[this.tabledata.indexOf(item)].content;
+      this.form_title = this.tabledata[this.tabledata.indexOf(item)].title
+      this.form_image = this.tabledata[this.tabledata.indexOf(item)].image
+      this.form_content = this.tabledata[this.tabledata.indexOf(item)].content
       this.form_publish = this.tabledata[
         this.tabledata.indexOf(item)
-      ].publishvalue;
-      this.editedIndex = this.tabledata.indexOf(item);
-      this.dialog = true;
+      ].publishvalue
+      this.editedIndex = this.tabledata.indexOf(item)
+      this.dialog = true
     },
 
     deleteItem(item) {
-      this.editedIndex = this.tabledata.indexOf(item);
-      this.editedItem = Object.assign({}, item);
-      this.dialogDelete = true;
+      this.editedIndex = this.tabledata.indexOf(item)
+      this.editedItem = Object.assign({}, item)
+      this.dialogDelete = true
     },
     SaveEdited() {
-      this.$axios.$get("/sanctum/csrf-cookie").then((response) => {});
-      NProgress.start();
-      let payload = new FormData();
+      this.$axios.$get('/sanctum/csrf-cookie').then(response => {})
+      NProgress.start()
+      let payload = new FormData()
 
-      payload.append("post_id", this.tabledata[this.editedIndex].id);
-      payload.append("title", this.form_title);
-      payload.append("content", this.form_content);
-      payload.append("publish", this.form_publish);
+      payload.append('post_id', this.tabledata[this.editedIndex].id)
+      payload.append('title', this.form_title)
+      payload.append('content', this.form_content)
+      payload.append('publish', this.form_publish)
       if (this.form_image) {
-        payload.append("image", this.form_image);
+        payload.append('image', this.form_image)
       }
 
       try {
         this.$axios
-          .$post("api/post/update", payload, {
+          .$post('api/post/update', payload, {
             headers: {
-              "Content-Type": "multipart/form-data",
-            },
+              'Content-Type': 'multipart/form-data'
+            }
           })
-          .then((res) => {
-
-            this.tabledata[this.editedIndex].title = this.form_title;
-            this.tabledata[this.editedIndex].content = this.form_content;
+          .then(res => {
+            this.tabledata[this.editedIndex].title = this.form_title
+            this.tabledata[this.editedIndex].content = this.form_content
             this.tabledata[this.editedIndex].publish =
-              this.form_publish == 1 ? "Draft" : "Publish";
+              this.form_publish == 1 ? 'Draft' : 'Publish'
 
-            this.tabledata[this.editedIndex].publishvalue = this.form_publish;
+            this.tabledata[this.editedIndex].publishvalue = this.form_publish
 
             if (this.form_image) {
-              this.tabledata[this.editedIndex].image = res.image;
+              this.tabledata[this.editedIndex].image = res.image
             }
 
-            this.dialog = false;
-            this.form_publish="";
-            this.image_preview = "";
+            this.dialog = false
+            this.form_publish = ''
+            this.image_preview = ''
 
-            NProgress.done();
+            NProgress.done()
           })
-          .catch((error) => {
-            this.form_publish="";
-            NProgress.done();
+          .catch(error => {
+            this.form_publish = ''
+            NProgress.done()
           })
-          .finally(() => {});
+          .finally(() => {})
       } catch (error) {}
     },
     deleteItemConfirm() {
-      let payload = new FormData();
-      payload.append("post_id", this.tabledata[this.editedIndex].id);
+      let payload = new FormData()
+      payload.append('post_id', this.tabledata[this.editedIndex].id)
       try {
         this.$axios
-          .$post("api/post/delete", payload)
-          .then((res) => {})
-          .catch((error) => {})
-          .finally(() => {});
+          .$post('api/post/delete', payload)
+          .then(res => {})
+          .catch(error => {})
+          .finally(() => {})
       } catch (error) {}
-      this.tabledata.splice(this.editedIndex, 1);
-      this.closeDelete();
+      this.tabledata.splice(this.editedIndex, 1)
+      this.closeDelete()
     },
     getDataFromApi() {
-      this.loading = true;
-      const { sortBy, sortDesc, page, itemsPerPage } = this.options;
+      this.loading = true
+      const { sortBy, sortDesc, page, itemsPerPage } = this.options
 
-      let payload = new FormData();
-      payload.append("sortDesc", sortDesc);
-      payload.append("sortBy", sortBy);
-      payload.append("page", page);
-      payload.append("itemsPerPage", itemsPerPage);
-      payload.append("search", this.search);
+      let payload = new FormData()
+      payload.append('sortDesc', sortDesc)
+      payload.append('sortBy', sortBy)
+      payload.append('page', page)
+      payload.append('itemsPerPage', itemsPerPage)
+      payload.append('search', this.search)
 
-      this.$axios.$get("/sanctum/csrf-cookie").then((response) => {});
+      this.$axios.$get('/sanctum/csrf-cookie').then(response => {})
       this.$axios
-        .$post("api/post/datatable", payload)
-        .then((res) => {
-          var data = [];
-          var rowcount = 1;
+        .$post('api/post/datatable', payload)
+        .then(res => {
+          var data = []
+          var rowcount = 1
           if (page == 1) {
-            rowcount = 1;
+            rowcount = 1
           } else {
-            rowcount = (page - 1) * itemsPerPage + 1;
+            rowcount = (page - 1) * itemsPerPage + 1
           }
 
           for (const [key, value] of Object.entries(res.data)) {
@@ -436,26 +434,27 @@ export default {
               slug: value.slug,
               title: value.title,
               content: value.content,
-              publish: value.publish == 1 ? "Draft" : "Publish",
+              publish: value.publish == 1 ? 'Draft' : 'Publish',
               publishvalue: value.publish,
               image: value.image,
-            });
-            rowcount++;
+              created_at: value.created_at
+            })
+            rowcount++
           }
-          console.log(data);
-          this.tabledata = data;
-          this.tabledata_total = res.total;
-          this.loading = false;
+
+          this.tabledata = data
+          this.tabledata_total = res.total
+          this.loading = false
         })
-        .catch((error) => {
-          this.loading = false;
+        .catch(error => {
+          this.loading = false
         })
         .finally(() => {
-          this.loading = false;
-        });
-    },
-  },
-};
+          this.loading = false
+        })
+    }
+  }
+}
 </script>
 <style scoped>
 ul.clean {

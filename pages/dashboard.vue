@@ -26,6 +26,10 @@
 </template>
 <script>
 export default {
-  middleware: "auth"
-};
+  data() {
+    return {}
+  },
+  middleware: 'auth',
+  async created() {}
+}
 </script>

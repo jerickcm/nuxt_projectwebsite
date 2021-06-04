@@ -1,30 +1,29 @@
-import colors from "vuetify/es5/util/colors";
+import colors from 'vuetify/es5/util/colors'
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-
-    titleTemplate: "%s - Project",
-    title: "Nuxt and Laravel",
+    titleTemplate: '%s - Project',
+    title: 'Nuxt and Laravel',
     htmlAttrs: {
-      lang: "en"
+      lang: 'en'
     },
     meta: [
-      { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "" }
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: '' }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     script: [
       {
         src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
         'data-ad-client': 'pub-3213536425475125',
         async: true
       }
-    ],
+    ]
   },
   env: {
-    API_URL : process.env.API_URL || 'http://back.api.test:3001'
+    API_URL: process.env.API_URL || 'http://back.api.test:3001'
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
@@ -38,7 +37,7 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
-    "@nuxtjs/vuetify"
+    '@nuxtjs/vuetify'
   ],
   // router: {
   //   middleware: ['auth']
@@ -46,9 +45,15 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    "@nuxtjs/axios",
-    "@nuxtjs/auth-next"
+    '@nuxtjs/axios',
+    '@nuxtjs/auth-next',
+    '@nuxtjs/robots'
   ],
+  robots: {
+    UserAgent: '*',
+    Disallow: '/dashboard',
+    Allow: '/'
+  },
   auth: {
     // token: {
     //   prefix: '_token.'
@@ -59,30 +64,30 @@ export default {
     strategies: {
       google: {
         scope: [
-          "openid",
-          "profile",
-          "email",
-          "https://www.googleapis.com/auth/gmail.metadata"
+          'openid',
+          'profile',
+          'email',
+          'https://www.googleapis.com/auth/gmail.metadata'
         ],
         clientId:
-          "14757956463-i7pn4r8arrel30q04rh9htcmnf1aoaot.apps.googleusercontent.com",
-        codeChallengeMethod: "",
-        responseType: "code",
+          '14757956463-i7pn4r8arrel30q04rh9htcmnf1aoaot.apps.googleusercontent.com',
+        codeChallengeMethod: '',
+        responseType: 'code'
         // grantType: "client_credentials",
         // redirectUri: "http://localhost"
       },
       laravelSanctum: {
-        provider: "laravel/sanctum",
+        provider: 'laravel/sanctum',
         //  url: 'http://localhost:8000',
-        url: process.env.BASE_URL ,
+        url: process.env.BASE_URL,
         // url: "http://back.api.test",
         endpoints: {
           login: {
-            url: "/api/login"
+            url: '/api/login'
           },
 
           logout: {
-            url: "/api/logout"
+            url: '/api/logout'
           }
           //   user: {
           //     url: '/api/user', method: 'get', propertyName: 'data'
@@ -91,23 +96,23 @@ export default {
       }
     },
     redirect: {
-      login: "/login",
+      login: '/login',
       // login: "/",
-      logout: "/",
+      logout: '/',
       // callback: '/login',
-      home: "/dashboard"
+      home: '/dashboard'
     }
   },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // baseURL: process.env.BASE_URL || "http://back.api.test",
-    baseURL: process.env.BASE_URL ,
+    baseURL: process.env.BASE_URL,
     credentials: true
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
-    customVariables: ["~/assets/variables.scss"],
+    customVariables: ['~/assets/variables.scss'],
     theme: {
       dark: false,
 
@@ -127,14 +132,13 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
   server: {
-  //  port: 80,
+    //  port: 80,
     // port: 80, // default: 3000
     // host: '0.0.0.0', // default: localhost,
     // timing: falseY
-
   },
   target: 'static'
-};
+}
 
 // Note that Vuetify 1.5.x is handled by @nuxtjs/vuetify@0.x.x
 // Meanwhile Vuetify 2.x.x is now handled by the last versions of the module : @nuxtjs/vuetify@1.x.x
