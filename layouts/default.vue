@@ -2,7 +2,6 @@
   <v-app blue>
     <v-app id="inspire">
       <v-app-bar app class="grey lighten-4" fixed>
-        <!-- color="blue darken-3" -->
         <v-btn to="/" depressed color="primary">
           <v-icon color="white lighten-2">
             mdi-domain
