@@ -1,6 +1,7 @@
 <template>
   <v-app dark>
-    <v-navigation-drawer
+
+    <!-- <v-navigation-drawer class="hidden-md-and-up d-none"
       v-model="drawer"
       :mini-variant="miniVariant"
       :clipped="clipped"
@@ -46,10 +47,10 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
-    </v-navigation-drawer>
+    </v-navigation-drawer> -->
 
     <v-app-bar :clipped-left="clipped" fixed app class="white">
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer"  class="hidden-md-and-up" />
 
       <!-- <v-btn icon @click.stop="clipped = !clipped">
         <v-icon>mdi-application</v-icon>
@@ -68,8 +69,11 @@
         <v-btn to="/blog" plain text tile rounded class="white pa-1 ma-1"
           >BLOG</v-btn
         >
-        <v-btn to="/blog" plain text tile rounded class="white pa-1 ma-1"
+        <v-btn to="/technology" plain text tile rounded class="white pa-1 ma-1"
           >TECHNOLOGY</v-btn
+        >
+        <v-btn to="/tutorials" plain text tile rounded class="white pa-1 ma-1"
+          >TUTORIALS</v-btn
         >
       </div>
 
@@ -225,7 +229,7 @@ export default {
     ],
     value: 'recent',
     clipped: false,
-    drawer: false,
+    drawer: true,
     fixed: false,
     items: [
       {
