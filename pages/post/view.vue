@@ -167,6 +167,9 @@
           <template v-slot:item.publish="{ item }">
             {{ item.publish }}
           </template>
+           <template v-slot:item.created_at="{ item }">
+            {{ item.created_at  }}
+          </template>
           <template v-slot:item.id="{ item }">
             <v-icon small class="mr-2" @click="editItem(item)">
               mdi-pencil
@@ -187,6 +190,9 @@ import { Vuelidate, validationMixin } from 'vuelidate'
 import { required, maxLength, email, minLength } from 'vuelidate/lib/validators'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
+
+// import DateFilter from '~/filters/date'
+// Vue.filter('date',DateFilter)
 
 var url = process.env.BASE_URL_AXIOS
 var timezone = process.env.TIMEZONE
@@ -439,6 +445,7 @@ export default {
               image: value.image,
               created_at: value.created_at
             })
+            //  created_at: (value.created_at | date)
             rowcount++
           }
 
