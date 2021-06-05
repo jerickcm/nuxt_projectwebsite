@@ -1,6 +1,5 @@
 <template>
   <v-app dark>
-
     <!-- <v-navigation-drawer class="hidden-md-and-up d-none"
       v-model="drawer"
       :mini-variant="miniVariant"
@@ -25,16 +24,7 @@
           </v-list-item-content>
         </v-list-item>
 
-        <v-list-item router exact @click.stop="fixed = !fixed">
-          <v-list-item-action>
-            <v-icon>
-              mdi-page-layout-footer
-            </v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title> Show/Hide Footer</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
+
 
         <v-list-item router exact @click.stop="miniVariant = !miniVariant">
           <v-list-item-action>
@@ -50,17 +40,25 @@
     </v-navigation-drawer> -->
 
     <v-app-bar :clipped-left="clipped" fixed app class="white">
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer"  class="hidden-md-and-up" />
+      <v-app-bar-nav-icon
+        @click.stop="drawer = !drawer"
+        class="hidden-md-and-up"
+      />
 
       <!-- <v-btn icon @click.stop="clipped = !clipped">
         <v-icon>mdi-application</v-icon>
       </v-btn> -->
       <v-spacer />
-      <div class="hidden-sm-and-down ">
-
-
-        <v-btn to="/" plain text tile class="white pa-1 ma-1 mr-10"
-          > <v-icon>mdi-code-json</v-icon> - Project Website  <v-icon>mdi-laptop</v-icon></v-btn
+      <div class="hidden-sm-and-down">
+        <v-btn
+          plain
+          text
+          tile
+          class="white pa-1 ma-1 mr-10"
+          @click.stop="rightDrawer = !rightDrawer"
+        >
+          <v-icon>mdi-code-json</v-icon> - Project Website
+          <v-icon>mdi-laptop</v-icon></v-btn
         >
         <v-btn to="/news" plain text tile rounded class="white pa-1 ma-1"
           ><v-icon>mdi-newspaper-variant-multiple-outline</v-icon> - NEWS</v-btn
@@ -80,7 +78,7 @@
       </div>
 
       <v-spacer />
-      <div class="hidden-sm-and-down ">
+      <div class="hidden-sm-and-down">
         <v-btn
           v-if="!$auth.loggedIn"
           to="/login"
@@ -139,11 +137,20 @@
 
     <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
       <v-list>
-        <v-list-item to="/dashboard">
+        <v-list-item to="/">
           <v-list-item-action>
-            <v-icon>
-              mdi-page-layout-footer
-            </v-icon>
+            <v-icon>mdi-code-json</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>
+              Project Website <v-icon>mdi-laptop</v-icon></v-list-item-title
+            >
+          </v-list-item-content>
+        </v-list-item>
+
+        <v-list-item to="/dashboard" v-if="$auth.loggedIn">
+          <v-list-item-action>
+            <v-icon> mdi-page-layout-footer </v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title> Dashboard</v-list-item-title>
@@ -152,15 +159,20 @@
 
         <v-list-item v-if="$auth.loggedIn" @click.prevent="logout()">
           <v-list-item-action>
-            <v-icon>
-              mdi-page-layout-footer
-            </v-icon>
+            <v-icon> mdi-page-layout-footer </v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title> Logout</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-
+        <v-list-item router exact @click.stop="fixed = !fixed">
+          <v-list-item-action>
+            <v-icon> mdi-page-layout-footer </v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title> Show/Hide Footer</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
         <!-- <v-list-item @click.native="right = !right">
           <v-list-item-action>
             <v-icon light> mdi-repeat </v-icon>
@@ -173,7 +185,7 @@
     <v-footer :absolute="!fixed" app class="black lighten-4">
       <!-- min-height="10vh" -->
       <v-spacer></v-spacer>
-      <div class="hidden-sm-and-down ">
+      <div class="hidden-sm-and-down">
         <v-btn
           plain
           text
@@ -191,7 +203,7 @@
           tile
           rounded
           class="black lighten-2 pa-1 ma-1 white--text"
-          ><v-icon>mdi-information-variant</v-icon>  ABOUT</v-btn
+          ><v-icon>mdi-information-variant</v-icon> ABOUT</v-btn
         >
         <v-btn
           to="/contact-us"
@@ -216,7 +228,7 @@ export default {
   data: () => ({
     loading: {
       color: 'blue',
-      height: '20px'
+      height: '20px',
     },
     rightDrawer: false,
     myitems: [{ title: 'Dashboard', link: '/dashboard' }],
@@ -227,7 +239,7 @@ export default {
       { label: 'Login', link: 'login' },
       { label: 'Register', link: 'register' },
       { label: 'about', link: 'about' },
-      { label: 'contact', link: 'contact' }
+      { label: 'contact', link: 'contact' },
     ],
     value: 'recent',
     clipped: false,
@@ -237,13 +249,13 @@ export default {
       {
         icon: 'mdi-home-import-outline',
         title: 'Home',
-        to: '/'
-      }
+        to: '/',
+      },
     ],
     miniVariant: false,
     right: true,
     rightDrawer: false,
-    title: 'Project Website'
+    title: 'Project Website',
   }),
 
   computed: {},
@@ -263,14 +275,53 @@ export default {
         NProgress.done()
         console.log(error)
       }
-    }
+    },
   },
-  async created() {}
+  async created() {},
 }
 </script>
-<style scoped>
+<style>
 .transparent {
   opacity: 0.25;
   border-color: transparent !important;
+}
+.fs-0-7 {
+  font-size: 0.7rem;
+}
+.fs-0-6 {
+  font-size: 0.6rem;
+}
+.fs-0-5 {
+  font-size: 0.5rem;
+}
+.fs-1 {
+  font-size: 1rem;
+}
+.fs-1-1 {
+  font-size: 1.1rem;
+}
+.fs-1-2 {
+  font-size: 1.2rem;
+}
+.fs-1-3 {
+  font-size: 1.3rem;
+}
+.fs-1-4 {
+  font-size: 1.4rem;
+}
+.fs-1-5 {
+  font-size: 1.5rem;
+}
+.fs-1-8 {
+  font-size: 1.8rem;
+}
+.fs-2 {
+  font-size: 2rem;
+}
+.fs-3 {
+  font-size: 3rem;
+}
+.fs-4 {
+  font-size: 4rem;
 }
 </style>

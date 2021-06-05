@@ -1,5 +1,6 @@
 export const greetMixins = {
-  created() {
+  async created() {
+
     console.log('[ -------------------------------- ]')
     console.log('[ -------------------------------- ]')
     console.log('[ -------------------------------- ]')
@@ -10,5 +11,6 @@ export const greetMixins = {
     console.log('[ -------------------------------- ]')
     console.log('[ -------------------------------- ]')
     console.log('[ -------------------------------- ]')
+    await this.$axios.$get('/sanctum/csrf-cookie')
   }
 }

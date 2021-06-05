@@ -1,0 +1,36 @@
+@font-face {
+  font-family: 'Lulu';
+  src: local('Lulu'),
+    url(~assets/Lulu/FontsFree-Net-Lulo-Clean-W01-One-Bold.ttf)
+      format('truetype');
+
+}
+
+@font-face {
+ font-family: 'Avenir';
+  src: local('Avenir'),
+    url(~assets/Avenir/Avenir-LT-35-Light.ttf)
+      format('truetype');
+}
+
+@font-face {
+  font-family: 'Halimun';
+   src: local('Halimun'),
+     url(~assets/Halimun/Halimun-W7jn.ttf)
+       format('truetype');
+ }
+
+ @font-face {
+  font-family: 'Kalam-Regular';
+   src: local('Kalam'),
+     url(~assets/Kalam/Kalam-Regular.ttf)
+       format('truetype');
+ }
+
+ @font-face {
+  font-family: 'Barlow-Regular';
+   src: local('Barlow'),
+     url(~assets/Barlow/BarlowCondensed-Regular.ttf)
+       format('truetype');
+ }
+
