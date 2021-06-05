@@ -1,19 +1,74 @@
 <template>
   <v-container fluid class="ma-0 pa-0">
     <v-row min-height="100vh">
-      <v-col sm="12" lg="9" class="grey lighten-4 ">
+      <v-col sm="12" lg="8" class="grey lighten-4 ">
         <v-card
           min-height="200vh"
           class="grey lighten-5 pa-1 ma-1 pl-2 ml-2 mt-2 pt-2"
-          >Index page</v-card
-        >
+          >Index page
+        </v-card>
       </v-col>
-      <v-col sm="12" lg="3" class="grey lighten-4">
+      <v-col sm="12" lg="4" class="grey lighten-4">
         <v-card
           min-height="200vh"
           class="grey lighten-5 pa-1 ma-1 pl-2 ml-2 mt-2 pt-2"
         >
-          <!-- <PostCard /> -->
+          <v-sheet class="pa-2 ma-2 text-center" color="white" elevation="2">
+            <label>Using vuex in Counters</label>
+            <p>{{ this.$store.state.test.counter }}</p>
+            <v-btn color="primary" v-on:click="add_one">Add 1</v-btn>
+            <v-btn color="primary" v-on:click="remove_one">Remove 1</v-btn>
+          </v-sheet>
+
+          <v-sheet class="pa-2 ma-2 text-center" color="white" elevation="2">
+            <label>Using vuex in Nuxt</label>
+            <ul>
+              <li v-for="todo in todos" :key="todo.text">
+                <input
+                  :checked="todo.done"
+                  @change="toggle(todo)"
+                  type="checkbox"
+                />
+                <span :class="{ done: todo.done }">{{ todo.text }}</span>
+              </li>
+              <li>
+                <input
+                  @keyup.enter="addTodo"
+                  placeholder="What needs to be done?"
+                />
+              </li>
+            </ul>
+          </v-sheet>
+
+          <v-sheet class="pa-2 ma-2 text-center" color="white" elevation="2">
+            <label>Using vuex mapGetters and mapActions</label>
+            <div>
+              <v-text-field
+                v-model="title"
+                placeholder="Add Todo..."
+              ></v-text-field>
+              <!-- <input type="text"   /> -->
+
+              <v-btn color="green" @click.prevent="onSubmit">Submit</v-btn>
+            </div>
+            <div v-for="todo in allTodos" :key="todo.id">
+              <v-sheet class="text-left pa-1 ma-1 orange lighten-2">
+                {{ todo.title }}
+                <v-spacer></v-spacer>
+                <v-btn @click="deleteTodos(todo.id)" color="primary"
+                  >Delete</v-btn
+                ></v-sheet
+              >
+            </div>
+
+            <!-- {{ allTodos }} -->
+          </v-sheet>
+
+          <v-sheet class="pa-2 ma-2 text-center" color="white" elevation="2">
+            <div v-for="test in myDatas" :key="test.id">
+              {{ test.id }} - {{ test.title }}
+            </div>
+          </v-sheet>
         </v-card>
       </v-col>
     </v-row>
@@ -24,168 +79,60 @@ import Vue from 'vue'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 import { validationMixin, Vuelidate } from 'vuelidate'
-import { required, email, minLength } from 'vuelidate/lib/validators'
 
-import { greetMixins } from '~/mixins/greeting.js';
+import { greetMixins } from '~/mixins/greeting.js'
+import { mapMutations, mapGetters, mapActions } from 'vuex'
 
 Vue.use(Vuelidate)
+
 export default {
-  layout: 'default',
-  loading: {
-    color: 'blue',
-    height: '20px'
-  },
-  mixins: [greetMixins,validationMixin],
-  validations: {
-    email: { required, email },
-    password: { required, minLength: minLength(6) }
-  },
-  mounted() {
-    this.$nextTick(() => {
-      this.$nuxt.$loading.start()
-      setTimeout(() => this.$nuxt.$loading.finish(), 2000)
-    })
-  },
   data: () => ({
-    clipped: false,
-    drawer: false,
-    fixed: false,
-    items: [
-      {
-        icon: 'mdi-apps',
-        title: 'Welcome',
-        to: '/'
-      },
-      {
-        icon: 'mdi-chart-bubble',
-        title: 'Inspire',
-        to: '/inspire'
-      }
-    ],
-    miniVariant: false,
-    right: true,
-    rightDrawer: false,
-    title: 'Vuetify.js',
-
-    alert: 'd-none',
-    error_msg: '',
-    loading: false,
-    email: null,
-    password: '',
-    form: {
-      email: '',
-      password: ''
-    },
-
-    show1: false,
-    rules: {
-      required: value => !!value || 'Required.',
-      min: v => v.length >= 6 || 'Min 6 characters'
-    }
+    title: ''
   }),
-  computed: {
-    emailErrors() {
-      const errors = []
-      if (!this.$v.email.$dirty) return errors
-      !this.$v.email.email && errors.push('Must be valid e-mail')
-      !this.$v.email.required && errors.push('E-mail is required')
-      return errors
-    },
-    passwordErrors() {
-      const passerrors = []
-      if (!this.$v.password.$dirty) return passerrors
-      !this.$v.email.required && passerrors.push('Password is required')
-      return passerrors
-    }
-  },
-  // middleware: ["guest"],
-  // auth: false,
-  //  auth: 'guest',
+
+  layout: 'default',
+  mixins: [greetMixins, validationMixin],
   methods: {
-    async loginwithgoogle() {
-      try {
-        let res = await this.$auth.loginWith('google', {
-          params: { prompt: 'select_account' }
-        })
-        // let res = await this.$auth.loginWith('google');
-        console.log('login result: ' + res)
-      } catch (err) {
-        this.consoleLog('login error: ' + err)
-      }
+    //test1
+    add_one() {
+      this.$store.commit('test/increment')
     },
-    clear() {
-      this.form.email = ''
-      this.form.password = ''
-      this.email = ''
-      this.password = ''
-      this.select = null
-      this.alert = 'd-none'
-      this.error_msg = ''
-      this.$v.$reset()
+    remove_one() {
+      this.$store.commit('test/decrement')
     },
-    login() {
-      this.$v.email.$touch()
-      this.$v.password.$touch()
-      if (!this.$v.$invalid) {
-        this.alert = 'd-none'
-        this.loading = true
-        // NProgress.configure({ parent: '#container' });
-        NProgress.start()
-        NProgress.configure({ showSpinner: false })
-        this.form.email = this.email
-        this.form.password = this.password
-        try {
-          this.$auth
-            .loginWith('laravelSanctum', {
-              data: {
-                email: this.form.email,
-                password: this.form.password
-              }
-            })
-            .then(response => {
-              console.log('Response is' + response)
-              this.loading = false
+    //test2
+    addTodo(e) {
+      this.$store.commit('todos/add', e.target.value)
+      e.target.value = ''
+    },
 
-              NProgress.done()
-            })
-            .catch(error => {
-              console.log(error)
-              this.loading = false
+    ...mapMutations({
+      toggle: 'todos/toggle'
+    }),
+    //test 3
+    ...mapActions('users', ['fetchTodos', 'addTodos', 'deleteTodos']),
+    onSubmit(e) {
+      e.preventDefault()
 
-              NProgress.done()
-              console.log('err onRejected')
-
-              this.alert = ''
-              this.error_msg = error.response.data
-            })
-
-          // .then(function (response) {
-          //    console.log("Response is" + response)
-          //   }
-          //   onResolved => {
-          //     this.loading = false;
-
-          //     NProgress.done();
-          //     console.log("err onResolved");
-          //   },
-          //   onRejected => {
-          //     this.loading = false;
-
-          //     NProgress.done();
-          //     console.log("err onRejected");
-
-          //     this.alert = "";
-          //     this.error_msg = error.response.data;
-          //   }
-          // );
-        } catch (error) {
-          this.alert = ''
-          this.error_msg = error.response.data
-          console.log(error.response.data)
-          if (error.response.status === 422) console.log(error.response.data)
-        }
-      }
+      // console.log(this.title)
+      this.addTodos(this.title)
     }
+    // deleteTodo(id) {
+    //   console.log(id)
+    //   this.deleteTodos(id)
+    // }
+  },
+  computed: {
+    //test2
+    todos() {
+      return this.$store.state.todos.list
+    },
+    //test3
+    // ...mapGetters('users', ['allTodos']),
+    ...mapGetters('users', ['myDatas', 'allTodos'])
+  },
+  created() {
+    this.fetchTodos('test')
   }
 }
 </script>
