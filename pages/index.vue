@@ -10,7 +10,7 @@
                   class="font-lulu white--text"
                   :class="{
                     'fs-1.1': $vuetify.breakpoint.smAndDown,
-                    'fs-3': $vuetify.breakpoint.mdAndUp,
+                    'fs-3': $vuetify.breakpoint.mdAndUp
                   }"
                   >JERICK C. MANGALUS</label
                 >
@@ -20,7 +20,7 @@
                   class="text-right white--text"
                   :class="{
                     'fs-0-5': $vuetify.breakpoint.smAndDown,
-                    'fs-1-0': $vuetify.breakpoint.mdAndUp,
+                    'fs-1-0': $vuetify.breakpoint.mdAndUp
                   }"
                   >[ Technology R&D ]
                 </label>
@@ -57,7 +57,6 @@
                     </v-list-item-group>
                   </v-list>
                 </v-card>
-
               </v-col>
             </v-row>
           </v-container>
@@ -65,40 +64,42 @@
       </v-col>
       <v-col sm="12" lg="12" class="ma-0 pa-0">
         <v-sheet class="grey lighten-5 pa-1 ma-1" elevation="2">
-         <v-container class="">
-        <v-row no-gutters class="mt-5">
-          <v-col cols="12" sm="12" lg="12">
-            <v-layout justify-center align-center>
-              <v-avatar
-                :size="150"
-                class="text-center black"
-                v-if="$vuetify.breakpoint.smAndDown"
-              >
-                <v-img
-                  class="text-center"
-                  src="/images/cartoon-darken.jpg"
-                ></v-img>
-              </v-avatar>
+          <v-container class="">
+            <v-row no-gutters class="mt-5">
+              <v-col cols="12" sm="12" lg="12">
+                <v-layout justify-center align-center>
+                  <v-avatar
+                    :size="150"
+                    class="text-center black"
+                    v-if="$vuetify.breakpoint.smAndDown"
+                  >
+                    <v-img
+                      class="text-center"
+                      src="/images/cartoon-darken.jpg"
+                    ></v-img>
+                  </v-avatar>
 
-              <v-avatar :size="350" class="text-center black" v-else>
-                <v-img
-                  class="text-center"
-                  src="/images/cartoon-darken.jpg"
-                ></v-img>
-              </v-avatar> </v-layout
-          ></v-col>
-        </v-row>
-        <v-row no-gutters class="mt-5">
-          <v-col
-            cols="12"
-            sm="12"
-            lg="12"
-            class="font-avenir fs-1-4 text-center"
-          >
-            The darkness in programming is when you get and successfully fix and build something you are happy, but if you get too long to do it frustration builds up.
-          </v-col>
-        </v-row>
-      </v-container>
+                  <v-avatar :size="350" class="text-center black" v-else>
+                    <v-img
+                      class="text-center"
+                      src="/images/cartoon-darken.jpg"
+                    ></v-img>
+                  </v-avatar> </v-layout
+              ></v-col>
+            </v-row>
+            <v-row no-gutters class="mt-5">
+              <v-col
+                cols="12"
+                sm="12"
+                lg="12"
+                class="font-avenir fs-1-4 text-center"
+              >
+                The darkness in programming is when you get and successfully fix
+                and build something you are happy, but if you get too long to do
+                it frustration builds up.
+              </v-col>
+            </v-row>
+          </v-container>
         </v-sheet>
       </v-col>
       <v-col sm="12" lg="12" class="ma-0 pa-0">
@@ -106,7 +107,9 @@
           <v-container class="">
             <v-row no-gutters>
               <v-col cols="12" sm="12" lg="12">
-                <p class="fs-1-1 text-justify white--text fs-1-8 font-barlowreg">
+                <p
+                  class="fs-1-1 text-justify white--text fs-1-8 font-barlowreg"
+                >
                   The inspireation of this website build is to expand my
                   knowledge base in web development. Secondly I am planning to
                   retain this website in a public server earning from ads, Maybe
@@ -120,8 +123,13 @@
                   also in Google Cloud Platform , I am using laravel sail.
                   Connecting backend and frontend I initially used Laravel
                   Santum and nuxt auth next. Along development I am learning
-                  alot surprisingly the pressure is less and you will love programming even more compared to working environment of building a site.
-                  By the way developing this site is during the pandemic it started in March 20 2020 in the philippines and at present its still a risk and threat to peoples live event though their is already a vaccine the production seems to still inadequate.
+                  alot surprisingly the pressure is less and you will love
+                  programming even more compared to working environment of
+                  building a site. By the way developing this site is during the
+                  pandemic it started in March 20 2020 in the philippines and at
+                  present its still a risk and threat to peoples live event
+                  though their is already a vaccine the production seems to
+                  still inadequate.
                 </p>
               </v-col>
             </v-row>
@@ -150,7 +158,7 @@
                     class="font-kalamreg text-center mt-5"
                     :class="{
                       'fs-1.1': $vuetify.breakpoint.smAndDown,
-                      'fs-2': $vuetify.breakpoint.mdAndUp,
+                      'fs-2': $vuetify.breakpoint.mdAndUp
                     }"
                   >
                     " {{ message.message }} " - {{ message.author }}
@@ -172,6 +180,7 @@ import { mapGetters, mapActions } from 'vuex'
 
 export default {
   data: () => ({
+    selectedItem: 0,
     show: true,
     title: '',
     links: [
@@ -180,27 +189,27 @@ export default {
       { label: 'PODCAST' },
       { label: 'DOCUMENTARY' },
       { label: 'CONTACT' },
-      { label: 'JOIN THE MOVEMENT' },
+      { label: 'JOIN THE MOVEMENT' }
     ],
-      model: 6,
-    rounded: ['0', 'sm', 'md', 'lg', 'xl', 'pill', 'circle'],
+    model: 6,
+    rounded: ['0', 'sm', 'md', 'lg', 'xl', 'pill', 'circle']
   }),
 
   layout: 'default',
   mixins: [greetMixins],
   methods: {
-    ...mapActions('messageoftheday', ['fetchQuote']),
+    ...mapActions('messageoftheday', ['fetchQuote'])
   },
   computed: {
     // LoadingStatus2(){
     //   return this.$store.state.messageoftheday.LoadingStatus
     // },
-    ...mapGetters('messageoftheday', ['MessageOfTheDay', 'LoadingStatus']),
+    ...mapGetters('messageoftheday', ['MessageOfTheDay', 'LoadingStatus'])
   },
   async created() {},
   mounted() {
     this.fetchQuote()
-  },
+  }
 }
 </script>
 <style scoped>
