@@ -7,7 +7,8 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "start-front": "http-server dist -p 80"
   },
   "dependencies": {
     "@engrjerickcmangalus/ckeditor-nuxt-custom-build-simpleuploader": "^4.0.10",
