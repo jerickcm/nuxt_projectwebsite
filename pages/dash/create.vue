@@ -35,55 +35,54 @@
 </template>
 
 <script>
-var url = process.env.BASE_URL_AXIOS;
-var timezone = process.env.TIMEZONE;
-console.log(url);
+var url = process.env.API_URL
+var timezone = process.env.TIMEZONE
+console.log(url)
 export default {
-  middleware: "auth",
+  middleware: 'auth',
 
   data() {
     return {
       url: null,
-      form_content: "",
-      form_title: "",
-      token: null,
-    };
+      form_content: '',
+      form_title: '',
+      token: null
+    }
   },
   components: {
-    "ckeditor-nuxt": () =>
-      import("@engrjerickcmangalus/ckeditor-nuxt-custom-build-simpleuploader"),
+    'ckeditor-nuxt': () =>
+      import('@engrjerickcmangalus/ckeditor-nuxt-custom-build-simpleuploader')
   },
   async created() {
-
-    this.$axios.$get("/sanctum/csrf-cookie").then((response) => {});
-    this.url = url;
-    this.timezone = timezone;
+    this.$axios.$get('/sanctum/csrf-cookie').then(response => {})
+    this.url = url
+    this.timezone = timezone
     this.editorConfig = {
       simpleUpload: {
-        uploadUrl: "http://back.api.test:3001/api/ckeditor",
+        uploadUrl: 'http://back.api.test:3001/api/ckeditor',
         withCredentials: true,
         headers: {
-          Accept: "application/json",
+          Accept: 'application/json',
           Timezone: this.timezone,
-            // Authorization:"Bearer " + this.$auth.$storage.getCookies()["XSRF-TOKEN"],
-            "X-XSRF-TOKEN": this.$auth.$storage.getCookies()["XSRF-TOKEN"],
-            // "XSRF-TOKEN": this.$auth.$storage.getCookies()["XSRF-TOKEN"],
-            // "CSRF-TOKEN": this.$auth.$storage.getCookies()["XSRF-TOKEN"],
-        },
-      },
-    };
+          // Authorization:"Bearer " + this.$auth.$storage.getCookies()["XSRF-TOKEN"],
+          'X-XSRF-TOKEN': this.$auth.$storage.getCookies()['XSRF-TOKEN']
+          // "XSRF-TOKEN": this.$auth.$storage.getCookies()["XSRF-TOKEN"],
+          // "CSRF-TOKEN": this.$auth.$storage.getCookies()["XSRF-TOKEN"],
+        }
+      }
+    }
   },
   computed: {},
   methods: {
     onSubmit() {
-      console.log(this.$auth.user);
-      console.log(this.$store.state.auth.loggedIn);
-      console.log(this.$auth.$storage.getCookies());
+      console.log(this.$auth.user)
+      console.log(this.$store.state.auth.loggedIn)
+      console.log(this.$auth.$storage.getCookies())
 
-      var test = this.$auth.$storage.getCookies();
-      console.log("test");
+      var test = this.$auth.$storage.getCookies()
+      console.log('test')
       // console.log(test.__gads);
-      console.log(test["XSRF-TOKEN"]);
+      console.log(test['XSRF-TOKEN'])
       // for (let key in test) {
       //   console.log(key, test[key]);
       // }
@@ -95,23 +94,23 @@ export default {
 
       if (this.form_title && this.form_content) {
         // this.$axios.$get("/sanctum/csrf-cookie").then(response => {});
-        let payload = new FormData();
+        let payload = new FormData()
 
-        payload.append("title", this.form_title);
-        payload.append("content", this.form_content);
+        payload.append('title', this.form_title)
+        payload.append('content', this.form_content)
         this.$axios
-          .post("/api/create-post", payload, {
+          .post('/api/create-post', payload, {
             headers: {
-              "Content-Type": "multipart/form-data",
-            },
+              'Content-Type': 'multipart/form-data'
+            }
           })
-          .then((res) => {})
-          .catch((error) => {})
-          .finally(() => {});
+          .then(res => {})
+          .catch(error => {})
+          .finally(() => {})
       }
-    },
-  },
-};
+    }
+  }
+}
 </script>
 <style scoped>
 ul.clean {

@@ -26,7 +26,7 @@ export default {
     API_URL: process.env.API_URL || 'http://back.api.test:3001'
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [  "~layouts/global.css",],
+  css: ['~layouts/global.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -79,7 +79,7 @@ export default {
       laravelSanctum: {
         provider: 'laravel/sanctum',
         //  url: 'http://localhost:8000',
-        url: process.env.BASE_URL,
+        url: process.env.API_URL,
         // url: "http://back.api.test",
         endpoints: {
           login: {
@@ -106,7 +106,7 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // baseURL: process.env.BASE_URL || "http://back.api.test",
-    baseURL: process.env.BASE_URL,
+    baseURL: process.env.API_URL,
     credentials: true
   },
 

@@ -167,8 +167,8 @@
           <template v-slot:item.publish="{ item }">
             {{ item.publish }}
           </template>
-           <template v-slot:item.created_at="{ item }">
-            {{ item.created_at  }}
+          <template v-slot:item.created_at="{ item }">
+            {{ item.created_at }}
           </template>
           <template v-slot:item.id="{ item }">
             <v-icon small class="mr-2" @click="editItem(item)">
@@ -194,7 +194,7 @@ import 'nprogress/nprogress.css'
 // import DateFilter from '~/filters/date'
 // Vue.filter('date',DateFilter)
 
-var url = process.env.BASE_URL_AXIOS
+var url = process.env.API_URL
 var timezone = process.env.TIMEZONE
 var url = process.env.API_URL
 export default {
