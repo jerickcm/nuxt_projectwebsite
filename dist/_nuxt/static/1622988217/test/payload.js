@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/test", {data:[{}],fetch:{},mutations:[["messageoftheday\u002FLoadingStatus",true]]});
