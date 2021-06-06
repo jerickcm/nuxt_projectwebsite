@@ -48,8 +48,10 @@
       <!-- <v-btn icon @click.stop="clipped = !clipped">
         <v-icon>mdi-application</v-icon>
       </v-btn> -->
+
       <v-spacer />
-      <div class="hidden-sm-and-down">
+      <div class="">
+        <!-- hidden-sm-and-down -->
         <v-btn
           plain
           text
@@ -57,7 +59,7 @@
           class="white pa-1 ma-1 mr-10"
           @click.stop="rightDrawer = !rightDrawer"
         >
-          <v-icon>mdi-code-json</v-icon> - Project Website
+          <v-icon>mdi-code-json</v-icon> -- Project Website
           <v-icon>mdi-laptop</v-icon></v-btn
         >
         <v-btn to="/news" plain text tile rounded class="white pa-1 ma-1"
@@ -228,7 +230,7 @@ export default {
   data: () => ({
     loading: {
       color: 'blue',
-      height: '20px',
+      height: '20px'
     },
     rightDrawer: false,
     myitems: [{ title: 'Dashboard', link: '/dashboard' }],
@@ -239,7 +241,7 @@ export default {
       { label: 'Login', link: 'login' },
       { label: 'Register', link: 'register' },
       { label: 'about', link: 'about' },
-      { label: 'contact', link: 'contact' },
+      { label: 'contact', link: 'contact' }
     ],
     value: 'recent',
     clipped: false,
@@ -249,13 +251,13 @@ export default {
       {
         icon: 'mdi-home-import-outline',
         title: 'Home',
-        to: '/',
-      },
+        to: '/'
+      }
     ],
     miniVariant: false,
     right: true,
     rightDrawer: false,
-    title: 'Project Website',
+    title: 'Project Website'
   }),
 
   computed: {},
@@ -275,9 +277,9 @@ export default {
         NProgress.done()
         console.log(error)
       }
-    },
+    }
   },
-  async created() {},
+  async created() {}
 }
 </script>
 <style>
