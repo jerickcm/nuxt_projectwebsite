@@ -59,7 +59,7 @@
           class="white pa-1 ma-1 mr-10"
           @click.stop="rightDrawer = !rightDrawer"
         >
-          <v-icon>mdi-code-json</v-icon> -- Project Website
+          <v-icon>mdi-code-json</v-icon> --| Project Website
           <v-icon>mdi-laptop</v-icon></v-btn
         >
         <v-btn to="/news" plain text tile rounded class="white pa-1 ma-1"
