@@ -1,7 +1,8 @@
-const state = {
+export const state = () => ({
   MessageOfTheDay: [],
   LoadingStatus:false
-}
+})
+
 const getters = {
   MessageOfTheDay: state => state.MessageOfTheDay,
   LoadingStatus: state => state.LoadingStatus,

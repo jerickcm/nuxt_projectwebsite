@@ -1,6 +1,5 @@
 import axios from 'axios'
-
-const state = {
+export const state = () => ({
   mydata: [
     { id: 1, title: 'Test 1' },
     { id: 2, title: 'Test 2' }
@@ -9,7 +8,8 @@ const state = {
     // { id: 1, title: 'Title 1' },
     // { id: 2, title: 'Title 2' }
   ]
-}
+})
+
 const getters = {
   allTodos: state => state.todos,
   myDatas: state => state.mydata
@@ -49,7 +49,6 @@ const mutations = {
     (state.todos = state.todos.filter(todo => todo.id !== id))
 }
 export default {
-  state,
   getters,
   actions,
   mutations

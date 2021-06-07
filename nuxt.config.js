@@ -22,9 +22,9 @@ export default {
       }
     ]
   },
-  env: {
-    API_URL: process.env.API_URL || 'http://back.api.test:3001'
-  },
+  // env: {
+  //   API_URL: 'http://35.223.238.193:3001'
+  // },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['~layouts/global.css'],
 
@@ -47,7 +47,8 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/auth-next',
-    '@nuxtjs/robots'
+    '@nuxtjs/robots',
+    '@nuxtjs/dotenv'
   ],
   robots: {
     UserAgent: '*',
