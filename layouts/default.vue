@@ -91,7 +91,8 @@
           class="white pa-1 ma-1"
           ><v-icon>mdi-login-variant</v-icon>Login</v-btn
         >
-        <v-btn
+
+        <!-- <v-btn
           v-if="!$auth.loggedIn"
           to="/register"
           plain
@@ -100,7 +101,7 @@
           rounded
           class="white pa-1 ma-1"
           ><v-icon>mdi-account-plus-outline </v-icon> - Register</v-btn
-        >
+        > -->
 
         <v-btn
           v-if="$auth.loggedIn"
