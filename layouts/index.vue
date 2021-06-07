@@ -3,26 +3,25 @@
     <v-app id="inspire">
       <v-app-bar app class="grey lighten-4" fixed>
         <v-btn to="/" depressed color="primary">
-          <v-icon color="white lighten-2">
-            mdi-domain
-          </v-icon>
+          <v-icon color="white lighten-2"> mdi-domain </v-icon>
           - Project Website
 
-          <v-icon color="white lighten-2">
-            sign-out
-          </v-icon>
+          <v-icon color="white lighten-2"> sign-out </v-icon>
         </v-btn>
 
         <v-spacer></v-spacer>
 
-        <v-toolbar-items
-          v-if="$auth.loggedIn && $auth.user['is_admin']"
-          class="hidden-sm-and-down mr-10"
-        >
-          <v-btn depressed color="primary" to="/admin" class="blue--text white"
-            >Admin
-          </v-btn>
-          <v-btn depressed color="primary" to="/users">Users </v-btn>
+        <v-toolbar-items v-if="$auth.loggedIn" class="hidden-sm-and-down mr-10">
+          <div v-if="$auth.user['is_admin']">
+            <v-btn
+              depressed
+              color="primary"
+              to="/admin"
+              class="blue--text white"
+              >Admin
+            </v-btn>
+            <v-btn depressed color="primary" to="/users">Users </v-btn>
+          </div>
         </v-toolbar-items>
 
         <v-toolbar-items class="hidden-sm-and-down mr-10">
@@ -51,9 +50,7 @@
             @click.prevent="logout()"
             >Logout
 
-            <v-icon>
-              sign-out-alt
-            </v-icon>
+            <v-icon> sign-out-alt </v-icon>
           </v-btn>
         </v-toolbar-items>
         <v-sheet color="primary" outlined class="hidden-md-and-up">
@@ -79,9 +76,7 @@
                 </v-list-item-title>
               </v-list-item>
               <v-list-item v-if="$auth.loggedIn" @click.prevent="logout()">
-                <v-list-item-title>
-                  Logout
-                </v-list-item-title>
+                <v-list-item-title> Logout </v-list-item-title>
               </v-list-item>
             </v-list>
           </v-menu>
@@ -126,12 +121,12 @@ import 'nprogress/nprogress.css'
 export default {
   loading: {
     color: 'blue',
-    height: '20px'
+    height: '20px',
   },
   data: () => ({
     myitems: [
       // { title: "Logout" , link: "/logout"},
-      { title: 'Dashboard', link: '/dashboard' }
+      { title: 'Dashboard', link: '/dashboard' },
     ],
     menu: [{ icon: 'Dashboard', title: 'Dashboard' }],
     top_nav: [
@@ -140,7 +135,7 @@ export default {
       { label: 'Login', link: 'login' },
       { label: 'Register', link: 'register' },
       { label: 'about', link: 'about' },
-      { label: 'contact', link: 'contact' }
+      { label: 'contact', link: 'contact' },
     ],
     value: 'recent',
     clipped: false,
@@ -150,7 +145,7 @@ export default {
       {
         icon: 'mdi-apps',
         title: 'Welcome',
-        to: '/'
+        to: '/',
       },
       // {
       //   icon: 'mdi-chart-bubble',
@@ -160,13 +155,13 @@ export default {
       {
         icon: 'mdi-chart-bubble',
         title: 'Login',
-        to: '/login'
-      }
+        to: '/login',
+      },
     ],
     miniVariant: false,
     right: true,
     rightDrawer: false,
-    title: 'Nuxt Laravel Project'
+    title: 'Nuxt Laravel Project',
   }),
 
   computed: {
@@ -189,7 +184,7 @@ export default {
         NProgress.done()
         console.log(error)
       }
-    }
+    },
   },
   async created() {
     try {
@@ -212,7 +207,7 @@ export default {
     } catch (error) {
       console.log('error')
     }
-  }
+  },
 }
 </script>
 <style scoped></style>

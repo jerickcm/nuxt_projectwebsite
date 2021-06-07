@@ -148,27 +148,27 @@ export default {
       // this.$v.name.$touch();
       this.$v.$touch();
       if (!this.$v.$invalid) {
-        this.alert = "d-none";
-        this.loading = true;
+        // this.alert = "d-none";
+        // this.loading = true;
 
-        this.form.email = this.email;
-        this.form.password = this.password;
-        this.form.name = this.name;
-        try {
-          await this.$axios.$get("/sanctum/csrf-cookie").then(response => {});
-        } catch (error) {
-          if (error.response.status === 422) console.log(error.response.data);
-        }
-        try {
-          await this.$axios.$post("api/register", this.form);
-        } catch (error) {
-          this.alert = "";
-          this.error_msg = error.response.data;
-          if (error.response.status === 422) {
-            console.log(error.response.data);
-          }
-        }
-        this.loading = false;
+        // this.form.email = this.email;
+        // this.form.password = this.password;
+        // this.form.name = this.name;
+        // try {
+        //   await this.$axios.$get("/sanctum/csrf-cookie").then(response => {});
+        // } catch (error) {
+        //   if (error.response.status === 422) console.log(error.response.data);
+        // }
+        // try {
+        //   await this.$axios.$post("api/register", this.form);
+        // } catch (error) {
+        //   this.alert = "";
+        //   this.error_msg = error.response.data;
+        //   if (error.response.status === 422) {
+        //     console.log(error.response.data);
+        //   }
+        // }
+        // this.loading = false;
       }
     },
     clear() {

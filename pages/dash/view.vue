@@ -203,33 +203,33 @@ export default {
         //fecth data
         //I used here jQuery $.param() helper, becuase axios submits data as JSON Payload, and we need for data or Query params
         //This can be changed
-        this.$axios
-          .get('/api/users?' + $.param(params), {
-            cancelToken: this.cancelSource.token
-          })
-          .then(res => {
-            this.draw++
+        // this.$axios
+        //   .get('/api/users?' + $.param(params), {
+        //     cancelToken: this.cancelSource.token
+        //   })
+        //   .then(res => {
+        //     this.draw++
 
-            this.cancelSource = null
+        //     this.cancelSource = null
 
-            let items = res.data.data
-            let total = res.data.recordsFiltered
+        //     let items = res.data.data
+        //     let total = res.data.recordsFiltered
 
-            resolve({
-              items,
-              total
-            })
-          })
-          .catch(err => {
-            if (axios.isCancel(err)) {
-              console.log('Request canceled', err.message)
-            } else {
-              reject(err)
-            }
-          })
-          .always(() => {
-            this.loading = false
-          })
+        //     resolve({
+        //       items,
+        //       total
+        //     })
+        //   })
+        //   .catch(err => {
+        //     if (axios.isCancel(err)) {
+        //       console.log('Request canceled', err.message)
+        //     } else {
+        //       reject(err)
+        //     }
+        //   })
+        //   .always(() => {
+        //     this.loading = false
+        //   })
       })
     }
   }
