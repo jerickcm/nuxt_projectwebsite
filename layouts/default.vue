@@ -52,14 +52,15 @@
       <v-spacer />
       <div class="">
         <!-- hidden-sm-and-down -->
+        <v-icon  @click.stop="rightDrawer = !rightDrawer" >mdi-code-json</v-icon>
         <v-btn
           plain
           text
           tile
           class="white pa-1 ma-1 mr-10"
-          @click.stop="rightDrawer = !rightDrawer"
+          to="/"
         >
-          <v-icon>mdi-code-json</v-icon> --| Project Website
+           -- Project Website
           <v-icon>mdi-laptop</v-icon></v-btn
         >
         <v-btn to="/news" plain text tile rounded class="white pa-1 ma-1"
