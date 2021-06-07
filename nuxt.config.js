@@ -1,10 +1,10 @@
 import colors from 'vuetify/es5/util/colors'
-console.log(process.env.NODE_ENV );
+// console.log(process.env.NODE_ENV );
 const dev = process.env.DEV_API;
 const prod = process.env.PROD_API;
 const api = process.env.NODE_ENV === 'development' ? dev : prod;
-console.log('api');
-console.log(api);
+// console.log('api');
+// console.log(api);
 export default {
   dev: process.env.NODE_ENV !== 'production',
   // Global page headers: https://go.nuxtjs.dev/config-head

@@ -94,9 +94,7 @@
                 lg="12"
                 class="font-avenir fs-1-4 text-center"
               >
-                The darkness in programming is when you get and successfully fix
-                and build something you are happy, but if you get too long to do
-                it frustration builds up.
+                The darkness in programming is when you fix it you're happy, when you can fix it long enough you are frustrated.
               </v-col>
             </v-row>
           </v-container>
