@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/posts_view", {data:[{}],fetch:{},mutations:[]});

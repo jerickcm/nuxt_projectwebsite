@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[15],{581:function(n,e,t){"use strict";t.r(e);var c={},l=t(71),component=Object(l.a)(c,(function(){var n=this,e=n.$createElement;return(n._self._c||e)("div",[n._v("\n  Blog Page\n")])}),[],!1,null,"2940af3f",null);e.default=component.exports}}]);
