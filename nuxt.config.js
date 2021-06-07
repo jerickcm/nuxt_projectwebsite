@@ -1,6 +1,12 @@
 import colors from 'vuetify/es5/util/colors'
-
+console.log(process.env.NODE_ENV );
+const dev = process.env.DEV_API;
+const prod = process.env.PROD_API;
+const api = process.env.NODE_ENV === 'development' ? dev : prod;
+console.log('api');
+console.log(api);
 export default {
+  dev: process.env.NODE_ENV !== 'production',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - Project',
@@ -23,7 +29,7 @@ export default {
     ]
   },
   env: {
-    API_URL: 'http://35.223.238.193:3001'
+    API_URL: api
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['~layouts/global.css'],
@@ -80,7 +86,7 @@ export default {
       laravelSanctum: {
         provider: 'laravel/sanctum',
         //  url: 'http://localhost:8000',
-        url: process.env.API_URL,
+        url: api,
         // url: "http://back.api.test",
         endpoints: {
           login: {
@@ -107,7 +113,7 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // baseURL: process.env.BASE_URL || "http://back.api.test",
-    baseURL: process.env.API_URL,
+    baseURL:api,
     credentials: true
   },
 
