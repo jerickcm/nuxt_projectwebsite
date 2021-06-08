@@ -1,7 +1,7 @@
 <template>
   <v-container fluid class="ma-0 pa-0 grey lighten-3">
     <v-row>
-      <v-col sm="12" lg="12" class="ma-0 pa-0">
+      <v-col xs="12" sm="12" lg="12" md="12" class="ma-0 pa-0">
         <v-sheet class="black lighten-5" elevation="2" min-height="10vh">
           <v-container>
             <v-row class="pt-5">
@@ -62,7 +62,9 @@
           </v-container>
         </v-sheet>
       </v-col>
-      <v-col sm="12" lg="12" class="ma-0 pa-0">
+    </v-row>
+    <v-row>
+      <v-col xs="12" sm="12" lg="12" class="ma-0 pa-0">
         <v-sheet class="grey lighten-5 pa-1 ma-1" elevation="2">
           <v-container class="">
             <v-row no-gutters class="mt-5">
@@ -94,13 +96,16 @@
                 lg="12"
                 class="font-avenir fs-1-4 text-center"
               >
-                The darkness in programming is when you fix it you're happy, when you can fix it long enough you are frustrated.
+                The darkness in programming is when you fix it you're happy,
+                when you can fix it long enough you are frustrated.
               </v-col>
             </v-row>
           </v-container>
         </v-sheet>
       </v-col>
-      <v-col sm="12" lg="12" class="ma-0 pa-0">
+    </v-row>
+    <v-row>
+      <v-col xs="12" sm="12" lg="12" class="ma-0 pa-0">
         <v-sheet class="grey lighten-1" elevation="2" min-height="30vh">
           <v-container class="">
             <v-row no-gutters>
@@ -133,11 +138,13 @@
             </v-row>
           </v-container>
         </v-sheet>
-      </v-col>
-      <v-col sm="12" lg="12" class="ma-0 pa-0">
+      </v-col></v-row
+    >
+    <v-row>
+      <v-col xs="12" sm="12" lg="12" class="ma-0 pa-0">
         <v-sheet class="white lighten-5" elevation="2" min-height="10vh">
           <v-container class="">
-            <v-row no-gutters>
+            <v-row>
               <v-col cols="12" sm="12" lg="12">
                 <v-progress-linear
                   v-if="LoadingStatus"

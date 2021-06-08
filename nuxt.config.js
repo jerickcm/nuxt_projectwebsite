@@ -1,8 +1,8 @@
 import colors from 'vuetify/es5/util/colors'
 // console.log(process.env.NODE_ENV );
-const dev = process.env.DEV_API;
-const prod = process.env.PROD_API;
-const api = process.env.NODE_ENV === 'development' ? dev : prod;
+const dev = process.env.DEV_API
+const prod = process.env.PROD_API
+const api = process.env.NODE_ENV === 'development' ? dev : prod
 // console.log('api');
 // console.log(api);
 export default {
@@ -28,9 +28,9 @@ export default {
       }
     ]
   },
-  env: {
-    API_URL: api
-  },
+  // env: {
+  //   API_URL: api
+  // },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['~layouts/global.css'],
 
@@ -113,7 +113,7 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // baseURL: process.env.BASE_URL || "http://back.api.test",
-    baseURL:api,
+    baseURL: api,
     credentials: true
   },
 

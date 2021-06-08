@@ -1,67 +1,19 @@
 <template>
   <v-app dark>
-    <!-- <v-navigation-drawer class="hidden-md-and-up d-none"
-      v-model="drawer"
-      :mini-variant="miniVariant"
-      :clipped="clipped"
-      fixed
-      app
-    >
-      <v-list>
-        <v-list-item
-          v-for="(item, i) in items"
-          :key="i"
-          :to="item.to"
-          router
-          exact
-        >
-          <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-action>
-
-          <v-list-item-content>
-            <v-list-item-title v-text="item.title" />
-          </v-list-item-content>
-        </v-list-item>
-
-
-
-        <v-list-item router exact @click.stop="miniVariant = !miniVariant">
-          <v-list-item-action>
-            <v-icon
-              >mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon
-            >
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title> Toogle Left Sidebar</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer> -->
-
-    <v-app-bar :clipped-left="clipped" fixed app class="white">
+    <v-app-bar fixed app class="white">
       <v-app-bar-nav-icon
-        @click.stop="drawer = !drawer"
+        @click.stop="rightDrawer = !rightDrawer"
         class="hidden-md-and-up"
       />
-
-      <!-- <v-btn icon @click.stop="clipped = !clipped">
-        <v-icon>mdi-application</v-icon>
-      </v-btn> -->
-
       <v-spacer />
-      <div class="">
-        <!-- hidden-sm-and-down -->
-        <v-icon  @click.stop="rightDrawer = !rightDrawer" >mdi-code-json</v-icon>
-        <v-btn
-          plain
-          text
-          tile
-          class="white pa-1 ma-1 mr-10"
-          to="/"
+      <div class="hidden-sm-and-down">
+        <v-icon color="blue" @click.stop="rightDrawer = !rightDrawer"
+          >mdi-code-json</v-icon
         >
-           -- Project Website
-          <v-icon>mdi-laptop</v-icon></v-btn
+
+        <v-btn plain text tile class="blue--text pa-1 ma-1 mr-10" to="/">
+          -- Project Website
+          <v-icon color="blue">mdi-laptop</v-icon></v-btn
         >
         <v-btn to="/news" plain text tile rounded class="white pa-1 ma-1"
           ><v-icon>mdi-newspaper-variant-multiple-outline</v-icon> - NEWS</v-btn
@@ -79,7 +31,6 @@
           ><v-icon>mdi-cast-education</v-icon> TUTORIALS</v-btn
         >
       </div>
-
       <v-spacer />
       <div class="hidden-sm-and-down">
         <v-btn
@@ -128,12 +79,8 @@
         >
       </div>
       <v-spacer />
-      <v-btn icon class="hidden-md-and-up">
-        <v-icon>mdi-menu</v-icon>
-      </v-btn>
     </v-app-bar>
-
-    <v-main>
+    <v-main class="padding-bottom:20vh">
       <v-container fluid class="pa-0">
         <nuxt />
       </v-container>
@@ -141,55 +88,21 @@
 
     <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
       <v-list>
-        <v-list-item to="/">
-          <v-list-item-action>
-            <v-icon>mdi-code-json</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>
-              Project Website <v-icon>mdi-laptop</v-icon></v-list-item-title
-            >
-          </v-list-item-content>
-        </v-list-item>
-
-        <v-list-item to="/dashboard" v-if="$auth.loggedIn">
-          <v-list-item-action>
-            <v-icon> mdi-page-layout-footer </v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title> Dashboard</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-
-        <v-list-item v-if="$auth.loggedIn" @click.prevent="logout()">
-          <v-list-item-action>
-            <v-icon> mdi-page-layout-footer </v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title> Logout</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item router exact @click.stop="fixed = !fixed">
-          <v-list-item-action>
-            <v-icon> mdi-page-layout-footer </v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title> Show/Hide Footer</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <!-- <v-list-item @click.native="right = !right">
-          <v-list-item-action>
-            <v-icon light> mdi-repeat </v-icon>
-          </v-list-item-action>
-          <v-list-item-title>Switch drawer (click me)</v-list-item-title>
-        </v-list-item> -->
+        <Nav />
       </v-list>
     </v-navigation-drawer>
 
-    <v-footer :absolute="!fixed" app class="black lighten-4">
+    <v-footer
+      :absolute="!fixed"
+      app
+      class="black lighten-4"
+      style="margin-top:40vh"
+    >
+      <!-- min-height="15vh" -->
       <!-- min-height="10vh" -->
       <v-spacer></v-spacer>
-      <div class="hidden-sm-and-down">
+      <!-- class="hidden-sm-and-down" -->
+      <div>
         <v-btn
           plain
           text
@@ -230,11 +143,6 @@ import 'nprogress/nprogress.css'
 
 export default {
   data: () => ({
-    loading: {
-      color: 'blue',
-      height: '20px'
-    },
-    rightDrawer: false,
     myitems: [{ title: 'Dashboard', link: '/dashboard' }],
     menu: [{ icon: 'Dashboard', title: 'Dashboard' }],
     top_nav: [
@@ -247,7 +155,9 @@ export default {
     ],
     value: 'recent',
     clipped: false,
-    drawer: true,
+    drawer: false,
+    miniVariant: false,
+    togglePaneValue: false,
     fixed: false,
     items: [
       {
@@ -256,8 +166,10 @@ export default {
         to: '/'
       }
     ],
-    miniVariant: false,
-    right: true,
+
+    right: false,
+    left: true,
+    leftDrawer: false,
     rightDrawer: false,
     title: 'Project Website'
   }),
@@ -265,6 +177,13 @@ export default {
   computed: {},
 
   methods: {
+    togglePane() {
+      if (this.togglePaneValue == '') {
+        this.togglePaneValue = 'd-none'
+      } else {
+        this.togglePaneValue = ''
+      }
+    },
     menuItems() {
       return this.menu
     },
