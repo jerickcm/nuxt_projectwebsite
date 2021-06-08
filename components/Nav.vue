@@ -29,7 +29,7 @@
 
     <v-list-item to="/dashboard" v-if="$auth.loggedIn">
       <v-list-item-action>
-        <v-icon> mdi-page-layout-footer </v-icon>
+        <v-icon>mdi-monitor-dashboard</v-icon>
       </v-list-item-action>
       <v-list-item-content>
         <v-list-item-title> Dashboard</v-list-item-title>
@@ -38,7 +38,7 @@
 
     <v-list-item v-if="$auth.loggedIn" @click.prevent="logout()">
       <v-list-item-action>
-        <v-icon> mdi-page-layout-footer </v-icon>
+        <v-icon>mdi-logout</v-icon>
       </v-list-item-action>
       <v-list-item-content>
         <v-list-item-title> Logout</v-list-item-title>
@@ -79,7 +79,12 @@ export default {
       //   icons: 'mdi-cloud-check-outline',
       //   label: 'TECHNOLOGY',
       //   link: '/TUTORIALS'
-      // }
+      // },
+      {
+        icons: 'mdi-login-variant',
+        label: 'Login',
+        link: '/login'
+      },
     ]
   })
 }

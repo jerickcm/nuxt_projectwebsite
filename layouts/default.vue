@@ -73,6 +73,7 @@
           class="white pa-1 ma-1"
           @click.stop="rightDrawer = !rightDrawer"
         >
+        <v-icon>mdi-logout</v-icon>
           Dashboard</v-btn
         >
         <v-btn
@@ -84,6 +85,7 @@
           rounded
           class="white pa-1 ma-1"
         >
+       <v-icon>mdi-monitor-dashboard</v-icon>
           Logout</v-btn
         >
       </div>
