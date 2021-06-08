@@ -1,16 +1,17 @@
 export const greetMixins = {
   async created() {
-
-    console.log('[ -------------------------------- ]')
-    console.log('[ -------------------------------- ]')
-    console.log('[ -------------------------------- ]')
-    console.log(
-      '%c[ -- Hello from Project Website -- ]',
-      'background: #FFF; color: #0000FF'
-    )
-    console.log('[ -------------------------------- ]')
-    console.log('[ -------------------------------- ]')
-    console.log('[ -------------------------------- ]')
     await this.$axios.$get('/sanctum/csrf-cookie')
+    console.log('                                         ')
+    console.log('╭───────────────────────────────────────╮')
+    console.log('│                                       │')
+    console.log('│   Development @ v1.1                  │')
+    console.log('│                                       │')
+    console.log('│   ▸ Powered by: Nuxt and Laravel      │')
+    console.log('│   ▸ Developed by:  Coderzero8         │')
+    console.log('│                                       │')
+    console.log('│  Welcome to Project Website           │')
+    console.log('│                                       │')
+    console.log('╰───────────────────────────────────────╯')
+    console.log('                                         ')
   }
 }

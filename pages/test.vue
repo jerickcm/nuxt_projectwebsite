@@ -2,24 +2,15 @@
   <v-container fluid class="ma-0 pa-0">
     <v-row min-height="100vh">
       <v-col sm="12" lg="8" class="grey lighten-4 pa-4 ma-0">
-         <v-card
-          min-height="200vh"
-          class="grey lighten-5 pa-0 ma-1 "
-          >
+        <v-card min-height="200vh" class="grey lighten-5 pa-0 ma-1 ">
           <v-card>
-            {{MessageOfTheDay}}
-            <v-card-text>
-              {{Message }} - {{Author}}
-            </v-card-text>
-
+            {{ MessageOfTheDay }}
+            <v-card-text> {{ Message }} - {{ Author }} </v-card-text>
           </v-card>
         </v-card>
       </v-col>
       <v-col sm="12" lg="4" class="grey lighten-4 pa-4 ma-0">
-        <v-card
-          min-height="200vh"
-          class="grey lighten-5 pa-0"
-        >
+        <v-card min-height="200vh" class="grey lighten-5 pa-0">
           <v-sheet class="pa-2 ma-2 text-center" color="white" elevation="2">
             <label>Using vuex in Counters</label>
             <p>{{ this.$store.state.test.counter }}</p>
@@ -86,7 +77,6 @@ import Vue from 'vue'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 
-
 import { greetMixins } from '~/mixins/greeting.js'
 import { mapMutations, mapGetters, mapActions } from 'vuex'
 
@@ -94,7 +84,6 @@ export default {
   data: () => ({
     title: ''
   }),
-
   layout: 'default',
   mixins: [greetMixins],
   methods: {
@@ -120,7 +109,7 @@ export default {
       e.preventDefault()
       this.addTodos(this.title)
     },
-    ...mapActions('messageoftheday', ['fetchQuote']),
+    ...mapActions('messageoftheday', ['fetchQuote'])
   },
   computed: {
     //test2
@@ -130,17 +119,14 @@ export default {
     //test3
     // ...mapGetters('users', ['allTodos']),
     ...mapGetters('users', ['myDatas', 'allTodos']),
-     ...mapGetters('messageoftheday', ['Author','Message','MessageOfTheDay'])
+    ...mapGetters('messageoftheday', ['Author', 'Message', 'MessageOfTheDay'])
   },
   created() {
-   this.$axios.$get('/sanctum/csrf-cookie')
-    this.fetchTodos('test');
-    this.fetchQuote();
+    this.$axios.$get('/sanctum/csrf-cookie')
+    this.fetchTodos('test')
+    this.fetchQuote()
   },
-  mounted(){
-
-  }
-
+  mounted() {}
 }
 </script>
 <style scoped></style>

@@ -178,9 +178,6 @@
   </v-container>
 </template>
 <script>
-import NProgress from 'nprogress'
-import 'nprogress/nprogress.css'
-import { greetMixins } from '~/mixins/greeting.js'
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
@@ -201,7 +198,7 @@ export default {
   }),
 
   layout: 'default',
-  mixins: [greetMixins],
+
   methods: {
     ...mapActions('messageoftheday', ['fetchQuote'])
   },

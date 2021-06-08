@@ -57,6 +57,7 @@
 <script>
 export default {
   data: () => ({
+    fixed: false,
     navlist: [
       {
         icons: 'mdi-newspaper-variant-multiple-outline',

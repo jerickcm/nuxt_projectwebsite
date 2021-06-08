@@ -140,8 +140,9 @@
 <script>
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
-
+import { greetMixins } from '~/mixins/greeting.js'
 export default {
+  mixins: [greetMixins],
   data: () => ({
     myitems: [{ title: 'Dashboard', link: '/dashboard' }],
     menu: [{ icon: 'Dashboard', title: 'Dashboard' }],

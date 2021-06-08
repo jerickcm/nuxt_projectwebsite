@@ -1,5 +1,8 @@
 <template>
   <v-sheet class="ma-0 pa-0">
+    <!-- <v-row>
+      <v-col> dosiufnhv9uwh {{ GetPosts }}</v-col>
+    </v-row> -->
     <v-row v-for="(item, index) in posts" :key="index" class="ma-0 pa-0">
       <v-col sm="12" lg="12" class="mb-0 pb-0">
         <v-card elevation="2" outlined shaped tile class=" pa-2 ma-0">
@@ -81,7 +84,7 @@
 <script>
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
-
+import { mapGetters, mapActions } from 'vuex'
 export default {
   data: () => ({
     no_more_post: 'd-none',
@@ -95,21 +98,31 @@ export default {
     disable_color: 'green'
   }),
   async created() {
-    await this.$axios.$get('/sanctum/csrf-cookie').then(response => {})
+    // await this.$axios.$get('/sanctum/csrf-cookie').then(response => {})
   },
   mounted() {
     this.getposts()
+    this.generatePost()
   },
+  computed: {
+    // ...mapGetters('posts', ['GetPosts'])
+  },
+
   methods: {
-    requestnextposts() {},
+    // ...mapActions('posts', ['fetchPosts']),
+    generatePost() {
+      // console.log(this.GetPosts)
+      // this.fetchPosts(this.page)
+      // console.log(this.GetPosts)
+      // console.log('called in mounted')
+    },
     getposts() {
       NProgress.start()
       let payload = new FormData()
-      payload.append('page', this.page)
       NProgress.inc()
       try {
         this.$axios
-          .$post('api/post/list', payload)
+          .$get(`api/post/list/${this.page}`)
           .then(res => {
             if (res.data.length == 0) {
               this.no_more_post = ''
@@ -128,7 +141,7 @@ export default {
                 slug: value.slug,
                 title: value.title,
                 content: value.content,
-                created_at: value.created,
+                created_at: value.created_at,
                 human_date: value.human_date,
                 image: value.image,
                 increment: this.increment
