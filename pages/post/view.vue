@@ -194,9 +194,14 @@ import 'nprogress/nprogress.css'
 // import DateFilter from '~/filters/date'
 // Vue.filter('date',DateFilter)
 
-var url = process.env.API_URL
+
+
 var timezone = process.env.TIMEZONE
-var url = process.env.API_URL
+const dev = process.env.DEV_API
+const prod = process.env.PROD_API
+const url = process.env.NODE_ENV === 'development' ? dev : prod
+
+var timezone = process.env.TIMEZONE
 export default {
   middleware: 'auth',
   mixins: [validationMixin],

@@ -109,8 +109,13 @@ import { Vuelidate, validationMixin } from 'vuelidate'
 Vue.use(Vuelidate)
 import { required } from 'vuelidate/lib/validators'
 
+
+const dev = process.env.DEV_API
+const prod = process.env.PROD_API
+const url = process.env.NODE_ENV === 'development' ? dev : prod
+
 var timezone = process.env.TIMEZONE
-var url = process.env.API_URL
+
 
 export default {
   middleware: 'auth',

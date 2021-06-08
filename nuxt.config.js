@@ -28,9 +28,9 @@ export default {
       }
     ]
   },
-  // env: {
-  //   API_URL: api
-  // },
+  env: {
+    API_URL: api
+  },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['~layouts/global.css'],
 
