@@ -17,6 +17,7 @@
       v-for="(item, i) in navlist"
       :key="i"
       :to="item.link"
+
     >
       <v-list-item-action>
         <v-icon> {{ item.icons }}</v-icon>
@@ -59,26 +60,26 @@ export default {
   data: () => ({
     fixed: false,
     navlist: [
-      {
-        icons: 'mdi-newspaper-variant-multiple-outline',
-        label: 'NEWS',
-        link: '/news'
-      },
+      // {
+      //   icons: 'mdi-newspaper-variant-multiple-outline',
+      //   label: 'NEWS',
+      //   link: '/news'
+      // },
       {
         icons: 'mdi-post-outline',
         label: 'POST',
         link: '/posts'
       },
-      {
-        icons: 'mdi-blogger',
-        label: 'BLOG',
-        link: '/blog'
-      },
-      {
-        icons: 'mdi-cloud-check-outline',
-        label: 'TECHNOLOGY',
-        link: '/TUTORIALS'
-      }
+      // {
+      //   icons: 'mdi-blogger',
+      //   label: 'BLOG',
+      //   link: '/blog'
+      // },
+      // {
+      //   icons: 'mdi-cloud-check-outline',
+      //   label: 'TECHNOLOGY',
+      //   link: '/TUTORIALS'
+      // }
     ]
   })
 }

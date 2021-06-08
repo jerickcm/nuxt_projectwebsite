@@ -109,30 +109,48 @@
         <v-sheet class="grey lighten-1" elevation="2" min-height="30vh">
           <v-container class="">
             <v-row no-gutters>
-              <v-col cols="12" sm="12" lg="12">
+              <v-col cols="12" sm="12" lg="12" class="pa-1 ma-1">
                 <p
                   class="fs-1-1 text-justify white--text fs-1-8 font-barlowreg"
                 >
-                  The inspireation of this website build is to expand my
-                  knowledge base in web development. Secondly I am planning to
-                  retain this website in a public server earning from ads, Maybe
-                  in my free time I could just update it all the time with my
-                  newly learned tricks fixed in my journey with webdeveopment.
+                  The inspiration of this website build is to expand my
+                  knowledge base , in web development.
+
+                  Secondly I am planning to
+                  retain this website in a public server earning from ads.
+
+                  Maybe in my free time I could just update it with my
+                  newly learned tricks in web deveopment.
+
                   This website is running in frontend Vue in a nuxt framework
-                  and backend is Laravel8, the time this site is being developed
-                  is in the release of PHP8, Also docker is in my list of
-                  research I am actually surprice with laravel response to api
-                  is very slow. This project is using docker in local and docker
-                  also in Google Cloud Platform , I am using laravel sail.
-                  Connecting backend and frontend I initially used Laravel
-                  Santum and nuxt auth next. Along development I am learning
-                  alot surprisingly the pressure is less and you will love
-                  programming even more compared to working environment of
-                  building a site. By the way developing this site is during the
-                  pandemic it started in March 20 2020 in the philippines and at
-                  present its still a risk and threat to peoples live event
-                  though their is already a vaccine the production seems to
+                  and backend is Laravel8.
+
+                  The time this site is being developed
+                  is in the new release of PHP version 8.
+
+                  Also docker is in my list of
+                  research I am actually surprised with laravel response to api
+                  is very slow and that is because i am using windows file system that later i discovered you need to be inside the linux filesystem
+                  because I was running the backend in a linux container image.
+
+                  This project is using docker in local and docker
+                  also in Google Cloud Platform that is my dev-ops application.
+
+                  I am using Laravel sail to build the containers
+                  connecting backend and frontend I used Laravel
+                  Santum together with Nuxt auth next node plugin.
+
+                  Along development I am learning
+                  a lot I advise aldo for developer to do this during work from home.
+
+                  By the way developing this site is during the
+                  pandemic it started in March 20, 2020 here in the Philippines and
+                  at
+                  present covid-19 is still a threat to peoples lives.
+
+                  Even  though their is already a vaccine the production seems to
                   still inadequate.
+
                 </p>
               </v-col>
             </v-row>
@@ -186,12 +204,12 @@ export default {
     show: true,
     title: '',
     links: [
-      { label: 'ABOUT' },
-      { label: 'MEDIA' },
-      { label: 'PODCAST' },
-      { label: 'DOCUMENTARY' },
-      { label: 'CONTACT' },
-      { label: 'JOIN THE MOVEMENT' }
+      // { label: 'ABOUT' },
+      // { label: 'MEDIA' },
+      // { label: 'PODCAST' },
+      // { label: 'DOCUMENTARY' },
+      // { label: 'CONTACT' },
+      // { label: 'JOIN THE MOVEMENT' }
     ],
     model: 6,
     rounded: ['0', 'sm', 'md', 'lg', 'xl', 'pill', 'circle']

@@ -15,12 +15,20 @@
           -- Project Website
           <v-icon color="blue">mdi-laptop</v-icon></v-btn
         >
-        <v-btn to="/news" plain text tile rounded class="white pa-1 ma-1"
-          ><v-icon>mdi-newspaper-variant-multiple-outline</v-icon> - NEWS</v-btn
-        >
+
+        <!--
+
+        <v-btn to="/news" plain text tile rounded class="white pa-1 ma-1">
+          <v-icon>mdi-newspaper-variant-multiple-outline</v-icon>
+           - NEWS
+        </v-btn>
+
+        -->
+
         <v-btn to="/posts" plain text tile rounded class="white pa-1 ma-1"
           ><v-icon>mdi-post-outline</v-icon> POST</v-btn
         >
+           <!--
         <v-btn to="/blog" plain text tile rounded class="white pa-1 ma-1"
           ><v-icon>mdi-blogger</v-icon>BLOG</v-btn
         >
@@ -28,8 +36,9 @@
           ><v-icon>mdi-cloud-check-outline</v-icon> TECHNOLOGY</v-btn
         >
         <v-btn to="/tutorials" plain text tile rounded class="white pa-1 ma-1"
-          ><v-icon>mdi-cast-education</v-icon> TUTORIALS</v-btn
-        >
+          ><v-icon>mdi-cast-education</v-icon> TUTORIALS
+          </v-btn>
+              -->
       </div>
       <v-spacer />
       <div class="hidden-sm-and-down">
@@ -96,7 +105,7 @@
       :absolute="!fixed"
       app
       class="black lighten-4"
-      style="margin-top:40vh"
+      style="margin-top:50vh"
     >
       <!-- min-height="15vh" -->
       <!-- min-height="10vh" -->
