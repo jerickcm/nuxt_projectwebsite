@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  middleware: 'admin'
+  // middleware: 'admin'
 }
 </script>
 
