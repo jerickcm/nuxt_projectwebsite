@@ -116,30 +116,31 @@ const url = process.env.NODE_ENV === 'development' ? dev : prod
 var timezone = process.env.TIMEZONE
 
 export default {
+  head: () => ({
+    title: 'Create Post'
+  }),
   middleware: 'auth',
   mixins: [validationMixin],
-  data() {
-    return {
-      url_backend: '',
-      form_content: '',
-      form_title: '',
-      form_publish: '',
-      token: null,
-      publishselection: [
-        {
-          value: 1,
-          text: 'Draft'
-        },
-        {
-          value: 2,
-          text: 'Publish'
-        }
-      ],
-      image: '',
-      image_preview: '',
-      image_name: ''
-    }
-  },
+  data: () => ({
+    url_backend: '',
+    form_content: '',
+    form_title: '',
+    form_publish: '',
+    token: null,
+    publishselection: [
+      {
+        value: 1,
+        text: 'Draft'
+      },
+      {
+        value: 2,
+        text: 'Publish'
+      }
+    ],
+    image: '',
+    image_preview: '',
+    image_name: ''
+  }),
 
   validations: {
     form_content: { required },
@@ -202,7 +203,7 @@ export default {
     onSubmit() {
       if (this.form_title && this.form_content && this.form_publish) {
         this.$axios.$get('/sanctum/csrf-cookie')
-        this.$toast.success('creating.')
+        this.$toast.success('Sending')
         let payload = new FormData()
         payload.append('publish', this.form_publish)
         payload.append('title', this.form_title)
@@ -216,13 +217,15 @@ export default {
             }
           })
           .then(res => {
-            this.$toast.success('done.')
-            redirect('/dashboard')
+            this.$toast.success('Done.')
+            // redirect('/dashboard')
           })
-          .catch(error => {})
+          .catch(error => {
+            // this.$toast.success('Error.')
+          })
           .finally(() => {})
       } else {
-        this.$toast.error('failed.')
+        this.$toast.error('Validation failed.')
       }
     }
   }

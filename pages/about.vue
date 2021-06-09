@@ -149,30 +149,36 @@
       <v-col justify="center" align="center">
         <v-row justify="center" align="center">
           <v-col justify="center" align="center" class="pt-10">
-            <h3>Schools Affiliations</h3>
+            <h3>School Affiliations</h3>
           </v-col>
         </v-row>
         <v-row justify="center" align="center">
           <v-col cols="8" sm="2">
-            <v-img
-              src="/images/School Affiliations/bulsu.jpg"
-              contain
-              max-height="100"
-            ></v-img>
+            <a href="https://www.bulsu.edu.ph/" target="_blank">
+              <v-img
+                src="/images/School Affiliations/bulsu.jpg"
+                contain
+                max-height="100"
+              ></v-img>
+            </a>
           </v-col>
           <v-col cols="8" sm="2">
-            <v-img
-              src="/images/School Affiliations/Mapua.png"
-              contain
-              max-height="100"
-            ></v-img>
+            <a href="https://www.mapua.edu.ph/" target="_blank">
+              <v-img
+                src="/images/School Affiliations/Mapua.png"
+                contain
+                max-height="100"
+              ></v-img>
+            </a>
           </v-col>
           <v-col cols="8" sm="2">
-            <v-img
-              src="/images/School Affiliations/adu.png"
-              contain
-              max-height="100"
-            ></v-img>
+            <a href="https://www.adamson.edu.ph/" target="_blank">
+              <v-img
+                src="/images/School Affiliations/adu.png"
+                contain
+                max-height="100"
+              ></v-img>
+            </a>
           </v-col>
         </v-row>
       </v-col>
@@ -200,11 +206,13 @@
             ></v-img>
           </v-col>
           <v-col cols="8" sm="2">
-            <v-img
-              src="/images/company affiliations/instaforex.jpg"
-              contain
-              max-height="100"
-            ></v-img>
+            <a href="https://www.instaforex.com/" target="_blank">
+              <v-img
+                src="/images/company affiliations/instaforex.jpg"
+                contain
+                max-height="100"
+              ></v-img>
+            </a>
           </v-col>
           <v-col cols="8" sm="2">
             <v-img

@@ -54,6 +54,9 @@
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 export default {
+  head: () => ({
+    title: 'Post View'
+  }),
   data: () => ({
     posts: {
       content: [],

@@ -44,7 +44,7 @@
                     {{ link.label }}
                   </v-btn>
                 </div>
-                <v-card class="mx-auto hidden-md-and-up" tile>
+                <v-card class="mx-auto hidden-md-and-up d-none" tile>
                   <v-list dense>
                     <v-list-item-group v-model="selectedItem" color="primary">
                       <v-list-item v-for="(item, i) in links" :key="i">
