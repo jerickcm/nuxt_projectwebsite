@@ -9,8 +9,8 @@ export default {
   dev: process.env.NODE_ENV !== 'production',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - Project',
-    title: 'Nuxt and Laravel',
+    titleTemplate: '%s - Page',
+    title: '',
     htmlAttrs: {
       lang: 'en'
     },

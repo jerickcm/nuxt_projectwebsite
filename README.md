@@ -22,3 +22,7 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 # shift +alt+f to autoformat code in prettier
 # nuxt_projectwebsite
+
+
+# docker source location
+\\wsl$\Ubuntu-20.04

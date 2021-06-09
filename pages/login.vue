@@ -80,22 +80,9 @@ import { required, email, minLength } from 'vuelidate/lib/validators'
 Vue.use(Vuelidate)
 
 export default {
-  loading: {
-    color: 'blue',
-    height: '20px'
-  },
-
-  mixins: [validationMixin],
-  validations: {
-    email: { required, email },
-    password: { required, minLength: minLength(6) }
-  },
-  mounted() {
-    this.$nextTick(() => {
-      this.$nuxt.$loading.start()
-      setTimeout(() => this.$nuxt.$loading.finish(), 2000)
-    })
-  },
+  head: () => ({
+    title: 'Login'
+  }),
   data: () => ({
     alert: 'd-none',
     error_msg: '',
@@ -113,6 +100,23 @@ export default {
       min: v => v.length >= 6 || 'Min 6 characters'
     }
   }),
+  loading: {
+    color: 'blue',
+    height: '20px'
+  },
+
+  mixins: [validationMixin],
+  validations: {
+    email: { required, email },
+    password: { required, minLength: minLength(6) }
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start()
+      setTimeout(() => this.$nuxt.$loading.finish(), 2000)
+    })
+  },
+
   computed: {
     emailErrors() {
       const errors = []

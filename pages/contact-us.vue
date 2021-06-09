@@ -1,53 +1,75 @@
 <template>
   <v-container fluid class="ma-0 pa-0">
     <v-parallax class="ma-0 pa-0" height="900" src="/images/contactus.jpg">
-      <v-row justify="center" align="center" class="mt-10">
-        <v-col cols="4" sm="4" md="4">
+      <v-row class="mt-10">
+        <v-col class="col-md-6 offset-md-3">
           <v-card elevation="2" outlined tile class="ma-10 pa-10">
-            <h1>Contact Us</h1></v-card
-          >
-        </v-col>
-        <v-col cols="4" sm="4" md="4">
-          <v-card elevation="2" outlined tile class="ma-10 pa-10">
-            <h2>For all inquiries please contact us below</h2>
-          </v-card>
-        </v-col>
-      </v-row>
-      <v-row justify="center" align="center" class="mt-10">
-        <v-col cols="4" sm="8" md="6">
-          <v-card elevation="2" outlined tile class="ma-10 pa-10">
+            <v-sheet class="ma-1 pa-1">
+              <h1 class="blue--text">Contact Us</h1>
+            </v-sheet>
+            <v-sheet class="ma-1 pa-1">
+              <h2 class="green--text">
+                For all inquiries please contact us below
+              </h2>
+            </v-sheet>
             <form
               action="mailto:jmangaluz@gmail.com"
               method="get"
               enctype="text/plain"
             >
               <div>
-                <label for="name"
-                  >Name:
-                  <input type="text" name="name" id="name" />
-                </label>
+                <v-text-field
+                  class="ma-2 pa-2"
+                  v-model="Name"
+                  :error-messages="emailErrors"
+                  label="Name"
+                  name="name"
+                  id="name"
+                  required
+                ></v-text-field>
+                <!-- @input="$v.email.$touch()"
+                  @blur="$v.email.$touch()" -->
               </div>
               <div>
-                <label for="email"
-                  >Email:
-                  <input type="text" name="email" id="email" />
-                </label>
+                <v-text-field
+                  class="ma-2 pa-2"
+                  v-model="Email"
+                  :error-messages="emailErrors"
+                  label="Email:"
+                  name="email"
+                  id="email"
+                  required
+                  type="email"
+                ></v-text-field>
+                <!-- @input="$v.email.$touch()"
+                  @blur="$v.email.$touch()" -->
               </div>
               <div>
-                <label>Comments:</label>
-                <br />
-                <textarea name="comments" rows="12" cols="35">
-Send your comments to us.</textarea
+                <v-textarea
+                  class="ma-2 pa-2"
+                  outlined
+                  name="input-7-4"
+                  label="Comments"
+                  value="Send your comments to us."
+                ></v-textarea>
+              </div>
+              <div>
+                <v-btn
+                  color="green"
+                  type="submit"
+                  name="submit"
+                  value="Send"
+                  class="white--text"
+                  >Send</v-btn
                 >
-              </div>
-              <div>
-                <input color="green" type="submit" name="submit" value="Send" />
-                <input
+                <v-btn
                   color="blue"
                   type="reset"
                   name="reset"
                   value="Clear Form"
-                />
+                  class="white--text"
+                  >Clear Form</v-btn
+                >
               </div>
             </form>
           </v-card>
@@ -58,6 +80,10 @@ Send your comments to us.</textarea
 </template>
 <script>
 export default {
+  head: () => ({
+    title: 'Contact Us'
+  }),
+
   auth: false
 }
 </script>

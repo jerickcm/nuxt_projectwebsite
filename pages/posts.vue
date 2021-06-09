@@ -23,6 +23,10 @@
 
 export default {
   // mixins: [greetMixins],
+
+  head: () => ({
+    title: 'Post'
+  }),
   data: () => ({
     loading: false
   }),

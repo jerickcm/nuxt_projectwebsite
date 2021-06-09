@@ -114,43 +114,27 @@
                   class="fs-1-1 text-justify white--text fs-1-8 font-barlowreg"
                 >
                   The inspiration of this website build is to expand my
-                  knowledge base , in web development.
-
-                  Secondly I am planning to
-                  retain this website in a public server earning from ads.
-
-                  Maybe in my free time I could just update it with my
-                  newly learned tricks in web deveopment.
-
-                  This website is running in frontend Vue in a nuxt framework
-                  and backend is Laravel8.
-
-                  The time this site is being developed
-                  is in the new release of PHP version 8.
-
-                  Also docker is in my list of
-                  research I am actually surprised with laravel response to api
-                  is very slow and that is because i am using windows file system that later i discovered you need to be inside the linux filesystem
-                  because I was running the backend in a linux container image.
-
-                  This project is using docker in local and docker
-                  also in Google Cloud Platform that is my dev-ops application.
-
-                  I am using Laravel sail to build the containers
-                  connecting backend and frontend I used Laravel
-                  Santum together with Nuxt auth next node plugin.
-
-                  Along development I am learning
-                  a lot I advise aldo for developer to do this during work from home.
-
-                  By the way developing this site is during the
-                  pandemic it started in March 20, 2020 here in the Philippines and
-                  at
-                  present covid-19 is still a threat to peoples lives.
-
-                  Even  though their is already a vaccine the production seems to
-                  still inadequate.
-
+                  knowledge base , in web development. Secondly I am planning to
+                  retain this website in a public server earning from ads. Maybe
+                  in my free time I could just update it with my newly learned
+                  tricks in web deveopment. This website is running in frontend
+                  Vue in a nuxt framework and backend is Laravel8. The time this
+                  site is being developed is in the new release of PHP version
+                  8. Also docker is in my list of research I am actually
+                  surprised with laravel response to api is very slow and that
+                  is because i am using windows file system that later i
+                  discovered you need to be inside the linux filesystem because
+                  I was running the backend in a linux container image. This
+                  project is using docker in local and docker also in Google
+                  Cloud Platform that is my dev-ops application. I am using
+                  Laravel sail to build the containers connecting backend and
+                  frontend I used Laravel Santum together with Nuxt auth next
+                  node plugin. Along development I am learning a lot I advise
+                  aldo for developer to do this during work from home. By the
+                  way developing this site is during the pandemic it started in
+                  March 20, 2020 here in the Philippines and at present covid-19
+                  is still a threat to peoples lives. Even though their is
+                  already a vaccine the production seems to still inadequate.
                 </p>
               </v-col>
             </v-row>
@@ -199,6 +183,9 @@
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
+  head: () => ({
+    title: 'Index'
+  }),
   data: () => ({
     selectedItem: 0,
     show: true,

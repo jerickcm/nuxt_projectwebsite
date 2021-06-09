@@ -1,7 +1,6 @@
 <template>
   <v-container fluid class="pa-0 ma-0 ">
     <v-row class="">
-
       <v-col cols="12" sm="12" md="12" class="pa-0">
         <v-carousel
           cycle
@@ -20,10 +19,14 @@
           <v-carousel-item v-for="(slide, i) in slides" :key="i">
             <v-sheet :color="colors[i]" height="100%">
               <v-row class="fill-height" align="center" justify="center">
-
-                <v-img  src="/images/about.jpg"   > <v-sheet color="red lighten-2"  class="dark--text text-h1 ma-10 pa-10"><strong>About Us</strong></v-sheet> </v-img>
+                <v-img src="/images/about.jpg">
+                  <v-sheet
+                    color="red lighten-2"
+                    class="dark--text text-h1 ma-10 pa-10"
+                    ><strong>About Us</strong></v-sheet
+                  >
+                </v-img>
                 <!-- <div class="display-3">{{ slide }} Slide</div> -->
-
               </v-row>
             </v-sheet>
           </v-carousel-item>
@@ -179,22 +182,23 @@
 
 <script>
 export default {
+  head: () => ({
+    title: 'Login'
+  }),
   auth: false,
+  data: () => ({
+    colors: [
+      'indigo',
+      'warning',
+      'pink darken-2',
+      'red lighten-1',
+      'deep-purple accent-4'
+    ],
+    slides: ['First'] //, "Second", "Third", "Fourth", "Fifth"
+  }),
 
-  data() {
-    return {
-      colors: [
-        "indigo",
-        "warning",
-        "pink darken-2",
-        "red lighten-1",
-        "deep-purple accent-4"
-      ],
-      slides: ["First"] //, "Second", "Third", "Fourth", "Fifth"
-    };
-  },
   computed: {}
-};
+}
 </script>
 <style scoped>
 ul.clean {
