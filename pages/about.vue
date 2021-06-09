@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid class="pa-0 ma-0 ">
+  <v-container fluid class="pa-0 ma-0 pb-5">
     <v-row class="">
       <v-col cols="12" sm="12" md="12" class="pa-0">
         <v-carousel
@@ -149,28 +149,76 @@
       <v-col justify="center" align="center">
         <v-row justify="center" align="center">
           <v-col justify="center" align="center" class="pt-10">
-            <h3>Some of our Clients</h3>
+            <h3>Schools Affiliations</h3>
           </v-col>
         </v-row>
         <v-row justify="center" align="center">
           <v-col cols="8" sm="2">
-            <v-img src="/images/jollibee.png" contain max-height="100"></v-img>
-          </v-col>
-          <v-col cols="8" sm="2">
-            <v-img src="/images/cocacola.jpg" contain max-height="100"></v-img>
-          </v-col>
-          <v-col cols="8" sm="2">
             <v-img
-              src="/images/starbucksiconiclogo.png"
+              src="/images/School Affiliations/bulsu.jpg"
               contain
               max-height="100"
             ></v-img>
           </v-col>
           <v-col cols="8" sm="2">
-            <v-img src="/images/mcdo.png" contain max-height="100"></v-img>
+            <v-img
+              src="/images/School Affiliations/Mapua.png"
+              contain
+              max-height="100"
+            ></v-img>
           </v-col>
           <v-col cols="8" sm="2">
-            <v-img src="/images/nike.png" contain max-height="100"></v-img>
+            <v-img
+              src="/images/School Affiliations/adu.png"
+              contain
+              max-height="100"
+            ></v-img>
+          </v-col>
+        </v-row>
+      </v-col>
+    </v-row>
+    <v-row justify="center" align="center" class="lightgray">
+      <v-col justify="center" align="center">
+        <v-row justify="center" align="center">
+          <v-col justify="center" align="center" class="pt-10">
+            <h3>Company Affiliations</h3>
+          </v-col>
+        </v-row>
+        <v-row justify="center" align="center">
+          <v-col cols="8" sm="2">
+            <v-img
+              src="/images/company affiliations/nmg.jpeg"
+              contain
+              max-height="100"
+            ></v-img>
+          </v-col>
+          <v-col cols="8" sm="2">
+            <v-img
+              src="/images/company affiliations/ama.png"
+              contain
+              max-height="100"
+            ></v-img>
+          </v-col>
+          <v-col cols="8" sm="2">
+            <v-img
+              src="/images/company affiliations/instaforex.jpg"
+              contain
+              max-height="100"
+            ></v-img>
+          </v-col>
+          <v-col cols="8" sm="2">
+            <v-img
+              src="/images/company affiliations/smacp.png"
+              contain
+              max-height="100"
+            ></v-img>
+          </v-col>
+          <v-col cols="8" sm="2">
+            <v-img
+              src="/images/company affiliations/neugent.jpg"
+              contain
+              max-height="100"
+            ></v-img>
           </v-col>
         </v-row>
 
