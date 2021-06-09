@@ -1,7 +1,12 @@
 <template>
   <v-container fluid class="ma-0 pa-0">
     <v-row>
-      <v-col>
+      <v-col
+        sm="12"
+        md="8"
+        lg="8"
+        class="mb-0 pb-0 col-md-8  col-lg-6 offset-md-2"
+      >
         <v-skeleton-loader
           elevation="2"
           outlined
@@ -12,14 +17,16 @@
           v-if="pageload"
         ></v-skeleton-loader>
         <v-card
+          min-height="500vh"
           v-else
-          elevation="2"
           outlined
           shaped
           tile
-          class="pa-2 ma-2"
+          class="pa-1 ma-1"
           :class="charge"
         >
+          <h1 class="blue--text">{{ posts['title'] }}</h1>
+
           <v-img height="250" :src="posts['image']"> </v-img>
           <v-card-title>
             <h2>Title : {{ posts['title'] }}</h2>
@@ -29,7 +36,13 @@
             <span>Email : {{ posts['email'] }}</span
             ><br />
             <span>Date : {{ posts['human_date'] }}</span>
-            <v-sheet v-html="posts['content']" class="ck-content"></v-sheet>
+
+            <v-sheet
+              color="grey lighten-5"
+              outlined
+              v-html="posts['content']"
+              class="ck-content pa-0 ma-1 pt-2 pb-2"
+            ></v-sheet>
           </v-card-text>
         </v-card>
       </v-col>

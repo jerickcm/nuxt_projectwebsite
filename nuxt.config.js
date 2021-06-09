@@ -5,6 +5,14 @@ const prod = process.env.PROD_API
 const api = process.env.NODE_ENV === 'development' ? dev : prod
 // console.log('api');
 // console.log(api);
+
+// script: [
+//   {
+//     src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
+//     'data-ad-client': 'pub-3213536425475125',
+//     async: true
+//   }
+// ]
 export default {
   dev: process.env.NODE_ENV !== 'production',
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -19,14 +27,7 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/nuxt.ico' }],
-    script: [
-      {
-        src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
-        'data-ad-client': 'pub-3213536425475125',
-        async: true
-      }
-    ]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/nuxt.ico' }]
   },
   env: {
     API_URL: api
@@ -54,8 +55,13 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/auth-next',
     '@nuxtjs/robots',
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/toast'
   ],
+  toast: {
+    position: 'top-right',
+    duration: 3000
+  },
   robots: {
     UserAgent: '*',
     Disallow: '/dashboard',

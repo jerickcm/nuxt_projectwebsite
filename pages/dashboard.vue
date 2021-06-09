@@ -26,9 +26,10 @@
 </template>
 <script>
 export default {
-  data() {
-    return {}
-  },
+  head: () => ({
+    title: 'Dashboard'
+  }),
+  data: () => ({}),
   middleware: 'auth',
   async created() {}
 }

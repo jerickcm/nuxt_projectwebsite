@@ -2,10 +2,27 @@
   <v-sheet class="ma-0 pa-0">
     <!-- <v-row>
       <v-col> dosiufnhv9uwh {{ GetPosts }}</v-col>
+
     </v-row> -->
+    <v-row class="ma-0 pa-0">
+      <v-col
+        sm="12"
+        md="8"
+        lg="8"
+        class="mb-0 pb-0 col-md-8  col-lg-6 offset-md-2"
+      >
+        <h1>Post</h1>
+      </v-col>
+    </v-row>
     <v-row v-for="(item, index) in posts" :key="index" class="ma-0 pa-0">
-      <v-col sm="12" lg="12" class="mb-0 pb-0">
+      <v-col
+        sm="12"
+        md="8"
+        lg="8"
+        class="mb-0 pb-0 col-md-8  col-lg-6 offset-md-2"
+      >
         <v-card elevation="2" outlined shaped tile class=" pa-2 ma-0">
+          <!-- color="blue lighten-5" -->
           <!-- -->
           <nuxt-link
             class="nuxtlink"
@@ -16,9 +33,9 @@
             }"
           >
             <v-img height="250" :src="item.image">
-              <v-card-title class="white--text transparent">
+              <!-- <v-card-title class="white--text transparent">
                 Article No: {{ item.increment }}
-              </v-card-title>
+              </v-card-title> -->
             </v-img>
           </nuxt-link>
 
@@ -41,13 +58,19 @@
         </v-card>
       </v-col>
     </v-row>
+
     <v-row
       class="ma-0 pa-0"
       :class="loadcard"
       v-for="index in 10"
       :key="index + `b`"
     >
-      <v-col sm="12" lg="12" class="mb-0 pb-0">
+      <v-col
+        sm="12"
+        md="8"
+        lg="8"
+        class="mb-0 pb-0 col-md-8  col-lg-6 offset-md-2"
+      >
         <v-skeleton-loader
           elevation="2"
           outlined
@@ -58,16 +81,26 @@
         ></v-skeleton-loader>
       </v-col>
     </v-row>
-    <v-row class="ma-2 pa-2" :class="no_more_post">
-      <v-col sm="12" lg="12" class="text-center text-lg-center mb-0 pb-0">
-        <v-card elevation="2" outlined shaped tile class="pa-2 ma-2">
+    <v-row class="ma-0 pa-0" :class="no_more_post">
+      <v-col
+        sm="12"
+        md="8"
+        lg="8"
+        class="mb-0 pb-0 col-md-8  col-lg-6 offset-md-2"
+      >
+        <v-card elevation="2" outlined shaped tile class=" pa-2 ma-0">
           Nothing Follows
         </v-card>
       </v-col>
     </v-row>
     <v-row class="ma-0 pa-0">
-      <v-col sm="12" lg="12" class="mb-0 pb-0">
-        <v-card elevation="2" class="pa-2 ma-2 ">
+      <v-col
+        sm="12"
+        md="8"
+        lg="8"
+        class="mb-0 pb-0 col-md-8  col-lg-6 offset-md-2"
+      >
+        <v-card elevation="2" outlined shaped tile class=" pa-2 ma-0">
           <v-btn
             class="white--text"
             @click="getposts"
@@ -147,6 +180,7 @@ export default {
                 increment: this.increment
               })
             }
+
             this.posts = this.data
             NProgress.done()
             this.loadcard = 'd-none'

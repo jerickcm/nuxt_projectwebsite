@@ -70,8 +70,10 @@
                     v-on:change="handleFileUpload()"
                   />
                   <v-card>
-                    <v-img v-if="form_image" :src="form_image"></v-img>
                     <v-img v-if="image_preview" :src="image_preview"></v-img>
+                    <div v-else>
+                      <v-img v-if="form_image" :src="form_image"></v-img>
+                    </div>
                   </v-card>
 
                   <label
@@ -185,16 +187,10 @@
   </v-container>
 </template>
 <script>
-import Vue from 'vue'
-import { Vuelidate, validationMixin } from 'vuelidate'
-import { required, maxLength, email, minLength } from 'vuelidate/lib/validators'
+import { validationMixin } from 'vuelidate'
+import { required } from 'vuelidate/lib/validators'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
-
-// import DateFilter from '~/filters/date'
-// Vue.filter('date',DateFilter)
-
-
 
 var timezone = process.env.TIMEZONE
 const dev = process.env.DEV_API
@@ -205,53 +201,56 @@ var timezone = process.env.TIMEZONE
 export default {
   middleware: 'auth',
   mixins: [validationMixin],
-  data() {
-    return {
-      headers: [
-        {
-          text: 'No',
-          align: 'start',
-          sortable: false,
-          value: 'no'
-        },
-        { text: 'Name', value: 'name' },
 
-        { text: 'Title', value: 'title' },
-        { text: 'Slug', value: 'slug' },
-        { text: 'Publish', value: 'publish' },
-        { text: 'Date / Time', value: 'created_at' },
-        { text: 'Action', value: 'id', sortable: false }
-      ],
-      form_content: '',
-      form_title: '',
-      form_publish: '',
-      dialog: false,
-      dialogDelete: false,
-      deletedialog: false,
-      editedIndex: -1,
-      search: '',
-      tabledata: [],
-      tabledata_total: 0,
-      loading: true,
-      options: {},
+  head: () => ({
+    title: 'Post Datatable'
+  }),
 
-      publishselection: [
-        {
-          value: 1,
-          text: 'Draft'
-        },
-        {
-          value: 2,
-          text: 'Publish'
-        }
-      ],
-      form_image: '',
+  data: () => ({
+    headers: [
+      {
+        text: 'No',
+        align: 'start',
+        sortable: false,
+        value: 'no'
+      },
+      { text: 'Name', value: 'name' },
 
-      image: '',
-      image_preview: '',
-      image_name: ''
-    }
-  },
+      { text: 'Title', value: 'title' },
+      { text: 'Slug', value: 'slug' },
+      { text: 'Publish', value: 'publish' },
+      { text: 'Date / Time', value: 'created_at' },
+      { text: 'Action', value: 'id', sortable: false }
+    ],
+    form_content: '',
+    form_title: '',
+    form_publish: '',
+    dialog: false,
+    dialogDelete: false,
+    deletedialog: false,
+    editedIndex: -1,
+    search: '',
+    tabledata: [],
+    tabledata_total: 0,
+    loading: true,
+    options: {},
+
+    publishselection: [
+      {
+        value: 1,
+        text: 'Draft'
+      },
+      {
+        value: 2,
+        text: 'Publish'
+      }
+    ],
+    form_image: '',
+
+    image: '',
+    image_preview: '',
+    image_name: ''
+  }),
   validations: {
     form_content: { required },
     form_title: { required },
@@ -344,6 +343,7 @@ export default {
       this.form_title = this.tabledata[this.tabledata.indexOf(item)].title
       this.form_image = this.tabledata[this.tabledata.indexOf(item)].image
       this.form_content = this.tabledata[this.tabledata.indexOf(item)].content
+
       this.form_publish = this.tabledata[
         this.tabledata.indexOf(item)
       ].publishvalue
@@ -365,9 +365,10 @@ export default {
       payload.append('title', this.form_title)
       payload.append('content', this.form_content)
       payload.append('publish', this.form_publish)
-      if (this.form_image) {
-        payload.append('image', this.form_image)
-      }
+
+      // if (this.form_image) {
+      payload.append('image', this.form_image)
+      // }
 
       try {
         this.$axios
@@ -384,9 +385,9 @@ export default {
 
             this.tabledata[this.editedIndex].publishvalue = this.form_publish
 
-            if (this.form_image) {
-              this.tabledata[this.editedIndex].image = res.image
-            }
+            // if (this.form_image) {
+            this.tabledata[this.editedIndex].image = res.image
+            // }
 
             this.dialog = false
             this.form_publish = ''
@@ -448,9 +449,8 @@ export default {
               publish: value.publish == 1 ? 'Draft' : 'Publish',
               publishvalue: value.publish,
               image: value.image,
-              created_at: value.created_at
+              created_at: value.human_date
             })
-            //  created_at: (value.created_at | date)
             rowcount++
           }
 

@@ -28,7 +28,7 @@
         <v-btn to="/posts" plain text tile rounded class="white pa-1 ma-1"
           ><v-icon>mdi-post-outline</v-icon> POST</v-btn
         >
-           <!--
+        <!--
         <v-btn to="/blog" plain text tile rounded class="white pa-1 ma-1"
           ><v-icon>mdi-blogger</v-icon>BLOG</v-btn
         >
@@ -71,9 +71,9 @@
           tile
           rounded
           class="white pa-1 ma-1"
-          @click.stop="rightDrawer = !rightDrawer"
+          to="/dashboard"
         >
-        <v-icon>mdi-logout</v-icon>
+          <v-icon>mdi-monitor-dashboard</v-icon>
           Dashboard</v-btn
         >
         <v-btn
@@ -85,7 +85,7 @@
           rounded
           class="white pa-1 ma-1"
         >
-       <v-icon>mdi-monitor-dashboard</v-icon>
+          <v-icon>mdi-logout</v-icon>
           Logout</v-btn
         >
       </div>

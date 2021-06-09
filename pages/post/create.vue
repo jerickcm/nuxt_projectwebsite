@@ -109,13 +109,11 @@ import { Vuelidate, validationMixin } from 'vuelidate'
 Vue.use(Vuelidate)
 import { required } from 'vuelidate/lib/validators'
 
-
 const dev = process.env.DEV_API
 const prod = process.env.PROD_API
 const url = process.env.NODE_ENV === 'development' ? dev : prod
 
 var timezone = process.env.TIMEZONE
-
 
 export default {
   middleware: 'auth',
@@ -201,6 +199,7 @@ export default {
     },
     onSubmit() {
       if (this.form_title && this.form_content && this.form_publish) {
+        this.$toast.success('creating.')
         let payload = new FormData()
         payload.append('publish', this.form_publish)
         payload.append('title', this.form_title)
@@ -213,10 +212,14 @@ export default {
               'Content-Type': 'multipart/form-data'
             }
           })
-          .then(res => {})
+          .then(res => {
+            this.$toast.success('done.')
+            redirect('/dashboard')
+          })
           .catch(error => {})
           .finally(() => {})
       } else {
+        this.$toast.error('failed.')
       }
     }
   }
