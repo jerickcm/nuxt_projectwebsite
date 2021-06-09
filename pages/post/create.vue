@@ -163,6 +163,8 @@ export default {
         }
       }
     }
+
+    await this.$axios.$get('/sanctum/csrf-cookie')
   },
   computed: {
     titleErrors() {
@@ -199,6 +201,7 @@ export default {
     },
     onSubmit() {
       if (this.form_title && this.form_content && this.form_publish) {
+        this.$axios.$get('/sanctum/csrf-cookie')
         this.$toast.success('creating.')
         let payload = new FormData()
         payload.append('publish', this.form_publish)
