@@ -1,9 +1,5 @@
 <template>
   <v-sheet class="ma-0 pa-0">
-    <!-- <v-row>
-      <v-col> dosiufnhv9uwh {{ GetPosts }}</v-col>
-
-    </v-row> -->
     <v-row class="ma-0 pa-0">
       <v-col
         sm="12"
@@ -24,25 +20,22 @@
         <v-card elevation="2" outlined shaped tile class=" pa-2 ma-0">
           <!-- color="blue lighten-5" -->
           <!-- -->
+          <!-- target="_blank" -->
           <nuxt-link
             class="nuxtlink"
-            target="_blank"
+
             :to="{
               path: 'posts_view',
               query: { slug: item.slug }
             }"
           >
             <v-img height="250" :src="item.image">
-              <!-- <v-card-title class="white--text transparent">
-                Article No: {{ item.increment }}
-              </v-card-title> -->
             </v-img>
           </nuxt-link>
-
+        <!-- target="_blank" -->
           <v-card-title>
             <nuxt-link
               class="nuxtlink"
-              target="_blank"
               :to="{
                 path: 'posts_view',
                 query: { slug: item.slug }

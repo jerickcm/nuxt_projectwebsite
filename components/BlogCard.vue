@@ -1,9 +1,5 @@
 <template>
   <v-sheet class="ma-0 pa-0">
-    <!-- <v-row>
-      <v-col> dosiufnhv9uwh {{ GetPosts }}</v-col>
-
-    </v-row> -->
     <v-row class="ma-0 pa-0">
       <v-col
         sm="12"
@@ -24,11 +20,11 @@
         <v-card elevation="2" outlined shaped tile class=" pa-2 ma-0">
           <!-- color="blue lighten-5" -->
           <!-- -->
+          <!-- target="_blank" -->
           <nuxt-link
             class="nuxtlink"
-            target="_blank"
             :to="{
-              path: 'posts_view',
+              path: 'blogs_view',
               query: { slug: item.slug }
             }"
           >
@@ -38,13 +34,12 @@
               </v-card-title> -->
             </v-img>
           </nuxt-link>
-
+  <!-- target="_blank" -->
           <v-card-title>
             <nuxt-link
-              class="nuxtlink"
-              target="_blank"
+              class="nuxtlink"=
               :to="{
-                path: 'posts_view',
+                path: 'blogs_view',
                 query: { slug: item.slug }
               }"
               >Title : {{ item.title }}
@@ -116,10 +111,8 @@
   </v-sheet>
 </template>
 <script>
-
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
-
 export default {
   data: () => ({
     no_more_post: 'd-none',
