@@ -26,3 +26,7 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 # docker source location
 \\wsl$\Ubuntu-20.04
+
+
+# 
+add material icon theme in vs code extensions 
