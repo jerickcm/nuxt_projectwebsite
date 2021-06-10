@@ -340,6 +340,7 @@ export default {
       })
     },
     editItem(item) {
+        this.$axios.$get('/sanctum/csrf-cookie').then(response => {})
       this.form_title = this.tabledata[this.tabledata.indexOf(item)].title
       this.form_image = this.tabledata[this.tabledata.indexOf(item)].image
       this.form_content = this.tabledata[this.tabledata.indexOf(item)].content
@@ -365,10 +366,7 @@ export default {
       payload.append('title', this.form_title)
       payload.append('content', this.form_content)
       payload.append('publish', this.form_publish)
-
-      // if (this.form_image) {
       payload.append('image', this.form_image)
-      // }
 
       try {
         this.$axios
