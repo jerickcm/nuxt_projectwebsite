@@ -7,6 +7,7 @@
       />
       <v-spacer />
       <div class="hidden-sm-and-down">
+
         <v-icon color="blue" @click.stop="rightDrawer = !rightDrawer"
           >mdi-code-json</v-icon
         >
@@ -24,10 +25,19 @@
         </v-btn>
 
         -->
+        <v-btn
+            v-for="(item, i) in navlist"
+            :key="i"
+            :to="item.link"
+            plain text tile rounded class="white pa-1 ma-1"
+          >
+          <v-icon>{{item.icons}}</v-icon> {{item.label}}
+        </v-btn>
 
-        <v-btn to="/posts" plain text tile rounded class="white pa-1 ma-1"
+        <!-- <v-btn to="/posts" plain text tile rounded class="white pa-1 ma-1"
           ><v-icon>mdi-post-outline</v-icon> POST</v-btn
-        >
+        > -->
+
         <!--
         <v-btn to="/blog" plain text tile rounded class="white pa-1 ma-1"
           ><v-icon>mdi-blogger</v-icon>BLOG</v-btn
@@ -42,6 +52,7 @@
       </div>
       <v-spacer />
       <div class="hidden-sm-and-down">
+
         <v-btn
           v-if="!$auth.loggedIn"
           to="/login"
@@ -152,8 +163,10 @@
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 import { greetMixins } from '~/mixins/greeting.js'
+
+import { navlist } from '~/mixins/navlist.js'
 export default {
-  mixins: [greetMixins],
+  mixins: [greetMixins,navlist],
   data: () => ({
     myitems: [{ title: 'Dashboard', link: '/dashboard' }],
     menu: [{ icon: 'Dashboard', title: 'Dashboard' }],

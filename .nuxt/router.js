@@ -6,7 +6,7 @@ import scrollBehavior from './router.scrollBehavior.js'
 
 const _55dd2d9b = () => interopDefault(import('..\\pages\\about.vue' /* webpackChunkName: "pages/about" */))
 const _b1f74746 = () => interopDefault(import('..\\pages\\admin.vue' /* webpackChunkName: "pages/admin" */))
-const _c86e76f8 = () => interopDefault(import('..\\pages\\blog.vue' /* webpackChunkName: "pages/blog" */))
+const _3e0925c2 = () => interopDefault(import('..\\pages\\blogs.vue' /* webpackChunkName: "pages/blogs" */))
 const _36dfef66 = () => interopDefault(import('..\\pages\\contact-us.vue' /* webpackChunkName: "pages/contact-us" */))
 const _2dcba3bc = () => interopDefault(import('..\\pages\\dashboard.vue' /* webpackChunkName: "pages/dashboard" */))
 const _71c2df5c = () => interopDefault(import('..\\pages\\index84.vue' /* webpackChunkName: "pages/index84" */))
@@ -20,6 +20,8 @@ const _28f79524 = () => interopDefault(import('..\\pages\\technology.vue' /* web
 const _7edce174 = () => interopDefault(import('..\\pages\\test.vue' /* webpackChunkName: "pages/test" */))
 const _79a87be3 = () => interopDefault(import('..\\pages\\tutorials.vue' /* webpackChunkName: "pages/tutorials" */))
 const _8a023ad4 = () => interopDefault(import('..\\pages\\users.vue' /* webpackChunkName: "pages/users" */))
+const _c88af200 = () => interopDefault(import('..\\pages\\blog\\create.vue' /* webpackChunkName: "pages/blog/create" */))
+const _12dae1ae = () => interopDefault(import('..\\pages\\blog\\view.vue' /* webpackChunkName: "pages/blog/view" */))
 const _0f2a4220 = () => interopDefault(import('..\\pages\\dash\\create.vue' /* webpackChunkName: "pages/dash/create" */))
 const _2e582319 = () => interopDefault(import('..\\pages\\dash\\view.vue' /* webpackChunkName: "pages/dash/view" */))
 const _b9353a04 = () => interopDefault(import('..\\pages\\post\\create.vue' /* webpackChunkName: "pages/post/create" */))
@@ -46,9 +48,9 @@ export const routerOptions = {
     component: _b1f74746,
     name: "admin"
   }, {
-    path: "/blog",
-    component: _c86e76f8,
-    name: "blog"
+    path: "/blogs",
+    component: _3e0925c2,
+    name: "blogs"
   }, {
     path: "/contact-us",
     component: _36dfef66,
@@ -101,6 +103,14 @@ export const routerOptions = {
     path: "/users",
     component: _8a023ad4,
     name: "users"
+  }, {
+    path: "/blog/create",
+    component: _c88af200,
+    name: "blog-create"
+  }, {
+    path: "/blog/view",
+    component: _12dae1ae,
+    name: "blog-view"
   }, {
     path: "/dash/create",
     component: _0f2a4220,

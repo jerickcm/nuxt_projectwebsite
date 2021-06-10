@@ -38,6 +38,17 @@
             </v-list-item-content>
           </v-list-item>
 
+
+          <v-list-item to="/login" v-if="!$auth.loggedIn">
+            <v-list-item-action>
+              <v-icon>mdi-login-variant</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title> Login</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+
+
           <v-list-item to="/dashboard" v-if="$auth.loggedIn">
             <v-list-item-action>
               <v-icon>mdi-monitor-dashboard</v-icon>
@@ -88,36 +99,12 @@
   </v-contaner>
 </template>
 <script>
+
+import { navlist } from '~/mixins/navlist.js'
 export default {
+  mixins: [navlist],
   data: () => ({
     fixed: false,
-    navlist: [
-      // {
-      //   icons: 'mdi-newspaper-variant-multiple-outline',
-      //   label: 'NEWS',
-      //   link: '/news'
-      // },
-      {
-        icons: 'mdi-post-outline',
-        label: 'POST',
-        link: '/posts'
-      },
-      // {
-      //   icons: 'mdi-blogger',
-      //   label: 'BLOG',
-      //   link: '/blog'
-      // },
-      // {
-      //   icons: 'mdi-cloud-check-outline',
-      //   label: 'TECHNOLOGY',
-      //   link: '/TUTORIALS'
-      // },
-      {
-        icons: 'mdi-login-variant',
-        label: 'Login',
-        link: '/login'
-      }
-    ]
   })
 }
 </script>

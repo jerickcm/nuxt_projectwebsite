@@ -14,11 +14,11 @@
     "_name": "_b1f74746"
   },
   {
-    "name": "blog",
-    "path": "/blog",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\blog.vue",
-    "chunkName": "pages/blog",
-    "_name": "_c86e76f8"
+    "name": "blogs",
+    "path": "/blogs",
+    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\blogs.vue",
+    "chunkName": "pages/blogs",
+    "_name": "_3e0925c2"
   },
   {
     "name": "contact-us",
@@ -110,6 +110,20 @@
     "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\users.vue",
     "chunkName": "pages/users",
     "_name": "_8a023ad4"
+  },
+  {
+    "name": "blog-create",
+    "path": "/blog/create",
+    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\blog\\\\create.vue",
+    "chunkName": "pages/blog/create",
+    "_name": "_c88af200"
+  },
+  {
+    "name": "blog-view",
+    "path": "/blog/view",
+    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\blog\\\\view.vue",
+    "chunkName": "pages/blog/view",
+    "_name": "_12dae1ae"
   },
   {
     "name": "dash-create",
