@@ -37,7 +37,7 @@
   <!-- target="_blank" -->
           <v-card-title>
             <nuxt-link
-              class="nuxtlink"=
+              class="nuxtlink"
               :to="{
                 path: 'blogs_view',
                 query: { slug: item.slug }
