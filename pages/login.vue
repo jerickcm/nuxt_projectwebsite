@@ -149,10 +149,11 @@ export default {
       this.error_msg = ''
       this.$v.$reset()
     },
-    login() {
+    async login() {
       this.$v.email.$touch()
       this.$v.password.$touch()
       if (!this.$v.$invalid) {
+
         this.alert = 'd-none'
         this.loading = true
         // NProgress.configure({ parent: '#container' });
@@ -160,6 +161,7 @@ export default {
         NProgress.configure({ showSpinner: false })
         this.form.email = this.email
         this.form.password = this.password
+         await this.$axios.$get('/sanctum/csrf-cookie')
         try {
           this.$auth
             .loginWith('laravelSanctum', {
