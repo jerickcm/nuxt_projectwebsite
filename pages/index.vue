@@ -184,37 +184,30 @@ import { mapGetters, mapActions } from 'vuex'
 
 export default {
   head: () => ({
-    title: 'Index'
+    title: 'Profile ',
+    meta:[
+      { hid: 'Profile', name: 'Profile', content: 'Profile' }
+    ]
   }),
   data: () => ({
     selectedItem: 0,
     show: true,
     title: '',
-    links: [
-      // { label: 'ABOUT' },
-      // { label: 'MEDIA' },
-      // { label: 'PODCAST' },
-      // { label: 'DOCUMENTARY' },
-      // { label: 'CONTACT' },
-      // { label: 'JOIN THE MOVEMENT' }
-    ],
     model: 6,
-    rounded: ['0', 'sm', 'md', 'lg', 'xl', 'pill', 'circle']
+    rounded: ['0', 'sm', 'md', 'lg', 'xl', 'pill', 'circle'],
+    links:[]
+
   }),
-
   layout: 'default',
-
   methods: {
     ...mapActions('messageoftheday', ['fetchQuote'])
   },
   computed: {
-    // LoadingStatus2(){
-    //   return this.$store.state.messageoftheday.LoadingStatus
-    // },
     ...mapGetters('messageoftheday', ['MessageOfTheDay', 'LoadingStatus'])
   },
   async created() {},
-  mounted() {
+  async mounted() {
+    await this.$axios.$get('/sanctum/csrf-cookie')
     this.fetchQuote()
   }
 }

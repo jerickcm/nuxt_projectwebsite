@@ -103,9 +103,9 @@
       <v-spacer />
     </v-app-bar>
     <v-main class="padding-bottom:20vh">
-      <v-container fluid class="pa-0">
+      <!-- <v-container fluid class="pa-0"> -->
         <nuxt />
-      </v-container>
+      <!-- </v-container> -->
     </v-main>
 
     <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
@@ -163,10 +163,9 @@
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 import { greetMixins } from '~/mixins/greeting.js'
-
 import { navlist } from '~/mixins/navlist.js'
 export default {
-    head: () => ({
+  head: () => ({
     titleTemplate: '%s - Project Website',
     meta:[
       { hid: 'description', name: 'description', content: 'Content' }

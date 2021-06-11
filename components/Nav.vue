@@ -1,12 +1,12 @@
 <template>
-  <v-contaner fluid>
-    <v-row>
+  <v-container fluid>
+   <v-row>
       <v-col class="pa-2 ma-2 ml-5">
-        <!-- <v-card> -->
+
         <v-avatar :size="50" class="text-center black">
           <v-img class="text-center" src="/images/cartoon-darken.jpg"></v-img>
         </v-avatar>
-        <!-- </v-card> -->
+
       </v-col>
     </v-row>
     <v-row>
@@ -58,14 +58,6 @@
             </v-list-item-content>
           </v-list-item>
 
-          <!-- <v-list-item v-if="$auth.loggedIn" @click.prevent="logout()">
-            <v-list-item-action>
-              <v-icon>mdi-logout</v-icon>
-            </v-list-item-action>
-            <v-list-item-content>
-              <v-list-item-title> Logout</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item> -->
 
           <v-list-item router exact @click.stop="fixed = !fixed">
             <v-list-item-action>
@@ -96,15 +88,20 @@
         </v-list>
       </v-col>
     </v-row>
-  </v-contaner>
+
+
+  </v-container>
+
 </template>
+
+
 <script>
 
 import { navlist } from '~/mixins/navlist.js'
 export default {
   mixins: [navlist],
   data: () => ({
-    fixed: false,
+    // fixed: false,
   })
 }
 </script>
