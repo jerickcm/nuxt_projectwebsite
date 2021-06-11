@@ -8,17 +8,26 @@
         <v-btn to="post/create" slot="create_menu" class="green white--text"
           >Create Post</v-btn
         >
-        <v-btn to="post/view" slot="view_menu" class="blue white--text"
+        <v-btn to="post/manage" slot="view_menu" class="blue white--text"
           >View Post</v-btn
         >
       </Dashboard>
-     <Dashboard>
+      <Dashboard>
         <h2 slot="menu_name">BLOG MENU</h2>
         <v-btn to="blog/create" slot="create_menu" class="green white--text"
           >Create BLOG</v-btn
         >
-        <v-btn to="blog/view" slot="view_menu" class="blue white--text"
+        <v-btn to="blog/manage" slot="view_menu" class="blue white--text"
           >View BLOG</v-btn
+        >
+      </Dashboard>
+      <Dashboard>
+        <h2 slot="menu_name">NEWS MENU</h2>
+        <v-btn to="news/create" slot="create_menu" class="green white--text"
+          >Create NEWS</v-btn
+        >
+        <v-btn to="news/manage" slot="view_menu" class="blue white--text"
+          >View NEWS</v-btn
         >
       </Dashboard>
       <!-- <Dashboard>

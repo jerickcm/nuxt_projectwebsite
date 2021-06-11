@@ -2,16 +2,15 @@ export const navlist = {
     data: () => ({
       fixed: false,
       navlist: [
-        // {
-        //   icons: 'mdi-newspaper-variant-multiple-outline',
-        //   label: 'NEWS',
-        //   link: '/news'
-        // },
+        {
+          icons: 'mdi-newspaper-variant-multiple-outline',
+          label: 'NEWS',
+          link: '/news'
+        },
         {
           icons: 'mdi-post-outline',
           label: 'POST',
           link: '/post'
-
         },
         {
           icons: 'mdi-blogger',
