@@ -14,8 +14,12 @@
 <script>
   export default {
     head: () => ({
-      title: 'Post'
+      title: 'Blog Articles',
+      meta:[
+      { hid: 'Blog', name: 'Blog', content: 'Blog Article Page' }
+      ],
     }),
+
     data: () => ({
       loading: false
     }),

@@ -25,7 +25,7 @@ export default {
   head: () => ({
     title: 'Post Articles',
     meta:[
-      { hid: 'description', name: 'Profile', content: 'This is the the posts' }
+      { hid: 'Posts', name: 'Posts', content: 'Post Article Page' }
     ]
   }),
 

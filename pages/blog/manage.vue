@@ -357,8 +357,8 @@ export default {
       this.editedItem = Object.assign({}, item)
       this.dialogDelete = true
     },
-    SaveEdited() {
-      this.$axios.$get('/sanctum/csrf-cookie').then(response => {})
+   async   SaveEdited() {
+      await this.$axios.$get('/sanctum/csrf-cookie').then(response => {})
       NProgress.start()
       let payload = new FormData()
       let table_id = this.tabledata[this.editedIndex].id;
@@ -402,8 +402,8 @@ export default {
           .finally(() => {})
       } catch (error) {}
     },
-    deleteItemConfirm() {
-
+   async  deleteItemConfirm() {
+      await this.$axios.$get('/sanctum/csrf-cookie').then(response => {})
       let table_id = this.tabledata[this.editedIndex].id;
       try {
         this.$axios

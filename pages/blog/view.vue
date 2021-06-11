@@ -55,7 +55,10 @@ import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 export default {
   head: () => ({
-    title: 'Post View'
+    title: 'Blog View',
+    meta:[
+      { hid: 'Login', name: 'Login', content: 'Login Page' }
+    ],
   }),
   data: () => ({
     posts: {

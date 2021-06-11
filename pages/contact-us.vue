@@ -81,7 +81,10 @@
 <script>
 export default {
   head: () => ({
-    title: 'Contact Us'
+    title: 'Contack Us',
+    meta:[
+      { hid: 'Contack Us', name: 'Contack Us', content: 'Authors Contack Us feel free to email send some comments and suggestions' }
+    ],
   }),
 
   auth: false

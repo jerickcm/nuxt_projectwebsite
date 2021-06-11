@@ -239,7 +239,10 @@
 <script>
 export default {
   head: () => ({
-    title: 'Login'
+    title: 'About',
+    meta:[
+      { hid: 'About', name: 'About', content: 'Authors services and work-school affiliations' }
+    ],
   }),
   auth: false,
   data: () => ({

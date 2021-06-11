@@ -55,7 +55,10 @@ import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 export default {
   head: () => ({
-    title: 'Post View'
+    title: 'Post View ' ,
+    meta:[
+      { hid: 'Post', name: 'Post', content: 'Post Page' }
+    ],
   }),
   data: () => ({
     posts: {
@@ -66,19 +69,22 @@ export default {
     },
     pageload: true
   }),
-  mounted() {
+  async mounted() {
     console.log('mounted')
-    this.getposts()
+
   },
   async created() {
     this.slug = this.$route.query.slug
-    console.log(this.slug)
-    await this.$axios.$get('/sanctum/csrf-cookie').then(response => {})
+    this.getposts()
   },
   components: {},
   watch: {},
   methods: {
-    getposts() {
+
+    async  getposts() {
+
+      await this.$axios.$get('/sanctum/csrf-cookie').then(response => {})
+
       NProgress.start()
       let payload = new FormData()
       payload.append('slug', this.$route.query.slug)
