@@ -1,436 +1,488 @@
 <template>
-  <v-container fluid class="ma-0 pa-0">
-    <v-row>
-      <v-col
-        sm="12"
-        md="8"
-        lg="8"
-        class="mb-0 pb-0 col-md-8  col-lg-6 offset-md-2"
-      >
-        <v-skeleton-loader
-          elevation="2"
-          outlined
-          shaped
-          tile
-          class="pa-2 ma-2"
-          type="card"
-          v-if="pageload"
-        ></v-skeleton-loader>
-        <v-card
-          min-height="500vh"
-          v-else
-          outlined
-          shaped
-          tile
-          class="pa-1 ma-1"
-          :class="charge"
+  <v-container fluid class="grey ligthen-3 pa-0 ma-0" min-height="">
+    <v-sheet class="blue ligthen-3 pa-5 pt-10 pb-10" min-height="">
+      <v-card>
+        <v-dialog
+          persistent
+          v-model="dialog"
+          fullscreen
+          hide-overlay
+          transition="dialog-bottom-transition"
+          scrollable
         >
-          <h1 class="blue--text">{{ posts['title'] }}</h1>
+          <v-card tile>
+            <v-toolbar flat dark color="primary" max-height="50vh">
+              <v-btn icon dark @click="dialog = false">
+                <v-icon>mdi-close</v-icon>
+              </v-btn>
+              <v-toolbar-title>Settings</v-toolbar-title>
+              <v-spacer></v-spacer>
+              <v-toolbar-items>
+                <v-btn dark text @click="SaveEdited"> Save </v-btn>
+              </v-toolbar-items>
+            </v-toolbar>
+            <v-card-text>
+              <v-row>
+                <v-col>
+                  <v-text-field
+                    v-model="form_title"
+                    label="Title"
+                    @blur="$v.form_title.$touch()"
+                    @input="$v.form_title.$touch()"
+                  ></v-text-field>
+                  <template v-if="$v.form_title.$error">
+                    <div
+                      v-if="!$v.form_title.required"
+                      class="errorMessage red--text"
+                    >
+                      Title is required.
+                    </div>
+                  </template>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col>
+                  <v-select
+                    v-model="form_publish"
+                    :items="publishselection"
+                    item-value="value"
+                    item-text="text"
+                    label="Publish"
+                    @blur="$v.form_publish.$touch()"
+                  />
+                  <template v-if="$v.form_publish.$error">
+                    <p
+                      v-if="!$v.form_publish.required"
+                      class="errorMessage red--text"
+                    >
+                      Select Publish is required.
+                    </p>
+                  </template></v-col
+                >
+              </v-row>
 
-          <v-img height="250" :src="posts['image']"> </v-img>
-          <v-card-title>
-            <h2>Title : {{ posts['title'] }}</h2>
-          </v-card-title>
-          <v-card-text class="">
-            <span>Author : {{ posts['name'] }}</span> <br />
-            <span>Email : {{ posts['email'] }}</span
-            ><br />
-            <span>Date : {{ posts['human_date'] }}</span>
+              <v-row>
+                <v-col lg="4">
+                  <input
+                    type="file"
+                    id="file"
+                    ref="file"
+                    v-on:change="handleFileUpload()"
+                  />
+                  <v-card>
+                    <v-img v-if="image_preview" :src="image_preview"></v-img>
+                    <div v-else>
+                      <v-img v-if="form_image" :src="form_image"></v-img>
+                    </div>
+                  </v-card>
 
-            <v-sheet
-              color="grey lighten-5"
-              outlined
-              v-html="posts['content']"
-              class="ck-content pa-0 ma-1 pt-2 pb-2"
-            ></v-sheet>
-          </v-card-text>
-        </v-card>
-      </v-col>
-    </v-row>
+                  <label
+                    v-if="this.image_preview != '' || this.form_image != ''"
+                    onclick="return false"
+                    v-on:click="remove_image()"
+                    class="red--text"
+                    >Remove</label
+                  >
+                </v-col>
+                <v-spacer></v-spacer>
+              </v-row>
+              <v-row
+                ><v-col class="">
+                  <label for class="black--text">Content</label> <br />
+                  <client-only placeholder="loading...">
+                    <ckeditor-nuxt
+                      :config="editorConfig"
+                      v-model="form_content"
+                      @blur="$v.form_content.$touch()"
+                      @input="$v.form_content.$touch()"
+                      :error-messages="contentErrors"
+                      class=""
+                      style="height: 300px"
+                    />
+
+                    <template v-if="$v.form_content.$error">
+                      <div
+                        v-if="!$v.form_content.required"
+                        class="errorMessage red--text"
+                      >
+                        Content is required.
+                      </div>
+                    </template>
+                  </client-only></v-col
+                >
+              </v-row>
+            </v-card-text>
+
+            <div style="flex: 1 1 auto"></div>
+          </v-card>
+        </v-dialog>
+
+        <v-card-title>
+          Post Table
+          <v-spacer></v-spacer>
+          <v-text-field
+            v-model="search"
+            append-icon="mdi-magnify"
+            label="Search"
+            single-line
+            hide-details
+            @change="getDataFromApi"
+          ></v-text-field>
+        </v-card-title>
+        <v-data-table
+          :headers="headers"
+          :items="tabledata"
+          :options.sync="options"
+          :server-items-length="tabledata_total"
+          :loading="loading"
+          class="elevation-1"
+          :footer-props="{
+            'items-per-page-options': [5, 10, 20, 30, 40, 50]
+          }"
+        >
+          <template v-slot:top>
+            <v-dialog v-model="dialogDelete" max-width="500px">
+              <v-card>
+                <v-card-title class="text-h5"
+                  >Are you sure you want to delete this item?</v-card-title
+                >
+                <v-card-actions>
+                  <v-spacer></v-spacer>
+                  <v-btn color="blue darken-1" text @click="closeDelete"
+                    >Cancel</v-btn
+                  >
+                  <v-btn color="blue darken-1" text @click="deleteItemConfirm"
+                    >OK</v-btn
+                  >
+                  <v-spacer></v-spacer>
+                </v-card-actions>
+              </v-card>
+            </v-dialog>
+          </template>
+
+          <template v-slot:header.id="{ header }">
+            {{ header.text.toUpperCase() }}
+          </template>
+          <template v-slot:header.name="{ header }">
+            {{ header.text.toUpperCase() }}
+          </template>
+          <template v-slot:item.publish="{ item }">
+            {{ item.publish }}
+          </template>
+          <template v-slot:item.created_at="{ item }">
+            {{ item.created_at }}
+          </template>
+          <template v-slot:item.id="{ item }">
+            <v-icon small class="mr-2" @click="editItem(item)">
+              mdi-pencil
+            </v-icon>
+            <v-icon small @click="deleteItem(item)">
+              <!-- v-bind="attrs" v-on="on" -->
+              mdi-delete
+            </v-icon>
+          </template>
+        </v-data-table>
+      </v-card>
+    </v-sheet>
   </v-container>
 </template>
-
 <script>
+import { validationMixin } from 'vuelidate'
+import { required } from 'vuelidate/lib/validators'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
-export default {
-  head: () => ({
-    title: 'Post View ' ,
-    meta:[
-      { hid: 'Post', name: 'Post', content: 'Post Page' }
-    ],
-  }),
-  data: () => ({
-    posts: {
-      content: [],
-      image: '',
-      date: '',
-      author: ''
-    },
-    pageload: true
-  }),
-  async mounted() {
-    console.log('mounted')
 
+var timezone = process.env.TIMEZONE
+const dev = process.env.DEV_API
+const prod = process.env.PROD_API
+const url = process.env.NODE_ENV === 'development' ? dev : prod
+
+var timezone = process.env.TIMEZONE
+export default {
+  middleware: 'auth',
+  mixins: [validationMixin],
+
+  head: () => ({
+    title: 'Post Datatable'
+  }),
+
+  data: () => ({
+    headers: [
+      {
+        text: 'No',
+        align: 'start',
+        sortable: false,
+        value: 'no'
+      },
+      { text: 'Name', value: 'name' },
+
+      { text: 'Title', value: 'title' },
+      { text: 'Slug', value: 'slug' },
+      { text: 'Publish', value: 'publish' },
+      { text: 'Date / Time', value: 'created_at' },
+      { text: 'Action', value: 'id', sortable: false }
+    ],
+    form_content: '',
+    form_title: '',
+    form_publish: '',
+    dialog: false,
+    dialogDelete: false,
+    deletedialog: false,
+    editedIndex: -1,
+    search: '',
+    tabledata: [],
+    tabledata_total: 0,
+    loading: true,
+    options: {},
+
+    publishselection: [
+      {
+        value: 1,
+        text: 'Draft'
+      },
+      {
+        value: 2,
+        text: 'Publish'
+      }
+    ],
+    form_image: '',
+
+    image: '',
+    image_preview: '',
+    image_name: ''
+  }),
+  validations: {
+    form_content: { required },
+    form_title: { required },
+    form_publish: { required }
   },
   async created() {
-    this.slug = this.$route.query.slug
-    this.getposts()
+    this.timezone = timezone
+    this.editorConfig = {
+      simpleUpload: {
+        uploadUrl: url + '/' + 'api/ckeditor',
+        withCredentials: true,
+        headers: {
+          Accept: 'application/json',
+          Timezone: this.timezone,
+          'X-XSRF-TOKEN': this.$auth.$storage.getCookies()['XSRF-TOKEN']
+        }
+      }
+    }
   },
-  components: {},
-  watch: {},
+  components: {
+    'ckeditor-nuxt': () =>
+      import('@engrjerickcmangalus/ckeditor-nuxt-custom-build-simpleuploader')
+  },
+  computed: {
+    titleErrors() {
+      const errors = []
+      if (!this.$v.form_title.$dirty) return errors
+      !this.$v.form_title.required && errors.push('Title is required.')
+      return errors
+    },
+    contentErrors() {
+      const errors = []
+      if (!this.$v.form_content.$dirty) return errors
+      !this.$v.form_content.required && errors.push('Content is required.')
+      return errors
+    }
+  },
+  watch: {
+    options: {
+      handler() {
+        this.getDataFromApi()
+      },
+      deep: true
+    },
+    dialog(val) {
+      val || this.close()
+    },
+    dialogDelete(val) {
+      val || this.closeDelete()
+    }
+  },
+  mounted() {
+    this.getDataFromApi()
+  },
   methods: {
+    handleFileUpload(e) {
+      const file = this.$refs.file.files[0]
+      this.image_preview = URL.createObjectURL(file)
+      try {
+        this.image_name = this.$refs.file.files[0].name
+        this.form_image = this.$refs.file.files[0]
+      } catch (err) {
+        console.log(err)
+      }
+    },
+    remove_image() {
+      this.$refs.file.value = null
+      this.image_name = ''
+      this.image = ''
+      this.image_preview = ''
+      this.form_image = ''
+      return false
+    },
+    close() {
+      this.dialog = false
+      this.$nextTick(() => {
+        this.editedItem = Object.assign({}, this.defaultItem)
+        this.editedIndex = -1
+      })
+    },
 
-    async  getposts() {
+    closeDelete() {
+      this.dialogDelete = false
+      this.$nextTick(() => {
+        this.editedItem = Object.assign({}, this.defaultItem)
+        this.editedIndex = -1
+      })
+    },
+    editItem(item) {
+      this.form_title = this.tabledata[this.tabledata.indexOf(item)].title
+      this.form_image = this.tabledata[this.tabledata.indexOf(item)].image
+      this.form_content = this.tabledata[this.tabledata.indexOf(item)].content
 
-      await this.$axios.$get('/sanctum/csrf-cookie').then(response => {})
+      this.form_publish = this.tabledata[
+        this.tabledata.indexOf(item)
+      ].publishvalue
+      this.editedIndex = this.tabledata.indexOf(item)
+      this.dialog = true
+    },
 
+    deleteItem(item) {
+      this.editedIndex = this.tabledata.indexOf(item)
+      this.editedItem = Object.assign({}, item)
+      this.dialogDelete = true
+    },
+    SaveEdited() {
+      this.$axios.$get('/sanctum/csrf-cookie').then(response => {})
       NProgress.start()
       let payload = new FormData()
-      payload.append('slug', this.$route.query.slug)
-      NProgress.inc()
+
+      payload.append('post_id', this.tabledata[this.editedIndex].id)
+      payload.append('title', this.form_title)
+      payload.append('content', this.form_content)
+      payload.append('publish', this.form_publish)
+
+      // if (this.form_image) {
+      payload.append('image', this.form_image)
+      // }
+
       try {
         this.$axios
-          .$post('api/post/getbyslug', payload)
+          .$post('api/post/update', payload, {
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
+          })
           .then(res => {
-            this.posts = res.data[0]
+            this.tabledata[this.editedIndex].title = this.form_title
+            this.tabledata[this.editedIndex].content = this.form_content
+            this.tabledata[this.editedIndex].publish =
+              this.form_publish == 1 ? 'Draft' : 'Publish'
+
+            this.tabledata[this.editedIndex].publishvalue = this.form_publish
+
+            // if (this.form_image) {
+            this.tabledata[this.editedIndex].image = res.image
+            // }
+
+            this.dialog = false
+            this.form_publish = ''
+            this.image_preview = ''
+
             NProgress.done()
-            this.pageload = false
           })
           .catch(error => {
+            this.form_publish = ''
             NProgress.done()
-            this.pageload = false
           })
           .finally(() => {})
-      } catch (error) {
-        console.log('error')
-      }
+      } catch (error) {}
+    },
+    deleteItemConfirm() {
+      let payload = new FormData()
+      payload.append('post_id', this.tabledata[this.editedIndex].id)
+      try {
+        this.$axios
+          .$post('api/post/delete', payload)
+          .then(res => {})
+          .catch(error => {})
+          .finally(() => {})
+      } catch (error) {}
+      this.tabledata.splice(this.editedIndex, 1)
+      this.closeDelete()
+    },
+    getDataFromApi() {
+      this.loading = true
+      const { sortBy, sortDesc, page, itemsPerPage } = this.options
+
+      let payload = new FormData()
+      payload.append('sortDesc', sortDesc)
+      payload.append('sortBy', sortBy)
+      payload.append('page', page)
+      payload.append('itemsPerPage', itemsPerPage)
+      payload.append('search', this.search)
+
+      this.$axios.$get('/sanctum/csrf-cookie').then(response => {})
+      this.$axios
+        .$post('api/post/datatable', payload)
+        .then(res => {
+          var data = []
+          var rowcount = 1
+          if (page == 1) {
+            rowcount = 1
+          } else {
+            rowcount = (page - 1) * itemsPerPage + 1
+          }
+
+          for (const [key, value] of Object.entries(res.data)) {
+            data.push({
+              no: rowcount,
+              name: value.name,
+              id: value.id,
+              slug: value.slug,
+              title: value.title,
+              content: value.content,
+              publish: value.publish == 1 ? 'Draft' : 'Publish',
+              publishvalue: value.publish,
+              image: value.image,
+              created_at: value.human_date
+            })
+            rowcount++
+          }
+
+          this.tabledata = data
+          this.tabledata_total = res.total
+          this.loading = false
+        })
+        .catch(error => {
+          this.loading = false
+        })
+        .finally(() => {
+          this.loading = false
+        })
     }
   }
 }
 </script>
 <style scoped>
-:root {
-  --ck-color-mention-background: hsla(341, 100%, 30%, 0.1);
-  --ck-color-mention-text: hsl(341, 100%, 30%);
-  --ck-highlight-marker-blue: hsl(201, 97%, 72%);
-  --ck-highlight-marker-green: hsl(120, 93%, 68%);
-  --ck-highlight-marker-pink: hsl(345, 96%, 73%);
-  --ck-highlight-marker-yellow: hsl(60, 97%, 73%);
-  --ck-highlight-pen-green: hsl(112, 100%, 27%);
-  --ck-highlight-pen-red: hsl(0, 85%, 49%);
-  --ck-image-style-spacing: 1.5em;
-  --ck-todo-list-checkmark-size: 16px;
+ul.clean {
+  list-style: none !important;
+  list-style-type: none !important;
 }
-
-/* ckeditor5-highlight/theme/highlight.css */
-.ck-content .marker-yellow {
-  background-color: var(--ck-highlight-marker-yellow);
+.ck-editor__editable {
+  height: 350px;
 }
-/* ckeditor5-highlight/theme/highlight.css */
-.ck-content .marker-green {
-  background-color: var(--ck-highlight-marker-green);
+.ck.ck-content.ck-editor__editable {
+  height: 350px;
 }
-/* ckeditor5-highlight/theme/highlight.css */
-.ck-content .marker-pink {
-  background-color: var(--ck-highlight-marker-pink);
+.ck.ck-content.ck-editor__editable.ck-rounded-corners.ck-editor__editable_inline {
+  height: 350px;
 }
-/* ckeditor5-highlight/theme/highlight.css */
-.ck-content .marker-blue {
-  background-color: var(--ck-highlight-marker-blue);
-}
-/* ckeditor5-highlight/theme/highlight.css */
-.ck-content .pen-red {
-  color: var(--ck-highlight-pen-red);
-  background-color: transparent;
-}
-/* ckeditor5-highlight/theme/highlight.css */
-.ck-content .pen-green {
-  color: var(--ck-highlight-pen-green);
-  background-color: transparent;
-}
-/* ckeditor5-image/theme/imagestyle.css */
-.ck-content .image-style-side {
-  float: right;
-  margin-left: var(--ck-image-style-spacing);
-  max-width: 50%;
-}
-/* ckeditor5-image/theme/imagestyle.css */
-.ck-content .image-style-align-left {
-  float: left;
-  margin-right: var(--ck-image-style-spacing);
-}
-/* ckeditor5-image/theme/imagestyle.css */
-.ck-content .image-style-align-center {
-  margin-left: auto;
-  margin-right: auto;
-}
-/* ckeditor5-image/theme/imagestyle.css */
-.ck-content .image-style-align-right {
-  float: right;
-  margin-left: var(--ck-image-style-spacing);
-}
-/* ckeditor5-image/theme/image.css */
-.ck-content .image {
-  display: table;
-  clear: both;
-  text-align: center;
-  margin: 1em auto;
-}
-/* ckeditor5-image/theme/image.css */
-.ck-content .image img {
-  display: block;
-  margin: 0 auto;
-  max-width: 100%;
-  min-width: 50px;
-}
-/* ckeditor5-image/theme/imageresize.css */
-.ck-content .image.image_resized {
-  max-width: 100%;
-  display: block;
-  box-sizing: border-box;
-}
-/* ckeditor5-image/theme/imageresize.css */
-.ck-content .image.image_resized img {
-  width: 100%;
-}
-/* ckeditor5-image/theme/imageresize.css */
-.ck-content .image.image_resized > figcaption {
-  display: block;
-}
-/* ckeditor5-image/theme/imagecaption.css */
-.ck-content .image > figcaption {
-  display: table-caption;
-  caption-side: bottom;
-  word-break: break-word;
-  color: hsl(0, 0%, 20%);
-  background-color: hsl(0, 0%, 97%);
-  padding: 0.6em;
-  font-size: 0.75em;
-  outline-offset: -1px;
-}
-/* ckeditor5-basic-styles/theme/code.css */
-.ck-content code {
-  background-color: hsla(0, 0%, 78%, 0.3);
-  padding: 0.15em;
-  border-radius: 2px;
-}
-/* ckeditor5-font/theme/fontsize.css */
-.ck-content .text-tiny {
-  font-size: 0.7em;
-}
-/* ckeditor5-font/theme/fontsize.css */
-.ck-content .text-small {
-  font-size: 0.85em;
-}
-/* ckeditor5-font/theme/fontsize.css */
-.ck-content .text-big {
-  font-size: 1.4em;
-}
-/* ckeditor5-font/theme/fontsize.css */
-.ck-content .text-huge {
-  font-size: 1.8em;
-}
-/* ckeditor5-block-quote/theme/blockquote.css */
-.ck-content blockquote {
-  overflow: hidden;
-  padding-right: 1.5em;
-  padding-left: 1.5em;
-  margin-left: 0;
-  margin-right: 0;
-  font-style: italic;
-  border-left: solid 5px hsl(0, 0%, 80%);
-}
-/* ckeditor5-block-quote/theme/blockquote.css */
-.ck-content[dir='rtl'] blockquote {
-  border-left: 0;
-  border-right: solid 5px hsl(0, 0%, 80%);
-}
-/* ckeditor5-table/theme/table.css */
-.ck-content .table {
-  margin: 1em auto;
-  display: table;
-}
-/* ckeditor5-table/theme/table.css */
-.ck-content .table table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 100%;
-  height: 100%;
-  /* border: 1px double hsl(0, 0%, 70%); */
-}
-/* ckeditor5-table/theme/table.css */
-.ck-content .table table td,
-.ck-content .table table th {
-  min-width: 2em;
-  padding: 0.4em;
-  /* border: 1px solid hsl(0, 0%, 75%); */
-}
-/* ckeditor5-table/theme/table.css */
-.ck-content .table table th {
-  font-weight: bold;
-  background: hsla(0, 0%, 0%, 5%);
-}
-/* ckeditor5-table/theme/table.css */
-.ck-content[dir='rtl'] .table th {
-  text-align: right;
-}
-/* ckeditor5-table/theme/table.css */
-.ck-content[dir='ltr'] .table th {
-  text-align: left;
-}
-/* ckeditor5-page-break/theme/pagebreak.css */
-.ck-content .page-break {
-  position: relative;
-  clear: both;
-  padding: 5px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-/* ckeditor5-page-break/theme/pagebreak.css */
-.ck-content .page-break::after {
-  content: '';
-  position: absolute;
-  border-bottom: 2px dashed hsl(0, 0%, 77%);
-  width: 100%;
-}
-/* ckeditor5-page-break/theme/pagebreak.css */
-.ck-content .page-break__label {
-  position: relative;
-  z-index: 1;
-  padding: 0.3em 0.6em;
-  display: block;
-  text-transform: uppercase;
-  border: 1px solid hsl(0, 0%, 77%);
-  border-radius: 2px;
-  font-family: Helvetica, Arial, Tahoma, Verdana, Sans-Serif;
-  font-size: 0.75em;
-  font-weight: bold;
-  color: hsl(0, 0%, 20%);
-  background: hsl(0, 0%, 100%);
-  box-shadow: 2px 2px 1px hsla(0, 0%, 0%, 0.15);
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-/* ckeditor5-media-embed/theme/mediaembed.css */
-.ck-content .media {
-  clear: both;
-  margin: 1em 0;
-  display: block;
-  min-width: 15em;
-}
-/* ckeditor5-list/theme/todolist.css */
-.ck-content .todo-list {
-  list-style: none;
-}
-/* ckeditor5-list/theme/todolist.css */
-.ck-content .todo-list li {
-  margin-bottom: 5px;
-}
-/* ckeditor5-list/theme/todolist.css */
-.ck-content .todo-list li .todo-list {
-  margin-top: 5px;
-}
-/* ckeditor5-list/theme/todolist.css */
-.ck-content .todo-list .todo-list__label > input {
-  -webkit-appearance: none;
-  display: inline-block;
-  position: relative;
-  width: var(--ck-todo-list-checkmark-size);
-  height: var(--ck-todo-list-checkmark-size);
-  vertical-align: middle;
-  border: 0;
-  left: -25px;
-  margin-right: -15px;
-  right: 0;
-  margin-left: 0;
-}
-/* ckeditor5-list/theme/todolist.css */
-.ck-content .todo-list .todo-list__label > input::before {
-  display: block;
-  position: absolute;
-  box-sizing: border-box;
-  content: '';
-  width: 100%;
-  height: 100%;
-  border: 1px solid hsl(0, 0%, 20%);
-  border-radius: 2px;
-  transition: 250ms ease-in-out box-shadow, 250ms ease-in-out background,
-    250ms ease-in-out border;
-}
-/* ckeditor5-list/theme/todolist.css */
-.ck-content .todo-list .todo-list__label > input::after {
-  display: block;
-  position: absolute;
-  box-sizing: content-box;
-  pointer-events: none;
-  content: '';
-  left: calc(var(--ck-todo-list-checkmark-size) / 3);
-  top: calc(var(--ck-todo-list-checkmark-size) / 5.3);
-  width: calc(var(--ck-todo-list-checkmark-size) / 5.3);
-  height: calc(var(--ck-todo-list-checkmark-size) / 2.6);
-  border-style: solid;
-  border-color: transparent;
-  border-width: 0 calc(var(--ck-todo-list-checkmark-size) / 8)
-    calc(var(--ck-todo-list-checkmark-size) / 8) 0;
-  transform: rotate(45deg);
-}
-/* ckeditor5-list/theme/todolist.css */
-.ck-content .todo-list .todo-list__label > input[checked]::before {
-  background: hsl(126, 64%, 41%);
-  border-color: hsl(126, 64%, 41%);
-}
-/* ckeditor5-list/theme/todolist.css */
-.ck-content .todo-list .todo-list__label > input[checked]::after {
-  border-color: hsl(0, 0%, 100%);
-}
-/* ckeditor5-list/theme/todolist.css */
-.ck-content .todo-list .todo-list__label .todo-list__label__description {
-  vertical-align: middle;
-}
-/* ckeditor5-horizontal-line/theme/horizontalline.css */
-.ck-content hr {
-  margin: 15px 0;
-  height: 4px;
-  background: hsl(0, 0%, 87%);
-  border: 0;
-}
-/* ckeditor5-code-block/theme/codeblock.css */
-.ck-content pre {
-  padding: 1em;
-  color: hsl(0, 0%, 20.8%);
-  background: hsla(0, 0%, 78%, 0.3);
-  border: 1px solid hsl(0, 0%, 77%);
-  border-radius: 2px;
-  text-align: left;
-  direction: ltr;
-  tab-size: 4;
-  white-space: pre-wrap;
-  font-style: normal;
-  min-width: 200px;
-}
-/* ckeditor5-code-block/theme/codeblock.css */
-.ck-content pre code {
-  background: unset;
-  padding: 0;
-  border-radius: 0;
-}
-/* ckeditor5-mention/theme/mention.css */
-.ck-content .mention {
-  background: var(--ck-color-mention-background);
-  color: var(--ck-color-mention-text);
-}
-@media print {
-  /* ckeditor5-page-break/theme/pagebreak.css */
-  .ck-content .page-break {
-    padding: 0;
-  }
-  /* ckeditor5-page-break/theme/pagebreak.css */
-  .ck-content .page-break::after {
-    display: none;
-  }
+.ck.ck-content.ck-editor__editable_inline {
+  height: 350px;
 }
 </style>

@@ -81,10 +81,7 @@ Vue.use(Vuelidate)
 
 export default {
   head: () => ({
-    title: 'Login',
-    meta:[
-      { hid: 'Login', name: 'Login', content: 'Login Page' }
-    ],
+    title: 'Login'
   }),
   data: () => ({
     alert: 'd-none',

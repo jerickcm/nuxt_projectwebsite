@@ -166,12 +166,6 @@ import { greetMixins } from '~/mixins/greeting.js'
 
 import { navlist } from '~/mixins/navlist.js'
 export default {
-  head: () => ({
-    titleTemplate: '%s - Project Website',
-    meta:[
-      { hid: 'description', name: 'description', content: 'Content' }
-    ]
-  }),
   mixins: [greetMixins,navlist],
   data: () => ({
     myitems: [{ title: 'Dashboard', link: '/dashboard' }],

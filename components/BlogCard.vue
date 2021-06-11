@@ -24,7 +24,7 @@
           <nuxt-link
             class="nuxtlink"
             :to="{
-              path: 'blog/view',
+              path: 'blogs_view',
               query: { slug: item.slug }
             }"
           >
@@ -34,12 +34,12 @@
               </v-card-title> -->
             </v-img>
           </nuxt-link>
-          <!-- target="_blank" -->
+  <!-- target="_blank" -->
           <v-card-title>
             <nuxt-link
               class="nuxtlink"
               :to="{
-                path: 'blog/view',
+                path: 'blogs_view',
                 query: { slug: item.slug }
               }"
               >Title : {{ item.title }}
