@@ -24,7 +24,7 @@
           <nuxt-link
             class="nuxtlink"
             :to="{
-              path: 'blogs_view',
+              path: 'blog/view',
               query: { slug: item.slug }
             }"
           >
@@ -39,7 +39,7 @@
             <nuxt-link
               class="nuxtlink"
               :to="{
-                path: 'blogs_view',
+                path: 'blog/view',
                 query: { slug: item.slug }
               }"
               >Title : {{ item.title }}
