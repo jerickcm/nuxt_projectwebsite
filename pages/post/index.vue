@@ -22,11 +22,13 @@
 // import { greetMixins } from '~/mixins/greeting.js'
 
 export default {
-  // mixins: [greetMixins],
-
   head: () => ({
-    title: 'Post'
+    title: 'Post Articles',
+    meta:[
+      { hid: 'description', name: 'Profile', content: 'This is the the posts' }
+    ]
   }),
+
   data: () => ({
     loading: false
   }),

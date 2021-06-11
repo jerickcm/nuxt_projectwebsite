@@ -415,7 +415,7 @@ export default {
       this.tabledata.splice(this.editedIndex, 1)
       this.closeDelete()
     },
-    getDataFromApi() {
+    async getDataFromApi() {
       this.loading = true
       const { sortBy, sortDesc, page, itemsPerPage } = this.options
 
@@ -426,7 +426,7 @@ export default {
       payload.append('itemsPerPage', itemsPerPage)
       payload.append('search', this.search)
 
-      this.$axios.$get('/sanctum/csrf-cookie').then(response => {})
+      await this.$axios.$get('/sanctum/csrf-cookie').then(response => {})
       this.$axios
         .$post('api/blog/datatable', payload)
         .then(res => {

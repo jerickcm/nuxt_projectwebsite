@@ -184,7 +184,10 @@ import { mapGetters, mapActions } from 'vuex'
 
 export default {
   head: () => ({
-    title: 'Index'
+    title: 'Profile',
+    meta:[
+      { hid: 'description', name: 'Profile', content: 'This is the authors main profile' }
+    ]
   }),
   data: () => ({
     selectedItem: 0,

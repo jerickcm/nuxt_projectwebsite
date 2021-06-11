@@ -10,12 +10,12 @@ export const navlist = {
         {
           icons: 'mdi-post-outline',
           label: 'POST',
-          link: '/posts'
+          link: '/post'
         },
         {
           icons: 'mdi-blogger',
           label: 'BLOG',
-          link: '/blogs'
+          link: '/blog'
         },
         // {
         //   icons: 'mdi-cloud-check-outline',

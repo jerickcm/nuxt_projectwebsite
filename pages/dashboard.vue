@@ -8,8 +8,8 @@
         <v-btn to="post/create" slot="create_menu" class="green white--text"
           >Create Post</v-btn
         >
-        <v-btn to="post/view" slot="view_menu" class="blue white--text"
-          >View Post</v-btn
+        <v-btn to="post/manage" slot="view_menu" class="blue white--text"
+          >Manage Post</v-btn
         >
       </Dashboard>
      <Dashboard>
@@ -17,8 +17,8 @@
         <v-btn to="blog/create" slot="create_menu" class="green white--text"
           >Create BLOG</v-btn
         >
-        <v-btn to="blog/view" slot="view_menu" class="blue white--text"
-          >View BLOG</v-btn
+        <v-btn to="blog/manage" slot="view_menu" class="blue white--text"
+          >Manage BLOG</v-btn
         >
       </Dashboard>
       <!-- <Dashboard>
