@@ -3,9 +3,26 @@
     <!-- <v-row class=""> Featured Post </v-row> -->
     <v-row class="">
       <!-- <v-col lg="2" class="" min-height="450vh"> </v-col> -->
-      <v-col mg="12" lg="10" class="" min-height="450vh">
+      <v-col md="3" lg="9" class="" >
         <PostCard />
       </v-col>
+
+     <v-col md="3" lg="3" class="" min-height="450vh">
+       <v-card class="pa-4 ma-4" min-height="40vh" >
+          <v-card-title>Google ads</v-card-title>
+          <amp-ad width="100vw" height="320"
+              type="adsense"
+              data-ad-client="ca-pub-3213536425475125"
+              data-ad-slot="8148499203"
+              data-auto-format="rspv"
+              data-full-width="">
+            <div overflow=""></div>
+          </amp-ad>
+       </v-card>
+     </v-col>
+
+
+
       <!-- <v-col lg="2" class="" min-height="450vh">
         <v-sheet min-height="450vh" class="grey lighten-5">
           <v-card class="pa-1 ma-1">
@@ -26,6 +43,13 @@ export default {
     title: 'Post Articles',
     meta:[
       { hid: 'Posts', name: 'Posts', content: 'Post Article Page' }
+    ],
+    script: [
+      {
+        src: 'https://cdn.ampproject.org/v0/amp-ad-0.1.js',
+        'custom-element': 'amp-ad',
+        async: true
+      }
     ]
   }),
 
