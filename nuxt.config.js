@@ -91,7 +91,7 @@ export default {
           'https://www.googleapis.com/auth/gmail.metadata'
         ],
         clientId:
-          '14757956463-i7pn4r8arrel30q04rh9htcmnf1aoaot.apps.googleusercontent.com',
+          '635307167233-mii6gf2ho460gj11ui5tvb7teo1rcp3o.apps.googleusercontent.com',
         codeChallengeMethod: '',
         responseType: 'code'
         // grantType: "client_credentials",
@@ -99,9 +99,8 @@ export default {
       },
       laravelSanctum: {
         provider: 'laravel/sanctum',
-        //  url: 'http://localhost:8000',
+
         url: api,
-        // url: "http://back.api.test",
         endpoints: {
           login: {
             url: '/api/login'
