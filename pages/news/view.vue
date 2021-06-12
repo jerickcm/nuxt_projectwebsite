@@ -17,19 +17,18 @@
           v-if="pageload"
         ></v-skeleton-loader>
         <v-card
-          min-height="500vh"
+
           v-else
           outlined
           shaped
           tile
           class="pa-1 ma-1"
-          :class="charge"
         >
-          <h1 class="blue--text">{{ posts['title'] }}</h1>
+          <!-- <h1 class="blue--text">{{ posts['title'] }}</h1> -->
 
           <v-img height="250" :src="posts['image']"> </v-img>
           <v-card-title>
-            <h2>Title : {{ posts['title'] }}</h2>
+            <!-- <h2>Title : {{ posts['title'] }}</h2> -->
           </v-card-title>
           <v-card-text class="">
             <span>Author : {{ posts['name'] }}</span> <br />
@@ -55,7 +54,7 @@ import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 export default {
   head: () => ({
-    title: 'Post View'
+    // title: 'Post View'
   }),
   data: () => ({
     posts: {
@@ -86,7 +85,7 @@ export default {
       NProgress.inc()
       try {
         this.$axios
-          .$get(`api/blog/${slug}`, payload)
+          .$get(`api/news/${slug}`, payload)
           .then(res => {
             this.posts = res.data[0]
             NProgress.done()
