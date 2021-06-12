@@ -1,30 +1,33 @@
 <template>
   <v-app dark>
     <v-app-bar fixed app class="white">
-      <v-app-bar-nav-icon
-        @click.stop="rightDrawer = !rightDrawer"
-        class="hidden-md-and-up"
-      />
+
+      <v-sheet color="white" class="hidden-md-and-up font-kalamreg " @click.stop="rightDrawer = !rightDrawer">
+        <!-- <v-app-bar-nav-icon/> -->
+        <!-- <label for="" class="font-lulu mt-1 pt-1">Menu</label> -->
+        <!-- <v-icon x-large color="green">mdi-code-json</v-icon> -->
+
+        <v-icon color="green" x-large >mdi-message-arrow-left</v-icon> Menu
+
+
+      </v-sheet >
+
       <v-spacer />
+
+
       <div class="hidden-sm-and-down">
+
 
         <v-icon color="blue" @click.stop="rightDrawer = !rightDrawer"
           >mdi-code-json</v-icon
         >
+
 
         <v-btn plain text tile class="blue--text pa-1 ma-1 mr-10" to="/">
           -- Project Website
           <v-icon color="blue">mdi-laptop</v-icon></v-btn
         >
 
-        <!--
-
-        <v-btn to="/news" plain text tile rounded class="white pa-1 ma-1">
-          <v-icon>mdi-newspaper-variant-multiple-outline</v-icon>
-           - NEWS
-        </v-btn>
-
-        -->
         <v-btn
             v-for="(item, i) in navlist"
             :key="i"
@@ -276,5 +279,19 @@ export default {
 }
 .fs-4 {
   font-size: 4rem;
+}
+.font-lulu {
+  font-family: 'Lulu', sans-serif;
+}
+.font-halimun {
+  font-family: 'Halimun', sans-serif;
+}
+
+.font-kalamreg {
+  font-family: 'Kalam-Regular', sans-serif;
+  line-height: 1.2;
+}
+.font-barlowreg {
+  font-family: 'Barlow-Regular', sans-serif;
 }
 </style>
