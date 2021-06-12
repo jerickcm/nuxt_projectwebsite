@@ -28,13 +28,13 @@ export default {
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/nuxt.ico' }],
-    script: [
-      {
-        src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
-        'data-ad-client': 'ca-pub-3213536425475125',
-        async: true
-      }
-    ]
+    // script: [
+    //   {
+    //     src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
+    //     'data-ad-client': 'ca-pub-3213536425475125',
+    //     async: true
+    //   }
+    // ]
   },
   env: {
     API_URL: api
