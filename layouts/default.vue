@@ -55,7 +55,7 @@
       </div>
       <v-spacer />
       <div class="hidden-sm-and-down">
-
+        <!--
         <v-btn
           v-if="!$auth.loggedIn"
           to="/login"
@@ -64,10 +64,9 @@
           tile
           rounded
           class="white pa-1 ma-1"
-          ><v-icon>mdi-login-variant</v-icon>Login</v-btn
-        >
+          ><v-icon>mdi-login-variant</v-icon>Login</v-btn>
 
-        <!-- <v-btn
+        <v-btn
           v-if="!$auth.loggedIn"
           to="/register"
           plain

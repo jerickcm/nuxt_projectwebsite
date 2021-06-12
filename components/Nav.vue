@@ -38,7 +38,7 @@
             </v-list-item-content>
           </v-list-item>
 
-
+          <!--
           <v-list-item to="/login" v-if="!$auth.loggedIn">
             <v-list-item-action>
               <v-icon>mdi-login-variant</v-icon>
@@ -47,7 +47,7 @@
               <v-list-item-title> Login</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-
+        -->
 
           <v-list-item to="/dashboard" v-if="$auth.loggedIn">
             <v-list-item-action>

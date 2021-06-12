@@ -82,18 +82,19 @@ export default {
     // localStorage: {
     //   prefix: 'auth.'
     // },
+
     strategies: {
       google: {
         scope: [
-          'openid',
+        //   'openid',
           'profile',
           'email',
-          'https://www.googleapis.com/auth/gmail.metadata'
+        //   'https://www.googleapis.com/auth/gmail.metadata'
         ],
         clientId:
           '635307167233-mii6gf2ho460gj11ui5tvb7teo1rcp3o.apps.googleusercontent.com',
         codeChallengeMethod: '',
-        responseType: 'code'
+        // responseType: 'code'
         // grantType: "client_credentials",
         // redirectUri: "http://localhost"
       },

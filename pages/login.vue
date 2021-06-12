@@ -137,7 +137,10 @@ export default {
   //  auth: 'guest',
   methods: {
     loginwithgoogle() {
-      this.$auth.loginWith('google')
+      // this.$auth.loginWith('google')
+      this.$auth.loginWith('google', { params: { prompt: "select_account" } }).then(() => {
+          console.log("Logged in!");
+      });
     },
     clear() {
       this.form.email = ''

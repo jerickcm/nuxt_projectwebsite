@@ -208,7 +208,12 @@ export default {
   async created() {},
   async mounted() {
     await this.$axios.$get('/sanctum/csrf-cookie')
-    this.fetchQuote()
+    try {
+       this.fetchQuote()
+    } catch (error) {
+      console.log(error)
+    }
+
   }
 }
 </script>
