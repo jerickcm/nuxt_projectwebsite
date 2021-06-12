@@ -4,7 +4,7 @@
       <form class="white pa-5" action="">
         <v-row
           ><v-col>
-            <v-btn color="primary" depressed> POST </v-btn>
+                 <v-btn color="primary" depressed to="/dashboard"> BACK </v-btn>
           </v-col></v-row
         >
 
@@ -122,6 +122,7 @@ export default {
   middleware: 'auth',
   mixins: [validationMixin],
   data: () => ({
+    image_id:'',
     url_backend: '',
     form_content: '',
     form_title: '',
@@ -152,6 +153,7 @@ export default {
       import('@engrjerickcmangalus/ckeditor-nuxt-custom-build-simpleuploader')
   },
   async created() {
+    this.image_id = 'post' +'-' + new Date().getTime();
     this.timezone = timezone
     this.editorConfig = {
       simpleUpload: {
@@ -160,6 +162,7 @@ export default {
         headers: {
           Accept: 'application/json',
           Timezone: this.timezone,
+          identifier: this.image_id,
           'X-XSRF-TOKEN': this.$auth.$storage.getCookies()['XSRF-TOKEN']
         }
       }
@@ -168,6 +171,7 @@ export default {
     await this.$axios.$get('/sanctum/csrf-cookie')
   },
   computed: {
+
     titleErrors() {
       const errors = []
       if (!this.$v.form_title.$dirty) return errors
@@ -205,13 +209,16 @@ export default {
         this.$axios.$get('/sanctum/csrf-cookie')
         this.$toast.success('Sending')
         let payload = new FormData()
+
+
+        payload.append('ckeditor_log',  this.image_id)
         payload.append('publish', this.form_publish)
         payload.append('title', this.form_title)
         payload.append('content', this.form_content)
         payload.append('image', this.image)
         payload.append('image_name', this.image_name)
         this.$axios
-          .post('/api/create-post', payload, {
+          .post('/api/post/create', payload, {
             headers: {
               'Content-Type': 'multipart/form-data'
             }

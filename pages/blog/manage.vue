@@ -137,7 +137,7 @@
           :loading="loading"
           class="elevation-1"
           :footer-props="{
-            'items-per-page-options': [5, 10, 20, 30, 40, 50]
+            'items-per-page-options': [5, 10, 20, 30, 40, 50],
           }"
         >
           <template v-slot:top>
@@ -203,7 +203,7 @@ export default {
   mixins: [validationMixin],
 
   head: () => ({
-    title: 'Post Datatable'
+    title: 'Post Datatable',
   }),
 
   data: () => ({
@@ -212,7 +212,7 @@ export default {
         text: 'No',
         align: 'start',
         sortable: false,
-        value: 'no'
+        value: 'no',
       },
       { text: 'Name', value: 'name' },
 
@@ -220,7 +220,7 @@ export default {
       { text: 'Slug', value: 'slug' },
       { text: 'Publish', value: 'publish' },
       { text: 'Date / Time', value: 'created_at' },
-      { text: 'Action', value: 'id', sortable: false }
+      { text: 'Action', value: 'id', sortable: false },
     ],
     form_content: '',
     form_title: '',
@@ -238,23 +238,23 @@ export default {
     publishselection: [
       {
         value: 1,
-        text: 'Draft'
+        text: 'Draft',
       },
       {
         value: 2,
-        text: 'Publish'
-      }
+        text: 'Publish',
+      },
     ],
     form_image: '',
 
     image: '',
     image_preview: '',
-    image_name: ''
+    image_name: '',
   }),
   validations: {
     form_content: { required },
     form_title: { required },
-    form_publish: { required }
+    form_publish: { required },
   },
   async created() {
     this.timezone = timezone
@@ -265,14 +265,15 @@ export default {
         headers: {
           Accept: 'application/json',
           Timezone: this.timezone,
-          'X-XSRF-TOKEN': this.$auth.$storage.getCookies()['XSRF-TOKEN']
-        }
-      }
+          identifier: this.image_id,
+          'X-XSRF-TOKEN': this.$auth.$storage.getCookies()['XSRF-TOKEN'],
+        },
+      },
     }
   },
   components: {
     'ckeditor-nuxt': () =>
-      import('@engrjerickcmangalus/ckeditor-nuxt-custom-build-simpleuploader')
+      import('@engrjerickcmangalus/ckeditor-nuxt-custom-build-simpleuploader'),
   },
   computed: {
     titleErrors() {
@@ -286,21 +287,21 @@ export default {
       if (!this.$v.form_content.$dirty) return errors
       !this.$v.form_content.required && errors.push('Content is required.')
       return errors
-    }
+    },
   },
   watch: {
     options: {
       handler() {
         this.getDataFromApi()
       },
-      deep: true
+      deep: true,
     },
     dialog(val) {
       val || this.close()
     },
     dialogDelete(val) {
       val || this.closeDelete()
-    }
+    },
   },
   mounted() {
     this.getDataFromApi()
@@ -340,14 +341,14 @@ export default {
       })
     },
     editItem(item) {
-        this.$axios.$get('/sanctum/csrf-cookie').then(response => {})
+
+      this.image_id = this.tabledata[this.tabledata.indexOf(item)].ckeditor_log
       this.form_title = this.tabledata[this.tabledata.indexOf(item)].title
       this.form_image = this.tabledata[this.tabledata.indexOf(item)].image
       this.form_content = this.tabledata[this.tabledata.indexOf(item)].content
 
-      this.form_publish = this.tabledata[
-        this.tabledata.indexOf(item)
-      ].publishvalue
+      this.form_publish =
+        this.tabledata[this.tabledata.indexOf(item)].publishvalue
       this.editedIndex = this.tabledata.indexOf(item)
       this.dialog = true
     },
@@ -357,11 +358,12 @@ export default {
       this.editedItem = Object.assign({}, item)
       this.dialogDelete = true
     },
-   async   SaveEdited() {
-      await this.$axios.$get('/sanctum/csrf-cookie').then(response => {})
+    async SaveEdited() {
+      await this.$axios.$get('/sanctum/csrf-cookie').then((response) => {})
       NProgress.start()
       let payload = new FormData()
-      let table_id = this.tabledata[this.editedIndex].id;
+      let table_id = this.tabledata[this.editedIndex].id
+
       payload.append('post_id', this.tabledata[this.editedIndex].id)
       payload.append('title', this.form_title)
       payload.append('content', this.form_content)
@@ -373,11 +375,10 @@ export default {
           // .$post('api/post/update', payload, {
           .$post(`api/blog/update/${table_id}`, payload, {
             headers: {
-              'Content-Type': 'multipart/form-data'
-            }
+              'Content-Type': 'multipart/form-data',
+            },
           })
-          .then(res => {
-
+          .then((res) => {
             this.tabledata[this.editedIndex].title = this.form_title
             this.tabledata[this.editedIndex].content = this.form_content
             this.tabledata[this.editedIndex].publish =
@@ -395,21 +396,21 @@ export default {
 
             NProgress.done()
           })
-          .catch(error => {
+          .catch((error) => {
             this.form_publish = ''
             NProgress.done()
           })
           .finally(() => {})
       } catch (error) {}
     },
-   async  deleteItemConfirm() {
-      await this.$axios.$get('/sanctum/csrf-cookie').then(response => {})
-      let table_id = this.tabledata[this.editedIndex].id;
+    async deleteItemConfirm() {
+      await this.$axios.$get('/sanctum/csrf-cookie').then((response) => {})
+      let table_id = this.tabledata[this.editedIndex].id
       try {
         this.$axios
           .$delete(`api/blog/delete/${table_id}`)
-          .then(res => {})
-          .catch(error => {})
+          .then((res) => {})
+          .catch((error) => {})
           .finally(() => {})
       } catch (error) {}
       this.tabledata.splice(this.editedIndex, 1)
@@ -426,10 +427,10 @@ export default {
       payload.append('itemsPerPage', itemsPerPage)
       payload.append('search', this.search)
 
-      await this.$axios.$get('/sanctum/csrf-cookie').then(response => {})
+      await this.$axios.$get('/sanctum/csrf-cookie').then((response) => {})
       this.$axios
         .$post('api/blog/datatable', payload)
-        .then(res => {
+        .then((res) => {
           var data = []
           var rowcount = 1
           if (page == 1) {
@@ -449,7 +450,8 @@ export default {
               publish: value.publish == 1 ? 'Draft' : 'Publish',
               publishvalue: value.publish,
               image: value.image,
-              created_at: value.human_date
+              created_at: value.human_date,
+              ckeditor_log: value.ckeditor_log,
             })
             rowcount++
           }
@@ -458,14 +460,14 @@ export default {
           this.tabledata_total = res.total
           this.loading = false
         })
-        .catch(error => {
+        .catch((error) => {
           this.loading = false
         })
         .finally(() => {
           this.loading = false
         })
-    }
-  }
+    },
+  },
 }
 </script>
 <style scoped>

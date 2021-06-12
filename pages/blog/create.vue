@@ -121,6 +121,7 @@ export default {
   middleware: 'auth',
   mixins: [validationMixin],
   data: () => ({
+        image_id:'',
     url_backend: '',
     form_content: '',
     form_title: '',
@@ -152,6 +153,7 @@ export default {
   },
   async created() {
     this.timezone = timezone
+    this.image_id = 'blog' +'-' + new Date().getTime();
     this.editorConfig = {
       simpleUpload: {
         uploadUrl: url + '/' + 'api/ckeditor',
@@ -159,6 +161,7 @@ export default {
         headers: {
           Accept: 'application/json',
           Timezone: this.timezone,
+           identifier: this.image_id,
           'X-XSRF-TOKEN': this.$auth.$storage.getCookies()['XSRF-TOKEN']
         }
       }
@@ -204,6 +207,7 @@ export default {
         this.$axios.$get('/sanctum/csrf-cookie')
         this.$toast.success('Sending')
         let payload = new FormData()
+        payload.append('ckeditor_log',  this.image_id)
         payload.append('publish', this.form_publish)
         payload.append('title', this.form_title)
         payload.append('content', this.form_content)
