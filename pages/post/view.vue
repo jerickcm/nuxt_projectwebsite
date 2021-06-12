@@ -17,13 +17,13 @@
           v-if="pageload"
         ></v-skeleton-loader>
         <v-card
-          min-height="500vh"
+
           v-else
           outlined
           shaped
           tile
           class="pa-1 ma-1"
-          :class="charge"
+
         >
           <h1 class="blue--text">{{ posts['title'] }}</h1>
 
@@ -54,9 +54,7 @@
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 export default {
-  head: () => ({
-    title: 'Post View'
-  }),
+
   data: () => ({
     posts: {
       content: [],
@@ -64,41 +62,93 @@ export default {
       date: '',
       author: ''
     },
+    title:'',
     pageload: true
   }),
+   head () {
+     return {
+        title: 'Post: # '+ this.title,
+        meta:[{
+            hid:'',
+            name:'',
+            content:'',
+        }]
+     }
+   },
   mounted() {
     console.log('mounted')
-    this.getposts()
+    // this.getposts()
+  },
+  async asyncData({$axios,error,params}){
+    // console.log(params);
+
+    // await $axios.$get('/sanctum/csrf-cookie')
+    // let  response = await  $axios.$get(`api/post/slug/${$route.query.slug}`)
+    // this.title = response.data[0].title;
+
+  //    console.log('asyncData')
+  //       await $axios.$get('/sanctum/csrf-cookie')
+  //   // try {
+  //   //   // console.log(this.$route.query.slug)
+  //   //   // const{ data } = $axios.$get(`api/post/slug/${this.$route.query.slug}`)
+  //   //   // console.log(data)
+  //   //   return {
+  //   //     events:data
+  //   //   }
+  //   // } catch (e) {
+  //   //   console.log('error')
+  //   // }
   },
   async created() {
-    this.slug = this.$route.query.slug
+    // console.log('created')
+    // console.log( this.$route.query.slug)
+    NProgress.start()
+    NProgress.inc()
+    await this.$axios.$get('/sanctum/csrf-cookie')
+    let  response = await  this.$axios.$get(`api/post/slug/${this.$route.query.slug}`)
+    this.title = response.data[0].title;
+    NProgress.done()
+    this.pageload = false
+    this.slug = this.$route.query.slug,
+    this.posts = response.data[0];
     console.log(this.slug)
-    await this.$axios.$get('/sanctum/csrf-cookie').then(response => {})
   },
   components: {},
   watch: {},
   methods: {
-    getposts() {
-      NProgress.start()
-      let payload = new FormData()
-      payload.append('slug', this.$route.query.slug)
-      NProgress.inc()
-      try {
-        this.$axios
-          .$post('api/post/getbyslug', payload)
-          .then(res => {
-            this.posts = res.data[0]
-            NProgress.done()
-            this.pageload = false
-          })
-          .catch(error => {
-            NProgress.done()
-            this.pageload = false
-          })
-          .finally(() => {})
-      } catch (error) {
-        console.log('error')
-      }
+   async getposts() {
+
+      // NProgress.start()
+      // NProgress.inc()
+      // await this.$axios.$get('/sanctum/csrf-cookie')
+      // let  response = await  this.$axios.$get(`api/post/slug/${this.$route.query.slug}`)
+      // this.title = response.data[0].title;
+      // NProgress.done()
+      // this.pageload = false
+      // this.slug = this.$route.query.slug,
+      // this.posts = response.data[0];
+      // console.log(this.slug)
+
+      // NProgress.start()
+      // let payload = new FormData()
+      // payload.append('slug', this.$route.query.slug)
+      // NProgress.inc()
+      // try {
+      //   this.$axios
+      //     .$post('api/post/getbyslug', payload)
+      //     .then(res => {
+      //       this.posts = res.data[0]
+      //       NProgress.done()
+      //       this.pageload = false
+      //     })
+      //     .catch(error => {
+      //       NProgress.done()
+      //       this.pageload = false
+      //     })
+      //     .finally(() => {})
+      // } catch (error) {
+      //   console.log('error')
+      // }
     }
   }
 }
