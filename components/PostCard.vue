@@ -100,7 +100,7 @@
             :disabled="disable_next"
             :class="disable_color"
           >
-            Next Post
+             Next Article
           </v-btn>
         </v-card>
       </v-col>
