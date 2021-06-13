@@ -16,15 +16,7 @@
           type="card"
           v-if="pageload"
         ></v-skeleton-loader>
-        <v-card
-          min-height="500vh"
-          v-else
-          outlined
-          shaped
-          tile
-          class="pa-1 ma-1"
-          :class="charge"
-        >
+        <v-card v-else outlined shaped tile class="pa-1 ma-1" :class="charge">
           <h1 class="blue--text">{{ posts['title'] }}</h1>
 
           <v-img height="250" :src="posts['image']"> </v-img>
@@ -77,12 +69,12 @@ export default {
     pageload: true
   }),
   async created() {
-    NProgress.start()
-    NProgress.inc()
+    // NProgress.start()
+    // NProgress.inc()
     await this.$axios.$get('/sanctum/csrf-cookie')
     let response = await this.$axios.$get(`api/blog/${this.$route.query.slug}`)
     this.title = response.data[0].title
-    NProgress.done()
+    // NProgress.done()
     this.pageload = false
     this.slug = this.$route.query.slug
     this.posts = response.data[0]

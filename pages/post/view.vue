@@ -73,14 +73,14 @@ export default {
   },
   async asyncData({ $axios, error, params }) {},
   async created() {
-    NProgress.start()
-    NProgress.inc()
+    // NProgress.start()
+    // NProgress.inc()
     await this.$axios.$get('/sanctum/csrf-cookie')
     let response = await this.$axios.$get(
       `api/post/slug/${this.$route.query.slug}`
     )
     this.title = response.data[0].title
-    NProgress.done()
+    // NProgress.done()
     this.pageload = false
     this.slug = this.$route.query.slug
     this.posts = response.data[0]
