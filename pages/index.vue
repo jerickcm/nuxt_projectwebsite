@@ -102,7 +102,7 @@
             </v-row>
           </v-container>
         </v-sheet>
-      </v-col>
+      </v-col>=
     </v-row>
     <v-row>
       <v-col xs="12" sm="12" lg="12" class="ma-0 pa-0">
