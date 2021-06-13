@@ -104,7 +104,7 @@
       </div>
       <v-spacer />
     </v-app-bar>
-    <v-main class="padding-bottom:20vh">
+    <v-main class="padding-bottom:25vh">
       <!-- <v-container fluid class="pa-0"> -->
         <nuxt />
       <!-- </v-container> -->
@@ -122,6 +122,12 @@
       class="black lighten-4"
       style="margin-top:50vh"
     >
+     <v-sheet min-height="7vh" class="black pa-1 ma-1">
+        <label for="" class="grey--text fs-0-6">DNS by:</label>
+        <a href="https://domains.google/">
+        <v-img width="100px" src="/images/google domain.svg"></v-img>
+        </a>
+      </v-sheet>
       <!-- min-height="15vh" -->
       <!-- min-height="10vh" -->
       <v-spacer></v-spacer>
@@ -157,6 +163,14 @@
         >
       </div>
       <v-spacer></v-spacer>
+
+      <v-sheet  min-height="7vh" class="black  pa-1 ma-1">
+        <label for="" class="grey--text fs-0-6">Secured by:</label>
+        <a href="https://letsencrypt.org/">
+          <v-img width="100px" src="/images/letsencrypt-logo-horizontal.svg"></v-img>
+        </a>
+      </v-sheet >
+
     </v-footer>
   </v-app>
 </template>
