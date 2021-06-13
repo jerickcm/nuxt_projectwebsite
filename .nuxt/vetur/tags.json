@@ -1,0 +1,29 @@
+{
+  "BlogCard": {
+    "description": "Auto imported from components/BlogCard.vue"
+  },
+  "Dashboard": {
+    "description": "Auto imported from components/Dashboard.vue"
+  },
+  "DashTitle": {
+    "description": "Auto imported from components/DashTitle.vue"
+  },
+  "EventCard": {
+    "description": "Auto imported from components/EventCard.vue"
+  },
+  "Nav": {
+    "description": "Auto imported from components/Nav.vue"
+  },
+  "NewsCard": {
+    "description": "Auto imported from components/NewsCard.vue"
+  },
+  "PostCard": {
+    "description": "Auto imported from components/PostCard.vue"
+  },
+  "Template": {
+    "description": "Auto imported from components/Template.vue"
+  },
+  "VuetifyLogo": {
+    "description": "Auto imported from components/VuetifyLogo.vue"
+  }
+}
