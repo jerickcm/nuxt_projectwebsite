@@ -200,7 +200,7 @@ export async function setContext (app, context) {
       payload: context.payload,
       error: context.error,
       base: app.router.options.base,
-      env: {"API_URL":"http://back.api.test:3001","TIMEZONE":"Asia/Singapore","DEV_API":"http://back.api.test:3001","PROD_API":"http://backend.inhinyeru.com"}
+      env: {"API_URL":"http://back.api.test:3001","TIMEZONE":"Asia/Singapore","DEV_API":"http://back.api.test:3001","PROD_API":"https://backend.inhinyeru.com"}
     }
     // Only set once
 

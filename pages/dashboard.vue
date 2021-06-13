@@ -30,6 +30,16 @@
           >View NEWS</v-btn
         >
       </Dashboard>
+
+         <Dashboard>
+        <h2 slot="menu_name">QUOTES MENU</h2>
+        <v-btn to="quotes/create" slot="create_menu" class="green white--text"
+          >Create QUOTES</v-btn
+        >
+        <v-btn to="quotes/manage" slot="view_menu" class="blue white--text"
+          >View QUOTES</v-btn
+        >
+      </Dashboard>
       <!-- <Dashboard>
         <h2 slot="menu_name">NEWS MENU</h2>
         <v-btn to="dash/create" slot="create_menu" class="green white--text"

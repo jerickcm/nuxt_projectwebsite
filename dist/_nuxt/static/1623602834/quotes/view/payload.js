@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/quotes/view", {data:[{}],fetch:{},mutations:[]});
