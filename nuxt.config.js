@@ -158,7 +158,7 @@ export default {
     // host: '0.0.0.0', // default: localhost,
     // timing: falseY
   },
-  // target: 'static'
+  target: 'static'
 }
 
 // Note that Vuetify 1.5.x is handled by @nuxtjs/vuetify@0.x.x
