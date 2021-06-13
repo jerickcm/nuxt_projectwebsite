@@ -96,14 +96,15 @@
                 lg="12"
                 class="font-avenir fs-1-4 text-center"
               >
-                The darkness in programming is when you fix it you're happy,
-                when you can fix it long enough you are frustrated.
+                <!-- The darkness in programming is when you fix it you're happy,
+                when you can fix it long enough you are frustrated. -->
               </v-col>
             </v-row>
           </v-container>
         </v-sheet>
-      </v-col>=
+      </v-col>
     </v-row>
+
     <v-row>
       <v-col xs="12" sm="12" lg="12" class="ma-0 pa-0">
         <v-sheet class="grey lighten-1" elevation="2" min-height="30vh">
