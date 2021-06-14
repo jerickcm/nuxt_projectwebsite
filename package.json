@@ -1,5 +1,5 @@
 {
-  "name": "Project Website",
+  "name": "Project-website",
   "version": "1.0.2",
   "private": true,
   "scripts": {
@@ -17,6 +17,7 @@
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/robots": "^2.5.0",
     "core-js": "^3.14.0",
+    "juice": "^8.0.0",
     "nprogress": "^0.2.0",
     "nuxt": "^2.15.3",
     "vuelidate": "^0.7.6",

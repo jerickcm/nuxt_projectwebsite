@@ -1,27 +1,20 @@
 <template>
   <v-app dark>
     <v-app-bar fixed app class="white">
-
-      <v-sheet color="white" class="hidden-md-and-up font-kalamreg " @click.stop="rightDrawer = !rightDrawer">
-        <!-- <v-app-bar-nav-icon/> -->
-        <!-- <label for="" class="font-lulu mt-1 pt-1">Menu</label> -->
-        <!-- <v-icon x-large color="green">mdi-code-json</v-icon> -->
-
-        <v-icon color="green" x-large >mdi-message-arrow-left</v-icon> Menu
-
-
-      </v-sheet >
+      <v-sheet
+        color="white"
+        class="hidden-md-and-up font-kalamreg"
+        @click.stop="rightDrawer = !rightDrawer"
+      >
+        <v-icon color="green" x-large>mdi-message-arrow-left</v-icon> Menu
+      </v-sheet>
 
       <v-spacer />
 
-
       <div class="hidden-sm-and-down">
-
-
         <v-icon color="blue" @click.stop="rightDrawer = !rightDrawer"
           >mdi-code-json</v-icon
         >
-
 
         <v-btn plain text tile class="blue--text pa-1 ma-1 mr-10" to="/">
           -- Project Website
@@ -29,54 +22,20 @@
         >
 
         <v-btn
-            v-for="(item, i) in navlist"
-            :key="i"
-            :to="item.link"
-            plain text tile rounded class="white pa-1 ma-1"
-          >
-          <v-icon>{{item.icons}}</v-icon> {{item.label}}
+          v-for="(item, i) in navlist"
+          :key="i"
+          :to="item.link"
+          plain
+          text
+          tile
+          rounded
+          class="white pa-1 ma-1"
+        >
+          <v-icon>{{ item.icons }}</v-icon> {{ item.label }}
         </v-btn>
-
-        <!-- <v-btn to="/posts" plain text tile rounded class="white pa-1 ma-1"
-          ><v-icon>mdi-post-outline</v-icon> POST</v-btn
-        > -->
-
-        <!--
-        <v-btn to="/blog" plain text tile rounded class="white pa-1 ma-1"
-          ><v-icon>mdi-blogger</v-icon>BLOG</v-btn
-        >
-        <v-btn to="/technology" plain text tile rounded class="white pa-1 ma-1"
-          ><v-icon>mdi-cloud-check-outline</v-icon> TECHNOLOGY</v-btn
-        >
-        <v-btn to="/tutorials" plain text tile rounded class="white pa-1 ma-1"
-          ><v-icon>mdi-cast-education</v-icon> TUTORIALS
-          </v-btn>
-              -->
       </div>
       <v-spacer />
       <div class="hidden-sm-and-down">
-        <!--
-        <v-btn
-          v-if="!$auth.loggedIn"
-          to="/login"
-          plain
-          text
-          tile
-          rounded
-          class="white pa-1 ma-1"
-          ><v-icon>mdi-login-variant</v-icon>Login</v-btn>
-
-        <v-btn
-          v-if="!$auth.loggedIn"
-          to="/register"
-          plain
-          text
-          tile
-          rounded
-          class="white pa-1 ma-1"
-          ><v-icon>mdi-account-plus-outline </v-icon> - Register</v-btn
-        > -->
-
         <v-btn
           v-if="$auth.loggedIn"
           plain
@@ -104,9 +63,14 @@
       </div>
       <v-spacer />
     </v-app-bar>
-    <v-main class="padding-bottom:25vh">
+    <v-main
+      :class="{
+        'padb-35': $vuetify.breakpoint.smAndDown,
+        'padb-30': $vuetify.breakpoint.mdAndUp,
+      }"
+    >
       <!-- <v-container fluid class="pa-0"> -->
-        <nuxt />
+      <nuxt />
       <!-- </v-container> -->
     </v-main>
 
@@ -116,22 +80,23 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-footer
-      :absolute="!fixed"
-      app
-      class="black lighten-4"
-      style="margin-top:50vh"
-    >
-     <v-sheet min-height="7vh" class="black pa-1 ma-1">
+    <v-footer :absolute="!fixed" app class="black lighten-4">
+      <v-sheet
+        class="black pa-1 ma-1"
+        :class="{
+          'd-none': $vuetify.breakpoint.smAndDown,
+          '': $vuetify.breakpoint.mdAndUp,
+        }"
+      >
+        >
         <label for="" class="grey--text fs-0-6">DNS by:</label>
         <a href="https://domains.google/">
-        <v-img width="100px" src="/images/google domain.svg"></v-img>
+          <v-img width="90px" src="/images/google domain.svg"></v-img>
         </a>
       </v-sheet>
-      <!-- min-height="15vh" -->
-      <!-- min-height="10vh" -->
+
       <v-spacer></v-spacer>
-      <!-- class="hidden-sm-and-down" -->
+
       <div>
         <v-btn
           plain
@@ -142,14 +107,13 @@
         >
           &copy; {{ new Date().getFullYear() }}
         </v-btn>
-
         <v-btn
           to="/about"
           plain
           text
           tile
           rounded
-          class="black lighten-2 pa-1 ma-1 white--text"
+          class="black lighten-2 white--text"
           ><v-icon>mdi-information-variant</v-icon> ABOUT</v-btn
         >
         <v-btn
@@ -158,19 +122,28 @@
           text
           tile
           rounded
-          class="black lighten-2 pa-1 ma-1 white--text"
+          class="black lighten-2 white--text"
           ><v-icon>mdi-human-greeting-proximity</v-icon>CONTACT US</v-btn
         >
       </div>
       <v-spacer></v-spacer>
 
-      <v-sheet  min-height="7vh" class="black  pa-1 ma-1">
+      <v-sheet
+        class="black pa-1 ma-1"
+        :class="{
+          'd-none': $vuetify.breakpoint.smAndDown,
+          '': $vuetify.breakpoint.mdAndUp,
+        }"
+      >
+        >
         <label for="" class="grey--text fs-0-6">Secured by:</label>
         <a href="https://letsencrypt.org/">
-          <v-img width="100px" src="/images/letsencrypt-logo-horizontal.svg"></v-img>
+          <v-img
+            width="90px"
+            src="/images/letsencrypt-logo-horizontal.svg"
+          ></v-img>
         </a>
-      </v-sheet >
-
+      </v-sheet>
     </v-footer>
   </v-app>
 </template>
@@ -183,11 +156,9 @@ import { navlist } from '~/mixins/navlist.js'
 export default {
   head: () => ({
     titleTemplate: '%s - Project Website',
-    meta:[
-      { hid: 'description', name: 'description', content: 'Content' }
-    ]
+    meta: [{ hid: 'description', name: 'description', content: 'Content' }],
   }),
-  mixins: [greetMixins,navlist],
+  mixins: [greetMixins, navlist],
   data: () => ({
     myitems: [{ title: 'Dashboard', link: '/dashboard' }],
     menu: [{ icon: 'Dashboard', title: 'Dashboard' }],
@@ -197,7 +168,7 @@ export default {
       { label: 'Login', link: 'login' },
       { label: 'Register', link: 'register' },
       { label: 'about', link: 'about' },
-      { label: 'contact', link: 'contact' }
+      { label: 'contact', link: 'contact' },
     ],
     value: 'recent',
     clipped: false,
@@ -209,15 +180,15 @@ export default {
       {
         icon: 'mdi-home-import-outline',
         title: 'Home',
-        to: '/'
-      }
+        to: '/',
+      },
     ],
 
     right: false,
     left: true,
     leftDrawer: false,
     rightDrawer: false,
-    title: 'Project Website'
+    title: 'Project Website',
   }),
 
   computed: {},
@@ -244,12 +215,21 @@ export default {
         NProgress.done()
         console.log(error)
       }
-    }
+    },
   },
-  async created() {}
+  async created() {},
 }
 </script>
 <style>
+.padb-35 {
+  padding-bottom: 150vh;
+  margin-bottom: 10vh;
+}
+
+.padb-30 {
+  margin-bottom: 35vh;
+margin-bottom: 10vh;
+}
 .transparent {
   opacity: 0.25;
   border-color: transparent !important;

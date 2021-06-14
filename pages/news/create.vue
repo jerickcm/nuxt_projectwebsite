@@ -103,6 +103,8 @@
 </template>
 
 <script>
+import juice from 'juice'
+import ckeditor5const from '~/mixins/ckeditor5const'
 import Vue from 'vue'
 import { Vuelidate, validationMixin } from 'vuelidate'
 Vue.use(Vuelidate)
@@ -116,12 +118,12 @@ var timezone = process.env.TIMEZONE
 
 export default {
   head: () => ({
-    title: 'Create News'
+    title: 'Create News',
   }),
   middleware: 'auth',
   mixins: [validationMixin],
   data: () => ({
-        image_id:'',
+    image_id: '',
     url_backend: '',
     form_content: '',
     form_title: '',
@@ -130,30 +132,30 @@ export default {
     publishselection: [
       {
         value: 1,
-        text: 'Draft'
+        text: 'Draft',
       },
       {
         value: 2,
-        text: 'Publish'
-      }
+        text: 'Publish',
+      },
     ],
     image: '',
     image_preview: '',
-    image_name: ''
+    image_name: '',
   }),
 
   validations: {
     form_content: { required },
     form_title: { required },
-    form_publish: { required }
+    form_publish: { required },
   },
   components: {
     'ckeditor-nuxt': () =>
-      import('@engrjerickcmangalus/ckeditor-nuxt-custom-build-simpleuploader')
+      import('@engrjerickcmangalus/ckeditor-nuxt-custom-build-simpleuploader'),
   },
   async created() {
     this.timezone = timezone
-    this.image_id = 'news' +'-' + new Date().getTime();
+    this.image_id = 'news' + '-' + new Date().getTime()
     this.editorConfig = {
       simpleUpload: {
         uploadUrl: url + '/' + 'api/ckeditor',
@@ -161,10 +163,10 @@ export default {
         headers: {
           Accept: 'application/json',
           Timezone: this.timezone,
-           identifier: this.image_id,
-          'X-XSRF-TOKEN': this.$auth.$storage.getCookies()['XSRF-TOKEN']
-        }
-      }
+          identifier: this.image_id,
+          'X-XSRF-TOKEN': this.$auth.$storage.getCookies()['XSRF-TOKEN'],
+        },
+      },
     }
 
     await this.$axios.$get('/sanctum/csrf-cookie')
@@ -181,7 +183,7 @@ export default {
       if (!this.$v.form_content.$dirty) return errors
       !this.$v.form_content.required && errors.push('Content is required.')
       return errors
-    }
+    },
   },
   methods: {
     handleFileUpload(e) {
@@ -206,8 +208,14 @@ export default {
       if (this.form_title && this.form_content && this.form_publish) {
         this.$axios.$get('/sanctum/csrf-cookie')
         this.$toast.success('Sending')
+
+        this.form_content = juice.inlineContent(
+          this.form_content,
+          ckeditor5const.styles
+        )
+
         let payload = new FormData()
-        payload.append('ckeditor_log',  this.image_id)
+        payload.append('ckeditor_log', this.image_id)
         payload.append('publish', this.form_publish)
         payload.append('title', this.form_title)
         payload.append('content', this.form_content)
@@ -216,22 +224,22 @@ export default {
         this.$axios
           .post('/api/news/create', payload, {
             headers: {
-              'Content-Type': 'multipart/form-data'
-            }
+              'Content-Type': 'multipart/form-data',
+            },
           })
-          .then(res => {
+          .then((res) => {
             this.$toast.success('Done.')
             // redirect('/dashboard')
           })
-          .catch(error => {
+          .catch((error) => {
             // this.$toast.success('Error.')
           })
           .finally(() => {})
       } else {
         this.$toast.error('Validation failed.')
       }
-    }
-  }
+    },
+  },
 }
 </script>
 <style scoped>

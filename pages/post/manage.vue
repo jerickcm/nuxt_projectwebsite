@@ -187,6 +187,8 @@
   </v-container>
 </template>
 <script>
+import juice from 'juice'
+import ckeditor5const from '~/mixins/ckeditor5const'
 import { validationMixin } from 'vuelidate'
 import { required } from 'vuelidate/lib/validators'
 import NProgress from 'nprogress'
@@ -360,6 +362,12 @@ export default {
     async SaveEdited() {
       await this.$axios.$get('/sanctum/csrf-cookie').then((response) => {})
       NProgress.start()
+
+      this.form_content = juice.inlineContent(
+        this.form_content,
+        ckeditor5const.styles
+      )
+
       let payload = new FormData()
 
       payload.append('post_id', this.tabledata[this.editedIndex].id)
@@ -433,7 +441,6 @@ export default {
       this.$axios
         .$post('api/post/datatable', payload)
         .then((res) => {
-
           var data = []
           var rowcount = 1
 

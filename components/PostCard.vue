@@ -5,7 +5,7 @@
         sm="12"
         md="8"
         lg="8"
-        class="mb-0 pb-0 col-md-8  col-lg-6 offset-md-2"
+        class="mb-0 pb-0 col-md-8 col-lg-6 offset-md-2"
       >
         <h1>Post</h1>
       </v-col>
@@ -15,30 +15,28 @@
         sm="12"
         md="8"
         lg="8"
-        class="mb-0 pb-0 col-md-8  col-lg-6 offset-md-2"
+        class="mb-0 pb-0 col-md-8 col-lg-6 offset-md-2"
       >
-        <v-card elevation="2" outlined shaped tile class=" pa-2 ma-0">
+        <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
           <!-- color="blue lighten-5" -->
           <!-- -->
           <!-- target="_blank" -->
           <nuxt-link
             class="nuxtlink"
-
             :to="{
               path: 'post/view',
-              query: { slug: item.slug }
+              query: { slug: item.slug },
             }"
           >
-            <v-img height="250" :src="item.image">
-            </v-img>
+            <v-img height="250" :src="item.image"> </v-img>
           </nuxt-link>
-        <!-- target="_blank" -->
+          <!-- target="_blank" -->
           <v-card-title>
             <nuxt-link
               class="nuxtlink"
               :to="{
                 path: 'post/view',
-                query: { slug: item.slug }
+                query: { slug: item.slug },
               }"
               >Title : {{ item.title }}
             </nuxt-link>
@@ -62,7 +60,7 @@
         sm="12"
         md="8"
         lg="8"
-        class="mb-0 pb-0 col-md-8  col-lg-6 offset-md-2"
+        class="mb-0 pb-0 col-md-8 col-lg-6 offset-md-2"
       >
         <v-skeleton-loader
           elevation="2"
@@ -79,9 +77,9 @@
         sm="12"
         md="8"
         lg="8"
-        class="mb-0 pb-0 col-md-8  col-lg-6 offset-md-2"
+        class="mb-0 pb-0 col-md-8 col-lg-6 offset-md-2"
       >
-        <v-card elevation="2" outlined shaped tile class=" pa-2 ma-0">
+        <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
           Nothing Follows
         </v-card>
       </v-col>
@@ -91,16 +89,16 @@
         sm="12"
         md="8"
         lg="8"
-        class="mb-0 pb-0 col-md-8  col-lg-6 offset-md-2"
+        class="mb-0 pb-0 col-md-8 col-lg-6 offset-md-2"
       >
-        <v-card elevation="2" outlined shaped tile class=" pa-2 ma-0">
+        <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
           <v-btn
             class="white--text"
             @click="getposts"
             :disabled="disable_next"
             :class="disable_color"
           >
-             Next Article
+            Next Article
           </v-btn>
         </v-card>
       </v-col>
@@ -121,7 +119,7 @@ export default {
     data: [],
     increment: 0,
     disable_next: false,
-    disable_color: 'green'
+    disable_color: 'green',
   }),
   async created() {
     // await this.$axios.$get('/sanctum/csrf-cookie').then(response => {})
@@ -149,7 +147,7 @@ export default {
       try {
         this.$axios
           .$get(`api/post/list/${this.page}`)
-          .then(res => {
+          .then((res) => {
             if (res.data.length == 0) {
               this.no_more_post = ''
               this.disable_next = true
@@ -159,6 +157,11 @@ export default {
               this.disable_color = 'green'
             }
 
+            if((res.data).length < 10){
+              this.no_more_post = ''
+              this.disable_next = true
+              this.disable_color = 'grey'
+            }
             for (const [key, value] of Object.entries(res.data)) {
               this.increment = this.increment + 1
               this.data.push({
@@ -170,16 +173,18 @@ export default {
                 created_at: value.created_at,
                 human_date: value.human_date,
                 image: value.image,
-                increment: this.increment
+                increment: this.increment,
               })
             }
+              this.posts = this.data
+// console.log(count(this.posts))
+console.log("logs logs")
 
-            this.posts = this.data
             NProgress.done()
             this.loadcard = 'd-none'
             this.page = this.page + 1
           })
-          .catch(error => {
+          .catch((error) => {
             NProgress.done()
             this.loadcard = 'd-none'
           })
@@ -187,8 +192,8 @@ export default {
       } catch (error) {
         console.log('error')
       }
-    }
-  }
+    },
+  },
 }
 </script>
 <style scoped>

@@ -152,6 +152,11 @@ export default {
               this.disable_color = 'green'
             }
 
+            if((res.data).length < 10){
+              this.no_more_post = ''
+              this.disable_next = true
+              this.disable_color = 'grey'
+            }
             for (const [key, value] of Object.entries(res.data)) {
               this.increment = this.increment + 1
               this.data.push({

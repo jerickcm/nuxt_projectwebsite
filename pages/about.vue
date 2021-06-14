@@ -42,7 +42,7 @@
         </v-row>
 
         <v-row justify="center" align="center" class="lg-5">
-          <v-col cols="8" sm="2">
+          <v-col cols="12" xs="12" sm="12" md="3" lg="3" xl="3">
             <ul class="clean">
               <li class="white--text">
                 <b>Branding</b>
@@ -67,7 +67,7 @@
               </li>
             </ul>
           </v-col>
-          <v-col>
+          <v-col cols="12" xs="12" sm="12" md="3" lg="3" xl="3">
             <ul class="clean">
               <li class="white--text">
                 <strong>Digital</strong>
@@ -92,7 +92,7 @@
               </li>
             </ul>
           </v-col>
-          <v-col>
+          <v-col cols="12" xs="12" sm="12" md="3" lg="3" xl="3">
             <ul class="clean">
               <li class="white--text">
                 <strong>Print</strong>
@@ -117,7 +117,7 @@
               </li>
             </ul>
           </v-col>
-          <v-col>
+          <v-col cols="12" xs="12" sm="12" md="3" lg="3" xl="3">
             <ul class="clean">
               <li class="white--text">
                 <strong>Strategy</strong>

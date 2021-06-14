@@ -166,7 +166,7 @@
                     class="font-kalamreg text-center mt-5"
                     :class="{
                       'fs-1.1': $vuetify.breakpoint.smAndDown,
-                      'fs-2': $vuetify.breakpoint.mdAndUp,
+                      'fs-1.5': $vuetify.breakpoint.mdAndUp,
                     }"
                   >
                     " {{ message.message }} " - {{ message.author }}

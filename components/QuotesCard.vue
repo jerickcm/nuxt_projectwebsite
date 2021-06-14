@@ -116,6 +116,7 @@ export default {
         this.$axios
           .$get(`api/quotes/page/${this.page}/item/${10}`)
           .then(res => {
+
             if (res.data.length == 0) {
               this.no_more_post = ''
               this.disable_next = true
@@ -123,6 +124,12 @@ export default {
             } else {
               this.disable_next = false
               this.disable_color = 'green'
+            }
+
+            if((res.data).length < 10){
+              this.no_more_post = ''
+              this.disable_next = true
+              this.disable_color = 'grey'
             }
 
             for (const [key, value] of Object.entries(res.data)) {
