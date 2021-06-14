@@ -8,30 +8,30 @@
   </v-container>
 </template>
 <script>
-  export default {
-    head: () => ({
-      title: 'News Articles',
-      meta:[
-      { hid: 'News', name: 'News', content: 'News Article Page' }
-      ],
-    }),
+export default {
+  middleware: 'auth',
+  auth: false,
+  head: () => ({
+    title: 'News Articles',
+    meta: [{ hid: 'News', name: 'News', content: 'News Article Page' }],
+  }),
 
-    data: () => ({
-      loading: false
-    }),
-     async created() {
-      // await this.$axios.$get('/sanctum/csrf-cookie')
-     },
-    mounted() {},
-    inject: {
-      theme: {
-        default: { isDark: false }
-      }
+  data: () => ({
+    loading: false,
+  }),
+  async created() {
+    // await this.$axios.$get('/sanctum/csrf-cookie')
+  },
+  mounted() {},
+  inject: {
+    theme: {
+      default: { isDark: false },
     },
-    components: {},
-    watch: {},
-    methods: {}
-  }
+  },
+  components: {},
+  watch: {},
+  methods: {},
+}
 </script>
 <style scoped>
 ul.clean {

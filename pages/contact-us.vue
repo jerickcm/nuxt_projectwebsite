@@ -80,10 +80,10 @@
 </template>
 <script>
 export default {
+  middleware: 'auth',
+  auth: false,
   head: () => ({
-    title: 'Contact Us'
+    title: 'Contact Us',
   }),
-
-  auth: false
 }
 </script>

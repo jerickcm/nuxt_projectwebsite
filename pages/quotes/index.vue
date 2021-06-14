@@ -1,41 +1,38 @@
 <template>
   <v-container fluid class="white">
-
     <v-row class="">
-
       <v-col mg="12" lg="10" class="" min-height="450vh">
         <QuotesCard />
       </v-col>
-
     </v-row>
   </v-container>
 </template>
 
 <script>
-  export default {
-    head: () => ({
-      title: 'Quotes Articles',
-      meta:[
-      { hid: 'Quotes', name: 'Quotes', content: 'Quotes Article Page' }
-      ],
-    }),
+export default {
+  middleware: 'auth',
+  auth: false,
+  head: () => ({
+    title: 'Quotes Articles',
+    meta: [{ hid: 'Quotes', name: 'Quotes', content: 'Quotes Article Page' }],
+  }),
 
-    data: () => ({
-      loading: false
-    }),
-     async created() {
-      // await this.$axios.$get('/sanctum/csrf-cookie')
-     },
-    mounted() {},
-    inject: {
-      theme: {
-        default: { isDark: false }
-      }
+  data: () => ({
+    loading: false,
+  }),
+  async created() {
+    // await this.$axios.$get('/sanctum/csrf-cookie')
+  },
+  mounted() {},
+  inject: {
+    theme: {
+      default: { isDark: false },
     },
-    components: {},
-    watch: {},
-    methods: {}
-  }
+  },
+  components: {},
+  watch: {},
+  methods: {},
+}
 </script>
 <style scoped>
 ul.clean {

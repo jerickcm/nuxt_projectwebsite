@@ -184,6 +184,8 @@
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
+  middleware: 'auth',
+  auth: false,
   head: () => ({
     title: 'Profile ',
     meta: [{ hid: 'Profile', name: 'Profile', content: 'Profile' }],
