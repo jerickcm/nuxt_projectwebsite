@@ -9,7 +9,7 @@
           >Create Post</v-btn
         >
         <v-btn to="post/manage" slot="view_menu" class="blue white--text"
-          >View Post</v-btn
+          >Manage Post</v-btn
         >
       </Dashboard>
       <Dashboard>
@@ -18,7 +18,7 @@
           >Create BLOG</v-btn
         >
         <v-btn to="blog/manage" slot="view_menu" class="blue white--text"
-          >View BLOG</v-btn
+          >Manage BLOG</v-btn
         >
       </Dashboard>
       <Dashboard>
@@ -27,28 +27,19 @@
           >Create NEWS</v-btn
         >
         <v-btn to="news/manage" slot="view_menu" class="blue white--text"
-          >View NEWS</v-btn
+          >Manage NEWS</v-btn
         >
       </Dashboard>
 
-         <Dashboard>
+      <Dashboard>
         <h2 slot="menu_name">QUOTES MENU</h2>
         <v-btn to="quotes/create" slot="create_menu" class="green white--text"
           >Create QUOTES</v-btn
         >
         <v-btn to="quotes/manage" slot="view_menu" class="blue white--text"
-          >View QUOTES</v-btn
+          >Manage QUOTES</v-btn
         >
       </Dashboard>
-      <!-- <Dashboard>
-        <h2 slot="menu_name">NEWS MENU</h2>
-        <v-btn to="dash/create" slot="create_menu" class="green white--text"
-          >Create News</v-btn
-        >
-        <v-btn to="dash/view" slot="view_menu" class="blue white--text"
-          >View News</v-btn
-        >
-      </Dashboard> -->
     </v-sheet>
   </v-container>
 </template>
