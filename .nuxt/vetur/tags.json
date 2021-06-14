@@ -20,6 +20,9 @@
   "PostCard": {
     "description": "Auto imported from components/PostCard.vue"
   },
+  "QuotesCard": {
+    "description": "Auto imported from components/QuotesCard.vue"
+  },
   "Template": {
     "description": "Auto imported from components/Template.vue"
   },

@@ -15,3 +15,5 @@ export const greetMixins = {
     // console.log('                                         ')
   }
 }
+
+// Development @ v1.2 - able to apply https

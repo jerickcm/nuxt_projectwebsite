@@ -16,7 +16,11 @@ export const navlist = {
           icons: 'mdi-blogger',
           label: 'BLOG',
           link: '/blog'
-
+        },
+        {
+          icons: 'mdi-format-quote-close',
+          label: 'Quotes',
+          link: '/quotes'
         },
         // {
         //   icons: 'mdi-cloud-check-outline',

@@ -3,23 +3,11 @@
     <!-- <v-row class=""> Featured Post </v-row> -->
     <v-row class="">
       <!-- <v-col lg="2" class="" min-height="450vh"> </v-col> -->
-      <v-col md="3" lg="9" class="" >
+      <v-col md="12" lg="12" class="" >
         <PostCard />
       </v-col>
 
-     <v-col md="3" lg="3" class="" min-height="450vh">
-       <v-card class="pa-4 ma-4" min-height="40vh" >
-          <v-card-title>Google ads</v-card-title>
-          <amp-ad width="100vw" height="320"
-              type="adsense"
-              data-ad-client="ca-pub-3213536425475125"
-              data-ad-slot="8148499203"
-              data-auto-format="rspv"
-              data-full-width="">
-            <div overflow=""></div>
-          </amp-ad>
-       </v-card>
-     </v-col>
+
 
 
 

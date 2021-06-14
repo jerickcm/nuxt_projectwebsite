@@ -7,6 +7,7 @@ export { default as EventCard } from '../..\\components\\EventCard.vue'
 export { default as Nav } from '../..\\components\\Nav.vue'
 export { default as NewsCard } from '../..\\components\\NewsCard.vue'
 export { default as PostCard } from '../..\\components\\PostCard.vue'
+export { default as QuotesCard } from '../..\\components\\QuotesCard.vue'
 export { default as Template } from '../..\\components\\Template.vue'
 export { default as VuetifyLogo } from '../..\\components\\VuetifyLogo.vue'
 
@@ -17,5 +18,6 @@ export const LazyEventCard = import('../..\\components\\EventCard.vue' /* webpac
 export const LazyNav = import('../..\\components\\Nav.vue' /* webpackChunkName: "components/nav" */).then(c => wrapFunctional(c.default || c))
 export const LazyNewsCard = import('../..\\components\\NewsCard.vue' /* webpackChunkName: "components/news-card" */).then(c => wrapFunctional(c.default || c))
 export const LazyPostCard = import('../..\\components\\PostCard.vue' /* webpackChunkName: "components/post-card" */).then(c => wrapFunctional(c.default || c))
+export const LazyQuotesCard = import('../..\\components\\QuotesCard.vue' /* webpackChunkName: "components/quotes-card" */).then(c => wrapFunctional(c.default || c))
 export const LazyTemplate = import('../..\\components\\Template.vue' /* webpackChunkName: "components/template" */).then(c => wrapFunctional(c.default || c))
 export const LazyVuetifyLogo = import('../..\\components\\VuetifyLogo.vue' /* webpackChunkName: "components/vuetify-logo" */).then(c => wrapFunctional(c.default || c))

@@ -20,7 +20,7 @@
       loading: false
     }),
      async created() {
-      await this.$axios.$get('/sanctum/csrf-cookie')
+      // await this.$axios.$get('/sanctum/csrf-cookie')
      },
     mounted() {},
     inject: {

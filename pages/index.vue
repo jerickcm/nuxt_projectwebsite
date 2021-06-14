@@ -10,7 +10,7 @@
                   class="font-lulu white--text"
                   :class="{
                     'fs-1.1': $vuetify.breakpoint.smAndDown,
-                    'fs-3': $vuetify.breakpoint.mdAndUp
+                    'fs-3': $vuetify.breakpoint.mdAndUp,
                   }"
                   >JERICK C. MANGALUS</label
                 >
@@ -20,7 +20,7 @@
                   class="text-right white--text"
                   :class="{
                     'fs-0-5': $vuetify.breakpoint.smAndDown,
-                    'fs-1-0': $vuetify.breakpoint.mdAndUp
+                    'fs-1-0': $vuetify.breakpoint.mdAndUp,
                   }"
                   >[ Technology R&D ]
                 </label>
@@ -96,14 +96,15 @@
                 lg="12"
                 class="font-avenir fs-1-4 text-center"
               >
-                The darkness in programming is when you fix it you're happy,
-                when you can fix it long enough you are frustrated.
+                <!-- The darkness in programming is when you fix it you're happy,
+                when you can fix it long enough you are frustrated. -->
               </v-col>
             </v-row>
           </v-container>
         </v-sheet>
-      </v-col>=
+      </v-col>
     </v-row>
+
     <v-row>
       <v-col xs="12" sm="12" lg="12" class="ma-0 pa-0">
         <v-sheet class="grey lighten-1" elevation="2" min-height="30vh">
@@ -140,8 +141,8 @@
             </v-row>
           </v-container>
         </v-sheet>
-      </v-col></v-row
-    >
+      </v-col>
+    </v-row>
     <v-row>
       <v-col xs="12" sm="12" lg="12" class="ma-0 pa-0">
         <v-sheet class="white lighten-5" elevation="2" min-height="10vh">
@@ -165,7 +166,7 @@
                     class="font-kalamreg text-center mt-5"
                     :class="{
                       'fs-1.1': $vuetify.breakpoint.smAndDown,
-                      'fs-2': $vuetify.breakpoint.mdAndUp
+                      'fs-2': $vuetify.breakpoint.mdAndUp,
                     }"
                   >
                     " {{ message.message }} " - {{ message.author }}
@@ -185,9 +186,7 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
   head: () => ({
     title: 'Profile ',
-    meta:[
-      { hid: 'Profile', name: 'Profile', content: 'Profile' }
-    ]
+    meta: [{ hid: 'Profile', name: 'Profile', content: 'Profile' }],
   }),
   data: () => ({
     selectedItem: 0,
@@ -195,26 +194,24 @@ export default {
     title: '',
     model: 6,
     rounded: ['0', 'sm', 'md', 'lg', 'xl', 'pill', 'circle'],
-    links:[]
-
+    links: [],
   }),
   layout: 'default',
   methods: {
-    ...mapActions('messageoftheday', ['fetchQuote'])
+    ...mapActions('messageoftheday', ['fetchQuote']),
   },
   computed: {
-    ...mapGetters('messageoftheday', ['MessageOfTheDay', 'LoadingStatus'])
+    ...mapGetters('messageoftheday', ['MessageOfTheDay', 'LoadingStatus']),
   },
   async created() {},
   async mounted() {
     await this.$axios.$get('/sanctum/csrf-cookie')
     try {
-       this.fetchQuote()
+      this.fetchQuote()
     } catch (error) {
       console.log(error)
     }
-
-  }
+  },
 }
 </script>
 <style scoped>
