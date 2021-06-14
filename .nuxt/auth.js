@@ -61,7 +61,7 @@ export default function (ctx, inject) {
 
   // laravelSanctum
   $auth.registerStrategy('laravelSanctum', new CookieScheme($auth, {
-  "url": "http://back.api.test:3001",
+  "url": "https://backend.inhinyeru.com",
   "endpoints": {
     "csrf": {
       "withCredentials": true,
@@ -70,7 +70,7 @@ export default function (ctx, inject) {
         "Content-Type": "application/json",
         "Accept": "application/json"
       },
-      "url": "http://back.api.test:3001/sanctum/csrf-cookie"
+      "url": "https://backend.inhinyeru.com/sanctum/csrf-cookie"
     },
     "login": {
       "withCredentials": true,
@@ -79,7 +79,7 @@ export default function (ctx, inject) {
         "Content-Type": "application/json",
         "Accept": "application/json"
       },
-      "url": "http://back.api.test:3001/api/login"
+      "url": "https://backend.inhinyeru.com/api/login"
     },
     "logout": {
       "withCredentials": true,
@@ -88,7 +88,7 @@ export default function (ctx, inject) {
         "Content-Type": "application/json",
         "Accept": "application/json"
       },
-      "url": "http://back.api.test:3001/api/logout"
+      "url": "https://backend.inhinyeru.com/api/logout"
     },
     "user": {
       "withCredentials": true,
@@ -97,7 +97,7 @@ export default function (ctx, inject) {
         "Content-Type": "application/json",
         "Accept": "application/json"
       },
-      "url": "http://back.api.test:3001/api/user"
+      "url": "https://backend.inhinyeru.com/api/user"
     }
   },
   "name": "laravelSanctum",
