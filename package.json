@@ -16,6 +16,7 @@
     "@nuxtjs/auth-next": "5.0.0-1620773067.c356fed",
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/robots": "^2.5.0",
+    "@nuxtjs/sitemap": "^2.4.0",
     "core-js": "^3.14.0",
     "juice": "^8.0.0",
     "nprogress": "^0.2.0",
