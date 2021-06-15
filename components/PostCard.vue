@@ -25,7 +25,7 @@
             class="nuxtlink"
             :to="{
               path: 'post/view',
-              query: { slug: item.slug },
+              query: { slug: item.slug }
             }"
           >
             <v-img height="250" :src="item.image"> </v-img>
@@ -36,7 +36,7 @@
               class="nuxtlink"
               :to="{
                 path: 'post/view',
-                query: { slug: item.slug },
+                query: { slug: item.slug }
               }"
               >Title : {{ item.title }}
             </nuxt-link>
@@ -119,7 +119,7 @@ export default {
     data: [],
     increment: 0,
     disable_next: false,
-    disable_color: 'green',
+    disable_color: 'green'
   }),
   async created() {
     // await this.$axios.$get('/sanctum/csrf-cookie').then(response => {})
@@ -140,14 +140,15 @@ export default {
       // console.log(this.GetPosts)
       // console.log('called in mounted')
     },
-    getposts() {
+    async getposts() {
       NProgress.start()
       let payload = new FormData()
       NProgress.inc()
       try {
+        await this.$axios.$get('/sanctum/csrf-cookie').then(response => {})
         this.$axios
           .$get(`api/post/list/${this.page}`)
-          .then((res) => {
+          .then(res => {
             if (res.data.length == 0) {
               this.no_more_post = ''
               this.disable_next = true
@@ -157,7 +158,7 @@ export default {
               this.disable_color = 'green'
             }
 
-            if((res.data).length < 10){
+            if (res.data.length < 10) {
               this.no_more_post = ''
               this.disable_next = true
               this.disable_color = 'grey'
@@ -173,18 +174,18 @@ export default {
                 created_at: value.created_at,
                 human_date: value.human_date,
                 image: value.image,
-                increment: this.increment,
+                increment: this.increment
               })
             }
-              this.posts = this.data
-// console.log(count(this.posts))
-console.log("logs logs")
+            this.posts = this.data
+            // console.log(count(this.posts))
+            console.log('logs logs')
 
             NProgress.done()
             this.loadcard = 'd-none'
             this.page = this.page + 1
           })
-          .catch((error) => {
+          .catch(error => {
             NProgress.done()
             this.loadcard = 'd-none'
           })
@@ -192,8 +193,8 @@ console.log("logs logs")
       } catch (error) {
         console.log('error')
       }
-    },
-  },
+    }
+  }
 }
 </script>
 <style scoped>

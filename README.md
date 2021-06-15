@@ -30,3 +30,6 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 # 
 add material icon theme in vs code extensions 
+
+
+pm2 start npm --name "nuxt ssr" -- start

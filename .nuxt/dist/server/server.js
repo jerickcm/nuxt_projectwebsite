@@ -4822,7 +4822,7 @@ class framework_Vuetify {
 }
 framework_Vuetify.install = install;
 framework_Vuetify.installed = false;
-framework_Vuetify.version = "2.5.0";
+framework_Vuetify.version = "2.5.3";
 framework_Vuetify.config = {
   silent: false
 };
@@ -4844,6 +4844,7 @@ framework_Vuetify.config = {
 "use strict";
 /* unused harmony export Intersect */
 function inserted(el, binding) {
+  if (typeof window === 'undefined' || !('IntersectionObserver' in window)) return;
   const modifiers = binding.modifiers || {};
   const value = binding.value;
   const {
@@ -4856,18 +4857,15 @@ function inserted(el, binding) {
   const observer = new IntersectionObserver((entries = [], observer) => {
     /* istanbul ignore if */
     if (!el._observe) return; // Just in case, should never fire
-    // If is not quiet or has already been
+
+    const isIntersecting = entries.some(entry => entry.isIntersecting); // If is not quiet or has already been
     // initted, invoke the user callback
 
-    if (handler && (!modifiers.quiet || el._observe.init)) {
-      const isIntersecting = Boolean(entries.find(entry => entry.isIntersecting));
+    if (handler && (!modifiers.quiet || el._observe.init) && (!modifiers.once || isIntersecting || !el._observe.init)) {
       handler(entries, observer, isIntersecting);
-    } // If has already been initted and
-    // has the once modifier, unbind
+    }
 
-
-    if (el._observe.init && modifiers.once) unbind(el); // Otherwise, mark the observer as initted
-    else el._observe.init = true;
+    if (isIntersecting && modifiers.once) unbind(el);else el._observe.init = true;
   }, options);
   el._observe = {
     init: false,
@@ -6230,7 +6228,7 @@ var SIZE_MAP;
 })(SIZE_MAP || (SIZE_MAP = {}));
 
 function isFontAwesome5(iconType) {
-  return ['fas', 'far', 'fal', 'fab', 'fad'].some(val => iconType.includes(val));
+  return ['fas', 'far', 'fal', 'fab', 'fad', 'fak'].some(val => iconType.includes(val));
 }
 
 function isSvgPath(icon) {
@@ -6713,11 +6711,53 @@ function createSimpleTransition(name, origin = 'top center 0', mode) {
       };
 
       if (context.props.leaveAbsolute) {
-        data.on.leave = mergeTransitions(data.on.leave, el => el.style.position = 'absolute');
+        data.on.leave = mergeTransitions(data.on.leave, el => {
+          const {
+            offsetTop,
+            offsetLeft,
+            offsetWidth,
+            offsetHeight
+          } = el;
+          el._transitionInitialStyles = {
+            position: el.style.position,
+            top: el.style.top,
+            left: el.style.left,
+            width: el.style.width,
+            height: el.style.height
+          };
+          el.style.position = 'absolute';
+          el.style.top = offsetTop + 'px';
+          el.style.left = offsetLeft + 'px';
+          el.style.width = offsetWidth + 'px';
+          el.style.height = offsetHeight + 'px';
+        });
+        data.on.afterLeave = mergeTransitions(data.on.afterLeave, el => {
+          if (el && el._transitionInitialStyles) {
+            const {
+              position,
+              top,
+              left,
+              width,
+              height
+            } = el._transitionInitialStyles;
+            delete el._transitionInitialStyles;
+            el.style.position = position || '';
+            el.style.top = top || '';
+            el.style.left = left || '';
+            el.style.width = width || '';
+            el.style.height = height || '';
+          }
+        });
       }
 
       if (context.props.hideOnLeave) {
-        data.on.leave = mergeTransitions(data.on.leave, el => el.style.display = 'none');
+        data.on.leave = mergeTransitions(data.on.leave, el => {
+          el._initialDisplay = el.style.display;
+          el.style.display = 'none';
+        });
+        data.on.afterLeave = mergeTransitions(data.on.afterLeave, el => {
+          if (el) el.style.display = el._initialDisplay || '';
+        });
       }
 
       return h(tag, Object(mergeData["a" /* default */])(context.data, data), context.children);
@@ -7048,6 +7088,66 @@ module.exports = require("core-js/modules/esnext.map.update.js");
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
+
+
+/* @vue/component */
+
+/* harmony default export */ __webpack_exports__["a"] = (vue__WEBPACK_IMPORTED_MODULE_0___default.a.extend().extend({
+  name: 'stackable',
+
+  data() {
+    return {
+      stackElement: null,
+      stackExclude: null,
+      stackMinZIndex: 0,
+      isActive: false
+    };
+  },
+
+  computed: {
+    activeZIndex() {
+      if (typeof window === 'undefined') return 0;
+      const content = this.stackElement || this.$refs.content; // Return current zindex if not active
+
+      const index = !this.isActive ? Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__[/* getZIndex */ "t"])(content) : this.getMaxZIndex(this.stackExclude || [content]) + 2;
+      if (index == null) return index; // Return max current z-index (excluding self) + 2
+      // (2 to leave room for an overlay below, if needed)
+
+      return parseInt(index);
+    }
+
+  },
+  methods: {
+    getMaxZIndex(exclude = []) {
+      const base = this.$el; // Start with lowest allowed z-index or z-index of
+      // base component's element, whichever is greater
+
+      const zis = [this.stackMinZIndex, Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__[/* getZIndex */ "t"])(base)]; // Convert the NodeList to an array to
+      // prevent an Edge bug with Symbol.iterator
+      // https://github.com/vuetifyjs/vuetify/issues/2146
+
+      const activeElements = [...document.getElementsByClassName('v-menu__content--active'), ...document.getElementsByClassName('v-dialog__content--active')]; // Get z-index for all active dialogs
+
+      for (let index = 0; index < activeElements.length; index++) {
+        if (!exclude.includes(activeElements[index])) {
+          zis.push(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__[/* getZIndex */ "t"])(activeElements[index]));
+        }
+      }
+
+      return Math.max(...zis);
+    }
+
+  }
+}));
+
+/***/ }),
+/* 80 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony import */ var _bootable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(42);
 /* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
 /* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2);
@@ -7172,66 +7272,6 @@ function validateAttachTarget(val) {
 
       target.appendChild(this.$refs.content);
       this.hasDetached = true;
-    }
-
-  }
-}));
-
-/***/ }),
-/* 80 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
-
-
-/* @vue/component */
-
-/* harmony default export */ __webpack_exports__["a"] = (vue__WEBPACK_IMPORTED_MODULE_0___default.a.extend().extend({
-  name: 'stackable',
-
-  data() {
-    return {
-      stackElement: null,
-      stackExclude: null,
-      stackMinZIndex: 0,
-      isActive: false
-    };
-  },
-
-  computed: {
-    activeZIndex() {
-      if (typeof window === 'undefined') return 0;
-      const content = this.stackElement || this.$refs.content; // Return current zindex if not active
-
-      const index = !this.isActive ? Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__[/* getZIndex */ "t"])(content) : this.getMaxZIndex(this.stackExclude || [content]) + 2;
-      if (index == null) return index; // Return max current z-index (excluding self) + 2
-      // (2 to leave room for an overlay below, if needed)
-
-      return parseInt(index);
-    }
-
-  },
-  methods: {
-    getMaxZIndex(exclude = []) {
-      const base = this.$el; // Start with lowest allowed z-index or z-index of
-      // base component's element, whichever is greater
-
-      const zis = [this.stackMinZIndex, Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__[/* getZIndex */ "t"])(base)]; // Convert the NodeList to an array to
-      // prevent an Edge bug with Symbol.iterator
-      // https://github.com/vuetifyjs/vuetify/issues/2146
-
-      const activeElements = [...document.getElementsByClassName('v-menu__content--active'), ...document.getElementsByClassName('v-dialog__content--active')]; // Get z-index for all active dialogs
-
-      for (let index = 0; index < activeElements.length; index++) {
-        if (!exclude.includes(activeElements[index])) {
-          zis.push(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__[/* getZIndex */ "t"])(activeElements[index]));
-        }
-      }
-
-      return Math.max(...zis);
     }
 
   }
@@ -7913,7 +7953,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "7bf0f2cf"
+  "3f86ee95"
   
 )
 
@@ -9834,67 +9874,67 @@ function shouldScrollToTop(route) {
 
 
 
-const _006f1191 = () => interopDefault(__webpack_require__.e(/* import() | pages/about */ 9).then(__webpack_require__.bind(null, 354)));
+const _55dd2d9b = () => interopDefault(__webpack_require__.e(/* import() | pages/about */ 9).then(__webpack_require__.bind(null, 354)));
 
-const _51964053 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin */ 10).then(__webpack_require__.bind(null, 357)));
+const _b1f74746 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin */ 10).then(__webpack_require__.bind(null, 357)));
 
-const _7cce7218 = () => interopDefault(__webpack_require__.e(/* import() | pages/blog/index */ 12).then(__webpack_require__.bind(null, 358)));
+const _0c00337e = () => interopDefault(__webpack_require__.e(/* import() | pages/blog/index */ 12).then(__webpack_require__.bind(null, 358)));
 
-const _2c7c2e17 = () => interopDefault(__webpack_require__.e(/* import() | pages/contact-us */ 15).then(__webpack_require__.bind(null, 355)));
+const _36dfef66 = () => interopDefault(__webpack_require__.e(/* import() | pages/contact-us */ 15).then(__webpack_require__.bind(null, 355)));
 
-const _6f8d2718 = () => interopDefault(__webpack_require__.e(/* import() | pages/dashboard */ 18).then(__webpack_require__.bind(null, 359)));
+const _2dcba3bc = () => interopDefault(__webpack_require__.e(/* import() | pages/dashboard */ 18).then(__webpack_require__.bind(null, 359)));
 
-const _2c62e126 = () => interopDefault(__webpack_require__.e(/* import() | pages/login */ 20).then(__webpack_require__.bind(null, 360)));
+const _3f3cab77 = () => interopDefault(__webpack_require__.e(/* import() | pages/login */ 20).then(__webpack_require__.bind(null, 360)));
 
-const _c5d73294 = () => interopDefault(__webpack_require__.e(/* import() | pages/logout */ 21).then(__webpack_require__.bind(null, 361)));
+const _152c6828 = () => interopDefault(__webpack_require__.e(/* import() | pages/logout */ 21).then(__webpack_require__.bind(null, 361)));
 
-const _c98599ba = () => interopDefault(__webpack_require__.e(/* import() | pages/news/index */ 23).then(__webpack_require__.bind(null, 362)));
+const _34b6c0a6 = () => interopDefault(__webpack_require__.e(/* import() | pages/news/index */ 23).then(__webpack_require__.bind(null, 362)));
 
-const _6f437336 = () => interopDefault(__webpack_require__.e(/* import() | pages/post/index */ 27).then(__webpack_require__.bind(null, 363)));
+const _8caa4080 = () => interopDefault(__webpack_require__.e(/* import() | pages/post/index */ 27).then(__webpack_require__.bind(null, 363)));
 
-const _04805a02 = () => interopDefault(__webpack_require__.e(/* import() | pages/quotes/index */ 31).then(__webpack_require__.bind(null, 364)));
+const _4bfe4509 = () => interopDefault(__webpack_require__.e(/* import() | pages/quotes/index */ 31).then(__webpack_require__.bind(null, 364)));
 
-const _1af5b64f = () => interopDefault(__webpack_require__.e(/* import() | pages/register */ 34).then(__webpack_require__.bind(null, 365)));
+const _98f2b3f6 = () => interopDefault(__webpack_require__.e(/* import() | pages/register */ 34).then(__webpack_require__.bind(null, 365)));
 
-const _33705b38 = () => interopDefault(__webpack_require__.e(/* import() | pages/technology */ 35).then(__webpack_require__.bind(null, 366)));
+const _28f79524 = () => interopDefault(__webpack_require__.e(/* import() | pages/technology */ 35).then(__webpack_require__.bind(null, 366)));
 
-const _469390a6 = () => interopDefault(__webpack_require__.e(/* import() | pages/template */ 36).then(__webpack_require__.bind(null, 367)));
+const _41b6ff48 = () => interopDefault(__webpack_require__.e(/* import() | pages/template */ 36).then(__webpack_require__.bind(null, 367)));
 
-const _c5b8b284 = () => interopDefault(__webpack_require__.e(/* import() | pages/test */ 37).then(__webpack_require__.bind(null, 368)));
+const _7edce174 = () => interopDefault(__webpack_require__.e(/* import() | pages/test */ 37).then(__webpack_require__.bind(null, 368)));
 
-const _001b74d9 = () => interopDefault(__webpack_require__.e(/* import() | pages/tutorials */ 38).then(__webpack_require__.bind(null, 369)));
+const _79a87be3 = () => interopDefault(__webpack_require__.e(/* import() | pages/tutorials */ 38).then(__webpack_require__.bind(null, 369)));
 
-const _6590c68c = () => interopDefault(__webpack_require__.e(/* import() | pages/users */ 39).then(__webpack_require__.bind(null, 370)));
+const _8a023ad4 = () => interopDefault(__webpack_require__.e(/* import() | pages/users */ 39).then(__webpack_require__.bind(null, 370)));
 
-const _cd973b6c = () => interopDefault(__webpack_require__.e(/* import() | pages/blog/create */ 11).then(__webpack_require__.bind(null, 379)));
+const _c88af200 = () => interopDefault(__webpack_require__.e(/* import() | pages/blog/create */ 11).then(__webpack_require__.bind(null, 379)));
 
-const _4779fb9a = () => interopDefault(__webpack_require__.e(/* import() | pages/blog/manage */ 13).then(__webpack_require__.bind(null, 380)));
+const _426db22e = () => interopDefault(__webpack_require__.e(/* import() | pages/blog/manage */ 13).then(__webpack_require__.bind(null, 380)));
 
-const _3e7eb4f3 = () => interopDefault(__webpack_require__.e(/* import() | pages/blog/view */ 14).then(__webpack_require__.bind(null, 371)));
+const _12dae1ae = () => interopDefault(__webpack_require__.e(/* import() | pages/blog/view */ 14).then(__webpack_require__.bind(null, 371)));
 
-const _14368b8c = () => interopDefault(__webpack_require__.e(/* import() | pages/dash/create */ 16).then(__webpack_require__.bind(null, 372)));
+const _0f2a4220 = () => interopDefault(__webpack_require__.e(/* import() | pages/dash/create */ 16).then(__webpack_require__.bind(null, 372)));
 
-const _764448e3 = () => interopDefault(__webpack_require__.e(/* import() | pages/dash/view */ 17).then(__webpack_require__.bind(null, 373)));
+const _2e582319 = () => interopDefault(__webpack_require__.e(/* import() | pages/dash/view */ 17).then(__webpack_require__.bind(null, 373)));
 
-const _17c5080a = () => interopDefault(__webpack_require__.e(/* import() | pages/news/create */ 22).then(__webpack_require__.bind(null, 381)));
+const _12b8be9e = () => interopDefault(__webpack_require__.e(/* import() | pages/news/create */ 22).then(__webpack_require__.bind(null, 381)));
 
-const _372c1be4 = () => interopDefault(__webpack_require__.e(/* import() | pages/news/manage */ 24).then(__webpack_require__.bind(null, 382)));
+const _39b2409a = () => interopDefault(__webpack_require__.e(/* import() | pages/news/manage */ 24).then(__webpack_require__.bind(null, 382)));
 
-const _f0d6f238 = () => interopDefault(__webpack_require__.e(/* import() | pages/news/view */ 25).then(__webpack_require__.bind(null, 374)));
+const _3fa8611a = () => interopDefault(__webpack_require__.e(/* import() | pages/news/view */ 25).then(__webpack_require__.bind(null, 374)));
 
-const _be418370 = () => interopDefault(__webpack_require__.e(/* import() | pages/post/create */ 26).then(__webpack_require__.bind(null, 383)));
+const _b9353a04 = () => interopDefault(__webpack_require__.e(/* import() | pages/post/create */ 26).then(__webpack_require__.bind(null, 383)));
 
-const _3824439e = () => interopDefault(__webpack_require__.e(/* import() | pages/post/manage */ 28).then(__webpack_require__.bind(null, 384)));
+const _3317fa32 = () => interopDefault(__webpack_require__.e(/* import() | pages/post/manage */ 28).then(__webpack_require__.bind(null, 384)));
 
-const _128c7871 = () => interopDefault(__webpack_require__.e(/* import() | pages/post/view */ 29).then(__webpack_require__.bind(null, 375)));
+const _6abf5ab2 = () => interopDefault(__webpack_require__.e(/* import() | pages/post/view */ 29).then(__webpack_require__.bind(null, 375)));
 
-const _3c2250c2 = () => interopDefault(__webpack_require__.e(/* import() | pages/quotes/create */ 30).then(__webpack_require__.bind(null, 376)));
+const _5b7ea6d5 = () => interopDefault(__webpack_require__.e(/* import() | pages/quotes/create */ 30).then(__webpack_require__.bind(null, 376)));
 
-const _24fd7788 = () => interopDefault(__webpack_require__.e(/* import() | pages/quotes/manage */ 32).then(__webpack_require__.bind(null, 385)));
+const _c2e57284 = () => interopDefault(__webpack_require__.e(/* import() | pages/quotes/manage */ 32).then(__webpack_require__.bind(null, 385)));
 
-const _76df08f0 = () => interopDefault(__webpack_require__.e(/* import() | pages/quotes/view */ 33).then(__webpack_require__.bind(null, 377)));
+const _71d2bf84 = () => interopDefault(__webpack_require__.e(/* import() | pages/quotes/view */ 33).then(__webpack_require__.bind(null, 377)));
 
-const _2026ec56 = () => interopDefault(__webpack_require__.e(/* import() | pages/index */ 19).then(__webpack_require__.bind(null, 356)));
+const _75950860 = () => interopDefault(__webpack_require__.e(/* import() | pages/index */ 19).then(__webpack_require__.bind(null, 356)));
 
 const emptyFn = () => {};
 
@@ -9907,127 +9947,127 @@ const routerOptions = {
   scrollBehavior: router_scrollBehavior,
   routes: [{
     path: "/about",
-    component: _006f1191,
+    component: _55dd2d9b,
     name: "about"
   }, {
     path: "/admin",
-    component: _51964053,
+    component: _b1f74746,
     name: "admin"
   }, {
     path: "/blog",
-    component: _7cce7218,
+    component: _0c00337e,
     name: "blog"
   }, {
     path: "/contact-us",
-    component: _2c7c2e17,
+    component: _36dfef66,
     name: "contact-us"
   }, {
     path: "/dashboard",
-    component: _6f8d2718,
+    component: _2dcba3bc,
     name: "dashboard"
   }, {
     path: "/login",
-    component: _2c62e126,
+    component: _3f3cab77,
     name: "login"
   }, {
     path: "/logout",
-    component: _c5d73294,
+    component: _152c6828,
     name: "logout"
   }, {
     path: "/news",
-    component: _c98599ba,
+    component: _34b6c0a6,
     name: "news"
   }, {
     path: "/post",
-    component: _6f437336,
+    component: _8caa4080,
     name: "post"
   }, {
     path: "/quotes",
-    component: _04805a02,
+    component: _4bfe4509,
     name: "quotes"
   }, {
     path: "/register",
-    component: _1af5b64f,
+    component: _98f2b3f6,
     name: "register"
   }, {
     path: "/technology",
-    component: _33705b38,
+    component: _28f79524,
     name: "technology"
   }, {
     path: "/template",
-    component: _469390a6,
+    component: _41b6ff48,
     name: "template"
   }, {
     path: "/test",
-    component: _c5b8b284,
+    component: _7edce174,
     name: "test"
   }, {
     path: "/tutorials",
-    component: _001b74d9,
+    component: _79a87be3,
     name: "tutorials"
   }, {
     path: "/users",
-    component: _6590c68c,
+    component: _8a023ad4,
     name: "users"
   }, {
     path: "/blog/create",
-    component: _cd973b6c,
+    component: _c88af200,
     name: "blog-create"
   }, {
     path: "/blog/manage",
-    component: _4779fb9a,
+    component: _426db22e,
     name: "blog-manage"
   }, {
     path: "/blog/view",
-    component: _3e7eb4f3,
+    component: _12dae1ae,
     name: "blog-view"
   }, {
     path: "/dash/create",
-    component: _14368b8c,
+    component: _0f2a4220,
     name: "dash-create"
   }, {
     path: "/dash/view",
-    component: _764448e3,
+    component: _2e582319,
     name: "dash-view"
   }, {
     path: "/news/create",
-    component: _17c5080a,
+    component: _12b8be9e,
     name: "news-create"
   }, {
     path: "/news/manage",
-    component: _372c1be4,
+    component: _39b2409a,
     name: "news-manage"
   }, {
     path: "/news/view",
-    component: _f0d6f238,
+    component: _3fa8611a,
     name: "news-view"
   }, {
     path: "/post/create",
-    component: _be418370,
+    component: _b9353a04,
     name: "post-create"
   }, {
     path: "/post/manage",
-    component: _3824439e,
+    component: _3317fa32,
     name: "post-manage"
   }, {
     path: "/post/view",
-    component: _128c7871,
+    component: _6abf5ab2,
     name: "post-view"
   }, {
     path: "/quotes/create",
-    component: _3c2250c2,
+    component: _5b7ea6d5,
     name: "quotes-create"
   }, {
     path: "/quotes/manage",
-    component: _24fd7788,
+    component: _c2e57284,
     name: "quotes-manage"
   }, {
     path: "/quotes/view",
-    component: _76df08f0,
+    component: _71d2bf84,
     name: "quotes-view"
   }, {
     path: "/",
-    component: _2026ec56,
+    component: _75950860,
     name: "index"
   }],
   fallback: false
@@ -10285,7 +10325,7 @@ var error_component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "bfedb7fe",
-  "026e1de4"
+  "83f433ac"
   
 )
 
@@ -10595,7 +10635,7 @@ var nuxt_loading_component = Object(componentNormalizer["a" /* default */])(
   false,
   nuxt_loading_injectStyles,
   null,
-  "8824e488"
+  "2d680a02"
   
 )
 
@@ -11976,7 +12016,7 @@ var default_component = Object(componentNormalizer["a" /* default */])(
   false,
   default_injectStyles,
   null,
-  "ed07c6c6"
+  "837a293a"
   
 )
 
@@ -12268,7 +12308,7 @@ var layouts_component = Object(componentNormalizer["a" /* default */])(
   false,
   layouts_injectStyles,
   "36eff48a",
-  "82b000a4"
+  "7a3fc7f4"
   
 )
 
@@ -14823,7 +14863,15 @@ async function createApp(ssrContext, config = {}) {
 
 
   await new Promise((resolve, reject) => {
-    router.replace(app.context.route.fullPath, resolve, err => {
+    const {
+      route
+    } = router.resolve(app.context.route.fullPath); // Ignore 404s rather than blindly replacing URL
+
+    if (!route.matched.length && false) {
+      return resolve();
+    }
+
+    router.replace(route, resolve, err => {
       // https://github.com/vuejs/vue-router/blob/v3.4.3/src/util/errors.js
       if (!err._isRouter) return reject(err);
       if (err.type !== 2
@@ -15382,7 +15430,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "6e0ae144"
+  "ff486050"
   
 )
 
@@ -15426,14 +15474,14 @@ var delayable = __webpack_require__(45);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/mixins/dependent/index.js
 var dependent = __webpack_require__(37);
 
-// EXTERNAL MODULE: ./node_modules/vuetify/lib/mixins/detachable/index.js
-var detachable = __webpack_require__(79);
-
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/mixins/positionable/index.js
 var positionable = __webpack_require__(22);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/mixins/stackable/index.js
-var stackable = __webpack_require__(80);
+var stackable = __webpack_require__(79);
+
+// EXTERNAL MODULE: ./node_modules/vuetify/lib/mixins/detachable/index.js
+var detachable = __webpack_require__(80);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/util/mixins.js
 var mixins = __webpack_require__(2);
@@ -15445,12 +15493,12 @@ var helpers = __webpack_require__(0);
 // Mixins
 
 
+
  // Utilities
 
 
- // Types
 
-const baseMixins = Object(mixins["a" /* default */])(stackable["a" /* default */], positionable["a" /* default */], activatable["a" /* default */]);
+const baseMixins = Object(mixins["a" /* default */])(stackable["a" /* default */], positionable["a" /* default */], activatable["a" /* default */], detachable["a" /* default */]);
 /* @vue/component */
 
 /* harmony default export */ var menuable = (baseMixins.extend().extend({
@@ -15500,6 +15548,7 @@ const baseMixins = Object(mixins["a" /* default */])(stackable["a" /* default */
     }
   },
   data: () => ({
+    activatorNode: [],
     absoluteX: 0,
     absoluteY: 0,
     activatedBy: null,
@@ -15527,6 +15576,7 @@ const baseMixins = Object(mixins["a" /* default */])(stackable["a" /* default */
         scrollHeight: 0
       }
     },
+    relativeYOffset: 0,
     hasJustFocused: false,
     hasWindow: false,
     inputActivator: false,
@@ -15569,6 +15619,10 @@ const baseMixins = Object(mixins["a" /* default */])(stackable["a" /* default */
 
     hasActivator() {
       return !!this.$slots.activator || !!this.$scopedSlots.activator || !!this.activator || !!this.inputActivator;
+    },
+
+    absoluteYOffset() {
+      return this.pageYOffset - this.relativeYOffset;
     }
 
   },
@@ -15588,6 +15642,16 @@ const baseMixins = Object(mixins["a" /* default */])(stackable["a" /* default */
 
   beforeMount() {
     this.hasWindow = typeof window !== 'undefined';
+
+    if (this.hasWindow) {
+      window.addEventListener('resize', this.updateDimensions, false);
+    }
+  },
+
+  beforeDestroy() {
+    if (this.hasWindow) {
+      window.removeEventListener('resize', this.updateDimensions, false);
+    }
   },
 
   methods: {
@@ -15629,7 +15693,7 @@ const baseMixins = Object(mixins["a" /* default */])(stackable["a" /* default */
 
     calcYOverflow(top) {
       const documentHeight = this.getInnerHeight();
-      const toTop = this.pageYOffset + documentHeight;
+      const toTop = this.absoluteYOffset + documentHeight;
       const activator = this.dimensions.activator;
       const contentHeight = this.dimensions.content.height;
       const totalHeight = top + contentHeight;
@@ -15642,8 +15706,8 @@ const baseMixins = Object(mixins["a" /* default */])(stackable["a" /* default */
         top = this.pageYOffset + (activator.top - contentHeight); // If overflowing bottom
       } else if (isOverflowing && !this.allowOverflow) {
         top = toTop - contentHeight - 12; // If overflowing top
-      } else if (top < this.pageYOffset && !this.allowOverflow) {
-        top = this.pageYOffset + 12;
+      } else if (top < this.absoluteYOffset && !this.allowOverflow) {
+        top = this.absoluteYOffset + 12;
       }
 
       return top < 12 ? 12 : top;
@@ -15792,7 +15856,17 @@ const baseMixins = Object(mixins["a" /* default */])(stackable["a" /* default */
 
 
       this.sneakPeek(() => {
-        this.$refs.content && (dimensions.content = this.measure(this.$refs.content));
+        if (this.$refs.content) {
+          if (this.$refs.content.offsetParent) {
+            const offsetRect = this.getRoundedBoundedClientRect(this.$refs.content.offsetParent);
+            this.relativeYOffset = window.pageYOffset + offsetRect.top;
+            dimensions.activator.top -= this.relativeYOffset;
+            dimensions.activator.left -= window.pageXOffset + offsetRect.left;
+          }
+
+          dimensions.content = this.measure(this.$refs.content);
+        }
+
         this.dimensions = dimensions;
       });
     }
@@ -15833,7 +15907,6 @@ var console = __webpack_require__(3);
 
 
 
-
  // Directives
 
 
@@ -15842,7 +15915,7 @@ var console = __webpack_require__(3);
 
 
 
-const VMenu_baseMixins = Object(mixins["a" /* default */])(dependent["a" /* default */], delayable["a" /* default */], detachable["a" /* default */], menuable, returnable["a" /* default */], roundable["a" /* default */], toggleable["a" /* default */], themeable["a" /* default */]);
+const VMenu_baseMixins = Object(mixins["a" /* default */])(dependent["a" /* default */], delayable["a" /* default */], menuable, returnable["a" /* default */], roundable["a" /* default */], toggleable["a" /* default */], themeable["a" /* default */]);
 /* @vue/component */
 
 /* harmony default export */ var VMenu_VMenu = __webpack_exports__["a"] = (VMenu_baseMixins.extend({

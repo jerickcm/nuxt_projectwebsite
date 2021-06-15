@@ -136,7 +136,7 @@ const baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_8__[/* default *
       return {
         opacity: backgroundOpacity,
         [this.isReversed ? 'right' : 'left']: Object(_util_helpers__WEBPACK_IMPORTED_MODULE_7__[/* convertToUnit */ "g"])(this.normalizedValue, '%'),
-        width: Object(_util_helpers__WEBPACK_IMPORTED_MODULE_7__[/* convertToUnit */ "g"])(this.normalizedBuffer - this.normalizedValue, '%')
+        width: Object(_util_helpers__WEBPACK_IMPORTED_MODULE_7__[/* convertToUnit */ "g"])(Math.max(0, this.normalizedBuffer - this.normalizedValue), '%')
       };
     },
 
@@ -1480,13 +1480,6 @@ var external_vue_default = /*#__PURE__*/__webpack_require__.n(external_vue_);
 
 
 function intersectable(options) {
-  if (typeof window === 'undefined' || !('IntersectionObserver' in window)) {
-    // do nothing because intersection observer is not available
-    return external_vue_default.a.extend({
-      name: 'intersectable'
-    });
-  }
-
   return external_vue_default.a.extend({
     name: 'intersectable',
 
@@ -1826,13 +1819,14 @@ const dirtyTypes = ['color', 'file', 'time', 'date', 'datetime-local', 'week', '
     },
 
     genClearIcon() {
-      if (!this.clearable) return null;
-      const data = this.isDirty ? undefined : {
-        attrs: {
-          disabled: true
-        }
-      };
-      return this.genSlot('append', 'inner', [this.genIcon('clear', this.clearableCallback, data)]);
+      if (!this.clearable) return null; // if the text field has no content then don't display the clear icon.
+      // We add an empty div because other controls depend on a ref to append inner
+
+      if (!this.isDirty) {
+        return this.genSlot('append', 'inner', [this.$createElement('div')]);
+      }
+
+      return this.genSlot('append', 'inner', [this.genIcon('clear', this.clearableCallback)]);
     },
 
     genCounter() {
@@ -2067,7 +2061,7 @@ const dirtyTypes = ['color', 'file', 'time', 'date', 'datetime-local', 'week', '
 __webpack_require__.r(__webpack_exports__);
 
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/test.vue?vue&type=template&id=bb5dafda&scoped=true&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-container',{staticClass:"ma-0 pa-0",attrs:{"fluid":""}},[_c('v-row',{attrs:{"min-height":"100vh"}},[_c('v-col',{staticClass:"grey lighten-4 pa-4 ma-0",attrs:{"sm":"12","lg":"8"}},[_c('v-card',{staticClass:"grey lighten-5 pa-0 ma-1 ",attrs:{"min-height":"200vh"}},[_c('v-card',[_vm._v("\n          "+_vm._s(_vm.MessageOfTheDay)+"\n          "),_c('v-card-text',[_vm._v(" "+_vm._s(_vm.Message)+" - "+_vm._s(_vm.Author)+" ")])],1)],1)],1),_vm._v(" "),_c('v-col',{staticClass:"grey lighten-4 pa-4 ma-0",attrs:{"sm":"12","lg":"4"}},[_c('v-card',{staticClass:"grey lighten-5 pa-0",attrs:{"min-height":"200vh"}},[_c('v-sheet',{staticClass:"pa-2 ma-2 text-center",attrs:{"color":"white","elevation":"2"}},[_c('label',[_vm._v("Using vuex in Counters")]),_vm._v(" "),_c('p',[_vm._v(_vm._s(this.$store.state.test.counter))]),_vm._v(" "),_c('v-btn',{attrs:{"color":"primary"},on:{"click":_vm.add_one}},[_vm._v("Add 1")]),_vm._v(" "),_c('v-btn',{attrs:{"color":"primary"},on:{"click":_vm.remove_one}},[_vm._v("Remove 1")])],1),_vm._v(" "),_c('v-sheet',{staticClass:"pa-2 ma-2 text-center",attrs:{"color":"white","elevation":"2"}},[_c('label',[_vm._v("Using vuex in Nuxt")]),_vm._v(" "),_c('ul',[_vm._l((_vm.todos),function(todo){return _c('li',{key:todo.text},[_c('input',{attrs:{"type":"checkbox"},domProps:{"checked":todo.done},on:{"change":function($event){return _vm.toggle(todo)}}}),_vm._v(" "),_c('span',{class:{ done: todo.done }},[_vm._v(_vm._s(todo.text))])])}),_vm._v(" "),_c('li',[_c('input',{attrs:{"placeholder":"What needs to be done?"},on:{"keyup":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }return _vm.addTodo($event)}}})])],2)]),_vm._v(" "),_c('v-sheet',{staticClass:"pa-2 ma-2 text-center",attrs:{"color":"white","elevation":"2"}},[_c('label',[_vm._v("Using vuex mapGetters and mapActions")]),_vm._v(" "),_c('div',[_c('v-text-field',{attrs:{"placeholder":"Add Todo..."},model:{value:(_vm.title),callback:function ($$v) {_vm.title=$$v},expression:"title"}}),_vm._v(" "),_c('v-btn',{attrs:{"color":"green"},on:{"click":function($event){$event.preventDefault();return _vm.onSubmit($event)}}},[_vm._v("Submit")])],1),_vm._v(" "),_vm._l((_vm.allTodos),function(todo){return _c('div',{key:todo.id},[_c('v-sheet',{staticClass:"text-left pa-1 ma-1 orange lighten-2"},[_vm._v("\n              "+_vm._s(todo.title)+"\n              "),_c('v-spacer'),_vm._v(" "),_c('v-btn',{attrs:{"color":"primary"},on:{"click":function($event){return _vm.deleteTodos(todo.id)}}},[_vm._v("Delete")])],1)],1)})],2),_vm._v(" "),_c('v-sheet',{staticClass:"pa-2 ma-2 text-center",attrs:{"color":"white","elevation":"2"}},_vm._l((_vm.myDatas),function(test){return _c('div',{key:test.id},[_vm._v("\n            "+_vm._s(test.id)+" - "+_vm._s(test.title)+"\n          ")])}),0)],1)],1)],1)],1)}
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-container',{staticClass:"ma-0 pa-0",attrs:{"fluid":""}},[_c('v-row',{attrs:{"min-height":"100vh"}},[_c('v-col',{staticClass:"grey lighten-4 pa-4 ma-0",attrs:{"sm":"12","lg":"8"}},[_c('v-card',{staticClass:"grey lighten-5 pa-0 ma-1 ",attrs:{"min-height":"200vh"}},[_c('v-card',[_vm._v("\n          "+_vm._s(_vm.MessageOfTheDay)+"\n          "),_c('v-card-text',[_vm._v(" "+_vm._s(_vm.Message)+" - "+_vm._s(_vm.Author)+" ")])],1)],1)],1),_vm._v(" "),_c('v-col',{staticClass:"grey lighten-4 pa-4 ma-0",attrs:{"sm":"12","lg":"4"}},[_c('v-card',{staticClass:"grey lighten-5 pa-0",attrs:{"min-height":"200vh"}},[_c('v-sheet',{staticClass:"pa-2 ma-2 text-center",attrs:{"color":"white","elevation":"2"}},[_c('label',[_vm._v("Using vuex in Counters")]),_vm._v(" "),_c('p',[_vm._v(_vm._s(this.$store.state.test.counter))]),_vm._v(" "),_c('v-btn',{attrs:{"color":"primary"},on:{"click":_vm.add_one}},[_vm._v("Add 1")]),_vm._v(" "),_c('v-btn',{attrs:{"color":"primary"},on:{"click":_vm.remove_one}},[_vm._v("Remove 1")])],1),_vm._v(" "),_c('v-sheet',{staticClass:"pa-2 ma-2 text-center",attrs:{"color":"white","elevation":"2"}},[_c('label',[_vm._v("Using vuex in Nuxt")]),_vm._v(" "),_c('ul',[_vm._l((_vm.todos),function(todo){return _c('li',{key:todo.text},[_c('input',{attrs:{"type":"checkbox"},domProps:{"checked":todo.done},on:{"change":function($event){return _vm.toggle(todo)}}}),_vm._v(" "),_c('span',{class:{ done: todo.done }},[_vm._v(_vm._s(todo.text))])])}),_vm._v(" "),_c('li',[_c('input',{attrs:{"placeholder":"What needs to be done?"},on:{"keyup":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }return _vm.addTodo.apply(null, arguments)}}})])],2)]),_vm._v(" "),_c('v-sheet',{staticClass:"pa-2 ma-2 text-center",attrs:{"color":"white","elevation":"2"}},[_c('label',[_vm._v("Using vuex mapGetters and mapActions")]),_vm._v(" "),_c('div',[_c('v-text-field',{attrs:{"placeholder":"Add Todo..."},model:{value:(_vm.title),callback:function ($$v) {_vm.title=$$v},expression:"title"}}),_vm._v(" "),_c('v-btn',{attrs:{"color":"green"},on:{"click":function($event){$event.preventDefault();return _vm.onSubmit.apply(null, arguments)}}},[_vm._v("Submit")])],1),_vm._v(" "),_vm._l((_vm.allTodos),function(todo){return _c('div',{key:todo.id},[_c('v-sheet',{staticClass:"text-left pa-1 ma-1 orange lighten-2"},[_vm._v("\n              "+_vm._s(todo.title)+"\n              "),_c('v-spacer'),_vm._v(" "),_c('v-btn',{attrs:{"color":"primary"},on:{"click":function($event){return _vm.deleteTodos(todo.id)}}},[_vm._v("Delete")])],1)],1)})],2),_vm._v(" "),_c('v-sheet',{staticClass:"pa-2 ma-2 text-center",attrs:{"color":"white","elevation":"2"}},_vm._l((_vm.myDatas),function(test){return _c('div',{key:test.id},[_vm._v("\n            "+_vm._s(test.id)+" - "+_vm._s(test.title)+"\n          ")])}),0)],1)],1)],1)],1)}
 var staticRenderFns = []
 
 
@@ -2278,7 +2272,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "bb5dafda",
-  "7bfcf3cb"
+  "05b58145"
   
 )
 
