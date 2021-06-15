@@ -10,10 +10,10 @@
   {
     "name": "admin",
     "path": "/admin",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\admin\\\\index.vue",
-    "chunkName": "pages/admin/index",
+    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\admin.vue",
+    "chunkName": "pages/admin",
     "url": "/admin",
-    "_name": "_508874f6"
+    "_name": "_b1f74746"
   },
   {
     "name": "blog",

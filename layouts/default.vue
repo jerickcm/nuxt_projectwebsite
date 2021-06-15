@@ -17,7 +17,7 @@
         >
 
         <v-btn plain text tile class="blue--text pa-1 ma-1 mr-10" to="/">
-          <v-img src="/projectwebsite/pw.png" width="4rem"></v-img>
+          <v-img src="/projectwebsite/PW.png" width="4rem"></v-img>
           <!-- -- Project Website -->
           <!-- <v-icon color="blue">mdi-laptop</v-icon></v-btn -->
           <!-- > -->

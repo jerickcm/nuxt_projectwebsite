@@ -43,7 +43,7 @@ module.exports =
 /******/
 /******/ 		// "0" is the signal for "already loaded"
 /******/ 		if(installedChunks[chunkId] !== 0) {
-/******/ 			var chunk = require("./" + ({"1":"components/blog-card","2":"components/dash-title","3":"components/dashboard","4":"components/event-card","5":"components/news-card","6":"components/post-card","7":"components/quotes-card","8":"components/vuetify-logo","9":"pages/about","10":"pages/admin/index","11":"pages/blog/create","12":"pages/blog/index","13":"pages/blog/manage","14":"pages/blog/view","15":"pages/contact-us","16":"pages/dash/create","17":"pages/dash/view","18":"pages/dashboard","19":"pages/index","20":"pages/login","21":"pages/logout","22":"pages/news/create","23":"pages/news/index","24":"pages/news/manage","25":"pages/news/view","26":"pages/post/create","27":"pages/post/index","28":"pages/post/manage","29":"pages/post/view","30":"pages/quotes/create","31":"pages/quotes/index","32":"pages/quotes/manage","33":"pages/quotes/view","34":"pages/register","35":"pages/technology","36":"pages/template","37":"pages/test","38":"pages/tutorials","39":"pages/users"}[chunkId]||chunkId) + ".js");
+/******/ 			var chunk = require("./" + ({"1":"components/blog-card","2":"components/dash-title","3":"components/dashboard","4":"components/event-card","5":"components/news-card","6":"components/post-card","7":"components/quotes-card","8":"components/vuetify-logo","9":"pages/about","10":"pages/admin","11":"pages/blog/create","12":"pages/blog/index","13":"pages/blog/manage","14":"pages/blog/view","15":"pages/contact-us","16":"pages/dash/create","17":"pages/dash/view","18":"pages/dashboard","19":"pages/index","20":"pages/login","21":"pages/logout","22":"pages/news/create","23":"pages/news/index","24":"pages/news/manage","25":"pages/news/view","26":"pages/post/create","27":"pages/post/index","28":"pages/post/manage","29":"pages/post/view","30":"pages/quotes/create","31":"pages/quotes/index","32":"pages/quotes/manage","33":"pages/quotes/view","34":"pages/register","35":"pages/technology","36":"pages/template","37":"pages/test","38":"pages/tutorials","39":"pages/users"}[chunkId]||chunkId) + ".js");
 /******/ 			var moreModules = chunk.modules, chunkIds = chunk.ids;
 /******/ 			for(var moduleId in moreModules) {
 /******/ 				modules[moduleId] = moreModules[moduleId];
@@ -10137,7 +10137,7 @@ function shouldScrollToTop(route) {
 
 const _55dd2d9b = () => interopDefault(__webpack_require__.e(/* import() | pages/about */ 9).then(__webpack_require__.bind(null, 358)));
 
-const _508874f6 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/index */ 10).then(__webpack_require__.bind(null, 361)));
+const _b1f74746 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin */ 10).then(__webpack_require__.bind(null, 361)));
 
 const _0c00337e = () => interopDefault(__webpack_require__.e(/* import() | pages/blog/index */ 12).then(__webpack_require__.bind(null, 362)));
 
@@ -10212,7 +10212,7 @@ const routerOptions = {
     name: "about"
   }, {
     path: "/admin",
-    component: _508874f6,
+    component: _b1f74746,
     name: "admin"
   }, {
     path: "/blog",
@@ -10904,8 +10904,8 @@ var nuxt_loading_component = Object(componentNormalizer["a" /* default */])(
 // EXTERNAL MODULE: ./layouts/global.css
 var layouts_global = __webpack_require__(112);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/admin.vue?vue&type=template&id=e91a3372&
-var adminvue_type_template_id_e91a3372_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-app',{attrs:{"dark":""}},[_c('v-app-bar',{staticClass:"blue lighten-2",attrs:{"fixed":"","app":""}},[_c('v-sheet',{staticClass:"hidden-md-and-up font-kalamreg",attrs:{"color":"white"},on:{"click":function($event){$event.stopPropagation();_vm.rightDrawer = !_vm.rightDrawer}}},[_c('v-icon',{attrs:{"color":"green","x-large":""}},[_vm._v("mdi-message-arrow-left")]),_vm._v(" Menu\n    ")],1),_vm._v(" "),_c('v-spacer'),_vm._v(" "),_c('div',{staticClass:"hidden-sm-and-down"},[_c('v-icon',{attrs:{"color":"blue"},on:{"click":function($event){$event.stopPropagation();_vm.rightDrawer = !_vm.rightDrawer}}},[_vm._v("mdi-code-json")]),_vm._v(" "),_c('v-btn',{staticClass:"blue--text pa-1 ma-1 mr-10",attrs:{"plain":"","text":"","tile":"","to":"/"}},[_c('v-img',{attrs:{"src":"/projectwebsite/pw.png","width":"4rem"}})],1),_vm._v(" "),_vm._l((_vm.navlist),function(item,i){return _c('v-btn',{key:i,staticClass:"white pa-1 ma-1",attrs:{"to":item.link,"plain":"","text":"","tile":"","rounded":""}},[_c('v-icon',[_vm._v(_vm._s(item.icons))]),_vm._v(" "+_vm._s(item.label)+"\n      ")],1)})],2),_vm._v(" "),_c('v-spacer'),_vm._v(" "),_c('div',{staticClass:"hidden-sm-and-down"},[(_vm.$auth.user && _vm.$auth.loggedIn && _vm.$auth.user['is_admin'] == '1')?_c('v-btn',{staticClass:"white pa-1 ma-1",attrs:{"plain":"","text":"","tile":"","rounded":"","to":"/admin"}},[_c('v-icon',[_vm._v("mdi-account-tie")]),_vm._v("\n        Admin")],1):_vm._e(),_vm._v(" "),(_vm.$auth.loggedIn)?_c('v-btn',{staticClass:"white pa-1 ma-1",attrs:{"plain":"","text":"","tile":"","rounded":"","to":"/dashboard"}},[_c('v-icon',[_vm._v("mdi-monitor-dashboard")]),_vm._v("\n        Dashboard")],1):_vm._e(),_vm._v(" "),(_vm.$auth.loggedIn)?_c('v-btn',{staticClass:"white pa-1 ma-1",attrs:{"plain":"","text":"","tile":"","rounded":""},on:{"click":function($event){$event.preventDefault();return _vm.logout()}}},[_c('v-icon',[_vm._v("mdi-logout")]),_vm._v("\n        Logout")],1):_vm._e()],1),_vm._v(" "),_c('v-spacer')],1),_vm._v(" "),_c('v-main',{class:{
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/admin.vue?vue&type=template&id=5694e247&
+var adminvue_type_template_id_5694e247_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-app',{attrs:{"dark":""}},[_c('v-app-bar',{staticClass:"blue lighten-2",attrs:{"fixed":"","app":""}},[_c('v-sheet',{staticClass:"hidden-md-and-up font-kalamreg",attrs:{"color":"white"},on:{"click":function($event){$event.stopPropagation();_vm.rightDrawer = !_vm.rightDrawer}}},[_c('v-icon',{attrs:{"color":"green","x-large":""}},[_vm._v("mdi-message-arrow-left")]),_vm._v(" Menu\n    ")],1),_vm._v(" "),_c('v-spacer'),_vm._v(" "),_c('div',{staticClass:"hidden-sm-and-down"},[_c('v-icon',{attrs:{"color":"blue"},on:{"click":function($event){$event.stopPropagation();_vm.rightDrawer = !_vm.rightDrawer}}},[_vm._v("mdi-code-json")]),_vm._v(" "),_c('v-btn',{staticClass:"blue--text pa-1 ma-1 mr-10",attrs:{"plain":"","text":"","tile":"","to":"/"}},[_c('v-img',{attrs:{"src":"/projectwebsite/PW.png","width":"4rem"}})],1),_vm._v(" "),_vm._l((_vm.navlist),function(item,i){return _c('v-btn',{key:i,staticClass:"white pa-1 ma-1",attrs:{"to":item.link,"plain":"","text":"","tile":"","rounded":""}},[_c('v-icon',[_vm._v(_vm._s(item.icons))]),_vm._v(" "+_vm._s(item.label)+"\n      ")],1)})],2),_vm._v(" "),_c('v-spacer'),_vm._v(" "),_c('div',{staticClass:"hidden-sm-and-down"},[(_vm.$auth.user && _vm.$auth.loggedIn && _vm.$auth.user['is_admin'] == '1')?_c('v-btn',{staticClass:"white pa-1 ma-1",attrs:{"plain":"","text":"","tile":"","rounded":"","to":"/admin"}},[_c('v-icon',[_vm._v("mdi-account-tie")]),_vm._v("\n        Admin")],1):_vm._e(),_vm._v(" "),(_vm.$auth.loggedIn)?_c('v-btn',{staticClass:"white pa-1 ma-1",attrs:{"plain":"","text":"","tile":"","rounded":"","to":"/dashboard"}},[_c('v-icon',[_vm._v("mdi-monitor-dashboard")]),_vm._v("\n        Dashboard")],1):_vm._e(),_vm._v(" "),(_vm.$auth.loggedIn)?_c('v-btn',{staticClass:"white pa-1 ma-1",attrs:{"plain":"","text":"","tile":"","rounded":""},on:{"click":function($event){$event.preventDefault();return _vm.logout()}}},[_c('v-icon',[_vm._v("mdi-logout")]),_vm._v("\n        Logout")],1):_vm._e()],1),_vm._v(" "),_c('v-spacer')],1),_vm._v(" "),_c('v-main',{class:{
       'padb-35': _vm.$vuetify.breakpoint.smAndDown,
       'padb-30': _vm.$vuetify.breakpoint.mdAndUp
     }},[_c('nuxt')],1),_vm._v(" "),_c('v-navigation-drawer',{attrs:{"right":_vm.right,"temporary":"","fixed":""},model:{value:(_vm.rightDrawer),callback:function ($$v) {_vm.rightDrawer=$$v},expression:"rightDrawer"}},[_c('v-list',[_c('Nav')],1)],1),_vm._v(" "),_c('v-footer',{staticClass:"black lighten-4",attrs:{"absolute":!_vm.fixed,"app":""}},[_c('v-sheet',{staticClass:"black pa-1 ma-1",class:{
@@ -10915,10 +10915,10 @@ var adminvue_type_template_id_e91a3372_render = function () {var _vm=this;var _h
         'd-none': _vm.$vuetify.breakpoint.smAndDown,
         '': _vm.$vuetify.breakpoint.mdAndUp
       }},[_vm._v("\n      >\n      "),_c('label',{staticClass:"grey--text fs-0-6",attrs:{"for":""}},[_vm._v("Secured by:")]),_vm._v(" "),_c('a',{attrs:{"href":"https://letsencrypt.org/"}},[_c('v-img',{attrs:{"width":"90px","src":"/images/letsencrypt-logo-horizontal.svg"}})],1)])],1)],1)}
-var adminvue_type_template_id_e91a3372_staticRenderFns = []
+var adminvue_type_template_id_5694e247_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./layouts/admin.vue?vue&type=template&id=e91a3372&
+// CONCATENATED MODULE: ./layouts/admin.vue?vue&type=template&id=5694e247&
 
 // EXTERNAL MODULE: external "nprogress"
 var external_nprogress_ = __webpack_require__(8);
@@ -12286,8 +12286,8 @@ if (style0.__inject__) style0.__inject__(context)
 
 var admin_component = Object(componentNormalizer["a" /* default */])(
   layouts_adminvue_type_script_lang_js_,
-  adminvue_type_template_id_e91a3372_render,
-  adminvue_type_template_id_e91a3372_staticRenderFns,
+  adminvue_type_template_id_5694e247_render,
+  adminvue_type_template_id_5694e247_staticRenderFns,
   false,
   admin_injectStyles,
   null,
@@ -12316,8 +12316,8 @@ installComponents_default()(admin_component, {Nav: __webpack_require__(97).defau
 
 installComponents_default()(admin_component, {VApp: VApp_VApp,VAppBar: VAppBar_VAppBar,VBtn: VBtn["a" /* default */],VFooter: VFooter_VFooter,VIcon: VIcon["a" /* default */],VImg: VImg["a" /* default */],VList: VList["a" /* default */],VMain: VMain_VMain,VNavigationDrawer: VNavigationDrawer_VNavigationDrawer,VSheet: VSheet["a" /* default */],VSpacer: VSpacer["a" /* default */]})
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/default.vue?vue&type=template&id=00d723a9&
-var defaultvue_type_template_id_00d723a9_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-app',{attrs:{"dark":""}},[_c('v-app-bar',{staticClass:"white",attrs:{"fixed":"","app":""}},[_c('v-sheet',{staticClass:"hidden-md-and-up font-kalamreg",attrs:{"color":"white"},on:{"click":function($event){$event.stopPropagation();_vm.rightDrawer = !_vm.rightDrawer}}},[_c('v-icon',{attrs:{"color":"green","x-large":""}},[_vm._v("mdi-message-arrow-left")]),_vm._v(" Menu\n    ")],1),_vm._v(" "),_c('v-spacer'),_vm._v(" "),_c('div',{staticClass:"hidden-sm-and-down"},[_c('v-icon',{attrs:{"color":"blue"},on:{"click":function($event){$event.stopPropagation();_vm.rightDrawer = !_vm.rightDrawer}}},[_vm._v("mdi-code-json")]),_vm._v(" "),_c('v-btn',{staticClass:"blue--text pa-1 ma-1 mr-10",attrs:{"plain":"","text":"","tile":"","to":"/"}},[_c('v-img',{attrs:{"src":"/projectwebsite/pw.png","width":"4rem"}})],1),_vm._v(" "),_vm._l((_vm.navlist),function(item,i){return _c('v-btn',{key:i,staticClass:"white pa-1 ma-1",attrs:{"to":item.link,"plain":"","text":"","tile":"","rounded":""}},[_c('v-icon',[_vm._v(_vm._s(item.icons))]),_vm._v(" "+_vm._s(item.label)+"\n      ")],1)})],2),_vm._v(" "),_c('v-spacer'),_vm._v(" "),_c('div',{staticClass:"hidden-sm-and-down"},[(_vm.$auth.user && _vm.$auth.loggedIn && _vm.$auth.user['is_admin'] == '1')?_c('v-btn',{staticClass:"white pa-1 ma-1",attrs:{"plain":"","text":"","tile":"","rounded":"","to":"/admin"}},[_c('v-icon',[_vm._v("mdi-account-tie")]),_vm._v("\n        Admin")],1):_vm._e(),_vm._v(" "),(_vm.$auth.loggedIn)?_c('v-btn',{staticClass:"white pa-1 ma-1",attrs:{"plain":"","text":"","tile":"","rounded":"","to":"/dashboard"}},[_c('v-icon',[_vm._v("mdi-monitor-dashboard")]),_vm._v("\n        Dashboard")],1):_vm._e(),_vm._v(" "),(_vm.$auth.loggedIn)?_c('v-btn',{staticClass:"white pa-1 ma-1",attrs:{"plain":"","text":"","tile":"","rounded":""},on:{"click":function($event){$event.preventDefault();return _vm.logout()}}},[_c('v-icon',[_vm._v("mdi-logout")]),_vm._v("\n        Logout")],1):_vm._e()],1),_vm._v(" "),_c('v-spacer')],1),_vm._v(" "),_c('v-main',{class:{
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/default.vue?vue&type=template&id=3116a7a9&
+var defaultvue_type_template_id_3116a7a9_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-app',{attrs:{"dark":""}},[_c('v-app-bar',{staticClass:"white",attrs:{"fixed":"","app":""}},[_c('v-sheet',{staticClass:"hidden-md-and-up font-kalamreg",attrs:{"color":"white"},on:{"click":function($event){$event.stopPropagation();_vm.rightDrawer = !_vm.rightDrawer}}},[_c('v-icon',{attrs:{"color":"green","x-large":""}},[_vm._v("mdi-message-arrow-left")]),_vm._v(" Menu\n    ")],1),_vm._v(" "),_c('v-spacer'),_vm._v(" "),_c('div',{staticClass:"hidden-sm-and-down"},[_c('v-icon',{attrs:{"color":"blue"},on:{"click":function($event){$event.stopPropagation();_vm.rightDrawer = !_vm.rightDrawer}}},[_vm._v("mdi-code-json")]),_vm._v(" "),_c('v-btn',{staticClass:"blue--text pa-1 ma-1 mr-10",attrs:{"plain":"","text":"","tile":"","to":"/"}},[_c('v-img',{attrs:{"src":"/projectwebsite/PW.png","width":"4rem"}})],1),_vm._v(" "),_vm._l((_vm.navlist),function(item,i){return _c('v-btn',{key:i,staticClass:"white pa-1 ma-1",attrs:{"to":item.link,"plain":"","text":"","tile":"","rounded":""}},[_c('v-icon',[_vm._v(_vm._s(item.icons))]),_vm._v(" "+_vm._s(item.label)+"\n      ")],1)})],2),_vm._v(" "),_c('v-spacer'),_vm._v(" "),_c('div',{staticClass:"hidden-sm-and-down"},[(_vm.$auth.user && _vm.$auth.loggedIn && _vm.$auth.user['is_admin'] == '1')?_c('v-btn',{staticClass:"white pa-1 ma-1",attrs:{"plain":"","text":"","tile":"","rounded":"","to":"/admin"}},[_c('v-icon',[_vm._v("mdi-account-tie")]),_vm._v("\n        Admin")],1):_vm._e(),_vm._v(" "),(_vm.$auth.loggedIn)?_c('v-btn',{staticClass:"white pa-1 ma-1",attrs:{"plain":"","text":"","tile":"","rounded":"","to":"/dashboard"}},[_c('v-icon',[_vm._v("mdi-monitor-dashboard")]),_vm._v("\n        Dashboard")],1):_vm._e(),_vm._v(" "),(_vm.$auth.loggedIn)?_c('v-btn',{staticClass:"white pa-1 ma-1",attrs:{"plain":"","text":"","tile":"","rounded":""},on:{"click":function($event){$event.preventDefault();return _vm.logout()}}},[_c('v-icon',[_vm._v("mdi-logout")]),_vm._v("\n        Logout")],1):_vm._e()],1),_vm._v(" "),_c('v-spacer')],1),_vm._v(" "),_c('v-main',{class:{
       'padb-35': _vm.$vuetify.breakpoint.smAndDown,
       'padb-30': _vm.$vuetify.breakpoint.mdAndUp
     }},[_c('nuxt')],1),_vm._v(" "),_c('v-navigation-drawer',{attrs:{"right":_vm.right,"temporary":"","fixed":""},model:{value:(_vm.rightDrawer),callback:function ($$v) {_vm.rightDrawer=$$v},expression:"rightDrawer"}},[_c('v-list',[_c('Nav')],1)],1),_vm._v(" "),_c('v-footer',{staticClass:"black lighten-4",attrs:{"absolute":!_vm.fixed,"app":""}},[_c('v-sheet',{staticClass:"black pa-1 ma-1",class:{
@@ -12327,10 +12327,10 @@ var defaultvue_type_template_id_00d723a9_render = function () {var _vm=this;var 
         'd-none': _vm.$vuetify.breakpoint.smAndDown,
         '': _vm.$vuetify.breakpoint.mdAndUp
       }},[_vm._v("\n      >\n      "),_c('label',{staticClass:"grey--text fs-0-6",attrs:{"for":""}},[_vm._v("Secured by:")]),_vm._v(" "),_c('a',{attrs:{"href":"https://letsencrypt.org/"}},[_c('v-img',{attrs:{"width":"90px","src":"/images/letsencrypt-logo-horizontal.svg"}})],1)])],1)],1)}
-var defaultvue_type_template_id_00d723a9_staticRenderFns = []
+var defaultvue_type_template_id_3116a7a9_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./layouts/default.vue?vue&type=template&id=00d723a9&
+// CONCATENATED MODULE: ./layouts/default.vue?vue&type=template&id=3116a7a9&
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/default.vue?vue&type=script&lang=js&
 //
@@ -12605,8 +12605,8 @@ if (style0.__inject__) style0.__inject__(context)
 
 var default_component = Object(componentNormalizer["a" /* default */])(
   layouts_defaultvue_type_script_lang_js_,
-  defaultvue_type_template_id_00d723a9_render,
-  defaultvue_type_template_id_00d723a9_staticRenderFns,
+  defaultvue_type_template_id_3116a7a9_render,
+  defaultvue_type_template_id_3116a7a9_staticRenderFns,
   false,
   default_injectStyles,
   null,
