@@ -18,9 +18,14 @@ export const navlist = {
           link: '/blog'
         },
         {
-          icons: 'mdi-format-quote-close',
+          icons: 'mdi-comment-quote-outline',
           label: 'Quotes',
           link: '/quotes'
+        },
+        {
+          icons: 'mdi-earth',
+          label: 'Reminders',
+          link: '/world-reminders'
         },
         // {
         //   icons: 'mdi-cloud-check-outline',

@@ -1,4 +1,4 @@
-exports.ids = [37];
+exports.ids = [38];
 exports.modules = {
 
 /***/ 195:
@@ -136,7 +136,7 @@ const baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_8__[/* default *
       return {
         opacity: backgroundOpacity,
         [this.isReversed ? 'right' : 'left']: Object(_util_helpers__WEBPACK_IMPORTED_MODULE_7__[/* convertToUnit */ "g"])(this.normalizedValue, '%'),
-        width: Object(_util_helpers__WEBPACK_IMPORTED_MODULE_7__[/* convertToUnit */ "g"])(Math.max(0, this.normalizedBuffer - this.normalizedValue), '%')
+        width: Object(_util_helpers__WEBPACK_IMPORTED_MODULE_7__[/* convertToUnit */ "g"])(this.normalizedBuffer - this.normalizedValue, '%')
       };
     },
 
@@ -191,7 +191,7 @@ const baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_8__[/* default *
   },
   methods: {
     genContent() {
-      const slot = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_7__[/* getSlot */ "r"])(this, 'default', {
+      const slot = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_7__[/* getSlot */ "s"])(this, 'default', {
         value: this.internalLazyValue
       });
       if (!slot) return null;
@@ -279,10 +279,10 @@ const baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_8__[/* default *
 /* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
 
 
-const VCardActions = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__[/* createSimpleFunctional */ "h"])('v-card__actions');
-const VCardSubtitle = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__[/* createSimpleFunctional */ "h"])('v-card__subtitle');
-const VCardText = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__[/* createSimpleFunctional */ "h"])('v-card__text');
-const VCardTitle = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__[/* createSimpleFunctional */ "h"])('v-card__title');
+const VCardActions = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__[/* createSimpleFunctional */ "i"])('v-card__actions');
+const VCardSubtitle = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__[/* createSimpleFunctional */ "i"])('v-card__subtitle');
+const VCardText = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__[/* createSimpleFunctional */ "i"])('v-card__text');
+const VCardTitle = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__[/* createSimpleFunctional */ "i"])('v-card__title');
 
 /* unused harmony default export */ var _unused_webpack_default_export = ({
   $_vuetify_subcomponents: {
@@ -512,7 +512,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 "use strict";
 /* harmony import */ var _colorable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
 /* harmony import */ var _themeable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
-/* harmony import */ var _registrable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(36);
+/* harmony import */ var _registrable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(37);
 /* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(0);
 /* harmony import */ var _util_console__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3);
 /* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(2);
@@ -678,7 +678,7 @@ const baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_5__[/* default *
   watch: {
     rules: {
       handler(newVal, oldVal) {
-        if (Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__[/* deepEqual */ "i"])(newVal, oldVal)) return;
+        if (Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__[/* deepEqual */ "j"])(newVal, oldVal)) return;
         this.validate();
       },
 
@@ -785,7 +785,7 @@ const baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_5__[/* default *
 // UNUSED EXPORTS: VLabel
 
 // EXTERNAL MODULE: ./node_modules/vuetify/src/components/VLabel/VLabel.sass
-var VLabel = __webpack_require__(211);
+var VLabel = __webpack_require__(212);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/mixins/colorable/index.js
 var colorable = __webpack_require__(7);
@@ -875,7 +875,7 @@ var helpers = __webpack_require__(0);
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(208);
+var content = __webpack_require__(209);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -891,7 +891,7 @@ __webpack_require__(5).default("4f4f805e", content, true)
 // UNUSED EXPORTS: VInput
 
 // EXTERNAL MODULE: ./node_modules/vuetify/src/components/VInput/VInput.sass
-var VInput = __webpack_require__(209);
+var VInput = __webpack_require__(210);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VIcon/index.js
 var VIcon = __webpack_require__(22);
@@ -900,7 +900,7 @@ var VIcon = __webpack_require__(22);
 var VLabel = __webpack_require__(205);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/src/components/VMessages/VMessages.sass
-var VMessages = __webpack_require__(213);
+var VMessages = __webpack_require__(214);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/mixins/colorable/index.js
 var colorable = __webpack_require__(7);
@@ -948,7 +948,7 @@ var helpers = __webpack_require__(0);
       return this.$createElement('div', {
         staticClass: 'v-messages__message',
         key
-      }, Object(helpers["r" /* getSlot */])(this, 'default', {
+      }, Object(helpers["s" /* getSlot */])(this, 'default', {
         message,
         key
       }) || [message]);
@@ -1127,11 +1127,11 @@ const baseMixins = Object(mixins["a" /* default */])(binds_attrs["a" /* default 
 
     genIcon(type, cb, extraData = {}) {
       const icon = this[`${type}Icon`];
-      const eventName = `click:${Object(helpers["v" /* kebabCase */])(type)}`;
+      const eventName = `click:${Object(helpers["w" /* kebabCase */])(type)}`;
       const hasListener = !!(this.listeners$[eventName] || cb);
       const data = Object(mergeData["a" /* default */])({
         attrs: {
-          'aria-label': hasListener ? Object(helpers["v" /* kebabCase */])(type).split('-')[0] + ' icon' : undefined,
+          'aria-label': hasListener ? Object(helpers["w" /* kebabCase */])(type).split('-')[0] + ' icon' : undefined,
           color: this.validationState,
           dark: this.dark,
           disabled: this.isDisabled,
@@ -1154,7 +1154,7 @@ const baseMixins = Object(mixins["a" /* default */])(binds_attrs["a" /* default 
       }, extraData);
       return this.$createElement('div', {
         staticClass: `v-input__icon`,
-        class: type ? `v-input__icon--${Object(helpers["v" /* kebabCase */])(type)}` : undefined
+        class: type ? `v-input__icon--${Object(helpers["w" /* kebabCase */])(type)}` : undefined
       }, [this.$createElement(VIcon["a" /* default */], data, icon)]);
     },
 
@@ -1200,7 +1200,7 @@ const baseMixins = Object(mixins["a" /* default */])(binds_attrs["a" /* default 
           role: this.hasMessages ? 'alert' : null
         },
         scopedSlots: {
-          default: props => Object(helpers["r" /* getSlot */])(this, 'message', props)
+          default: props => Object(helpers["s" /* getSlot */])(this, 'message', props)
         }
       });
     },
@@ -1272,7 +1272,7 @@ const baseMixins = Object(mixins["a" /* default */])(binds_attrs["a" /* default 
 
 /***/ }),
 
-/***/ 208:
+/***/ 209:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -1286,13 +1286,13 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 209:
+/***/ 210:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(210);
+var content = __webpack_require__(211);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -1300,7 +1300,7 @@ __webpack_require__(5).default("22487aae", content, true)
 
 /***/ }),
 
-/***/ 210:
+/***/ 211:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -1314,13 +1314,13 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 211:
+/***/ 212:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(212);
+var content = __webpack_require__(213);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -1328,7 +1328,7 @@ __webpack_require__(5).default("371f82d0", content, true)
 
 /***/ }),
 
-/***/ 212:
+/***/ 213:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -1342,13 +1342,13 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 213:
+/***/ 214:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(214);
+var content = __webpack_require__(215);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -1356,7 +1356,7 @@ __webpack_require__(5).default("2bb34da4", content, true)
 
 /***/ }),
 
-/***/ 214:
+/***/ 215:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -1370,13 +1370,13 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 215:
+/***/ 216:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(216);
+var content = __webpack_require__(217);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -1384,7 +1384,7 @@ __webpack_require__(5).default("3dc908a0", content, true)
 
 /***/ }),
 
-/***/ 216:
+/***/ 217:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -1410,7 +1410,7 @@ var VTextField = __webpack_require__(206);
 var VInput = __webpack_require__(207);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/src/components/VCounter/VCounter.sass
-var VCounter = __webpack_require__(215);
+var VCounter = __webpack_require__(216);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/mixins/themeable/index.js
 var themeable = __webpack_require__(6);
@@ -1480,6 +1480,13 @@ var external_vue_default = /*#__PURE__*/__webpack_require__.n(external_vue_);
 
 
 function intersectable(options) {
+  if (typeof window === 'undefined' || !('IntersectionObserver' in window)) {
+    // do nothing because intersection observer is not available
+    return external_vue_default.a.extend({
+      name: 'intersectable'
+    });
+  }
+
   return external_vue_default.a.extend({
     name: 'intersectable',
 
@@ -1520,7 +1527,7 @@ var loadable = __webpack_require__(197);
 var validatable = __webpack_require__(204);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/directives/resize/index.js
-var resize = __webpack_require__(37);
+var resize = __webpack_require__(40);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/directives/ripple/index.js
 var ripple = __webpack_require__(23);
@@ -1819,14 +1826,13 @@ const dirtyTypes = ['color', 'file', 'time', 'date', 'datetime-local', 'week', '
     },
 
     genClearIcon() {
-      if (!this.clearable) return null; // if the text field has no content then don't display the clear icon.
-      // We add an empty div because other controls depend on a ref to append inner
-
-      if (!this.isDirty) {
-        return this.genSlot('append', 'inner', [this.$createElement('div')]);
-      }
-
-      return this.genSlot('append', 'inner', [this.genIcon('clear', this.clearableCallback)]);
+      if (!this.clearable) return null;
+      const data = this.isDirty ? undefined : {
+        attrs: {
+          disabled: true
+        }
+      };
+      return this.genSlot('append', 'inner', [this.genIcon('clear', this.clearableCallback, data)]);
     },
 
     genCounter() {
@@ -1989,7 +1995,7 @@ const dirtyTypes = ['color', 'file', 'time', 'date', 'datetime-local', 'week', '
     },
 
     onKeyDown(e) {
-      if (e.keyCode === helpers["w" /* keyCodes */].enter) this.$emit('change', this.internalValue);
+      if (e.keyCode === helpers["x" /* keyCodes */].enter) this.$emit('change', this.internalValue);
       this.$emit('keydown', e);
     },
 
@@ -2053,7 +2059,7 @@ const dirtyTypes = ['color', 'file', 'time', 'date', 'datetime-local', 'week', '
 
 /***/ }),
 
-/***/ 372:
+/***/ 404:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2061,7 +2067,7 @@ const dirtyTypes = ['color', 'file', 'time', 'date', 'datetime-local', 'week', '
 __webpack_require__.r(__webpack_exports__);
 
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/test.vue?vue&type=template&id=bb5dafda&scoped=true&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-container',{staticClass:"ma-0 pa-0",attrs:{"fluid":""}},[_c('v-row',{attrs:{"min-height":"100vh"}},[_c('v-col',{staticClass:"grey lighten-4 pa-4 ma-0",attrs:{"sm":"12","lg":"8"}},[_c('v-card',{staticClass:"grey lighten-5 pa-0 ma-1 ",attrs:{"min-height":"200vh"}},[_c('v-card',[_vm._v("\n          "+_vm._s(_vm.MessageOfTheDay)+"\n          "),_c('v-card-text',[_vm._v(" "+_vm._s(_vm.Message)+" - "+_vm._s(_vm.Author)+" ")])],1)],1)],1),_vm._v(" "),_c('v-col',{staticClass:"grey lighten-4 pa-4 ma-0",attrs:{"sm":"12","lg":"4"}},[_c('v-card',{staticClass:"grey lighten-5 pa-0",attrs:{"min-height":"200vh"}},[_c('v-sheet',{staticClass:"pa-2 ma-2 text-center",attrs:{"color":"white","elevation":"2"}},[_c('label',[_vm._v("Using vuex in Counters")]),_vm._v(" "),_c('p',[_vm._v(_vm._s(this.$store.state.test.counter))]),_vm._v(" "),_c('v-btn',{attrs:{"color":"primary"},on:{"click":_vm.add_one}},[_vm._v("Add 1")]),_vm._v(" "),_c('v-btn',{attrs:{"color":"primary"},on:{"click":_vm.remove_one}},[_vm._v("Remove 1")])],1),_vm._v(" "),_c('v-sheet',{staticClass:"pa-2 ma-2 text-center",attrs:{"color":"white","elevation":"2"}},[_c('label',[_vm._v("Using vuex in Nuxt")]),_vm._v(" "),_c('ul',[_vm._l((_vm.todos),function(todo){return _c('li',{key:todo.text},[_c('input',{attrs:{"type":"checkbox"},domProps:{"checked":todo.done},on:{"change":function($event){return _vm.toggle(todo)}}}),_vm._v(" "),_c('span',{class:{ done: todo.done }},[_vm._v(_vm._s(todo.text))])])}),_vm._v(" "),_c('li',[_c('input',{attrs:{"placeholder":"What needs to be done?"},on:{"keyup":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }return _vm.addTodo.apply(null, arguments)}}})])],2)]),_vm._v(" "),_c('v-sheet',{staticClass:"pa-2 ma-2 text-center",attrs:{"color":"white","elevation":"2"}},[_c('label',[_vm._v("Using vuex mapGetters and mapActions")]),_vm._v(" "),_c('div',[_c('v-text-field',{attrs:{"placeholder":"Add Todo..."},model:{value:(_vm.title),callback:function ($$v) {_vm.title=$$v},expression:"title"}}),_vm._v(" "),_c('v-btn',{attrs:{"color":"green"},on:{"click":function($event){$event.preventDefault();return _vm.onSubmit.apply(null, arguments)}}},[_vm._v("Submit")])],1),_vm._v(" "),_vm._l((_vm.allTodos),function(todo){return _c('div',{key:todo.id},[_c('v-sheet',{staticClass:"text-left pa-1 ma-1 orange lighten-2"},[_vm._v("\n              "+_vm._s(todo.title)+"\n              "),_c('v-spacer'),_vm._v(" "),_c('v-btn',{attrs:{"color":"primary"},on:{"click":function($event){return _vm.deleteTodos(todo.id)}}},[_vm._v("Delete")])],1)],1)})],2),_vm._v(" "),_c('v-sheet',{staticClass:"pa-2 ma-2 text-center",attrs:{"color":"white","elevation":"2"}},_vm._l((_vm.myDatas),function(test){return _c('div',{key:test.id},[_vm._v("\n            "+_vm._s(test.id)+" - "+_vm._s(test.title)+"\n          ")])}),0)],1)],1)],1)],1)}
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-container',{staticClass:"ma-0 pa-0",attrs:{"fluid":""}},[_c('v-row',{attrs:{"min-height":"100vh"}},[_c('v-col',{staticClass:"grey lighten-4 pa-4 ma-0",attrs:{"sm":"12","lg":"8"}},[_c('v-card',{staticClass:"grey lighten-5 pa-0 ma-1 ",attrs:{"min-height":"200vh"}},[_c('v-card',[_vm._v("\n          "+_vm._s(_vm.MessageOfTheDay)+"\n          "),_c('v-card-text',[_vm._v(" "+_vm._s(_vm.Message)+" - "+_vm._s(_vm.Author)+" ")])],1)],1)],1),_vm._v(" "),_c('v-col',{staticClass:"grey lighten-4 pa-4 ma-0",attrs:{"sm":"12","lg":"4"}},[_c('v-card',{staticClass:"grey lighten-5 pa-0",attrs:{"min-height":"200vh"}},[_c('v-sheet',{staticClass:"pa-2 ma-2 text-center",attrs:{"color":"white","elevation":"2"}},[_c('label',[_vm._v("Using vuex in Counters")]),_vm._v(" "),_c('p',[_vm._v(_vm._s(this.$store.state.test.counter))]),_vm._v(" "),_c('v-btn',{attrs:{"color":"primary"},on:{"click":_vm.add_one}},[_vm._v("Add 1")]),_vm._v(" "),_c('v-btn',{attrs:{"color":"primary"},on:{"click":_vm.remove_one}},[_vm._v("Remove 1")])],1),_vm._v(" "),_c('v-sheet',{staticClass:"pa-2 ma-2 text-center",attrs:{"color":"white","elevation":"2"}},[_c('label',[_vm._v("Using vuex in Nuxt")]),_vm._v(" "),_c('ul',[_vm._l((_vm.todos),function(todo){return _c('li',{key:todo.text},[_c('input',{attrs:{"type":"checkbox"},domProps:{"checked":todo.done},on:{"change":function($event){return _vm.toggle(todo)}}}),_vm._v(" "),_c('span',{class:{ done: todo.done }},[_vm._v(_vm._s(todo.text))])])}),_vm._v(" "),_c('li',[_c('input',{attrs:{"placeholder":"What needs to be done?"},on:{"keyup":function($event){if(!$event.type.indexOf('key')&&_vm._k($event.keyCode,"enter",13,$event.key,"Enter")){ return null; }return _vm.addTodo($event)}}})])],2)]),_vm._v(" "),_c('v-sheet',{staticClass:"pa-2 ma-2 text-center",attrs:{"color":"white","elevation":"2"}},[_c('label',[_vm._v("Using vuex mapGetters and mapActions")]),_vm._v(" "),_c('div',[_c('v-text-field',{attrs:{"placeholder":"Add Todo..."},model:{value:(_vm.title),callback:function ($$v) {_vm.title=$$v},expression:"title"}}),_vm._v(" "),_c('v-btn',{attrs:{"color":"green"},on:{"click":function($event){$event.preventDefault();return _vm.onSubmit($event)}}},[_vm._v("Submit")])],1),_vm._v(" "),_vm._l((_vm.allTodos),function(todo){return _c('div',{key:todo.id},[_c('v-sheet',{staticClass:"text-left pa-1 ma-1 orange lighten-2"},[_vm._v("\n              "+_vm._s(todo.title)+"\n              "),_c('v-spacer'),_vm._v(" "),_c('v-btn',{attrs:{"color":"primary"},on:{"click":function($event){return _vm.deleteTodos(todo.id)}}},[_vm._v("Delete")])],1)],1)})],2),_vm._v(" "),_c('v-sheet',{staticClass:"pa-2 ma-2 text-center",attrs:{"color":"white","elevation":"2"}},_vm._l((_vm.myDatas),function(test){return _c('div',{key:test.id},[_vm._v("\n            "+_vm._s(test.id)+" - "+_vm._s(test.title)+"\n          ")])}),0)],1)],1)],1)],1)}
 var staticRenderFns = []
 
 
@@ -2080,7 +2086,7 @@ var nprogress = __webpack_require__(50);
 var greeting = __webpack_require__(43);
 
 // EXTERNAL MODULE: external "vuex"
-var external_vuex_ = __webpack_require__(30);
+var external_vuex_ = __webpack_require__(31);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/test.vue?vue&type=script&lang=js&
 //
@@ -2272,7 +2278,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "bb5dafda",
-  "05b58145"
+  "7bfcf3cb"
   
 )
 

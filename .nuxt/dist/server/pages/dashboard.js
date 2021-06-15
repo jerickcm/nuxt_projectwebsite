@@ -1,4 +1,4 @@
-exports.ids = [18,2,3];
+exports.ids = [19,2,3];
 exports.modules = {
 
 /***/ 195:
@@ -136,7 +136,7 @@ const baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_8__[/* default *
       return {
         opacity: backgroundOpacity,
         [this.isReversed ? 'right' : 'left']: Object(_util_helpers__WEBPACK_IMPORTED_MODULE_7__[/* convertToUnit */ "g"])(this.normalizedValue, '%'),
-        width: Object(_util_helpers__WEBPACK_IMPORTED_MODULE_7__[/* convertToUnit */ "g"])(Math.max(0, this.normalizedBuffer - this.normalizedValue), '%')
+        width: Object(_util_helpers__WEBPACK_IMPORTED_MODULE_7__[/* convertToUnit */ "g"])(this.normalizedBuffer - this.normalizedValue, '%')
       };
     },
 
@@ -191,7 +191,7 @@ const baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_8__[/* default *
   },
   methods: {
     genContent() {
-      const slot = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_7__[/* getSlot */ "r"])(this, 'default', {
+      const slot = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_7__[/* getSlot */ "s"])(this, 'default', {
         value: this.internalLazyValue
       });
       if (!slot) return null;
@@ -279,10 +279,10 @@ const baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_8__[/* default *
 /* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
 
 
-const VCardActions = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__[/* createSimpleFunctional */ "h"])('v-card__actions');
-const VCardSubtitle = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__[/* createSimpleFunctional */ "h"])('v-card__subtitle');
-const VCardText = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__[/* createSimpleFunctional */ "h"])('v-card__text');
-const VCardTitle = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__[/* createSimpleFunctional */ "h"])('v-card__title');
+const VCardActions = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__[/* createSimpleFunctional */ "i"])('v-card__actions');
+const VCardSubtitle = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__[/* createSimpleFunctional */ "i"])('v-card__subtitle');
+const VCardText = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__[/* createSimpleFunctional */ "i"])('v-card__text');
+const VCardTitle = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__[/* createSimpleFunctional */ "i"])('v-card__title');
 
 /* unused harmony default export */ var _unused_webpack_default_export = ({
   $_vuetify_subcomponents: {
@@ -506,7 +506,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 302:
+/***/ 323:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -570,7 +570,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "26305d4a"
+  "3dbe5461"
   
 )
 
@@ -586,7 +586,7 @@ installComponents_default()(component, {VBtn: VBtn["a" /* default */],VCard: VCa
 
 /***/ }),
 
-/***/ 303:
+/***/ 324:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -641,7 +641,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "d5f4f1ee"
+  "3447ebe2"
   
 )
 
@@ -657,21 +657,31 @@ installComponents_default()(component, {VCard: VCard["a" /* default */],VCardTex
 
 /***/ }),
 
-/***/ 363:
+/***/ 395:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/dashboard.vue?vue&type=template&id=37945be3&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-container',{staticClass:"grey ligthen-3  pa-0 ma-0",attrs:{"fluid":"","min-height":"800vh"}},[_c('v-sheet',{staticClass:"blue ligthen-3 pa-5 pt-10 pb-10",attrs:{"min-height":"200vh"}},[_c('DashTitle',{attrs:{"Dashboard":"Dashboard","to":"/dashboard"}}),_vm._v(" "),_c('Dashboard',[_c('h2',{attrs:{"slot":"menu_name"},slot:"menu_name"},[_vm._v("POST MENU")]),_vm._v(" "),_c('v-btn',{staticClass:"green white--text",attrs:{"slot":"create_menu","to":"post/create"},slot:"create_menu"},[_vm._v("Create Post")]),_vm._v(" "),_c('v-btn',{staticClass:"blue white--text",attrs:{"slot":"view_menu","to":"post/manage"},slot:"view_menu"},[_vm._v("Manage Post")])],1),_vm._v(" "),_c('Dashboard',[_c('h2',{attrs:{"slot":"menu_name"},slot:"menu_name"},[_vm._v("BLOG MENU")]),_vm._v(" "),_c('v-btn',{staticClass:"green white--text",attrs:{"slot":"create_menu","to":"blog/create"},slot:"create_menu"},[_vm._v("Create BLOG")]),_vm._v(" "),_c('v-btn',{staticClass:"blue white--text",attrs:{"slot":"view_menu","to":"blog/manage"},slot:"view_menu"},[_vm._v("Manage BLOG")])],1),_vm._v(" "),_c('Dashboard',[_c('h2',{attrs:{"slot":"menu_name"},slot:"menu_name"},[_vm._v("NEWS MENU")]),_vm._v(" "),_c('v-btn',{staticClass:"green white--text",attrs:{"slot":"create_menu","to":"news/create"},slot:"create_menu"},[_vm._v("Create NEWS")]),_vm._v(" "),_c('v-btn',{staticClass:"blue white--text",attrs:{"slot":"view_menu","to":"news/manage"},slot:"view_menu"},[_vm._v("Manage NEWS")])],1),_vm._v(" "),_c('Dashboard',[_c('h2',{attrs:{"slot":"menu_name"},slot:"menu_name"},[_vm._v("QUOTES MENU")]),_vm._v(" "),_c('v-btn',{staticClass:"green white--text",attrs:{"slot":"create_menu","to":"quotes/create"},slot:"create_menu"},[_vm._v("Create QUOTES")]),_vm._v(" "),_c('v-btn',{staticClass:"blue white--text",attrs:{"slot":"view_menu","to":"quotes/manage"},slot:"view_menu"},[_vm._v("Manage QUOTES")])],1)],1)],1)}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/dashboard.vue?vue&type=template&id=0629d7b5&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-container',{staticClass:"grey ligthen-3 pa-0 ma-0",attrs:{"fluid":"","min-height":"800vh"}},[_c('v-sheet',{staticClass:"blue ligthen-3 pa-5 pt-10 pb-10",attrs:{"min-height":"200vh"}},[_c('DashTitle',{attrs:{"Dashboard":"Dashboard","to":"/dashboard"}}),_vm._v(" "),_c('Dashboard',[_c('h2',{attrs:{"slot":"menu_name"},slot:"menu_name"},[_vm._v("POST MENU")]),_vm._v(" "),_c('v-btn',{staticClass:"green white--text",attrs:{"slot":"create_menu","to":"post/create"},slot:"create_menu"},[_vm._v("Create Post")]),_vm._v(" "),_c('v-btn',{staticClass:"blue white--text",attrs:{"slot":"view_menu","to":"post/manage"},slot:"view_menu"},[_vm._v("Manage Post")])],1),_vm._v(" "),_c('Dashboard',[_c('h2',{attrs:{"slot":"menu_name"},slot:"menu_name"},[_vm._v("BLOG MENU")]),_vm._v(" "),_c('v-btn',{staticClass:"green white--text",attrs:{"slot":"create_menu","to":"blog/create"},slot:"create_menu"},[_vm._v("Create BLOG")]),_vm._v(" "),_c('v-btn',{staticClass:"blue white--text",attrs:{"slot":"view_menu","to":"blog/manage"},slot:"view_menu"},[_vm._v("Manage BLOG")])],1),_vm._v(" "),_c('Dashboard',[_c('h2',{attrs:{"slot":"menu_name"},slot:"menu_name"},[_vm._v("NEWS MENU")]),_vm._v(" "),_c('v-btn',{staticClass:"green white--text",attrs:{"slot":"create_menu","to":"news/create"},slot:"create_menu"},[_vm._v("Create NEWS")]),_vm._v(" "),_c('v-btn',{staticClass:"blue white--text",attrs:{"slot":"view_menu","to":"news/manage"},slot:"view_menu"},[_vm._v("Manage NEWS")])],1),_vm._v(" "),_c('Dashboard',[_c('h2',{attrs:{"slot":"menu_name"},slot:"menu_name"},[_vm._v("QUOTES MENU")]),_vm._v(" "),_c('v-btn',{staticClass:"green white--text",attrs:{"slot":"create_menu","to":"quotes/create"},slot:"create_menu"},[_vm._v("Create QUOTES")]),_vm._v(" "),_c('v-btn',{staticClass:"blue white--text",attrs:{"slot":"view_menu","to":"quotes/manage"},slot:"view_menu"},[_vm._v("Manage QUOTES")])],1),_vm._v(" "),_c('Dashboard',[_c('h2',{attrs:{"slot":"menu_name"},slot:"menu_name"},[_vm._v("World Reminders MENU")]),_vm._v(" "),_c('v-btn',{staticClass:"green white--text",attrs:{"slot":"create_menu","to":"world-reminders/create"},slot:"create_menu"},[_vm._v("Create World Reminders")]),_vm._v(" "),_c('v-btn',{staticClass:"blue white--text",attrs:{"slot":"view_menu","to":"world-reminders/manage"},slot:"view_menu"},[_vm._v("Manage World Reminders")])],1)],1)],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./pages/dashboard.vue?vue&type=template&id=37945be3&
+// CONCATENATED MODULE: ./pages/dashboard.vue?vue&type=template&id=0629d7b5&
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/dashboard.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -760,14 +770,14 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "bf1c6e1e"
+  "6baafa2b"
   
 )
 
 /* harmony default export */ var dashboard = __webpack_exports__["default"] = (component.exports);
 
 /* nuxt-component-imports */
-installComponents_default()(component, {DashTitle: __webpack_require__(302).default,Dashboard: __webpack_require__(303).default})
+installComponents_default()(component, {DashTitle: __webpack_require__(323).default,Dashboard: __webpack_require__(324).default})
 
 
 /* vuetify-loader */

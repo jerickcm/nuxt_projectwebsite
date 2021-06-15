@@ -28,5 +28,8 @@
   },
   "VuetifyLogo": {
     "description": "Auto imported from components/VuetifyLogo.vue"
+  },
+  "WorldRemindersCard": {
+    "description": "Auto imported from components/WorldRemindersCard.vue"
   }
 }

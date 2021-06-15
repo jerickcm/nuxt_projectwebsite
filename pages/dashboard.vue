@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid class="grey ligthen-3  pa-0 ma-0" min-height="800vh">
+  <v-container fluid class="grey ligthen-3 pa-0 ma-0" min-height="800vh">
     <v-sheet class="blue ligthen-3 pa-5 pt-10 pb-10" min-height="200vh">
       <DashTitle Dashboard="Dashboard" to="/dashboard"> </DashTitle>
 
@@ -40,6 +40,16 @@
           >Manage QUOTES</v-btn
         >
       </Dashboard>
+
+      <Dashboard>
+        <h2 slot="menu_name">World Reminders MENU</h2>
+        <v-btn to="world-reminders/create" slot="create_menu" class="green white--text"
+          >Create World Reminders</v-btn
+        >
+        <v-btn to="world-reminders/manage" slot="view_menu" class="blue white--text"
+          >Manage World Reminders</v-btn
+        >
+      </Dashboard>
     </v-sheet>
   </v-container>
 </template>
@@ -47,10 +57,10 @@
 export default {
   middleware: 'auth',
   head: () => ({
-    title: 'Dashboard'
+    title: 'Dashboard',
   }),
   data: () => ({}),
 
-  async created() {}
+  async created() {},
 }
 </script>

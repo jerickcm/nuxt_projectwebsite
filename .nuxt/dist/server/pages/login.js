@@ -1,4 +1,4 @@
-exports.ids = [20];
+exports.ids = [21];
 exports.modules = {
 
 /***/ 195:
@@ -136,7 +136,7 @@ const baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_8__[/* default *
       return {
         opacity: backgroundOpacity,
         [this.isReversed ? 'right' : 'left']: Object(_util_helpers__WEBPACK_IMPORTED_MODULE_7__[/* convertToUnit */ "g"])(this.normalizedValue, '%'),
-        width: Object(_util_helpers__WEBPACK_IMPORTED_MODULE_7__[/* convertToUnit */ "g"])(Math.max(0, this.normalizedBuffer - this.normalizedValue), '%')
+        width: Object(_util_helpers__WEBPACK_IMPORTED_MODULE_7__[/* convertToUnit */ "g"])(this.normalizedBuffer - this.normalizedValue, '%')
       };
     },
 
@@ -191,7 +191,7 @@ const baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_8__[/* default *
   },
   methods: {
     genContent() {
-      const slot = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_7__[/* getSlot */ "r"])(this, 'default', {
+      const slot = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_7__[/* getSlot */ "s"])(this, 'default', {
         value: this.internalLazyValue
       });
       if (!slot) return null;
@@ -483,7 +483,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 "use strict";
 /* harmony import */ var _colorable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
 /* harmony import */ var _themeable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
-/* harmony import */ var _registrable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(36);
+/* harmony import */ var _registrable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(37);
 /* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(0);
 /* harmony import */ var _util_console__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3);
 /* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(2);
@@ -649,7 +649,7 @@ const baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_5__[/* default *
   watch: {
     rules: {
       handler(newVal, oldVal) {
-        if (Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__[/* deepEqual */ "i"])(newVal, oldVal)) return;
+        if (Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__[/* deepEqual */ "j"])(newVal, oldVal)) return;
         this.validate();
       },
 
@@ -756,7 +756,7 @@ const baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_5__[/* default *
 // UNUSED EXPORTS: VLabel
 
 // EXTERNAL MODULE: ./node_modules/vuetify/src/components/VLabel/VLabel.sass
-var VLabel = __webpack_require__(211);
+var VLabel = __webpack_require__(212);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/mixins/colorable/index.js
 var colorable = __webpack_require__(7);
@@ -846,7 +846,7 @@ var helpers = __webpack_require__(0);
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(208);
+var content = __webpack_require__(209);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -862,7 +862,7 @@ __webpack_require__(5).default("4f4f805e", content, true)
 // UNUSED EXPORTS: VInput
 
 // EXTERNAL MODULE: ./node_modules/vuetify/src/components/VInput/VInput.sass
-var VInput = __webpack_require__(209);
+var VInput = __webpack_require__(210);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VIcon/index.js
 var VIcon = __webpack_require__(22);
@@ -871,7 +871,7 @@ var VIcon = __webpack_require__(22);
 var VLabel = __webpack_require__(205);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/src/components/VMessages/VMessages.sass
-var VMessages = __webpack_require__(213);
+var VMessages = __webpack_require__(214);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/mixins/colorable/index.js
 var colorable = __webpack_require__(7);
@@ -919,7 +919,7 @@ var helpers = __webpack_require__(0);
       return this.$createElement('div', {
         staticClass: 'v-messages__message',
         key
-      }, Object(helpers["r" /* getSlot */])(this, 'default', {
+      }, Object(helpers["s" /* getSlot */])(this, 'default', {
         message,
         key
       }) || [message]);
@@ -1098,11 +1098,11 @@ const baseMixins = Object(mixins["a" /* default */])(binds_attrs["a" /* default 
 
     genIcon(type, cb, extraData = {}) {
       const icon = this[`${type}Icon`];
-      const eventName = `click:${Object(helpers["v" /* kebabCase */])(type)}`;
+      const eventName = `click:${Object(helpers["w" /* kebabCase */])(type)}`;
       const hasListener = !!(this.listeners$[eventName] || cb);
       const data = Object(mergeData["a" /* default */])({
         attrs: {
-          'aria-label': hasListener ? Object(helpers["v" /* kebabCase */])(type).split('-')[0] + ' icon' : undefined,
+          'aria-label': hasListener ? Object(helpers["w" /* kebabCase */])(type).split('-')[0] + ' icon' : undefined,
           color: this.validationState,
           dark: this.dark,
           disabled: this.isDisabled,
@@ -1125,7 +1125,7 @@ const baseMixins = Object(mixins["a" /* default */])(binds_attrs["a" /* default 
       }, extraData);
       return this.$createElement('div', {
         staticClass: `v-input__icon`,
-        class: type ? `v-input__icon--${Object(helpers["v" /* kebabCase */])(type)}` : undefined
+        class: type ? `v-input__icon--${Object(helpers["w" /* kebabCase */])(type)}` : undefined
       }, [this.$createElement(VIcon["a" /* default */], data, icon)]);
     },
 
@@ -1171,7 +1171,7 @@ const baseMixins = Object(mixins["a" /* default */])(binds_attrs["a" /* default 
           role: this.hasMessages ? 'alert' : null
         },
         scopedSlots: {
-          default: props => Object(helpers["r" /* getSlot */])(this, 'message', props)
+          default: props => Object(helpers["s" /* getSlot */])(this, 'message', props)
         }
       });
     },
@@ -1243,7 +1243,7 @@ const baseMixins = Object(mixins["a" /* default */])(binds_attrs["a" /* default 
 
 /***/ }),
 
-/***/ 208:
+/***/ 209:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -1257,13 +1257,13 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 209:
+/***/ 210:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(210);
+var content = __webpack_require__(211);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -1271,7 +1271,7 @@ __webpack_require__(5).default("22487aae", content, true)
 
 /***/ }),
 
-/***/ 210:
+/***/ 211:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -1285,13 +1285,13 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 211:
+/***/ 212:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(212);
+var content = __webpack_require__(213);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -1299,7 +1299,7 @@ __webpack_require__(5).default("371f82d0", content, true)
 
 /***/ }),
 
-/***/ 212:
+/***/ 213:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -1313,13 +1313,13 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 213:
+/***/ 214:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(214);
+var content = __webpack_require__(215);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -1327,7 +1327,7 @@ __webpack_require__(5).default("2bb34da4", content, true)
 
 /***/ }),
 
-/***/ 214:
+/***/ 215:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -1341,13 +1341,13 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 215:
+/***/ 216:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(216);
+var content = __webpack_require__(217);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -1355,7 +1355,7 @@ __webpack_require__(5).default("3dc908a0", content, true)
 
 /***/ }),
 
-/***/ 216:
+/***/ 217:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -1381,7 +1381,7 @@ var VTextField = __webpack_require__(206);
 var VInput = __webpack_require__(207);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/src/components/VCounter/VCounter.sass
-var VCounter = __webpack_require__(215);
+var VCounter = __webpack_require__(216);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/mixins/themeable/index.js
 var themeable = __webpack_require__(6);
@@ -1451,6 +1451,13 @@ var external_vue_default = /*#__PURE__*/__webpack_require__.n(external_vue_);
 
 
 function intersectable(options) {
+  if (typeof window === 'undefined' || !('IntersectionObserver' in window)) {
+    // do nothing because intersection observer is not available
+    return external_vue_default.a.extend({
+      name: 'intersectable'
+    });
+  }
+
   return external_vue_default.a.extend({
     name: 'intersectable',
 
@@ -1491,7 +1498,7 @@ var loadable = __webpack_require__(197);
 var validatable = __webpack_require__(204);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/directives/resize/index.js
-var resize = __webpack_require__(37);
+var resize = __webpack_require__(40);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/directives/ripple/index.js
 var ripple = __webpack_require__(23);
@@ -1790,14 +1797,13 @@ const dirtyTypes = ['color', 'file', 'time', 'date', 'datetime-local', 'week', '
     },
 
     genClearIcon() {
-      if (!this.clearable) return null; // if the text field has no content then don't display the clear icon.
-      // We add an empty div because other controls depend on a ref to append inner
-
-      if (!this.isDirty) {
-        return this.genSlot('append', 'inner', [this.$createElement('div')]);
-      }
-
-      return this.genSlot('append', 'inner', [this.genIcon('clear', this.clearableCallback)]);
+      if (!this.clearable) return null;
+      const data = this.isDirty ? undefined : {
+        attrs: {
+          disabled: true
+        }
+      };
+      return this.genSlot('append', 'inner', [this.genIcon('clear', this.clearableCallback, data)]);
     },
 
     genCounter() {
@@ -1960,7 +1966,7 @@ const dirtyTypes = ['color', 'file', 'time', 'date', 'datetime-local', 'week', '
     },
 
     onKeyDown(e) {
-      if (e.keyCode === helpers["w" /* keyCodes */].enter) this.$emit('change', this.internalValue);
+      if (e.keyCode === helpers["x" /* keyCodes */].enter) this.$emit('change', this.internalValue);
       this.$emit('keydown', e);
     },
 
@@ -2024,13 +2030,13 @@ const dirtyTypes = ['color', 'file', 'time', 'date', 'datetime-local', 'week', '
 
 /***/ }),
 
-/***/ 238:
+/***/ 248:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(239);
+var content = __webpack_require__(249);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -2038,7 +2044,7 @@ __webpack_require__(5).default("0cd63bd9", content, true)
 
 /***/ }),
 
-/***/ 239:
+/***/ 249:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -2052,13 +2058,13 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 252:
+/***/ 255:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(253);
+var content = __webpack_require__(256);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -2066,7 +2072,7 @@ __webpack_require__(5).default("5db1c400", content, true)
 
 /***/ }),
 
-/***/ 253:
+/***/ 256:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -2080,13 +2086,13 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 261:
+/***/ 265:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 
 // EXTERNAL MODULE: ./node_modules/vuetify/src/components/VParallax/VParallax.sass
-var VParallax = __webpack_require__(238);
+var VParallax = __webpack_require__(248);
 
 // EXTERNAL MODULE: external "vue"
 var external_vue_ = __webpack_require__(1);
@@ -2246,13 +2252,13 @@ const baseMixins = Object(mixins["a" /* default */])(translatable);
 
 /***/ }),
 
-/***/ 307:
+/***/ 329:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 
 // EXTERNAL MODULE: ./node_modules/vuetify/src/components/VAlert/VAlert.sass
-var VAlert = __webpack_require__(252);
+var VAlert = __webpack_require__(255);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSheet/index.js
 var VSheet = __webpack_require__(29);
@@ -2520,7 +2526,7 @@ var console = __webpack_require__(3);
 
 /***/ }),
 
-/***/ 364:
+/***/ 396:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2528,7 +2534,7 @@ var console = __webpack_require__(3);
 __webpack_require__.r(__webpack_exports__);
 
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/login.vue?vue&type=template&id=2a9a7106&scoped=true&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-container',{staticClass:"ma-0 pa-0",attrs:{"fluid":""}},[_c('v-parallax',{staticClass:"ma-0 pa-0",attrs:{"height":"900","src":"/images/bg1.jpeg"}},[_c('v-row',{attrs:{"center":""}},[_c('v-col',{staticClass:"col-md-6 offset-md-3 pt-10",attrs:{"cols":"12","sm":"6"}},[_c('strong',{staticClass:"ma-2 pa-2 mt-10 pt-10 text-h6"},[_vm._v("Login : ")]),_vm._v(" "),_c('v-card',{staticClass:"ma-2 ",attrs:{"elevation":"2","loading":_vm.loading,"tile":""}},[_c('v-alert',{class:_vm.alert,attrs:{"prominent":"","text":"","type":"error","id":"alert"}},[_vm._v(_vm._s(_vm.error_msg))]),_vm._v(" "),_c('form',{staticClass:"pa-2"},[_c('v-text-field',{staticClass:"ma-2 pa-2",attrs:{"error-messages":_vm.emailErrors,"label":"E-mail","required":""},on:{"input":function($event){return _vm.$v.email.$touch()},"blur":function($event){return _vm.$v.email.$touch()}},model:{value:(_vm.email),callback:function ($$v) {_vm.email=$$v},expression:"email"}}),_vm._v(" "),_c('v-text-field',{staticClass:"ma-2 pa-2",attrs:{"append-icon":_vm.show1 ? 'mdi-eye' : 'mdi-eye-off',"rules":[_vm.rules.required, _vm.rules.min],"type":_vm.show1 ? 'text' : 'password',"error-messages":_vm.passwordErrors,"name":"input-10-1","label":"Password","hint":"At least 6 characters","counter":""},on:{"input":function($event){return _vm.$v.password.$touch()},"blur":function($event){return _vm.$v.password.$touch()},"click:append":function($event){_vm.show1 = !_vm.show1}},model:{value:(_vm.password),callback:function ($$v) {_vm.password=$$v},expression:"password"}}),_vm._v(" "),_c('v-btn',{staticClass:"mr-4 ma-2",attrs:{"depressed":"","color":"primary"},on:{"click":function($event){$event.preventDefault();return _vm.login.apply(null, arguments)}}},[_vm._v("\n              Login\n            ")]),_vm._v(" "),_c('v-btn',{staticClass:"mr-4 ma-2 pa-2",attrs:{"depressed":"","color":"primary"},on:{"click":_vm.clear}},[_vm._v("\n              clear\n            ")]),_vm._v(" "),_c('v-btn',{staticClass:"mr-4 ma-2",attrs:{"depressed":"","color":"primary"},on:{"click":function($event){$event.preventDefault();return _vm.loginwithgoogle.apply(null, arguments)}}},[_vm._v("\n              Login with google\n            ")])],1)],1)],1)],1)],1)],1)}
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-container',{staticClass:"ma-0 pa-0",attrs:{"fluid":""}},[_c('v-parallax',{staticClass:"ma-0 pa-0",attrs:{"height":"900","src":"/images/bg1.jpeg"}},[_c('v-row',{attrs:{"center":""}},[_c('v-col',{staticClass:"col-md-6 offset-md-3 pt-10",attrs:{"cols":"12","sm":"6"}},[_c('strong',{staticClass:"ma-2 pa-2 mt-10 pt-10 text-h6"},[_vm._v("Login : ")]),_vm._v(" "),_c('v-card',{staticClass:"ma-2 ",attrs:{"elevation":"2","loading":_vm.loading,"tile":""}},[_c('v-alert',{class:_vm.alert,attrs:{"prominent":"","text":"","type":"error","id":"alert"}},[_vm._v(_vm._s(_vm.error_msg))]),_vm._v(" "),_c('form',{staticClass:"pa-2"},[_c('v-text-field',{staticClass:"ma-2 pa-2",attrs:{"error-messages":_vm.emailErrors,"label":"E-mail","required":""},on:{"input":function($event){return _vm.$v.email.$touch()},"blur":function($event){return _vm.$v.email.$touch()}},model:{value:(_vm.email),callback:function ($$v) {_vm.email=$$v},expression:"email"}}),_vm._v(" "),_c('v-text-field',{staticClass:"ma-2 pa-2",attrs:{"append-icon":_vm.show1 ? 'mdi-eye' : 'mdi-eye-off',"rules":[_vm.rules.required, _vm.rules.min],"type":_vm.show1 ? 'text' : 'password',"error-messages":_vm.passwordErrors,"name":"input-10-1","label":"Password","hint":"At least 6 characters","counter":""},on:{"input":function($event){return _vm.$v.password.$touch()},"blur":function($event){return _vm.$v.password.$touch()},"click:append":function($event){_vm.show1 = !_vm.show1}},model:{value:(_vm.password),callback:function ($$v) {_vm.password=$$v},expression:"password"}}),_vm._v(" "),_c('v-btn',{staticClass:"mr-4 ma-2",attrs:{"depressed":"","color":"primary"},on:{"click":function($event){$event.preventDefault();return _vm.login($event)}}},[_vm._v("\n              Login\n            ")]),_vm._v(" "),_c('v-btn',{staticClass:"mr-4 ma-2 pa-2",attrs:{"depressed":"","color":"primary"},on:{"click":_vm.clear}},[_vm._v("\n              clear\n            ")]),_vm._v(" "),_c('v-btn',{staticClass:"mr-4 ma-2",attrs:{"depressed":"","color":"primary"},on:{"click":function($event){$event.preventDefault();return _vm.loginwithgoogle($event)}}},[_vm._v("\n              Login with google\n            ")])],1)],1)],1)],1)],1)],1)}
 var staticRenderFns = []
 
 
@@ -2788,7 +2794,7 @@ var installComponents = __webpack_require__(12);
 var installComponents_default = /*#__PURE__*/__webpack_require__.n(installComponents);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VAlert/VAlert.js + 1 modules
-var VAlert = __webpack_require__(307);
+var VAlert = __webpack_require__(329);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VBtn/VBtn.js + 2 modules
 var VBtn = __webpack_require__(179);
@@ -2803,7 +2809,7 @@ var VCol = __webpack_require__(190);
 var VContainer = __webpack_require__(191);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VParallax/VParallax.js + 1 modules
-var VParallax = __webpack_require__(261);
+var VParallax = __webpack_require__(265);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VRow.js
 var VRow = __webpack_require__(192);
@@ -2829,7 +2835,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "2a9a7106",
-  "d90ff474"
+  "33c23800"
   
 )
 

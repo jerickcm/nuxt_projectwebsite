@@ -9,6 +9,7 @@
     "components/post-card.js": "components/post-card.js",
     "components/quotes-card.js": "components/quotes-card.js",
     "components/vuetify-logo.js": "components/vuetify-logo.js",
+    "components/world-reminders-card.js": "components/world-reminders-card.js",
     "pages/about.js": "pages/about.js",
     "pages/admin.js": "pages/admin.js",
     "pages/blog/create.js": "pages/blog/create.js",
@@ -40,6 +41,10 @@
     "pages/test.js": "pages/test.js",
     "pages/tutorials.js": "pages/tutorials.js",
     "pages/users.js": "pages/users.js",
+    "pages/world-reminders/create.js": "pages/world-reminders/create.js",
+    "pages/world-reminders/index.js": "pages/world-reminders/index.js",
+    "pages/world-reminders/manage.js": "pages/world-reminders/manage.js",
+    "pages/world-reminders/view.js": "pages/world-reminders/view.js",
     "server.js": "server.js"
   },
   "maps": {
@@ -51,6 +56,7 @@
     "components/post-card.js": "components/post-card.js.map",
     "components/quotes-card.js": "components/quotes-card.js.map",
     "components/vuetify-logo.js": "components/vuetify-logo.js.map",
+    "components/world-reminders-card.js": "components/world-reminders-card.js.map",
     "pages/about.js": "pages/about.js.map",
     "pages/admin.js": "pages/admin.js.map",
     "pages/blog/create.js": "pages/blog/create.js.map",
@@ -82,6 +88,10 @@
     "pages/test.js": "pages/test.js.map",
     "pages/tutorials.js": "pages/tutorials.js.map",
     "pages/users.js": "pages/users.js.map",
+    "pages/world-reminders/create.js": "pages/world-reminders/create.js.map",
+    "pages/world-reminders/index.js": "pages/world-reminders/index.js.map",
+    "pages/world-reminders/manage.js": "pages/world-reminders/manage.js.map",
+    "pages/world-reminders/view.js": "pages/world-reminders/view.js.map",
     "server.js": "server.js.map"
   }
 }
