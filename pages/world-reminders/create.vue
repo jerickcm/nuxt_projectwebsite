@@ -86,7 +86,7 @@
                 v-model="date"
                 :active-picker.sync="activePicker"
                 :max="new Date().toISOString().substr(0, 10)"
-                min="1950-01-01"
+                min="1800-01-01"
                 @change="save"
               ></v-date-picker>
             </v-menu>
