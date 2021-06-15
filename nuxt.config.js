@@ -55,8 +55,12 @@ export default {
     '@nuxtjs/auth-next',
     '@nuxtjs/robots',
     '@nuxtjs/dotenv',
-    '@nuxtjs/toast'
+    '@nuxtjs/toast',
+    '@nuxtjs/sitemap'
   ],
+  sitemap: {
+    hostname: 'http://www.inhinyeru.com',
+  },
   toast: {
     position: 'top-right',
     duration: 3000

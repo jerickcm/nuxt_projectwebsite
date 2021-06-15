@@ -121,25 +121,15 @@ export default {
     disable_next: false,
     disable_color: 'green'
   }),
-  async created() {
-    // await this.$axios.$get('/sanctum/csrf-cookie').then(response => {})
-  },
+  async created() {},
   mounted() {
     this.getposts()
     this.generatePost()
   },
-  computed: {
-    // ...mapGetters('posts', ['GetPosts'])
-  },
+  computed: {},
 
   methods: {
-    // ...mapActions('posts', ['fetchPosts']),
-    generatePost() {
-      // console.log(this.GetPosts)
-      // this.fetchPosts(this.page)
-      // console.log(this.GetPosts)
-      // console.log('called in mounted')
-    },
+    generatePost() {},
     async getposts() {
       NProgress.start()
       let payload = new FormData()

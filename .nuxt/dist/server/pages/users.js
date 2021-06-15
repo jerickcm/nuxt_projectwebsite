@@ -1,7 +1,7 @@
 exports.ids = [39];
 exports.modules = {
 
-/***/ 370:
+/***/ 374:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -31,20 +31,20 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./pages/users.vue?vue&type=script&lang=js&
  /* harmony default export */ var pages_usersvue_type_script_lang_js_ = (usersvue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(12);
+var componentNormalizer = __webpack_require__(9);
 
 // EXTERNAL MODULE: ./node_modules/vuetify-loader/lib/runtime/installComponents.js
-var installComponents = __webpack_require__(16);
+var installComponents = __webpack_require__(12);
 var installComponents_default = /*#__PURE__*/__webpack_require__.n(installComponents);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VCol.js
-var VCol = __webpack_require__(186);
+var VCol = __webpack_require__(190);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VContainer.js
-var VContainer = __webpack_require__(187);
+var VContainer = __webpack_require__(191);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VRow.js
-var VRow = __webpack_require__(188);
+var VRow = __webpack_require__(192);
 
 // CONCATENATED MODULE: ./pages/users.vue
 

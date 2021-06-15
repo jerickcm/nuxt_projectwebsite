@@ -1,7 +1,7 @@
 exports.ids = [4];
 exports.modules = {
 
-/***/ 378:
+/***/ 382:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -30,7 +30,7 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./components/EventCard.vue?vue&type=script&lang=js&
  /* harmony default export */ var components_EventCardvue_type_script_lang_js_ = (EventCardvue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(12);
+var componentNormalizer = __webpack_require__(9);
 
 // CONCATENATED MODULE: ./components/EventCard.vue
 

@@ -33,3 +33,8 @@ add material icon theme in vs code extensions
 
 
 pm2 start npm --name "nuxt ssr" -- start
+
+
+material design for v-icon
+https://materialdesignicons.com/
+

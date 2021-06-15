@@ -1,13 +1,13 @@
 exports.ids = [38];
 exports.modules = {
 
-/***/ 234:
+/***/ 238:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(235);
+var content = __webpack_require__(239);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -15,7 +15,7 @@ __webpack_require__(5).default("0cd63bd9", content, true)
 
 /***/ }),
 
-/***/ 235:
+/***/ 239:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -29,13 +29,13 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 257:
+/***/ 261:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 
 // EXTERNAL MODULE: ./node_modules/vuetify/src/components/VParallax/VParallax.sass
-var VParallax = __webpack_require__(234);
+var VParallax = __webpack_require__(238);
 
 // EXTERNAL MODULE: external "vue"
 var external_vue_ = __webpack_require__(1);
@@ -195,7 +195,7 @@ const baseMixins = Object(mixins["a" /* default */])(translatable);
 
 /***/ }),
 
-/***/ 369:
+/***/ 373:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -235,35 +235,35 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./pages/tutorials.vue?vue&type=script&lang=js&
  /* harmony default export */ var pages_tutorialsvue_type_script_lang_js_ = (tutorialsvue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(12);
+var componentNormalizer = __webpack_require__(9);
 
 // EXTERNAL MODULE: ./node_modules/vuetify-loader/lib/runtime/installComponents.js
-var installComponents = __webpack_require__(16);
+var installComponents = __webpack_require__(12);
 var installComponents_default = /*#__PURE__*/__webpack_require__.n(installComponents);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VBtn/VBtn.js + 2 modules
-var VBtn = __webpack_require__(174);
+var VBtn = __webpack_require__(179);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VCol.js
-var VCol = __webpack_require__(186);
+var VCol = __webpack_require__(190);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VContainer.js
-var VContainer = __webpack_require__(187);
+var VContainer = __webpack_require__(191);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VIcon/VIcon.js
-var VIcon = __webpack_require__(53);
+var VIcon = __webpack_require__(56);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VParallax/VParallax.js + 1 modules
-var VParallax = __webpack_require__(257);
+var VParallax = __webpack_require__(261);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VRow.js
-var VRow = __webpack_require__(188);
+var VRow = __webpack_require__(192);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSheet/VSheet.js
-var VSheet = __webpack_require__(10);
+var VSheet = __webpack_require__(14);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VSpacer.js
-var VSpacer = __webpack_require__(189);
+var VSpacer = __webpack_require__(193);
 
 // CONCATENATED MODULE: ./pages/tutorials.vue
 

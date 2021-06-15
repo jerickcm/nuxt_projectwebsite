@@ -45,11 +45,12 @@
 </template>
 <script>
 export default {
+  middleware: 'auth',
   head: () => ({
     title: 'Dashboard'
   }),
   data: () => ({}),
-  middleware: 'auth',
+
   async created() {}
 }
 </script>

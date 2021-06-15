@@ -7,10 +7,11 @@ import NuxtLoading from './components/nuxt-loading.vue'
 
 import '..\\layouts\\global.css'
 
+import _77068119 from '..\\layouts\\admin.vue'
 import _6f6c098b from '..\\layouts\\default.vue'
 import _777ba69c from '..\\layouts\\index.vue'
 
-const layouts = { "_default": sanitizeComponent(_6f6c098b),"_index": sanitizeComponent(_777ba69c) }
+const layouts = { "_admin": sanitizeComponent(_77068119),"_default": sanitizeComponent(_6f6c098b),"_index": sanitizeComponent(_777ba69c) }
 
 export default {
   render (h, props) {
