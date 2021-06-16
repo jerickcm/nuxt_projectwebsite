@@ -19,10 +19,10 @@
       >
         <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
           <v-card-text class="">
-            <p>{{ item.event_date }}</p>
+            <p>{{ item.date }}</p>
             <h2>{{ item.title }}</h2>
             <p>{{ item.subtitle }}</p>
-            <p>{{ item.content }}</p>
+            <p v-html="item.content"></p>
           </v-card-text>
         </v-card>
       </v-col>
@@ -97,7 +97,7 @@ export default {
     increment: 0,
     disable_next: false,
     disable_color: 'green',
-    date: '',
+    date: ''
   }),
   async asyncData() {
     await this.$axios.$get('/sanctum/csrf-cookie')
@@ -113,13 +113,16 @@ export default {
       NProgress.start()
       NProgress.inc()
 
-      this.date = new Date().toJSON().slice(0, 10).replace(/-/g, '-')
+      this.date = new Date()
+        .toJSON()
+        .slice(0, 10)
+        .replace(/-/g, '-')
       // console.log(currentDateWithFormat);
 
       try {
         this.$axios
           .$get(`api/er/page/${this.page}/item/${10}/date/${this.date}`)
-          .then((res) => {
+          .then(res => {
             if (res.data.length == 0) {
               this.no_more_post = ''
               this.disable_next = true
@@ -150,6 +153,7 @@ export default {
                 author: value.author,
                 image: value.image,
                 increment: this.increment,
+                date: value.date
               })
             }
 
@@ -158,7 +162,7 @@ export default {
             this.loadcard = 'd-none'
             this.page = this.page + 1
           })
-          .catch((error) => {
+          .catch(error => {
             NProgress.done()
             this.loadcard = 'd-none'
           })
@@ -166,8 +170,8 @@ export default {
       } catch (error) {
         console.log('error')
       }
-    },
-  },
+    }
+  }
 }
 </script>
 <style scoped>

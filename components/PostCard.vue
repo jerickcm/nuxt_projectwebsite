@@ -21,6 +21,15 @@
           <!-- color="blue lighten-5" -->
           <!-- -->
           <!-- target="_blank" -->
+          <!-- <div
+            style="
+              float: left;
+              width: 100%;
+              height: 135px;
+              margin-right: 20px;
+              display: flex;
+              flex-wrap: wrap;"
+          > -->
           <nuxt-link
             class="nuxtlink"
             :to="{
@@ -28,8 +37,17 @@
               query: { slug: item.slug }
             }"
           >
-            <v-img height="250" :src="item.image"> </v-img>
+            <!-- <v-img height="250" :src="item.image"> </v-img> -->
+            <img
+              :src="item.image"
+              width="100%"
+              height="250rem"
+              style="object-position: center;"
+              alt=""
+            />
           </nuxt-link>
+          <!-- </div> -->
+
           <!-- target="_blank" -->
           <v-card-title>
             <nuxt-link

@@ -43,10 +43,7 @@
         </v-row>
         <v-row>
           <v-col>
-            <v-text-field
-              v-model="form_author"
-              label="Author"
-            ></v-text-field>
+            <v-text-field v-model="form_author" label="Author"></v-text-field>
           </v-col>
         </v-row>
         <v-row>
@@ -187,12 +184,12 @@ var timezone = process.env.TIMEZONE
 import { country } from '~/mixins/country.js'
 export default {
   head: () => ({
-    title: 'Create Post',
+    title: 'Create Post'
   }),
   watch: {
     menu(val) {
       val && setTimeout(() => (this.activePicker = 'YEAR'))
-    },
+    }
   },
   middleware: 'auth',
   mixins: [validationMixin, country],
@@ -203,7 +200,7 @@ export default {
 
     image_id: '',
     url_backend: '',
-    form_author:'',
+    form_author: '',
     form_content: '',
     form_title: '',
     form_subtitle: '',
@@ -214,26 +211,26 @@ export default {
     publishselection: [
       {
         value: 1,
-        text: 'Draft',
+        text: 'Draft'
       },
       {
         value: 2,
-        text: 'Publish',
-      },
+        text: 'Publish'
+      }
     ],
     image: '',
     image_preview: '',
-    image_name: '',
+    image_name: ''
   }),
 
   validations: {
     form_content: { required },
     form_title: { required },
-    form_publish: { required },
+    form_publish: { required }
   },
   components: {
     'ckeditor-nuxt': () =>
-      import('@engrjerickcmangalus/ckeditor-nuxt-custom-build-simpleuploader'),
+      import('@engrjerickcmangalus/ckeditor-nuxt-custom-build-simpleuploader')
   },
   async created() {
     this.timezone = timezone
@@ -246,9 +243,9 @@ export default {
           Accept: 'application/json',
           Timezone: this.timezone,
           identifier: this.image_id,
-          'X-XSRF-TOKEN': this.$auth.$storage.getCookies()['XSRF-TOKEN'],
-        },
-      },
+          'X-XSRF-TOKEN': this.$auth.$storage.getCookies()['XSRF-TOKEN']
+        }
+      }
     }
 
     await this.$axios.$get('/sanctum/csrf-cookie')
@@ -265,7 +262,7 @@ export default {
       if (!this.$v.form_content.$dirty) return errors
       !this.$v.form_content.required && errors.push('Content is required.')
       return errors
-    },
+    }
   },
   methods: {
     save(date) {
@@ -306,9 +303,9 @@ export default {
 
         payload.append('publish', this.form_publish)
         payload.append('title', this.form_title)
+        payload.append('subtitle', this.form_subtitle)
         payload.append('content', this.form_content)
         payload.append('author', this.form_author)
-        payload.append('subtitle', this.subtitle)
         payload.append('country', this.form_country)
         payload.append('event_date', this.form_event_date)
 
@@ -318,19 +315,19 @@ export default {
         this.$axios
           .post('/api/er/create', payload, {
             headers: {
-              'Content-Type': 'multipart/form-data',
-            },
+              'Content-Type': 'multipart/form-data'
+            }
           })
-          .then((res) => {
+          .then(res => {
             this.$toast.success('Done.')
           })
-          .catch((error) => {})
+          .catch(error => {})
           .finally(() => {})
       } else {
         this.$toast.error('Validation failed.')
       }
-    },
-  },
+    }
+  }
 }
 </script>
 <style scoped>
