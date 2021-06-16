@@ -20,7 +20,10 @@
         <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
           <v-card-text class="">
             <p>{{ item.date }}</p>
+            <h3>{{ item.anniversary }} year anniversary</h3>
+            <br />
             <h2>{{ item.title }}</h2>
+
             <p>{{ item.subtitle }}</p>
             <p v-html="item.content"></p>
           </v-card-text>
@@ -153,7 +156,8 @@ export default {
                 author: value.author,
                 image: value.image,
                 increment: this.increment,
-                date: value.date
+                date: value.date,
+                anniversary: value.anniversary
               })
             }
 
