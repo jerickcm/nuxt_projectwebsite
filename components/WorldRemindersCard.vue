@@ -12,7 +12,8 @@
     </v-row>
     <v-row class="ma-0 pa-0">
       <v-col class="mb-0 pb-0 col-md-10 col-lg-10 offset-md-2 offset-lg-2">
-        <v-btn  class="ma-1 blue lighten-3"
+        <v-btn
+          class="ma-1 blue lighten-3"
           v-for="(item, index) in months"
           :key="index"
           :to="'/world-reminders/' + item.name"
@@ -22,18 +23,30 @@
     </v-row>
     <v-row v-for="(item, index) in content" :key="index" class="ma-0 pa-0">
       <v-col class="mb-0 pb-0 col-md-10 col-lg-10 offset-md-2 offset-lg-2">
-        <div class="pa-2 ma-0">
+        <div class="pt-2 mt-2">
           <hr />
-          <div class="">
-            <p>{{ item.date }}</p>
+          <div class="pt-2 mt-2">
+            <p class="blue--text">{{ item.date }}</p>
+            <h2>{{ item.title }}</h2>
             <h3>{{ item.anniversary }} year anniversary</h3>
             <br />
-            <h2>{{ item.title }}</h2>
 
             <p>{{ item.subtitle }}</p>
+
+            <img
+              v-if="item.image"
+              :src="item.image"
+              height="250rem"
+              style="object-position: center"
+              alt=""
+            />
+
             <p v-html="item.content"></p>
+            <br />
+            <strong
+              ><p>Author/Source : {{ item.author }}</p></strong
+            >
           </div>
-          <hr />
         </div>
       </v-col>
     </v-row>
@@ -126,9 +139,13 @@ export default {
 
       this.date = new Date().toJSON().slice(0, 10).replace(/-/g, '-')
       if (this.$route.params.id) {
-             try {
+        try {
           this.$axios
-            .$get(`api/er/page/${this.page}/item/${10}/month/${this.$route.params.id}`)
+            .$get(
+              `api/er/page/${this.page}/item/${10}/month/${
+                this.$route.params.id
+              }`
+            )
             .then((res) => {
               if (res.data.length == 0) {
                 this.no_more_post = ''
