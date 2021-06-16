@@ -4,41 +4,44 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _55dd2d9b = () => interopDefault(import('..\\pages\\about.vue' /* webpackChunkName: "pages/about" */))
-const _b1f74746 = () => interopDefault(import('..\\pages\\admin.vue' /* webpackChunkName: "pages/admin" */))
-const _0c00337e = () => interopDefault(import('..\\pages\\blog\\index.vue' /* webpackChunkName: "pages/blog/index" */))
-const _36dfef66 = () => interopDefault(import('..\\pages\\contact-us.vue' /* webpackChunkName: "pages/contact-us" */))
-const _2dcba3bc = () => interopDefault(import('..\\pages\\dashboard.vue' /* webpackChunkName: "pages/dashboard" */))
-const _3f3cab77 = () => interopDefault(import('..\\pages\\login.vue' /* webpackChunkName: "pages/login" */))
-const _152c6828 = () => interopDefault(import('..\\pages\\logout.vue' /* webpackChunkName: "pages/logout" */))
-const _34b6c0a6 = () => interopDefault(import('..\\pages\\news\\index.vue' /* webpackChunkName: "pages/news/index" */))
-const _8caa4080 = () => interopDefault(import('..\\pages\\post\\index.vue' /* webpackChunkName: "pages/post/index" */))
-const _4bfe4509 = () => interopDefault(import('..\\pages\\quotes\\index.vue' /* webpackChunkName: "pages/quotes/index" */))
-const _98f2b3f6 = () => interopDefault(import('..\\pages\\register.vue' /* webpackChunkName: "pages/register" */))
-const _28f79524 = () => interopDefault(import('..\\pages\\technology.vue' /* webpackChunkName: "pages/technology" */))
-const _41b6ff48 = () => interopDefault(import('..\\pages\\template.vue' /* webpackChunkName: "pages/template" */))
-const _7edce174 = () => interopDefault(import('..\\pages\\test.vue' /* webpackChunkName: "pages/test" */))
-const _79a87be3 = () => interopDefault(import('..\\pages\\tutorials.vue' /* webpackChunkName: "pages/tutorials" */))
-const _8a023ad4 = () => interopDefault(import('..\\pages\\users.vue' /* webpackChunkName: "pages/users" */))
-const _d27b53a4 = () => interopDefault(import('..\\pages\\world-reminders\\index.vue' /* webpackChunkName: "pages/world-reminders/index" */))
-const _c88af200 = () => interopDefault(import('..\\pages\\blog\\create.vue' /* webpackChunkName: "pages/blog/create" */))
-const _426db22e = () => interopDefault(import('..\\pages\\blog\\manage.vue' /* webpackChunkName: "pages/blog/manage" */))
-const _12dae1ae = () => interopDefault(import('..\\pages\\blog\\view.vue' /* webpackChunkName: "pages/blog/view" */))
-const _0f2a4220 = () => interopDefault(import('..\\pages\\dash\\create.vue' /* webpackChunkName: "pages/dash/create" */))
-const _2e582319 = () => interopDefault(import('..\\pages\\dash\\view.vue' /* webpackChunkName: "pages/dash/view" */))
-const _12b8be9e = () => interopDefault(import('..\\pages\\news\\create.vue' /* webpackChunkName: "pages/news/create" */))
-const _39b2409a = () => interopDefault(import('..\\pages\\news\\manage.vue' /* webpackChunkName: "pages/news/manage" */))
-const _3fa8611a = () => interopDefault(import('..\\pages\\news\\view.vue' /* webpackChunkName: "pages/news/view" */))
-const _b9353a04 = () => interopDefault(import('..\\pages\\post\\create.vue' /* webpackChunkName: "pages/post/create" */))
-const _3317fa32 = () => interopDefault(import('..\\pages\\post\\manage.vue' /* webpackChunkName: "pages/post/manage" */))
-const _6abf5ab2 = () => interopDefault(import('..\\pages\\post\\view.vue' /* webpackChunkName: "pages/post/view" */))
-const _5b7ea6d5 = () => interopDefault(import('..\\pages\\quotes\\create.vue' /* webpackChunkName: "pages/quotes/create" */))
-const _c2e57284 = () => interopDefault(import('..\\pages\\quotes\\manage.vue' /* webpackChunkName: "pages/quotes/manage" */))
-const _71d2bf84 = () => interopDefault(import('..\\pages\\quotes\\view.vue' /* webpackChunkName: "pages/quotes/view" */))
-const _693cba50 = () => interopDefault(import('..\\pages\\world-reminders\\create.vue' /* webpackChunkName: "pages/world-reminders/create" */))
-const _a7694b8e = () => interopDefault(import('..\\pages\\world-reminders\\manage.vue' /* webpackChunkName: "pages/world-reminders/manage" */))
-const _6ea95679 = () => interopDefault(import('..\\pages\\world-reminders\\view.vue' /* webpackChunkName: "pages/world-reminders/view" */))
-const _75950860 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
+const _006f1191 = () => interopDefault(import('..\\pages\\about.vue' /* webpackChunkName: "pages/about" */))
+const _51964053 = () => interopDefault(import('..\\pages\\admin.vue' /* webpackChunkName: "pages/admin" */))
+const _7cce7218 = () => interopDefault(import('..\\pages\\blog\\index.vue' /* webpackChunkName: "pages/blog/index" */))
+const _2c7c2e17 = () => interopDefault(import('..\\pages\\contact-us.vue' /* webpackChunkName: "pages/contact-us" */))
+const _6f8d2718 = () => interopDefault(import('..\\pages\\dashboard.vue' /* webpackChunkName: "pages/dashboard" */))
+const _2c62e126 = () => interopDefault(import('..\\pages\\login.vue' /* webpackChunkName: "pages/login" */))
+const _c5d73294 = () => interopDefault(import('..\\pages\\logout.vue' /* webpackChunkName: "pages/logout" */))
+const _c98599ba = () => interopDefault(import('..\\pages\\news\\index.vue' /* webpackChunkName: "pages/news/index" */))
+const _6f437336 = () => interopDefault(import('..\\pages\\post\\index.vue' /* webpackChunkName: "pages/post/index" */))
+const _04805a02 = () => interopDefault(import('..\\pages\\quotes\\index.vue' /* webpackChunkName: "pages/quotes/index" */))
+const _1af5b64f = () => interopDefault(import('..\\pages\\register.vue' /* webpackChunkName: "pages/register" */))
+const _33705b38 = () => interopDefault(import('..\\pages\\technology.vue' /* webpackChunkName: "pages/technology" */))
+const _469390a6 = () => interopDefault(import('..\\pages\\template.vue' /* webpackChunkName: "pages/template" */))
+const _c5b8b284 = () => interopDefault(import('..\\pages\\test.vue' /* webpackChunkName: "pages/test" */))
+const _001b74d9 = () => interopDefault(import('..\\pages\\tutorials.vue' /* webpackChunkName: "pages/tutorials" */))
+const _6590c68c = () => interopDefault(import('..\\pages\\users.vue' /* webpackChunkName: "pages/users" */))
+const _fffbc610 = () => interopDefault(import('..\\pages\\world-reminders\\index.vue' /* webpackChunkName: "pages/world-reminders/index" */))
+const _cd973b6c = () => interopDefault(import('..\\pages\\blog\\create.vue' /* webpackChunkName: "pages/blog/create" */))
+const _4779fb9a = () => interopDefault(import('..\\pages\\blog\\manage.vue' /* webpackChunkName: "pages/blog/manage" */))
+const _3e7eb4f3 = () => interopDefault(import('..\\pages\\blog\\view.vue' /* webpackChunkName: "pages/blog/view" */))
+const _14368b8c = () => interopDefault(import('..\\pages\\dash\\create.vue' /* webpackChunkName: "pages/dash/create" */))
+const _764448e3 = () => interopDefault(import('..\\pages\\dash\\view.vue' /* webpackChunkName: "pages/dash/view" */))
+const _17c5080a = () => interopDefault(import('..\\pages\\news\\create.vue' /* webpackChunkName: "pages/news/create" */))
+const _372c1be4 = () => interopDefault(import('..\\pages\\news\\manage.vue' /* webpackChunkName: "pages/news/manage" */))
+const _f0d6f238 = () => interopDefault(import('..\\pages\\news\\view.vue' /* webpackChunkName: "pages/news/view" */))
+const _be418370 = () => interopDefault(import('..\\pages\\post\\create.vue' /* webpackChunkName: "pages/post/create" */))
+const _3824439e = () => interopDefault(import('..\\pages\\post\\manage.vue' /* webpackChunkName: "pages/post/manage" */))
+const _128c7871 = () => interopDefault(import('..\\pages\\post\\view.vue' /* webpackChunkName: "pages/post/view" */))
+const _3c2250c2 = () => interopDefault(import('..\\pages\\quotes\\create.vue' /* webpackChunkName: "pages/quotes/create" */))
+const _24fd7788 = () => interopDefault(import('..\\pages\\quotes\\manage.vue' /* webpackChunkName: "pages/quotes/manage" */))
+const _76df08f0 = () => interopDefault(import('..\\pages\\quotes\\view.vue' /* webpackChunkName: "pages/quotes/view" */))
+const _b0146674 = () => interopDefault(import('..\\pages\\world-reminders\\create.vue' /* webpackChunkName: "pages/world-reminders/create" */))
+const _29f726a2 = () => interopDefault(import('..\\pages\\world-reminders\\manage.vue' /* webpackChunkName: "pages/world-reminders/manage" */))
+const _0b5ee322 = () => interopDefault(import('..\\pages\\world-reminders\\view.vue' /* webpackChunkName: "pages/world-reminders/view" */))
+const _063a0540 = () => interopDefault(import('..\\pages\\world-reminders\\_id.vue' /* webpackChunkName: "pages/world-reminders/_id" */))
+const _2026ec56 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
+const _2ca55429 = () => interopDefault(import('..\\pages\\_username\\index.vue' /* webpackChunkName: "pages/_username/index" */))
+const _32cb2ee8 = () => interopDefault(import('..\\pages\\_username\\following.vue' /* webpackChunkName: "pages/_username/following" */))
 
 const emptyFn = () => {}
 
@@ -53,144 +56,156 @@ export const routerOptions = {
 
   routes: [{
     path: "/about",
-    component: _55dd2d9b,
+    component: _006f1191,
     name: "about"
   }, {
     path: "/admin",
-    component: _b1f74746,
+    component: _51964053,
     name: "admin"
   }, {
     path: "/blog",
-    component: _0c00337e,
+    component: _7cce7218,
     name: "blog"
   }, {
     path: "/contact-us",
-    component: _36dfef66,
+    component: _2c7c2e17,
     name: "contact-us"
   }, {
     path: "/dashboard",
-    component: _2dcba3bc,
+    component: _6f8d2718,
     name: "dashboard"
   }, {
     path: "/login",
-    component: _3f3cab77,
+    component: _2c62e126,
     name: "login"
   }, {
     path: "/logout",
-    component: _152c6828,
+    component: _c5d73294,
     name: "logout"
   }, {
     path: "/news",
-    component: _34b6c0a6,
+    component: _c98599ba,
     name: "news"
   }, {
     path: "/post",
-    component: _8caa4080,
+    component: _6f437336,
     name: "post"
   }, {
     path: "/quotes",
-    component: _4bfe4509,
+    component: _04805a02,
     name: "quotes"
   }, {
     path: "/register",
-    component: _98f2b3f6,
+    component: _1af5b64f,
     name: "register"
   }, {
     path: "/technology",
-    component: _28f79524,
+    component: _33705b38,
     name: "technology"
   }, {
     path: "/template",
-    component: _41b6ff48,
+    component: _469390a6,
     name: "template"
   }, {
     path: "/test",
-    component: _7edce174,
+    component: _c5b8b284,
     name: "test"
   }, {
     path: "/tutorials",
-    component: _79a87be3,
+    component: _001b74d9,
     name: "tutorials"
   }, {
     path: "/users",
-    component: _8a023ad4,
+    component: _6590c68c,
     name: "users"
   }, {
     path: "/world-reminders",
-    component: _d27b53a4,
+    component: _fffbc610,
     name: "world-reminders"
   }, {
     path: "/blog/create",
-    component: _c88af200,
+    component: _cd973b6c,
     name: "blog-create"
   }, {
     path: "/blog/manage",
-    component: _426db22e,
+    component: _4779fb9a,
     name: "blog-manage"
   }, {
     path: "/blog/view",
-    component: _12dae1ae,
+    component: _3e7eb4f3,
     name: "blog-view"
   }, {
     path: "/dash/create",
-    component: _0f2a4220,
+    component: _14368b8c,
     name: "dash-create"
   }, {
     path: "/dash/view",
-    component: _2e582319,
+    component: _764448e3,
     name: "dash-view"
   }, {
     path: "/news/create",
-    component: _12b8be9e,
+    component: _17c5080a,
     name: "news-create"
   }, {
     path: "/news/manage",
-    component: _39b2409a,
+    component: _372c1be4,
     name: "news-manage"
   }, {
     path: "/news/view",
-    component: _3fa8611a,
+    component: _f0d6f238,
     name: "news-view"
   }, {
     path: "/post/create",
-    component: _b9353a04,
+    component: _be418370,
     name: "post-create"
   }, {
     path: "/post/manage",
-    component: _3317fa32,
+    component: _3824439e,
     name: "post-manage"
   }, {
     path: "/post/view",
-    component: _6abf5ab2,
+    component: _128c7871,
     name: "post-view"
   }, {
     path: "/quotes/create",
-    component: _5b7ea6d5,
+    component: _3c2250c2,
     name: "quotes-create"
   }, {
     path: "/quotes/manage",
-    component: _c2e57284,
+    component: _24fd7788,
     name: "quotes-manage"
   }, {
     path: "/quotes/view",
-    component: _71d2bf84,
+    component: _76df08f0,
     name: "quotes-view"
   }, {
     path: "/world-reminders/create",
-    component: _693cba50,
+    component: _b0146674,
     name: "world-reminders-create"
   }, {
     path: "/world-reminders/manage",
-    component: _a7694b8e,
+    component: _29f726a2,
     name: "world-reminders-manage"
   }, {
     path: "/world-reminders/view",
-    component: _6ea95679,
+    component: _0b5ee322,
     name: "world-reminders-view"
   }, {
+    path: "/world-reminders/:id?",
+    component: _063a0540,
+    name: "world-reminders-id"
+  }, {
     path: "/",
-    component: _75950860,
+    component: _2026ec56,
     name: "index"
+  }, {
+    path: "/:username",
+    component: _2ca55429,
+    name: "username"
+  }, {
+    path: "/:username/following",
+    component: _32cb2ee8,
+    name: "username-following"
   }],
 
   fallback: false

@@ -18,18 +18,6 @@
         class="mb-0 pb-0 col-md-8 col-lg-6 offset-md-2"
       >
         <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
-          <!-- color="blue lighten-5" -->
-          <!-- -->
-          <!-- target="_blank" -->
-          <!-- <div
-            style="
-              float: left;
-              width: 100%;
-              height: 135px;
-              margin-right: 20px;
-              display: flex;
-              flex-wrap: wrap;"
-          > -->
           <nuxt-link
             class="nuxtlink"
             :to="{
@@ -37,7 +25,6 @@
               query: { slug: item.slug }
             }"
           >
-            <!-- <v-img height="250" :src="item.image"> </v-img> -->
             <img
               :src="item.image"
               width="100%"
@@ -46,9 +33,6 @@
               alt=""
             />
           </nuxt-link>
-          <!-- </div> -->
-
-          <!-- target="_blank" -->
           <v-card-title>
             <nuxt-link
               class="nuxtlink"

@@ -1,4 +1,4 @@
-exports.ids = [39];
+exports.ids = [41];
 exports.modules = {
 
 /***/ 248:
@@ -29,7 +29,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 265:
+/***/ 268:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -195,7 +195,7 @@ const baseMixins = Object(mixins["a" /* default */])(translatable);
 
 /***/ }),
 
-/***/ 405:
+/***/ 406:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -254,7 +254,7 @@ var VContainer = __webpack_require__(191);
 var VIcon = __webpack_require__(56);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VParallax/VParallax.js + 1 modules
-var VParallax = __webpack_require__(265);
+var VParallax = __webpack_require__(268);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VRow.js
 var VRow = __webpack_require__(192);
@@ -283,7 +283,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "bed22a96",
-  "310016b2"
+  "078d7028"
   
 )
 

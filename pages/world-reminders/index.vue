@@ -1,7 +1,7 @@
 <template>
   <v-container fluid class="white">
     <v-row class="">
-      <v-col mg="12" lg="10" class="" min-height="450vh">
+      <v-col ms="10" lg="10" >
         <WorldRemindersCard />
       </v-col>
     </v-row>
