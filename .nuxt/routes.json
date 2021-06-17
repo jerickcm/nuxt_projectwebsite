@@ -2,284 +2,325 @@
   {
     "name": "about",
     "path": "/about",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\about.vue",
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\about.vue",
     "chunkName": "pages/about",
-    "url": "/about"
+    "url": "/about",
+    "_name": "_006f1191"
   },
   {
     "name": "admin",
     "path": "/admin",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\admin.vue",
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\admin.vue",
     "chunkName": "pages/admin",
-    "url": "/admin"
+    "url": "/admin",
+    "_name": "_51964053"
   },
   {
     "name": "blog",
     "path": "/blog",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\blog\\\\index.vue",
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\blog\\\\index.vue",
     "chunkName": "pages/blog/index",
-    "url": "/blog"
+    "url": "/blog",
+    "_name": "_7cce7218"
   },
   {
     "name": "contact-us",
     "path": "/contact-us",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\contact-us.vue",
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\contact-us.vue",
     "chunkName": "pages/contact-us",
-    "url": "/contact-us"
+    "url": "/contact-us",
+    "_name": "_2c7c2e17"
   },
   {
     "name": "dashboard",
     "path": "/dashboard",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\dashboard\\\\index.vue",
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\dashboard\\\\index.vue",
     "chunkName": "pages/dashboard/index",
-    "url": "/dashboard"
+    "url": "/dashboard",
+    "_name": "_7517826a"
   },
   {
     "name": "login",
     "path": "/login",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\login.vue",
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\login.vue",
     "chunkName": "pages/login",
-    "url": "/login"
+    "url": "/login",
+    "_name": "_2c62e126"
   },
   {
     "name": "logout",
     "path": "/logout",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\logout.vue",
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\logout.vue",
     "chunkName": "pages/logout",
-    "url": "/logout"
+    "url": "/logout",
+    "_name": "_c5d73294"
   },
   {
     "name": "news",
     "path": "/news",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\news\\\\index.vue",
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\news\\\\index.vue",
     "chunkName": "pages/news/index",
-    "url": "/news"
+    "url": "/news",
+    "_name": "_c98599ba"
   },
   {
     "name": "post",
     "path": "/post",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\post\\\\index.vue",
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\post\\\\index.vue",
     "chunkName": "pages/post/index",
-    "url": "/post"
+    "url": "/post",
+    "_name": "_6f437336"
   },
   {
     "name": "profile",
     "path": "/profile",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\profile\\\\index.vue",
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\profile\\\\index.vue",
     "chunkName": "pages/profile/index",
-    "url": "/profile"
+    "url": "/profile",
+    "_name": "_5db2ad96"
   },
   {
     "name": "quotes",
     "path": "/quotes",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\quotes\\\\index.vue",
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\quotes\\\\index.vue",
     "chunkName": "pages/quotes/index",
-    "url": "/quotes"
+    "url": "/quotes",
+    "_name": "_04805a02"
   },
   {
     "name": "register",
     "path": "/register",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\register.vue",
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\register.vue",
     "chunkName": "pages/register",
-    "url": "/register"
+    "url": "/register",
+    "_name": "_1af5b64f"
   },
   {
     "name": "technology",
     "path": "/technology",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\technology.vue",
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\technology.vue",
     "chunkName": "pages/technology",
-    "url": "/technology"
+    "url": "/technology",
+    "_name": "_33705b38"
   },
   {
     "name": "template",
     "path": "/template",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\template.vue",
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\template.vue",
     "chunkName": "pages/template",
-    "url": "/template"
+    "url": "/template",
+    "_name": "_469390a6"
   },
   {
     "name": "test",
     "path": "/test",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\test.vue",
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\test.vue",
     "chunkName": "pages/test",
-    "url": "/test"
+    "url": "/test",
+    "_name": "_c5b8b284"
   },
   {
     "name": "tutorials",
     "path": "/tutorials",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\tutorials.vue",
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\tutorials.vue",
     "chunkName": "pages/tutorials",
-    "url": "/tutorials"
+    "url": "/tutorials",
+    "_name": "_001b74d9"
   },
   {
     "name": "users",
     "path": "/users",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\users.vue",
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\users.vue",
     "chunkName": "pages/users",
-    "url": "/users"
+    "url": "/users",
+    "_name": "_6590c68c"
   },
   {
     "name": "world-reminders",
     "path": "/world-reminders",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\world-reminders\\\\index.vue",
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\world-reminders\\\\index.vue",
     "chunkName": "pages/world-reminders/index",
-    "url": "/world-reminders"
+    "url": "/world-reminders",
+    "_name": "_fffbc610"
   },
   {
     "name": "blog-create",
     "path": "/blog/create",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\blog\\\\create.vue",
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\blog\\\\create.vue",
     "chunkName": "pages/blog/create",
-    "url": "/blog/create"
+    "url": "/blog/create",
+    "_name": "_cd973b6c"
   },
   {
     "name": "blog-manage",
     "path": "/blog/manage",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\blog\\\\manage.vue",
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\blog\\\\manage.vue",
     "chunkName": "pages/blog/manage",
-    "url": "/blog/manage"
+    "url": "/blog/manage",
+    "_name": "_4779fb9a"
   },
   {
     "name": "blog-view",
     "path": "/blog/view",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\blog\\\\view.vue",
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\blog\\\\view.vue",
     "chunkName": "pages/blog/view",
-    "url": "/blog/view"
+    "url": "/blog/view",
+    "_name": "_3e7eb4f3"
   },
   {
     "name": "dash-create",
     "path": "/dash/create",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\dash\\\\create.vue",
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\dash\\\\create.vue",
     "chunkName": "pages/dash/create",
-    "url": "/dash/create"
+    "url": "/dash/create",
+    "_name": "_14368b8c"
   },
   {
     "name": "dash-view",
     "path": "/dash/view",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\dash\\\\view.vue",
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\dash\\\\view.vue",
     "chunkName": "pages/dash/view",
-    "url": "/dash/view"
+    "url": "/dash/view",
+    "_name": "_764448e3"
   },
   {
     "name": "news-create",
     "path": "/news/create",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\news\\\\create.vue",
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\news\\\\create.vue",
     "chunkName": "pages/news/create",
-    "url": "/news/create"
+    "url": "/news/create",
+    "_name": "_17c5080a"
   },
   {
     "name": "news-manage",
     "path": "/news/manage",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\news\\\\manage.vue",
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\news\\\\manage.vue",
     "chunkName": "pages/news/manage",
-    "url": "/news/manage"
+    "url": "/news/manage",
+    "_name": "_372c1be4"
   },
   {
     "name": "news-view",
     "path": "/news/view",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\news\\\\view.vue",
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\news\\\\view.vue",
     "chunkName": "pages/news/view",
-    "url": "/news/view"
+    "url": "/news/view",
+    "_name": "_f0d6f238"
   },
   {
     "name": "post-create",
     "path": "/post/create",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\post\\\\create.vue",
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\post\\\\create.vue",
     "chunkName": "pages/post/create",
-    "url": "/post/create"
+    "url": "/post/create",
+    "_name": "_be418370"
   },
   {
     "name": "post-manage",
     "path": "/post/manage",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\post\\\\manage.vue",
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\post\\\\manage.vue",
     "chunkName": "pages/post/manage",
-    "url": "/post/manage"
+    "url": "/post/manage",
+    "_name": "_3824439e"
   },
   {
     "name": "post-view",
     "path": "/post/view",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\post\\\\view.vue",
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\post\\\\view.vue",
     "chunkName": "pages/post/view",
-    "url": "/post/view"
+    "url": "/post/view",
+    "_name": "_128c7871"
   },
   {
     "name": "profile-edit",
     "path": "/profile/edit",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\profile\\\\edit.vue",
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\profile\\\\edit.vue",
     "chunkName": "pages/profile/edit",
-    "url": "/profile/edit"
+    "url": "/profile/edit",
+    "_name": "_46b0ff77"
   },
   {
     "name": "quotes-create",
     "path": "/quotes/create",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\quotes\\\\create.vue",
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\quotes\\\\create.vue",
     "chunkName": "pages/quotes/create",
-    "url": "/quotes/create"
+    "url": "/quotes/create",
+    "_name": "_3c2250c2"
   },
   {
     "name": "quotes-manage",
     "path": "/quotes/manage",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\quotes\\\\manage.vue",
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\quotes\\\\manage.vue",
     "chunkName": "pages/quotes/manage",
-    "url": "/quotes/manage"
+    "url": "/quotes/manage",
+    "_name": "_24fd7788"
   },
   {
     "name": "quotes-view",
     "path": "/quotes/view",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\quotes\\\\view.vue",
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\quotes\\\\view.vue",
     "chunkName": "pages/quotes/view",
-    "url": "/quotes/view"
+    "url": "/quotes/view",
+    "_name": "_76df08f0"
   },
   {
     "name": "world-reminders-create",
     "path": "/world-reminders/create",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\world-reminders\\\\create.vue",
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\world-reminders\\\\create.vue",
     "chunkName": "pages/world-reminders/create",
-    "url": "/world-reminders/create"
+    "url": "/world-reminders/create",
+    "_name": "_b0146674"
   },
   {
     "name": "world-reminders-manage",
     "path": "/world-reminders/manage",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\world-reminders\\\\manage.vue",
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\world-reminders\\\\manage.vue",
     "chunkName": "pages/world-reminders/manage",
-    "url": "/world-reminders/manage"
+    "url": "/world-reminders/manage",
+    "_name": "_29f726a2"
   },
   {
     "name": "world-reminders-view",
     "path": "/world-reminders/view",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\world-reminders\\\\view.vue",
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\world-reminders\\\\view.vue",
     "chunkName": "pages/world-reminders/view",
-    "url": "/world-reminders/view"
+    "url": "/world-reminders/view",
+    "_name": "_0b5ee322"
   },
   {
     "name": "world-reminders-id",
     "path": "/world-reminders/:id?",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\world-reminders\\\\_id.vue",
-    "chunkName": "pages/world-reminders/_id"
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\world-reminders\\\\_id.vue",
+    "chunkName": "pages/world-reminders/_id",
+    "_name": "_063a0540"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\index.vue",
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\index.vue",
     "chunkName": "pages/index",
-    "url": "/"
+    "url": "/",
+    "_name": "_2026ec56"
   },
   {
     "name": "username",
     "path": "/:username",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\_username\\\\index.vue",
-    "chunkName": "pages/_username/index"
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\_username\\\\index.vue",
+    "chunkName": "pages/_username/index",
+    "_name": "_2ca55429"
   },
   {
     "name": "username-following",
     "path": "/:username/following",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\_username\\\\following.vue",
-    "chunkName": "pages/_username/following"
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\_username\\\\following.vue",
+    "chunkName": "pages/_username/following",
+    "_name": "_32cb2ee8"
   },
   {
     "name": "username-skel",
     "path": "/:username/skel",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\_username\\\\skel.vue",
-    "chunkName": "pages/_username/skel"
+    "component": "C:\\\\docker\\\\nuxt\\\\pages\\\\_username\\\\skel.vue",
+    "chunkName": "pages/_username/skel",
+    "_name": "_a561cb10"
   }
 ]

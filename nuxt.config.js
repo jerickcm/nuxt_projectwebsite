@@ -84,6 +84,7 @@ export default {
         //   'openid',
           'profile',
           'email',
+
         //   'https://www.googleapis.com/auth/gmail.metadata'
         ],
         clientId:

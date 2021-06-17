@@ -85,11 +85,16 @@ export default {
   mounted() {
     console.log('mounted')
   },
-  async asyncData({ $axios, error, params }) {
+  async asyncData({ $axios, error, params ,$auth}) {
     await $axios.$get('/sanctum/csrf-cookie')
-    let response = await $axios.$get(`api/user_details`)
+    let response = await $axios.$get(`api/user_details/${$auth.state['user'].email}`)
     console.log(response.user['details'])
     return { profile: response.user }
+  },
+  computed: {
+    email() {
+      return this.$auth.state['user'].email
+    },
   },
   async created() {},
   middleware: 'auth',

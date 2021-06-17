@@ -74,7 +74,37 @@ export default {
     title: 'Dashboard'
   }),
   data: () => ({}),
+    async asyncData({ $axios, error, params,$auth }) {
+      // if( $auth.state['strategy'] == 'google' ){
+      //   await $axios.$get('/sanctum/csrf-cookie')
+      //   let response = await $axios.$get(
+      //     `api/validate/email/${params.email}`)
+      //   return { profile: response.data}
+      // }
+  },
+  computed: {
+    email() {
+      return this.$auth.state['user'].email
+    },
+  },
+  async created() {
+    console.log(this.$auth.state['user'].email)
+    console.log(this.$auth.state['strategy'])
 
-  async created() {}
+      if(this.$auth.state['strategy'] =='google'){
+
+        await this.$axios.$get('/sanctum/csrf-cookie')
+
+        let payload = new FormData()
+        payload.append('email', this.$auth.state['user'].email)
+        payload.append('name',this.$auth.state['user'].name)
+
+        let response = await this.$axios.$post(
+          `api/validate/account`,payload)
+
+        return { profile: response.data}
+      }
+
+  }
 }
 </script>
