@@ -4,6 +4,14 @@
       <DashTitle Dashboard="Dashboard" to="/dashboard"> </DashTitle>
 
       <Dashboard>
+        <h2 slot="menu_name">Profile MENU</h2>
+
+        <v-btn to="/profile/edit" slot="view_menu" class="blue white--text"
+          >Manage Profile</v-btn
+        >
+      </Dashboard>
+
+      <Dashboard>
         <h2 slot="menu_name">POST MENU</h2>
         <v-btn to="post/create" slot="create_menu" class="green white--text"
           >Create Post</v-btn
@@ -43,10 +51,16 @@
 
       <Dashboard>
         <h2 slot="menu_name">World Reminders MENU</h2>
-        <v-btn to="world-reminders/create" slot="create_menu" class="green white--text"
+        <v-btn
+          to="world-reminders/create"
+          slot="create_menu"
+          class="green white--text"
           >Create World Reminders</v-btn
         >
-        <v-btn to="world-reminders/manage" slot="view_menu" class="blue white--text"
+        <v-btn
+          to="world-reminders/manage"
+          slot="view_menu"
+          class="blue white--text"
           >Manage World Reminders</v-btn
         >
       </Dashboard>
@@ -57,10 +71,10 @@
 export default {
   middleware: 'auth',
   head: () => ({
-    title: 'Dashboard',
+    title: 'Dashboard'
   }),
   data: () => ({}),
 
-  async created() {},
+  async created() {}
 }
 </script>
