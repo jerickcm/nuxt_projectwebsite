@@ -89,8 +89,9 @@ export default {
         clientId:
           '635307167233-mii6gf2ho460gj11ui5tvb7teo1rcp3o.apps.googleusercontent.com',
         codeChallengeMethod: '',
-        // responseType: 'code'
-        // grantType: "client_credentials",
+        // responseType: 'code',
+        responseType: "id_token token",
+        grantType: "client_credentials",
         // redirectUri: "http://localhost"
       },
       laravelSanctum: {
