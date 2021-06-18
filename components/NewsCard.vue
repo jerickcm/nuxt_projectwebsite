@@ -10,6 +10,7 @@
       >
         <h1>News</h1>
         <p>Technological News</p>
+        {{ datum }}
       </v-col>
     </v-row>
     <v-row v-for="(item, index) in content" :key="index" class="ma-0 pa-0">
@@ -21,9 +22,6 @@
         class="mb-0 pb-0 col-md-8 col-lg-8 offset-md-2 offset-lg-2 offset-xl-2"
       >
         <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
-          <!-- color="blue lighten-5" -->
-          <!-- -->
-          <!-- target="_blank" -->
           <nuxt-link
             class="nuxtlink"
             :to="{
@@ -112,12 +110,13 @@
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 export default {
+  props:['content'],
   data: () => ({
     no_more_post: 'd-none',
-    loadcard: '',
+    loadcard: 'd-none',
     loading: false,
-    content: [],
-    page: 1,
+    // content: '',
+    page: 2,
     data: [],
     increment: 0,
     disable_next: false,
@@ -125,9 +124,10 @@ export default {
   }),
   async created() {},
   mounted() {
-    this.getposts()
+    // this.getposts()
   },
-  computed: {},
+  computed: {
+  },
   methods: {
     getposts() {
       this.$axios.$get('/sanctum/csrf-cookie')
@@ -151,6 +151,7 @@ export default {
               this.disable_next = true
               this.disable_color = 'grey'
             }
+
             for (const [key, value] of Object.entries(res.data)) {
               this.increment = this.increment + 1
               this.data.push({
