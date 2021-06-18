@@ -9,6 +9,7 @@
         class="mb-0 pb-0 col-md-8 col-lg-8 offset-md-2 offset-lg-2 offset-xl-2"
       >
         <h1>Blog</h1>
+        <p>Relevent Personal Blogs about programming and events</p>
       </v-col>
     </v-row>
     <v-row v-for="(item, index) in content" :key="index" class="ma-0 pa-0">

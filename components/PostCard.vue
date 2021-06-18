@@ -9,6 +9,7 @@
         class="mb-0 pb-0 col-md-8 col-lg-8 offset-md-2 offset-lg-2 offset-xl-2"
       >
         <h1>Post</h1>
+        <p>Technological post ment to help user</p>
       </v-col>
     </v-row>
     <v-row v-for="(item, index) in posts" :key="index" class="ma-0 pa-0">
@@ -51,7 +52,6 @@
         </v-card>
       </v-col>
     </v-row>
-
     <v-row
       class="ma-0 pa-0"
       :class="loadcard"
@@ -132,7 +132,6 @@ export default {
     this.generatePost()
   },
   computed: {},
-
   methods: {
     generatePost() {},
     async getposts() {

@@ -8,6 +8,7 @@
         class="mb-0 pb-0 col-md-10 col-lg-10 offset-md-2 offset-lg-2"
       >
         <h1>World Reminders</h1>
+        <p>Anniversary of past events.</p>
       </v-col>
     </v-row>
     <v-row class="ma-0 pa-0">

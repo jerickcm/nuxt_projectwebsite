@@ -3,7 +3,7 @@
     <v-app-bar fixed app class="white">
       <v-sheet
         color="white"
-        class="hidden-md-and-up font-kalamreg"
+        class="hidden-md-and-up font-kalamreg hand"
         @click.stop="rightDrawer = !rightDrawer"
       >
         <v-icon color="green" x-large>mdi-message-arrow-left</v-icon> Menu
@@ -303,5 +303,8 @@ export default {
 
 .font-Bonida {
   font-family: 'Bonida', sans-serif;
+}
+.hand{
+  cursor:pointer;
 }
 </style>
