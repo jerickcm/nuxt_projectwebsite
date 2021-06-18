@@ -34,3 +34,10 @@
        format('truetype');
  }
 
+
+ @font-face {
+  font-family: 'Bonida';
+   src: local('Bonida'),
+     url(~assets/Bonida/Bonida-vmmYA.ttf)
+       format('truetype');
+ }

@@ -8,11 +8,15 @@
     <v-row>
       <v-col>
         <v-card>
-          <v-image :src="profile['details'].cover_photo"></v-image>
-          <v-image :src="profile['details'].profile_picture"></v-image>
+          <v-img :src="profile['details'].cover_photo"></v-img>
+          <v-img :src="profile['details'].profile_picture"></v-img>
           <v-card-text>
-            <span>Name: {{ profile.name }}</span
+            <span class="fs-1-5">{{ profile.name }}</span
             ><br />
+            <span class="fs-1-5">
+              <span class="font-Bonida">{{ allibataname }}</span></span
+            ><br />
+
             <span>Username: {{ username }}</span
             ><br />
             <span>Email: {{ profile.email }}</span
@@ -50,8 +54,14 @@ export default {
     }
   },
   data() {
-    loading: false
+    return {
+      loading: false,
+      // allibataname: 'asdasd',
+      profile: [],
+      pp: 'test'
+    }
   },
+  async watch() {},
   async asyncData({ $axios, error, params }) {
     await $axios.$get('/sanctum/csrf-cookie')
     let response = await $axios.$get(
@@ -62,6 +72,9 @@ export default {
   computed: {
     username() {
       return this.$route.params.username
+    },
+    allibataname() {
+      return this.profile.name
     }
   },
   methods: {},

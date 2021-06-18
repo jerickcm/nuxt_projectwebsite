@@ -300,4 +300,8 @@ export default {
 .font-barlowreg {
   font-family: 'Barlow-Regular', sans-serif;
 }
+
+.font-Bonida {
+  font-family: 'Bonida', sans-serif;
+}
 </style>

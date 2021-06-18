@@ -18,6 +18,8 @@
             </v-card>
 
             <v-text-field v-model="profile.name" label="Name"></v-text-field>
+            <span class="font-Bonida">{{ alibataname }}</span>
+
             <v-text-field
               v-model="profile['details'].username"
               label="Username"
@@ -43,7 +45,7 @@
               label="Country"
             ></v-text-field>
 
-            <v-btn @click="Update_Profile"> Save </v-btn>
+            <v-btn color="primary" @click="Update_Profile"> Save </v-btn>
           </v-card>
         </v-col>
       </v-row>
@@ -51,7 +53,9 @@
   </div>
 </template>
 <script>
+import { usernames } from '~/mixins/reservedusernames.js'
 export default {
+  mixins: [usernames],
   data() {
     return {
       profile: '',
@@ -85,16 +89,21 @@ export default {
   mounted() {
     console.log('mounted')
   },
-  async asyncData({ $axios, error, params ,$auth}) {
+  async asyncData({ $axios, error, params, $auth }) {
     await $axios.$get('/sanctum/csrf-cookie')
-    let response = await $axios.$get(`api/user_details/${$auth.state['user'].email}`)
-    console.log(response.user['details'])
+    let response = await $axios.$get(
+      `api/user_details/${$auth.state['user'].email}`
+    )
     return { profile: response.user }
   },
   computed: {
     email() {
       return this.$auth.state['user'].email
     },
+
+    alibataname() {
+      return this.profile.name
+    }
   },
   async created() {},
   middleware: 'auth',
@@ -112,23 +121,27 @@ export default {
       }
     },
     async Update_Profile() {
-      console.log(this.profile)
+      var reservedvalues = this.reservedval
+      if (reservedvalues.includes(this.profile['details'].username)) {
+        this.$toast.error(
+          `username "` + this.profile['details'].username + `" is reserved`
+        )
+      } else {
+        let payload = new FormData()
+        payload.append('username', this.profile['details'].username)
 
-      let payload = new FormData()
-
-      payload.append('username', this.profile['details'].username)
-
-      try {
-        this.$axios
-          .$post(`api/user_details/update/${this.profile.id}`, payload, {
-            headers: {
-              'Content-Type': 'multipart/form-data'
-            }
-          })
-          .then(res => {})
-          .catch(error => {})
-          .finally(() => {})
-      } catch (error) {}
+        try {
+          this.$axios
+            .$post(`api/user_details/update/${this.profile.id}`, payload, {
+              headers: {
+                'Content-Type': 'multipart/form-data'
+              }
+            })
+            .then(res => {})
+            .catch(error => {})
+            .finally(() => {})
+        } catch (error) {}
+      }
     }
   }
 }
