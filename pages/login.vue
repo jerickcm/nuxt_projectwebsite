@@ -60,7 +60,7 @@
                 depressed
                 color="primary"
               >
-                Login with google
+                Login with &zwnj; &zwnj; <v-icon>mdi-google</v-icon> oogle
               </v-btn>
             </form>
           </v-card>
@@ -138,9 +138,11 @@ export default {
   methods: {
     loginwithgoogle() {
       // this.$auth.loginWith('google')
-      this.$auth.loginWith('google', { params: { prompt: "select_account" } }).then(() => {
-          console.log("Logged in!");
-      });
+      this.$auth
+        .loginWith('google', { params: { prompt: 'select_account' } })
+        .then(() => {
+          console.log('Logged in!')
+        })
     },
     clear() {
       this.form.email = ''
@@ -156,7 +158,6 @@ export default {
       this.$v.email.$touch()
       this.$v.password.$touch()
       if (!this.$v.$invalid) {
-
         this.alert = 'd-none'
         this.loading = true
         // NProgress.configure({ parent: '#container' });
@@ -164,7 +165,7 @@ export default {
         NProgress.configure({ showSpinner: false })
         this.form.email = this.email
         this.form.password = this.password
-         await this.$axios.$get('/sanctum/csrf-cookie')
+        await this.$axios.$get('/sanctum/csrf-cookie')
         try {
           this.$auth
             .loginWith('laravelSanctum', {
