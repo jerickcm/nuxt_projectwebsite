@@ -136,7 +136,7 @@ const baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_8__[/* default *
       return {
         opacity: backgroundOpacity,
         [this.isReversed ? 'right' : 'left']: Object(_util_helpers__WEBPACK_IMPORTED_MODULE_7__[/* convertToUnit */ "g"])(this.normalizedValue, '%'),
-        width: Object(_util_helpers__WEBPACK_IMPORTED_MODULE_7__[/* convertToUnit */ "g"])(this.normalizedBuffer - this.normalizedValue, '%')
+        width: Object(_util_helpers__WEBPACK_IMPORTED_MODULE_7__[/* convertToUnit */ "g"])(Math.max(0, this.normalizedBuffer - this.normalizedValue), '%')
       };
     },
 
@@ -1069,7 +1069,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "03cc5f68",
-  "db4879b6"
+  "55f1beeb"
   
 )
 
@@ -1224,7 +1224,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "2646a981",
-  "4baf99e2"
+  "3e3b3d09"
   
 )
 
