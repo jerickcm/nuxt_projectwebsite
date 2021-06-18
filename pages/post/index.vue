@@ -26,29 +26,29 @@ export default {
   middleware: 'auth',
   auth: false,
   head: () => ({
-    title: 'Post Articles',
+    title: 'Post',
     meta: [{ hid: 'Posts', name: 'Posts', content: 'Post Article Page' }],
     script: [
       {
         src: 'https://cdn.ampproject.org/v0/amp-ad-0.1.js',
         'custom-element': 'amp-ad',
-        async: true,
-      },
-    ],
+        async: true
+      }
+    ]
   }),
 
   data: () => ({
-    loading: false,
+    loading: false
   }),
   mounted() {},
   inject: {
     theme: {
-      default: { isDark: false },
-    },
+      default: { isDark: false }
+    }
   },
   components: {},
   watch: {},
-  methods: {},
+  methods: {}
 }
 </script>
 <style scoped>

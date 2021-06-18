@@ -1,7 +1,7 @@
 <template>
   <v-container fluid class="white">
     <v-row class="">
-      <v-col ms="10" lg="10" >
+      <v-col ms="10" lg="10">
         <WorldRemindersCard />
       </v-col>
     </v-row>
@@ -14,11 +14,17 @@ export default {
   auth: false,
   head: () => ({
     title: 'World Reminders',
-    meta: [{ hid: 'World Reminders', name: 'World Reminders', content: 'World Reminders' }],
+    meta: [
+      {
+        hid: 'World Reminders',
+        name: 'World Reminders',
+        content: 'World Reminders'
+      }
+    ]
   }),
 
   data: () => ({
-    loading: false,
+    loading: false
   }),
   async created() {
     // await this.$axios.$get('/sanctum/csrf-cookie')
@@ -26,12 +32,12 @@ export default {
   mounted() {},
   inject: {
     theme: {
-      default: { isDark: false },
-    },
+      default: { isDark: false }
+    }
   },
   components: {},
   watch: {},
-  methods: {},
+  methods: {}
 }
 </script>
 <style scoped>

@@ -8,7 +8,7 @@ export default {
   dev: process.env.NODE_ENV !== 'production',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - Page',
+    titleTemplate: '%s | PWev',
     title: '',
     htmlAttrs: {
       lang: 'en'

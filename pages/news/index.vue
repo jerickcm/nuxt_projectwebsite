@@ -12,12 +12,12 @@ export default {
   middleware: 'auth',
   auth: false,
   head: () => ({
-    title: 'News Articles',
-    meta: [{ hid: 'News', name: 'News', content: 'News Article Page' }],
+    title: 'News',
+    meta: [{ hid: 'News', name: 'News', content: 'News Article Page' }]
   }),
 
   data: () => ({
-    loading: false,
+    loading: false
   }),
   async created() {
     // await this.$axios.$get('/sanctum/csrf-cookie')
@@ -25,12 +25,12 @@ export default {
   mounted() {},
   inject: {
     theme: {
-      default: { isDark: false },
-    },
+      default: { isDark: false }
+    }
   },
   components: {},
   watch: {},
-  methods: {},
+  methods: {}
 }
 </script>
 <style scoped>
