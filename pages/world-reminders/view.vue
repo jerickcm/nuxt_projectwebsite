@@ -5,7 +5,8 @@
         sm="12"
         md="8"
         lg="8"
-        class="mb-0 pb-0 col-md-8  col-lg-6 offset-md-2"
+        xl="8"
+        class="mb-0 pb-0 col-md-8 col-lg-8 offset-md-2 offset-lg-2 offset-xl-2"
       >
         <v-skeleton-loader
           elevation="2"
@@ -16,7 +17,7 @@
           type="card"
           v-if="pageload"
         ></v-skeleton-loader>
-        <v-card v-else outlined shaped tile class="pa-1 ma-1" :class="charge">
+        <v-card v-else outlined shaped tile class="pa-1 ma-1" >
           <h1 class="blue--text">{{ posts['title'] }}</h1>
 
           <v-img height="250" :src="posts['image']"> </v-img>

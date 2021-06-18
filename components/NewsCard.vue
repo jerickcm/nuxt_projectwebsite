@@ -5,7 +5,8 @@
         sm="12"
         md="8"
         lg="8"
-        class="mb-0 pb-0 col-md-8  col-lg-6 offset-md-2"
+        xl="8"
+        class="mb-0 pb-0 col-md-8 col-lg-8 offset-md-2 offset-lg-2 offset-xl-2"
       >
         <h1>News</h1>
       </v-col>
@@ -15,32 +16,26 @@
         sm="12"
         md="8"
         lg="8"
-        class="mb-0 pb-0 col-md-8  col-lg-6 offset-md-2"
+        xl="8"
+        class="mb-0 pb-0 col-md-8 col-lg-8 offset-md-2 offset-lg-2 offset-xl-2"
       >
-        <v-card elevation="2" outlined shaped tile class=" pa-2 ma-0">
+        <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
           <!-- color="blue lighten-5" -->
           <!-- -->
           <!-- target="_blank" -->
           <nuxt-link
             class="nuxtlink"
             :to="{
-              path: 'news/view',
-              query: { slug: item.slug }
+              path: 'news/' + item.slug,
             }"
           >
-            <v-img height="250" :src="item.image">
-              <!-- <v-card-title class="white--text transparent">
-                Article No: {{ item.increment }}
-              </v-card-title> -->
-            </v-img>
+            <v-img height="250" :src="item.image"> </v-img>
           </nuxt-link>
-  <!-- target="_blank" -->
           <v-card-title>
             <nuxt-link
               class="nuxtlink"
               :to="{
-                path: 'news/view',
-                query: { slug: item.slug }
+                path: 'news/' + item.slug,
               }"
               >Title : {{ item.title }}
             </nuxt-link>
@@ -64,7 +59,8 @@
         sm="12"
         md="8"
         lg="8"
-        class="mb-0 pb-0 col-md-8  col-lg-6 offset-md-2"
+        xl="8"
+        class="mb-0 pb-0 col-md-8 col-lg-8 offset-md-2 offset-lg-2 offset-xl-2"
       >
         <v-skeleton-loader
           elevation="2"
@@ -81,11 +77,11 @@
         sm="12"
         md="8"
         lg="8"
-        class="mb-0 pb-0 col-md-8  col-lg-6 offset-md-2"
+        xl="8"
+        class="mb-0 pb-0 col-md-8 col-lg-8 offset-md-2 offset-lg-2 offset-xl-2"
       >
-        <v-card elevation="2" outlined shaped tile class=" pa-2 ma-0">
+        <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
           <label for="" class="grey--text">Nothing Follows</label>
-
         </v-card>
       </v-col>
     </v-row>
@@ -94,9 +90,10 @@
         sm="12"
         md="8"
         lg="8"
-        class="mb-0 pb-0 col-md-8  col-lg-6 offset-md-2"
+        xl="8"
+        class="mb-0 pb-0 col-md-8 col-lg-8 offset-md-2 offset-lg-2 offset-xl-2"
       >
-        <v-card elevation="2" outlined shaped tile class=" pa-2 ma-0">
+        <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
           <v-btn
             class="white--text"
             @click="getposts"
@@ -123,17 +120,13 @@ export default {
     data: [],
     increment: 0,
     disable_next: false,
-    disable_color: 'green'
+    disable_color: 'green',
   }),
-  async created() {
-
-  },
+  async created() {},
   mounted() {
     this.getposts()
   },
-  computed: {
-
-  },
+  computed: {},
   methods: {
     getposts() {
       this.$axios.$get('/sanctum/csrf-cookie')
@@ -142,7 +135,7 @@ export default {
       try {
         this.$axios
           .$get(`api/news/page/${this.page}/item/${10}`)
-          .then(res => {
+          .then((res) => {
             if (res.data.length == 0) {
               this.no_more_post = ''
               this.disable_next = true
@@ -152,7 +145,7 @@ export default {
               this.disable_color = 'green'
             }
 
-            if((res.data).length < 10){
+            if (res.data.length < 10) {
               this.no_more_post = ''
               this.disable_next = true
               this.disable_color = 'grey'
@@ -168,7 +161,7 @@ export default {
                 created_at: value.created_at,
                 human_date: value.human_date,
                 image: value.image,
-                increment: this.increment
+                increment: this.increment,
               })
             }
 
@@ -177,7 +170,7 @@ export default {
             this.loadcard = 'd-none'
             this.page = this.page + 1
           })
-          .catch(error => {
+          .catch((error) => {
             NProgress.done()
             this.loadcard = 'd-none'
           })
@@ -185,8 +178,8 @@ export default {
       } catch (error) {
         console.log('error')
       }
-    }
-  }
+    },
+  },
 }
 </script>
 <style scoped>

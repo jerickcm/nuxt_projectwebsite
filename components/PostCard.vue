@@ -5,7 +5,8 @@
         sm="12"
         md="8"
         lg="8"
-        class="mb-0 pb-0 col-md-8 col-lg-6 offset-md-2"
+        xl="8"
+        class="mb-0 pb-0 col-md-8 col-lg-8 offset-md-2 offset-lg-2 offset-xl-2"
       >
         <h1>Post</h1>
       </v-col>
@@ -15,21 +16,21 @@
         sm="12"
         md="8"
         lg="8"
-        class="mb-0 pb-0 col-md-8 col-lg-6 offset-md-2"
+        xl="8"
+        class="mb-0 pb-0 col-md-8 col-lg-8 offset-md-2 offset-lg-2 offset-xl-2"
       >
         <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
           <nuxt-link
             class="nuxtlink"
             :to="{
-              path: 'post/view',
-              query: { slug: item.slug }
+              path: 'post/' + item.slug,
             }"
           >
             <img
               :src="item.image"
               width="100%"
               height="250rem"
-              style="object-position: center;"
+              style="object-position: center"
               alt=""
             />
           </nuxt-link>
@@ -37,8 +38,7 @@
             <nuxt-link
               class="nuxtlink"
               :to="{
-                path: 'post/view',
-                query: { slug: item.slug }
+                path: 'post/' + item.slug,
               }"
               >Title : {{ item.title }}
             </nuxt-link>
@@ -62,7 +62,8 @@
         sm="12"
         md="8"
         lg="8"
-        class="mb-0 pb-0 col-md-8 col-lg-6 offset-md-2"
+        xl="8"
+        class="mb-0 pb-0 col-md-8 col-lg-8 offset-md-2 offset-lg-2 offset-xl-2"
       >
         <v-skeleton-loader
           elevation="2"
@@ -79,7 +80,8 @@
         sm="12"
         md="8"
         lg="8"
-        class="mb-0 pb-0 col-md-8 col-lg-6 offset-md-2"
+        xl="8"
+        class="mb-0 pb-0 col-md-8 col-lg-8 offset-md-2 offset-lg-2 offset-xl-2"
       >
         <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
           Nothing Follows
@@ -91,7 +93,8 @@
         sm="12"
         md="8"
         lg="8"
-        class="mb-0 pb-0 col-md-8 col-lg-6 offset-md-2"
+        xl="8"
+        class="mb-0 pb-0 col-md-8 col-lg-8 offset-md-2 offset-lg-2 offset-xl-2"
       >
         <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
           <v-btn
@@ -121,7 +124,7 @@ export default {
     data: [],
     increment: 0,
     disable_next: false,
-    disable_color: 'green'
+    disable_color: 'green',
   }),
   async created() {},
   mounted() {
@@ -137,10 +140,10 @@ export default {
       let payload = new FormData()
       NProgress.inc()
       try {
-        await this.$axios.$get('/sanctum/csrf-cookie').then(response => {})
+        await this.$axios.$get('/sanctum/csrf-cookie').then((response) => {})
         this.$axios
           .$get(`api/post/list/${this.page}`)
-          .then(res => {
+          .then((res) => {
             if (res.data.length == 0) {
               this.no_more_post = ''
               this.disable_next = true
@@ -166,7 +169,7 @@ export default {
                 created_at: value.created_at,
                 human_date: value.human_date,
                 image: value.image,
-                increment: this.increment
+                increment: this.increment,
               })
             }
             this.posts = this.data
@@ -177,7 +180,7 @@ export default {
             this.loadcard = 'd-none'
             this.page = this.page + 1
           })
-          .catch(error => {
+          .catch((error) => {
             NProgress.done()
             this.loadcard = 'd-none'
           })
@@ -185,8 +188,8 @@ export default {
       } catch (error) {
         console.log('error')
       }
-    }
-  }
+    },
+  },
 }
 </script>
 <style scoped>
