@@ -13,13 +13,30 @@
     </v-row>
     <v-row class="ma-0 pa-0">
       <v-col class="mb-0 pb-0 col-md-10 col-lg-10 offset-md-2 offset-lg-2">
-        <v-btn
-          class="ma-1 blue lighten-3"
-          v-for="(item, index) in months"
-          :key="index"
-          :to="'/world-reminders/' + item.name"
-          >{{ item.name }}</v-btn
-        >
+        <v-container>
+          <v-row
+            color="blue"
+            v-for="(i, ind) in Math.ceil(months.length / 6)"
+            :key="ind"
+          >
+            <v-col
+              color="red"
+              md="2"
+              lg="2"
+              sm="2"
+              xl="2"
+              v-for="(item, indx) in months.slice((i - 1) * 6, i * 6)"
+              :key="indx"
+            >
+              <v-btn
+                width="6rem"
+                class="ma-1 blue lighten-3 pa-1"
+                :to="'/world-reminders/' + item.name"
+                >{{ item.name }}</v-btn
+              >
+            </v-col>
+          </v-row>
+        </v-container>
       </v-col>
     </v-row>
     <v-row v-for="(item, index) in content" :key="index" class="ma-0 pa-0">

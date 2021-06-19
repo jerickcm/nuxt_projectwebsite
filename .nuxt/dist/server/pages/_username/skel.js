@@ -484,14 +484,15 @@ module.exports = ___CSS_LOADER_EXPORT___;
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/_username/skel.vue?vue&type=template&id=259f0c1c&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/_username/skel.vue?vue&type=template&id=2b5fb058&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_vm._ssrNode("<h1>"+_vm._ssrEscape("Event # "+_vm._s(_vm.id))+"</h1> "),_c('v-container',_vm._l((_vm.rowCount),function(item,index){return _c('v-row',{key:_vm.data.id},_vm._l((_vm.numberOfColumns),function(item,index){return _c('v-col',{key:_vm.data.id},[_vm._v("\n        AA\n      ")])}),1)}),1),_vm._ssrNode(" "),_c('v-container',_vm._l((Math.ceil(_vm.datum.length / 4)),function(i,ind){return _c('v-row',{key:ind,attrs:{"color":"blue"}},_vm._l((_vm.datum.slice((i - 1) * 4, i * 4)),function(item,indx){return _c('v-col',{key:indx,attrs:{"color":"red","lg":"3"}},[_c('v-card',[_vm._v("\n          "+_vm._s(item.name)+"\n        ")])],1)}),1)}),1)],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./pages/_username/skel.vue?vue&type=template&id=259f0c1c&
+// CONCATENATED MODULE: ./pages/_username/skel.vue?vue&type=template&id=2b5fb058&
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/_username/skel.vue?vue&type=script&lang=js&
+//
 //
 //
 //

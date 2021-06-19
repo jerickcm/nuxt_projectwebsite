@@ -12,78 +12,48 @@
         <p>Memorable quotes from technology and science dicipline</p>
       </v-col>
     </v-row>
-    <v-row v-for="(item, index) in content" :key="index" class="ma-0 pa-0">
-      <v-col
-        sm="12"
-        md="8"
-        lg="8"
-        xl="8"
-        class="mb-0 pb-0 col-md-8 col-lg-8 offset-md-2 offset-lg-2 offset-xl-2"
-      >
-        <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
-          <v-card-text class="">
-            <h2>{{ item.message }} - {{ item.author }}</h2>
-            <br />
-            <br />
-          </v-card-text>
-        </v-card>
-      </v-col>
-    </v-row>
 
-    <v-row
-      class="ma-0 pa-0"
-      v-if="loading"
-      v-for="index in 10"
-      :key="index + `b`"
-    >
-      <v-col
-        sm="12"
-        md="8"
-        lg="8"
-        xl="8"
-        class="mb-0 pb-0 col-md-8 col-lg-8 offset-md-2 offset-lg-2 offset-xl-2"
-      >
-        <v-skeleton-loader
-          elevation="2"
-          outlined
-          shaped
-          tile
-          class="pa-2 ma-2"
-          type="card"
-        ></v-skeleton-loader>
-      </v-col>
-    </v-row>
-    <v-row class="ma-0 pa-0" v-if="!(length == 10)">
-      <v-col
-        sm="12"
-        md="8"
-        lg="8"
-        xl="8"
-        class="mb-0 pb-0 col-md-8 col-lg-8 offset-md-2 offset-lg-2 offset-xl-2"
-      >
-        <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
-          <label for="" class="grey--text">Nothing Follows</label>
-        </v-card>
-      </v-col>
-    </v-row>
     <v-row class="ma-0 pa-0">
-      <v-col
-        sm="12"
-        md="8"
-        lg="8"
-        xl="8"
-        class="mb-0 pb-0 col-md-8 col-lg-8 offset-md-2 offset-lg-2 offset-xl-2"
-      >
-        <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
-          <v-btn
-            class="white--text"
-            @click="getnextarticle"
-            :disabled="length == 10 ? false : true"
-            :class="length == 10 ? 'green' : 'grey'"
+      <!-- v-for="(item, index) in content" :key="index" -->
+      <v-col class="">
+        <v-container>
+          <v-row
+            color="blue"
+            v-for="(i, ind) in Math.ceil(content.length / 3)"
+            :key="ind"
           >
-            Next Article
-          </v-btn>
-        </v-card>
+            <v-col
+              lg="4"
+              v-for="(item, indx) in content.slice((i - 1) * 3, i * 3)"
+              :key="indx"
+            >
+              <v-card height="15vh" class=" pa-4">
+                <p>{{ item.message }} - {{ item.author }}</p>
+              </v-card>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col lg="12">
+              <v-card class=" pa-4 text-center">
+                <label
+                  for=""
+                  class="grey--text pa-4 ma-2"
+                  v-if="!(length == 10)"
+                  >Nothing Follows</label
+                ><br />
+
+                <v-btn
+                  class="white--text pa-4 ma-2"
+                  @click="getnextarticle"
+                  :disabled="length == 10 ? false : true"
+                  :class="length == 10 ? 'green' : 'grey'"
+                >
+                  Next Article
+                </v-btn>
+              </v-card>
+            </v-col>
+          </v-row>
+        </v-container>
       </v-col>
     </v-row>
   </v-sheet>

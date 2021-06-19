@@ -8,6 +8,7 @@
         </v-col>
       </v-row>
     </v-container>
+
     <v-container>
       <v-row
         color="blue"
