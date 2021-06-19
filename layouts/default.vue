@@ -102,7 +102,6 @@
           '': $vuetify.breakpoint.mdAndUp
         }"
       >
-        >
         <label for="" class="grey--text fs-0-6">DNS by:</label>
         <a href="https://domains.google/">
           <v-img width="90px" src="/images/google domain.svg"></v-img>
@@ -149,7 +148,6 @@
           '': $vuetify.breakpoint.mdAndUp
         }"
       >
-        >
         <label for="" class="grey--text fs-0-6">Secured by:</label>
         <a href="https://letsencrypt.org/">
           <v-img
@@ -304,7 +302,7 @@ export default {
 .font-Bonida {
   font-family: 'Bonida', sans-serif;
 }
-.hand{
-  cursor:pointer;
+.hand {
+  cursor: pointer;
 }
 </style>

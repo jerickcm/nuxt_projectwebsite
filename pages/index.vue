@@ -10,7 +10,7 @@
                   class="font-lulu white--text"
                   :class="{
                     'fs-1.1': $vuetify.breakpoint.smAndDown,
-                    'fs-3': $vuetify.breakpoint.mdAndUp,
+                    'fs-3': $vuetify.breakpoint.mdAndUp
                   }"
                   >JERICK C. MANGALUS</label
                 >
@@ -20,7 +20,7 @@
                   class="text-right white--text"
                   :class="{
                     'fs-0-5': $vuetify.breakpoint.smAndDown,
-                    'fs-1-0': $vuetify.breakpoint.mdAndUp,
+                    'fs-1-0': $vuetify.breakpoint.mdAndUp
                   }"
                   >[ Technology R&D ]
                 </label>
@@ -166,7 +166,7 @@
                     class="font-kalamreg text-center mt-5"
                     :class="{
                       'fs-1.1': $vuetify.breakpoint.smAndDown,
-                      'fs-1.5': $vuetify.breakpoint.mdAndUp,
+                      'fs-1.5': $vuetify.breakpoint.mdAndUp
                     }"
                   >
                     " {{ message.message }} " - {{ message.author }}
@@ -188,7 +188,7 @@ export default {
   auth: false,
   head: () => ({
     title: 'Profile ',
-    meta: [{ hid: 'Profile', name: 'Profile', content: 'Profile' }],
+    meta: [{ hid: 'Profile', name: 'Profile', content: 'Profile' }]
   }),
   data: () => ({
     selectedItem: 0,
@@ -196,14 +196,14 @@ export default {
     title: '',
     model: 6,
     rounded: ['0', 'sm', 'md', 'lg', 'xl', 'pill', 'circle'],
-    links: [],
+    links: []
   }),
   layout: 'default',
   methods: {
-    ...mapActions('messageoftheday', ['fetchQuote']),
+    ...mapActions('messageoftheday', ['fetchQuote'])
   },
   computed: {
-    ...mapGetters('messageoftheday', ['MessageOfTheDay', 'LoadingStatus']),
+    ...mapGetters('messageoftheday', ['MessageOfTheDay', 'LoadingStatus'])
   },
   async created() {},
   async mounted() {
@@ -213,7 +213,7 @@ export default {
     } catch (error) {
       console.log(error)
     }
-  },
+  }
 }
 </script>
 <style scoped>

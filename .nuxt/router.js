@@ -5,7 +5,7 @@ import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
 const _55dd2d9b = () => interopDefault(import('..\\pages\\about.vue' /* webpackChunkName: "pages/about" */))
-const _b1f74746 = () => interopDefault(import('..\\pages\\admin.vue' /* webpackChunkName: "pages/admin" */))
+const _508874f6 = () => interopDefault(import('..\\pages\\admin\\index.vue' /* webpackChunkName: "pages/admin/index" */))
 const _0c00337e = () => interopDefault(import('..\\pages\\blog\\index.vue' /* webpackChunkName: "pages/blog/index" */))
 const _36dfef66 = () => interopDefault(import('..\\pages\\contact-us.vue' /* webpackChunkName: "pages/contact-us" */))
 const _6c1f47c0 = () => interopDefault(import('..\\pages\\dashboard\\index.vue' /* webpackChunkName: "pages/dashboard/index" */))
@@ -37,6 +37,16 @@ const _c2e57284 = () => interopDefault(import('..\\pages\\quotes\\manage.vue' /*
 const _71d2bf84 = () => interopDefault(import('..\\pages\\quotes\\view.vue' /* webpackChunkName: "pages/quotes/view" */))
 const _693cba50 = () => interopDefault(import('..\\pages\\world-reminders\\create.vue' /* webpackChunkName: "pages/world-reminders/create" */))
 const _a7694b8e = () => interopDefault(import('..\\pages\\world-reminders\\manage.vue' /* webpackChunkName: "pages/world-reminders/manage" */))
+const _36feb38a = () => interopDefault(import('..\\pages\\admin\\blog\\create.vue' /* webpackChunkName: "pages/admin/blog/create" */))
+const _278f4624 = () => interopDefault(import('..\\pages\\admin\\blog\\manage.vue' /* webpackChunkName: "pages/admin/blog/manage" */))
+const _3f69bfec = () => interopDefault(import('..\\pages\\admin\\news\\create.vue' /* webpackChunkName: "pages/admin/news/create" */))
+const _fb0f4056 = () => interopDefault(import('..\\pages\\admin\\news\\manage.vue' /* webpackChunkName: "pages/admin/news/manage" */))
+const _27a8fb8e = () => interopDefault(import('..\\pages\\admin\\post\\create.vue' /* webpackChunkName: "pages/admin/post/create" */))
+const _2f3a2222 = () => interopDefault(import('..\\pages\\admin\\post\\manage.vue' /* webpackChunkName: "pages/admin/post/manage" */))
+const _e98c3960 = () => interopDefault(import('..\\pages\\admin\\quotes\\create.vue' /* webpackChunkName: "pages/admin/quotes/create" */))
+const _636ef98e = () => interopDefault(import('..\\pages\\admin\\quotes\\manage.vue' /* webpackChunkName: "pages/admin/quotes/manage" */))
+const _51ae5835 = () => interopDefault(import('..\\pages\\admin\\world-reminders\\create.vue' /* webpackChunkName: "pages/admin/world-reminders/create" */))
+const _d6860fc4 = () => interopDefault(import('..\\pages\\admin\\world-reminders\\manage.vue' /* webpackChunkName: "pages/admin/world-reminders/manage" */))
 const _7060fd66 = () => interopDefault(import('..\\pages\\blog\\_id.vue' /* webpackChunkName: "pages/blog/_id" */))
 const _f97ead56 = () => interopDefault(import('..\\pages\\news\\_id.vue' /* webpackChunkName: "pages/news/_id" */))
 const _4dedd228 = () => interopDefault(import('..\\pages\\post\\_id.vue' /* webpackChunkName: "pages/post/_id" */))
@@ -64,7 +74,7 @@ export const routerOptions = {
     name: "about"
   }, {
     path: "/admin",
-    component: _b1f74746,
+    component: _508874f6,
     name: "admin"
   }, {
     path: "/blog",
@@ -190,6 +200,46 @@ export const routerOptions = {
     path: "/world-reminders/manage",
     component: _a7694b8e,
     name: "world-reminders-manage"
+  }, {
+    path: "/admin/blog/create",
+    component: _36feb38a,
+    name: "admin-blog-create"
+  }, {
+    path: "/admin/blog/manage",
+    component: _278f4624,
+    name: "admin-blog-manage"
+  }, {
+    path: "/admin/news/create",
+    component: _3f69bfec,
+    name: "admin-news-create"
+  }, {
+    path: "/admin/news/manage",
+    component: _fb0f4056,
+    name: "admin-news-manage"
+  }, {
+    path: "/admin/post/create",
+    component: _27a8fb8e,
+    name: "admin-post-create"
+  }, {
+    path: "/admin/post/manage",
+    component: _2f3a2222,
+    name: "admin-post-manage"
+  }, {
+    path: "/admin/quotes/create",
+    component: _e98c3960,
+    name: "admin-quotes-create"
+  }, {
+    path: "/admin/quotes/manage",
+    component: _636ef98e,
+    name: "admin-quotes-manage"
+  }, {
+    path: "/admin/world-reminders/create",
+    component: _51ae5835,
+    name: "admin-world-reminders-create"
+  }, {
+    path: "/admin/world-reminders/manage",
+    component: _d6860fc4,
+    name: "admin-world-reminders-manage"
   }, {
     path: "/blog/:id",
     component: _7060fd66,
