@@ -52,7 +52,6 @@
     "pages/world-reminders/create.js": "pages/world-reminders/create.js",
     "pages/world-reminders/index.js": "pages/world-reminders/index.js",
     "pages/world-reminders/manage.js": "pages/world-reminders/manage.js",
-    "pages/world-reminders/view.js": "pages/world-reminders/view.js",
     "server.js": "server.js"
   },
   "maps": {
@@ -107,7 +106,6 @@
     "pages/world-reminders/create.js": "pages/world-reminders/create.js.map",
     "pages/world-reminders/index.js": "pages/world-reminders/index.js.map",
     "pages/world-reminders/manage.js": "pages/world-reminders/manage.js.map",
-    "pages/world-reminders/view.js": "pages/world-reminders/view.js.map",
     "server.js": "server.js.map"
   }
 }

@@ -54,7 +54,7 @@
 
     <v-row
       class="ma-0 pa-0"
-      :class="loadcard"
+      v-if="loading"
       v-for="index in 10"
       :key="index + `b`"
     >
@@ -69,7 +69,7 @@
         ></v-skeleton-loader>
       </v-col>
     </v-row>
-    <v-row class="ma-0 pa-0" :class="no_more_post">
+    <v-row class="ma-0 pa-0" v-if="!(length == 10)">
       <v-col class="mb-0 pb-0 col-md-10 col-lg-10 offset-md-2 offset-lg-2">
         <div elevation="2" outlined shaped tile class="pa-2 ma-0">
           <label for="" class="grey--text">Nothing Follows</label>
@@ -81,9 +81,9 @@
         <div>
           <v-btn
             class="white--text"
-            @click="getposts"
-            :disabled="disable_next"
-            :class="disable_color"
+            @click="getnextarticle"
+            :disabled="length == 10 ? false : true"
+            :class="length == 10 ? 'green' : 'grey'"
           >
             Next Article
           </v-btn>
@@ -93,9 +93,8 @@
   </v-sheet>
 </template>
 <script>
-import NProgress from 'nprogress'
-import 'nprogress/nprogress.css'
 export default {
+  props: ['content', 'length', 'loading'],
   data: () => ({
     months: [
       { name: 'January' },
@@ -109,149 +108,25 @@ export default {
       { name: 'September' },
       { name: 'October' },
       { name: 'November' },
-      { name: 'December' },
+      { name: 'December' }
     ],
-    no_more_post: 'd-none',
-    loadcard: '',
-    loading: false,
-    content: [],
-    page: 1,
-    data: [],
-    increment: 0,
-    disable_next: false,
-    disable_color: 'green',
-    date: '',
+    page: 2
   }),
   async asyncData() {},
   async created() {},
   mounted() {
-    this.getposts()
+    // this.getposts()
   },
   computed: {
     link(id) {
       return '/world-reminders/' + id
-    },
+    }
   },
   methods: {
-    getposts() {
-      this.$axios.$get('/sanctum/csrf-cookie')
-      NProgress.start()
-      NProgress.inc()
-
-      this.date = new Date().toJSON().slice(0, 10).replace(/-/g, '-')
-      if (this.$route.params.id) {
-        try {
-          this.$axios
-            .$get(
-              `api/er/page/${this.page}/item/${10}/month/${
-                this.$route.params.id
-              }`
-            )
-            .then((res) => {
-              if (res.data.length == 0) {
-                this.no_more_post = ''
-                this.disable_next = true
-                this.disable_color = 'grey'
-              } else {
-                this.disable_next = false
-                this.disable_color = 'green'
-              }
-
-              if (res.data.length < 10) {
-                this.no_more_post = ''
-                this.disable_next = true
-                this.disable_color = 'grey'
-              }
-
-              for (const [key, value] of Object.entries(res.data)) {
-                this.increment = this.increment + 1
-                this.data.push({
-                  id: value.id,
-                  slug: value.slug,
-                  title: value.title,
-                  subtitle: value.subtitle,
-                  event_date: value.event_date,
-                  country: value.country,
-                  content: value.content,
-                  created_at: value.created_at,
-                  human_date: value.human_date,
-                  author: value.author,
-                  image: value.image,
-                  increment: this.increment,
-                  date: value.date,
-                  anniversary: value.anniversary,
-                })
-              }
-
-              this.content = this.data
-              NProgress.done()
-              this.loadcard = 'd-none'
-              this.page = this.page + 1
-            })
-            .catch((error) => {
-              NProgress.done()
-              this.loadcard = 'd-none'
-            })
-            .finally(() => {})
-        } catch (error) {
-          console.log('error')
-        }
-      } else {
-        try {
-          this.$axios
-            .$get(`api/er/page/${this.page}/item/${10}/date/${this.date}`)
-            .then((res) => {
-              if (res.data.length == 0) {
-                this.no_more_post = ''
-                this.disable_next = true
-                this.disable_color = 'grey'
-              } else {
-                this.disable_next = false
-                this.disable_color = 'green'
-              }
-
-              if (res.data.length < 10) {
-                this.no_more_post = ''
-                this.disable_next = true
-                this.disable_color = 'grey'
-              }
-
-              for (const [key, value] of Object.entries(res.data)) {
-                this.increment = this.increment + 1
-                this.data.push({
-                  id: value.id,
-                  slug: value.slug,
-                  title: value.title,
-                  subtitle: value.subtitle,
-                  event_date: value.event_date,
-                  country: value.country,
-                  content: value.content,
-                  created_at: value.created_at,
-                  human_date: value.human_date,
-                  author: value.author,
-                  image: value.image,
-                  increment: this.increment,
-                  date: value.date,
-                  anniversary: value.anniversary,
-                })
-              }
-
-              this.content = this.data
-              NProgress.done()
-              this.loadcard = 'd-none'
-              this.page = this.page + 1
-            })
-            .catch((error) => {
-              NProgress.done()
-              this.loadcard = 'd-none'
-            })
-            .finally(() => {})
-        } catch (error) {
-          console.log('error')
-        }
-      }
-    },
-  },
+    getnextarticle() {
+      this.$emit('next-article')
+    }
+  }
 }
 </script>
 <style scoped>

@@ -21,27 +21,20 @@
         class="mb-0 pb-0 col-md-8 col-lg-8 offset-md-2 offset-lg-2 offset-xl-2"
       >
         <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
-          <!-- color="blue lighten-5" -->
-          <!-- -->
-          <!-- target="_blank" -->
           <nuxt-link
             class="nuxtlink"
             :to="{
-              path: 'blog/'+item.slug,
+              path: 'blog/' + item.slug
             }"
           >
-            <v-img height="250" :src="item.image">
-              <!-- <v-card-title class="white--text transparent">
-                Article No: {{ item.increment }}
-              </v-card-title> -->
-            </v-img>
+            <v-img height="250" :src="item.image"> </v-img>
           </nuxt-link>
-          <!-- target="_blank" -->
+
           <v-card-title>
             <nuxt-link
               class="nuxtlink"
               :to="{
-                path: 'blog/'+item.slug,
+                path: 'blog/' + item.slug
               }"
               >Title : {{ item.title }}
             </nuxt-link>
@@ -57,7 +50,7 @@
 
     <v-row
       class="ma-0 pa-0"
-      :class="loadcard"
+      v-if="loading"
       v-for="index in 10"
       :key="index + `b`"
     >
@@ -78,7 +71,7 @@
         ></v-skeleton-loader>
       </v-col>
     </v-row>
-    <v-row class="ma-0 pa-0" :class="no_more_post">
+    <v-row class="ma-0 pa-0" v-if="!(length == 10)">
       <v-col
         sm="12"
         md="8"
@@ -102,9 +95,9 @@
         <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
           <v-btn
             class="white--text"
-            @click="getposts"
-            :disabled="disable_next"
-            :class="disable_color"
+            @click="getnextarticle"
+            :disabled="length == 10 ? false : true"
+            :class="length == 10 ? 'green' : 'grey'"
           >
             Next Article
           </v-btn>
@@ -114,78 +107,17 @@
   </v-sheet>
 </template>
 <script>
-import NProgress from 'nprogress'
-import 'nprogress/nprogress.css'
 export default {
-  data: () => ({
-    no_more_post: 'd-none',
-    loadcard: '',
-    loading: false,
-    content: [],
-    page: 1,
-    data: [],
-    increment: 0,
-    disable_next: false,
-    disable_color: 'green',
-  }),
+  props: ['content', 'length', 'loading'],
+  data: () => ({}),
   async created() {},
-  mounted() {
-    this.getposts()
-  },
+  mounted() {},
   computed: {},
   methods: {
-    getposts() {
-      this.$axios.$get('/sanctum/csrf-cookie')
-      NProgress.start()
-      NProgress.inc()
-      try {
-        this.$axios
-          .$get(`api/blog/page/${this.page}/item/${10}`)
-          .then((res) => {
-            if (res.data.length == 0) {
-              this.no_more_post = ''
-              this.disable_next = true
-              this.disable_color = 'grey'
-            } else {
-              this.disable_next = false
-              this.disable_color = 'green'
-            }
-
-            if (res.data.length < 10) {
-              this.no_more_post = ''
-              this.disable_next = true
-              this.disable_color = 'grey'
-            }
-            for (const [key, value] of Object.entries(res.data)) {
-              this.increment = this.increment + 1
-              this.data.push({
-                name: value.name,
-                id: value.id,
-                slug: value.slug,
-                title: value.title,
-                content: value.content,
-                created_at: value.created_at,
-                human_date: value.human_date,
-                image: value.image,
-                increment: this.increment,
-              })
-            }
-
-            this.content = this.data
-            NProgress.done()
-            this.loadcard = 'd-none'
-            this.page = this.page + 1
-          })
-          .catch((error) => {
-            NProgress.done()
-            this.loadcard = 'd-none'
-          })
-          .finally(() => {})
-      } catch (error) {
-        console.log('error')
-      }
-    },
-  },
+    getnextarticle() {
+      this.$emit('next-article')
+    }
+  }
 }
 </script>
 <style scoped>

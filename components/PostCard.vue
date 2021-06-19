@@ -12,7 +12,7 @@
         <p>Technological post ment to help user</p>
       </v-col>
     </v-row>
-    <v-row v-for="(item, index) in posts" :key="index" class="ma-0 pa-0">
+    <v-row v-for="(item, index) in content" :key="index" class="ma-0 pa-0">
       <v-col
         sm="12"
         md="8"
@@ -24,7 +24,7 @@
           <nuxt-link
             class="nuxtlink"
             :to="{
-              path: 'post/' + item.slug,
+              path: 'post/' + item.slug
             }"
           >
             <img
@@ -39,7 +39,7 @@
             <nuxt-link
               class="nuxtlink"
               :to="{
-                path: 'post/' + item.slug,
+                path: 'post/' + item.slug
               }"
               >Title : {{ item.title }}
             </nuxt-link>
@@ -52,9 +52,10 @@
         </v-card>
       </v-col>
     </v-row>
+
     <v-row
       class="ma-0 pa-0"
-      :class="loadcard"
+      v-if="loading"
       v-for="index in 10"
       :key="index + `b`"
     >
@@ -75,7 +76,8 @@
         ></v-skeleton-loader>
       </v-col>
     </v-row>
-    <v-row class="ma-0 pa-0" :class="no_more_post">
+
+    <v-row class="ma-0 pa-0" v-if="!(length == 10)">
       <v-col
         sm="12"
         md="8"
@@ -99,9 +101,9 @@
         <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
           <v-btn
             class="white--text"
-            @click="getposts"
-            :disabled="disable_next"
-            :class="disable_color"
+            @click="getnextarticle"
+            :disabled="length == 10 ? false : true"
+            :class="length == 10 ? 'green' : 'grey'"
           >
             Next Article
           </v-btn>
@@ -111,84 +113,17 @@
   </v-sheet>
 </template>
 <script>
-import NProgress from 'nprogress'
-import 'nprogress/nprogress.css'
-import { mapGetters, mapActions } from 'vuex'
 export default {
-  data: () => ({
-    no_more_post: 'd-none',
-    loadcard: '',
-    loading: false,
-    posts: [],
-    page: 1,
-    data: [],
-    increment: 0,
-    disable_next: false,
-    disable_color: 'green',
-  }),
+  props: ['content', 'length', 'loading'],
+  data: () => ({}),
   async created() {},
-  mounted() {
-    this.getposts()
-    this.generatePost()
-  },
+  mounted() {},
   computed: {},
   methods: {
-    generatePost() {},
-    async getposts() {
-      NProgress.start()
-      let payload = new FormData()
-      NProgress.inc()
-      try {
-        await this.$axios.$get('/sanctum/csrf-cookie').then((response) => {})
-        this.$axios
-          .$get(`api/post/list/${this.page}`)
-          .then((res) => {
-            if (res.data.length == 0) {
-              this.no_more_post = ''
-              this.disable_next = true
-              this.disable_color = 'grey'
-            } else {
-              this.disable_next = false
-              this.disable_color = 'green'
-            }
-
-            if (res.data.length < 10) {
-              this.no_more_post = ''
-              this.disable_next = true
-              this.disable_color = 'grey'
-            }
-            for (const [key, value] of Object.entries(res.data)) {
-              this.increment = this.increment + 1
-              this.data.push({
-                name: value.name,
-                id: value.id,
-                slug: value.slug,
-                title: value.title,
-                content: value.content,
-                created_at: value.created_at,
-                human_date: value.human_date,
-                image: value.image,
-                increment: this.increment,
-              })
-            }
-            this.posts = this.data
-            // console.log(count(this.posts))
-            console.log('logs logs')
-
-            NProgress.done()
-            this.loadcard = 'd-none'
-            this.page = this.page + 1
-          })
-          .catch((error) => {
-            NProgress.done()
-            this.loadcard = 'd-none'
-          })
-          .finally(() => {})
-      } catch (error) {
-        console.log('error')
-      }
-    },
-  },
+    getnextarticle() {
+      this.$emit('next-article')
+    }
+  }
 }
 </script>
 <style scoped>

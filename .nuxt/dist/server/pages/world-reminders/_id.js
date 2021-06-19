@@ -236,64 +236,57 @@ module.exports = ___CSS_LOADER_EXPORT___;
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(262);
+var content = __webpack_require__(263);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add CSS to SSR context
 var add = __webpack_require__(5).default
 module.exports.__inject__ = function (context) {
-  add("5c797d60", content, true, context)
+  add("0140f40c", content, true, context)
 };
 
 /***/ }),
 
-/***/ 261:
+/***/ 262:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_WorldRemindersCard_vue_vue_type_style_index_0_id_7c914c62_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(253);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_WorldRemindersCard_vue_vue_type_style_index_0_id_7c914c62_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_WorldRemindersCard_vue_vue_type_style_index_0_id_7c914c62_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_WorldRemindersCard_vue_vue_type_style_index_0_id_7c914c62_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_WorldRemindersCard_vue_vue_type_style_index_0_id_7c914c62_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_WorldRemindersCard_vue_vue_type_style_index_0_id_6d0d5240_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(253);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_WorldRemindersCard_vue_vue_type_style_index_0_id_6d0d5240_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_WorldRemindersCard_vue_vue_type_style_index_0_id_6d0d5240_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_WorldRemindersCard_vue_vue_type_style_index_0_id_6d0d5240_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_WorldRemindersCard_vue_vue_type_style_index_0_id_6d0d5240_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ 262:
+/***/ 263:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(4);
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".transparent[data-v-7c914c62]{background-color:#00f!important;opacity:.25;border-color:transparent!important}.nuxtlink[data-v-7c914c62]{text-decoration:none}", ""]);
+___CSS_LOADER_EXPORT___.push([module.i, ".transparent[data-v-6d0d5240]{background-color:#00f!important;opacity:.25;border-color:transparent!important}.nuxtlink[data-v-6d0d5240]{text-decoration:none}", ""]);
 // Exports
 module.exports = ___CSS_LOADER_EXPORT___;
 
 
 /***/ }),
 
-/***/ 267:
+/***/ 268:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/WorldRemindersCard.vue?vue&type=template&id=7c914c62&scoped=true&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-sheet',{staticClass:"ma-0 pa-0"},[_c('v-row',{staticClass:"ma-0 pa-0"},[_c('v-col',{staticClass:"mb-0 pb-0 col-md-10 col-lg-10 offset-md-2 offset-lg-2",attrs:{"sm":"12","md":"8","lg":"8"}},[_c('h1',[_vm._v("World Reminders")]),_vm._v(" "),_c('p',[_vm._v("Anniversary of past events.")])])],1),_vm._v(" "),_c('v-row',{staticClass:"ma-0 pa-0"},[_c('v-col',{staticClass:"mb-0 pb-0 col-md-10 col-lg-10 offset-md-2 offset-lg-2"},_vm._l((_vm.months),function(item,index){return _c('v-btn',{key:index,staticClass:"ma-1 blue lighten-3",attrs:{"to":'/world-reminders/' + item.name}},[_vm._v(_vm._s(item.name))])}),1)],1),_vm._v(" "),_vm._l((_vm.content),function(item,index){return _c('v-row',{key:index,staticClass:"ma-0 pa-0"},[_c('v-col',{staticClass:"mb-0 pb-0 col-md-10 col-lg-10 offset-md-2 offset-lg-2"},[_c('div',{staticClass:"pt-2 mt-2"},[_c('hr'),_vm._v(" "),_c('div',{staticClass:"pt-2 mt-2"},[_c('p',{staticClass:"blue--text"},[_vm._v(_vm._s(item.date))]),_vm._v(" "),_c('h2',[_vm._v(_vm._s(item.title))]),_vm._v(" "),_c('h3',[_vm._v(_vm._s(item.anniversary)+" year anniversary")]),_vm._v(" "),_c('br'),_vm._v(" "),_c('p',[_vm._v(_vm._s(item.subtitle))]),_vm._v(" "),(item.image)?_c('img',{staticStyle:{"object-position":"center"},attrs:{"src":item.image,"height":"250rem","alt":""}}):_vm._e(),_vm._v(" "),_c('p',{domProps:{"innerHTML":_vm._s(item.content)}}),_vm._v(" "),_c('br'),_vm._v(" "),_c('strong',[_c('p',[_vm._v("Author/Source : "+_vm._s(item.author))])])])])])],1)}),_vm._v(" "),_vm._l((10),function(index){return _c('v-row',{key:index + "b",staticClass:"ma-0 pa-0",class:_vm.loadcard},[_c('v-col',{staticClass:"mb-0 pb-0 col-md-10 col-lg-10 offset-md-2 offset-lg-2"},[_c('v-skeleton-loader',{staticClass:"pa-2 ma-2",attrs:{"elevation":"2","outlined":"","shaped":"","tile":"","type":"card"}})],1)],1)}),_vm._v(" "),_c('v-row',{staticClass:"ma-0 pa-0",class:_vm.no_more_post},[_c('v-col',{staticClass:"mb-0 pb-0 col-md-10 col-lg-10 offset-md-2 offset-lg-2"},[_c('div',{staticClass:"pa-2 ma-0",attrs:{"elevation":"2","outlined":"","shaped":"","tile":""}},[_c('label',{staticClass:"grey--text",attrs:{"for":""}},[_vm._v("Nothing Follows")])])])],1),_vm._v(" "),_c('v-row',{staticClass:"ma-0 pa-0"},[_c('v-col',{staticClass:"mb-0 pb-0 col-md-10 col-lg-10 offset-md-2 offset-lg-2"},[_c('div',[_c('v-btn',{staticClass:"white--text",class:_vm.disable_color,attrs:{"disabled":_vm.disable_next},on:{"click":_vm.getposts}},[_vm._v("\n          Next Article\n        ")])],1)])],1)],2)}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/WorldRemindersCard.vue?vue&type=template&id=6d0d5240&scoped=true&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-sheet',{staticClass:"ma-0 pa-0"},[_c('v-row',{staticClass:"ma-0 pa-0"},[_c('v-col',{staticClass:"mb-0 pb-0 col-md-10 col-lg-10 offset-md-2 offset-lg-2",attrs:{"sm":"12","md":"8","lg":"8"}},[_c('h1',[_vm._v("World Reminders")]),_vm._v(" "),_c('p',[_vm._v("Anniversary of past events.")])])],1),_vm._v(" "),_c('v-row',{staticClass:"ma-0 pa-0"},[_c('v-col',{staticClass:"mb-0 pb-0 col-md-10 col-lg-10 offset-md-2 offset-lg-2"},_vm._l((_vm.months),function(item,index){return _c('v-btn',{key:index,staticClass:"ma-1 blue lighten-3",attrs:{"to":'/world-reminders/' + item.name}},[_vm._v(_vm._s(item.name))])}),1)],1),_vm._v(" "),_vm._l((_vm.content),function(item,index){return _c('v-row',{key:index,staticClass:"ma-0 pa-0"},[_c('v-col',{staticClass:"mb-0 pb-0 col-md-10 col-lg-10 offset-md-2 offset-lg-2"},[_c('div',{staticClass:"pt-2 mt-2"},[_c('hr'),_vm._v(" "),_c('div',{staticClass:"pt-2 mt-2"},[_c('p',{staticClass:"blue--text"},[_vm._v(_vm._s(item.date))]),_vm._v(" "),_c('h2',[_vm._v(_vm._s(item.title))]),_vm._v(" "),_c('h3',[_vm._v(_vm._s(item.anniversary)+" year anniversary")]),_vm._v(" "),_c('br'),_vm._v(" "),_c('p',[_vm._v(_vm._s(item.subtitle))]),_vm._v(" "),(item.image)?_c('img',{staticStyle:{"object-position":"center"},attrs:{"src":item.image,"height":"250rem","alt":""}}):_vm._e(),_vm._v(" "),_c('p',{domProps:{"innerHTML":_vm._s(item.content)}}),_vm._v(" "),_c('br'),_vm._v(" "),_c('strong',[_c('p',[_vm._v("Author/Source : "+_vm._s(item.author))])])])])])],1)}),_vm._v(" "),_vm._l((10),function(index){return (_vm.loading)?_c('v-row',{key:index + "b",staticClass:"ma-0 pa-0"},[_c('v-col',{staticClass:"mb-0 pb-0 col-md-10 col-lg-10 offset-md-2 offset-lg-2"},[_c('v-skeleton-loader',{staticClass:"pa-2 ma-2",attrs:{"elevation":"2","outlined":"","shaped":"","tile":"","type":"card"}})],1)],1):_vm._e()}),_vm._v(" "),(!(_vm.length == 10))?_c('v-row',{staticClass:"ma-0 pa-0"},[_c('v-col',{staticClass:"mb-0 pb-0 col-md-10 col-lg-10 offset-md-2 offset-lg-2"},[_c('div',{staticClass:"pa-2 ma-0",attrs:{"elevation":"2","outlined":"","shaped":"","tile":""}},[_c('label',{staticClass:"grey--text",attrs:{"for":""}},[_vm._v("Nothing Follows")])])])],1):_vm._e(),_vm._v(" "),_c('v-row',{staticClass:"ma-0 pa-0"},[_c('v-col',{staticClass:"mb-0 pb-0 col-md-10 col-lg-10 offset-md-2 offset-lg-2"},[_c('div',[_c('v-btn',{staticClass:"white--text",class:_vm.length == 10 ? 'green' : 'grey',attrs:{"disabled":_vm.length == 10 ? false : true},on:{"click":_vm.getnextarticle}},[_vm._v("\n          Next Article\n        ")])],1)])],1)],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./components/WorldRemindersCard.vue?vue&type=template&id=7c914c62&scoped=true&
-
-// EXTERNAL MODULE: external "nprogress"
-var external_nprogress_ = __webpack_require__(8);
-var external_nprogress_default = /*#__PURE__*/__webpack_require__.n(external_nprogress_);
-
-// EXTERNAL MODULE: ./node_modules/nprogress/nprogress.css
-var nprogress = __webpack_require__(50);
+// CONCATENATED MODULE: ./components/WorldRemindersCard.vue?vue&type=template&id=6d0d5240&scoped=true&
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/WorldRemindersCard.vue?vue&type=script&lang=js&
 //
@@ -390,9 +383,8 @@ var nprogress = __webpack_require__(50);
 //
 //
 //
-
-
 /* harmony default export */ var WorldRemindersCardvue_type_script_lang_js_ = ({
+  props: ['content', 'length', 'loading'],
   data: () => ({
     months: [{
       name: 'January'
@@ -419,24 +411,14 @@ var nprogress = __webpack_require__(50);
     }, {
       name: 'December'
     }],
-    no_more_post: 'd-none',
-    loadcard: '',
-    loading: false,
-    content: [],
-    page: 1,
-    data: [],
-    increment: 0,
-    disable_next: false,
-    disable_color: 'green',
-    date: ''
+    page: 2
   }),
 
   async asyncData() {},
 
   async created() {},
 
-  mounted() {
-    this.getposts();
+  mounted() {// this.getposts()
   },
 
   computed: {
@@ -446,111 +428,8 @@ var nprogress = __webpack_require__(50);
 
   },
   methods: {
-    getposts() {
-      this.$axios.$get('/sanctum/csrf-cookie');
-      external_nprogress_default.a.start();
-      external_nprogress_default.a.inc();
-      this.date = new Date().toJSON().slice(0, 10).replace(/-/g, '-');
-
-      if (this.$route.params.id) {
-        try {
-          this.$axios.$get(`api/er/page/${this.page}/item/${10}/month/${this.$route.params.id}`).then(res => {
-            if (res.data.length == 0) {
-              this.no_more_post = '';
-              this.disable_next = true;
-              this.disable_color = 'grey';
-            } else {
-              this.disable_next = false;
-              this.disable_color = 'green';
-            }
-
-            if (res.data.length < 10) {
-              this.no_more_post = '';
-              this.disable_next = true;
-              this.disable_color = 'grey';
-            }
-
-            for (const [key, value] of Object.entries(res.data)) {
-              this.increment = this.increment + 1;
-              this.data.push({
-                id: value.id,
-                slug: value.slug,
-                title: value.title,
-                subtitle: value.subtitle,
-                event_date: value.event_date,
-                country: value.country,
-                content: value.content,
-                created_at: value.created_at,
-                human_date: value.human_date,
-                author: value.author,
-                image: value.image,
-                increment: this.increment,
-                date: value.date,
-                anniversary: value.anniversary
-              });
-            }
-
-            this.content = this.data;
-            external_nprogress_default.a.done();
-            this.loadcard = 'd-none';
-            this.page = this.page + 1;
-          }).catch(error => {
-            external_nprogress_default.a.done();
-            this.loadcard = 'd-none';
-          }).finally(() => {});
-        } catch (error) {
-          console.log('error');
-        }
-      } else {
-        try {
-          this.$axios.$get(`api/er/page/${this.page}/item/${10}/date/${this.date}`).then(res => {
-            if (res.data.length == 0) {
-              this.no_more_post = '';
-              this.disable_next = true;
-              this.disable_color = 'grey';
-            } else {
-              this.disable_next = false;
-              this.disable_color = 'green';
-            }
-
-            if (res.data.length < 10) {
-              this.no_more_post = '';
-              this.disable_next = true;
-              this.disable_color = 'grey';
-            }
-
-            for (const [key, value] of Object.entries(res.data)) {
-              this.increment = this.increment + 1;
-              this.data.push({
-                id: value.id,
-                slug: value.slug,
-                title: value.title,
-                subtitle: value.subtitle,
-                event_date: value.event_date,
-                country: value.country,
-                content: value.content,
-                created_at: value.created_at,
-                human_date: value.human_date,
-                author: value.author,
-                image: value.image,
-                increment: this.increment,
-                date: value.date,
-                anniversary: value.anniversary
-              });
-            }
-
-            this.content = this.data;
-            external_nprogress_default.a.done();
-            this.loadcard = 'd-none';
-            this.page = this.page + 1;
-          }).catch(error => {
-            external_nprogress_default.a.done();
-            this.loadcard = 'd-none';
-          }).finally(() => {});
-        } catch (error) {
-          console.log('error');
-        }
-      }
+    getnextarticle() {
+      this.$emit('next-article');
     }
 
   }
@@ -585,7 +464,7 @@ var VSkeletonLoader = __webpack_require__(236);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(261)
+  var style0 = __webpack_require__(262)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -598,8 +477,8 @@ var component = Object(componentNormalizer["a" /* default */])(
   staticRenderFns,
   false,
   injectStyles,
-  "7c914c62",
-  "7da4ba14"
+  "6d0d5240",
+  "21c1934c"
   
 )
 
@@ -617,19 +496,26 @@ installComponents_default()(component, {VBtn: VBtn["a" /* default */],VCol: VCol
 
 /***/ }),
 
-/***/ 428:
+/***/ 425:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/world-reminders/_id.vue?vue&type=template&id=07fadf2c&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-container',{staticClass:"white",attrs:{"fluid":""}},[_c('v-row',{},[_c('v-col',{attrs:{"ms":"10","lg":"10"}},[_c('WorldRemindersCard')],1)],1)],1)}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/world-reminders/_id.vue?vue&type=template&id=dc9f2156&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-container',{staticClass:"white",attrs:{"fluid":""}},[_c('v-row',{},[_c('v-col',{attrs:{"ms":"10","lg":"10"}},[_c('WorldRemindersCard',{attrs:{"content":_vm.content,"length":_vm.length,"loading":_vm.loading},on:{"next-article":_vm.nextArticle}})],1)],1)],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./pages/world-reminders/_id.vue?vue&type=template&id=07fadf2c&
+// CONCATENATED MODULE: ./pages/world-reminders/_id.vue?vue&type=template&id=dc9f2156&
+
+// EXTERNAL MODULE: external "nprogress"
+var external_nprogress_ = __webpack_require__(8);
+var external_nprogress_default = /*#__PURE__*/__webpack_require__.n(external_nprogress_);
+
+// EXTERNAL MODULE: ./node_modules/nprogress/nprogress.css
+var nprogress = __webpack_require__(50);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/world-reminders/_id.vue?vue&type=script&lang=js&
 //
@@ -642,6 +528,13 @@ var staticRenderFns = []
 //
 //
 //
+//
+//
+//
+//
+//
+
+
 /* harmony default export */ var _idvue_type_script_lang_js_ = ({
   auth: false,
 
@@ -657,13 +550,27 @@ var staticRenderFns = []
   },
 
   data: () => ({
-    loading: false
+    loading: false,
+    page: 2
   }),
+
+  async asyncData({
+    $axios,
+    error,
+    params
+  }) {
+    await $axios.$get('/sanctum/csrf-cookie');
+    const res = await $axios.$get(`api/er/page/1/item/10/month/${params.id}`);
+    return {
+      content: res.data,
+      length: res.data.length
+    };
+  },
 
   async created() {},
 
   computed: {
-    id() {
+    async id() {
       return this.$route.params.id;
     }
 
@@ -673,7 +580,31 @@ var staticRenderFns = []
 
   components: {},
   watch: {},
-  methods: {}
+  methods: {
+    async nextArticle() {
+      this.loading = true;
+      await this.$axios.$get('/sanctum/csrf-cookie');
+      external_nprogress_default.a.start();
+      external_nprogress_default.a.inc();
+
+      try {
+        this.$axios.$get(`api/er/page/${this.page}/item/${10}/month/${this.id}`).then(res => {
+          this.length = res.data.length;
+          this.content = [...this.content, ...res.data];
+          external_nprogress_default.a.done();
+          this.page = this.page + 1;
+          this.loading = false;
+        }).catch(error => {
+          this.loading = false;
+          external_nprogress_default.a.done();
+        }).finally(() => {});
+      } catch (error) {
+        this.loading = false;
+        console.log('error');
+      }
+    }
+
+  }
 });
 // CONCATENATED MODULE: ./pages/world-reminders/_id.vue?vue&type=script&lang=js&
  /* harmony default export */ var world_reminders_idvue_type_script_lang_js_ = (_idvue_type_script_lang_js_); 
@@ -708,14 +639,14 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "4e2c837b"
+  "17a7da7e"
   
 )
 
 /* harmony default export */ var _id = __webpack_exports__["default"] = (component.exports);
 
 /* nuxt-component-imports */
-installComponents_default()(component, {WorldRemindersCard: __webpack_require__(267).default})
+installComponents_default()(component, {WorldRemindersCard: __webpack_require__(268).default})
 
 
 /* vuetify-loader */
