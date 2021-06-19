@@ -104,6 +104,7 @@
 </template>
 
 <script>
+import { admin } from '~/mixins/admin_pages.js'
 import juice from 'juice'
 import ckeditor5const from '~/mixins/ckeditor5const'
 
@@ -123,7 +124,7 @@ export default {
     title: 'Create Post',
   }),
   middleware: 'auth',
-  mixins: [validationMixin],
+  mixins: [validationMixin,admin],
   data: () => ({
     image_id: '',
     url_backend: '',

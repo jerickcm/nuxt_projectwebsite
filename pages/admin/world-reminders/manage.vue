@@ -256,6 +256,7 @@
 </template>
 <script>
 import { country } from '~/mixins/country.js'
+import { admin } from '~/mixins/admin_pages.js'
 import juice from 'juice'
 import ckeditor5const from '~/mixins/ckeditor5const'
 import { validationMixin } from 'vuelidate'
@@ -271,7 +272,7 @@ const url = process.env.NODE_ENV === 'development' ? dev : prod
 var timezone = process.env.TIMEZONE
 export default {
   middleware: 'auth',
-  mixins: [validationMixin, country],
+  mixins: [validationMixin, country,admin],
 
   head: () => ({
     title: 'Post Datatable'

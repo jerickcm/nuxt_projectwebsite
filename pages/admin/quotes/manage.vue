@@ -35,7 +35,7 @@
                       v-if="!$v.form_message.required"
                       class="errorMessage red--text"
                     >
-                     Quote is required.
+                      Quote is required.
                     </div>
                   </template>
                 </v-col>
@@ -54,7 +54,7 @@
                       v-if="!$v.form_author.required"
                       class="errorMessage red--text"
                     >
-                     Author is required.
+                      Author is required.
                     </div>
                   </template>
                 </v-col>
@@ -156,6 +156,7 @@
   </v-container>
 </template>
 <script>
+import { admin } from '~/mixins/admin_pages.js'
 import { validationMixin } from 'vuelidate'
 import { required } from 'vuelidate/lib/validators'
 import NProgress from 'nprogress'
@@ -163,7 +164,7 @@ import 'nprogress/nprogress.css'
 
 export default {
   middleware: 'auth',
-  mixins: [validationMixin],
+  mixins: [validationMixin, admin],
 
   head: () => ({
     title: 'Post Datatable',

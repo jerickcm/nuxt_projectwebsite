@@ -17,28 +17,25 @@
         >
 
         <v-btn plain text tile class="blue--text pa-1 ma-1 mr-10" to="/">
-          <!-- -- Project Website -->
-          <!-- <v-icon color="blue">mdi-laptop</v-icon> -->
           <v-img src="/projectwebsite/PW.png" width="4rem"></v-img>
         </v-btn>
 
         <v-btn
           v-for="(item, i) in navlist"
           :key="i"
-          :to="item.link"
+          :to="{ name: item.link }"
           plain
           text
           tile
           rounded
           class="white pa-1 ma-1"
         >
-          <v-icon>{{ item.icons }}</v-icon> {{ item.label }}
+          <v-icon color="blue">{{ item.icons }}</v-icon> {{ item.label }}
         </v-btn>
       </div>
       <v-spacer />
       <div class="hidden-sm-and-down">
-        <!-- $auth.user['is_admin'] == '1' &&  -->
-        <v-btn
+        <!-- <v-btn
           v-if="$auth.user && $auth.loggedIn && $auth.user['is_admin'] == '1'"
           plain
           text
@@ -49,7 +46,7 @@
         >
           <v-icon>mdi-account-tie</v-icon>
           Admin</v-btn
-        >
+        > -->
 
         <v-btn
           v-if="$auth.loggedIn"
@@ -82,7 +79,7 @@
     <v-main
       :class="{
         'padb-35': $vuetify.breakpoint.smAndDown,
-        'padb-30': $vuetify.breakpoint.mdAndUp
+        'padb-30': $vuetify.breakpoint.mdAndUp,
       }"
     >
       <nuxt />
@@ -90,7 +87,7 @@
 
     <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
       <v-list>
-        <Nav />
+        <AdminNav />
       </v-list>
     </v-navigation-drawer>
 
@@ -99,7 +96,7 @@
         class="black pa-1 ma-1"
         :class="{
           'd-none': $vuetify.breakpoint.smAndDown,
-          '': $vuetify.breakpoint.mdAndUp
+          '': $vuetify.breakpoint.mdAndUp,
         }"
       >
         >
@@ -146,7 +143,7 @@
         class="black pa-1 ma-1"
         :class="{
           'd-none': $vuetify.breakpoint.smAndDown,
-          '': $vuetify.breakpoint.mdAndUp
+          '': $vuetify.breakpoint.mdAndUp,
         }"
       >
         >
@@ -166,11 +163,11 @@
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 import { greetMixins } from '~/mixins/greeting.js'
-import { navlist } from '~/mixins/navlist.js'
+import { navlist } from '~/mixins/admin_navlist.js'
 export default {
   head: () => ({
     titleTemplate: '%s - Project Website',
-    meta: [{ hid: 'description', name: 'description', content: 'Content' }]
+    meta: [{ hid: 'description', name: 'description', content: 'Content' }],
   }),
   mixins: [greetMixins, navlist],
   data: () => ({
@@ -182,7 +179,7 @@ export default {
       { label: 'Login', link: 'login' },
       { label: 'Register', link: 'register' },
       { label: 'about', link: 'about' },
-      { label: 'contact', link: 'contact' }
+      { label: 'contact', link: 'contact' },
     ],
     value: 'recent',
     clipped: false,
@@ -194,14 +191,14 @@ export default {
       {
         icon: 'mdi-home-import-outline',
         title: 'Home',
-        to: '/'
-      }
+        to: '/',
+      },
     ],
     right: false,
     left: true,
     leftDrawer: false,
     rightDrawer: false,
-    title: 'Project Website'
+    title: 'Project Website',
   }),
 
   computed: {},
@@ -228,9 +225,9 @@ export default {
         NProgress.done()
         console.log(error)
       }
-    }
+    },
   },
-  async created() {}
+  async created() {},
 }
 </script>
 <style>

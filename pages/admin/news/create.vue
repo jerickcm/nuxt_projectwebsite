@@ -103,6 +103,7 @@
 </template>
 
 <script>
+import { admin } from '~/mixins/admin_pages.js'
 import juice from 'juice'
 import ckeditor5const from '~/mixins/ckeditor5const'
 import Vue from 'vue'
@@ -117,11 +118,11 @@ const url = process.env.NODE_ENV === 'development' ? dev : prod
 var timezone = process.env.TIMEZONE
 
 export default {
+
   head: () => ({
     title: 'Create News',
   }),
-  middleware: 'auth',
-  mixins: [validationMixin],
+  mixins: [validationMixin,admin],
   data: () => ({
     image_id: '',
     url_backend: '',

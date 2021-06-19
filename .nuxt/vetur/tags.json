@@ -1,4 +1,7 @@
 {
+  "AdminNav": {
+    "description": "Auto imported from components/AdminNav.vue"
+  },
   "BlogCard": {
     "description": "Auto imported from components/BlogCard.vue"
   },

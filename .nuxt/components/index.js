@@ -1,5 +1,6 @@
 import { wrapFunctional } from './utils'
 
+export { default as AdminNav } from '../..\\components\\AdminNav.vue'
 export { default as BlogCard } from '../..\\components\\BlogCard.vue'
 export { default as Dashboard } from '../..\\components\\Dashboard.vue'
 export { default as DashTitle } from '../..\\components\\DashTitle.vue'
@@ -12,6 +13,7 @@ export { default as Template } from '../..\\components\\Template.vue'
 export { default as VuetifyLogo } from '../..\\components\\VuetifyLogo.vue'
 export { default as WorldRemindersCard } from '../..\\components\\WorldRemindersCard.vue'
 
+export const LazyAdminNav = import('../..\\components\\AdminNav.vue' /* webpackChunkName: "components/admin-nav" */).then(c => wrapFunctional(c.default || c))
 export const LazyBlogCard = import('../..\\components\\BlogCard.vue' /* webpackChunkName: "components/blog-card" */).then(c => wrapFunctional(c.default || c))
 export const LazyDashboard = import('../..\\components\\Dashboard.vue' /* webpackChunkName: "components/dashboard" */).then(c => wrapFunctional(c.default || c))
 export const LazyDashTitle = import('../..\\components\\DashTitle.vue' /* webpackChunkName: "components/dash-title" */).then(c => wrapFunctional(c.default || c))

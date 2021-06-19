@@ -104,6 +104,7 @@
 
 <script>
 import juice from 'juice'
+import { admin } from '~/mixins/admin_pages.js'
 import ckeditor5const from '~/mixins/ckeditor5const'
 
 import Vue from 'vue'
@@ -121,8 +122,7 @@ export default {
   head: () => ({
     title: 'Create Post',
   }),
-  middleware: 'auth',
-  mixins: [validationMixin],
+  mixins: [validationMixin,admin],
   data: () => ({
     image_id: '',
     url_backend: '',

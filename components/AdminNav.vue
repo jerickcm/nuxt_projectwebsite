@@ -25,13 +25,12 @@
           </v-list-item>
 
           <v-list-item
-            to="/dashboard"
             v-for="(item, i) in navlist"
             :key="i"
-            :to="item.link"
+            :to="{ name: item.link }"
           >
             <v-list-item-action>
-              <v-icon> {{ item.icons }}</v-icon>
+              <v-icon color="blue"> {{ item.icons }}</v-icon>
             </v-list-item-action>
             <v-list-item-content>
               <v-list-item-title> {{ item.label }}</v-list-item-title>
@@ -97,7 +96,7 @@
 
 <script>
 
-import { navlist } from '~/mixins/navlist.js'
+import { navlist } from '~/mixins/admin_navlist.js'
 export default {
   mixins: [navlist],
   data: () => ({

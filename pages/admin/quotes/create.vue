@@ -78,6 +78,7 @@
 </template>
 
 <script>
+import { admin } from '~/mixins/admin_pages.js'
 import Vue from 'vue'
 import { Vuelidate, validationMixin } from 'vuelidate'
 Vue.use(Vuelidate)
@@ -93,8 +94,8 @@ export default {
   head: () => ({
     title: 'Create News',
   }),
-  middleware: 'auth',
-  mixins: [validationMixin],
+
+  mixins: [validationMixin,admin],
   data: () => ({
     form_message: '',
     form_author: '',

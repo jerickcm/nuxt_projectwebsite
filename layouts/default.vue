@@ -18,9 +18,7 @@
 
         <v-btn plain text tile class="blue--text pa-1 ma-1 mr-10" to="/">
           <v-img src="/projectwebsite/PW.png" width="4rem"></v-img>
-          <!-- -- Project Website -->
-          <!-- <v-icon color="blue">mdi-laptop</v-icon></v-btn -->
-          <!-- > -->
+
         </v-btn>
         <v-btn
           v-for="(item, i) in navlist"
@@ -37,7 +35,7 @@
       </div>
       <v-spacer />
       <div class="hidden-sm-and-down">
-        <!-- $auth.user['is_admin'] == '1' &&  -->
+
         <v-btn
           v-if="$auth.user && $auth.loggedIn && $auth.user['is_admin'] == '1'"
           plain

@@ -187,6 +187,7 @@
   </v-container>
 </template>
 <script>
+import { admin } from '~/mixins/admin_pages.js'
 import juice from 'juice'
 import ckeditor5const from '~/mixins/ckeditor5const'
 import { validationMixin } from 'vuelidate'
@@ -201,8 +202,8 @@ const url = process.env.NODE_ENV === 'development' ? dev : prod
 
 var timezone = process.env.TIMEZONE
 export default {
-  middleware: 'auth',
-  mixins: [validationMixin],
+
+  mixins: [validationMixin,admin],
 
   head: () => ({
     title: 'News Datatable',
@@ -379,7 +380,7 @@ export default {
       try {
         this.$axios
           // .$post('api/post/update', payload, {
-          .$post(`api/news/update/${table_id}`, payload, {
+          .$post(`admin/news/update/${table_id}`, payload, {
             headers: {
               'Content-Type': 'multipart/form-data',
             },
@@ -414,7 +415,7 @@ export default {
       let table_id = this.tabledata[this.editedIndex].id
       try {
         this.$axios
-          .$delete(`api/news/delete/${table_id}`)
+          .$delete(`admin/news/delete/${table_id}`)
           .then((res) => {})
           .catch((error) => {})
           .finally(() => {})
@@ -435,7 +436,7 @@ export default {
 
       await this.$axios.$get('/sanctum/csrf-cookie').then((response) => {})
       this.$axios
-        .$post('api/news/datatable', payload)
+        .$post('admin/news/datatable', payload)
         .then((res) => {
           var data = []
           var rowcount = 1
