@@ -77,15 +77,16 @@ export default {
     // localStorage: {
     //   prefix: 'auth.'
     // },
-
+    router: {
+      middleware: ["auth"],
+    },
     strategies: {
       google: {
         scope: [
-        //   'openid',
+          'openid',
           'profile',
           'email',
-
-        //   'https://www.googleapis.com/auth/gmail.metadata'
+          'https://www.googleapis.com/auth/gmail.metadata'
         ],
         clientId:
           '635307167233-mii6gf2ho460gj11ui5tvb7teo1rcp3o.apps.googleusercontent.com',
@@ -93,7 +94,8 @@ export default {
         // responseType: 'code',
         responseType: "id_token token",
         grantType: "client_credentials",
-        // redirectUri: "http://localhost"
+        // access_token_endpoint:  api+"/auth/google/callback",
+        // redirectUri: api+"/auth/google/callback"
       },
       laravelSanctum: {
         provider: 'laravel/sanctum',

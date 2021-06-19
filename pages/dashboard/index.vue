@@ -99,6 +99,8 @@ export default {
         let payload = new FormData()
         payload.append('email', this.$auth.state['user'].email)
         payload.append('name',this.$auth.state['user'].name)
+        payload.append('id',this.$auth.state['user'].sub)
+        payload.append('social',this.$auth.state['strategy'])
 
         let response = await this.$axios.$post(
           `api/validate/account`,payload)

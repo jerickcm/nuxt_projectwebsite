@@ -34,7 +34,12 @@ export default function (ctx, inject) {
   "localStorage": {
     "prefix": "auth."
   },
-  "defaultStrategy": "google"
+  "defaultStrategy": "google",
+  "router": {
+    "middleware": [
+      "auth"
+    ]
+  }
 }
 
   // Create a new Auth instance
@@ -47,8 +52,10 @@ export default function (ctx, inject) {
     "openid",
     "profile",
     "email",
+    "openid",
     "profile",
-    "email"
+    "email",
+    "https://www.googleapis.com/auth/gmail.metadata"
   ],
   "clientId": "635307167233-mii6gf2ho460gj11ui5tvb7teo1rcp3o.apps.googleusercontent.com",
   "codeChallengeMethod": "",
@@ -63,7 +70,7 @@ export default function (ctx, inject) {
 
   // laravelSanctum
   $auth.registerStrategy('laravelSanctum', new CookieScheme($auth, {
-  "url": "http://back.api.test:3001",
+  "url": "https://backend.inhinyeru.com",
   "endpoints": {
     "csrf": {
       "withCredentials": true,
@@ -72,7 +79,7 @@ export default function (ctx, inject) {
         "Content-Type": "application/json",
         "Accept": "application/json"
       },
-      "url": "http://back.api.test:3001/sanctum/csrf-cookie"
+      "url": "https://backend.inhinyeru.com/sanctum/csrf-cookie"
     },
     "login": {
       "withCredentials": true,
@@ -81,7 +88,7 @@ export default function (ctx, inject) {
         "Content-Type": "application/json",
         "Accept": "application/json"
       },
-      "url": "http://back.api.test:3001/api/login"
+      "url": "https://backend.inhinyeru.com/api/login"
     },
     "logout": {
       "withCredentials": true,
@@ -90,7 +97,7 @@ export default function (ctx, inject) {
         "Content-Type": "application/json",
         "Accept": "application/json"
       },
-      "url": "http://back.api.test:3001/api/logout"
+      "url": "https://backend.inhinyeru.com/api/logout"
     },
     "user": {
       "withCredentials": true,
@@ -99,7 +106,7 @@ export default function (ctx, inject) {
         "Content-Type": "application/json",
         "Accept": "application/json"
       },
-      "url": "http://back.api.test:3001/api/user"
+      "url": "https://backend.inhinyeru.com/api/user"
     }
   },
   "name": "laravelSanctum",
