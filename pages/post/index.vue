@@ -17,7 +17,9 @@ import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 export default {
   created() {
-    this.$nuxt.$loading.finish()
+    setTimeout(function() {
+      this.$nuxt.$loading.finish()
+    }, 1000)
   },
   transition: {
     beforeEnter(el) {

@@ -163,7 +163,7 @@
                 >
                   <p
                     for=""
-                    class="font-kalamreg text-center mt-5"
+                    class="text-center mt-5"
                     :class="{
                       'fs-1.1': $vuetify.breakpoint.smAndDown,
                       'fs-1.5': $vuetify.breakpoint.mdAndUp
@@ -237,10 +237,10 @@ export default {
 .font-halimun {
   font-family: 'Halimun', sans-serif;
 }
-.font-kalamreg {
+/* .font-kalamreg {
   font-family: 'Kalam-Regular', sans-serif;
   line-height: 1.2;
-}
+} */
 .font-barlowreg {
   font-family: 'Barlow-Regular', sans-serif;
 }

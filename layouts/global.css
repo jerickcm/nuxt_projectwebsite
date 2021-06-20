@@ -20,12 +20,12 @@
        format('truetype');
  }
 
- @font-face {
+ /* @font-face {
   font-family: 'Kalam-Regular';
    src: local('Kalam'),
      url(~assets/Kalam/Kalam-Regular.ttf)
        format('truetype');
- }
+ } */
 
  @font-face {
   font-family: 'Barlow-Regular';
