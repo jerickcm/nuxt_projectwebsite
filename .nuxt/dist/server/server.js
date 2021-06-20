@@ -10694,7 +10694,15 @@ async function setContext(app, context) {
         "API_URL": "https://backend.inhinyeru.com",
         "TIMEZONE": "Asia/Singapore",
         "DEV_API": "http://localhost:3001",
-        "PROD_API": "https://backend.inhinyeru.com"
+        "PROD_API": "https://backend.inhinyeru.com",
+        "DEV_GITHUBCIENTID": "9dc2d0876cb49c4b4027",
+        "PROD_GITHUBCIENTID": "b916f0145cfe505852e1",
+        "DEV_GITHUBSECRET": "22df2f3cca1c86549d0a9e0ae350d716734a4e87",
+        "PROD_GITHUBSECRET": "b1da4bff4b81777b4fd16feb74943fa1cfd83e1e",
+        "DEV_FB": "134187988811148",
+        "PROD_FB": "141292091328620",
+        "DEV_GOOGLE": "635307167233-mii6gf2ho460gj11ui5tvb7teo1rcp3o.apps.googleusercontent.com",
+        "PROD_GOOGLE": "635307167233-mii6gf2ho460gj11ui5tvb7teo1rcp3o.apps.googleusercontent.com"
       }
     }; // Only set once
 
@@ -13581,8 +13589,8 @@ installComponents_default()(admin_component, {AdminNav: __webpack_require__(203)
 
 installComponents_default()(admin_component, {VApp: VApp_VApp,VAppBar: VAppBar_VAppBar,VBtn: VBtn["a" /* default */],VFooter: VFooter_VFooter,VIcon: VIcon["a" /* default */],VImg: VImg["a" /* default */],VList: VList["a" /* default */],VMain: VMain_VMain,VNavigationDrawer: VNavigationDrawer_VNavigationDrawer,VSheet: VSheet["a" /* default */],VSpacer: VSpacer["a" /* default */]})
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/default.vue?vue&type=template&id=950701a6&
-var defaultvue_type_template_id_950701a6_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-app',{attrs:{"dark":""}},[_c('v-app-bar',{staticClass:"white",attrs:{"fixed":"","app":""}},[_c('v-sheet',{staticClass:"hidden-md-and-up font-kalamreg hand",attrs:{"color":"white"},on:{"click":function($event){$event.stopPropagation();_vm.rightDrawer = !_vm.rightDrawer}}},[_c('v-icon',{attrs:{"color":"green","x-large":""}},[_vm._v("mdi-message-arrow-left")]),_vm._v(" Menu\n    ")],1),_vm._v(" "),_c('v-spacer'),_vm._v(" "),_c('div',{staticClass:"hidden-sm-and-down"},[_c('v-icon',{attrs:{"color":"blue"},on:{"click":function($event){$event.stopPropagation();_vm.rightDrawer = !_vm.rightDrawer}}},[_vm._v("mdi-code-json")]),_vm._v(" "),_c('v-btn',{staticClass:"blue--text pa-1 ma-1 mr-10",attrs:{"plain":"","text":"","tile":"","to":"/"}},[_c('v-img',{attrs:{"src":"/projectwebsite/PW.png","width":"4rem"}})],1),_vm._v(" "),_vm._l((_vm.navlist),function(item,i){return _c('v-btn',{key:i,staticClass:"white pa-1 ma-1",attrs:{"to":item.link,"plain":"","text":"","tile":"","rounded":""}},[_c('v-icon',[_vm._v(_vm._s(item.icons))]),_vm._v(" "+_vm._s(item.label)+"\n      ")],1)})],2),_vm._v(" "),_c('v-spacer'),_vm._v(" "),_c('div',{staticClass:"hidden-sm-and-down"},[(_vm.$auth.user && _vm.$auth.loggedIn && _vm.$auth.user['is_admin'] == '1')?_c('v-btn',{staticClass:"white pa-1 ma-1",attrs:{"plain":"","text":"","tile":"","rounded":"","to":"/admin"}},[_c('v-icon',[_vm._v("mdi-account-tie")]),_vm._v("\n        Admin")],1):_vm._e(),_vm._v(" "),(_vm.$auth.loggedIn)?_c('v-btn',{staticClass:"white pa-1 ma-1",attrs:{"plain":"","text":"","tile":"","rounded":"","to":"/dashboard"}},[_c('v-icon',[_vm._v("mdi-monitor-dashboard")]),_vm._v("\n        Dashboard")],1):_vm._e(),_vm._v(" "),(_vm.$auth.loggedIn)?_c('v-btn',{staticClass:"white pa-1 ma-1",attrs:{"plain":"","text":"","tile":"","rounded":""},on:{"click":function($event){$event.preventDefault();return _vm.logout()}}},[_c('v-icon',[_vm._v("mdi-logout")]),_vm._v("\n        Logout")],1):_vm._e(),_vm._v(" "),(!_vm.$auth.loggedIn)?_c('v-btn',{staticClass:"white pa-1 ma-1",attrs:{"plain":"","tile":"","rounded":""},on:{"click":function($event){$event.preventDefault();_vm.dialog_login = true}}},[_c('v-icon',[_vm._v("mdi-logout")]),_vm._v("\n        Login")],1):_vm._e()],1),_vm._v(" "),_c('v-spacer')],1),_vm._v(" "),_c('v-main',{class:{
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/default.vue?vue&type=template&id=5610a636&
+var defaultvue_type_template_id_5610a636_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-app',{attrs:{"dark":""}},[_c('v-app-bar',{staticClass:"white",attrs:{"fixed":"","app":""}},[_c('v-sheet',{staticClass:"hidden-md-and-up font-kalamreg hand",attrs:{"color":"white"},on:{"click":function($event){$event.stopPropagation();_vm.rightDrawer = !_vm.rightDrawer}}},[_c('v-icon',{attrs:{"color":"green","x-large":""}},[_vm._v("mdi-message-arrow-left")]),_vm._v(" Menu\n    ")],1),_vm._v(" "),_c('v-spacer'),_vm._v(" "),_c('div',{staticClass:"hidden-sm-and-down"},[_c('v-icon',{attrs:{"color":"blue"},on:{"click":function($event){$event.stopPropagation();_vm.rightDrawer = !_vm.rightDrawer}}},[_vm._v("mdi-code-json")]),_vm._v(" "),_c('v-btn',{staticClass:"blue--text pa-1 ma-1 mr-10",attrs:{"plain":"","text":"","tile":"","to":"/"}},[_c('v-img',{attrs:{"src":"/projectwebsite/PW.png","width":"4rem"}})],1),_vm._v(" "),_vm._l((_vm.navlist),function(item,i){return _c('v-btn',{key:i,staticClass:"white pa-1 ma-1",attrs:{"to":item.link,"plain":"","text":"","tile":"","rounded":""}},[_c('v-icon',[_vm._v(_vm._s(item.icons))]),_vm._v(" "+_vm._s(item.label)+"\n      ")],1)})],2),_vm._v(" "),_c('v-spacer'),_vm._v(" "),_c('div',{staticClass:"hidden-sm-and-down"},[(_vm.$auth.user && _vm.$auth.loggedIn && _vm.$auth.user['is_admin'] == '1')?_c('v-btn',{staticClass:"white pa-1 ma-1",attrs:{"plain":"","text":"","tile":"","rounded":"","to":"/admin"}},[_c('v-icon',[_vm._v("mdi-account-tie")]),_vm._v("\n        Admin")],1):_vm._e(),_vm._v(" "),(_vm.$auth.loggedIn)?_c('v-btn',{staticClass:"white pa-1 ma-1",attrs:{"plain":"","text":"","tile":"","rounded":"","to":"/dashboard"}},[_c('v-icon',[_vm._v("mdi-monitor-dashboard")]),_vm._v("\n        Dashboard")],1):_vm._e(),_vm._v(" "),(_vm.$auth.loggedIn)?_c('v-btn',{staticClass:"white pa-1 ma-1",attrs:{"plain":"","text":"","tile":"","rounded":""},on:{"click":function($event){$event.preventDefault();return _vm.logout()}}},[_c('v-icon',[_vm._v("mdi-logout")]),_vm._v("\n        Logout")],1):_vm._e(),_vm._v(" "),(!_vm.$auth.loggedIn)?_c('v-btn',{staticClass:"white pa-1 ma-1",attrs:{"plain":"","tile":"","rounded":""},on:{"click":function($event){$event.preventDefault();_vm.dialog_login = true}}},[_c('v-icon',[_vm._v("mdi-logout")]),_vm._v("\n        Login")],1):_vm._e()],1),_vm._v(" "),_c('v-spacer')],1),_vm._v(" "),_c('v-main',{class:{
       'padb-35': _vm.$vuetify.breakpoint.smAndDown,
       'padb-30': _vm.$vuetify.breakpoint.mdAndUp
     }},[_c('nuxt')],1),_vm._v(" "),_c('v-navigation-drawer',{attrs:{"right":_vm.right,"temporary":"","fixed":""},model:{value:(_vm.rightDrawer),callback:function ($$v) {_vm.rightDrawer=$$v},expression:"rightDrawer"}},[_c('v-list',[_c('Nav',{attrs:{"dialog_login":_vm.dialog_login},on:{"update-login":_vm.updateLogin}})],1)],1),_vm._v(" "),_c('v-footer',{staticClass:"black lighten-4",attrs:{"absolute":!_vm.fixed,"app":""}},[_c('v-sheet',{staticClass:"black pa-1 ma-1",class:{
@@ -13592,10 +13600,10 @@ var defaultvue_type_template_id_950701a6_render = function () {var _vm=this;var 
         'd-none': _vm.$vuetify.breakpoint.smAndDown,
         '': _vm.$vuetify.breakpoint.mdAndUp
       }},[_c('label',{staticClass:"grey--text fs-0-6",attrs:{"for":""}},[_vm._v("Secured by:")]),_vm._v(" "),_c('a',{attrs:{"href":"https://letsencrypt.org/"}},[_c('v-img',{attrs:{"width":"90px","src":"/images/letsencrypt-logo-horizontal.svg"}})],1)])],1)],1)}
-var defaultvue_type_template_id_950701a6_staticRenderFns = []
+var defaultvue_type_template_id_5610a636_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./layouts/default.vue?vue&type=template&id=950701a6&
+// CONCATENATED MODULE: ./layouts/default.vue?vue&type=template&id=5610a636&
 
 // EXTERNAL MODULE: ./mixins/navlist.js
 var navlist = __webpack_require__(54);
@@ -13777,7 +13785,7 @@ var navlist = __webpack_require__(54);
 
 /* harmony default export */ var defaultvue_type_script_lang_js_ = ({
   head: () => ({
-    titleTemplate: '%s | Prj. Wbst.',
+    titleTemplate: '%s | P.Website',
     meta: [{
       hid: 'description',
       name: 'description',
@@ -13884,8 +13892,8 @@ if (style0.__inject__) style0.__inject__(context)
 
 var default_component = Object(componentNormalizer["a" /* default */])(
   layouts_defaultvue_type_script_lang_js_,
-  defaultvue_type_template_id_950701a6_render,
-  defaultvue_type_template_id_950701a6_staticRenderFns,
+  defaultvue_type_template_id_5610a636_render,
+  defaultvue_type_template_id_5610a636_staticRenderFns,
   false,
   default_injectStyles,
   null,
@@ -16409,12 +16417,12 @@ _nuxt_middleware.auth = authMiddleware;
       "authorization": "https://facebook.com/v2.12/dialog/oauth",
       "userInfo": "https://graph.facebook.com/v6.0/me?fields=id,name,picture{url},email"
     },
-    "clientId": "134187988811148",
+    "clientId": "141292091328620",
     "name": "facebook"
   })); // github
 
   $auth.registerStrategy('github', new runtime_Oauth2Scheme($auth, {
-    "clientId": "9dc2d0876cb49c4b4027",
+    "clientId": "b916f0145cfe505852e1",
     "name": "github",
     "endpoints": {
       "authorization": "https://github.com/login/oauth/authorize",
@@ -16584,7 +16592,7 @@ async function createApp(ssrContext, config = {}) {
 
   const app = {
     head: {
-      "titleTemplate": "%s | PWev",
+      "titleTemplate": "%s | P.Website",
       "title": "",
       "htmlAttrs": {
         "lang": "en"

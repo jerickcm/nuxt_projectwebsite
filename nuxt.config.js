@@ -4,11 +4,32 @@ const dev = process.env.DEV_API
 const prod = process.env.PROD_API
 const api = process.env.NODE_ENV === 'development' ? dev : prod
 
+const dev_fb_id = process.env.DEV_FB
+const prod_fb_id = process.env.PROD_FB
+const fb_id = process.env.NODE_ENV === 'development' ? dev_fb_id : prod_fb_id
+
+const dev_github_id = process.env.DEV_GITHUBCIENTID
+const prod_github_id = process.env.PROD_GITHUBCIENTID
+const github_id =
+  process.env.NODE_ENV === 'development' ? dev_github_id : prod_github_id
+
+const dev_github_secret = process.env.DEV_GITHUBSECRET
+const prod_github_secret = process.env.PROD_GITHUBSECRET
+const github_secret =
+  process.env.NODE_ENV === 'development'
+    ? dev_github_secret
+    : prod_github_secret
+
+const dev_google_id = process.env.DEV_GOOGLE
+const prod_google_id = process.env.PROD_GOOGLE
+const google_id =
+  process.env.NODE_ENV === 'development' ? dev_google_id : prod_google_id
+
 export default {
   dev: process.env.NODE_ENV !== 'production',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s | PWev',
+    titleTemplate: '%s | P.Website',
     title: '',
     htmlAttrs: {
       lang: 'en'
@@ -19,13 +40,6 @@ export default {
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/nuxt.ico' }]
-    // script: [
-    //   {
-    //     src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
-    //     'data-ad-client': 'ca-pub-3213536425475125',
-    //     async: true
-    //   }
-    // ]
   },
   env: {
     API_URL: api
@@ -71,12 +85,6 @@ export default {
     Allow: '/'
   },
   auth: {
-    // token: {
-    //   prefix: '_token.'
-    // },
-    // localStorage: {
-    //   prefix: 'auth.'
-    // },
     router: {
       middleware: ['auth']
     },
@@ -87,12 +95,12 @@ export default {
           userInfo:
             'https://graph.facebook.com/v6.0/me?fields=id,name,picture{url},email'
         },
-        clientId: '134187988811148',
+        clientId: fb_id,
         scope: ['public_profile', 'email']
       },
       github: {
-        clientId: '9dc2d0876cb49c4b4027',
-        clientSecret: '22df2f3cca1c86549d0a9e0ae350d716734a4e87'
+        clientId: github_id,
+        clientSecret: github_secret
       },
       google: {
         scope: [
@@ -101,8 +109,7 @@ export default {
           'email',
           'https://www.googleapis.com/auth/gmail.metadata'
         ],
-        clientId:
-          '635307167233-mii6gf2ho460gj11ui5tvb7teo1rcp3o.apps.googleusercontent.com',
+        clientId: google_id,
         codeChallengeMethod: '',
         // responseType: 'code',
         responseType: 'id_token token',
@@ -122,9 +129,6 @@ export default {
           logout: {
             url: '/api/logout'
           }
-          //   user: {
-          //     url: '/api/user', method: 'get', propertyName: 'data'
-          //   },
         }
       }
     },

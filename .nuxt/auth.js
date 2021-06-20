@@ -58,13 +58,13 @@ export default function (ctx, inject) {
     "authorization": "https://facebook.com/v2.12/dialog/oauth",
     "userInfo": "https://graph.facebook.com/v6.0/me?fields=id,name,picture{url},email"
   },
-  "clientId": "134187988811148",
+  "clientId": "141292091328620",
   "name": "facebook"
 }))
 
   // github
   $auth.registerStrategy('github', new Oauth2Scheme($auth, {
-  "clientId": "9dc2d0876cb49c4b4027",
+  "clientId": "b916f0145cfe505852e1",
   "name": "github",
   "endpoints": {
     "authorization": "https://github.com/login/oauth/authorize",

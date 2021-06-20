@@ -175,7 +175,7 @@ import { greetMixins } from '~/mixins/greeting.js'
 import { navlist } from '~/mixins/navlist.js'
 export default {
   head: () => ({
-    titleTemplate: '%s | Prj. Wbst.',
+    titleTemplate: '%s | P.Website',
     meta: [{ hid: 'description', name: 'description', content: 'Content' }]
   }),
   mixins: [greetMixins, navlist],
