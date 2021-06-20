@@ -40,6 +40,14 @@
     "_name": "_6c1f47c0"
   },
   {
+    "name": "final",
+    "path": "/final",
+    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\final.vue",
+    "chunkName": "pages/final",
+    "url": "/final",
+    "_name": "_8a38a1f8"
+  },
+  {
     "name": "login",
     "path": "/login",
     "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\login.vue",

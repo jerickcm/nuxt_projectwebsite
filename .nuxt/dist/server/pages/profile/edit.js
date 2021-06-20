@@ -1,11 +1,11 @@
-exports.ids = [46];
+exports.ids = [47];
 exports.modules = {
 
-/***/ 302:
+/***/ 301:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(URL) {/* harmony import */ var _mixins_reservedusernames_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(395);
+/* WEBPACK VAR INJECTION */(function(URL) {/* harmony import */ var _mixins_reservedusernames_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(400);
 //
 //
 //
@@ -160,24 +160,24 @@ exports.modules = {
 
   }
 });
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(215)["URL"]))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(214)["URL"]))
 
 /***/ }),
 
-/***/ 395:
+/***/ 400:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return usernames; });
 const usernames = {
   data: () => ({
-    reservedval: ['admin', 'blog', 'codesnippet', 'dash', 'dashboard', 'news', 'post', 'profile', 'quotes', 'technology', 'tutorial', 'world-reminders', 'about', 'contact-us', 'index', 'login', 'logout', 'register', 'template', 'test', 'tutorials', 'users']
+    reservedval: ['admin', 'blog', 'codesnippet', 'dash', 'dashboard', 'news', 'post', 'profile', 'quotes', 'technology', 'tutorial', 'world-reminders', 'about', 'contact-us', 'index', 'login', 'logout', 'register', 'template', 'test', 'tutorials', 'users', 'final']
   })
 };
 
 /***/ }),
 
-/***/ 481:
+/***/ 487:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -192,7 +192,7 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./pages/profile/edit.vue?vue&type=template&id=133dc010&scoped=true&
 
 // EXTERNAL MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/profile/edit.vue?vue&type=script&lang=js&
-var editvue_type_script_lang_js_ = __webpack_require__(302);
+var editvue_type_script_lang_js_ = __webpack_require__(301);
 
 // CONCATENATED MODULE: ./pages/profile/edit.vue?vue&type=script&lang=js&
  /* harmony default export */ var profile_editvue_type_script_lang_js_ = (editvue_type_script_lang_js_["a" /* default */]); 
@@ -204,25 +204,25 @@ var installComponents = __webpack_require__(11);
 var installComponents_default = /*#__PURE__*/__webpack_require__.n(installComponents);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VBtn/VBtn.js + 2 modules
-var VBtn = __webpack_require__(211);
+var VBtn = __webpack_require__(210);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VCard/VCard.js
-var VCard = __webpack_require__(208);
+var VCard = __webpack_require__(207);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VCol.js
-var VCol = __webpack_require__(222);
+var VCol = __webpack_require__(221);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VContainer.js
-var VContainer = __webpack_require__(223);
+var VContainer = __webpack_require__(222);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VImg/VImg.js + 2 modules
-var VImg = __webpack_require__(62);
+var VImg = __webpack_require__(61);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VRow.js
-var VRow = __webpack_require__(224);
+var VRow = __webpack_require__(223);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VTextField/VTextField.js + 3 modules
-var VTextField = __webpack_require__(213);
+var VTextField = __webpack_require__(212);
 
 // CONCATENATED MODULE: ./pages/profile/edit.vue
 

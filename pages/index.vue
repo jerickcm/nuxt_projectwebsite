@@ -217,13 +217,17 @@ export default {
     } catch (error) {
       console.log(error)
     }
-  },
-  mounted() {
-    this.$nextTick(() => {
-      this.$nuxt.$loading.start()
-      setTimeout(() => this.$nuxt.$loading.finish(), 500)
-    })
   }
+
+  // transition: {
+  //   afterLeave(el) {
+  //     console.log('afterLeave', el)
+  //     this.$nextTick(() => {
+  //       this.$nuxt.$loading.start()
+  //       setTimeout(() => this.$nuxt.$loading.finish(), 5000)
+  //     })
+  //   }
+  // }
 }
 </script>
 <style scoped>

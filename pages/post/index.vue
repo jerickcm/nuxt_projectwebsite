@@ -16,9 +16,20 @@
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 export default {
-  middleware: 'auth',
+  created() {
+    this.$nuxt.$loading.finish()
+  },
+  transition: {
+    beforeEnter(el) {
+      this.$nextTick(() => {
+        this.$nuxt.$loading.start()
+      })
+    }
+  },
   auth: false,
   head: () => ({
+    content: '',
+    length: '',
     title: 'Post',
     meta: [{ hid: 'Posts', name: 'Posts', content: 'Post Article Page' }]
   }),

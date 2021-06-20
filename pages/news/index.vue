@@ -16,10 +16,17 @@
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 export default {
-  loading: {
-    color: 'red',
-    height: '5px'
+  created() {
+    this.$nuxt.$loading.finish()
   },
+  transition: {
+    beforeEnter(el) {
+      this.$nextTick(() => {
+        this.$nuxt.$loading.start()
+      })
+    }
+  },
+
   middleware: 'auth',
   auth: false,
   head: () => ({
@@ -29,6 +36,7 @@ export default {
   async asyncData({ $axios, error, params }) {
     await $axios.$get('/sanctum/csrf-cookie')
     const res = await $axios.$get(`api/news/page/1/item/10`)
+    console.log(res)
     return {
       content: res.data,
       length: res.data.length

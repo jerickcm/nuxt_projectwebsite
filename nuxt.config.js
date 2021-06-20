@@ -46,8 +46,11 @@ export default {
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['~layouts/global.css'],
-  loading: { color: '39b982' },
-
+  // loading: { color: '39b982' },
+  loading: {
+    color: 'green',
+    height: '3px'
+  },
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
 

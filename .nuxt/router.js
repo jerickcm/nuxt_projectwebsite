@@ -9,6 +9,7 @@ const _508874f6 = () => interopDefault(import('..\\pages\\admin\\index.vue' /* w
 const _0c00337e = () => interopDefault(import('..\\pages\\blog\\index.vue' /* webpackChunkName: "pages/blog/index" */))
 const _36dfef66 = () => interopDefault(import('..\\pages\\contact-us.vue' /* webpackChunkName: "pages/contact-us" */))
 const _6c1f47c0 = () => interopDefault(import('..\\pages\\dashboard\\index.vue' /* webpackChunkName: "pages/dashboard/index" */))
+const _8a38a1f8 = () => interopDefault(import('..\\pages\\final.vue' /* webpackChunkName: "pages/final" */))
 const _3f3cab77 = () => interopDefault(import('..\\pages\\login.vue' /* webpackChunkName: "pages/login" */))
 const _152c6828 = () => interopDefault(import('..\\pages\\logout.vue' /* webpackChunkName: "pages/logout" */))
 const _34b6c0a6 = () => interopDefault(import('..\\pages\\news\\index.vue' /* webpackChunkName: "pages/news/index" */))
@@ -90,6 +91,10 @@ export const routerOptions = {
     path: "/dashboard",
     component: _6c1f47c0,
     name: "dashboard"
+  }, {
+    path: "/final",
+    component: _8a38a1f8,
+    name: "final"
   }, {
     path: "/login",
     component: _3f3cab77,

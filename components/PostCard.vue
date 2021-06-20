@@ -101,7 +101,7 @@
         <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
           <v-btn
             class="white--text"
-            @click="getnextarticle"
+            @click.prevent="getnextarticle"
             :disabled="length == 10 ? false : true"
             :class="length == 10 ? 'green' : 'grey'"
           >

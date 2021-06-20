@@ -17,6 +17,16 @@
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 export default {
+  created() {
+    this.$nuxt.$loading.finish()
+  },
+  transition: {
+    beforeEnter(el) {
+      this.$nextTick(() => {
+        this.$nuxt.$loading.start()
+      })
+    }
+  },
   middleware: 'auth',
   auth: false,
   head: () => ({
