@@ -1,4 +1,4 @@
-exports.ids = [59];
+exports.ids = [61];
 exports.modules = {
 
 /***/ 258:
@@ -195,7 +195,7 @@ const baseMixins = Object(mixins["a" /* default */])(translatable);
 
 /***/ }),
 
-/***/ 463:
+/***/ 471:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -283,7 +283,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "bed22a96",
-  "310016b2"
+  "078d7028"
   
 )
 

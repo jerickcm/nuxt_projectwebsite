@@ -3,6 +3,11 @@ export const navlist = {
       fixed: false,
       navlist: [
         {
+          icons: 'mdi-card-account-details',
+          label: 'Users',
+          link: 'admin-users-manage'
+        },
+        {
           icons: 'mdi-newspaper-variant-multiple-outline',
           label: 'NEWS',
           link: 'admin-news-manage'

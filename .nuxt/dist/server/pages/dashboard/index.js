@@ -1,4 +1,4 @@
-exports.ids = [33,2,3];
+exports.ids = [35,2,3];
 exports.modules = {
 
 /***/ 205:
@@ -94,7 +94,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "26305d4a"
+  "3dbe5461"
   
 )
 
@@ -165,7 +165,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "d5f4f1ee"
+  "3447ebe2"
   
 )
 
@@ -181,7 +181,7 @@ installComponents_default()(component, {VCard: VCard["a" /* default */],VCardTex
 
 /***/ }),
 
-/***/ 449:
+/***/ 457:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -349,7 +349,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "776ef927"
+  "4168d6e1"
   
 )
 

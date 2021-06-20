@@ -1,4 +1,4 @@
-exports.ids = [54];
+exports.ids = [56];
 exports.modules = {
 
 /***/ 258:
@@ -223,7 +223,7 @@ const baseMixins = Object(mixins["a" /* default */])(translatable);
 
 /***/ }),
 
-/***/ 357:
+/***/ 361:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -508,7 +508,7 @@ var console = __webpack_require__(3);
 
 /***/ }),
 
-/***/ 458:
+/***/ 466:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -735,7 +735,7 @@ var installComponents = __webpack_require__(11);
 var installComponents_default = /*#__PURE__*/__webpack_require__.n(installComponents);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VAlert/VAlert.js + 1 modules
-var VAlert = __webpack_require__(357);
+var VAlert = __webpack_require__(361);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VBtn/VBtn.js + 2 modules
 var VBtn = __webpack_require__(209);
@@ -773,7 +773,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "4b0e1554"
+  "2317b4dc"
   
 )
 

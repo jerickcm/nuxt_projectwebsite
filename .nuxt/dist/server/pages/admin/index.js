@@ -30,7 +30,7 @@ const VCardTitle = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__[/* createSi
 
 /***/ }),
 
-/***/ 252:
+/***/ 243:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -106,7 +106,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "26305d4a"
+  "3dbe5461"
   
 )
 
@@ -177,7 +177,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "d5f4f1ee"
+  "3447ebe2"
   
 )
 
@@ -193,7 +193,7 @@ installComponents_default()(component, {VCard: VCard["a" /* default */],VCardTex
 
 /***/ }),
 
-/***/ 447:
+/***/ 455:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -208,7 +208,7 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./pages/admin/index.vue?vue&type=template&id=986507c4&
 
 // EXTERNAL MODULE: ./mixins/admin_pages.js
-var admin_pages = __webpack_require__(252);
+var admin_pages = __webpack_require__(243);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/admin/index.vue?vue&type=script&lang=js&
 //
@@ -344,7 +344,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "e4f722bc"
+  "6f36395c"
   
 )
 

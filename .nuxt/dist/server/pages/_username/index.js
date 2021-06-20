@@ -30,7 +30,7 @@ const VCardTitle = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__[/* createSi
 
 /***/ }),
 
-/***/ 477:
+/***/ 485:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -181,7 +181,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "54107388"
+  "1e0a5142"
   
 )
 
