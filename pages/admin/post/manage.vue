@@ -120,6 +120,11 @@
         <v-card-title>
           Post Table
           <v-spacer></v-spacer>
+          <v-spacer></v-spacer>
+          <v-spacer></v-spacer>
+          <v-spacer></v-spacer>
+          <v-spacer></v-spacer>
+
           <v-text-field
             v-model="search"
             append-icon="mdi-magnify"
@@ -128,6 +133,8 @@
             hide-details
             @change="getDataFromApi"
           ></v-text-field>
+          <v-spacer></v-spacer>
+          <v-btn color="primary" to="/admin/post/create">Create</v-btn>
         </v-card-title>
         <v-data-table
           :headers="headers"
@@ -202,7 +209,7 @@ const url = process.env.NODE_ENV === 'development' ? dev : prod
 
 var timezone = process.env.TIMEZONE
 export default {
-  mixins: [validationMixin,admin],
+  mixins: [validationMixin, admin],
 
   head: () => ({
     title: 'Post Datatable'

@@ -34,7 +34,7 @@ export default function (ctx, inject) {
   "localStorage": {
     "prefix": "auth."
   },
-  "defaultStrategy": "google",
+  "defaultStrategy": "facebook",
   "router": {
     "middleware": [
       "auth"
@@ -46,6 +46,38 @@ export default function (ctx, inject) {
   const $auth = new Auth(ctx, options)
 
   // Register strategies
+  // facebook
+  $auth.registerStrategy('facebook', new Oauth2Scheme($auth, {
+  "scope": [
+    "public_profile",
+    "email",
+    "public_profile",
+    "email"
+  ],
+  "endpoints": {
+    "authorization": "https://facebook.com/v2.12/dialog/oauth",
+    "userInfo": "https://graph.facebook.com/v6.0/me?fields=id,name,picture{url},email"
+  },
+  "clientId": "134187988811148",
+  "name": "facebook"
+}))
+
+  // github
+  $auth.registerStrategy('github', new Oauth2Scheme($auth, {
+  "clientId": "9dc2d0876cb49c4b4027",
+  "name": "github",
+  "endpoints": {
+    "authorization": "https://github.com/login/oauth/authorize",
+    "token": "/_auth/oauth/github/authorize",
+    "userInfo": "https://api.github.com/user"
+  },
+  "scope": [
+    "user",
+    "email"
+  ],
+  "responseType": "code"
+}))
+
   // google
   $auth.registerStrategy('google', new Oauth2Scheme($auth, {
   "scope": [

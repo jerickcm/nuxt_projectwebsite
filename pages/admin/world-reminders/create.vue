@@ -4,7 +4,10 @@
       <form class="white pa-5" action="">
         <v-row
           ><v-col>
-            <v-btn color="primary" depressed to="/dashboard"> BACK </v-btn>
+            <!-- <v-btn color="primary" depressed to="/dashboard"> BACK </v-btn> -->
+            <v-btn color="primary" depressed to="/admin/quotes/world-reminders">
+              BACK
+            </v-btn>
           </v-col></v-row
         >
         <v-row>

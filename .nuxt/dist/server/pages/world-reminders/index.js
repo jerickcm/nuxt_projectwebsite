@@ -1,13 +1,13 @@
 exports.ids = [60,9];
 exports.modules = {
 
-/***/ 235:
+/***/ 240:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(236);
+var content = __webpack_require__(241);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -15,7 +15,7 @@ __webpack_require__(5).default("5f757930", content, true)
 
 /***/ }),
 
-/***/ 236:
+/***/ 241:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -29,14 +29,14 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 253:
+/***/ 255:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _src_components_VSkeletonLoader_VSkeletonLoader_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(235);
+/* harmony import */ var _src_components_VSkeletonLoader_VSkeletonLoader_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(240);
 /* harmony import */ var _src_components_VSkeletonLoader_VSkeletonLoader_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_src_components_VSkeletonLoader_VSkeletonLoader_sass__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _mixins_elevatable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(39);
-/* harmony import */ var _mixins_measurable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(26);
+/* harmony import */ var _mixins_elevatable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(46);
+/* harmony import */ var _mixins_measurable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(32);
 /* harmony import */ var _mixins_themeable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6);
 /* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2);
 /* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(0);
@@ -454,29 +454,29 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./components/WorldRemindersCard.vue?vue&type=script&lang=js&
  /* harmony default export */ var components_WorldRemindersCardvue_type_script_lang_js_ = (WorldRemindersCardvue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(9);
+var componentNormalizer = __webpack_require__(10);
 
 // EXTERNAL MODULE: ./node_modules/vuetify-loader/lib/runtime/installComponents.js
-var installComponents = __webpack_require__(10);
+var installComponents = __webpack_require__(11);
 var installComponents_default = /*#__PURE__*/__webpack_require__.n(installComponents);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VBtn/VBtn.js + 2 modules
-var VBtn = __webpack_require__(182);
+var VBtn = __webpack_require__(210);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VCol.js
-var VCol = __webpack_require__(193);
+var VCol = __webpack_require__(221);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VContainer.js
-var VContainer = __webpack_require__(194);
+var VContainer = __webpack_require__(222);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VRow.js
-var VRow = __webpack_require__(195);
+var VRow = __webpack_require__(223);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSheet/VSheet.js
-var VSheet = __webpack_require__(14);
+var VSheet = __webpack_require__(15);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSkeletonLoader/VSkeletonLoader.js
-var VSkeletonLoader = __webpack_require__(253);
+var VSkeletonLoader = __webpack_require__(255);
 
 // CONCATENATED MODULE: ./components/WorldRemindersCard.vue
 
@@ -498,7 +498,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "28ad2f0a",
-  "7da4ba14"
+  "21c1934c"
   
 )
 
@@ -576,11 +576,11 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./pages/world-reminders/index.vue?vue&type=template&id=69b1bc11&scoped=true&
 
 // EXTERNAL MODULE: external "nprogress"
-var external_nprogress_ = __webpack_require__(11);
+var external_nprogress_ = __webpack_require__(9);
 var external_nprogress_default = /*#__PURE__*/__webpack_require__.n(external_nprogress_);
 
 // EXTERNAL MODULE: ./node_modules/nprogress/nprogress.css
-var nprogress = __webpack_require__(52);
+var nprogress = __webpack_require__(45);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/world-reminders/index.vue?vue&type=script&lang=js&
 //
@@ -671,20 +671,20 @@ var nprogress = __webpack_require__(52);
 // CONCATENATED MODULE: ./pages/world-reminders/index.vue?vue&type=script&lang=js&
  /* harmony default export */ var pages_world_remindersvue_type_script_lang_js_ = (world_remindersvue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(9);
+var componentNormalizer = __webpack_require__(10);
 
 // EXTERNAL MODULE: ./node_modules/vuetify-loader/lib/runtime/installComponents.js
-var installComponents = __webpack_require__(10);
+var installComponents = __webpack_require__(11);
 var installComponents_default = /*#__PURE__*/__webpack_require__.n(installComponents);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VCol.js
-var VCol = __webpack_require__(193);
+var VCol = __webpack_require__(221);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VContainer.js
-var VContainer = __webpack_require__(194);
+var VContainer = __webpack_require__(222);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VRow.js
-var VRow = __webpack_require__(195);
+var VRow = __webpack_require__(223);
 
 // CONCATENATED MODULE: ./pages/world-reminders/index.vue
 
@@ -706,7 +706,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "69b1bc11",
-  "b5faef5a"
+  "6d4943ce"
   
 )
 

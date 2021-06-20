@@ -62,6 +62,22 @@
               >
                 Login with &zwnj; &zwnj; <v-icon>mdi-google</v-icon> oogle
               </v-btn>
+              <v-btn
+                class="mr-4 ma-2"
+                @click.prevent="loginwithgithub"
+                depressed
+                color="grey"
+              >
+                Login with Github
+              </v-btn>
+              <v-btn
+                class="mr-4 ma-2"
+                @click.prevent="loginwithfacebook"
+                depressed
+                color="blue"
+              >
+                Login with Facebook
+              </v-btn>
             </form>
           </v-card>
         </v-col>
@@ -136,6 +152,9 @@ export default {
   // auth: false,
   //  auth: 'guest',
   methods: {
+    loginwithfacebook() {
+      this.$auth.loginWith('facebook')
+    },
     loginwithgoogle() {
       // this.$auth.loginWith('google')
       this.$auth
@@ -143,6 +162,11 @@ export default {
         .then(() => {
           console.log('Logged in!')
         })
+    },
+    loginwithgithub() {
+      // this.$auth.loginWith('google')
+
+      this.$auth.loginWith('github')
     },
     clear() {
       this.form.email = ''
@@ -192,26 +216,6 @@ export default {
               this.alert = ''
               this.error_msg = error.response.data
             })
-
-          // .then(function (response) {
-          //    console.log("Response is" + response)
-          //   }
-          //   onResolved => {
-          //     this.loading = false;
-
-          //     NProgress.done();
-          //     console.log("err onResolved");
-          //   },
-          //   onRejected => {
-          //     this.loading = false;
-
-          //     NProgress.done();
-          //     console.log("err onRejected");
-
-          //     this.alert = "";
-          //     this.error_msg = error.response.data;
-          //   }
-          // );
         } catch (error) {
           this.alert = ''
           this.error_msg = error.response.data

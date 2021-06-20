@@ -18,7 +18,7 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/nuxt.ico' }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/nuxt.ico' }]
     // script: [
     //   {
     //     src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
@@ -32,7 +32,7 @@ export default {
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['~layouts/global.css'],
-  loading:{color:'39b982'},
+  loading: { color: '39b982' },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -59,7 +59,7 @@ export default {
     '@nuxtjs/sitemap'
   ],
   sitemap: {
-    hostname: 'http://www.inhinyeru.com',
+    hostname: 'http://www.inhinyeru.com'
   },
   toast: {
     position: 'top-right',
@@ -78,9 +78,22 @@ export default {
     //   prefix: 'auth.'
     // },
     router: {
-      middleware: ["auth"],
+      middleware: ['auth']
     },
     strategies: {
+      facebook: {
+        scope: ['openid', 'profile', 'email'],
+        endpoints: {
+          userInfo:
+            'https://graph.facebook.com/v6.0/me?fields=id,name,picture{url},email'
+        },
+        clientId: '134187988811148',
+        scope: ['public_profile', 'email']
+      },
+      github: {
+        clientId: '9dc2d0876cb49c4b4027',
+        clientSecret: '22df2f3cca1c86549d0a9e0ae350d716734a4e87'
+      },
       google: {
         scope: [
           'openid',
@@ -92,8 +105,8 @@ export default {
           '635307167233-mii6gf2ho460gj11ui5tvb7teo1rcp3o.apps.googleusercontent.com',
         codeChallengeMethod: '',
         // responseType: 'code',
-        responseType: "id_token token",
-        grantType: "client_credentials",
+        responseType: 'id_token token',
+        grantType: 'client_credentials'
         // access_token_endpoint:  api+"/auth/google/callback",
         // redirectUri: api+"/auth/google/callback"
       },
@@ -156,7 +169,7 @@ export default {
     // port: 80, // default: 3000
     // host: '0.0.0.0', // default: localhost,
     // timing: falseY
-  },
+  }
   // target: 'static'
 }
 

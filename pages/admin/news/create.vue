@@ -4,7 +4,9 @@
       <form class="white pa-5" action="">
         <v-row
           ><v-col>
-            <v-btn color="primary" depressed to="/dashboard"> BACK </v-btn>
+            <v-btn color="primary" depressed to="/admin/news/manage">
+              BACK
+            </v-btn>
           </v-col></v-row
         >
         <v-row>
@@ -118,11 +120,10 @@ const url = process.env.NODE_ENV === 'development' ? dev : prod
 var timezone = process.env.TIMEZONE
 
 export default {
-
   head: () => ({
-    title: 'Create News',
+    title: 'Create News'
   }),
-  mixins: [validationMixin,admin],
+  mixins: [validationMixin, admin],
   data: () => ({
     image_id: '',
     url_backend: '',
@@ -133,26 +134,26 @@ export default {
     publishselection: [
       {
         value: 1,
-        text: 'Draft',
+        text: 'Draft'
       },
       {
         value: 2,
-        text: 'Publish',
-      },
+        text: 'Publish'
+      }
     ],
     image: '',
     image_preview: '',
-    image_name: '',
+    image_name: ''
   }),
 
   validations: {
     form_content: { required },
     form_title: { required },
-    form_publish: { required },
+    form_publish: { required }
   },
   components: {
     'ckeditor-nuxt': () =>
-      import('@engrjerickcmangalus/ckeditor-nuxt-custom-build-simpleuploader'),
+      import('@engrjerickcmangalus/ckeditor-nuxt-custom-build-simpleuploader')
   },
   async created() {
     this.timezone = timezone
@@ -165,9 +166,9 @@ export default {
           Accept: 'application/json',
           Timezone: this.timezone,
           identifier: this.image_id,
-          'X-XSRF-TOKEN': this.$auth.$storage.getCookies()['XSRF-TOKEN'],
-        },
-      },
+          'X-XSRF-TOKEN': this.$auth.$storage.getCookies()['XSRF-TOKEN']
+        }
+      }
     }
 
     await this.$axios.$get('/sanctum/csrf-cookie')
@@ -184,7 +185,7 @@ export default {
       if (!this.$v.form_content.$dirty) return errors
       !this.$v.form_content.required && errors.push('Content is required.')
       return errors
-    },
+    }
   },
   methods: {
     handleFileUpload(e) {
@@ -225,22 +226,22 @@ export default {
         this.$axios
           .post('/api/news/create', payload, {
             headers: {
-              'Content-Type': 'multipart/form-data',
-            },
+              'Content-Type': 'multipart/form-data'
+            }
           })
-          .then((res) => {
+          .then(res => {
             this.$toast.success('Done.')
             // redirect('/dashboard')
           })
-          .catch((error) => {
+          .catch(error => {
             // this.$toast.success('Error.')
           })
           .finally(() => {})
       } else {
         this.$toast.error('Validation failed.')
       }
-    },
-  },
+    }
+  }
 }
 </script>
 <style scoped>

@@ -1,7 +1,6 @@
 <template>
   <v-container fluid class="grey ligthen-3 pa-0 ma-0" min-height="800vh">
     <v-sheet class="blue ligthen-3 pa-5 pt-10 pb-10" min-height="200vh">
-
       <DashTitle Dashboard="Dashboard" to="/dashboard"> </DashTitle>
 
       <Dashboard>
@@ -12,7 +11,7 @@
         >
       </Dashboard>
 
-      <Dashboard>
+      <!-- <Dashboard>
         <h2 slot="menu_name">POST MENU</h2>
         <v-btn to="post/create" slot="create_menu" class="green white--text"
           >Create Post</v-btn
@@ -64,7 +63,7 @@
           class="blue white--text"
           >Manage World Reminders</v-btn
         >
-      </Dashboard>
+      </Dashboard> -->
     </v-sheet>
   </v-container>
 </template>
@@ -75,39 +74,37 @@ export default {
     title: 'Dashboard'
   }),
   data: () => ({}),
-    async asyncData({ $axios, error, params,$auth }) {
-      // if( $auth.state['strategy'] == 'google' ){
-      //   await $axios.$get('/sanctum/csrf-cookie')
-      //   let response = await $axios.$get(
-      //     `api/validate/email/${params.email}`)
-      //   return { profile: response.data}
-      // }
-  },
+  async asyncData({ $axios, error, params, $auth }) {},
   computed: {
     email() {
       return this.$auth.state['user'].email
-    },
+    }
   },
   async created() {
-    console.log(this.$auth.state['user'].email)
-    console.log(this.$auth.state['strategy'])
+    await this.$axios.$get('/sanctum/csrf-cookie')
 
-      if(this.$auth.state['strategy'] =='google'){
-
-        await this.$axios.$get('/sanctum/csrf-cookie')
-
-        let payload = new FormData()
+    if (this.$auth.state['strategy'] == 'laravelSanctum') {
+    } else {
+      let payload = new FormData()
+      if (this.$auth.state['strategy'] == 'google') {
         payload.append('email', this.$auth.state['user'].email)
-        payload.append('name',this.$auth.state['user'].name)
-        payload.append('id',this.$auth.state['user'].sub)
-        payload.append('social',this.$auth.state['strategy'])
-
-        let response = await this.$axios.$post(
-          `api/validate/account`,payload)
-
-        return { profile: response.data}
+        payload.append('name', this.$auth.state['user'].name)
+        payload.append('id', this.$auth.state['user'].sub)
+        payload.append('social', this.$auth.state['strategy'])
+      } else if (this.$auth.state['strategy'] == 'github') {
+        payload.append('email', this.$auth.state['user'].email)
+        payload.append('name', this.$auth.state['user'].login)
+        payload.append('id', this.$auth.state['user'].id)
+      } else if (this.$auth.state['strategy'] == 'facebook') {
+        payload.append('email', this.$auth.state['user'].email)
+        payload.append('name', this.$auth.state['user'].name)
+        payload.append('id', this.$auth.state['user'].id)
+        payload.append('social', this.$auth.state['strategy'])
       }
 
+      let response = await this.$axios.$post(`api/validate/account`, payload)
+      return { profile: response.data }
+    }
   }
 }
 </script>

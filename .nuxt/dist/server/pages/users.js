@@ -31,20 +31,20 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./pages/users.vue?vue&type=script&lang=js&
  /* harmony default export */ var pages_usersvue_type_script_lang_js_ = (usersvue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(9);
+var componentNormalizer = __webpack_require__(10);
 
 // EXTERNAL MODULE: ./node_modules/vuetify-loader/lib/runtime/installComponents.js
-var installComponents = __webpack_require__(10);
+var installComponents = __webpack_require__(11);
 var installComponents_default = /*#__PURE__*/__webpack_require__.n(installComponents);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VCol.js
-var VCol = __webpack_require__(193);
+var VCol = __webpack_require__(221);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VContainer.js
-var VContainer = __webpack_require__(194);
+var VContainer = __webpack_require__(222);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VRow.js
-var VRow = __webpack_require__(195);
+var VRow = __webpack_require__(223);
 
 // CONCATENATED MODULE: ./pages/users.vue
 
@@ -64,7 +64,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   null,
-  "61e11b1f"
+  "0f3a3ce5"
   
 )
 

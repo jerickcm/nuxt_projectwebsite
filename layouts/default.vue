@@ -18,7 +18,6 @@
 
         <v-btn plain text tile class="blue--text pa-1 ma-1 mr-10" to="/">
           <v-img src="/projectwebsite/PW.png" width="4rem"></v-img>
-
         </v-btn>
         <v-btn
           v-for="(item, i) in navlist"
@@ -35,7 +34,6 @@
       </div>
       <v-spacer />
       <div class="hidden-sm-and-down">
-
         <v-btn
           v-if="$auth.user && $auth.loggedIn && $auth.user['is_admin'] == '1'"
           plain
@@ -74,6 +72,18 @@
           <v-icon>mdi-logout</v-icon>
           Logout</v-btn
         >
+
+        <v-btn
+          v-if="!$auth.loggedIn"
+          @click.prevent="dialog_login = true"
+          plain
+          tile
+          rounded
+          class="white pa-1 ma-1"
+        >
+          <v-icon>mdi-logout</v-icon>
+          Login</v-btn
+        >
       </div>
       <v-spacer />
     </v-app-bar>
@@ -88,7 +98,7 @@
 
     <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
       <v-list>
-        <Nav />
+        <Nav :dialog_login="dialog_login" @update-login="updateLogin" />
       </v-list>
     </v-navigation-drawer>
 
@@ -170,6 +180,7 @@ export default {
   }),
   mixins: [greetMixins, navlist],
   data: () => ({
+    dialog_login: false,
     myitems: [{ title: 'Dashboard', link: '/dashboard' }],
     menu: [{ icon: 'Dashboard', title: 'Dashboard' }],
     top_nav: [
@@ -203,6 +214,9 @@ export default {
   computed: {},
 
   methods: {
+    updateLogin(value) {
+      this.dialog_login = value
+    },
     togglePane() {
       if (this.togglePaneValue == '') {
         this.togglePaneValue = 'd-none'

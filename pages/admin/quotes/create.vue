@@ -4,7 +4,10 @@
       <form class="white pa-5" action="">
         <v-row
           ><v-col>
-            <v-btn color="primary" depressed to="/dashboard"> BACK </v-btn>
+            <!-- <v-btn color="primary" depressed to="/dashboard"> BACK </v-btn> -->
+            <v-btn color="primary" depressed to="/admin/quotes/manage">
+              BACK
+            </v-btn>
           </v-col></v-row
         >
         <v-row>
@@ -92,10 +95,10 @@ var timezone = process.env.TIMEZONE
 
 export default {
   head: () => ({
-    title: 'Create News',
+    title: 'Create News'
   }),
 
-  mixins: [validationMixin,admin],
+  mixins: [validationMixin, admin],
   data: () => ({
     form_message: '',
     form_author: '',
@@ -104,19 +107,19 @@ export default {
     publishselection: [
       {
         value: 1,
-        text: 'Draft',
+        text: 'Draft'
       },
       {
         value: 2,
-        text: 'Publish',
-      },
-    ],
+        text: 'Publish'
+      }
+    ]
   }),
 
   validations: {
     form_message: { required },
     form_author: { required },
-    form_publish: { required },
+    form_publish: { required }
   },
   components: {},
   async created() {},
@@ -132,7 +135,7 @@ export default {
       if (!this.$v.form_content.$dirty) return errors
       !this.$v.form_content.required && errors.push('Content is required.')
       return errors
-    },
+    }
   },
   methods: {
     async onSubmit() {
@@ -148,22 +151,22 @@ export default {
         this.$axios
           .post('/api/quotes/create', payload, {
             headers: {
-              'Content-Type': 'multipart/form-data',
-            },
+              'Content-Type': 'multipart/form-data'
+            }
           })
-          .then((res) => {
+          .then(res => {
             this.$toast.success('Done.')
             // redirect('/dashboard')
           })
-          .catch((error) => {
+          .catch(error => {
             // this.$toast.success('Error.')
           })
           .finally(() => {})
       } else {
         this.$toast.error('Validation failed.')
       }
-    },
-  },
+    }
+  }
 }
 </script>
 <style scoped>

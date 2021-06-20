@@ -83,29 +83,29 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./pages/profile/index.vue?vue&type=script&lang=js&
  /* harmony default export */ var pages_profilevue_type_script_lang_js_ = (profilevue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(9);
+var componentNormalizer = __webpack_require__(10);
 
 // EXTERNAL MODULE: ./node_modules/vuetify-loader/lib/runtime/installComponents.js
-var installComponents = __webpack_require__(10);
+var installComponents = __webpack_require__(11);
 var installComponents_default = /*#__PURE__*/__webpack_require__.n(installComponents);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VBtn/VBtn.js + 2 modules
-var VBtn = __webpack_require__(182);
+var VBtn = __webpack_require__(210);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VCol.js
-var VCol = __webpack_require__(193);
+var VCol = __webpack_require__(221);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VContainer.js
-var VContainer = __webpack_require__(194);
+var VContainer = __webpack_require__(222);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VIcon/VIcon.js
-var VIcon = __webpack_require__(58);
+var VIcon = __webpack_require__(71);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VRow.js
-var VRow = __webpack_require__(195);
+var VRow = __webpack_require__(223);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSheet/VSheet.js
-var VSheet = __webpack_require__(14);
+var VSheet = __webpack_require__(15);
 
 // CONCATENATED MODULE: ./pages/profile/index.vue
 
@@ -125,7 +125,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "9d434992",
-  "9afb7914"
+  "76183f3c"
   
 )
 

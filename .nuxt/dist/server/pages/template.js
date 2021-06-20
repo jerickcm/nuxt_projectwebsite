@@ -55,14 +55,14 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./pages/template.vue?vue&type=script&lang=js&
  /* harmony default export */ var pages_templatevue_type_script_lang_js_ = (templatevue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(9);
+var componentNormalizer = __webpack_require__(10);
 
 // EXTERNAL MODULE: ./node_modules/vuetify-loader/lib/runtime/installComponents.js
-var installComponents = __webpack_require__(10);
+var installComponents = __webpack_require__(11);
 var installComponents_default = /*#__PURE__*/__webpack_require__.n(installComponents);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VContainer.js
-var VContainer = __webpack_require__(194);
+var VContainer = __webpack_require__(222);
 
 // CONCATENATED MODULE: ./pages/template.vue
 
@@ -82,7 +82,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "87eeaf9e",
-  "4eb58f33"
+  "0616cfad"
   
 )
 

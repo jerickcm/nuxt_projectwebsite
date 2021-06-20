@@ -188,6 +188,10 @@
         <v-card-title>
           Reminders Table
           <v-spacer></v-spacer>
+          <v-spacer></v-spacer>
+          <v-spacer></v-spacer>
+          <v-spacer></v-spacer>
+          <v-spacer></v-spacer>
           <v-text-field
             v-model="search"
             append-icon="mdi-magnify"
@@ -196,6 +200,10 @@
             hide-details
             @change="getDataFromApi"
           ></v-text-field>
+          <v-spacer></v-spacer>
+          <v-btn color="primary" to="/admin/world-reminders/create"
+            >Create</v-btn
+          >
         </v-card-title>
         <v-data-table
           :headers="headers"
@@ -272,7 +280,7 @@ const url = process.env.NODE_ENV === 'development' ? dev : prod
 var timezone = process.env.TIMEZONE
 export default {
   middleware: 'auth',
-  mixins: [validationMixin, country,admin],
+  mixins: [validationMixin, country, admin],
 
   head: () => ({
     title: 'Post Datatable'
