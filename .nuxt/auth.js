@@ -34,12 +34,7 @@ export default function (ctx, inject) {
   "localStorage": {
     "prefix": "auth."
   },
-  "defaultStrategy": "facebook",
-  "router": {
-    "middleware": [
-      "auth"
-    ]
-  }
+  "defaultStrategy": "facebook"
 }
 
   // Create a new Auth instance

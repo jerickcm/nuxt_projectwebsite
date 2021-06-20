@@ -16386,10 +16386,7 @@ _nuxt_middleware.auth = authMiddleware;
     "localStorage": {
       "prefix": "auth."
     },
-    "defaultStrategy": "facebook",
-    "router": {
-      "middleware": ["auth"]
-    }
+    "defaultStrategy": "facebook"
   }; // Create a new Auth instance
 
   const $auth = new Auth(ctx, options); // Register strategies

@@ -184,6 +184,10 @@
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
+  loading: {
+    color: 'orange',
+    height: '5px'
+  },
   middleware: 'auth',
   auth: false,
   head: () => ({
@@ -213,6 +217,12 @@ export default {
     } catch (error) {
       console.log(error)
     }
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start()
+      setTimeout(() => this.$nuxt.$loading.finish(), 500)
+    })
   }
 }
 </script>

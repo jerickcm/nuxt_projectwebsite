@@ -16,6 +16,10 @@
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 export default {
+  loading: {
+    color: 'red',
+    height: '5px'
+  },
   middleware: 'auth',
   auth: false,
   head: () => ({
@@ -35,7 +39,12 @@ export default {
     page: 2
   }),
   async created() {},
-  mounted() {},
+  mounted() {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start()
+      setTimeout(() => this.$nuxt.$loading.finish(), 500)
+    })
+  },
   watch: {
     lenght: function(val) {
       if (val < 10) {

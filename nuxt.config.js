@@ -85,9 +85,9 @@ export default {
     Allow: '/'
   },
   auth: {
-    router: {
-      middleware: ['auth']
-    },
+    // router: {
+    //   middleware: ['auth']
+    // },
     strategies: {
       facebook: {
         scope: ['openid', 'profile', 'email'],
