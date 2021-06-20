@@ -124,12 +124,7 @@
             </v-list-item-content>
           </v-list-item>
 
-          <v-list-item
-            to="/dashboard"
-            v-for="(item, i) in navlist"
-            :key="i"
-            :to="item.link"
-          >
+          <v-list-item v-for="(item, i) in navlist" :key="i" :to="item.link">
             <v-list-item-action>
               <v-icon> {{ item.icons }}</v-icon>
             </v-list-item-action>

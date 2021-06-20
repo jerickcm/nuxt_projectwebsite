@@ -117,36 +117,7 @@
       </v-sheet>
 
       <v-spacer></v-spacer>
-
-      <div>
-        <v-btn
-          plain
-          text
-          tile
-          rounded
-          class="black lighten-2 pa-1 ma-1 mr-10 white--text"
-        >
-          &copy; {{ new Date().getFullYear() }}
-        </v-btn>
-        <v-btn
-          to="/about"
-          plain
-          text
-          tile
-          rounded
-          class="black lighten-2 white--text"
-          ><v-icon>mdi-information-variant</v-icon> ABOUT</v-btn
-        >
-        <v-btn
-          to="/contact-us"
-          plain
-          text
-          tile
-          rounded
-          class="black lighten-2 white--text"
-          ><v-icon>mdi-human-greeting-proximity</v-icon>CONTACT US</v-btn
-        >
-      </div>
+      <FooterNav />
       <v-spacer></v-spacer>
 
       <v-sheet

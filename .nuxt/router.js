@@ -13,11 +13,13 @@ const _3f3cab77 = () => interopDefault(import('..\\pages\\login.vue' /* webpackC
 const _152c6828 = () => interopDefault(import('..\\pages\\logout.vue' /* webpackChunkName: "pages/logout" */))
 const _34b6c0a6 = () => interopDefault(import('..\\pages\\news\\index.vue' /* webpackChunkName: "pages/news/index" */))
 const _8caa4080 = () => interopDefault(import('..\\pages\\post\\index.vue' /* webpackChunkName: "pages/post/index" */))
+const _361520f9 = () => interopDefault(import('..\\pages\\privacy-policy.vue' /* webpackChunkName: "pages/privacy-policy" */))
 const _4ab6786b = () => interopDefault(import('..\\pages\\profile\\index.vue' /* webpackChunkName: "pages/profile/index" */))
 const _4bfe4509 = () => interopDefault(import('..\\pages\\quotes\\index.vue' /* webpackChunkName: "pages/quotes/index" */))
 const _98f2b3f6 = () => interopDefault(import('..\\pages\\register.vue' /* webpackChunkName: "pages/register" */))
 const _28f79524 = () => interopDefault(import('..\\pages\\technology.vue' /* webpackChunkName: "pages/technology" */))
 const _41b6ff48 = () => interopDefault(import('..\\pages\\template.vue' /* webpackChunkName: "pages/template" */))
+const _0f035527 = () => interopDefault(import('..\\pages\\terms-of-service.vue' /* webpackChunkName: "pages/terms-of-service" */))
 const _7edce174 = () => interopDefault(import('..\\pages\\test.vue' /* webpackChunkName: "pages/test" */))
 const _79a87be3 = () => interopDefault(import('..\\pages\\tutorials.vue' /* webpackChunkName: "pages/tutorials" */))
 const _8a023ad4 = () => interopDefault(import('..\\pages\\users.vue' /* webpackChunkName: "pages/users" */))
@@ -105,6 +107,10 @@ export const routerOptions = {
     component: _8caa4080,
     name: "post"
   }, {
+    path: "/privacy-policy",
+    component: _361520f9,
+    name: "privacy-policy"
+  }, {
     path: "/profile",
     component: _4ab6786b,
     name: "profile"
@@ -124,6 +130,10 @@ export const routerOptions = {
     path: "/template",
     component: _41b6ff48,
     name: "template"
+  }, {
+    path: "/terms-of-service",
+    component: _0f035527,
+    name: "terms-of-service"
   }, {
     path: "/test",
     component: _7edce174,

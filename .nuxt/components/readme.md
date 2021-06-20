@@ -11,6 +11,7 @@ You can directly use them in pages and other components without the need to impo
 - `<Dashboard>` | `<dashboard>` (components/Dashboard.vue)
 - `<DashTitle>` | `<dash-title>` (components/DashTitle.vue)
 - `<EventCard>` | `<event-card>` (components/EventCard.vue)
+- `<FooterNav>` | `<footer-nav>` (components/FooterNav.vue)
 - `<Nav>` | `<nav>` (components/Nav.vue)
 - `<NewsCard>` | `<news-card>` (components/NewsCard.vue)
 - `<PostCard>` | `<post-card>` (components/PostCard.vue)

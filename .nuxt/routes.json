@@ -72,6 +72,14 @@
     "_name": "_8caa4080"
   },
   {
+    "name": "privacy-policy",
+    "path": "/privacy-policy",
+    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\privacy-policy.vue",
+    "chunkName": "pages/privacy-policy",
+    "url": "/privacy-policy",
+    "_name": "_361520f9"
+  },
+  {
     "name": "profile",
     "path": "/profile",
     "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\profile\\\\index.vue",
@@ -110,6 +118,14 @@
     "chunkName": "pages/template",
     "url": "/template",
     "_name": "_41b6ff48"
+  },
+  {
+    "name": "terms-of-service",
+    "path": "/terms-of-service",
+    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\terms-of-service.vue",
+    "chunkName": "pages/terms-of-service",
+    "url": "/terms-of-service",
+    "_name": "_0f035527"
   },
   {
     "name": "test",
