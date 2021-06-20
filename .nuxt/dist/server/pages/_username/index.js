@@ -37,12 +37,12 @@ const VCardTitle = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__[/* createSi
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/_username/index.vue?vue&type=template&id=6c565be6&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-container',[_c('v-row',[_c('v-col',[_c('h1',[_vm._v("Profile Username : "+_vm._s(_vm.username))])])],1),_vm._v(" "),_c('v-row',[_c('v-col',[_c('v-card',[_c('v-img',{attrs:{"src":_vm.profile['details'].cover_photo}}),_vm._v(" "),_c('v-img',{attrs:{"src":_vm.profile['details'].profile_picture}}),_vm._v(" "),_c('v-card-text',[_c('span',{staticClass:"fs-1-5"},[_vm._v(_vm._s(_vm.profile.name))]),_c('br'),_vm._v(" "),_c('span',{staticClass:"fs-1-5"},[_c('span',{staticClass:"font-Bonida"},[_vm._v(_vm._s(_vm.allibataname))])]),_c('br'),_vm._v(" "),_c('span',[_vm._v("Username: "+_vm._s(_vm.username))]),_c('br'),_vm._v(" "),_c('span',[_vm._v("Email: "+_vm._s(_vm.profile.email))]),_c('br'),_vm._v(" "),_c('span',[_vm._v(" Address No: "+_vm._s(_vm.profile['details'].house_number)+" ")]),_vm._v(" "),_c('br'),_vm._v(" "),_c('span',[_vm._v(" Address street: "+_vm._s(_vm.profile['details'].street)+" ")]),_vm._v(" "),_c('br'),_vm._v(" "),_c('span',[_vm._v(" Address City: "+_vm._s(_vm.profile['details'].city)+" ")]),_vm._v(" "),_c('br'),_vm._v(" "),_c('span',[_vm._v(" Address province: "+_vm._s(_vm.profile['details'].province)+" ")]),_vm._v(" "),_c('br'),_vm._v(" "),_c('span',[_vm._v(" Address country: "+_vm._s(_vm.profile['details'].country)+" ")]),_vm._v(" "),_c('br')])],1)],1)],1)],1)}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/_username/index.vue?vue&type=template&id=dc145004&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-container',[_c('v-row',[_c('v-col',[_c('h1',[_vm._v("Profile Username : "+_vm._s(_vm.username))])])],1),_vm._v(" "),_c('v-row',[_c('v-col',[_c('v-card',[(_vm.profile['details'].cover_photo)?_c('v-img',{attrs:{"src":_vm.profile['details'].cover_photo}}):_vm._e(),_vm._v(" "),(_vm.profile['details'].profile_picture)?_c('v-img',{attrs:{"src":_vm.profile['details'].profile_picture}}):_vm._e(),_vm._v(" "),_c('v-card-text',[_c('span',{staticClass:"fs-1-5"},[_vm._v(_vm._s(_vm.profile.name))]),_c('br'),_vm._v(" "),_c('span',{staticClass:"fs-1-5"},[_c('span',{staticClass:"font-Bonida"},[_vm._v(_vm._s(_vm.allibataname))])]),_c('br'),_vm._v(" "),(_vm.username)?_c('span',[_vm._v("Username: "+_vm._s(_vm.username))]):_vm._e(),_c('br'),_vm._v(" "),(_vm.profile.email)?_c('span',[_vm._v("Email: "+_vm._s(_vm.profile.email))]):_vm._e(),_c('br'),_vm._v(" "),(_vm.profile['details'].house_number)?_c('span',[_vm._v(" Address No: "+_vm._s(_vm.profile['details'].house_number)+" ")]):_vm._e(),_vm._v(" "),_c('br'),_vm._v(" "),(_vm.profile['details'].street)?_c('span',[_vm._v(" Address street: "+_vm._s(_vm.profile['details'].street)+" ")]):_vm._e(),_vm._v(" "),_c('br'),_vm._v(" "),(_vm.profile['details'].city)?_c('span',[_vm._v(" Address City: "+_vm._s(_vm.profile['details'].city)+" ")]):_vm._e(),_vm._v(" "),_c('br'),_vm._v(" "),(_vm.profile['details'].province)?_c('span',[_vm._v(" Address province: "+_vm._s(_vm.profile['details'].province)+" ")]):_vm._e(),_vm._v(" "),_c('br'),_vm._v(" "),(_vm.profile['details'].country)?_c('span',[_vm._v(" Address country: "+_vm._s(_vm.profile['details'].country)+" ")]):_vm._e(),_vm._v(" "),_c('br')])],1)],1)],1)],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./pages/_username/index.vue?vue&type=template&id=6c565be6&
+// CONCATENATED MODULE: ./pages/_username/index.vue?vue&type=template&id=dc145004&
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/_username/index.vue?vue&type=script&lang=js&
 //
@@ -102,7 +102,6 @@ var staticRenderFns = []
   data() {
     return {
       loading: false,
-      // allibataname: 'asdasd',
       profile: [],
       pp: 'test'
     };

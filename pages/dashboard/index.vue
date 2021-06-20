@@ -102,7 +102,9 @@ export default {
         payload.append('social', this.$auth.state['strategy'])
       }
 
-      let response = await this.$axios.$post(`api/validate/account`, payload)
+      let response = await this.$axios.$post(`api/validate/account`, payload)                
+      let merged = { ...this.$auth.user,...response.user};                  
+      this.$auth.setUser(merged)
       return { profile: response.data }
     }
   }
