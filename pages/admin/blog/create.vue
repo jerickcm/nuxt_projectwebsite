@@ -48,6 +48,34 @@
           >
         </v-row>
         <v-row>
+          <v-col cols="12">
+            <v-combobox
+              v-model="tags"
+              :items="items"
+              label="Tags"
+              multiple
+              chips
+            >
+              <template v-slot:selection="data">
+                <v-chip
+                  :key="JSON.stringify(data.item)"
+                  v-bind="data.attrs"
+                  :input-value="data.selected"
+                  :disabled="data.disabled"
+                  @click:close="data.parent.selectItem(data.item)"
+                >
+                  <v-avatar
+                    class="accent white--text"
+                    left
+                    v-text="data.item.slice(0, 1).toUpperCase()"
+                  ></v-avatar>
+                  {{ data.item }}
+                </v-chip>
+              </template>
+            </v-combobox>
+          </v-col>
+        </v-row>
+        <v-row>
           <v-col lg="4">
             <input
               type="file"
@@ -122,10 +150,13 @@ var timezone = process.env.TIMEZONE
 
 export default {
   head: () => ({
-    title: 'Create Post'
+    title: 'Create Post',
   }),
   mixins: [validationMixin, admin],
   data: () => ({
+    tags: [],
+    items: [],
+
     image_id: '',
     url_backend: '',
     form_content: '',
@@ -135,26 +166,36 @@ export default {
     publishselection: [
       {
         value: 1,
-        text: 'Draft'
+        text: 'Draft',
       },
       {
         value: 2,
-        text: 'Publish'
-      }
+        text: 'Publish',
+      },
     ],
     image: '',
     image_preview: '',
-    image_name: ''
+    image_name: '',
   }),
 
   validations: {
     form_content: { required },
     form_title: { required },
-    form_publish: { required }
+    form_publish: { required },
   },
   components: {
     'ckeditor-nuxt': () =>
-      import('@engrjerickcmangalus/ckeditor-nuxt-custom-build-simpleuploader')
+      import('@engrjerickcmangalus/ckeditor-nuxt-custom-build-simpleuploader'),
+  },
+  async mounted() {
+
+  },
+  async fetch() {
+   await this.$axios.$get('/sanctum/csrf-cookie')
+    let response = await this.$axios.$get('admin/blog/tags/data')
+    for (const [key, value] of Object.entries(response.data)) {
+      this.items = [...this.items,value.name]
+    }
   },
   async created() {
     this.timezone = timezone
@@ -167,9 +208,9 @@ export default {
           Accept: 'application/json',
           Timezone: this.timezone,
           identifier: this.image_id,
-          'X-XSRF-TOKEN': this.$auth.$storage.getCookies()['XSRF-TOKEN']
-        }
-      }
+          'X-XSRF-TOKEN': this.$auth.$storage.getCookies()['XSRF-TOKEN'],
+        },
+      },
     }
 
     await this.$axios.$get('/sanctum/csrf-cookie')
@@ -186,7 +227,7 @@ export default {
       if (!this.$v.form_content.$dirty) return errors
       !this.$v.form_content.required && errors.push('Content is required.')
       return errors
-    }
+    },
   },
   methods: {
     handleFileUpload(e) {
@@ -208,6 +249,7 @@ export default {
       return false
     },
     onSubmit() {
+        // console.log(this.tags)
       if (this.form_title && this.form_content && this.form_publish) {
         this.$axios.$get('/sanctum/csrf-cookie')
         this.$toast.success('Sending')
@@ -218,6 +260,8 @@ export default {
         )
 
         let payload = new FormData()
+
+        payload.append('tags', this.tags)
         payload.append('ckeditor_log', this.image_id)
         payload.append('publish', this.form_publish)
         payload.append('title', this.form_title)
@@ -225,24 +269,24 @@ export default {
         payload.append('image', this.image)
         payload.append('image_name', this.image_name)
         this.$axios
-          .post('/api/blog/create', payload, {
+          .post('/admin/blog/create', payload, {
             headers: {
-              'Content-Type': 'multipart/form-data'
-            }
+              'Content-Type': 'multipart/form-data',
+            },
           })
-          .then(res => {
+          .then((res) => {
             this.$toast.success('Done.')
             // redirect('/dashboard')
           })
-          .catch(error => {
+          .catch((error) => {
             // this.$toast.success('Error.')
           })
           .finally(() => {})
       } else {
         this.$toast.error('Validation failed.')
       }
-    }
-  }
+    },
+  },
 }
 </script>
 <style scoped>

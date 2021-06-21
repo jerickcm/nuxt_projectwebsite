@@ -103,38 +103,12 @@
     </v-navigation-drawer>
 
     <v-footer :absolute="!fixed" app class="black lighten-4">
-      <v-sheet
-        class="black pa-1 ma-1"
-        :class="{
-          'd-none': $vuetify.breakpoint.smAndDown,
-          '': $vuetify.breakpoint.mdAndUp
-        }"
-      >
-        <label for="" class="grey--text fs-0-6">DNS by:</label>
-        <a href="https://domains.google/">
-          <v-img width="90px" src="/images/google domain.svg"></v-img>
-        </a>
-      </v-sheet>
 
-      <v-spacer></v-spacer>
+
       <FooterNav />
-      <v-spacer></v-spacer>
 
-      <v-sheet
-        class="black pa-1 ma-1"
-        :class="{
-          'd-none': $vuetify.breakpoint.smAndDown,
-          '': $vuetify.breakpoint.mdAndUp
-        }"
-      >
-        <label for="" class="grey--text fs-0-6">Secured by:</label>
-        <a href="https://letsencrypt.org/">
-          <v-img
-            width="90px"
-            src="/images/letsencrypt-logo-horizontal.svg"
-          ></v-img>
-        </a>
-      </v-sheet>
+
+
     </v-footer>
   </v-app>
 </template>

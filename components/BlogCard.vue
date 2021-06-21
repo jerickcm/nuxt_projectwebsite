@@ -24,7 +24,7 @@
           <nuxt-link
             class="nuxtlink"
             :to="{
-              path: 'blog/' + item.slug
+              path: 'blog/' + item.slug,
             }"
           >
             <v-img height="250" :src="item.image"> </v-img>
@@ -34,12 +34,21 @@
             <nuxt-link
               class="nuxtlink"
               :to="{
-                path: 'blog/' + item.slug
+                path: 'blog/' + item.slug,
               }"
               >Title : {{ item.title }}
             </nuxt-link>
           </v-card-title>
           <v-card-text class="">
+            <v-chip-group
+              v-model="selection"
+              active-class="deep-purple accent-4 white--text"
+              column
+
+            >
+                  <!-- :to="`/blogs/category/${itm}`" -->
+                 Tags:<v-chip  v-for="(itm, index) in item.tags" :key="index" color="blue" class="white--text">{{itm}}</v-chip>
+            </v-chip-group>
             <span>Author: {{ item.name }} </span><br />
             <span>Date : {{ item.human_date }}</span
             ><br />
@@ -109,15 +118,17 @@
 <script>
 export default {
   props: ['content', 'length', 'loading'],
-  data: () => ({}),
+  data: () => ({
+    selection:''
+  }),
   async created() {},
   mounted() {},
   computed: {},
   methods: {
     getnextarticle() {
       this.$emit('next-article')
-    }
-  }
+    },
+  },
 }
 </script>
 <style scoped>
