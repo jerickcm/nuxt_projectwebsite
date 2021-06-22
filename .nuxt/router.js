@@ -22,6 +22,7 @@ const _28f79524 = () => interopDefault(import('..\\pages\\technology.vue' /* web
 const _41b6ff48 = () => interopDefault(import('..\\pages\\template.vue' /* webpackChunkName: "pages/template" */))
 const _0f035527 = () => interopDefault(import('..\\pages\\terms-of-service.vue' /* webpackChunkName: "pages/terms-of-service" */))
 const _7edce174 = () => interopDefault(import('..\\pages\\test.vue' /* webpackChunkName: "pages/test" */))
+const _47655a2f = () => interopDefault(import('..\\pages\\time.vue' /* webpackChunkName: "pages/time" */))
 const _79a87be3 = () => interopDefault(import('..\\pages\\tutorials.vue' /* webpackChunkName: "pages/tutorials" */))
 const _8a023ad4 = () => interopDefault(import('..\\pages\\users.vue' /* webpackChunkName: "pages/users" */))
 const _d27b53a4 = () => interopDefault(import('..\\pages\\world-reminders\\index.vue' /* webpackChunkName: "pages/world-reminders/index" */))
@@ -145,6 +146,10 @@ export const routerOptions = {
     path: "/test",
     component: _7edce174,
     name: "test"
+  }, {
+    path: "/time",
+    component: _47655a2f,
+    name: "time"
   }, {
     path: "/tutorials",
     component: _79a87be3,

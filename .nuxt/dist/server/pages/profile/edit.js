@@ -171,13 +171,13 @@ exports.modules = {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return usernames; });
 const usernames = {
   data: () => ({
-    reservedval: ['admin', 'blog', 'codesnippet', 'dash', 'dashboard', 'news', 'post', 'profile', 'quotes', 'technology', 'tutorial', 'world-reminders', 'about', 'contact-us', 'index', 'login', 'logout', 'register', 'template', 'test', 'tutorials', 'users', 'final']
+    reservedval: ['admin', 'blog', 'codesnippet', 'dash', 'dashboard', 'news', 'post', 'profile', 'quotes', 'technology', 'tutorial', 'world-reminders', 'about', 'contact-us', 'index', 'login', 'logout', 'register', 'template', 'test', 'tutorials', 'users', 'final', 'time']
   })
 };
 
 /***/ }),
 
-/***/ 504:
+/***/ 505:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

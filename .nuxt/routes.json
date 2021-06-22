@@ -144,6 +144,14 @@
     "_name": "_7edce174"
   },
   {
+    "name": "time",
+    "path": "/time",
+    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\time.vue",
+    "chunkName": "pages/time",
+    "url": "/time",
+    "_name": "_47655a2f"
+  },
+  {
     "name": "tutorials",
     "path": "/tutorials",
     "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\tutorials.vue",

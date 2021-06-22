@@ -23,7 +23,8 @@ export const usernames = {
       'test',
       'tutorials',
       'users',
-      'final'
+      'final',
+      'time'
     ]
   })
 }
