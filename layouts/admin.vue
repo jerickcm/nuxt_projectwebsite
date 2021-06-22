@@ -79,7 +79,7 @@
     <v-main
       :class="{
         'padb-35': $vuetify.breakpoint.smAndDown,
-        'padb-30': $vuetify.breakpoint.mdAndUp,
+        'padb-30': $vuetify.breakpoint.mdAndUp
       }"
     >
       <nuxt />
@@ -96,7 +96,7 @@
         class="black pa-1 ma-1"
         :class="{
           'd-none': $vuetify.breakpoint.smAndDown,
-          '': $vuetify.breakpoint.mdAndUp,
+          '': $vuetify.breakpoint.mdAndUp
         }"
       >
         >
@@ -143,7 +143,7 @@
         class="black pa-1 ma-1"
         :class="{
           'd-none': $vuetify.breakpoint.smAndDown,
-          '': $vuetify.breakpoint.mdAndUp,
+          '': $vuetify.breakpoint.mdAndUp
         }"
       >
         >
@@ -167,7 +167,7 @@ import { navlist } from '~/mixins/admin_navlist.js'
 export default {
   head: () => ({
     titleTemplate: '%s - Project Website',
-    meta: [{ hid: 'description', name: 'description', content: 'Content' }],
+    meta: [{ hid: 'description', name: 'description', content: 'Content' }]
   }),
   mixins: [greetMixins, navlist],
   data: () => ({
@@ -179,7 +179,7 @@ export default {
       { label: 'Login', link: 'login' },
       { label: 'Register', link: 'register' },
       { label: 'about', link: 'about' },
-      { label: 'contact', link: 'contact' },
+      { label: 'contact', link: 'contact' }
     ],
     value: 'recent',
     clipped: false,
@@ -191,16 +191,43 @@ export default {
       {
         icon: 'mdi-home-import-outline',
         title: 'Home',
-        to: '/',
-      },
+        to: '/'
+      }
     ],
     right: false,
     left: true,
     leftDrawer: false,
     rightDrawer: false,
-    title: 'Project Website',
+    title: 'Project Website'
   }),
+  // async created() {
+  //   await this.$axios.$get('/sanctum/csrf-cookie')
 
+  //   if (this.$auth.state['strategy'] == 'laravelSanctum') {
+  //   } else {
+  //     let payload = new FormData()
+  //     if (this.$auth.state['strategy'] == 'google') {
+  //       payload.append('email', this.$auth.state['user'].email)
+  //       payload.append('name', this.$auth.state['user'].name)
+  //       payload.append('id', this.$auth.state['user'].sub)
+  //       payload.append('social', this.$auth.state['strategy'])
+  //     } else if (this.$auth.state['strategy'] == 'github') {
+  //       payload.append('email', this.$auth.state['user'].email)
+  //       payload.append('name', this.$auth.state['user'].login)
+  //       payload.append('id', this.$auth.state['user'].id)
+  //     } else if (this.$auth.state['strategy'] == 'facebook') {
+  //       payload.append('email', this.$auth.state['user'].email)
+  //       payload.append('name', this.$auth.state['user'].name)
+  //       payload.append('id', this.$auth.state['user'].id)
+  //       payload.append('social', this.$auth.state['strategy'])
+  //     }
+
+  //     let response = await this.$axios.$post(`api/validate/account`, payload)
+  //     let merged = { ...this.$auth.user, ...response.user }
+  //     this.$auth.setUser(merged)
+  //     return { profile: response.data }
+  //   }
+  // },
   computed: {},
 
   methods: {
@@ -225,9 +252,9 @@ export default {
         NProgress.done()
         console.log(error)
       }
-    },
+    }
   },
-  async created() {},
+  async created() {}
 }
 </script>
 <style>

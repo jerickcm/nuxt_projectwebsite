@@ -150,7 +150,7 @@ var timezone = process.env.TIMEZONE
 
 export default {
   head: () => ({
-    title: 'Create Post',
+    title: 'Create Post'
   }),
   mixins: [validationMixin, admin],
   data: () => ({
@@ -166,35 +166,33 @@ export default {
     publishselection: [
       {
         value: 1,
-        text: 'Draft',
+        text: 'Draft'
       },
       {
         value: 2,
-        text: 'Publish',
-      },
+        text: 'Publish'
+      }
     ],
     image: '',
     image_preview: '',
-    image_name: '',
+    image_name: ''
   }),
 
   validations: {
     form_content: { required },
     form_title: { required },
-    form_publish: { required },
+    form_publish: { required }
   },
   components: {
     'ckeditor-nuxt': () =>
-      import('@engrjerickcmangalus/ckeditor-nuxt-custom-build-simpleuploader'),
+      import('@engrjerickcmangalus/ckeditor-nuxt-custom-build-simpleuploader')
   },
-  async mounted() {
-
-  },
+  async mounted() {},
   async fetch() {
-   await this.$axios.$get('/sanctum/csrf-cookie')
+    await this.$axios.$get('/sanctum/csrf-cookie')
     let response = await this.$axios.$get('admin/blog/tags/data')
     for (const [key, value] of Object.entries(response.data)) {
-      this.items = [...this.items,value.name]
+      this.items = [...this.items, value.name]
     }
   },
   async created() {
@@ -208,9 +206,9 @@ export default {
           Accept: 'application/json',
           Timezone: this.timezone,
           identifier: this.image_id,
-          'X-XSRF-TOKEN': this.$auth.$storage.getCookies()['XSRF-TOKEN'],
-        },
-      },
+          'X-XSRF-TOKEN': this.$auth.$storage.getCookies()['XSRF-TOKEN']
+        }
+      }
     }
 
     await this.$axios.$get('/sanctum/csrf-cookie')
@@ -227,7 +225,7 @@ export default {
       if (!this.$v.form_content.$dirty) return errors
       !this.$v.form_content.required && errors.push('Content is required.')
       return errors
-    },
+    }
   },
   methods: {
     handleFileUpload(e) {
@@ -249,7 +247,7 @@ export default {
       return false
     },
     onSubmit() {
-        // console.log(this.tags)
+      // console.log(this.tags)
       if (this.form_title && this.form_content && this.form_publish) {
         this.$axios.$get('/sanctum/csrf-cookie')
         this.$toast.success('Sending')
@@ -271,22 +269,23 @@ export default {
         this.$axios
           .post('/admin/blog/create', payload, {
             headers: {
-              'Content-Type': 'multipart/form-data',
-            },
+              'Content-Type': 'multipart/form-data'
+            }
           })
-          .then((res) => {
+          .then(res => {
             this.$toast.success('Done.')
+            this.$fetch()
             // redirect('/dashboard')
           })
-          .catch((error) => {
+          .catch(error => {
             // this.$toast.success('Error.')
           })
           .finally(() => {})
       } else {
         this.$toast.error('Validation failed.')
       }
-    },
-  },
+    }
+  }
 }
 </script>
 <style scoped>

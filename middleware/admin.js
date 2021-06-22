@@ -1,10 +1,10 @@
-export default({app,redirect}) => {
-  if(app.$auth.loggedIn){
-    if(app.$auth.$state.user['is_admin']){
-    }else{
-      return redirect('/');
+export default ({ app, redirect }) => {
+  if (app.$auth.loggedIn) {
+    if (app.$auth.$state.user['is_admin']) {
+    } else {
+      return redirect('/dashboard')
     }
-  }else{
-    return redirect('/');
+  } else {
+    return redirect('/')
   }
 }
