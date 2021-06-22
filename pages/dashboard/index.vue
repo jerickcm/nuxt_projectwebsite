@@ -74,13 +74,13 @@ export default {
     title: 'Dashboard'
   }),
   data: () => ({}),
-  async asyncData({ $axios, error, params, $auth }) {},
   computed: {
     email() {
       return this.$auth.state['user'].email
     }
   },
   async created() {
+  // async fetch() {
     await this.$axios.$get('/sanctum/csrf-cookie')
 
     if (this.$auth.state['strategy'] == 'laravelSanctum') {

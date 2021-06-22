@@ -1,7 +1,7 @@
 exports.ids = [59];
 exports.modules = {
 
-/***/ 479:
+/***/ 483:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -143,14 +143,14 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./pages/terms-of-service.vue?vue&type=script&lang=js&
  /* harmony default export */ var pages_terms_of_servicevue_type_script_lang_js_ = (terms_of_servicevue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(10);
+var componentNormalizer = __webpack_require__(11);
 
 // EXTERNAL MODULE: ./node_modules/vuetify-loader/lib/runtime/installComponents.js
-var installComponents = __webpack_require__(11);
+var installComponents = __webpack_require__(10);
 var installComponents_default = /*#__PURE__*/__webpack_require__.n(installComponents);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VContainer.js
-var VContainer = __webpack_require__(221);
+var VContainer = __webpack_require__(225);
 
 // CONCATENATED MODULE: ./pages/terms-of-service.vue
 
@@ -167,7 +167,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "2bddc378"
+  "bdc0c604"
   
 )
 

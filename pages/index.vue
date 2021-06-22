@@ -107,12 +107,12 @@
 
     <v-row>
       <v-col xs="12" sm="12" lg="12" class="ma-0 pa-0">
-        <v-sheet class="grey lighten-1" elevation="2" min-height="30vh">
+        <v-sheet color="background" class="" elevation="2" min-height="30vh">
           <v-container class="">
             <v-row no-gutters>
               <v-col cols="12" sm="12" lg="12" class="pa-1 ma-1">
                 <p
-                  class="fs-1-1 text-justify white--text fs-1-8 font-barlowreg"
+                  class="fs-1-1 text-justify fs-1-8 font-barlowreg"
                 >
                   The inspiration of this website build is to expand my
                   knowledge base , in web development. Secondly I am planning to
@@ -145,7 +145,7 @@
     </v-row>
     <v-row>
       <v-col xs="12" sm="12" lg="12" class="ma-0 pa-0">
-        <v-sheet class="white lighten-5" elevation="2" min-height="10vh">
+        <v-sheet class="" elevation="2" min-height="10vh">
           <v-container class="">
             <v-row>
               <v-col cols="12" sm="12" lg="12">
@@ -219,15 +219,6 @@ export default {
     }
   }
 
-  // transition: {
-  //   afterLeave(el) {
-  //     console.log('afterLeave', el)
-  //     this.$nextTick(() => {
-  //       this.$nuxt.$loading.start()
-  //       setTimeout(() => this.$nuxt.$loading.finish(), 5000)
-  //     })
-  //   }
-  // }
 }
 </script>
 <style scoped>

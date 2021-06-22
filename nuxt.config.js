@@ -60,8 +60,10 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+  
   ],
+ 
   // router: {
   //   middleware: ['auth']
   // },
@@ -164,8 +166,16 @@ export default {
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
-          success: colors.green.accent3
-        }
+          success: colors.green.accent3,
+          background: colors.grey.darken3
+        },
+        light: {
+          primary: colors.purple,
+          secondary: colors.grey.darken1,
+          accent: colors.shades.black,
+          error: colors.red.accent3,          
+          background: colors.indigo.lighten5
+        },
       }
     }
   },

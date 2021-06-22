@@ -87,7 +87,8 @@
             @change="getDataFromApi"
           ></v-text-field>
           <v-spacer></v-spacer>
-          <v-btn color="primary" to="/admin/users/create">Create</v-btn>
+          <v-btn class="mr-1" color="primary" to="/admin/users/create">Create</v-btn> 
+          <v-btn @click="download" color="info" >Download</v-btn>
         </v-card-title>
         <v-data-table
           :headers="headers"
@@ -225,6 +226,7 @@ export default {
   },
   async created() {
     this.timezone = timezone
+    this.url = url;
     this.editorConfig = {
       simpleUpload: {
         uploadUrl: url + '/' + 'api/ckeditor',
@@ -274,6 +276,10 @@ export default {
     this.getDataFromApi()
   },
   methods: {
+    download () {
+        const url = this.url +'/export1';
+        window.location.href = url;
+    },
     handleFileUpload(e) {
       const file = this.$refs.file.files[0]
       this.image_preview = URL.createObjectURL(file)

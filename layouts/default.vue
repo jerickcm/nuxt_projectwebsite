@@ -1,8 +1,8 @@
 <template>
   <v-app dark>
-    <v-app-bar fixed app class="white">
+    <v-app-bar fixed app >
       <v-sheet
-        color="white"
+       
         class="hidden-md-and-up font-kalamreg hand"
         @click.stop="rightDrawer = !rightDrawer"
       >
@@ -27,7 +27,7 @@
           text
           tile
           rounded
-          class="white pa-1 ma-1"
+          class=" pa-1 ma-1"
         >
           <v-icon>{{ item.icons }}</v-icon> {{ item.label }}
         </v-btn>
@@ -40,7 +40,7 @@
           text
           tile
           rounded
-          class="white pa-1 ma-1"
+          class=" pa-1 ma-1"
           to="/admin"
         >
           <v-icon>mdi-account-tie</v-icon>
@@ -53,7 +53,7 @@
           text
           tile
           rounded
-          class="white pa-1 ma-1"
+          class=" pa-1 ma-1"
           to="/dashboard"
         >
           <v-icon>mdi-monitor-dashboard</v-icon>
@@ -67,7 +67,7 @@
           text
           tile
           rounded
-          class="white pa-1 ma-1"
+          class=" pa-1 ma-1"
         >
           <v-icon>mdi-logout</v-icon>
           Logout</v-btn
@@ -79,19 +79,17 @@
           plain
           tile
           rounded
-          class="white pa-1 ma-1"
+          class=" pa-1 ma-1"
         >
           <v-icon>mdi-logout</v-icon>
           Login</v-btn
         >
       </div>
       <v-spacer />
-    </v-app-bar>
+    </v-app-bar>  
+
     <v-main
-      :class="{
-        'padb-35': $vuetify.breakpoint.smAndDown,
-        'padb-30': $vuetify.breakpoint.mdAndUp
-      }"
+     
     >
       <nuxt />
     </v-main>
@@ -102,7 +100,7 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-footer :absolute="!fixed" app class="black lighten-4">
+    <v-footer :absolute="!fixed" app class=" ">
       <FooterNav />
     </v-footer>
   </v-app>

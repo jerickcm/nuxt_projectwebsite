@@ -1,7 +1,7 @@
 exports.ids = [61];
 exports.modules = {
 
-/***/ 481:
+/***/ 485:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -46,7 +46,7 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./pages/time.vue?vue&type=script&lang=js&
  /* harmony default export */ var pages_timevue_type_script_lang_js_ = (timevue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(10);
+var componentNormalizer = __webpack_require__(11);
 
 // CONCATENATED MODULE: ./pages/time.vue
 
@@ -63,7 +63,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "63840c00"
+  "44856c86"
   
 )
 
