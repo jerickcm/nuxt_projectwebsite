@@ -103,12 +103,7 @@
     </v-navigation-drawer>
 
     <v-footer :absolute="!fixed" app class="black lighten-4">
-
-
       <FooterNav />
-
-
-
     </v-footer>
   </v-app>
 </template>

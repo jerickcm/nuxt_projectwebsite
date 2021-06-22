@@ -17,7 +17,7 @@
           type="card"
           v-if="pageload"
         ></v-skeleton-loader>
-        <v-card v-else outlined shaped tile class="pa-1 ma-1">
+        <v-sheet v-else shaped tile class="pa-1 ma-1">
           <h1 class="blue--text">{{ posts['title'] }}</h1>
 
           <v-img height="250" :src="posts['image']"> </v-img>
@@ -30,14 +30,9 @@
             ><br />
             <span>Date : {{ posts['human_date'] }}</span>
 
-            <v-sheet
-              color="grey lighten-5"
-              outlined
-              v-html="posts['content']"
-              class="ck-content pa-0 ma-1 pt-2 pb-2"
-            ></v-sheet>
+            <v-sheet v-html="posts['content']" class="ck-content"></v-sheet>
           </v-card-text>
-        </v-card>
+        </v-sheet>
       </v-col>
     </v-row>
   </v-container>
@@ -54,9 +49,9 @@ export default {
         {
           hid: 'News',
           name: 'News',
-          content: 'News'+ this.title
-        },
-      ],
+          content: 'News' + this.title
+        }
+      ]
     }
   },
   data: () => ({
@@ -64,10 +59,10 @@ export default {
       content: [],
       image: '',
       date: '',
-      author: '',
+      author: ''
     },
     title: '',
-    pageload: true,
+    pageload: true
   }),
   mounted() {
     console.log('mounted')
@@ -77,15 +72,12 @@ export default {
     let response = await $axios.$get(`api/news/${params.id}`)
     return {
       posts: response.data[0],
-      pageload:false,
+      pageload: false,
       slug: params.slug,
-      title:response.data[0].title
+      title: response.data[0].title
     }
-
   },
-  async created() {
-
-  },
+  async created() {},
   computed: {
     id() {
       return this.$route.params.id
@@ -93,7 +85,7 @@ export default {
   },
   components: {},
   watch: {},
-  methods: {},
+  methods: {}
 }
 </script>
 <style scoped>

@@ -17,7 +17,7 @@
           type="card"
           v-if="pageload"
         ></v-skeleton-loader>
-        <v-card v-else outlined shaped tile class="pa-1 ma-1" >
+        <v-sheet v-else shaped tile class="pa-1 ma-1">
           <h1 class="blue--text">{{ posts['title'] }}</h1>
 
           <v-img height="250" :src="posts['image']"> </v-img>
@@ -30,14 +30,9 @@
             ><br />
             <span>Date : {{ posts['human_date'] }}</span>
 
-            <v-sheet
-              color="grey lighten-5"
-              outlined
-              v-html="posts['content']"
-              class="ck-content pa-0 ma-1 pt-2 pb-2"
-            ></v-sheet>
+            <v-sheet v-html="posts['content']" class="ck-content"></v-sheet>
           </v-card-text>
-        </v-card>
+        </v-sheet>
       </v-col>
     </v-row>
   </v-container>
@@ -54,9 +49,9 @@ export default {
         {
           hid: 'Blog',
           name: 'Blog',
-          content: 'Blog' + this.title,
-        },
-      ],
+          content: 'Blog' + this.title
+        }
+      ]
     }
   },
   data: () => ({
@@ -64,10 +59,10 @@ export default {
       content: [],
       image: '',
       date: '',
-      author: '',
+      author: ''
     },
     title: '',
-    pageload: true,
+    pageload: true
   }),
   async asyncData({ $axios, error, params }) {
     await $axios.$get('/sanctum/csrf-cookie')
@@ -76,18 +71,18 @@ export default {
       posts: response.data[0],
       pageload: false,
       slug: params.slug,
-      title: response.data[0].title,
+      title: response.data[0].title
     }
   },
   computed: {
     id() {
       return this.$route.params.id
-    },
+    }
   },
   mounted() {},
   components: {},
   watch: {},
-  methods: {},
+  methods: {}
 }
 </script>
 
