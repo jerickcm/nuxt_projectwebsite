@@ -1,4 +1,4 @@
-exports.ids = [38];
+exports.ids = [39];
 exports.modules = {
 
 /***/ 263:
@@ -223,7 +223,7 @@ const baseMixins = Object(mixins["a" /* default */])(translatable);
 
 /***/ }),
 
-/***/ 372:
+/***/ 373:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -235,7 +235,7 @@ var VAlert = __webpack_require__(278);
 var VSheet = __webpack_require__(21);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VBtn/index.js
-var VBtn = __webpack_require__(48);
+var VBtn = __webpack_require__(47);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VIcon/index.js
 var VIcon = __webpack_require__(19);
@@ -497,7 +497,18 @@ var console = __webpack_require__(3);
 
 /***/ }),
 
-/***/ 473:
+/***/ 47:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _VBtn__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(212);
+
+
+/* harmony default export */ __webpack_exports__["a"] = (_VBtn__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"]);
+
+/***/ }),
+
+/***/ 476:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -505,7 +516,7 @@ var console = __webpack_require__(3);
 __webpack_require__.r(__webpack_exports__);
 
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/login.vue?vue&type=template&id=d729a5ac&scoped=true&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-container',{staticClass:"ma-0 pa-0",attrs:{"fluid":""}},[_c('v-parallax',{staticClass:"ma-0 pa-0",attrs:{"height":"900","src":"/images/bg1.jpeg"}},[_c('v-row',{attrs:{"center":""}},[_c('v-col',{staticClass:"col-md-6 offset-md-3 pt-10",attrs:{"cols":"12","sm":"6"}},[_c('strong',{staticClass:"ma-2 pa-2 mt-10 pt-10 text-h6"},[_vm._v("Login : ")]),_vm._v(" "),_c('v-card',{staticClass:"ma-2 ",attrs:{"elevation":"2","loading":_vm.loading,"tile":""}},[_c('v-alert',{class:_vm.alert,attrs:{"prominent":"","text":"","type":"error","id":"alert"}},[_vm._v(_vm._s(_vm.error_msg))]),_vm._v(" "),_c('form',{staticClass:"pa-2"},[_c('v-text-field',{staticClass:"ma-2 pa-2",attrs:{"error-messages":_vm.emailErrors,"label":"E-mail","required":""},on:{"input":function($event){return _vm.$v.email.$touch()},"blur":function($event){return _vm.$v.email.$touch()}},model:{value:(_vm.email),callback:function ($$v) {_vm.email=$$v},expression:"email"}}),_vm._v(" "),_c('v-text-field',{staticClass:"ma-2 pa-2",attrs:{"append-icon":_vm.show1 ? 'mdi-eye' : 'mdi-eye-off',"rules":[_vm.rules.required, _vm.rules.min],"type":_vm.show1 ? 'text' : 'password',"error-messages":_vm.passwordErrors,"name":"input-10-1","label":"Password","hint":"At least 6 characters","counter":""},on:{"input":function($event){return _vm.$v.password.$touch()},"blur":function($event){return _vm.$v.password.$touch()},"click:append":function($event){_vm.show1 = !_vm.show1}},model:{value:(_vm.password),callback:function ($$v) {_vm.password=$$v},expression:"password"}}),_vm._v(" "),_c('v-btn',{staticClass:"mr-4 ma-2",attrs:{"depressed":"","color":"primary"},on:{"click":function($event){$event.preventDefault();return _vm.login($event)}}},[_vm._v("\n              Login\n            ")]),_vm._v(" "),_c('v-btn',{staticClass:"mr-4 ma-2 pa-2",attrs:{"depressed":"","color":"primary"},on:{"click":_vm.clear}},[_vm._v("\n              clear\n            ")]),_vm._v(" "),_c('v-btn',{staticClass:"mr-4 ma-2",attrs:{"depressed":"","color":"primary"},on:{"click":function($event){$event.preventDefault();return _vm.loginwithgoogle($event)}}},[_vm._v("\n              Login with ‌ ‌ "),_c('v-icon',[_vm._v("mdi-google")]),_vm._v(" oogle\n            ")],1),_vm._v(" "),_c('v-btn',{staticClass:"mr-4 ma-2",attrs:{"depressed":"","color":"grey"},on:{"click":function($event){$event.preventDefault();return _vm.loginwithgithub($event)}}},[_vm._v("\n              Login with Github\n            ")]),_vm._v(" "),_c('v-btn',{staticClass:"mr-4 ma-2",attrs:{"depressed":"","color":"blue"},on:{"click":function($event){$event.preventDefault();return _vm.loginwithfacebook($event)}}},[_vm._v("\n              Login with Facebook\n            ")])],1)],1)],1)],1)],1)],1)}
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-container',{staticClass:"ma-0 pa-0",attrs:{"fluid":""}},[_c('v-parallax',{staticClass:"ma-0 pa-0",attrs:{"height":"900","src":"/images/bg1.jpeg"}},[_c('v-row',{attrs:{"center":""}},[_c('v-col',{staticClass:"col-md-6 offset-md-3 pt-10",attrs:{"cols":"12","sm":"6"}},[_c('strong',{staticClass:"ma-2 pa-2 mt-10 pt-10 text-h6"},[_vm._v("Login : ")]),_vm._v(" "),_c('v-card',{staticClass:"ma-2 ",attrs:{"elevation":"2","loading":_vm.loading,"tile":""}},[_c('v-alert',{class:_vm.alert,attrs:{"prominent":"","text":"","type":"error","id":"alert"}},[_vm._v(_vm._s(_vm.error_msg))]),_vm._v(" "),_c('form',{staticClass:"pa-2"},[_c('v-text-field',{staticClass:"ma-2 pa-2",attrs:{"error-messages":_vm.emailErrors,"label":"E-mail","required":""},on:{"input":function($event){return _vm.$v.email.$touch()},"blur":function($event){return _vm.$v.email.$touch()}},model:{value:(_vm.email),callback:function ($$v) {_vm.email=$$v},expression:"email"}}),_vm._v(" "),_c('v-text-field',{staticClass:"ma-2 pa-2",attrs:{"append-icon":_vm.show1 ? 'mdi-eye' : 'mdi-eye-off',"rules":[_vm.rules.required, _vm.rules.min],"type":_vm.show1 ? 'text' : 'password',"error-messages":_vm.passwordErrors,"name":"input-10-1","label":"Password","hint":"At least 6 characters","counter":""},on:{"input":function($event){return _vm.$v.password.$touch()},"blur":function($event){return _vm.$v.password.$touch()},"click:append":function($event){_vm.show1 = !_vm.show1}},model:{value:(_vm.password),callback:function ($$v) {_vm.password=$$v},expression:"password"}}),_vm._v(" "),_c('v-btn',{staticClass:"mr-4 ma-2",attrs:{"depressed":"","color":"primary"},on:{"click":function($event){$event.preventDefault();return _vm.login.apply(null, arguments)}}},[_vm._v("\n              Login\n            ")]),_vm._v(" "),_c('v-btn',{staticClass:"mr-4 ma-2 pa-2",attrs:{"depressed":"","color":"primary"},on:{"click":_vm.clear}},[_vm._v("\n              clear\n            ")]),_vm._v(" "),_c('v-btn',{staticClass:"mr-4 ma-2",attrs:{"depressed":"","color":"primary"},on:{"click":function($event){$event.preventDefault();return _vm.loginwithgoogle.apply(null, arguments)}}},[_vm._v("\n              Login with ‌ ‌ "),_c('v-icon',[_vm._v("mdi-google")]),_vm._v(" oogle\n            ")],1),_vm._v(" "),_c('v-btn',{staticClass:"mr-4 ma-2",attrs:{"depressed":"","color":"grey"},on:{"click":function($event){$event.preventDefault();return _vm.loginwithgithub.apply(null, arguments)}}},[_vm._v("\n              Login with Github\n            ")]),_vm._v(" "),_c('v-btn',{staticClass:"mr-4 ma-2",attrs:{"depressed":"","color":"blue"},on:{"click":function($event){$event.preventDefault();return _vm.loginwithfacebook.apply(null, arguments)}}},[_vm._v("\n              Login with Facebook\n            ")])],1)],1)],1)],1)],1)],1)}
 var staticRenderFns = []
 
 
@@ -520,13 +531,13 @@ var external_nprogress_ = __webpack_require__(9);
 var external_nprogress_default = /*#__PURE__*/__webpack_require__.n(external_nprogress_);
 
 // EXTERNAL MODULE: ./node_modules/nprogress/nprogress.css
-var nprogress = __webpack_require__(50);
+var nprogress = __webpack_require__(49);
 
 // EXTERNAL MODULE: external "vuelidate"
 var external_vuelidate_ = __webpack_require__(67);
 
 // EXTERNAL MODULE: external "vuelidate/lib/validators"
-var validators_ = __webpack_require__(41);
+var validators_ = __webpack_require__(40);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/login.vue?vue&type=script&lang=js&
 //
@@ -775,7 +786,7 @@ var installComponents = __webpack_require__(10);
 var installComponents_default = /*#__PURE__*/__webpack_require__.n(installComponents);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VAlert/VAlert.js + 1 modules
-var VAlert = __webpack_require__(372);
+var VAlert = __webpack_require__(373);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VBtn/VBtn.js + 2 modules
 var VBtn = __webpack_require__(212);
@@ -819,7 +830,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "d729a5ac",
-  "33c23800"
+  "d90ff474"
   
 )
 
@@ -838,17 +849,6 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 installComponents_default()(component, {VAlert: VAlert["a" /* default */],VBtn: VBtn["a" /* default */],VCard: VCard["a" /* default */],VCol: VCol["a" /* default */],VContainer: VContainer["a" /* default */],VIcon: VIcon["a" /* default */],VParallax: VParallax["a" /* default */],VRow: VRow["a" /* default */],VTextField: VTextField["a" /* default */]})
 
-
-/***/ }),
-
-/***/ 48:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _VBtn__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(212);
-
-
-/* harmony default export */ __webpack_exports__["a"] = (_VBtn__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"]);
 
 /***/ })
 

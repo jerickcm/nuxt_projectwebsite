@@ -24,22 +24,15 @@
             <v-card-text>
               <v-row>
                 <v-col>
-                  <v-text-field
-                    v-model="form_name"
-                    label="Name"
-                  
-                  ></v-text-field>
-                 
+                  <v-text-field v-model="form_name" label="Name"></v-text-field>
                 </v-col>
               </v-row>
-               <v-row>
+              <v-row>
                 <v-col>
                   <v-text-field
                     v-model="form_username"
                     label="Username"
-
                   ></v-text-field>
-               
                 </v-col>
               </v-row>
               <v-row>
@@ -47,8 +40,9 @@
                   <v-text-field
                     v-model="form_email"
                     label="Email"
-                    readonly disabled
-                  ></v-text-field>           
+                    readonly
+                    disabled
+                  ></v-text-field>
                 </v-col>
               </v-row>
               <v-row>
@@ -59,11 +53,9 @@
                     item-value="value"
                     item-text="text"
                     label="Is admin"
-                    
                   />
-                  </v-col>
+                </v-col>
               </v-row>
-                
             </v-card-text>
 
             <div style="flex: 1 1 auto"></div>
@@ -87,8 +79,12 @@
             @change="getDataFromApi"
           ></v-text-field>
           <v-spacer></v-spacer>
-          <v-btn class="mr-1" color="primary" to="/admin/users/create">Create</v-btn> 
-          <v-btn @click="download" color="info" >Download</v-btn>
+          <v-btn class="mr-1" color="info" to="/admin/users/logs">Logs</v-btn>
+
+          <v-btn class="mr-1" color="primary" to="/admin/users/create"
+            >Create</v-btn
+          >
+          <v-btn @click="download" color="info">Download</v-btn>
         </v-card-title>
         <v-data-table
           :headers="headers"
@@ -127,7 +123,7 @@
           <template v-slot:header.name="{ header }">
             {{ header.text.toUpperCase() }}
           </template>
-        
+
           <template v-slot:item.created_at="{ item }">
             {{ item.created_at }}
           </template>
@@ -136,7 +132,6 @@
               mdi-pencil
             </v-icon>
             <v-icon small @click="deleteItem(item)">
-       
               mdi-delete
             </v-icon>
           </template>
@@ -212,12 +207,10 @@ export default {
     image_preview: '',
     image_name: '',
 
-    form_username : '',
-    form_name : '',
+    form_username: '',
+    form_name: '',
     form_email: '',
-    form_is_admin : '',
-
-
+    form_is_admin: ''
   }),
   validations: {
     form_content: { required },
@@ -226,7 +219,7 @@ export default {
   },
   async created() {
     this.timezone = timezone
-    this.url = url;
+    this.url = url
     this.editorConfig = {
       simpleUpload: {
         uploadUrl: url + '/' + 'api/ckeditor',
@@ -276,9 +269,9 @@ export default {
     this.getDataFromApi()
   },
   methods: {
-    download () {
-        const url = this.url +'/export1';
-        window.location.href = url;
+    download() {
+      const url = this.url + '/export1'
+      window.location.href = url
     },
     handleFileUpload(e) {
       const file = this.$refs.file.files[0]
@@ -314,7 +307,6 @@ export default {
       })
     },
     editItem(item) {
-
       this.form_username = this.tabledata[this.tabledata.indexOf(item)].username
       this.form_name = this.tabledata[this.tabledata.indexOf(item)].name
       this.form_email = this.tabledata[this.tabledata.indexOf(item)].email
@@ -348,15 +340,15 @@ export default {
             }
           })
           .then(res => {
-            this.tabledata[this.editedIndex].name = this.form_name                    
-            this.tabledata[this.editedIndex].username = this.form_username        
-            this.tabledata[this.editedIndex].is_admin =this.form_is_admin          
+            this.tabledata[this.editedIndex].name = this.form_name
+            this.tabledata[this.editedIndex].username = this.form_username
+            this.tabledata[this.editedIndex].is_admin = this.form_is_admin
 
-            this.dialog = false      
+            this.dialog = false
 
             NProgress.done()
           })
-          .catch(error => {      
+          .catch(error => {
             NProgress.done()
           })
           .finally(() => {})
@@ -408,9 +400,9 @@ export default {
               username: value.username,
               email: value.email,
               id: value.id,
-              is_admin_text: (value.is_admin)? 'True':'False',         
-              is_admin:value.is_admin,  
-              created_at: value.human_date,              
+              is_admin_text: value.is_admin ? 'True' : 'False',
+              is_admin: value.is_admin,
+              created_at: value.human_date
             })
             rowcount++
           }

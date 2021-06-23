@@ -1,4 +1,4 @@
-exports.ids = [56];
+exports.ids = [57];
 exports.modules = {
 
 /***/ 263:
@@ -223,7 +223,7 @@ const baseMixins = Object(mixins["a" /* default */])(translatable);
 
 /***/ }),
 
-/***/ 372:
+/***/ 373:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -235,7 +235,7 @@ var VAlert = __webpack_require__(278);
 var VSheet = __webpack_require__(21);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VBtn/index.js
-var VBtn = __webpack_require__(48);
+var VBtn = __webpack_require__(47);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VIcon/index.js
 var VIcon = __webpack_require__(19);
@@ -497,7 +497,7 @@ var console = __webpack_require__(3);
 
 /***/ }),
 
-/***/ 48:
+/***/ 47:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -508,7 +508,7 @@ var console = __webpack_require__(3);
 
 /***/ }),
 
-/***/ 480:
+/***/ 483:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -530,13 +530,13 @@ var external_vue_default = /*#__PURE__*/__webpack_require__.n(external_vue_);
 var external_vuelidate_ = __webpack_require__(67);
 
 // EXTERNAL MODULE: external "vuelidate/lib/validators"
-var validators_ = __webpack_require__(41);
+var validators_ = __webpack_require__(40);
 
 // EXTERNAL MODULE: external "nprogress"
 var external_nprogress_ = __webpack_require__(9);
 
 // EXTERNAL MODULE: ./node_modules/nprogress/nprogress.css
-var nprogress = __webpack_require__(50);
+var nprogress = __webpack_require__(49);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/register.vue?vue&type=script&lang=js&
 //
@@ -735,7 +735,7 @@ var installComponents = __webpack_require__(10);
 var installComponents_default = /*#__PURE__*/__webpack_require__.n(installComponents);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VAlert/VAlert.js + 1 modules
-var VAlert = __webpack_require__(372);
+var VAlert = __webpack_require__(373);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VBtn/VBtn.js + 2 modules
 var VBtn = __webpack_require__(212);
@@ -773,7 +773,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "2317b4dc"
+  "4b0e1554"
   
 )
 

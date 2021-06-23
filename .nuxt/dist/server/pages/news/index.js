@@ -1,4 +1,4 @@
-exports.ids = [42,5];
+exports.ids = [43,5];
 exports.modules = {
 
 /***/ 208:
@@ -64,7 +64,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 "use strict";
 /* harmony import */ var _src_components_VSkeletonLoader_VSkeletonLoader_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(244);
 /* harmony import */ var _src_components_VSkeletonLoader_VSkeletonLoader_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_src_components_VSkeletonLoader_VSkeletonLoader_sass__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _mixins_elevatable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(53);
+/* harmony import */ var _mixins_elevatable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(52);
 /* harmony import */ var _mixins_measurable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(32);
 /* harmony import */ var _mixins_themeable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6);
 /* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2);
@@ -309,7 +309,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(389);
+var content = __webpack_require__(390);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -321,7 +321,7 @@ module.exports.__inject__ = function (context) {
 
 /***/ }),
 
-/***/ 369:
+/***/ 370:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -536,7 +536,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "4673d3c6",
-  "222a5b50"
+  "9afe63c4"
   
 )
 
@@ -558,7 +558,7 @@ installComponents_default()(component, {VBtn: VBtn["a" /* default */],VCard: VCa
 
 /***/ }),
 
-/***/ 388:
+/***/ 389:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -570,7 +570,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 389:
+/***/ 390:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -584,7 +584,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 475:
+/***/ 478:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -603,7 +603,7 @@ var external_nprogress_ = __webpack_require__(9);
 var external_nprogress_default = /*#__PURE__*/__webpack_require__.n(external_nprogress_);
 
 // EXTERNAL MODULE: ./node_modules/nprogress/nprogress.css
-var nprogress = __webpack_require__(50);
+var nprogress = __webpack_require__(49);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/news/index.vue?vue&type=script&lang=js&
 //
@@ -737,7 +737,7 @@ var VRow = __webpack_require__(226);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(388)
+  var style0 = __webpack_require__(389)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -751,14 +751,14 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "17dba7cf",
-  "4f304182"
+  "99796908"
   
 )
 
 /* harmony default export */ var news = __webpack_exports__["default"] = (component.exports);
 
 /* nuxt-component-imports */
-installComponents_default()(component, {NewsCard: __webpack_require__(369).default})
+installComponents_default()(component, {NewsCard: __webpack_require__(370).default})
 
 
 /* vuetify-loader */
