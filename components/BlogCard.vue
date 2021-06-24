@@ -36,7 +36,7 @@
               :to="{
                 path: 'blog/' + item.slug,
               }"
-              >Title : {{ item.title }}
+              > {{ item.title }}
             </nuxt-link>
           </v-card-title>
           <v-card-text class="">
@@ -47,7 +47,7 @@
 
             >
                   <!-- :to="`/blogs/category/${itm}`" -->
-                 Tags:<v-chip  v-for="(itm, index) in item.tags" :key="index" color="blue" class="white--text">{{itm}}</v-chip>
+                 <span class="pt-3">Tags: &zwnj;&zwnj;</span> <v-chip  v-for="(itm, index) in item.tags" :key="index" color="blue" class="white--text">{{itm}}</v-chip>
             </v-chip-group>
             <span>Author: {{ item.name }} </span><br />
             <span>Date : {{ item.human_date }}</span

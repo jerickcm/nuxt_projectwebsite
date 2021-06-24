@@ -104,8 +104,8 @@
 
     <!-- -->
     <!-- padless -->
-    <v-footer padless>
-      <v-card color="cstmblue" flat tile class=" text-center" width="100%">
+    <v-footer  padless>
+      <v-card color="dark"  flat tile class=" text-center" width="100%">
         <v-card-text>
           <v-btn
             v-for="icon in icons"
@@ -113,13 +113,14 @@
             class="mx-4 white--text"
             icon
           >
-            <v-icon size="24px" color="light">
+            <v-icon size="24px" class="white--text">
               {{ icon }}
             </v-icon>
           </v-btn>
         </v-card-text>
         <v-card-text>
           <v-btn
+          
             v-for="(item, i) in footerlist"
             :to="item.link"
             :key="i"
@@ -127,7 +128,7 @@
             text
             tile
             rounded
-            class="ma-2"
+            class="ma-2 white--text"
             ><v-icon>{{ item.icon }}</v-icon
             >&zwnj;&zwnj; {{ item.label }}
           </v-btn>
@@ -154,14 +155,14 @@
         </v-card-text>
         <v-card-text class="d-flex justify-center mb-6">
           <div class="ma-2 ">
-            <label for="" class="mb-5 fs-0-6">DNS by:</label>
+            <label for="" class="white--text mb-5 fs-0-6">DNS by:</label>
             <a href="https://domains.google/" class="pt-5 mt-5">
               <v-img style="width:99px" src="/images/google domain.svg"></v-img>
             </a>
           </div>
 
           <div class="ma-2">
-            <label for="" class=" fs-0-6">Secured by:</label>
+            <label for="" class="white--text fs-0-6">Secured by:</label>
             <a href="https://letsencrypt.org/">
               <v-img
                 style="width:99px"
@@ -170,13 +171,13 @@
             </a>
           </div>
         </v-card-text>
-        <v-card-text class=" pt-0">
+        <v-card-text  class="pt-0 white--text">
           All rights reserved.
         </v-card-text>
 
         <v-divider></v-divider>
 
-        <v-card-text class="">
+        <v-card-text class="pt-0 white--text">
           May 2021 - Present
           {{ new Date().getFullYear() }} —
           <strong>Inhinyeru.com</strong>

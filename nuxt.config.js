@@ -159,6 +159,7 @@ export default {
 
       themes: {
         dark: {
+           dark:'#000000',
           primary: colors.blue.darken2,
           accent: colors.grey.darken3,
           secondary: colors.amber.darken3,
@@ -172,6 +173,7 @@ export default {
           cstmblue: '#1C0745'
         },
         light: {
+          dark:'#000000',
           primary: colors.purple,
           accent: colors.shades.black,
           secondary: colors.grey.darken1,
