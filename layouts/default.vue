@@ -1,8 +1,7 @@
 <template>
   <v-app dark>
-    <v-app-bar fixed app >
+    <v-app-bar fixed app>
       <v-sheet
-       
         class="hidden-md-and-up font-kalamreg hand"
         @click.stop="rightDrawer = !rightDrawer"
       >
@@ -86,12 +85,13 @@
         >
       </div>
       <v-spacer />
-    </v-app-bar>  
+    </v-app-bar>
 
-    <v-main
-     
-    >
+    <!--
+       -->
+    <v-main>
       <nuxt />
+      <!-- :absolute="!fixed" -->
     </v-main>
 
     <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
@@ -99,10 +99,102 @@
         <Nav :dialog_login="dialog_login" @update-login="updateLogin" />
       </v-list>
     </v-navigation-drawer>
+    <!-- -->
+    <!-- -->
 
-    <v-footer :absolute="!fixed" app class=" ">
-      <FooterNav />
+    <!-- -->
+    <!-- padless -->
+    <v-footer padless>
+      <v-card color="cstmblue" flat tile class=" text-center" width="100%">
+        <v-card-text>
+          <v-btn
+            v-for="icon in icons"
+            :key="icon"
+            class="mx-4 white--text"
+            icon
+          >
+            <v-icon size="24px" color="light">
+              {{ icon }}
+            </v-icon>
+          </v-btn>
+        </v-card-text>
+        <v-card-text>
+          <v-btn
+            v-for="(item, i) in footerlist"
+            :to="item.link"
+            :key="i"
+            plain
+            text
+            tile
+            rounded
+            class="ma-2"
+            ><v-icon>{{ item.icon }}</v-icon
+            >&zwnj;&zwnj; {{ item.label }}
+          </v-btn>
+        </v-card-text>
+
+        <v-card-text class="pt-0">
+          <v-tooltip v-if="!$vuetify.theme.dark" bottom>
+            <template v-slot:activator="{ on }">
+              <v-btn v-on="on" color="info" small fab @click="darkMode">
+                <v-icon class="mr-1">mdi-moon-waxing-crescent</v-icon>
+              </v-btn>
+            </template>
+            <span>Dark Mode On</span>
+          </v-tooltip>
+
+          <v-tooltip v-else bottom>
+            <template v-slot:activator="{ on }">
+              <v-btn v-on="on" color="info" small fab @click="darkMode">
+                <v-icon color="yellow">mdi-white-balance-sunny</v-icon>
+              </v-btn>
+            </template>
+            <span>Dark Mode Off</span>
+          </v-tooltip>
+        </v-card-text>
+        <v-card-text class="d-flex justify-center mb-6">
+          <div class="ma-2 ">
+            <label for="" class="mb-5 fs-0-6">DNS by:</label>
+            <a href="https://domains.google/" class="pt-5 mt-5">
+              <v-img style="width:99px" src="/images/google domain.svg"></v-img>
+            </a>
+          </div>
+
+          <div class="ma-2">
+            <label for="" class=" fs-0-6">Secured by:</label>
+            <a href="https://letsencrypt.org/">
+              <v-img
+                style="width:99px"
+                src="/images/letsencrypt-logo-horizontal.svg"
+              ></v-img>
+            </a>
+          </div>
+        </v-card-text>
+        <v-card-text class=" pt-0">
+          All rights reserved.
+        </v-card-text>
+
+        <v-divider></v-divider>
+
+        <v-card-text class="">
+          May 2021 - Present
+          {{ new Date().getFullYear() }} —
+          <strong>Inhinyeru.com</strong>
+        </v-card-text>
+      </v-card>
     </v-footer>
+
+    <!-- <v-footer
+      app
+      :absolute="!fixed"
+      color="footer"
+      :class="{
+        'h-small': $vuetify.breakpoint.smAndDown,
+        'h-big': $vuetify.breakpoint.mdAndUp
+      }"
+    >
+      <FooterNav />
+    </v-footer> -->
   </v-app>
 </template>
 
@@ -111,13 +203,15 @@ import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 import { greetMixins } from '~/mixins/greeting.js'
 import { navlist } from '~/mixins/navlist.js'
+import { nav_footer } from '~/mixins/nav_footer.js'
 export default {
   head: () => ({
     titleTemplate: '%s | P.Website',
     meta: [{ hid: 'description', name: 'description', content: 'Content' }]
   }),
-  mixins: [greetMixins, navlist],
+  mixins: [greetMixins, navlist, nav_footer],
   data: () => ({
+    icons: ['mdi-facebook', 'mdi-twitter', 'mdi-linkedin', 'mdi-instagram'],
     dialog_login: false,
     myitems: [{ title: 'Dashboard', link: '/dashboard' }],
     menu: [{ icon: 'Dashboard', title: 'Dashboard' }],
@@ -152,6 +246,10 @@ export default {
   computed: {},
 
   methods: {
+    darkMode() {
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark
+    },
+
     updateLogin(value) {
       this.dialog_login = value
     },
@@ -182,6 +280,20 @@ export default {
 }
 </script>
 <style>
+.f-big {
+  margin-bottom: 0vh;
+}
+.f-small {
+  margin-bottom: 600vh;
+}
+
+.h-big {
+  height: 20vh;
+}
+.h-small {
+  height: 600vh;
+}
+
 .padb-35 {
   padding-bottom: 150vh;
   margin-bottom: 10vh;
