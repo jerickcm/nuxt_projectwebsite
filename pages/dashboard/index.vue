@@ -104,7 +104,12 @@ export default {
 
       let response = await this.$axios.$post(`api/validate/account`, payload)                
       let merged = { ...this.$auth.user,...response.user};                  
+      console.log(response.user)
+        console.log(response.user['is_admin'])
       this.$auth.setUser(merged)
+
+      this.$auth.$storage.setCookie("is_admin",response.user['is_admin'], false);
+      console.log(this.$auth.$storage.getCookie('is_admin'))
       return { profile: response.data }
     }
   }

@@ -9649,7 +9649,7 @@ __webpack_require__.r(__webpack_exports__);
   redirect
 }) => {
   if (app.$auth.loggedIn) {
-    if (app.$auth.$state.user['is_admin']) {} else {
+    if (app.$auth.$state.user['is_admin']) {} else if (app.$auth.$storage.getCookie('is_admin') == 1) {} else {
       return redirect('/dashboard');
     }
   } else {
