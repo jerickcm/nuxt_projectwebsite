@@ -113,10 +113,35 @@
         </v-card>
       </v-col>
     </v-row>
+        </v-row>
+    <v-row class="ma-0 pa-0">
+    <v-col
+    sm="12"
+    md="8"
+    lg="8"
+    xl="8"
+    class="mb-0 pb-0 col-md-8 col-lg-8 offset-md-2 offset-lg-2 offset-xl-2"
+    >
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3213536425475125"
+     data-ad-slot="3715096457"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+    </v-col>
+    </v-row>
   </v-sheet>
 </template>
+
 <script>
 export default {
+  head: {
+   
+  },
   props: ['content', 'length', 'loading'],
   data: () => ({
     selection:''

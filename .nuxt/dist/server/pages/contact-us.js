@@ -230,14 +230,29 @@ module.exports = ___CSS_LOADER_EXPORT___;
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/contact-us.vue?vue&type=template&id=41806b9f&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-container',{staticClass:"ma-0 pa-0",attrs:{"fluid":""}},[_c('v-parallax',{staticClass:"ma-0 pa-0",attrs:{"height":"900","src":"/images/contactus.jpg"}},[_c('v-row',{staticClass:"mt-10"},[_c('v-col',{staticClass:"col-md-6 offset-md-3"},[_c('v-card',{staticClass:"ma-10 pa-10",attrs:{"elevation":"2","outlined":"","tile":""}},[_c('v-sheet',{staticClass:"ma-1 pa-1"},[_c('h1',{staticClass:"blue--text"},[_vm._v("Contact Us")])]),_vm._v(" "),_c('v-sheet',{staticClass:"ma-1 pa-1"},[_c('h2',{staticClass:"green--text"},[_vm._v("\n              For all inquiries please contact us below\n            ")])]),_vm._v(" "),_c('form',{attrs:{"action":"mailto:jmangaluz@gmail.com","method":"get","enctype":"text/plain"}},[_c('div',[_c('v-text-field',{staticClass:"ma-2 pa-2",attrs:{"error-messages":_vm.emailErrors,"label":"Name","name":"name","id":"name","required":""},model:{value:(_vm.Name),callback:function ($$v) {_vm.Name=$$v},expression:"Name"}})],1),_vm._v(" "),_c('div',[_c('v-text-field',{staticClass:"ma-2 pa-2",attrs:{"error-messages":_vm.emailErrors,"label":"Email:","name":"email","id":"email","required":"","type":"email"},model:{value:(_vm.Email),callback:function ($$v) {_vm.Email=$$v},expression:"Email"}})],1),_vm._v(" "),_c('div',[_c('v-textarea',{staticClass:"ma-2 pa-2",attrs:{"outlined":"","name":"input-7-4","label":"Comments","value":"Send your comments to us."}})],1),_vm._v(" "),_c('div',[_c('v-btn',{staticClass:"white--text",attrs:{"color":"green","type":"submit","name":"submit","value":"Send"}},[_vm._v("Send")]),_vm._v(" "),_c('v-btn',{staticClass:"white--text",attrs:{"color":"blue","type":"reset","name":"reset","value":"Clear Form"}},[_vm._v("Clear Form")])],1)])],1)],1)],1)],1)],1)}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/contact-us.vue?vue&type=template&id=9a63debc&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-container',{staticClass:"ma-0 pa-0",attrs:{"fluid":""}},[_c('v-parallax',{staticClass:"ma-0 pa-0",attrs:{"height":"900","src":"/images/contactus.jpg"}},[_c('v-row',{staticClass:"mt-10"},[_c('v-col',{staticClass:"col-md-6 offset-md-3"},[_c('v-card',{staticClass:"ma-10 pa-10",attrs:{"elevation":"2","outlined":"","tile":""}},[_c('v-sheet',{staticClass:"ma-1 pa-1"},[_c('h1',{staticClass:"blue--text"},[_vm._v("Contact Us")])]),_vm._v(" "),_c('v-sheet',{staticClass:"ma-1 pa-1"},[_c('h2',{staticClass:"green--text"},[_vm._v("\n              For all inquiries please contact us below\n            ")])]),_vm._v(" "),_c('form',{attrs:{"action":"mailto:jmangaluz@gmail.com","method":"get","enctype":"text/plain"}},[_c('div',[_c('v-text-field',{staticClass:"ma-2 pa-2",attrs:{"error-messages":_vm.emailErrors,"label":"Name","name":"name","id":"name","required":""},model:{value:(_vm.Name),callback:function ($$v) {_vm.Name=$$v},expression:"Name"}})],1),_vm._v(" "),_c('div',[_c('v-text-field',{staticClass:"ma-2 pa-2",attrs:{"error-messages":_vm.emailErrors,"label":"Email:","name":"email","id":"email","required":"","type":"email"},model:{value:(_vm.Email),callback:function ($$v) {_vm.Email=$$v},expression:"Email"}})],1),_vm._v(" "),_c('div',[_c('v-textarea',{staticClass:"ma-2 pa-2",attrs:{"outlined":"","name":"input-7-4","label":"Comments","value":"Send your comments to us."}})],1),_vm._v(" "),_c('div',[_c('v-btn',{staticClass:"white--text",attrs:{"color":"green","type":"submit","name":"submit","value":"Send"}},[_vm._v("Send")]),_vm._v(" "),_c('v-btn',{staticClass:"white--text",attrs:{"color":"blue","type":"reset","name":"reset","value":"Clear Form"}},[_vm._v("Clear Form")])],1)])],1)],1)],1)],1),_vm._v(" "),_c('v-row',[_c('v-col',[_c('script',{attrs:{"async":"","src":"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"}}),_vm._v(" "),_c('script',[_vm._v("\n          (adsbygoogle = window.adsbygoogle || []).push({});\n          ")]),_vm._v(" "),_c('ins',{staticClass:"adsbygoogle",staticStyle:{"display":"block"},attrs:{"data-ad-client":"ca-pub-3213536425475125","data-ad-slot":"3715096457","data-ad-format":"auto","data-full-width-responsive":"true"}})])],1)],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./pages/contact-us.vue?vue&type=template&id=41806b9f&
+// CONCATENATED MODULE: ./pages/contact-us.vue?vue&type=template&id=9a63debc&
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/contact-us.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //

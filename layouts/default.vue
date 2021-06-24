@@ -1,7 +1,9 @@
 <template>
   <v-app dark>
     <v-app-bar fixed app>
-      <v-sheet
+
+      <v-sheet   plain
+          text
         class="hidden-md-and-up font-kalamreg hand"
         @click.stop="rightDrawer = !rightDrawer"
       >
