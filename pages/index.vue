@@ -106,22 +106,124 @@
     </v-row>
 
 
-    <!-- <v-row
-      color="blue"
-      v-for="(i, ind) in Math.ceil(content.length / 3)"
-      :key="ind"
-    >
-      <v-col
-        lg="4"
-        v-for="(item, indx) in content.slice((i - 1) * 3, i * 3)"
-        :key="indx"
-      >
-        <v-card height="15vh" class=" pa-4">
+    <v-row>
 
-        </v-card>
-      </v-col>
-    </v-row> -->
+      <v-container>
+        <v-row>
+        <v-col>
+        <h2 color="dark">Blogs</h2>
+        </v-col>
+        </v-row>
+        <v-row
+        color="blue"
+        v-for="(i, ind) in Math.ceil(content.length / 3)"
+        :key="ind"
+        >
+          <v-col
+          lg="4"
+          v-for="(item, indx) in content.slice((i - 1) * 3, i * 3)"
+          :key="indx"
+          >
+              <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
+                    <nuxt-link
+                      class="nuxtlink"
+                      target="_blank"
+                      :to="{
+                        path: 'blog/' + item.slug,
+                      }"
+                    >
+                      <v-img height="250" :src="item.image"> </v-img>
+                    </nuxt-link>
 
+                    <v-card-title>
+                    <h2 class="title1 blue--text">
+                      <nuxt-link
+                        class="nuxtlink"
+                        target="_blank"
+                        :to="{
+                          path: 'blog/' + item.slug,
+                        }"
+                        > {{ item.title }}
+                      </nuxt-link></h2>
+                    </v-card-title>
+                    <v-card-text class="">
+                      <v-chip-group
+                        v-model="selection"
+                        active-class="deep-purple accent-4 white--text"
+                        column
+
+                      >
+                          <span class="pt-3">Tags: &zwnj;&zwnj;</span> <v-chip  v-for="(itm, index) in item.tags" :key="index" color="blue" class="white--text">{{itm}}</v-chip>
+                      </v-chip-group>
+                      <span>Author: {{ item.name }} </span><br />
+                      <span>Date : {{ item.human_date }}</span
+                      ><br />
+                    </v-card-text>
+                  </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
+
+    </v-row>
+    <v-row>
+
+      <v-container>
+        <v-row>
+        <v-col>
+        <h2 color="dark">News</h2>
+        </v-col>
+        </v-row>
+        <v-row
+        color="blue"
+        v-for="(i, ind) in Math.ceil(news.length / 3)"
+        :key="ind"
+        >
+          <v-col
+          lg="4"
+          v-for="(item, indx) in news.slice((i - 1) * 3, i * 3)"
+          :key="indx"
+          >
+              <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
+                    <nuxt-link
+                    target="_blank"
+                      class="nuxtlink"
+                      :to="{
+                        path: 'news/' + item.slug,
+                      }"
+                    >
+                      <v-img height="250" :src="item.image"> </v-img>
+                    </nuxt-link>
+
+                    <v-card-title>
+                     <h2 class="title1 blue--text">
+                      <nuxt-link
+                      target="_blank"
+                        class="nuxtlink"
+                        :to="{
+                          path: 'news/' + item.slug,
+                        }"
+                        > {{ item.title }}
+                      </nuxt-link></h2>
+                    </v-card-title>
+                    <v-card-text class="">
+                      <v-chip-group
+                        v-model="selection"
+                        active-class="deep-purple accent-4 white--text"
+                        column
+
+                      >
+                          <span class="pt-3">Tags: &zwnj;&zwnj;</span> <v-chip  v-for="(itm, index) in item.tags" :key="index" color="blue" class="white--text">{{itm}}</v-chip>
+                      </v-chip-group>
+                      <span>Author: {{ item.name }} </span><br />
+                      <span>Date : {{ item.human_date }}</span
+                      ><br />
+                    </v-card-text>
+                  </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
+
+    </v-row>
     <v-row>
       <v-col xs="12" sm="12" lg="12" class="ma-0 pa-0">
         <v-sheet color="background" class="" elevation="2" min-height="30vh">
@@ -228,9 +330,13 @@ export default {
   auth: false,
   head: () => ({
     title: 'Profile ',
-    meta: [{ hid: 'Profile', name: 'Profile', content: 'Profile' }]
+    meta: [{ hid: 'Profile', name: 'Profile', content: 'Profile' }],
+
   }),
   data: () => ({
+    selection:0,
+    content:[],
+    news:[],
     selectedItem: 0,
     show: true,
     title: '',
@@ -238,6 +344,15 @@ export default {
     rounded: ['0', 'sm', 'md', 'lg', 'xl', 'pill', 'circle'],
     links: []
   }),
+  async fetch() {
+    await this.$axios.$get('/sanctum/csrf-cookie')
+    const res = await this.$axios.$get(`api/blog/page/1/item/3`)
+    this.content = res.data;
+    await this.$axios.$get('/sanctum/csrf-cookie')
+    const news = await this.$axios.$get(`api/news/page/1/item/3`)
+    this.news=news.data;
+  },
+
   layout: 'default',
   methods: {
     ...mapActions('messageoftheday', ['fetchQuote'])
@@ -245,13 +360,8 @@ export default {
   computed: {
     ...mapGetters('messageoftheday', ['MessageOfTheDay', 'LoadingStatus'])
   },
-  async fetch() {
-
-  },
   async created() {
-    //   await this.$axios.$get('/sanctum/csrf-cookie')
-    // const res = await $axios.$get(`api/blog/page/10/item/3`)
-    // console.log(res.data)
+
   },
   async mounted() {
     await this.$axios.$get('/sanctum/csrf-cookie')
@@ -260,12 +370,7 @@ export default {
     } catch (error) {
       console.log(error)
     }
-
-    // return {
-    //   content: res.data,
-    //   // length: res.data.length
-    // }
-  }
+  },
 
 }
 </script>
@@ -300,5 +405,12 @@ export default {
   100% {
     transform: scale(1);
   }
+}
+.title1{
+  text-decoration: none;
+}
+.v-application a {
+    color: rgb(66, 77, 238);
+    text-decoration: none;
 }
 </style>

@@ -525,7 +525,7 @@ var validators_ = __webpack_require__(43);
 var external_nprogress_ = __webpack_require__(8);
 
 // EXTERNAL MODULE: ./node_modules/nprogress/nprogress.css
-var nprogress = __webpack_require__(53);
+var nprogress = __webpack_require__(54);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/register.vue?vue&type=script&lang=js&
 //

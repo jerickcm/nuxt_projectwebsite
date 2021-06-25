@@ -170,7 +170,8 @@ export default {
           background: colors.grey.darken3,
           footer: '#000000',
           light: '#555353',
-          cstmblue: '#1C0745'
+          cstmblue: '#1C0745',
+          title:'#0000FF'
         },
         light: {
           dark:'#000000',
@@ -184,7 +185,8 @@ export default {
           background: colors.indigo.lighten5,
           footer: '#ffffff',
           light: '#ADA8A8',
-          cstmblue: '#0B8FC6'
+          cstmblue: '#0B8FC6',
+          title:'#0000FF'
         }
       }
     }
