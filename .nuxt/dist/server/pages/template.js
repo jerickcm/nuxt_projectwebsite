@@ -1,7 +1,7 @@
-exports.ids = [60];
+exports.ids = [59];
 exports.modules = {
 
-/***/ 488:
+/***/ 491:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -58,11 +58,11 @@ var staticRenderFns = []
 var componentNormalizer = __webpack_require__(11);
 
 // EXTERNAL MODULE: ./node_modules/vuetify-loader/lib/runtime/installComponents.js
-var installComponents = __webpack_require__(12);
+var installComponents = __webpack_require__(10);
 var installComponents_default = /*#__PURE__*/__webpack_require__.n(installComponents);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VContainer.js
-var VContainer = __webpack_require__(228);
+var VContainer = __webpack_require__(231);
 
 // CONCATENATED MODULE: ./pages/template.vue
 

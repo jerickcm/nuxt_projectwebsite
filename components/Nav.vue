@@ -170,6 +170,19 @@
               <v-list-item-title> Contact Us</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
+
+
+          <v-list-item v-if="$auth.loggedIn"  @click.prevent="logout()">
+            <v-list-item-action>
+             <v-icon>mdi-logout</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>
+               Logout
+              </v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+
         </v-list>
       </v-col>
     </v-row>
@@ -257,6 +270,17 @@ export default {
       this.alert = 'd-none'
       this.error_msg = ''
       this.$v.$reset()
+    },
+    async logout() {
+      NProgress.start()
+      try {
+        NProgress.inc()
+        await this.$auth.logout()
+        NProgress.done()
+      } catch (error) {
+        NProgress.done()
+        console.log(error)
+      }
     },
     async login() {
       this.$v.email.$touch()

@@ -105,6 +105,23 @@
       </v-col>
     </v-row>
 
+
+    <!-- <v-row
+      color="blue"
+      v-for="(i, ind) in Math.ceil(content.length / 3)"
+      :key="ind"
+    >
+      <v-col
+        lg="4"
+        v-for="(item, indx) in content.slice((i - 1) * 3, i * 3)"
+        :key="indx"
+      >
+        <v-card height="15vh" class=" pa-4">
+
+        </v-card>
+      </v-col>
+    </v-row> -->
+
     <v-row>
       <v-col xs="12" sm="12" lg="12" class="ma-0 pa-0">
         <v-sheet color="background" class="" elevation="2" min-height="30vh">
@@ -112,7 +129,11 @@
             <v-row no-gutters>
               <v-col cols="12" sm="12" lg="12" class="pa-1 ma-1">
                 <p
-                  class="fs-1-1 text-justify fs-1-8 font-barlowreg"
+                  class="pl-5 pr-5 text-justify  font-barlowreg"
+                  :class="{
+                    'fs-1': $vuetify.breakpoint.smAndDown,
+                    'fs-2': $vuetify.breakpoint.mdAndUp
+                  }"
                 >
                   The inspiration of this website build is to expand my
                   knowledge base , in web development. Secondly I am planning to
@@ -224,7 +245,14 @@ export default {
   computed: {
     ...mapGetters('messageoftheday', ['MessageOfTheDay', 'LoadingStatus'])
   },
-  async created() {},
+  async fetch() {
+
+  },
+  async created() {
+    //   await this.$axios.$get('/sanctum/csrf-cookie')
+    // const res = await $axios.$get(`api/blog/page/10/item/3`)
+    // console.log(res.data)
+  },
   async mounted() {
     await this.$axios.$get('/sanctum/csrf-cookie')
     try {
@@ -232,6 +260,11 @@ export default {
     } catch (error) {
       console.log(error)
     }
+
+    // return {
+    //   content: res.data,
+    //   // length: res.data.length
+    // }
   }
 
 }

@@ -1,13 +1,13 @@
 <template>
   <v-app dark>
     <v-app-bar fixed app class="blue lighten-2">
-      <v-sheet
+      <div
         color="white"
         class="hidden-md-and-up font-kalamreg"
         @click.stop="rightDrawer = !rightDrawer"
       >
         <v-icon color="green" x-large>mdi-message-arrow-left</v-icon> Menu
-      </v-sheet>
+      </div>
 
       <v-spacer />
 
@@ -90,8 +90,8 @@
         <AdminNav />
       </v-list>
     </v-navigation-drawer>
-
-    <v-footer :absolute="!fixed" app class="black lighten-4">
+    <FooterNav />
+    <!-- <v-footer :absolute="!fixed" app class="black lighten-4">
       <v-sheet
         class="black pa-1 ma-1"
         :class="{
@@ -155,7 +155,7 @@
           ></v-img>
         </a>
       </v-sheet>
-    </v-footer>
+    </v-footer> -->
   </v-app>
 </template>
 
