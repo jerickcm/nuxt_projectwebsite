@@ -96,8 +96,7 @@
                 lg="12"
                 class="font-avenir fs-1-4 text-center"
               >
-                <!-- The darkness in programming is when you fix it you're happy,
-                when you can fix it long enough you are frustrated. -->
+
               </v-col>
             </v-row>
           </v-container>
@@ -106,7 +105,7 @@
     </v-row>
 
 
-    <v-row>
+    <!-- <v-row>
 
       <v-container>
         <v-row>
@@ -223,7 +222,7 @@
         </v-row>
       </v-container>
 
-    </v-row>
+    </v-row> -->
     <v-row>
       <v-col xs="12" sm="12" lg="12" class="ma-0 pa-0">
         <v-sheet color="background" class="" elevation="2" min-height="30vh">
@@ -345,12 +344,12 @@ export default {
     links: []
   }),
   async fetch() {
-    await this.$axios.$get('/sanctum/csrf-cookie')
-    const res = await this.$axios.$get(`api/blog/page/1/item/3`)
-    this.content = res.data;
-    await this.$axios.$get('/sanctum/csrf-cookie')
-    const news = await this.$axios.$get(`api/news/page/1/item/3`)
-    this.news=news.data;
+    // await this.$axios.$get('/sanctum/csrf-cookie')
+    // const res = await this.$axios.$get(`api/blog/page/1/item/3`)
+    // this.content = res.data;
+    // await this.$axios.$get('/sanctum/csrf-cookie')
+    // const news = await this.$axios.$get(`api/news/page/1/item/3`)
+    // this.news=news.data;
   },
 
   layout: 'default',
