@@ -7,8 +7,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/about/",
-    "_name": "_006f1191"
+    "url": "/about/"
   },
   {
     "name": "admin",
@@ -18,8 +17,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/admin/",
-    "_name": "_5594be62"
+    "url": "/admin/"
   },
   {
     "name": "blog",
@@ -29,8 +27,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/blog/",
-    "_name": "_7cce7218"
+    "url": "/blog/"
   },
   {
     "name": "contact-us",
@@ -40,8 +37,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/contact-us/",
-    "_name": "_2c7c2e17"
+    "url": "/contact-us/"
   },
   {
     "name": "dashboard",
@@ -51,8 +47,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/dashboard/",
-    "_name": "_7517826a"
+    "url": "/dashboard/"
   },
   {
     "name": "final",
@@ -62,8 +57,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/final/",
-    "_name": "_657592fa"
+    "url": "/final/"
   },
   {
     "name": "login",
@@ -73,8 +67,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/login/",
-    "_name": "_2c62e126"
+    "url": "/login/"
   },
   {
     "name": "logout",
@@ -84,8 +77,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/logout/",
-    "_name": "_c5d73294"
+    "url": "/logout/"
   },
   {
     "name": "news",
@@ -95,8 +87,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/news/",
-    "_name": "_c98599ba"
+    "url": "/news/"
   },
   {
     "name": "post",
@@ -106,8 +97,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/post/",
-    "_name": "_6f437336"
+    "url": "/post/"
   },
   {
     "name": "privacy-policy",
@@ -117,8 +107,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/privacy-policy/",
-    "_name": "_86f55c7a"
+    "url": "/privacy-policy/"
   },
   {
     "name": "profile",
@@ -128,8 +117,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/profile/",
-    "_name": "_5db2ad96"
+    "url": "/profile/"
   },
   {
     "name": "quotes",
@@ -139,8 +127,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/quotes/",
-    "_name": "_04805a02"
+    "url": "/quotes/"
   },
   {
     "name": "register",
@@ -150,8 +137,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/register/",
-    "_name": "_1af5b64f"
+    "url": "/register/"
   },
   {
     "name": "technology",
@@ -161,8 +147,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/technology/",
-    "_name": "_33705b38"
+    "url": "/technology/"
   },
   {
     "name": "template",
@@ -172,8 +157,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/template/",
-    "_name": "_469390a6"
+    "url": "/template/"
   },
   {
     "name": "terms-of-service",
@@ -183,8 +167,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/terms-of-service/",
-    "_name": "_8bab091e"
+    "url": "/terms-of-service/"
   },
   {
     "name": "test",
@@ -194,8 +177,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/test/",
-    "_name": "_c5b8b284"
+    "url": "/test/"
   },
   {
     "name": "time",
@@ -205,8 +187,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/time/",
-    "_name": "_65ac1f79"
+    "url": "/time/"
   },
   {
     "name": "tutorials",
@@ -216,8 +197,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/tutorials/",
-    "_name": "_001b74d9"
+    "url": "/tutorials/"
   },
   {
     "name": "users",
@@ -227,8 +207,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/users/",
-    "_name": "_6590c68c"
+    "url": "/users/"
   },
   {
     "name": "world-reminders",
@@ -238,8 +217,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/world-reminders/",
-    "_name": "_fffbc610"
+    "url": "/world-reminders/"
   },
   {
     "name": "blog-create",
@@ -249,8 +227,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/blog/create/",
-    "_name": "_cd973b6c"
+    "url": "/blog/create/"
   },
   {
     "name": "blog-manage",
@@ -260,8 +237,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/blog/manage/",
-    "_name": "_4779fb9a"
+    "url": "/blog/manage/"
   },
   {
     "name": "blog-view",
@@ -271,8 +247,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/blog/view/",
-    "_name": "_3e7eb4f3"
+    "url": "/blog/view/"
   },
   {
     "name": "dash-create",
@@ -282,8 +257,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/dash/create/",
-    "_name": "_14368b8c"
+    "url": "/dash/create/"
   },
   {
     "name": "dash-view",
@@ -293,8 +267,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/dash/view/",
-    "_name": "_764448e3"
+    "url": "/dash/view/"
   },
   {
     "name": "news-create",
@@ -304,8 +277,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/news/create/",
-    "_name": "_17c5080a"
+    "url": "/news/create/"
   },
   {
     "name": "news-manage",
@@ -315,8 +287,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/news/manage/",
-    "_name": "_372c1be4"
+    "url": "/news/manage/"
   },
   {
     "name": "post-create",
@@ -326,8 +297,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/post/create/",
-    "_name": "_be418370"
+    "url": "/post/create/"
   },
   {
     "name": "post-manage",
@@ -337,8 +307,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/post/manage/",
-    "_name": "_3824439e"
+    "url": "/post/manage/"
   },
   {
     "name": "profile-edit",
@@ -348,8 +317,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/profile/edit/",
-    "_name": "_46b0ff77"
+    "url": "/profile/edit/"
   },
   {
     "name": "quotes-create",
@@ -359,8 +327,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/quotes/create/",
-    "_name": "_3c2250c2"
+    "url": "/quotes/create/"
   },
   {
     "name": "quotes-manage",
@@ -370,8 +337,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/quotes/manage/",
-    "_name": "_24fd7788"
+    "url": "/quotes/manage/"
   },
   {
     "name": "quotes-view",
@@ -381,8 +347,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/quotes/view/",
-    "_name": "_76df08f0"
+    "url": "/quotes/view/"
   },
   {
     "name": "world-reminders-create",
@@ -392,8 +357,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/world-reminders/create/",
-    "_name": "_b0146674"
+    "url": "/world-reminders/create/"
   },
   {
     "name": "world-reminders-manage",
@@ -403,8 +367,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/world-reminders/manage/",
-    "_name": "_29f726a2"
+    "url": "/world-reminders/manage/"
   },
   {
     "name": "admin-blog-create",
@@ -414,8 +377,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/admin/blog/create/",
-    "_name": "_256163b1"
+    "url": "/admin/blog/create/"
   },
   {
     "name": "admin-blog-manage",
@@ -425,8 +387,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/admin/blog/manage/",
-    "_name": "_6870039a"
+    "url": "/admin/blog/manage/"
   },
   {
     "name": "admin-news-create",
@@ -436,8 +397,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/admin/news/create/",
-    "_name": "_ff6b053c"
+    "url": "/admin/news/create/"
   },
   {
     "name": "admin-news-manage",
@@ -447,8 +407,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/admin/news/manage/",
-    "_name": "_794dc56a"
+    "url": "/admin/news/manage/"
   },
   {
     "name": "admin-post-create",
@@ -458,8 +417,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/admin/post/create/",
-    "_name": "_2d0c3faf"
+    "url": "/admin/post/create/"
   },
   {
     "name": "admin-post-manage",
@@ -469,8 +427,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/admin/post/manage/",
-    "_name": "_701adf98"
+    "url": "/admin/post/manage/"
   },
   {
     "name": "admin-quotes-create",
@@ -480,8 +437,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/admin/quotes/create/",
-    "_name": "_16e11b46"
+    "url": "/admin/quotes/create/"
   },
   {
     "name": "admin-quotes-manage",
@@ -491,8 +447,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/admin/quotes/manage/",
-    "_name": "_59efbb2f"
+    "url": "/admin/quotes/manage/"
   },
   {
     "name": "admin-users-create",
@@ -502,8 +457,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/admin/users/create/",
-    "_name": "_41f72c81"
+    "url": "/admin/users/create/"
   },
   {
     "name": "admin-users-logs",
@@ -513,8 +467,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/admin/users/logs/",
-    "_name": "_04d796f4"
+    "url": "/admin/users/logs/"
   },
   {
     "name": "admin-users-manage",
@@ -524,8 +477,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/admin/users/manage/",
-    "_name": "_f5f4672c"
+    "url": "/admin/users/manage/"
   },
   {
     "name": "admin-world-reminders-create",
@@ -535,8 +487,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/admin/world-reminders/create/",
-    "_name": "_77c7b4ff"
+    "url": "/admin/world-reminders/create/"
   },
   {
     "name": "admin-world-reminders-manage",
@@ -546,8 +497,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/admin/world-reminders/manage/",
-    "_name": "_8a535630"
+    "url": "/admin/world-reminders/manage/"
   },
   {
     "name": "blog-id",
@@ -556,8 +506,7 @@
     "chunkName": "pages/blog/_id",
     "pathToRegexpOptions": {
       "strict": true
-    },
-    "_name": "_12581348"
+    }
   },
   {
     "name": "news-id",
@@ -566,8 +515,7 @@
     "chunkName": "pages/news/_id",
     "pathToRegexpOptions": {
       "strict": true
-    },
-    "_name": "_09b3a24b"
+    }
   },
   {
     "name": "post-id",
@@ -576,8 +524,7 @@
     "chunkName": "pages/post/_id",
     "pathToRegexpOptions": {
       "strict": true
-    },
-    "_name": "_573e69c4"
+    }
   },
   {
     "name": "quotes-id",
@@ -586,8 +533,7 @@
     "chunkName": "pages/quotes/_id",
     "pathToRegexpOptions": {
       "strict": true
-    },
-    "_name": "_9e56edb2"
+    }
   },
   {
     "name": "world-reminders-id",
@@ -596,8 +542,7 @@
     "chunkName": "pages/world-reminders/_id",
     "pathToRegexpOptions": {
       "strict": true
-    },
-    "_name": "_063a0540"
+    }
   },
   {
     "name": "index",
@@ -607,8 +552,7 @@
     "pathToRegexpOptions": {
       "strict": true
     },
-    "url": "/",
-    "_name": "_2026ec56"
+    "url": "/"
   },
   {
     "name": "username",
@@ -617,8 +561,7 @@
     "chunkName": "pages/_username/index",
     "pathToRegexpOptions": {
       "strict": true
-    },
-    "_name": "_2ca55429"
+    }
   },
   {
     "name": "username-following",
@@ -627,8 +570,7 @@
     "chunkName": "pages/_username/following",
     "pathToRegexpOptions": {
       "strict": true
-    },
-    "_name": "_32cb2ee8"
+    }
   },
   {
     "name": "username-skel",
@@ -637,7 +579,6 @@
     "chunkName": "pages/_username/skel",
     "pathToRegexpOptions": {
       "strict": true
-    },
-    "_name": "_a561cb10"
+    }
   }
 ]

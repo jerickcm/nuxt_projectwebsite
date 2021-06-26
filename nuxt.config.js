@@ -65,9 +65,6 @@ export default {
     '@nuxtjs/vuetify'
   ],
 
-  // router: {
-  //   middleware: ['auth']
-  // },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
@@ -79,7 +76,7 @@ export default {
     '@nuxtjs/sitemap'
   ],
   axios: {
-    // baseURL: process.env.BASE_URL || "http://back.api.test",
+
     baseURL: api,
     credentials: true
   },
@@ -133,9 +130,7 @@ export default {
     Allow: '/'
   },
   auth: {
-    // router: {
-    //   middleware: ['auth']
-    // },
+
     strategies: {
       facebook: {
         scope: ['openid', 'profile', 'email'],
