@@ -111,7 +111,7 @@
         </p>
       </v-col>
     </v-row>
-    <v-row>
+    <!-- <v-row>
       <v-container>
         <v-row>
           <v-col>
@@ -165,7 +165,7 @@
           </v-col>
         </v-row>
       </v-container>
-    </v-row>
+    </v-row> -->
     <v-row>
       <v-container>
         <v-row>
@@ -435,9 +435,9 @@ export default {
     await this.$axios.$get('/sanctum/csrf-cookie')
     const news = await this.$axios.$get(`api/news/page/1/item/3`)
     this.news = news.data
-    await this.$axios.$get('/sanctum/csrf-cookie')
-    const posts = await this.$axios.$get(`api/post/page/1/item/3`)
-    this.posts = posts.data
+    // await this.$axios.$get('/sanctum/csrf-cookie')
+    // const posts = await this.$axios.$get(`api/post/page/1/item/3`)
+    // this.posts = posts.data
   },
 
   layout: 'default',
