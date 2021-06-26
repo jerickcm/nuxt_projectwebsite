@@ -50,8 +50,7 @@ export default {
     }
   },
   components: {
-    'ckeditor-nuxt': () =>
-      import('@engrjerickcmangalus/ckeditor-nuxt-custom-build-simpleuploader')
+    'ckeditor-nuxt': () => import('@coderzero8/ck5-nuxt')
   },
   async created() {
     this.$axios.$get('/sanctum/csrf-cookie').then(response => {})

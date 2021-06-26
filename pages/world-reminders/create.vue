@@ -229,8 +229,7 @@ export default {
     form_publish: { required }
   },
   components: {
-    'ckeditor-nuxt': () =>
-      import('@engrjerickcmangalus/ckeditor-nuxt-custom-build-simpleuploader')
+    'ckeditor-nuxt': () => import('@coderzero8/ck5-nuxt')
   },
   async created() {
     this.timezone = timezone

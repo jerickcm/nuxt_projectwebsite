@@ -79,10 +79,8 @@ export default function (ctx, inject) {
     "openid",
     "profile",
     "email",
-    "openid",
     "profile",
-    "email",
-    "https://www.googleapis.com/auth/gmail.metadata"
+    "email"
   ],
   "clientId": "635307167233-mii6gf2ho460gj11ui5tvb7teo1rcp3o.apps.googleusercontent.com",
   "codeChallengeMethod": "",

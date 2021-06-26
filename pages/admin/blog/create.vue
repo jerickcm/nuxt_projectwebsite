@@ -184,8 +184,7 @@ export default {
     form_publish: { required }
   },
   components: {
-    'ckeditor-nuxt': () =>
-      import('@engrjerickcmangalus/ckeditor-nuxt-custom-build-simpleuploader')
+    'ckeditor-nuxt': () => import('@coderzero8/ck5-nuxt')
   },
   async mounted() {},
   async fetch() {

@@ -108,10 +108,10 @@ export default {
       },
       google: {
         scope: [
-          'openid',
+          // 'openid',
           'profile',
-          'email',
-          'https://www.googleapis.com/auth/gmail.metadata'
+          'email'
+          // 'https://www.googleapis.com/auth/gmail.metadata'
         ],
         clientId: google_id,
         codeChallengeMethod: '',
@@ -129,7 +129,6 @@ export default {
           login: {
             url: '/api/login'
           },
-
           logout: {
             url: '/api/logout'
           }
@@ -159,7 +158,7 @@ export default {
 
       themes: {
         dark: {
-           dark:'#000000',
+          dark: '#000000',
           primary: colors.blue.darken2,
           accent: colors.grey.darken3,
           secondary: colors.amber.darken3,
@@ -171,10 +170,10 @@ export default {
           footer: '#000000',
           light: '#555353',
           cstmblue: '#1C0745',
-          title:'#0000FF'
+          title: '#0000FF'
         },
         light: {
-          dark:'#000000',
+          dark: '#000000',
           primary: colors.purple,
           accent: colors.shades.black,
           secondary: colors.grey.darken1,
@@ -186,7 +185,7 @@ export default {
           footer: '#ffffff',
           light: '#ADA8A8',
           cstmblue: '#0B8FC6',
-          title:'#0000FF'
+          title: '#0000FF'
         }
       }
     }

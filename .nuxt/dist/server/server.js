@@ -8308,7 +8308,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "7bf0f2cf"
+  "3f86ee95"
   
 )
 
@@ -10076,7 +10076,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "39cd5703"
+  "2e125806"
   
 )
 
@@ -12368,123 +12368,123 @@ function shouldScrollToTop(route) {
 
 
 
-const _006f1191 = () => interopDefault(__webpack_require__.e(/* import() | pages/about */ 13).then(__webpack_require__.bind(null, 475)));
+const _55dd2d9b = () => interopDefault(__webpack_require__.e(/* import() | pages/about */ 13).then(__webpack_require__.bind(null, 475)));
 
-const _5594be62 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/index */ 16).then(__webpack_require__.bind(null, 478)));
+const _508874f6 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/index */ 16).then(__webpack_require__.bind(null, 478)));
 
-const _7cce7218 = () => interopDefault(__webpack_require__.e(/* import() | pages/blog/index */ 30).then(__webpack_require__.bind(null, 479)));
+const _0c00337e = () => interopDefault(__webpack_require__.e(/* import() | pages/blog/index */ 30).then(__webpack_require__.bind(null, 479)));
 
-const _2c7c2e17 = () => interopDefault(__webpack_require__.e(/* import() | pages/contact-us */ 33).then(__webpack_require__.bind(null, 476)));
+const _36dfef66 = () => interopDefault(__webpack_require__.e(/* import() | pages/contact-us */ 33).then(__webpack_require__.bind(null, 476)));
 
-const _7517826a = () => interopDefault(__webpack_require__.e(/* import() | pages/dashboard/index */ 36).then(__webpack_require__.bind(null, 480)));
+const _6c1f47c0 = () => interopDefault(__webpack_require__.e(/* import() | pages/dashboard/index */ 36).then(__webpack_require__.bind(null, 480)));
 
-const _657592fa = () => interopDefault(__webpack_require__.e(/* import() | pages/final */ 37).then(__webpack_require__.bind(null, 481)));
+const _8a38a1f8 = () => interopDefault(__webpack_require__.e(/* import() | pages/final */ 37).then(__webpack_require__.bind(null, 481)));
 
-const _2c62e126 = () => interopDefault(__webpack_require__.e(/* import() | pages/login */ 39).then(__webpack_require__.bind(null, 482)));
+const _3f3cab77 = () => interopDefault(__webpack_require__.e(/* import() | pages/login */ 39).then(__webpack_require__.bind(null, 482)));
 
-const _c5d73294 = () => interopDefault(__webpack_require__.e(/* import() | pages/logout */ 40).then(__webpack_require__.bind(null, 483)));
+const _152c6828 = () => interopDefault(__webpack_require__.e(/* import() | pages/logout */ 40).then(__webpack_require__.bind(null, 483)));
 
-const _c98599ba = () => interopDefault(__webpack_require__.e(/* import() | pages/news/index */ 43).then(__webpack_require__.bind(null, 484)));
+const _34b6c0a6 = () => interopDefault(__webpack_require__.e(/* import() | pages/news/index */ 43).then(__webpack_require__.bind(null, 484)));
 
-const _6f437336 = () => interopDefault(__webpack_require__.e(/* import() | pages/post/index */ 47).then(__webpack_require__.bind(null, 485)));
+const _8caa4080 = () => interopDefault(__webpack_require__.e(/* import() | pages/post/index */ 47).then(__webpack_require__.bind(null, 485)));
 
-const _86f55c7a = () => interopDefault(__webpack_require__.e(/* import() | pages/privacy-policy */ 49).then(__webpack_require__.bind(null, 486)));
+const _361520f9 = () => interopDefault(__webpack_require__.e(/* import() | pages/privacy-policy */ 49).then(__webpack_require__.bind(null, 486)));
 
-const _5db2ad96 = () => interopDefault(__webpack_require__.e(/* import() | pages/profile/index */ 51).then(__webpack_require__.bind(null, 487)));
+const _4ab6786b = () => interopDefault(__webpack_require__.e(/* import() | pages/profile/index */ 51).then(__webpack_require__.bind(null, 487)));
 
-const _04805a02 = () => interopDefault(__webpack_require__.e(/* import() | pages/quotes/index */ 54).then(__webpack_require__.bind(null, 488)));
+const _4bfe4509 = () => interopDefault(__webpack_require__.e(/* import() | pages/quotes/index */ 54).then(__webpack_require__.bind(null, 488)));
 
-const _1af5b64f = () => interopDefault(__webpack_require__.e(/* import() | pages/register */ 57).then(__webpack_require__.bind(null, 489)));
+const _98f2b3f6 = () => interopDefault(__webpack_require__.e(/* import() | pages/register */ 57).then(__webpack_require__.bind(null, 489)));
 
-const _33705b38 = () => interopDefault(__webpack_require__.e(/* import() | pages/technology */ 58).then(__webpack_require__.bind(null, 490)));
+const _28f79524 = () => interopDefault(__webpack_require__.e(/* import() | pages/technology */ 58).then(__webpack_require__.bind(null, 490)));
 
-const _469390a6 = () => interopDefault(__webpack_require__.e(/* import() | pages/template */ 59).then(__webpack_require__.bind(null, 491)));
+const _41b6ff48 = () => interopDefault(__webpack_require__.e(/* import() | pages/template */ 59).then(__webpack_require__.bind(null, 491)));
 
-const _8bab091e = () => interopDefault(__webpack_require__.e(/* import() | pages/terms-of-service */ 60).then(__webpack_require__.bind(null, 492)));
+const _0f035527 = () => interopDefault(__webpack_require__.e(/* import() | pages/terms-of-service */ 60).then(__webpack_require__.bind(null, 492)));
 
-const _c5b8b284 = () => interopDefault(__webpack_require__.e(/* import() | pages/test */ 61).then(__webpack_require__.bind(null, 493)));
+const _7edce174 = () => interopDefault(__webpack_require__.e(/* import() | pages/test */ 61).then(__webpack_require__.bind(null, 493)));
 
-const _65ac1f79 = () => interopDefault(__webpack_require__.e(/* import() | pages/time */ 62).then(__webpack_require__.bind(null, 494)));
+const _47655a2f = () => interopDefault(__webpack_require__.e(/* import() | pages/time */ 62).then(__webpack_require__.bind(null, 494)));
 
-const _001b74d9 = () => interopDefault(__webpack_require__.e(/* import() | pages/tutorials */ 63).then(__webpack_require__.bind(null, 495)));
+const _79a87be3 = () => interopDefault(__webpack_require__.e(/* import() | pages/tutorials */ 63).then(__webpack_require__.bind(null, 495)));
 
-const _6590c68c = () => interopDefault(__webpack_require__.e(/* import() | pages/users */ 64).then(__webpack_require__.bind(null, 496)));
+const _8a023ad4 = () => interopDefault(__webpack_require__.e(/* import() | pages/users */ 64).then(__webpack_require__.bind(null, 496)));
 
-const _fffbc610 = () => interopDefault(__webpack_require__.e(/* import() | pages/world-reminders/index */ 67).then(__webpack_require__.bind(null, 497)));
+const _d27b53a4 = () => interopDefault(__webpack_require__.e(/* import() | pages/world-reminders/index */ 67).then(__webpack_require__.bind(null, 497)));
 
-const _cd973b6c = () => interopDefault(__webpack_require__.e(/* import() | pages/blog/create */ 29).then(__webpack_require__.bind(null, 513)));
+const _c88af200 = () => interopDefault(__webpack_require__.e(/* import() | pages/blog/create */ 29).then(__webpack_require__.bind(null, 513)));
 
-const _4779fb9a = () => interopDefault(__webpack_require__.e(/* import() | pages/blog/manage */ 31).then(__webpack_require__.bind(null, 514)));
+const _426db22e = () => interopDefault(__webpack_require__.e(/* import() | pages/blog/manage */ 31).then(__webpack_require__.bind(null, 514)));
 
-const _3e7eb4f3 = () => interopDefault(__webpack_require__.e(/* import() | pages/blog/view */ 32).then(__webpack_require__.bind(null, 498)));
+const _12dae1ae = () => interopDefault(__webpack_require__.e(/* import() | pages/blog/view */ 32).then(__webpack_require__.bind(null, 498)));
 
-const _14368b8c = () => interopDefault(__webpack_require__.e(/* import() | pages/dash/create */ 34).then(__webpack_require__.bind(null, 499)));
+const _0f2a4220 = () => interopDefault(__webpack_require__.e(/* import() | pages/dash/create */ 34).then(__webpack_require__.bind(null, 499)));
 
-const _764448e3 = () => interopDefault(__webpack_require__.e(/* import() | pages/dash/view */ 35).then(__webpack_require__.bind(null, 500)));
+const _2e582319 = () => interopDefault(__webpack_require__.e(/* import() | pages/dash/view */ 35).then(__webpack_require__.bind(null, 500)));
 
-const _17c5080a = () => interopDefault(__webpack_require__.e(/* import() | pages/news/create */ 42).then(__webpack_require__.bind(null, 515)));
+const _12b8be9e = () => interopDefault(__webpack_require__.e(/* import() | pages/news/create */ 42).then(__webpack_require__.bind(null, 515)));
 
-const _372c1be4 = () => interopDefault(__webpack_require__.e(/* import() | pages/news/manage */ 44).then(__webpack_require__.bind(null, 516)));
+const _39b2409a = () => interopDefault(__webpack_require__.e(/* import() | pages/news/manage */ 44).then(__webpack_require__.bind(null, 516)));
 
-const _be418370 = () => interopDefault(__webpack_require__.e(/* import() | pages/post/create */ 46).then(__webpack_require__.bind(null, 517)));
+const _b9353a04 = () => interopDefault(__webpack_require__.e(/* import() | pages/post/create */ 46).then(__webpack_require__.bind(null, 517)));
 
-const _3824439e = () => interopDefault(__webpack_require__.e(/* import() | pages/post/manage */ 48).then(__webpack_require__.bind(null, 518)));
+const _3317fa32 = () => interopDefault(__webpack_require__.e(/* import() | pages/post/manage */ 48).then(__webpack_require__.bind(null, 518)));
 
-const _46b0ff77 = () => interopDefault(__webpack_require__.e(/* import() | pages/profile/edit */ 50).then(__webpack_require__.bind(null, 519)));
+const _d6211cfe = () => interopDefault(__webpack_require__.e(/* import() | pages/profile/edit */ 50).then(__webpack_require__.bind(null, 519)));
 
-const _3c2250c2 = () => interopDefault(__webpack_require__.e(/* import() | pages/quotes/create */ 53).then(__webpack_require__.bind(null, 501)));
+const _5b7ea6d5 = () => interopDefault(__webpack_require__.e(/* import() | pages/quotes/create */ 53).then(__webpack_require__.bind(null, 501)));
 
-const _24fd7788 = () => interopDefault(__webpack_require__.e(/* import() | pages/quotes/manage */ 55).then(__webpack_require__.bind(null, 520)));
+const _c2e57284 = () => interopDefault(__webpack_require__.e(/* import() | pages/quotes/manage */ 55).then(__webpack_require__.bind(null, 520)));
 
-const _76df08f0 = () => interopDefault(__webpack_require__.e(/* import() | pages/quotes/view */ 56).then(__webpack_require__.bind(null, 502)));
+const _71d2bf84 = () => interopDefault(__webpack_require__.e(/* import() | pages/quotes/view */ 56).then(__webpack_require__.bind(null, 502)));
 
-const _b0146674 = () => interopDefault(__webpack_require__.e(/* import() | pages/world-reminders/create */ 66).then(__webpack_require__.bind(null, 521)));
+const _693cba50 = () => interopDefault(__webpack_require__.e(/* import() | pages/world-reminders/create */ 66).then(__webpack_require__.bind(null, 521)));
 
-const _29f726a2 = () => interopDefault(__webpack_require__.e(/* import() | pages/world-reminders/manage */ 68).then(__webpack_require__.bind(null, 522)));
+const _a7694b8e = () => interopDefault(__webpack_require__.e(/* import() | pages/world-reminders/manage */ 68).then(__webpack_require__.bind(null, 522)));
 
-const _256163b1 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/blog/create */ 14).then(__webpack_require__.bind(null, 523)));
+const _36feb38a = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/blog/create */ 14).then(__webpack_require__.bind(null, 523)));
 
-const _6870039a = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/blog/manage */ 15).then(__webpack_require__.bind(null, 524)));
+const _278f4624 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/blog/manage */ 15).then(__webpack_require__.bind(null, 524)));
 
-const _ff6b053c = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/news/create */ 17).then(__webpack_require__.bind(null, 525)));
+const _3f69bfec = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/news/create */ 17).then(__webpack_require__.bind(null, 525)));
 
-const _794dc56a = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/news/manage */ 18).then(__webpack_require__.bind(null, 526)));
+const _fb0f4056 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/news/manage */ 18).then(__webpack_require__.bind(null, 526)));
 
-const _2d0c3faf = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/post/create */ 19).then(__webpack_require__.bind(null, 527)));
+const _27a8fb8e = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/post/create */ 19).then(__webpack_require__.bind(null, 527)));
 
-const _701adf98 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/post/manage */ 20).then(__webpack_require__.bind(null, 528)));
+const _2f3a2222 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/post/manage */ 20).then(__webpack_require__.bind(null, 528)));
 
-const _16e11b46 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/quotes/create */ 21).then(__webpack_require__.bind(null, 503)));
+const _e98c3960 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/quotes/create */ 21).then(__webpack_require__.bind(null, 503)));
 
-const _59efbb2f = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/quotes/manage */ 22).then(__webpack_require__.bind(null, 529)));
+const _636ef98e = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/quotes/manage */ 22).then(__webpack_require__.bind(null, 529)));
 
-const _41f72c81 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/users/create */ 23).then(__webpack_require__.bind(null, 530)));
+const _66c03b37 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/users/create */ 23).then(__webpack_require__.bind(null, 530)));
 
-const _04d796f4 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/users/logs */ 24).then(__webpack_require__.bind(null, 504)));
+const _f23e49ac = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/users/logs */ 24).then(__webpack_require__.bind(null, 504)));
 
-const _f5f4672c = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/users/manage */ 25).then(__webpack_require__.bind(null, 531)));
+const _ac6249c0 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/users/manage */ 25).then(__webpack_require__.bind(null, 531)));
 
-const _77c7b4ff = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/world-reminders/create */ 26).then(__webpack_require__.bind(null, 532)));
+const _51ae5835 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/world-reminders/create */ 26).then(__webpack_require__.bind(null, 532)));
 
-const _8a535630 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/world-reminders/manage */ 27).then(__webpack_require__.bind(null, 533)));
+const _d6860fc4 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/world-reminders/manage */ 27).then(__webpack_require__.bind(null, 533)));
 
-const _12581348 = () => interopDefault(__webpack_require__.e(/* import() | pages/blog/_id */ 28).then(__webpack_require__.bind(null, 505)));
+const _7060fd66 = () => interopDefault(__webpack_require__.e(/* import() | pages/blog/_id */ 28).then(__webpack_require__.bind(null, 505)));
 
-const _09b3a24b = () => interopDefault(__webpack_require__.e(/* import() | pages/news/_id */ 41).then(__webpack_require__.bind(null, 506)));
+const _f97ead56 = () => interopDefault(__webpack_require__.e(/* import() | pages/news/_id */ 41).then(__webpack_require__.bind(null, 506)));
 
-const _573e69c4 = () => interopDefault(__webpack_require__.e(/* import() | pages/post/_id */ 45).then(__webpack_require__.bind(null, 507)));
+const _4dedd228 = () => interopDefault(__webpack_require__.e(/* import() | pages/post/_id */ 45).then(__webpack_require__.bind(null, 507)));
 
-const _9e56edb2 = () => interopDefault(__webpack_require__.e(/* import() | pages/quotes/_id */ 52).then(__webpack_require__.bind(null, 508)));
+const _0988149e = () => interopDefault(__webpack_require__.e(/* import() | pages/quotes/_id */ 52).then(__webpack_require__.bind(null, 508)));
 
-const _063a0540 = () => interopDefault(__webpack_require__.e(/* import() | pages/world-reminders/_id */ 65).then(__webpack_require__.bind(null, 509)));
+const _21ac0c16 = () => interopDefault(__webpack_require__.e(/* import() | pages/world-reminders/_id */ 65).then(__webpack_require__.bind(null, 509)));
 
-const _2026ec56 = () => interopDefault(__webpack_require__.e(/* import() | pages/index */ 38).then(__webpack_require__.bind(null, 477)));
+const _75950860 = () => interopDefault(__webpack_require__.e(/* import() | pages/index */ 38).then(__webpack_require__.bind(null, 477)));
 
-const _2ca55429 = () => interopDefault(__webpack_require__.e(/* import() | pages/_username/index */ 11).then(__webpack_require__.bind(null, 510)));
+const _fd03a442 = () => interopDefault(__webpack_require__.e(/* import() | pages/_username/index */ 11).then(__webpack_require__.bind(null, 510)));
 
-const _32cb2ee8 = () => interopDefault(__webpack_require__.e(/* import() | pages/_username/following */ 10).then(__webpack_require__.bind(null, 474)));
+const _57943d9e = () => interopDefault(__webpack_require__.e(/* import() | pages/_username/following */ 10).then(__webpack_require__.bind(null, 474)));
 
-const _a561cb10 = () => interopDefault(__webpack_require__.e(/* import() | pages/_username/skel */ 12).then(__webpack_require__.bind(null, 511)));
+const _65b93202 = () => interopDefault(__webpack_require__.e(/* import() | pages/_username/skel */ 12).then(__webpack_require__.bind(null, 511)));
 
 const emptyFn = () => {};
 
@@ -12497,239 +12497,239 @@ const routerOptions = {
   scrollBehavior: router_scrollBehavior,
   routes: [{
     path: "/about",
-    component: _006f1191,
+    component: _55dd2d9b,
     name: "about"
   }, {
     path: "/admin",
-    component: _5594be62,
+    component: _508874f6,
     name: "admin"
   }, {
     path: "/blog",
-    component: _7cce7218,
+    component: _0c00337e,
     name: "blog"
   }, {
     path: "/contact-us",
-    component: _2c7c2e17,
+    component: _36dfef66,
     name: "contact-us"
   }, {
     path: "/dashboard",
-    component: _7517826a,
+    component: _6c1f47c0,
     name: "dashboard"
   }, {
     path: "/final",
-    component: _657592fa,
+    component: _8a38a1f8,
     name: "final"
   }, {
     path: "/login",
-    component: _2c62e126,
+    component: _3f3cab77,
     name: "login"
   }, {
     path: "/logout",
-    component: _c5d73294,
+    component: _152c6828,
     name: "logout"
   }, {
     path: "/news",
-    component: _c98599ba,
+    component: _34b6c0a6,
     name: "news"
   }, {
     path: "/post",
-    component: _6f437336,
+    component: _8caa4080,
     name: "post"
   }, {
     path: "/privacy-policy",
-    component: _86f55c7a,
+    component: _361520f9,
     name: "privacy-policy"
   }, {
     path: "/profile",
-    component: _5db2ad96,
+    component: _4ab6786b,
     name: "profile"
   }, {
     path: "/quotes",
-    component: _04805a02,
+    component: _4bfe4509,
     name: "quotes"
   }, {
     path: "/register",
-    component: _1af5b64f,
+    component: _98f2b3f6,
     name: "register"
   }, {
     path: "/technology",
-    component: _33705b38,
+    component: _28f79524,
     name: "technology"
   }, {
     path: "/template",
-    component: _469390a6,
+    component: _41b6ff48,
     name: "template"
   }, {
     path: "/terms-of-service",
-    component: _8bab091e,
+    component: _0f035527,
     name: "terms-of-service"
   }, {
     path: "/test",
-    component: _c5b8b284,
+    component: _7edce174,
     name: "test"
   }, {
     path: "/time",
-    component: _65ac1f79,
+    component: _47655a2f,
     name: "time"
   }, {
     path: "/tutorials",
-    component: _001b74d9,
+    component: _79a87be3,
     name: "tutorials"
   }, {
     path: "/users",
-    component: _6590c68c,
+    component: _8a023ad4,
     name: "users"
   }, {
     path: "/world-reminders",
-    component: _fffbc610,
+    component: _d27b53a4,
     name: "world-reminders"
   }, {
     path: "/blog/create",
-    component: _cd973b6c,
+    component: _c88af200,
     name: "blog-create"
   }, {
     path: "/blog/manage",
-    component: _4779fb9a,
+    component: _426db22e,
     name: "blog-manage"
   }, {
     path: "/blog/view",
-    component: _3e7eb4f3,
+    component: _12dae1ae,
     name: "blog-view"
   }, {
     path: "/dash/create",
-    component: _14368b8c,
+    component: _0f2a4220,
     name: "dash-create"
   }, {
     path: "/dash/view",
-    component: _764448e3,
+    component: _2e582319,
     name: "dash-view"
   }, {
     path: "/news/create",
-    component: _17c5080a,
+    component: _12b8be9e,
     name: "news-create"
   }, {
     path: "/news/manage",
-    component: _372c1be4,
+    component: _39b2409a,
     name: "news-manage"
   }, {
     path: "/post/create",
-    component: _be418370,
+    component: _b9353a04,
     name: "post-create"
   }, {
     path: "/post/manage",
-    component: _3824439e,
+    component: _3317fa32,
     name: "post-manage"
   }, {
     path: "/profile/edit",
-    component: _46b0ff77,
+    component: _d6211cfe,
     name: "profile-edit"
   }, {
     path: "/quotes/create",
-    component: _3c2250c2,
+    component: _5b7ea6d5,
     name: "quotes-create"
   }, {
     path: "/quotes/manage",
-    component: _24fd7788,
+    component: _c2e57284,
     name: "quotes-manage"
   }, {
     path: "/quotes/view",
-    component: _76df08f0,
+    component: _71d2bf84,
     name: "quotes-view"
   }, {
     path: "/world-reminders/create",
-    component: _b0146674,
+    component: _693cba50,
     name: "world-reminders-create"
   }, {
     path: "/world-reminders/manage",
-    component: _29f726a2,
+    component: _a7694b8e,
     name: "world-reminders-manage"
   }, {
     path: "/admin/blog/create",
-    component: _256163b1,
+    component: _36feb38a,
     name: "admin-blog-create"
   }, {
     path: "/admin/blog/manage",
-    component: _6870039a,
+    component: _278f4624,
     name: "admin-blog-manage"
   }, {
     path: "/admin/news/create",
-    component: _ff6b053c,
+    component: _3f69bfec,
     name: "admin-news-create"
   }, {
     path: "/admin/news/manage",
-    component: _794dc56a,
+    component: _fb0f4056,
     name: "admin-news-manage"
   }, {
     path: "/admin/post/create",
-    component: _2d0c3faf,
+    component: _27a8fb8e,
     name: "admin-post-create"
   }, {
     path: "/admin/post/manage",
-    component: _701adf98,
+    component: _2f3a2222,
     name: "admin-post-manage"
   }, {
     path: "/admin/quotes/create",
-    component: _16e11b46,
+    component: _e98c3960,
     name: "admin-quotes-create"
   }, {
     path: "/admin/quotes/manage",
-    component: _59efbb2f,
+    component: _636ef98e,
     name: "admin-quotes-manage"
   }, {
     path: "/admin/users/create",
-    component: _41f72c81,
+    component: _66c03b37,
     name: "admin-users-create"
   }, {
     path: "/admin/users/logs",
-    component: _04d796f4,
+    component: _f23e49ac,
     name: "admin-users-logs"
   }, {
     path: "/admin/users/manage",
-    component: _f5f4672c,
+    component: _ac6249c0,
     name: "admin-users-manage"
   }, {
     path: "/admin/world-reminders/create",
-    component: _77c7b4ff,
+    component: _51ae5835,
     name: "admin-world-reminders-create"
   }, {
     path: "/admin/world-reminders/manage",
-    component: _8a535630,
+    component: _d6860fc4,
     name: "admin-world-reminders-manage"
   }, {
     path: "/blog/:id",
-    component: _12581348,
+    component: _7060fd66,
     name: "blog-id"
   }, {
     path: "/news/:id",
-    component: _09b3a24b,
+    component: _f97ead56,
     name: "news-id"
   }, {
     path: "/post/:id",
-    component: _573e69c4,
+    component: _4dedd228,
     name: "post-id"
   }, {
     path: "/quotes/:id",
-    component: _9e56edb2,
+    component: _0988149e,
     name: "quotes-id"
   }, {
     path: "/world-reminders/:id?",
-    component: _063a0540,
+    component: _21ac0c16,
     name: "world-reminders-id"
   }, {
     path: "/",
-    component: _2026ec56,
+    component: _75950860,
     name: "index"
   }, {
     path: "/:username",
-    component: _2ca55429,
+    component: _fd03a442,
     name: "username"
   }, {
     path: "/:username/following",
-    component: _32cb2ee8,
+    component: _57943d9e,
     name: "username-following"
   }, {
     path: "/:username/skel",
-    component: _a561cb10,
+    component: _65b93202,
     name: "username-skel"
   }],
   fallback: false
@@ -12987,7 +12987,7 @@ var error_component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "bfedb7fe",
-  "026e1de4"
+  "83f433ac"
   
 )
 
@@ -13297,7 +13297,7 @@ var nuxt_loading_component = Object(componentNormalizer["a" /* default */])(
   false,
   nuxt_loading_injectStyles,
   null,
-  "8824e488"
+  "2d680a02"
   
 )
 
@@ -14535,7 +14535,7 @@ var admin_component = Object(componentNormalizer["a" /* default */])(
   false,
   admin_injectStyles,
   null,
-  "1fd158aa"
+  "a8a1c81e"
   
 )
 
@@ -14794,7 +14794,7 @@ var default_component = Object(componentNormalizer["a" /* default */])(
   false,
   default_injectStyles,
   null,
-  "ed07c6c6"
+  "837a293a"
   
 )
 
@@ -15090,7 +15090,7 @@ var layouts_component = Object(componentNormalizer["a" /* default */])(
   false,
   layouts_injectStyles,
   "36eff48a",
-  "82b000a4"
+  "7a3fc7f4"
   
 )
 
@@ -17369,7 +17369,7 @@ _nuxt_middleware.auth = authMiddleware;
   })); // google
 
   $auth.registerStrategy('google', new runtime_Oauth2Scheme($auth, {
-    "scope": ["openid", "profile", "email", "openid", "profile", "email", "https://www.googleapis.com/auth/gmail.metadata"],
+    "scope": ["openid", "profile", "email", "profile", "email"],
     "clientId": "635307167233-mii6gf2ho460gj11ui5tvb7teo1rcp3o.apps.googleusercontent.com",
     "codeChallengeMethod": "",
     "responseType": "id_token token",
@@ -18268,7 +18268,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "0a2d60a9"
+  "64794722"
   
 )
 
@@ -18750,7 +18750,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "6e0ae144"
+  "ff486050"
   
 )
 
@@ -20385,7 +20385,7 @@ module.exports = require("juice");
 /* 224 */
 /***/ (function(module, exports) {
 
-module.exports = require("@engrjerickcmangalus/ckeditor-nuxt-custom-build-simpleuploader");
+module.exports = require("@coderzero8/ck5-nuxt");
 
 /***/ }),
 /* 225 */,
