@@ -48,7 +48,7 @@ var VBtn = __webpack_require__(216);
 var VCard = __webpack_require__(78);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VCard/index.js
-var components_VCard = __webpack_require__(50);
+var components_VCard = __webpack_require__(49);
 
 // CONCATENATED MODULE: ./components/DashTitle.vue
 
@@ -65,7 +65,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "26305d4a"
+  "3dbe5461"
   
 )
 
@@ -119,7 +119,7 @@ var installComponents_default = /*#__PURE__*/__webpack_require__.n(installCompon
 var VCard = __webpack_require__(78);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VCard/index.js
-var components_VCard = __webpack_require__(50);
+var components_VCard = __webpack_require__(49);
 
 // CONCATENATED MODULE: ./components/Dashboard.vue
 
@@ -136,7 +136,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "d5f4f1ee"
+  "3447ebe2"
   
 )
 
@@ -321,7 +321,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "776ef927"
+  "4168d6e1"
   
 )
 

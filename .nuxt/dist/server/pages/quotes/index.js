@@ -201,7 +201,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "36e386e6",
-  "c9cc47fc"
+  "6513b9bc"
   
 )
 
@@ -265,7 +265,7 @@ var external_nprogress_ = __webpack_require__(8);
 var external_nprogress_default = /*#__PURE__*/__webpack_require__.n(external_nprogress_);
 
 // EXTERNAL MODULE: ./node_modules/nprogress/nprogress.css
-var nprogress = __webpack_require__(54);
+var nprogress = __webpack_require__(53);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/quotes/index.vue?vue&type=script&lang=js&
 //
@@ -413,7 +413,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "326ed740",
-  "7a83eb40"
+  "174596e6"
   
 )
 

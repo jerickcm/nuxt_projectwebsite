@@ -505,11 +505,8 @@ export default {
     const news = await this.$axios.$get(`api/news/page/1/item/3`)
     this.news_load = false
     this.news = news.data
-    // await this.$axios.$get('/sanctum/csrf-cookie')
-    // const posts = await this.$axios.$get(`api/post/page/1/item/3`)
-    // this.posts = posts.data
-  },
 
+  },
   layout: 'default',
   methods: {
     ...mapActions('messageoftheday', ['fetchQuote'])
@@ -519,12 +516,18 @@ export default {
   },
   async created() {},
   async mounted() {
+
+
+
+
     await this.$axios.$get('/sanctum/csrf-cookie')
     try {
       this.fetchQuote()
     } catch (error) {
       console.log(error)
     }
+
+
   }
 }
 </script>

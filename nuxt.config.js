@@ -25,6 +25,8 @@ const prod_google_id = process.env.PROD_GOOGLE
 const google_id =
   process.env.NODE_ENV === 'development' ? dev_google_id : prod_google_id
 
+  // const axios = require('axios');
+  // const  response ;
 export default {
   dev: process.env.NODE_ENV !== 'production',
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -76,8 +78,50 @@ export default {
     '@nuxtjs/toast',
     '@nuxtjs/sitemap'
   ],
+  axios: {
+    // baseURL: process.env.BASE_URL || "http://back.api.test",
+    baseURL: api,
+    credentials: true
+  },
+  router: {
+    trailingSlash: true
+  },
   sitemap: {
-    hostname: 'http://www.inhinyeru.com'
+    hostname: 'https://www.inhinyeru.com',
+    gzip: true,
+    exclude: [
+      '/dashboard/*',
+      '/admin/*',
+      'admin',
+      '/admin/**',
+      '/post/manage',
+      '/blog/manage',
+      '/news/manage',
+      '/quotes/manage',
+
+      '/post/create',
+      '/blog/create',
+      '/news/create',
+      '/quotes/create',
+
+      '/profile/edit',
+    ],
+    trailingSlash: true,
+    routes: async () => {
+      const axios = require('axios');
+      let { data:blogs } = await axios.get(api+'/blogs/sitemap')
+      let { data:posts } = await axios.get(api+'/posts/sitemap')
+      let { data:news } = await axios.get(api+'/news/sitemap')
+      let { data:usernames } = await axios.get(api+'/userdetails/sitemap')
+
+      posts = posts.map((user) => `/post/${user.slug}`)
+      blogs = blogs.map((user) => `/blog/${user.slug}`)
+      news = news.map((user) => `/news/${user.slug}`)
+      usernames = usernames.map((user) => `/${user.username}`)
+
+      return [].concat(posts).concat(blogs).concat(news).concat(usernames) ;
+    },
+
   },
   toast: {
     position: 'top-right',
@@ -85,7 +129,7 @@ export default {
   },
   robots: {
     UserAgent: '*',
-    Disallow: '/dashboard',
+    Disallow: ['/admin', '/dashboard'],
     Allow: '/'
   },
   auth: {
@@ -144,11 +188,6 @@ export default {
     }
   },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {
-    // baseURL: process.env.BASE_URL || "http://back.api.test",
-    baseURL: api,
-    credentials: true
-  },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {

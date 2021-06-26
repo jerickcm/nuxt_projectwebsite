@@ -235,7 +235,7 @@ var VAlert = __webpack_require__(285);
 var VSheet = __webpack_require__(31);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VBtn/index.js
-var VBtn = __webpack_require__(51);
+var VBtn = __webpack_require__(50);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VIcon/index.js
 var VIcon = __webpack_require__(18);
@@ -519,13 +519,13 @@ var external_vue_default = /*#__PURE__*/__webpack_require__.n(external_vue_);
 var external_vuelidate_ = __webpack_require__(70);
 
 // EXTERNAL MODULE: external "vuelidate/lib/validators"
-var validators_ = __webpack_require__(43);
+var validators_ = __webpack_require__(42);
 
 // EXTERNAL MODULE: external "nprogress"
 var external_nprogress_ = __webpack_require__(8);
 
 // EXTERNAL MODULE: ./node_modules/nprogress/nprogress.css
-var nprogress = __webpack_require__(54);
+var nprogress = __webpack_require__(53);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/register.vue?vue&type=script&lang=js&
 //
@@ -762,7 +762,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "4b0e1554"
+  "2317b4dc"
   
 )
 
@@ -783,7 +783,7 @@ installComponents_default()(component, {VAlert: VAlert["a" /* default */],VBtn: 
 
 /***/ }),
 
-/***/ 51:
+/***/ 50:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
