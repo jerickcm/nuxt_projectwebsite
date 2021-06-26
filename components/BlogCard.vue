@@ -27,7 +27,15 @@
               path: 'blog/' + item.slug,
             }"
           >
-            <v-img height="250" :src="item.image"> </v-img>
+          <!-- v-if="item.image==''" -->
+          <!-- v-if="item.image!=='{}'"  -->
+              <v-img :src="item.image"
+
+              height="250px"
+              > </v-img>
+            <!-- <v-img  v-else src="/images/NoImageAvailable.jpg"> </v-img> -->
+
+
           </nuxt-link>
 
           <v-card-title>
@@ -140,7 +148,7 @@
 <script>
 export default {
   head: {
-   
+
   },
   props: ['content', 'length', 'loading'],
   data: () => ({
@@ -150,6 +158,11 @@ export default {
   mounted() {},
   computed: {},
   methods: {
+    image_default(event){
+       console.log('Image failed to load');
+      // console.log('event')
+      // event.target.src = "/images/NoImageAvailable.jpg";
+    },
     getnextarticle() {
       this.$emit('next-article')
     },

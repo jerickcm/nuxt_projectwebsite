@@ -1,6 +1,6 @@
 <template>
-  <v-container fluid class="ma-0 pa-0 grey lighten-3">
-    <v-row>
+  <v-container class=" ">
+    <!-- <v-row>
       <v-col xs="12" sm="12" lg="12" md="12" class="ma-0 pa-0">
         <v-sheet class="black lighten-5" elevation="2" min-height="10vh">
           <v-container>
@@ -28,8 +28,6 @@
             </v-row>
 
             <v-row>
-              <!-- <v-spacer /> -->
-
               <v-col class="col-md-6 offset-md-3 text-center">
                 <div class="hidden-sm-and-down text-center">
                   <v-btn
@@ -62,8 +60,8 @@
           </v-container>
         </v-sheet>
       </v-col>
-    </v-row>
-    <v-row>
+    </v-row> -->
+    <!-- <v-row>
       <v-col xs="12" sm="12" lg="12" class="ma-0 pa-0">
         <v-sheet class="grey lighten-5 pa-1 ma-1" elevation="2">
           <v-container class="">
@@ -96,134 +94,217 @@
                 lg="12"
                 class="font-avenir fs-1-4 text-center"
               >
-
               </v-col>
             </v-row>
           </v-container>
         </v-sheet>
       </v-col>
-    </v-row>
-
-
-    <!-- <v-row>
-
-      <v-container>
-        <v-row>
-        <v-col>
-        <h2 color="dark">Blogs</h2>
-        </v-col>
-        </v-row>
-        <v-row
-        color="blue"
-        v-for="(i, ind) in Math.ceil(content.length / 3)"
-        :key="ind"
-        >
-          <v-col
-          lg="4"
-          v-for="(item, indx) in content.slice((i - 1) * 3, i * 3)"
-          :key="indx"
-          >
-              <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
-                    <nuxt-link
-                      class="nuxtlink"
-                      target="_blank"
-                      :to="{
-                        path: 'blog/' + item.slug,
-                      }"
-                    >
-                      <v-img height="250" :src="item.image"> </v-img>
-                    </nuxt-link>
-
-                    <v-card-title>
-                    <h2 class="title1 blue--text">
-                      <nuxt-link
-                        class="nuxtlink"
-                        target="_blank"
-                        :to="{
-                          path: 'blog/' + item.slug,
-                        }"
-                        > {{ item.title }}
-                      </nuxt-link></h2>
-                    </v-card-title>
-                    <v-card-text class="">
-                      <v-chip-group
-                        v-model="selection"
-                        active-class="deep-purple accent-4 white--text"
-                        column
-
-                      >
-                          <span class="pt-3">Tags: &zwnj;&zwnj;</span> <v-chip  v-for="(itm, index) in item.tags" :key="index" color="blue" class="white--text">{{itm}}</v-chip>
-                      </v-chip-group>
-                      <span>Author: {{ item.name }} </span><br />
-                      <span>Date : {{ item.human_date }}</span
-                      ><br />
-                    </v-card-text>
-                  </v-card>
-          </v-col>
-        </v-row>
-      </v-container>
-
-    </v-row>
-    <v-row>
-
-      <v-container>
-        <v-row>
-        <v-col>
-        <h2 color="dark">News</h2>
-        </v-col>
-        </v-row>
-        <v-row
-        color="blue"
-        v-for="(i, ind) in Math.ceil(news.length / 3)"
-        :key="ind"
-        >
-          <v-col
-          lg="4"
-          v-for="(item, indx) in news.slice((i - 1) * 3, i * 3)"
-          :key="indx"
-          >
-              <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
-                    <nuxt-link
-                    target="_blank"
-                      class="nuxtlink"
-                      :to="{
-                        path: 'news/' + item.slug,
-                      }"
-                    >
-                      <v-img height="250" :src="item.image"> </v-img>
-                    </nuxt-link>
-
-                    <v-card-title>
-                     <h2 class="title1 blue--text">
-                      <nuxt-link
-                      target="_blank"
-                        class="nuxtlink"
-                        :to="{
-                          path: 'news/' + item.slug,
-                        }"
-                        > {{ item.title }}
-                      </nuxt-link></h2>
-                    </v-card-title>
-                    <v-card-text class="">
-                      <v-chip-group
-                        v-model="selection"
-                        active-class="deep-purple accent-4 white--text"
-                        column
-
-                      >
-                          <span class="pt-3">Tags: &zwnj;&zwnj;</span> <v-chip  v-for="(itm, index) in item.tags" :key="index" color="blue" class="white--text">{{itm}}</v-chip>
-                      </v-chip-group>
-                      <span>Author: {{ item.name }} </span><br />
-                      <span>Date : {{ item.human_date }}</span
-                      ><br />
-                    </v-card-text>
-                  </v-card>
-          </v-col>
-        </v-row>
-      </v-container>
-
     </v-row> -->
     <v-row>
+      <v-col>
+        <h1 color="dark">Project Website - Research and Development</h1>
+        <p>
+          Latest Code fixes, Tutorials and Reviews, News about technology and
+          Programming also includes Programming quotes and world event
+          anniversaries. May also include personal blogs and top 10 - 100
+          reviews of the authors favorite things and current researches.
+        </p>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-container>
+        <v-row>
+          <v-col>
+            <h2 color="dark">Post</h2>
+          </v-col>
+        </v-row>
+        <v-row
+          color="blue"
+          v-for="(i, ind) in Math.ceil(posts.length / 3)"
+          :key="ind"
+        >
+          <v-col
+            xs="12"
+            sm="12"
+            md="4"
+            lg="4"
+            xl="4"
+            v-for="(item, indx) in posts.slice((i - 1) * 3, i * 3)"
+            :key="indx"
+          >
+            <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
+              <nuxt-link
+                target="_blank"
+                class="nuxtlink"
+                :to="{
+                  path: 'post/' + item.slug
+                }"
+              >
+                <v-img height="250" :src="item.image"> </v-img>
+              </nuxt-link>
+
+              <v-card-title>
+                <h2 class="title1 blue--text fs-1 cardtitle">
+                  <nuxt-link
+                    target="_blank"
+                    class="nuxtlink"
+                    :to="{
+                      path: 'post/' + item.slug
+                    }"
+                  >
+                    {{ item.title }}
+                  </nuxt-link>
+                </h2>
+              </v-card-title>
+              <v-card-text class="">
+                <span>Author: {{ item.name }} </span><br />
+                <span>Date : {{ item.human_date }}</span
+                ><br />
+              </v-card-text>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-row>
+    <v-row>
+      <v-container>
+        <v-row>
+          <v-col>
+            <h2 color="dark">Blogs</h2>
+          </v-col>
+        </v-row>
+        <v-row
+          color="blue"
+          v-for="(i, ind) in Math.ceil(content.length / 3)"
+          :key="ind"
+        >
+          <v-col
+            xs="12"
+            sm="12"
+            md="4"
+            lg="4"
+            xl="4"
+            v-for="(item, indx) in content.slice((i - 1) * 3, i * 3)"
+            :key="indx"
+          >
+            <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
+              <nuxt-link
+                class="nuxtlink"
+                target="_blank"
+                :to="{
+                  path: 'blog/' + item.slug
+                }"
+              >
+                <v-img height="250" :src="item.image"> </v-img>
+              </nuxt-link>
+
+              <v-card-title>
+                <h2 class="title1 blue--text fs-1 cardtitle">
+                  <nuxt-link
+                    class="nuxtlink"
+                    target="_blank"
+                    :to="{
+                      path: 'blog/' + item.slug
+                    }"
+                  >
+                    {{ item.title }}
+                  </nuxt-link>
+                </h2>
+              </v-card-title>
+              <v-card-text class="">
+                <v-chip-group
+                  v-model="selection"
+                  active-class="deep-purple accent-4 white--text"
+                  column
+                >
+                  <span class="pt-3">Tags: &zwnj;&zwnj;</span>
+                  <v-chip
+                    v-for="(itm, index) in item.tags"
+                    :key="index"
+                    color="blue"
+                    class="white--text"
+                    >{{ itm }}</v-chip
+                  >
+                </v-chip-group>
+                <span>Author: {{ item.name }} </span><br />
+                <span>Date : {{ item.human_date }}</span
+                ><br />
+              </v-card-text>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-row>
+    <v-row>
+      <v-container>
+        <v-row>
+          <v-col>
+            <h2 color="dark">News</h2>
+          </v-col>
+        </v-row>
+        <v-row
+          color="blue"
+          v-for="(i, ind) in Math.ceil(news.length / 3)"
+          :key="ind"
+        >
+          <v-col
+            xs="12"
+            sm="12"
+            md="4"
+            lg="4"
+            xl="4"
+            v-for="(item, indx) in news.slice((i - 1) * 3, i * 3)"
+            :key="indx"
+          >
+            <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
+              <nuxt-link
+                target="_blank"
+                class="nuxtlink"
+                :to="{
+                  path: 'news/' + item.slug
+                }"
+              >
+                <v-img height="250" :src="item.image"> </v-img>
+              </nuxt-link>
+
+              <v-card-title>
+                <h2 class="title1 blue--text fs-1 cardtitle">
+                  <nuxt-link
+                    target="_blank"
+                    class="nuxtlink"
+                    :to="{
+                      path: 'news/' + item.slug
+                    }"
+                  >
+                    {{ item.title }}
+                  </nuxt-link>
+                </h2>
+              </v-card-title>
+              <v-card-text class="">
+                <v-chip-group
+                  v-model="selection"
+                  active-class="deep-purple accent-4 white--text"
+                  column
+                >
+                  <span class="pt-3">Tags: &zwnj;&zwnj;</span>
+                  <v-chip
+                    v-for="(itm, index) in item.tags"
+                    :key="index"
+                    color="blue"
+                    class="white--text"
+                    >{{ itm }}</v-chip
+                  >
+                </v-chip-group>
+                <span>Author: {{ item.name }} </span><br />
+                <span>Date : {{ item.human_date }}</span
+                ><br />
+              </v-card-text>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-row>
+    <!-- <v-row>
       <v-col xs="12" sm="12" lg="12" class="ma-0 pa-0">
         <v-sheet color="background" class="" elevation="2" min-height="30vh">
           <v-container class="">
@@ -264,10 +345,10 @@
           </v-container>
         </v-sheet>
       </v-col>
-    </v-row>
+    </v-row> -->
     <v-row>
-      <v-col xs="12" sm="12" lg="12" class="ma-0 pa-0">
-        <v-sheet class="" elevation="2" min-height="10vh">
+      <v-col xs="12" sm="12" lg="12" class="">
+        <v-sheet class="" elevation="2">
           <v-container class="">
             <v-row>
               <v-col cols="12" sm="12" lg="12">
@@ -278,43 +359,47 @@
                   rounded
                   height="6"
                 ></v-progress-linear>
-                <div
+                <v-sheet
                   v-if="!LoadingStatus"
                   v-for="message in MessageOfTheDay"
                   :key="message.author"
+                  class="text-center "
                 >
-                  <p
-                    for=""
-                    class="text-center mt-5"
+                  <span
+                    class="text-center mt-5 dont-break-out"
                     :class="{
-                      'fs-1.1': $vuetify.breakpoint.smAndDown,
+                      'fs-0.5': $vuetify.breakpoint.smAndDown,
                       'fs-1.5': $vuetify.breakpoint.mdAndUp
                     }"
                   >
                     " {{ message.message }} " - {{ message.author }}
-                  </p>
-                </div>
+                  </span>
+                </v-sheet>
               </v-col>
             </v-row>
           </v-container>
         </v-sheet>
       </v-col>
     </v-row>
-     <v-row>
-       <v-col>
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-          <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-          </script>
-          <ins class="adsbygoogle"
+    <!-- <v-row>
+      <v-col>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+        ></script>
+        <script>
+          ;(adsbygoogle = window.adsbygoogle || []).push({})
+        </script>
+        <ins
+          class="adsbygoogle"
           style="display:block"
           data-ad-client="ca-pub-3213536425475125"
           data-ad-slot="3715096457"
           data-ad-format="auto"
-          data-full-width-responsive="true"></ins>
-
-        </v-col>
-    </v-row>
+          data-full-width-responsive="true"
+        ></ins>
+      </v-col>
+    </v-row> -->
   </v-container>
 </template>
 <script>
@@ -328,14 +413,14 @@ export default {
   middleware: 'auth',
   auth: false,
   head: () => ({
-    title: 'Profile ',
-    meta: [{ hid: 'Profile', name: 'Profile', content: 'Profile' }],
-
+    title: 'Homepage ',
+    meta: [{ hid: 'Homepage', name: 'Homepage', content: 'Homepage' }]
   }),
   data: () => ({
-    selection:0,
-    content:[],
-    news:[],
+    selection: 0,
+    content: [],
+    news: [],
+    posts: [],
     selectedItem: 0,
     show: true,
     title: '',
@@ -344,12 +429,15 @@ export default {
     links: []
   }),
   async fetch() {
-    // await this.$axios.$get('/sanctum/csrf-cookie')
-    // const res = await this.$axios.$get(`api/blog/page/1/item/3`)
-    // this.content = res.data;
-    // await this.$axios.$get('/sanctum/csrf-cookie')
-    // const news = await this.$axios.$get(`api/news/page/1/item/3`)
-    // this.news=news.data;
+    await this.$axios.$get('/sanctum/csrf-cookie')
+    const res = await this.$axios.$get(`api/blog/page/1/item/3`)
+    this.content = res.data
+    await this.$axios.$get('/sanctum/csrf-cookie')
+    const news = await this.$axios.$get(`api/news/page/1/item/3`)
+    this.news = news.data
+    await this.$axios.$get('/sanctum/csrf-cookie')
+    const posts = await this.$axios.$get(`api/post/page/1/item/3`)
+    this.posts = posts.data
   },
 
   layout: 'default',
@@ -359,9 +447,7 @@ export default {
   computed: {
     ...mapGetters('messageoftheday', ['MessageOfTheDay', 'LoadingStatus'])
   },
-  async created() {
-
-  },
+  async created() {},
   async mounted() {
     await this.$axios.$get('/sanctum/csrf-cookie')
     try {
@@ -369,11 +455,27 @@ export default {
     } catch (error) {
       console.log(error)
     }
-  },
-
+  }
 }
 </script>
 <style scoped>
+.dont-break-out {
+  /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
 .font-lulu {
   font-family: 'Lulu', sans-serif;
 }
@@ -405,11 +507,16 @@ export default {
     transform: scale(1);
   }
 }
-.title1{
+.title1 {
   text-decoration: none;
 }
 .v-application a {
-    color: rgb(66, 77, 238);
-    text-decoration: none;
+  color: rgb(66, 77, 238);
+  text-decoration: none;
+}
+.cardtitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 </style>
