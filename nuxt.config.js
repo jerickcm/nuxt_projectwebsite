@@ -80,9 +80,9 @@ export default {
     baseURL: api,
     credentials: true
   },
-  router: {
-    trailingSlash: true
-  },
+  // router: {
+  //   trailingSlash: true
+  // },
   sitemap: {
     hostname: 'https://www.inhinyeru.com',
     gzip: true,
@@ -103,7 +103,7 @@ export default {
 
       '/profile/edit',
     ],
-    trailingSlash: true,
+    // trailingSlash: true,
     routes: async () => {
       const axios = require('axios');
       let { data:blogs } = await axios.get(api+'/blogs/sitemap')

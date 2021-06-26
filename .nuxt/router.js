@@ -76,299 +76,240 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
-    path: "/about/",
+    path: "/about",
     component: _006f1191,
-    pathToRegexpOptions: {"strict":true},
     name: "about"
   }, {
-    path: "/admin/",
+    path: "/admin",
     component: _5594be62,
-    pathToRegexpOptions: {"strict":true},
     name: "admin"
   }, {
-    path: "/blog/",
+    path: "/blog",
     component: _7cce7218,
-    pathToRegexpOptions: {"strict":true},
     name: "blog"
   }, {
-    path: "/contact-us/",
+    path: "/contact-us",
     component: _2c7c2e17,
-    pathToRegexpOptions: {"strict":true},
     name: "contact-us"
   }, {
-    path: "/dashboard/",
+    path: "/dashboard",
     component: _7517826a,
-    pathToRegexpOptions: {"strict":true},
     name: "dashboard"
   }, {
-    path: "/final/",
+    path: "/final",
     component: _657592fa,
-    pathToRegexpOptions: {"strict":true},
     name: "final"
   }, {
-    path: "/login/",
+    path: "/login",
     component: _2c62e126,
-    pathToRegexpOptions: {"strict":true},
     name: "login"
   }, {
-    path: "/logout/",
+    path: "/logout",
     component: _c5d73294,
-    pathToRegexpOptions: {"strict":true},
     name: "logout"
   }, {
-    path: "/news/",
+    path: "/news",
     component: _c98599ba,
-    pathToRegexpOptions: {"strict":true},
     name: "news"
   }, {
-    path: "/post/",
+    path: "/post",
     component: _6f437336,
-    pathToRegexpOptions: {"strict":true},
     name: "post"
   }, {
-    path: "/privacy-policy/",
+    path: "/privacy-policy",
     component: _86f55c7a,
-    pathToRegexpOptions: {"strict":true},
     name: "privacy-policy"
   }, {
-    path: "/profile/",
+    path: "/profile",
     component: _5db2ad96,
-    pathToRegexpOptions: {"strict":true},
     name: "profile"
   }, {
-    path: "/quotes/",
+    path: "/quotes",
     component: _04805a02,
-    pathToRegexpOptions: {"strict":true},
     name: "quotes"
   }, {
-    path: "/register/",
+    path: "/register",
     component: _1af5b64f,
-    pathToRegexpOptions: {"strict":true},
     name: "register"
   }, {
-    path: "/technology/",
+    path: "/technology",
     component: _33705b38,
-    pathToRegexpOptions: {"strict":true},
     name: "technology"
   }, {
-    path: "/template/",
+    path: "/template",
     component: _469390a6,
-    pathToRegexpOptions: {"strict":true},
     name: "template"
   }, {
-    path: "/terms-of-service/",
+    path: "/terms-of-service",
     component: _8bab091e,
-    pathToRegexpOptions: {"strict":true},
     name: "terms-of-service"
   }, {
-    path: "/test/",
+    path: "/test",
     component: _c5b8b284,
-    pathToRegexpOptions: {"strict":true},
     name: "test"
   }, {
-    path: "/time/",
+    path: "/time",
     component: _65ac1f79,
-    pathToRegexpOptions: {"strict":true},
     name: "time"
   }, {
-    path: "/tutorials/",
+    path: "/tutorials",
     component: _001b74d9,
-    pathToRegexpOptions: {"strict":true},
     name: "tutorials"
   }, {
-    path: "/users/",
+    path: "/users",
     component: _6590c68c,
-    pathToRegexpOptions: {"strict":true},
     name: "users"
   }, {
-    path: "/world-reminders/",
+    path: "/world-reminders",
     component: _fffbc610,
-    pathToRegexpOptions: {"strict":true},
     name: "world-reminders"
   }, {
-    path: "/blog/create/",
+    path: "/blog/create",
     component: _cd973b6c,
-    pathToRegexpOptions: {"strict":true},
     name: "blog-create"
   }, {
-    path: "/blog/manage/",
+    path: "/blog/manage",
     component: _4779fb9a,
-    pathToRegexpOptions: {"strict":true},
     name: "blog-manage"
   }, {
-    path: "/blog/view/",
+    path: "/blog/view",
     component: _3e7eb4f3,
-    pathToRegexpOptions: {"strict":true},
     name: "blog-view"
   }, {
-    path: "/dash/create/",
+    path: "/dash/create",
     component: _14368b8c,
-    pathToRegexpOptions: {"strict":true},
     name: "dash-create"
   }, {
-    path: "/dash/view/",
+    path: "/dash/view",
     component: _764448e3,
-    pathToRegexpOptions: {"strict":true},
     name: "dash-view"
   }, {
-    path: "/news/create/",
+    path: "/news/create",
     component: _17c5080a,
-    pathToRegexpOptions: {"strict":true},
     name: "news-create"
   }, {
-    path: "/news/manage/",
+    path: "/news/manage",
     component: _372c1be4,
-    pathToRegexpOptions: {"strict":true},
     name: "news-manage"
   }, {
-    path: "/post/create/",
+    path: "/post/create",
     component: _be418370,
-    pathToRegexpOptions: {"strict":true},
     name: "post-create"
   }, {
-    path: "/post/manage/",
+    path: "/post/manage",
     component: _3824439e,
-    pathToRegexpOptions: {"strict":true},
     name: "post-manage"
   }, {
-    path: "/profile/edit/",
+    path: "/profile/edit",
     component: _46b0ff77,
-    pathToRegexpOptions: {"strict":true},
     name: "profile-edit"
   }, {
-    path: "/quotes/create/",
+    path: "/quotes/create",
     component: _3c2250c2,
-    pathToRegexpOptions: {"strict":true},
     name: "quotes-create"
   }, {
-    path: "/quotes/manage/",
+    path: "/quotes/manage",
     component: _24fd7788,
-    pathToRegexpOptions: {"strict":true},
     name: "quotes-manage"
   }, {
-    path: "/quotes/view/",
+    path: "/quotes/view",
     component: _76df08f0,
-    pathToRegexpOptions: {"strict":true},
     name: "quotes-view"
   }, {
-    path: "/world-reminders/create/",
+    path: "/world-reminders/create",
     component: _b0146674,
-    pathToRegexpOptions: {"strict":true},
     name: "world-reminders-create"
   }, {
-    path: "/world-reminders/manage/",
+    path: "/world-reminders/manage",
     component: _29f726a2,
-    pathToRegexpOptions: {"strict":true},
     name: "world-reminders-manage"
   }, {
-    path: "/admin/blog/create/",
+    path: "/admin/blog/create",
     component: _256163b1,
-    pathToRegexpOptions: {"strict":true},
     name: "admin-blog-create"
   }, {
-    path: "/admin/blog/manage/",
+    path: "/admin/blog/manage",
     component: _6870039a,
-    pathToRegexpOptions: {"strict":true},
     name: "admin-blog-manage"
   }, {
-    path: "/admin/news/create/",
+    path: "/admin/news/create",
     component: _ff6b053c,
-    pathToRegexpOptions: {"strict":true},
     name: "admin-news-create"
   }, {
-    path: "/admin/news/manage/",
+    path: "/admin/news/manage",
     component: _794dc56a,
-    pathToRegexpOptions: {"strict":true},
     name: "admin-news-manage"
   }, {
-    path: "/admin/post/create/",
+    path: "/admin/post/create",
     component: _2d0c3faf,
-    pathToRegexpOptions: {"strict":true},
     name: "admin-post-create"
   }, {
-    path: "/admin/post/manage/",
+    path: "/admin/post/manage",
     component: _701adf98,
-    pathToRegexpOptions: {"strict":true},
     name: "admin-post-manage"
   }, {
-    path: "/admin/quotes/create/",
+    path: "/admin/quotes/create",
     component: _16e11b46,
-    pathToRegexpOptions: {"strict":true},
     name: "admin-quotes-create"
   }, {
-    path: "/admin/quotes/manage/",
+    path: "/admin/quotes/manage",
     component: _59efbb2f,
-    pathToRegexpOptions: {"strict":true},
     name: "admin-quotes-manage"
   }, {
-    path: "/admin/users/create/",
+    path: "/admin/users/create",
     component: _41f72c81,
-    pathToRegexpOptions: {"strict":true},
     name: "admin-users-create"
   }, {
-    path: "/admin/users/logs/",
+    path: "/admin/users/logs",
     component: _04d796f4,
-    pathToRegexpOptions: {"strict":true},
     name: "admin-users-logs"
   }, {
-    path: "/admin/users/manage/",
+    path: "/admin/users/manage",
     component: _f5f4672c,
-    pathToRegexpOptions: {"strict":true},
     name: "admin-users-manage"
   }, {
-    path: "/admin/world-reminders/create/",
+    path: "/admin/world-reminders/create",
     component: _77c7b4ff,
-    pathToRegexpOptions: {"strict":true},
     name: "admin-world-reminders-create"
   }, {
-    path: "/admin/world-reminders/manage/",
+    path: "/admin/world-reminders/manage",
     component: _8a535630,
-    pathToRegexpOptions: {"strict":true},
     name: "admin-world-reminders-manage"
   }, {
-    path: "/blog/:id/",
+    path: "/blog/:id",
     component: _12581348,
-    pathToRegexpOptions: {"strict":true},
     name: "blog-id"
   }, {
-    path: "/news/:id/",
+    path: "/news/:id",
     component: _09b3a24b,
-    pathToRegexpOptions: {"strict":true},
     name: "news-id"
   }, {
-    path: "/post/:id/",
+    path: "/post/:id",
     component: _573e69c4,
-    pathToRegexpOptions: {"strict":true},
     name: "post-id"
   }, {
-    path: "/quotes/:id/",
+    path: "/quotes/:id",
     component: _9e56edb2,
-    pathToRegexpOptions: {"strict":true},
     name: "quotes-id"
   }, {
-    path: "/world-reminders/:id?/",
+    path: "/world-reminders/:id?",
     component: _063a0540,
-    pathToRegexpOptions: {"strict":true},
     name: "world-reminders-id"
   }, {
     path: "/",
     component: _2026ec56,
-    pathToRegexpOptions: {"strict":true},
     name: "index"
   }, {
-    path: "/:username/",
+    path: "/:username",
     component: _2ca55429,
-    pathToRegexpOptions: {"strict":true},
     name: "username"
   }, {
-    path: "/:username/following/",
+    path: "/:username/following",
     component: _32cb2ee8,
-    pathToRegexpOptions: {"strict":true},
     name: "username-following"
   }, {
-    path: "/:username/skel/",
+    path: "/:username/skel",
     component: _a561cb10,
-    pathToRegexpOptions: {"strict":true},
     name: "username-skel"
   }],
 
