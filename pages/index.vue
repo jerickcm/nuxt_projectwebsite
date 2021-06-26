@@ -233,6 +233,38 @@
             </v-card>
           </v-col>
         </v-row>
+        <v-row v-if="blogs_load">
+          <v-col xs="12" sm="12" md="4" lg="4" xl="4">
+            <v-skeleton-loader
+              elevation="2"
+              outlined
+              shaped
+              tile
+              class="pa-2 ma-2"
+              type="card"
+            ></v-skeleton-loader>
+          </v-col>
+          <v-col xs="12" sm="12" md="4" lg="4" xl="4">
+            <v-skeleton-loader
+              elevation="2"
+              outlined
+              shaped
+              tile
+              class="pa-2 ma-2"
+              type="card"
+            ></v-skeleton-loader>
+          </v-col>
+          <v-col xs="12" sm="12" md="4" lg="4" xl="4">
+            <v-skeleton-loader
+              elevation="2"
+              outlined
+              shaped
+              tile
+              class="pa-2 ma-2"
+              type="card"
+            ></v-skeleton-loader>
+          </v-col>
+        </v-row>
       </v-container>
     </v-row>
     <v-row>
@@ -300,6 +332,38 @@
                 ><br />
               </v-card-text>
             </v-card>
+          </v-col>
+        </v-row>
+        <v-row v-if="news_load">
+          <v-col xs="12" sm="12" md="4" lg="4" xl="4">
+            <v-skeleton-loader
+              elevation="2"
+              outlined
+              shaped
+              tile
+              class="pa-2 ma-2"
+              type="card"
+            ></v-skeleton-loader>
+          </v-col>
+          <v-col xs="12" sm="12" md="4" lg="4" xl="4">
+            <v-skeleton-loader
+              elevation="2"
+              outlined
+              shaped
+              tile
+              class="pa-2 ma-2"
+              type="card"
+            ></v-skeleton-loader>
+          </v-col>
+          <v-col xs="12" sm="12" md="4" lg="4" xl="4">
+            <v-skeleton-loader
+              elevation="2"
+              outlined
+              shaped
+              tile
+              class="pa-2 ma-2"
+              type="card"
+            ></v-skeleton-loader>
           </v-col>
         </v-row>
       </v-container>
@@ -417,6 +481,8 @@ export default {
     meta: [{ hid: 'Homepage', name: 'Homepage', content: 'Homepage' }]
   }),
   data: () => ({
+    blogs_load: false,
+    news_load: false,
     selection: 0,
     content: [],
     news: [],
@@ -429,11 +495,15 @@ export default {
     links: []
   }),
   async fetch() {
+    this.blogs_load = true
     await this.$axios.$get('/sanctum/csrf-cookie')
     const res = await this.$axios.$get(`api/blog/page/1/item/3`)
+    this.blogs_load = false
     this.content = res.data
+    this.news_load = true
     await this.$axios.$get('/sanctum/csrf-cookie')
     const news = await this.$axios.$get(`api/news/page/1/item/3`)
+    this.news_load = false
     this.news = news.data
     // await this.$axios.$get('/sanctum/csrf-cookie')
     // const posts = await this.$axios.$get(`api/post/page/1/item/3`)

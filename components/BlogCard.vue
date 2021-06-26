@@ -160,8 +160,6 @@ export default {
   methods: {
     image_default(event){
        console.log('Image failed to load');
-      // console.log('event')
-      // event.target.src = "/images/NoImageAvailable.jpg";
     },
     getnextarticle() {
       this.$emit('next-article')
