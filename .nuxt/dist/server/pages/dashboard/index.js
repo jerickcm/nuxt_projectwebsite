@@ -1,7 +1,7 @@
-exports.ids = [36,2,3];
+exports.ids = [37,2,3];
 exports.modules = {
 
-/***/ 294:
+/***/ 297:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -48,7 +48,7 @@ var VBtn = __webpack_require__(216);
 var VCard = __webpack_require__(78);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VCard/index.js
-var components_VCard = __webpack_require__(49);
+var components_VCard = __webpack_require__(50);
 
 // CONCATENATED MODULE: ./components/DashTitle.vue
 
@@ -65,7 +65,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "3dbe5461"
+  "26305d4a"
   
 )
 
@@ -81,7 +81,7 @@ installComponents_default()(component, {VBtn: VBtn["a" /* default */],VCard: VCa
 
 /***/ }),
 
-/***/ 295:
+/***/ 298:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -119,7 +119,7 @@ var installComponents_default = /*#__PURE__*/__webpack_require__.n(installCompon
 var VCard = __webpack_require__(78);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VCard/index.js
-var components_VCard = __webpack_require__(49);
+var components_VCard = __webpack_require__(50);
 
 // CONCATENATED MODULE: ./components/Dashboard.vue
 
@@ -136,7 +136,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "3447ebe2"
+  "d5f4f1ee"
   
 )
 
@@ -152,7 +152,7 @@ installComponents_default()(component, {VCard: VCard["a" /* default */],VCardTex
 
 /***/ }),
 
-/***/ 477:
+/***/ 480:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -321,14 +321,14 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "4168d6e1"
+  "776ef927"
   
 )
 
 /* harmony default export */ var dashboard = __webpack_exports__["default"] = (component.exports);
 
 /* nuxt-component-imports */
-installComponents_default()(component, {DashTitle: __webpack_require__(294).default,Dashboard: __webpack_require__(295).default})
+installComponents_default()(component, {DashTitle: __webpack_require__(297).default,Dashboard: __webpack_require__(298).default})
 
 
 /* vuetify-loader */

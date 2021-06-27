@@ -219,6 +219,7 @@
                 >
                   <span class="pt-3">Tags: &zwnj;&zwnj;</span>
                   <v-chip
+                    :to="`/blog/tags/${itm}`"
                     v-for="(itm, index) in item.tags"
                     :key="index"
                     color="blue"
@@ -505,7 +506,6 @@ export default {
     const news = await this.$axios.$get(`api/news/page/1/item/3`)
     this.news_load = false
     this.news = news.data
-
   },
   layout: 'default',
   methods: {
@@ -516,15 +516,12 @@ export default {
   },
   async created() {},
   async mounted() {
-
     await this.$axios.$get('/sanctum/csrf-cookie')
     try {
       this.fetchQuote()
     } catch (error) {
       console.log(error)
     }
-
-
   }
 }
 </script>

@@ -54,8 +54,7 @@
               column
 
             >
-                  <!-- :to="`/blogs/category/${itm}`" -->
-                 <span class="pt-3">Tags: &zwnj;&zwnj;</span> <v-chip  v-for="(itm, index) in item.tags" :key="index" color="blue" class="white--text">{{itm}}</v-chip>
+                 <span  class="pt-3">Tags: &zwnj;&zwnj;</span> <v-chip :to="`/blog/tags/${itm}`"  v-for="(itm, index) in item.tags" :key="index" color="blue" class="white--text">{{itm}}</v-chip>
             </v-chip-group>
             <span>Author: {{ item.name }} </span><br />
             <span>Date : {{ item.human_date }}</span

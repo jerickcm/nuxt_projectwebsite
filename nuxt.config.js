@@ -1,8 +1,12 @@
 import colors from 'vuetify/es5/util/colors'
-// console.log(process.env.NODE_ENV );
+
 const dev = process.env.DEV_API
 const prod = process.env.PROD_API
 const api = process.env.NODE_ENV === 'development' ? dev : prod
+
+const dev_front = process.env.DEV_FRONT
+const prod_front = process.env.PROD_FRONT
+const front = process.env.NODE_ENV === 'development' ? dev_front : prod_front
 
 const dev_fb_id = process.env.DEV_FB
 const prod_fb_id = process.env.PROD_FB
@@ -25,8 +29,8 @@ const prod_google_id = process.env.PROD_GOOGLE
 const google_id =
   process.env.NODE_ENV === 'development' ? dev_google_id : prod_google_id
 
-  // const axios = require('axios');
-  // const  response ;
+// const axios = require('axios');
+// const  response ;
 export default {
   dev: process.env.NODE_ENV !== 'production',
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -76,7 +80,6 @@ export default {
     '@nuxtjs/sitemap'
   ],
   axios: {
-
     baseURL: api,
     credentials: true
   },
@@ -84,7 +87,7 @@ export default {
   //   trailingSlash: true
   // },
   sitemap: {
-    hostname: 'https://www.inhinyeru.com',
+    hostname: front,
     gzip: true,
     exclude: [
       '/dashboard/*',
@@ -101,24 +104,32 @@ export default {
       '/news/create',
       '/quotes/create',
 
-      '/profile/edit',
+      '/profile/edit'
     ],
     // trailingSlash: true,
     routes: async () => {
-      const axios = require('axios');
-      let { data:blogs } = await axios.get(api+'/blogs/sitemap')
-      let { data:posts } = await axios.get(api+'/posts/sitemap')
-      let { data:news } = await axios.get(api+'/news/sitemap')
-      let { data:usernames } = await axios.get(api+'/userdetails/sitemap')
+      const axios = require('axios')
+      let { data: blogs } = await axios.get(api + '/blogs/sitemap')
+      let { data: posts } = await axios.get(api + '/posts/sitemap')
+      let { data: news } = await axios.get(api + '/news/sitemap')
+      let { data: usernames } = await axios.get(api + '/userdetails/sitemap')
 
-      posts = posts.map((user) => `/post/${user.slug}`)
-      blogs = blogs.map((user) => `/blog/${user.slug}`)
-      news = news.map((user) => `/news/${user.slug}`)
-      usernames = usernames.map((user) => `/${user.username}`)
+      let { data: blogtags } = await axios.get(api + '/blogs/tag/sitemap')
 
-      return [].concat(posts).concat(blogs).concat(news).concat(usernames) ;
-    },
+      posts = posts.map(user => `/post/${user.slug}`)
+      blogs = blogs.map(user => `/blog/${user.slug}`)
+      news = news.map(user => `/news/${user.slug}`)
+      usernames = usernames.map(user => `/${user.username}`)
 
+      blogtags = blogtags.map(elem => `/blog/tags/${elem.name}`)
+
+      return []
+        .concat(posts)
+        .concat(blogs)
+        .concat(news)
+        .concat(usernames)
+        .concat(blogtags)
+    }
   },
   toast: {
     position: 'top-right',
@@ -130,7 +141,6 @@ export default {
     Allow: '/'
   },
   auth: {
-
     strategies: {
       facebook: {
         scope: ['openid', 'profile', 'email'],
