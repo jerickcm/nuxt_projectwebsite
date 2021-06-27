@@ -1,8 +1,8 @@
-const DELIVERY = "Delivery"
-const CARRIER = "Carrier"
+const DELIVERY = 'Delivery'
+const CARRIER = 'Carrier'
 
-
-const STYLE = `:root {
+const STYLE = `
+:root {
   --ck-color-mention-background: hsla(341, 100%, 30%, 0.1);
   --ck-color-mention-text: hsl(341, 100%, 30%);
   --ck-highlight-marker-blue: hsl(201, 97%, 72%);
@@ -326,7 +326,7 @@ pre code {
   .page-break::after {
       display: none;
   }
-}`;
+}`
 
 export default {
   styles: STYLE,

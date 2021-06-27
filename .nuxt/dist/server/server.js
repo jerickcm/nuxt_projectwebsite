@@ -11708,7 +11708,7 @@ async function setContext(app, context) {
         "DEV_API": "http://localhost:3001",
         "PROD_API": "https://backend.inhinyeru.com",
         "DEV_FRONT": "http://localhost:3000",
-        "PROD_FRONT": "https://backend.inhinyeru.com",
+        "PROD_FRONT": "https://www.inhinyeru.com",
         "DEV_GITHUBCIENTID": "9dc2d0876cb49c4b4027",
         "PROD_GITHUBCIENTID": "b916f0145cfe505852e1",
         "DEV_GITHUBSECRET": "22df2f3cca1c86549d0a9e0ae350d716734a4e87",

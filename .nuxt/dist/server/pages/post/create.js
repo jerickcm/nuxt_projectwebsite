@@ -1688,9 +1688,10 @@ module.exports = ___CSS_LOADER_EXPORT___;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-const DELIVERY = "Delivery";
-const CARRIER = "Carrier";
-const STYLE = `:root {
+const DELIVERY = 'Delivery';
+const CARRIER = 'Carrier';
+const STYLE = `
+:root {
   --ck-color-mention-background: hsla(341, 100%, 30%, 0.1);
   --ck-color-mention-text: hsl(341, 100%, 30%);
   --ck-highlight-marker-blue: hsl(201, 97%, 72%);
