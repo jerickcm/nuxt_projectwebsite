@@ -10,6 +10,7 @@ export { default as Nav } from '../..\\components\\Nav.vue'
 export { default as NewsCard } from '../..\\components\\NewsCard.vue'
 export { default as PostCard } from '../..\\components\\PostCard.vue'
 export { default as QuotesCard } from '../..\\components\\QuotesCard.vue'
+export { default as Search } from '../..\\components\\Search.vue'
 export { default as Template } from '../..\\components\\Template.vue'
 export { default as VuetifyLogo } from '../..\\components\\VuetifyLogo.vue'
 export { default as WorldRemindersCard } from '../..\\components\\WorldRemindersCard.vue'
@@ -24,6 +25,7 @@ export const LazyNav = import('../..\\components\\Nav.vue' /* webpackChunkName: 
 export const LazyNewsCard = import('../..\\components\\NewsCard.vue' /* webpackChunkName: "components/news-card" */).then(c => wrapFunctional(c.default || c))
 export const LazyPostCard = import('../..\\components\\PostCard.vue' /* webpackChunkName: "components/post-card" */).then(c => wrapFunctional(c.default || c))
 export const LazyQuotesCard = import('../..\\components\\QuotesCard.vue' /* webpackChunkName: "components/quotes-card" */).then(c => wrapFunctional(c.default || c))
+export const LazySearch = import('../..\\components\\Search.vue' /* webpackChunkName: "components/search" */).then(c => wrapFunctional(c.default || c))
 export const LazyTemplate = import('../..\\components\\Template.vue' /* webpackChunkName: "components/template" */).then(c => wrapFunctional(c.default || c))
 export const LazyVuetifyLogo = import('../..\\components\\VuetifyLogo.vue' /* webpackChunkName: "components/vuetify-logo" */).then(c => wrapFunctional(c.default || c))
 export const LazyWorldRemindersCard = import('../..\\components\\WorldRemindersCard.vue' /* webpackChunkName: "components/world-reminders-card" */).then(c => wrapFunctional(c.default || c))

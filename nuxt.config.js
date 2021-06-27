@@ -58,7 +58,9 @@ export default {
     height: '3px'
   },
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    // '~/plugins/vue-instantsearch'
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -235,7 +237,9 @@ export default {
     }
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    // transpile: ['vue-instantsearch', 'instantsearch.js/es']
+  },
   server: {
     //  port: 80,
     // port: 80, // default: 3000

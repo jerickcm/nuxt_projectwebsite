@@ -29,6 +29,9 @@
   "QuotesCard": {
     "description": "Auto imported from components/QuotesCard.vue"
   },
+  "Search": {
+    "description": "Auto imported from components/Search.vue"
+  },
   "Template": {
     "description": "Auto imported from components/Template.vue"
   },

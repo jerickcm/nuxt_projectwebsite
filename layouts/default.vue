@@ -1,15 +1,15 @@
 <template>
   <v-app dark>
     <v-app-bar fixed app>
-
-      <div   plain
-          text
+      <div
+        plain
+        text
         class="hidden-md-and-up font-kalamreg hand"
         @click.stop="rightDrawer = !rightDrawer"
       >
         <v-icon color="green" x-large>mdi-message-arrow-left</v-icon> Menu
       </div>
-
+      <v-spacer />
       <v-spacer />
 
       <div class="hidden-sm-and-down">
@@ -28,12 +28,19 @@
           text
           tile
           rounded
-          class=" pa-1 ma-1"
+          class="pa-1 ma-1"
         >
           <v-icon>{{ item.icons }}</v-icon> {{ item.label }}
         </v-btn>
       </div>
       <v-spacer />
+      <v-spacer />
+      <div class="pt-6">
+        <!-- <v-text-field label="Search" placeholder="Input Search"></v-text-field> -->
+
+      </div>
+      <v-spacer />
+
       <div class="hidden-sm-and-down">
         <v-btn
           v-if="$auth.user && $auth.loggedIn && $auth.user['is_admin'] == '1'"
@@ -41,7 +48,7 @@
           text
           tile
           rounded
-          class=" pa-1 ma-1"
+          class="pa-1 ma-1"
           to="/admin"
         >
           <v-icon>mdi-account-tie</v-icon>
@@ -54,7 +61,7 @@
           text
           tile
           rounded
-          class=" pa-1 ma-1"
+          class="pa-1 ma-1"
           to="/dashboard"
         >
           <v-icon>mdi-monitor-dashboard</v-icon>
@@ -68,7 +75,7 @@
           text
           tile
           rounded
-          class=" pa-1 ma-1"
+          class="pa-1 ma-1"
         >
           <v-icon>mdi-logout</v-icon>
           Logout</v-btn
@@ -80,18 +87,18 @@
           plain
           tile
           rounded
-          class=" pa-1 ma-1"
+          class="pa-1 ma-1"
         >
           <v-icon>mdi-logout</v-icon>
           Login</v-btn
         >
       </div>
       <v-spacer />
+      <v-spacer />
     </v-app-bar>
 
     <v-main>
       <nuxt />
-
     </v-main>
 
     <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
@@ -101,7 +108,6 @@
     </v-navigation-drawer>
 
     <FooterNav />
-
   </v-app>
 </template>
 
@@ -114,11 +120,10 @@ import { navlist } from '~/mixins/navlist.js'
 export default {
   head: () => ({
     titleTemplate: '%s | Project Website',
-    meta: [{ hid: 'description', name: 'description', content: 'Content' }]
+    meta: [{ hid: 'description', name: 'description', content: 'Content' }],
   }),
   mixins: [greetMixins, navlist],
   data: () => ({
-
     dialog_login: false,
     myitems: [{ title: 'Dashboard', link: '/dashboard' }],
     menu: [{ icon: 'Dashboard', title: 'Dashboard' }],
@@ -128,7 +133,7 @@ export default {
       { label: 'Login', link: 'login' },
       { label: 'Register', link: 'register' },
       { label: 'about', link: 'about' },
-      { label: 'contact', link: 'contact' }
+      { label: 'contact', link: 'contact' },
     ],
     value: 'recent',
     clipped: false,
@@ -140,14 +145,14 @@ export default {
       {
         icon: 'mdi-home-import-outline',
         title: 'Home',
-        to: '/'
-      }
+        to: '/',
+      },
     ],
     right: false,
     left: true,
     leftDrawer: false,
     rightDrawer: false,
-    title: 'Project Website'
+    title: 'Project Website',
   }),
 
   computed: {},
@@ -176,9 +181,9 @@ export default {
         NProgress.done()
         console.log(error)
       }
-    }
+    },
   },
-  async created() {}
+  async created() {},
 }
 </script>
 <style>
