@@ -1,6 +1,6 @@
 <template>
-  <v-sheet class="ma-0 pa-0">
-    <v-row class="ma-0 pa-0">
+  <v-sheet class="">
+    <v-row class="">
       <v-col
         sm="12"
         md="8"

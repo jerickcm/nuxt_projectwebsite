@@ -1,7 +1,7 @@
 exports.ids = [59];
 exports.modules = {
 
-/***/ 493:
+/***/ 494:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -64,7 +64,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 /* harmony default export */ var search = __webpack_exports__["default"] = (component.exports);
 
 /* nuxt-component-imports */
-installComponents(component, {Search: __webpack_require__(125).default})
+installComponents(component, {Search: __webpack_require__(126).default})
 
 
 /***/ })

@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid class="white">
+  <v-container fluid>
     <v-row class="">
       <v-col md="12" lg="12" class="">
         <PostCard

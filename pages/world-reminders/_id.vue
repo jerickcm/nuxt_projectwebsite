@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid class="white">
+  <v-container fluid>
     <v-row class="">
       <v-col ms="10" lg="10">
         <WorldRemindersCard

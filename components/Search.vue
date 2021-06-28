@@ -18,13 +18,35 @@
               placeholder="Start typing to Search"
               prepend-icon="mdi-credit-card-search"
               return-object
-            ></v-autocomplete>
+            >
+              <template v-slot:selection="data">
+                <!-- <v-avatar left>
+                  <v-img :src="data.item.image"></v-img>
+                </v-avatar> -->
+                {{ data.item.title }}
+              </template>
+
+              <template v-slot:item="data">
+                <template v-if="typeof data.item !== 'object'">
+                  <v-list-item-content v-text="data.item"></v-list-item-content>
+                </template>
+                <template v-else>
+                  <v-list-item-avatar tile>
+                    <v-img :src="data.item.image" />
+                  </v-list-item-avatar>
+                  <v-list-item-content>
+                    <v-list-item-title
+                      v-html="data.item.title"
+                    ></v-list-item-title>
+                  </v-list-item-content>
+                </template>
+              </template>
+            </v-autocomplete>
             <!-- prepend-icon="mdi-database-search" -->
           </v-card-text>
           <v-divider></v-divider>
           <v-expand-transition>
             <v-list v-if="model">
-              <!-- {{ model }} -->
               <v-list-item>
                 <p>Page :</p>
               </v-list-item>
@@ -84,7 +106,6 @@ export default {
     isLoading: false,
     model: null,
     search: null
-    // items: ['Alabama']
   }),
 
   computed: {
