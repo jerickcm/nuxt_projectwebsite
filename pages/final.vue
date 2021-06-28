@@ -1,17 +1,12 @@
 <template>
   <div class="container">
-   <Search />
+    <Search />
   </div>
 </template>
 
 <script>
 export default {
-
-  mounted() {
-
-  },
-  methods: {
-
-  }
+  mounted() {},
+  methods: {}
 }
 </script>

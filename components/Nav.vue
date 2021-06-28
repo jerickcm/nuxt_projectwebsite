@@ -54,6 +54,7 @@
                 >
               </v-row>
             </v-container>
+
             <form class="pa-2">
               <v-text-field
                 class="ma-2 pa-2"
@@ -88,6 +89,7 @@
               >
                 Login
               </v-btn>
+
               <v-btn
                 depressed
                 color="primary"
@@ -112,6 +114,16 @@
     <v-row>
       <v-col>
         <v-list>
+          <v-list-item @click.prevent="searchme">
+            <v-list-item-action>
+              <v-icon v-if="search == false">mdi-magnify-plus</v-icon>
+              <v-icon v-else>mdi-magnify-minus</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title> Search</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+
           <v-list-item to="/">
             <v-list-item-action>
               <v-icon color="blue">mdi-code-json</v-icon>
@@ -171,18 +183,16 @@
             </v-list-item-content>
           </v-list-item>
 
-
-          <v-list-item v-if="$auth.loggedIn"  @click.prevent="logout()">
+          <v-list-item v-if="$auth.loggedIn" @click.prevent="logout()">
             <v-list-item-action>
-             <v-icon>mdi-logout</v-icon>
+              <v-icon>mdi-logout</v-icon>
             </v-list-item-action>
             <v-list-item-content>
               <v-list-item-title>
-               Logout
+                Logout
               </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-
         </v-list>
       </v-col>
     </v-row>
@@ -199,7 +209,7 @@ import { required, email, minLength } from 'vuelidate/lib/validators'
 Vue.use(Vuelidate)
 import { navlist } from '~/mixins/navlist.js'
 export default {
-  props: ['dialog_login'],
+  props: ['dialog_login', 'search'],
   mixins: [navlist, validationMixin],
   validations: {
     email: { required, email },
@@ -238,6 +248,9 @@ export default {
     }
   },
   methods: {
+    searchme() {
+      this.$emit('update-search', true)
+    },
     openLogin() {
       this.dialog_login = true
       this.$emit('update-login', true)

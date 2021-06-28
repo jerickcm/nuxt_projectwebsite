@@ -1,6 +1,7 @@
 export const usernames = {
   data: () => ({
     reservedval: [
+      'search',
       'admin',
       'blog',
       'codesnippet',

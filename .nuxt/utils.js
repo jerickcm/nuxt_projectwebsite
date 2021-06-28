@@ -193,14 +193,14 @@ export async function setContext (app, context) {
   if (!app.context) {
     app.context = {
       isStatic: process.static,
-      isDev: true,
+      isDev: false,
       isHMR: false,
       app,
       store: app.store,
       payload: context.payload,
       error: context.error,
       base: app.router.options.base,
-      env: {"API_URL":"http://localhost:3001","TIMEZONE":"Asia/Singapore","DEV_API":"http://localhost:3001","PROD_API":"https://backend.inhinyeru.com","DEV_FRONT":"http://localhost:3000","PROD_FRONT":"https://www.inhinyeru.com","DEV_GITHUBCIENTID":"9dc2d0876cb49c4b4027","PROD_GITHUBCIENTID":"b916f0145cfe505852e1","DEV_GITHUBSECRET":"22df2f3cca1c86549d0a9e0ae350d716734a4e87","PROD_GITHUBSECRET":"b1da4bff4b81777b4fd16feb74943fa1cfd83e1e","DEV_FB":"134187988811148","PROD_FB":"141292091328620","DEV_GOOGLE":"635307167233-mii6gf2ho460gj11ui5tvb7teo1rcp3o.apps.googleusercontent.com","PROD_GOOGLE":"635307167233-mii6gf2ho460gj11ui5tvb7teo1rcp3o.apps.googleusercontent.com"}
+      env: {"API_URL":"https://backend.inhinyeru.com","TIMEZONE":"Asia/Singapore","DEV_API":"http://localhost:3001","PROD_API":"https://backend.inhinyeru.com","DEV_FRONT":"http://localhost:3000","PROD_FRONT":"https://www.inhinyeru.com","DEV_GITHUBCIENTID":"9dc2d0876cb49c4b4027","PROD_GITHUBCIENTID":"b916f0145cfe505852e1","DEV_GITHUBSECRET":"22df2f3cca1c86549d0a9e0ae350d716734a4e87","PROD_GITHUBSECRET":"b1da4bff4b81777b4fd16feb74943fa1cfd83e1e","DEV_FB":"134187988811148","PROD_FB":"141292091328620","DEV_GOOGLE":"635307167233-mii6gf2ho460gj11ui5tvb7teo1rcp3o.apps.googleusercontent.com","PROD_GOOGLE":"635307167233-mii6gf2ho460gj11ui5tvb7teo1rcp3o.apps.googleusercontent.com"}
     }
     // Only set once
 
@@ -279,7 +279,7 @@ export async function setContext (app, context) {
   app.context.next = context.next
   app.context._redirected = false
   app.context._errored = false
-  app.context.isHMR = Boolean(context.isHMR)
+  app.context.isHMR = false
   app.context.params = app.context.route.params || {}
   app.context.query = app.context.route.query || {}
 }
@@ -297,9 +297,6 @@ export function middlewareSeries (promises, appContext) {
 export function promisify (fn, context) {
   let promise
   if (fn.length === 2) {
-      console.warn('Callback-based asyncData, fetch or middleware calls are deprecated. ' +
-        'Please switch to promises or async/await syntax')
-
     // fn(context, callback)
     promise = new Promise((resolve) => {
       fn(context, function (err, data) {

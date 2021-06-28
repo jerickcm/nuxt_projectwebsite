@@ -195,7 +195,7 @@
                   path: 'blog/' + item.slug
                 }"
               >
-                <v-img height="250" :src="item.image"> </v-img>
+                <v-img contain aspect-ratio="1.7" :src="item.image"> </v-img>
               </nuxt-link>
 
               <v-card-title>
@@ -297,7 +297,13 @@
                   path: 'news/' + item.slug
                 }"
               >
-                <v-img height="250" :src="item.image"> </v-img>
+                <v-img
+                  contain
+                  aspect-ratio="1.7"
+                  height="250"
+                  :src="item.image"
+                >
+                </v-img>
               </nuxt-link>
 
               <v-card-title>

@@ -37,11 +37,24 @@
       <v-spacer />
       <div class="pt-6">
         <!-- <v-text-field label="Search" placeholder="Input Search"></v-text-field> -->
-
       </div>
       <v-spacer />
 
       <div class="hidden-sm-and-down">
+        <v-btn
+          plain
+          text
+          tile
+          rounded
+          class="pa-1 ma-1"
+          @click.prevent="searchme"
+        >
+          <v-icon v-if="search == false">mdi-magnify-plus</v-icon>
+          <v-icon v-else>mdi-magnify-minus</v-icon>
+
+          Search</v-btn
+        >
+
         <v-btn
           v-if="$auth.user && $auth.loggedIn && $auth.user['is_admin'] == '1'"
           plain
@@ -98,12 +111,18 @@
     </v-app-bar>
 
     <v-main>
+      <Search v-if="search" />
       <nuxt />
     </v-main>
 
     <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
       <v-list>
-        <Nav :dialog_login="dialog_login" @update-login="updateLogin" />
+        <Nav
+          :dialog_login="dialog_login"
+          :search="search"
+          @update-login="updateLogin"
+          @update-search="updateSearch"
+        />
       </v-list>
     </v-navigation-drawer>
 
@@ -120,10 +139,11 @@ import { navlist } from '~/mixins/navlist.js'
 export default {
   head: () => ({
     titleTemplate: '%s | Project Website',
-    meta: [{ hid: 'description', name: 'description', content: 'Content' }],
+    meta: [{ hid: 'description', name: 'description', content: 'Content' }]
   }),
   mixins: [greetMixins, navlist],
   data: () => ({
+    search: false,
     dialog_login: false,
     myitems: [{ title: 'Dashboard', link: '/dashboard' }],
     menu: [{ icon: 'Dashboard', title: 'Dashboard' }],
@@ -133,7 +153,7 @@ export default {
       { label: 'Login', link: 'login' },
       { label: 'Register', link: 'register' },
       { label: 'about', link: 'about' },
-      { label: 'contact', link: 'contact' },
+      { label: 'contact', link: 'contact' }
     ],
     value: 'recent',
     clipped: false,
@@ -145,18 +165,24 @@ export default {
       {
         icon: 'mdi-home-import-outline',
         title: 'Home',
-        to: '/',
-      },
+        to: '/'
+      }
     ],
     right: false,
     left: true,
     leftDrawer: false,
     rightDrawer: false,
-    title: 'Project Website',
+    title: 'Project Website'
   }),
 
   computed: {},
   methods: {
+    searchme() {
+      this.search = !this.search
+    },
+    updateSearch() {
+      this.search = !this.search
+    },
     updateLogin(value) {
       this.dialog_login = value
     },
@@ -181,9 +207,9 @@ export default {
         NProgress.done()
         console.log(error)
       }
-    },
+    }
   },
-  async created() {},
+  async created() {}
 }
 </script>
 <style>

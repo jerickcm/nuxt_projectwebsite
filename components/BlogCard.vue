@@ -29,10 +29,13 @@
           >
           <!-- v-if="item.image==''" -->
           <!-- v-if="item.image!=='{}'"  -->
-              <v-img :src="item.image"
+              <v-img
+               gradient="to top right, rgba(0,0,201,.1), rgba(0,0,72,.2)"
+              contain :src="item.image"
 
-              height="250px"
+              min-height="250"
               > </v-img>
+               <!-- height="250px" -->
             <!-- <v-img  v-else src="/images/NoImageAvailable.jpg"> </v-img> -->
 
 
