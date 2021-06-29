@@ -16,6 +16,16 @@
               <QuoteWidget />
             </v-col>
           </v-row>
+          <v-row>
+            <v-col>
+              <WidgetNews />
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col>
+              <WidgetPost />
+            </v-col>
+          </v-row>
         </v-container>
       </v-col>
     </v-row>

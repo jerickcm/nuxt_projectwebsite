@@ -5,9 +5,6 @@
   "BlogCard": {
     "description": "Auto imported from components/BlogCard.vue"
   },
-  "BlogWidget": {
-    "description": "Auto imported from components/BlogWidget.vue"
-  },
   "Dashboard": {
     "description": "Auto imported from components/Dashboard.vue"
   },
@@ -43,6 +40,15 @@
   },
   "VuetifyLogo": {
     "description": "Auto imported from components/VuetifyLogo.vue"
+  },
+  "WidgetBlog": {
+    "description": "Auto imported from components/WidgetBlog.vue"
+  },
+  "WidgetNews": {
+    "description": "Auto imported from components/WidgetNews.vue"
+  },
+  "WidgetPost": {
+    "description": "Auto imported from components/WidgetPost.vue"
   },
   "WorldRemindersCard": {
     "description": "Auto imported from components/WorldRemindersCard.vue"

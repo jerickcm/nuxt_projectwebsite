@@ -1,4 +1,4 @@
-exports.ids = [39,3,4];
+exports.ids = [41,2,3];
 exports.modules = {
 
 /***/ 306:
@@ -152,7 +152,7 @@ installComponents_default()(component, {VCard: VCard["a" /* default */],VCardTex
 
 /***/ }),
 
-/***/ 483:
+/***/ 485:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

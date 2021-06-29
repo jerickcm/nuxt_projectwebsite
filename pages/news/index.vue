@@ -24,7 +24,7 @@
           </v-row>
           <v-row>
             <v-col>
-              <BlogWidget />
+              <WidgetBlog />
             </v-col>
           </v-row>
         </v-container>
@@ -65,10 +65,12 @@ export default {
   //   }
   // },
   async fetch() {
+    this.loading = true
     await this.$axios.$get('/sanctum/csrf-cookie')
     const res = await this.$axios.$get(`api/news/page/1/item/10`)
     this.content = res.data
     this.length = res.data.length
+    this.loading = false
     // console.log(res)
     // return {
     //   content: res.data,

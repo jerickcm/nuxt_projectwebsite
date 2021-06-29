@@ -8,7 +8,6 @@ You can directly use them in pages and other components without the need to impo
 
 - `<AdminNav>` | `<admin-nav>` (components/AdminNav.vue)
 - `<BlogCard>` | `<blog-card>` (components/BlogCard.vue)
-- `<BlogWidget>` | `<blog-widget>` (components/BlogWidget.vue)
 - `<Dashboard>` | `<dashboard>` (components/Dashboard.vue)
 - `<DashTitle>` | `<dash-title>` (components/DashTitle.vue)
 - `<EventCard>` | `<event-card>` (components/EventCard.vue)
@@ -21,4 +20,7 @@ You can directly use them in pages and other components without the need to impo
 - `<Search>` | `<search>` (components/Search.vue)
 - `<Template>` | `<template>` (components/Template.vue)
 - `<VuetifyLogo>` | `<vuetify-logo>` (components/VuetifyLogo.vue)
+- `<WidgetBlog>` | `<widget-blog>` (components/WidgetBlog.vue)
+- `<WidgetNews>` | `<widget-news>` (components/WidgetNews.vue)
+- `<WidgetPost>` | `<widget-post>` (components/WidgetPost.vue)
 - `<WorldRemindersCard>` | `<world-reminders-card>` (components/WorldRemindersCard.vue)

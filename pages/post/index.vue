@@ -18,7 +18,7 @@
           </v-row>
           <v-row>
             <v-col>
-              <BlogWidget />
+              <WidgetBlog />
             </v-col>
           </v-row>
         </v-container>

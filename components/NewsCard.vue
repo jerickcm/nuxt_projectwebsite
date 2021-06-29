@@ -1,22 +1,17 @@
 <template>
   <v-sheet>
-    <!-- sm="12"
-        md="9"
-        lg="9"
-        xl="9"
-        class="
-                mb-0
-                pb-0
-                col-md-7 col-lg-7
-                offset-md-1 offset-lg-1 offset-xl-1
-              " -->
     <v-row class="">
       <v-col class="ma-2">
         <h1>News</h1>
         <p>Technological News</p>
       </v-col>
     </v-row>
-    <v-row v-for="(item, index) in content" :key="index" class="ma-0 pa-0">
+    <v-row
+      v-if="!loading"
+      v-for="(item, index) in content"
+      :key="index"
+      class="ma-0 pa-0"
+    >
       <v-col>
         <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
           <nuxt-link
@@ -50,13 +45,7 @@
       v-for="index in 10"
       :key="index + `b`"
     >
-      <v-col
-        sm="12"
-        md="8"
-        lg="8"
-        xl="8"
-        class="mb-0 pb-0 col-md-8 col-lg-8 offset-md-2 offset-lg-2 offset-xl-2"
-      >
+      <v-col>
         <v-skeleton-loader
           elevation="2"
           outlined
