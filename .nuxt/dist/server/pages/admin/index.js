@@ -13,7 +13,7 @@ const admin = {
 
 /***/ }),
 
-/***/ 305:
+/***/ 304:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -93,7 +93,7 @@ installComponents_default()(component, {VBtn: VBtn["a" /* default */],VCard: VCa
 
 /***/ }),
 
-/***/ 306:
+/***/ 305:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -164,7 +164,7 @@ installComponents_default()(component, {VCard: VCard["a" /* default */],VCardTex
 
 /***/ }),
 
-/***/ 482:
+/***/ 479:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -322,7 +322,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 /* harmony default export */ var admin = __webpack_exports__["default"] = (component.exports);
 
 /* nuxt-component-imports */
-installComponents_default()(component, {DashTitle: __webpack_require__(305).default,Dashboard: __webpack_require__(306).default})
+installComponents_default()(component, {DashTitle: __webpack_require__(304).default,Dashboard: __webpack_require__(305).default})
 
 
 /* vuetify-loader */

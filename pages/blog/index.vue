@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-row class="">
-      <v-col md="12" lg="12" class="">
+      <v-col md="12" lg="9" class="">
         <BlogCard
           :content="content"
           :length="length"
@@ -9,6 +9,7 @@
           @next-article="nextArticle"
         />
       </v-col>
+      <v-col md="3" lg="3" class=""> </v-col>
     </v-row>
   </v-container>
 </template>

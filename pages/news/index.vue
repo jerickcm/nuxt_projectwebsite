@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-row class="">
-      <v-col md="12" lg="12" class="">
+      <v-col md="9" lg="9" class="">
         <NewsCard
           :content="content"
           :length="length"
@@ -9,6 +9,7 @@
           @next-article="nextArticle"
         />
       </v-col>
+      <v-col md="3" lg="3" class=""> </v-col>
     </v-row>
   </v-container>
 </template>
@@ -17,16 +18,16 @@ import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 export default {
   created() {
-    setTimeout(function() {
-      this.$nuxt.$loading.finish()
-    }, 1000)
+    // setTimeout(function() {
+    //   this.$nuxt.$loading.finish()
+    // }, 1000)
   },
   transition: {
-    beforeEnter(el) {
-      this.$nextTick(() => {
-        this.$nuxt.$loading.start()
-      })
-    }
+    // beforeEnter(el) {
+    //   this.$nextTick(() => {
+    //     this.$nuxt.$loading.start()
+    //   })
+    // }
   },
 
   middleware: 'auth',
@@ -35,25 +36,38 @@ export default {
     title: 'News',
     meta: [{ hid: 'News', name: 'News', content: 'News Article Page' }]
   }),
-  async asyncData({ $axios, error, params }) {
-    await $axios.$get('/sanctum/csrf-cookie')
-    const res = await $axios.$get(`api/news/page/1/item/10`)
-    console.log(res)
-    return {
-      content: res.data,
-      length: res.data.length
-    }
+  // async asyncData({ $axios, error, params }) {
+  //   await $axios.$get('/sanctum/csrf-cookie')
+  //   const res = await $axios.$get(`api/news/page/1/item/10`)
+  //   console.log(res)
+  //   return {
+  //     content: res.data,
+  //     length: res.data.length
+  //   }
+  // },
+  async fetch() {
+    await this.$axios.$get('/sanctum/csrf-cookie')
+    const res = await this.$axios.$get(`api/news/page/1/item/10`)
+    this.content = res.data
+    this.length = res.data.length
+    // console.log(res)
+    // return {
+    //   content: res.data,
+    //   length: res.data.length
+    // }
   },
   data: () => ({
+    content: [],
+    length: null,
     loading: false,
     page: 2
   }),
   async created() {},
   mounted() {
-    this.$nextTick(() => {
-      this.$nuxt.$loading.start()
-      setTimeout(() => this.$nuxt.$loading.finish(), 500)
-    })
+    // this.$nextTick(() => {
+    //   this.$nuxt.$loading.start()
+    //   setTimeout(() => this.$nuxt.$loading.finish(), 500)
+    // })
   },
   watch: {
     lenght: function(val) {

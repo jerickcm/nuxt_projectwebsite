@@ -9,23 +9,14 @@ const _508874f6 = () => interopDefault(import('..\\pages\\admin\\index.vue' /* w
 const _0c00337e = () => interopDefault(import('..\\pages\\blog\\index.vue' /* webpackChunkName: "pages/blog/index" */))
 const _36dfef66 = () => interopDefault(import('..\\pages\\contact-us.vue' /* webpackChunkName: "pages/contact-us" */))
 const _6c1f47c0 = () => interopDefault(import('..\\pages\\dashboard\\index.vue' /* webpackChunkName: "pages/dashboard/index" */))
-const _8a38a1f8 = () => interopDefault(import('..\\pages\\final.vue' /* webpackChunkName: "pages/final" */))
 const _3f3cab77 = () => interopDefault(import('..\\pages\\login.vue' /* webpackChunkName: "pages/login" */))
-const _152c6828 = () => interopDefault(import('..\\pages\\logout.vue' /* webpackChunkName: "pages/logout" */))
 const _34b6c0a6 = () => interopDefault(import('..\\pages\\news\\index.vue' /* webpackChunkName: "pages/news/index" */))
 const _8caa4080 = () => interopDefault(import('..\\pages\\post\\index.vue' /* webpackChunkName: "pages/post/index" */))
 const _361520f9 = () => interopDefault(import('..\\pages\\privacy-policy.vue' /* webpackChunkName: "pages/privacy-policy" */))
 const _4ab6786b = () => interopDefault(import('..\\pages\\profile\\index.vue' /* webpackChunkName: "pages/profile/index" */))
 const _4bfe4509 = () => interopDefault(import('..\\pages\\quotes\\index.vue' /* webpackChunkName: "pages/quotes/index" */))
 const _98f2b3f6 = () => interopDefault(import('..\\pages\\register.vue' /* webpackChunkName: "pages/register" */))
-const _2e6a45ec = () => interopDefault(import('..\\pages\\search.vue' /* webpackChunkName: "pages/search" */))
-const _28f79524 = () => interopDefault(import('..\\pages\\technology.vue' /* webpackChunkName: "pages/technology" */))
-const _41b6ff48 = () => interopDefault(import('..\\pages\\template.vue' /* webpackChunkName: "pages/template" */))
 const _0f035527 = () => interopDefault(import('..\\pages\\terms-of-service.vue' /* webpackChunkName: "pages/terms-of-service" */))
-const _7edce174 = () => interopDefault(import('..\\pages\\test.vue' /* webpackChunkName: "pages/test" */))
-const _47655a2f = () => interopDefault(import('..\\pages\\time.vue' /* webpackChunkName: "pages/time" */))
-const _79a87be3 = () => interopDefault(import('..\\pages\\tutorials.vue' /* webpackChunkName: "pages/tutorials" */))
-const _8a023ad4 = () => interopDefault(import('..\\pages\\users.vue' /* webpackChunkName: "pages/users" */))
 const _d27b53a4 = () => interopDefault(import('..\\pages\\world-reminders\\index.vue' /* webpackChunkName: "pages/world-reminders/index" */))
 const _c88af200 = () => interopDefault(import('..\\pages\\blog\\create.vue' /* webpackChunkName: "pages/blog/create" */))
 const _426db22e = () => interopDefault(import('..\\pages\\blog\\manage.vue' /* webpackChunkName: "pages/blog/manage" */))
@@ -98,17 +89,9 @@ export const routerOptions = {
     component: _6c1f47c0,
     name: "dashboard"
   }, {
-    path: "/final",
-    component: _8a38a1f8,
-    name: "final"
-  }, {
     path: "/login",
     component: _3f3cab77,
     name: "login"
-  }, {
-    path: "/logout",
-    component: _152c6828,
-    name: "logout"
   }, {
     path: "/news",
     component: _34b6c0a6,
@@ -134,37 +117,9 @@ export const routerOptions = {
     component: _98f2b3f6,
     name: "register"
   }, {
-    path: "/search",
-    component: _2e6a45ec,
-    name: "search"
-  }, {
-    path: "/technology",
-    component: _28f79524,
-    name: "technology"
-  }, {
-    path: "/template",
-    component: _41b6ff48,
-    name: "template"
-  }, {
     path: "/terms-of-service",
     component: _0f035527,
     name: "terms-of-service"
-  }, {
-    path: "/test",
-    component: _7edce174,
-    name: "test"
-  }, {
-    path: "/time",
-    component: _47655a2f,
-    name: "time"
-  }, {
-    path: "/tutorials",
-    component: _79a87be3,
-    name: "tutorials"
-  }, {
-    path: "/users",
-    component: _8a023ad4,
-    name: "users"
   }, {
     path: "/world-reminders",
     component: _d27b53a4,

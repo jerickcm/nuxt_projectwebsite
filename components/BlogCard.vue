@@ -2,11 +2,16 @@
   <v-sheet class="ma-0 pa-0">
     <v-row class="ma-0 pa-0">
       <v-col
-        sm="12"
-        md="8"
-        lg="8"
-        xl="8"
-        class="mb-0 pb-0 col-md-8 col-lg-8 offset-md-2 offset-lg-2 offset-xl-2"
+    sm="12"
+        md="9"
+        lg="9"
+        xl="9"
+        class="
+                mb-0
+                pb-0
+                col-md-7 col-lg-7
+                offset-md-1 offset-lg-1 offset-xl-1
+              "
       >
         <h1>Blog</h1>
         <p>Relevent Personal Blogs about programming and events</p>
@@ -14,11 +19,16 @@
     </v-row>
     <v-row v-for="(item, index) in content" :key="index" class="ma-0 pa-0">
       <v-col
-        sm="12"
-        md="8"
-        lg="8"
-        xl="8"
-        class="mb-0 pb-0 col-md-8 col-lg-8 offset-md-2 offset-lg-2 offset-xl-2"
+    sm="12"
+        md="9"
+        lg="9"
+        xl="9"
+        class="
+                mb-0
+                pb-0
+                col-md-7 col-lg-7
+                offset-md-1 offset-lg-1 offset-xl-1
+              "
       >
         <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
           <nuxt-link
@@ -74,11 +84,16 @@
       :key="index + `b`"
     >
       <v-col
-        sm="12"
-        md="8"
-        lg="8"
-        xl="8"
-        class="mb-0 pb-0 col-md-8 col-lg-8 offset-md-2 offset-lg-2 offset-xl-2"
+    sm="12"
+        md="9"
+        lg="9"
+        xl="9"
+        class="
+                mb-0
+                pb-0
+                col-md-7 col-lg-7
+                offset-md-1 offset-lg-1 offset-xl-1
+              "
       >
         <v-skeleton-loader
           elevation="2"
@@ -92,11 +107,16 @@
     </v-row>
     <v-row class="ma-0 pa-0" v-if="!(length == 10)">
       <v-col
-        sm="12"
-        md="8"
-        lg="8"
-        xl="8"
-        class="mb-0 pb-0 col-md-8 col-lg-8 offset-md-2 offset-lg-2 offset-xl-2"
+    sm="12"
+        md="9"
+        lg="9"
+        xl="9"
+        class="
+                mb-0
+                pb-0
+                col-md-7 col-lg-7
+                offset-md-1 offset-lg-1 offset-xl-1
+              "
       >
         <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
           <label for="" class="grey--text">Nothing Follows</label>
@@ -105,11 +125,16 @@
     </v-row>
     <v-row class="ma-0 pa-0">
       <v-col
-        sm="12"
-        md="8"
-        lg="8"
-        xl="8"
-        class="mb-0 pb-0 col-md-8 col-lg-8 offset-md-2 offset-lg-2 offset-xl-2"
+    sm="12"
+        md="9"
+        lg="9"
+        xl="9"
+        class="
+                mb-0
+                pb-0
+                col-md-7 col-lg-7
+                offset-md-1 offset-lg-1 offset-xl-1
+              "
       >
         <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
           <v-btn
@@ -127,10 +152,15 @@
     <v-row class="ma-0 pa-0">
     <v-col
     sm="12"
-    md="8"
-    lg="8"
-    xl="8"
-    class="mb-0 pb-0 col-md-8 col-lg-8 offset-md-2 offset-lg-2 offset-xl-2"
+        md="9"
+        lg="9"
+        xl="9"
+        class="
+                mb-0
+                pb-0
+                col-md-7 col-lg-7
+                offset-md-1 offset-lg-1 offset-xl-1
+              "
     >
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
