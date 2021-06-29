@@ -5,6 +5,9 @@
   "BlogCard": {
     "description": "Auto imported from components/BlogCard.vue"
   },
+  "BlogWidget": {
+    "description": "Auto imported from components/BlogWidget.vue"
+  },
   "Dashboard": {
     "description": "Auto imported from components/Dashboard.vue"
   },
@@ -28,6 +31,9 @@
   },
   "QuotesCard": {
     "description": "Auto imported from components/QuotesCard.vue"
+  },
+  "QuoteWidget": {
+    "description": "Auto imported from components/QuoteWidget.vue"
   },
   "Search": {
     "description": "Auto imported from components/Search.vue"

@@ -1,35 +1,13 @@
 <template>
   <v-sheet class="ma-0 pa-0">
     <v-row class="ma-0 pa-0">
-      <v-col
-        sm="12"
-        md="9"
-        lg="9"
-        xl="9"
-        class="
-                mb-0
-                pb-0
-                col-md-7 col-lg-7
-                offset-md-1 offset-lg-1 offset-xl-1
-              "
-      >
+      <v-col>
         <h1>Post</h1>
         <p>Technological post ment to help user</p>
       </v-col>
     </v-row>
     <v-row v-for="(item, index) in content" :key="index" class="ma-0 pa-0">
-      <v-col
-        sm="12"
-        md="9"
-        lg="9"
-        xl="9"
-        class="
-                mb-0
-                pb-0
-                col-md-7 col-lg-7
-                offset-md-1 offset-lg-1 offset-xl-1
-              "
-      >
+      <v-col>
         <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
           <nuxt-link
             class="nuxtlink"
@@ -69,18 +47,7 @@
       v-for="index in 10"
       :key="index + `b`"
     >
-      <v-col
-        sm="12"
-        md="9"
-        lg="9"
-        xl="9"
-        class="
-                mb-0
-                pb-0
-                col-md-7 col-lg-7
-                offset-md-1 offset-lg-1 offset-xl-1
-              "
-      >
+      <v-col>
         <v-skeleton-loader
           elevation="2"
           outlined
@@ -93,36 +60,14 @@
     </v-row>
 
     <v-row class="ma-0 pa-0" v-if="!(length == 10)">
-      <v-col
-        sm="12"
-        md="9"
-        lg="9"
-        xl="9"
-        class="
-                mb-0
-                pb-0
-                col-md-7 col-lg-7
-                offset-md-1 offset-lg-1 offset-xl-1
-              "
-      >
+      <v-col>
         <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
           Nothing Follows
         </v-card>
       </v-col>
     </v-row>
     <v-row class="ma-0 pa-0">
-      <v-col
-        sm="12"
-        md="9"
-        lg="9"
-        xl="9"
-        class="
-                mb-0
-                pb-0
-                col-md-7 col-lg-7
-                offset-md-1 offset-lg-1 offset-xl-1
-              "
-      >
+      <v-col>
         <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
           <v-btn
             class="white--text"

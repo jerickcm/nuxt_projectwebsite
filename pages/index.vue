@@ -293,7 +293,7 @@
             </v-card>
           </v-col>
         </v-row>
-        <v-row v-if="news_load">
+        <v-row v-if="posts_load">
           <v-col xs="12" sm="12" md="4" lg="4" xl="4">
             <v-skeleton-loader
               elevation="2"

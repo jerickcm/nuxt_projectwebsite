@@ -1,7 +1,7 @@
 <template>
-  <v-container fluid>
+  <v-container>
     <v-row class="">
-      <v-col md="12" lg="9" class="">
+      <v-col xs="12" sm="12" md="12" lg="8" xl="8" class="">
         <BlogCard
           :content="content"
           :length="length"
@@ -9,7 +9,15 @@
           @next-article="nextArticle"
         />
       </v-col>
-      <v-col md="3" lg="3" class=""> </v-col>
+      <v-col xs="12" sm="12" md="12" lg="4" xl="4" class="">
+        <v-container>
+          <v-row>
+            <v-col>
+              <QuoteWidget />
+            </v-col>
+          </v-row>
+        </v-container>
+      </v-col>
     </v-row>
   </v-container>
 </template>

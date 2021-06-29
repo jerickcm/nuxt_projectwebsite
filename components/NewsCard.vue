@@ -1,8 +1,6 @@
 <template>
-  <v-sheet class="">
-    <v-row class="">
-      <v-col
-        sm="12"
+  <v-sheet>
+    <!-- sm="12"
         md="9"
         lg="9"
         xl="9"
@@ -11,25 +9,15 @@
                 pb-0
                 col-md-7 col-lg-7
                 offset-md-1 offset-lg-1 offset-xl-1
-              "
-      >
+              " -->
+    <v-row class="">
+      <v-col class="ma-2">
         <h1>News</h1>
         <p>Technological News</p>
       </v-col>
     </v-row>
     <v-row v-for="(item, index) in content" :key="index" class="ma-0 pa-0">
-      <v-col
-        sm="12"
-        md="9"
-        lg="9"
-        xl="9"
-        class="
-                mb-0
-                pb-0
-                col-md-7 col-lg-7
-                offset-md-1 offset-lg-1 offset-xl-1
-              "
-      >
+      <v-col>
         <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
           <nuxt-link
             class="nuxtlink"
@@ -80,36 +68,14 @@
       </v-col>
     </v-row>
     <v-row class="ma-0 pa-0" v-if="!(length == 10)">
-      <v-col
-        sm="12"
-        md="9"
-        lg="9"
-        xl="9"
-        class="
-                mb-0
-                pb-0
-                col-md-7 col-lg-7
-                offset-md-1 offset-lg-1 offset-xl-1
-              "
-      >
+      <v-col>
         <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
           <label for="" class="grey--text">Nothing Follows</label>
         </v-card>
       </v-col>
     </v-row>
     <v-row class="ma-0 pa-0">
-      <v-col
-        sm="12"
-        md="9"
-        lg="9"
-        xl="9"
-        class="
-                mb-0
-                pb-0
-                col-md-7 col-lg-7
-                offset-md-1 offset-lg-1 offset-xl-1
-              "
-      >
+      <v-col>
         <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
           <v-btn
             class="white--text"

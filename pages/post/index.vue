@@ -1,7 +1,7 @@
 <template>
-  <v-container fluid>
+  <v-container>
     <v-row class="">
-      <v-col md="9" lg="9" class="">
+      <v-col xs="12" sm="12" md="12" lg="8" xl="8" class="">
         <PostCard
           :content="content"
           :length="length"
@@ -9,7 +9,20 @@
           @next-article="nextArticle"
         />
       </v-col>
-      <v-col md="3" lg="3" class=""> </v-col>
+      <v-col xs="12" sm="12" md="12" lg="4" xl="4" class="">
+        <v-container>
+          <v-row>
+            <v-col>
+              <QuoteWidget />
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col>
+              <BlogWidget />
+            </v-col>
+          </v-row>
+        </v-container>
+      </v-col>
     </v-row>
   </v-container>
 </template>
@@ -31,8 +44,9 @@ export default {
   },
   auth: false,
   head: () => ({
-    content: '',
-    length: '',
+    selection: '',
+    // content: '',
+    // length: '',
     title: 'Post',
     meta: [{ hid: 'Posts', name: 'Posts', content: 'Post Article Page' }]
   }),
@@ -40,6 +54,13 @@ export default {
     loading: false,
     page: 2
   }),
+
+  // async fetch() {
+  //   await this.$axios.$get('/sanctum/csrf-cookie')
+  //   const res = await this.$axios.$get(`api/post/list/1`)
+  //   this.content = res.data
+  //   this.length = res.data.length
+  // },
   async asyncData({ $axios, error, params }) {
     await $axios.$get('/sanctum/csrf-cookie')
     const res = await $axios.$get(`api/post/list/1`)
