@@ -300,4 +300,9 @@ export default {
 .hand {
   cursor: pointer;
 }
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 </style>

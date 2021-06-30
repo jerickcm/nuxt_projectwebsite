@@ -62,7 +62,7 @@
             <p v-html="item.content"></p>
             <br />
             <strong
-              ><p>Author/Source : {{ item.author }}</p></strong
+              ><p class="ellipsis">Author/Source : {{ item.author }}</p></strong
             >
           </div>
         </div>
