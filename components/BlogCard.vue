@@ -13,23 +13,20 @@
 
       >
         <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
+
           <nuxt-link
             class="nuxtlink"
             :to="{
-              path: 'blog/' + item.slug,
+              path: '/blog/' + item.slug,
             }"
           >
-          <!-- v-if="item.image==''" -->
-          <!-- v-if="item.image!=='{}'"  -->
+
               <v-img
                gradient="to top right, rgba(0,0,201,.1), rgba(0,0,72,.2)"
               contain :src="item.image"
 
               min-height="250"
               > </v-img>
-               <!-- height="250px" -->
-            <!-- <v-img  v-else src="/images/NoImageAvailable.jpg"> </v-img> -->
-
 
           </nuxt-link>
 
@@ -37,7 +34,7 @@
             <nuxt-link
               class="nuxtlink"
               :to="{
-                path: 'blog/' + item.slug,
+                path: '/blog/' + item.slug,
               }"
               > {{ item.title }}
             </nuxt-link>
@@ -103,23 +100,8 @@
         </v-card>
       </v-col>
     </v-row>
-        </v-row>
-    <v-row class="ma-0 pa-0">
-    <v-col
+  </v-row>
 
-    >
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-    <ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-3213536425475125"
-     data-ad-slot="3715096457"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-    </v-col>
-    </v-row>
   </v-sheet>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <v-sheet>
-    <h2 class="mb-2">Post</h2>
+    <h2 class="ml-3 mb-2">Post</h2>
     <v-container v-if="!loader">
       <v-row>
         <v-col

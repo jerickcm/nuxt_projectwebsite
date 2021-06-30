@@ -1,6 +1,6 @@
 <template>
   <v-sheet>
-    <h2 class="mb-2">Blog</h2>
+    <h2 class="ml-3 mb-2">Blog</h2>
     <v-container v-if="!loader">
       <v-row>
         <v-col
@@ -62,29 +62,7 @@
     </v-container>
 
     <v-container v-if="loader">
-      <v-row>
-        <v-col>
-          <v-skeleton-loader
-            elevation="2"
-            outlined
-            shaped
-            tile
-            type="card"
-          ></v-skeleton-loader>
-        </v-col>
-      </v-row>
-      <v-row>
-        <v-col>
-          <v-skeleton-loader
-            elevation="2"
-            outlined
-            shaped
-            tile
-            type="card"
-          ></v-skeleton-loader>
-        </v-col>
-      </v-row>
-      <v-row>
+      <v-row v-for="(item, indx) in content" :key="indx">
         <v-col>
           <v-skeleton-loader
             elevation="2"
@@ -106,17 +84,14 @@ export default {
     author: '',
     loader: false
   }),
-  async fetch() {
+  async fetch() {},
+  async mounted() {
     this.loader = true
     await this.$axios.$get('/sanctum/csrf-cookie')
-    // const res = await this.$axios.$get(`api/blog/page/1/item/3`)
     const res = await this.$axios.$get(`api/blog/item`)
-    this.blogs_load = false
     this.content = res.data
     this.loader = false
   },
-
-  async mounted() {},
   computed: {},
   methods: {}
 }

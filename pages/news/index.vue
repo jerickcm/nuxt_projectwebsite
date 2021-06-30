@@ -19,12 +19,17 @@
         <v-container>
           <v-row>
             <v-col>
-              <QuoteWidget />
+              <WidgetQuote />
             </v-col>
           </v-row>
           <v-row>
             <v-col>
               <WidgetBlog />
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col>
+              <WidgetPost />
             </v-col>
           </v-row>
         </v-container>

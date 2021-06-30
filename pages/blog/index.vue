@@ -13,7 +13,7 @@
         <v-container>
           <v-row>
             <v-col>
-              <QuoteWidget />
+              <WidgetQuote />
             </v-col>
           </v-row>
           <v-row>

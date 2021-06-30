@@ -50,6 +50,9 @@
   "WidgetPost": {
     "description": "Auto imported from components/WidgetPost.vue"
   },
+  "WidgetQuote": {
+    "description": "Auto imported from components/WidgetQuote.vue"
+  },
   "WorldRemindersCard": {
     "description": "Auto imported from components/WorldRemindersCard.vue"
   }

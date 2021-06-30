@@ -35,19 +35,6 @@
       </div>
       <v-spacer />
       <div class="hidden-sm-and-down">
-        <!-- <v-btn
-          v-if="$auth.user && $auth.loggedIn && $auth.user['is_admin'] == '1'"
-          plain
-          text
-          tile
-          rounded
-          class="white pa-1 ma-1"
-          to="/admin"
-        >
-          <v-icon>mdi-account-tie</v-icon>
-          Admin</v-btn
-        > -->
-
         <v-btn
           v-if="$auth.loggedIn"
           plain
@@ -91,71 +78,6 @@
       </v-list>
     </v-navigation-drawer>
     <FooterNav />
-    <!-- <v-footer :absolute="!fixed" app class="black lighten-4">
-      <v-sheet
-        class="black pa-1 ma-1"
-        :class="{
-          'd-none': $vuetify.breakpoint.smAndDown,
-          '': $vuetify.breakpoint.mdAndUp
-        }"
-      >
-        >
-        <label for="" class="grey--text fs-0-6">DNS by:</label>
-        <a href="https://domains.google/">
-          <v-img width="90px" src="/images/google domain.svg"></v-img>
-        </a>
-      </v-sheet>
-
-      <v-spacer></v-spacer>
-
-      <div>
-        <v-btn
-          plain
-          text
-          tile
-          rounded
-          class="black lighten-2 pa-1 ma-1 mr-10 white--text"
-        >
-          &copy; {{ new Date().getFullYear() }}
-        </v-btn>
-        <v-btn
-          to="/about"
-          plain
-          text
-          tile
-          rounded
-          class="black lighten-2 white--text"
-          ><v-icon>mdi-information-variant</v-icon> ABOUT</v-btn
-        >
-        <v-btn
-          to="/contact-us"
-          plain
-          text
-          tile
-          rounded
-          class="black lighten-2 white--text"
-          ><v-icon>mdi-human-greeting-proximity</v-icon>CONTACT US</v-btn
-        >
-      </div>
-      <v-spacer></v-spacer>
-
-      <v-sheet
-        class="black pa-1 ma-1"
-        :class="{
-          'd-none': $vuetify.breakpoint.smAndDown,
-          '': $vuetify.breakpoint.mdAndUp
-        }"
-      >
-        >
-        <label for="" class="grey--text fs-0-6">Secured by:</label>
-        <a href="https://letsencrypt.org/">
-          <v-img
-            width="90px"
-            src="/images/letsencrypt-logo-horizontal.svg"
-          ></v-img>
-        </a>
-      </v-sheet>
-    </v-footer> -->
   </v-app>
 </template>
 
@@ -200,34 +122,7 @@ export default {
     rightDrawer: false,
     title: 'Project Website'
   }),
-  // async created() {
-  //   await this.$axios.$get('/sanctum/csrf-cookie')
 
-  //   if (this.$auth.state['strategy'] == 'laravelSanctum') {
-  //   } else {
-  //     let payload = new FormData()
-  //     if (this.$auth.state['strategy'] == 'google') {
-  //       payload.append('email', this.$auth.state['user'].email)
-  //       payload.append('name', this.$auth.state['user'].name)
-  //       payload.append('id', this.$auth.state['user'].sub)
-  //       payload.append('social', this.$auth.state['strategy'])
-  //     } else if (this.$auth.state['strategy'] == 'github') {
-  //       payload.append('email', this.$auth.state['user'].email)
-  //       payload.append('name', this.$auth.state['user'].login)
-  //       payload.append('id', this.$auth.state['user'].id)
-  //     } else if (this.$auth.state['strategy'] == 'facebook') {
-  //       payload.append('email', this.$auth.state['user'].email)
-  //       payload.append('name', this.$auth.state['user'].name)
-  //       payload.append('id', this.$auth.state['user'].id)
-  //       payload.append('social', this.$auth.state['strategy'])
-  //     }
-
-  //     let response = await this.$axios.$post(`api/validate/account`, payload)
-  //     let merged = { ...this.$auth.user, ...response.user }
-  //     this.$auth.setUser(merged)
-  //     return { profile: response.data }
-  //   }
-  // },
   computed: {},
 
   methods: {

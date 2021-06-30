@@ -1,20 +1,13 @@
 <template>
   <v-sheet class="ma-0 pa-0">
     <v-row class="ma-0 pa-0">
-      <v-col
-        sm="12"
-        md="8"
-        lg="8"
-        xl="8"
-        class="mb-0 pb-0 col-md-8 col-lg-8 offset-md-2 offset-lg-2 offset-xl-2"
-      >
+      <v-col xs="12" sm="12" md="8" lg="8" xl="8">
         <h1>Quotes</h1>
         <p>Memorable quotes from technology and science dicipline</p>
       </v-col>
     </v-row>
 
     <v-row class="ma-0 pa-0">
-      <!-- v-for="(item, index) in content" :key="index" -->
       <v-col class="">
         <v-container>
           <v-row
@@ -23,11 +16,15 @@
             :key="ind"
           >
             <v-col
+              xs="12"
+              sm="12"
+              md="6"
               lg="4"
+              xl="4"
               v-for="(item, indx) in content.slice((i - 1) * 3, i * 3)"
               :key="indx"
             >
-              <v-card height="15vh" class=" pa-4">
+              <v-card min-height="30vh" class=" pa-4">
                 <p>{{ item.message }} - {{ item.author }}</p>
               </v-card>
             </v-col>

@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-row class="">
-      <v-col ms="10" lg="10">
+      <v-col xs="12" sm="12" md="12" lg="8" xl="8" class="">
         <WorldRemindersCard
           :content="content"
           :length="length"
@@ -9,24 +9,29 @@
           @next-article="nextArticle"
         />
       </v-col>
-    </v-row>
-    <v-row>
-      <v-col>
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        ></script>
-        <script>
-          ;(adsbygoogle = window.adsbygoogle || []).push({})
-        </script>
-        <ins
-          class="adsbygoogle"
-          style="display:block"
-          data-ad-client="ca-pub-3213536425475125"
-          data-ad-slot="3715096457"
-          data-ad-format="auto"
-          data-full-width-responsive="true"
-        ></ins>
+      <v-col xs="12" sm="12" md="12" lg="4" xl="4" class="">
+        <v-container>
+          <v-row>
+            <v-col>
+              <WidgetQuote />
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col>
+              <WidgetNews />
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col>
+              <WidgetPost />
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col>
+              <WidgetBlog />
+            </v-col>
+          </v-row>
+        </v-container>
       </v-col>
     </v-row>
   </v-container>

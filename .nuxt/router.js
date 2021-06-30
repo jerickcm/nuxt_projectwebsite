@@ -50,7 +50,6 @@ const _75c57aed = () => interopDefault(import('..\\pages\\blog\\tags\\_id.vue' /
 const _7060fd66 = () => interopDefault(import('..\\pages\\blog\\_id.vue' /* webpackChunkName: "pages/blog/_id" */))
 const _f97ead56 = () => interopDefault(import('..\\pages\\news\\_id.vue' /* webpackChunkName: "pages/news/_id" */))
 const _4dedd228 = () => interopDefault(import('..\\pages\\post\\_id.vue' /* webpackChunkName: "pages/post/_id" */))
-const _0988149e = () => interopDefault(import('..\\pages\\quotes\\_id.vue' /* webpackChunkName: "pages/quotes/_id" */))
 const _21ac0c16 = () => interopDefault(import('..\\pages\\world-reminders\\_id.vue' /* webpackChunkName: "pages/world-reminders/_id" */))
 const _75950860 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
 const _fd03a442 = () => interopDefault(import('..\\pages\\_username\\index.vue' /* webpackChunkName: "pages/_username/index" */))
@@ -252,10 +251,6 @@ export const routerOptions = {
     path: "/post/:id",
     component: _4dedd228,
     name: "post-id"
-  }, {
-    path: "/quotes/:id",
-    component: _0988149e,
-    name: "quotes-id"
   }, {
     path: "/world-reminders/:id?",
     component: _21ac0c16,

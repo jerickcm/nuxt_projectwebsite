@@ -17,6 +17,7 @@ export { default as VuetifyLogo } from '../..\\components\\VuetifyLogo.vue'
 export { default as WidgetBlog } from '../..\\components\\WidgetBlog.vue'
 export { default as WidgetNews } from '../..\\components\\WidgetNews.vue'
 export { default as WidgetPost } from '../..\\components\\WidgetPost.vue'
+export { default as WidgetQuote } from '../..\\components\\WidgetQuote.vue'
 export { default as WorldRemindersCard } from '../..\\components\\WorldRemindersCard.vue'
 
 export const LazyAdminNav = import('../..\\components\\AdminNav.vue' /* webpackChunkName: "components/admin-nav" */).then(c => wrapFunctional(c.default || c))
@@ -36,4 +37,5 @@ export const LazyVuetifyLogo = import('../..\\components\\VuetifyLogo.vue' /* we
 export const LazyWidgetBlog = import('../..\\components\\WidgetBlog.vue' /* webpackChunkName: "components/widget-blog" */).then(c => wrapFunctional(c.default || c))
 export const LazyWidgetNews = import('../..\\components\\WidgetNews.vue' /* webpackChunkName: "components/widget-news" */).then(c => wrapFunctional(c.default || c))
 export const LazyWidgetPost = import('../..\\components\\WidgetPost.vue' /* webpackChunkName: "components/widget-post" */).then(c => wrapFunctional(c.default || c))
+export const LazyWidgetQuote = import('../..\\components\\WidgetQuote.vue' /* webpackChunkName: "components/widget-quote" */).then(c => wrapFunctional(c.default || c))
 export const LazyWorldRemindersCard = import('../..\\components\\WorldRemindersCard.vue' /* webpackChunkName: "components/world-reminders-card" */).then(c => wrapFunctional(c.default || c))

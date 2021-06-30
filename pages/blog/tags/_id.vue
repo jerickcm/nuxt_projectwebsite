@@ -1,13 +1,32 @@
 <template>
-  <v-container fluid>
+  <v-container>
     <v-row class="">
-      <v-col md="12" lg="12" class="">
+      <v-col md="8" lg="8" class="">
         <BlogCard
           :content="content"
           :length="length"
           :loading="loading"
           @next-article="nextArticle"
         />
+      </v-col>
+      <v-col xs="12" sm="12" md="12" lg="4" xl="4" class="">
+        <v-container>
+          <v-row>
+            <v-col>
+              <QuoteWidget />
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col>
+              <WidgetNews />
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col>
+              <WidgetPost />
+            </v-col>
+          </v-row>
+        </v-container>
       </v-col>
     </v-row>
   </v-container>

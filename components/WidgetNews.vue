@@ -1,6 +1,6 @@
 <template>
   <v-sheet>
-    <h2 class="mb-2">News</h2>
+    <h2 class="ml-3 mb-2">News</h2>
     <v-container>
       <v-row>
         <v-col

@@ -23,4 +23,5 @@ You can directly use them in pages and other components without the need to impo
 - `<WidgetBlog>` | `<widget-blog>` (components/WidgetBlog.vue)
 - `<WidgetNews>` | `<widget-news>` (components/WidgetNews.vue)
 - `<WidgetPost>` | `<widget-post>` (components/WidgetPost.vue)
+- `<WidgetQuote>` | `<widget-quote>` (components/WidgetQuote.vue)
 - `<WorldRemindersCard>` | `<world-reminders-card>` (components/WorldRemindersCard.vue)
