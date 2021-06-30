@@ -1,4 +1,4 @@
-exports.ids = [64,10,11,12,13,14];
+exports.ids = [67,10,12,14,16,17];
 exports.modules = {
 
 /***/ 255:
@@ -29,13 +29,13 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 270:
+/***/ 259:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(271);
+var content = __webpack_require__(260);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -43,7 +43,7 @@ __webpack_require__(5).default("3c0eddd7", content, true)
 
 /***/ }),
 
-/***/ 271:
+/***/ 260:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -57,13 +57,13 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 272:
+/***/ 261:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(273);
+var content = __webpack_require__(262);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -71,7 +71,7 @@ __webpack_require__(5).default("8f7a87bc", content, true)
 
 /***/ }),
 
-/***/ 273:
+/***/ 262:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -85,7 +85,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 276:
+/***/ 274:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -286,16 +286,16 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 280:
+/***/ 277:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 
 // EXTERNAL MODULE: ./node_modules/vuetify/src/components/VChipGroup/VChipGroup.sass
-var VChipGroup = __webpack_require__(270);
+var VChipGroup = __webpack_require__(259);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/src/components/VSlideGroup/VSlideGroup.sass
-var VSlideGroup = __webpack_require__(272);
+var VSlideGroup = __webpack_require__(261);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VIcon/index.js
 var VIcon = __webpack_require__(14);
@@ -923,7 +923,7 @@ var components_VCard = __webpack_require__(25);
 var VChip = __webpack_require__(99);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VChipGroup/VChipGroup.js + 1 modules
-var VChipGroup = __webpack_require__(280);
+var VChipGroup = __webpack_require__(277);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VCol.js
 var VCol = __webpack_require__(249);
@@ -941,7 +941,7 @@ var VRow = __webpack_require__(250);
 var VSheet = __webpack_require__(19);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSkeletonLoader/VSkeletonLoader.js
-var VSkeletonLoader = __webpack_require__(276);
+var VSkeletonLoader = __webpack_require__(274);
 
 // CONCATENATED MODULE: ./components/WidgetNews.vue
 
@@ -1120,7 +1120,7 @@ var components_VCard = __webpack_require__(25);
 var VChip = __webpack_require__(99);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VChipGroup/VChipGroup.js + 1 modules
-var VChipGroup = __webpack_require__(280);
+var VChipGroup = __webpack_require__(277);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VCol.js
 var VCol = __webpack_require__(249);
@@ -1138,7 +1138,7 @@ var VRow = __webpack_require__(250);
 var VSheet = __webpack_require__(19);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSkeletonLoader/VSkeletonLoader.js
-var VSkeletonLoader = __webpack_require__(276);
+var VSkeletonLoader = __webpack_require__(274);
 
 // CONCATENATED MODULE: ./components/WidgetPost.vue
 
@@ -1280,7 +1280,7 @@ var VRow = __webpack_require__(250);
 var VSheet = __webpack_require__(19);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSkeletonLoader/VSkeletonLoader.js
-var VSkeletonLoader = __webpack_require__(276);
+var VSkeletonLoader = __webpack_require__(274);
 
 // CONCATENATED MODULE: ./components/WidgetQuote.vue
 
@@ -1324,16 +1324,16 @@ installComponents_default()(component, {VCard: VCard["a" /* default */],VCardTex
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/WidgetBlog.vue?vue&type=template&id=2bbbb12e&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/WidgetBlog.vue?vue&type=template&id=43510853&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-sheet',[_c('h2',{staticClass:"ml-3 mb-2"},[_vm._v("Blog")]),_vm._v(" "),(!_vm.loader)?_c('v-container',[_c('v-row',_vm._l((_vm.content),function(item,indx){return _c('v-col',{key:indx,attrs:{"xs":"12","sm":"12","md":"12","lg":"12","xl":"12"}},[_c('v-card',{staticClass:"pa-2 ma-0",attrs:{"elevation":"2","outlined":"","shaped":"","tile":""}},[_c('nuxt-link',{staticClass:"nuxtlink",attrs:{"target":"_blank","to":{
               path: 'blog/' + item.slug
             }}},[_c('v-img',{attrs:{"contain":"","aspect-ratio":"1.7","src":item.image}})],1),_vm._v(" "),_c('v-card-title',[_c('h2',{staticClass:"title1 blue--text fs-1 cardtitle"},[_c('nuxt-link',{staticClass:"nuxtlink",attrs:{"target":"_blank","to":{
                   path: 'blog/' + item.slug
-                }}},[_vm._v("\n                "+_vm._s(item.title)+"\n              ")])],1)]),_vm._v(" "),_c('v-card-text',{},[_c('v-chip-group',{attrs:{"active-class":"deep-purple accent-4 white--text","column":""},model:{value:(_vm.selection),callback:function ($$v) {_vm.selection=$$v},expression:"selection"}},[_c('span',{staticClass:"pt-3"},[_vm._v("Tags: ‌‌")]),_vm._v(" "),_vm._l((item.tags),function(itm,index){return _c('v-chip',{key:index,staticClass:"white--text",attrs:{"to":("/blog/tags/" + itm),"color":"blue"}},[_vm._v(_vm._s(itm))])})],2),_vm._v(" "),_c('span',[_vm._v("Author: "+_vm._s(item.name)+" ")]),_c('br'),_vm._v(" "),_c('span',[_vm._v("Date : "+_vm._s(item.human_date))]),_c('br')],1)],1)],1)}),1)],1):_vm._e(),_vm._v(" "),(_vm.loader)?_c('v-container',_vm._l((_vm.content),function(item,indx){return _c('v-row',{key:indx},[_c('v-col',[_c('v-skeleton-loader',{attrs:{"elevation":"2","outlined":"","shaped":"","tile":"","type":"card"}})],1)],1)}),1):_vm._e()],1)}
+                }}},[_vm._v("\n                "+_vm._s(item.title)+"\n              ")])],1)]),_vm._v(" "),_c('v-card-text',{},[_c('v-chip-group',{attrs:{"active-class":"deep-purple accent-4 white--text","column":""},model:{value:(_vm.selection),callback:function ($$v) {_vm.selection=$$v},expression:"selection"}},[_c('span',{staticClass:"pt-3"},[_vm._v("Tags: ‌‌")]),_vm._v(" "),_vm._l((item.tags),function(itm,index){return _c('v-chip',{key:index,staticClass:"white--text",attrs:{"to":("/blog/tags/" + itm),"color":"blue"}},[_vm._v(_vm._s(itm))])})],2),_vm._v(" "),_c('span',[_vm._v("Author: "+_vm._s(item.name)+" ")]),_c('br'),_vm._v(" "),_c('span',[_vm._v("Date : "+_vm._s(item.human_date))]),_c('br')],1)],1)],1)}),1)],1):_vm._e(),_vm._v(" "),(_vm.loader)?_c('v-container',[_c('v-row',[_c('v-col',[_c('v-skeleton-loader',{attrs:{"elevation":"2","outlined":"","shaped":"","tile":"","type":"card"}})],1)],1)],1):_vm._e()],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./components/WidgetBlog.vue?vue&type=template&id=2bbbb12e&
+// CONCATENATED MODULE: ./components/WidgetBlog.vue?vue&type=template&id=43510853&
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/WidgetBlog.vue?vue&type=script&lang=js&
 //
@@ -1454,7 +1454,7 @@ var components_VCard = __webpack_require__(25);
 var VChip = __webpack_require__(99);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VChipGroup/VChipGroup.js + 1 modules
-var VChipGroup = __webpack_require__(280);
+var VChipGroup = __webpack_require__(277);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VCol.js
 var VCol = __webpack_require__(249);
@@ -1472,7 +1472,7 @@ var VRow = __webpack_require__(250);
 var VSheet = __webpack_require__(19);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSkeletonLoader/VSkeletonLoader.js
-var VSkeletonLoader = __webpack_require__(276);
+var VSkeletonLoader = __webpack_require__(274);
 
 // CONCATENATED MODULE: ./components/WidgetBlog.vue
 
@@ -1741,7 +1741,7 @@ var VRow = __webpack_require__(250);
 var VSheet = __webpack_require__(19);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSkeletonLoader/VSkeletonLoader.js
-var VSkeletonLoader = __webpack_require__(276);
+var VSkeletonLoader = __webpack_require__(274);
 
 // CONCATENATED MODULE: ./components/WorldRemindersCard.vue
 
@@ -1788,7 +1788,7 @@ installComponents_default()(component, {VBtn: VBtn["a" /* default */],VCol: VCol
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(408);
+var content = __webpack_require__(411);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -1800,7 +1800,7 @@ module.exports.__inject__ = function (context) {
 
 /***/ }),
 
-/***/ 407:
+/***/ 410:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1812,7 +1812,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 408:
+/***/ 411:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -1826,7 +1826,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 492:
+/***/ 495:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1995,7 +1995,7 @@ var VRow = __webpack_require__(250);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(407)
+  var style0 = __webpack_require__(410)
 if (style0.__inject__) style0.__inject__(context)
 
 }

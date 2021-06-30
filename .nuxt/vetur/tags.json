@@ -44,11 +44,20 @@
   "WidgetBlog": {
     "description": "Auto imported from components/WidgetBlog.vue"
   },
+  "WidgetBlogtags": {
+    "description": "Auto imported from components/WidgetBlogtags.vue"
+  },
   "WidgetNews": {
     "description": "Auto imported from components/WidgetNews.vue"
   },
+  "WidgetNewstags": {
+    "description": "Auto imported from components/WidgetNewstags.vue"
+  },
   "WidgetPost": {
     "description": "Auto imported from components/WidgetPost.vue"
+  },
+  "WidgetPosttags": {
+    "description": "Auto imported from components/WidgetPosttags.vue"
   },
   "WidgetQuote": {
     "description": "Auto imported from components/WidgetQuote.vue"

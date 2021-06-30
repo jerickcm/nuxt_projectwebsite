@@ -62,7 +62,7 @@
     </v-container>
 
     <v-container v-if="loader">
-      <v-row v-for="(item, indx) in content" :key="indx">
+      <v-row>
         <v-col>
           <v-skeleton-loader
             elevation="2"

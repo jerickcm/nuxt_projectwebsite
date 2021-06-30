@@ -15,8 +15,11 @@ export { default as Search } from '../..\\components\\Search.vue'
 export { default as Template } from '../..\\components\\Template.vue'
 export { default as VuetifyLogo } from '../..\\components\\VuetifyLogo.vue'
 export { default as WidgetBlog } from '../..\\components\\WidgetBlog.vue'
+export { default as WidgetBlogtags } from '../..\\components\\WidgetBlogtags.vue'
 export { default as WidgetNews } from '../..\\components\\WidgetNews.vue'
+export { default as WidgetNewstags } from '../..\\components\\WidgetNewstags.vue'
 export { default as WidgetPost } from '../..\\components\\WidgetPost.vue'
+export { default as WidgetPosttags } from '../..\\components\\WidgetPosttags.vue'
 export { default as WidgetQuote } from '../..\\components\\WidgetQuote.vue'
 export { default as WorldRemindersCard } from '../..\\components\\WorldRemindersCard.vue'
 
@@ -35,7 +38,10 @@ export const LazySearch = import('../..\\components\\Search.vue' /* webpackChunk
 export const LazyTemplate = import('../..\\components\\Template.vue' /* webpackChunkName: "components/template" */).then(c => wrapFunctional(c.default || c))
 export const LazyVuetifyLogo = import('../..\\components\\VuetifyLogo.vue' /* webpackChunkName: "components/vuetify-logo" */).then(c => wrapFunctional(c.default || c))
 export const LazyWidgetBlog = import('../..\\components\\WidgetBlog.vue' /* webpackChunkName: "components/widget-blog" */).then(c => wrapFunctional(c.default || c))
+export const LazyWidgetBlogtags = import('../..\\components\\WidgetBlogtags.vue' /* webpackChunkName: "components/widget-blogtags" */).then(c => wrapFunctional(c.default || c))
 export const LazyWidgetNews = import('../..\\components\\WidgetNews.vue' /* webpackChunkName: "components/widget-news" */).then(c => wrapFunctional(c.default || c))
+export const LazyWidgetNewstags = import('../..\\components\\WidgetNewstags.vue' /* webpackChunkName: "components/widget-newstags" */).then(c => wrapFunctional(c.default || c))
 export const LazyWidgetPost = import('../..\\components\\WidgetPost.vue' /* webpackChunkName: "components/widget-post" */).then(c => wrapFunctional(c.default || c))
+export const LazyWidgetPosttags = import('../..\\components\\WidgetPosttags.vue' /* webpackChunkName: "components/widget-posttags" */).then(c => wrapFunctional(c.default || c))
 export const LazyWidgetQuote = import('../..\\components\\WidgetQuote.vue' /* webpackChunkName: "components/widget-quote" */).then(c => wrapFunctional(c.default || c))
 export const LazyWorldRemindersCard = import('../..\\components\\WorldRemindersCard.vue' /* webpackChunkName: "components/world-reminders-card" */).then(c => wrapFunctional(c.default || c))

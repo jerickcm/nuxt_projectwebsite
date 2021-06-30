@@ -17,8 +17,11 @@ const components = {
   Template: () => import('../..\\components\\Template.vue' /* webpackChunkName: "components/template" */).then(c => wrapFunctional(c.default || c)),
   VuetifyLogo: () => import('../..\\components\\VuetifyLogo.vue' /* webpackChunkName: "components/vuetify-logo" */).then(c => wrapFunctional(c.default || c)),
   WidgetBlog: () => import('../..\\components\\WidgetBlog.vue' /* webpackChunkName: "components/widget-blog" */).then(c => wrapFunctional(c.default || c)),
+  WidgetBlogtags: () => import('../..\\components\\WidgetBlogtags.vue' /* webpackChunkName: "components/widget-blogtags" */).then(c => wrapFunctional(c.default || c)),
   WidgetNews: () => import('../..\\components\\WidgetNews.vue' /* webpackChunkName: "components/widget-news" */).then(c => wrapFunctional(c.default || c)),
+  WidgetNewstags: () => import('../..\\components\\WidgetNewstags.vue' /* webpackChunkName: "components/widget-newstags" */).then(c => wrapFunctional(c.default || c)),
   WidgetPost: () => import('../..\\components\\WidgetPost.vue' /* webpackChunkName: "components/widget-post" */).then(c => wrapFunctional(c.default || c)),
+  WidgetPosttags: () => import('../..\\components\\WidgetPosttags.vue' /* webpackChunkName: "components/widget-posttags" */).then(c => wrapFunctional(c.default || c)),
   WidgetQuote: () => import('../..\\components\\WidgetQuote.vue' /* webpackChunkName: "components/widget-quote" */).then(c => wrapFunctional(c.default || c)),
   WorldRemindersCard: () => import('../..\\components\\WorldRemindersCard.vue' /* webpackChunkName: "components/world-reminders-card" */).then(c => wrapFunctional(c.default || c))
 }

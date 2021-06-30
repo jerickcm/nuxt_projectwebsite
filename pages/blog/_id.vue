@@ -17,42 +17,42 @@
           type="card"
           v-if="pageload"
         ></v-skeleton-loader>
-        <v-sheet v-else shaped tile class="pa-1 ma-1">  
+        <v-sheet v-else shaped tile class="pa-1 ma-1">
           <v-img height="250" :src="posts['image']"> </v-img>
-           <v-chip-group
-              v-model="selection"
-              active-class="deep-purple accent-4 white--text"
-              column
-            >               
-                  <span class="pt-2">Tags: &zwnj;&zwnj;</span><v-chip  v-for="(itm, index) in posts['tags']" :key="index" color="blue" class="white--text">{{itm}}</v-chip>
-            </v-chip-group>
+          <v-chip-group
+            v-model="selection"
+            active-class="deep-purple accent-4 white--text"
+            column
+          >
+            <span class="pt-2">Tags: &zwnj;&zwnj;</span
+            ><v-chip
+              v-for="(itm, index) in posts['tags']"
+              :key="index"
+              color="blue"
+              class="white--text"
+              >{{ itm }}</v-chip
+            >
+          </v-chip-group>
           <v-card-title>
-            <h1 class="blue--text"> {{ posts['title'] }}</h1>
+            <h1 class="blue--text">{{ posts['title'] }}</h1>
           </v-card-title>
           <v-card-text class="">
             <span>Author : {{ posts['name'] }}</span> <br />
             <span>Email : {{ posts['email'] }}</span
             ><br />
             <span>Date : {{ posts['human_date'] }}</span>
-            <v-sheet v-html="posts['content']" class="ck-content mt-5 "></v-sheet>
+            <v-sheet
+              v-html="posts['content']"
+              class="ck-content mt-5 "
+            ></v-sheet>
           </v-card-text>
         </v-sheet>
       </v-col>
-    </v-row>   
+    </v-row>
     <v-row>
-       <v-col>
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-            <ins class="adsbygoogle"
-            style="display:block"
-            data-ad-client="ca-pub-3213536425475125"
-            data-ad-slot="3715096457"
-            data-ad-format="auto"
-            data-full-width-responsive="true"></ins>
-
-          </v-col>
+      <v-col>
+        <WidgetBlogtags />
+      </v-col>
     </v-row>
   </v-container>
 </template>
@@ -74,7 +74,7 @@ export default {
     }
   },
   data: () => ({
-    selection:'',
+    selection: '',
     posts: {
       content: [],
       image: '',
@@ -92,7 +92,7 @@ export default {
       pageload: false,
       slug: params.slug,
       title: response.data[0].title,
-      tags:response.data[0].tags,
+      tags: response.data[0].tags
     }
   },
   computed: {
