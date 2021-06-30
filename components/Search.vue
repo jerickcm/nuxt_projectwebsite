@@ -31,9 +31,13 @@
                   <v-list-item-content v-text="data.item"></v-list-item-content>
                 </template>
                 <template v-else>
-                  <v-list-item-avatar tile>
+                  <v-list-item-avatar v-if="data.item.user">
                     <v-img :src="data.item.image" />
                   </v-list-item-avatar>
+                  <v-list-item-avatar tile v-else>
+                    <v-img :src="data.item.image" />
+                  </v-list-item-avatar>
+
                   <v-list-item-content>
                     <v-list-item-title
                       v-html="data.item.title"
@@ -42,7 +46,6 @@
                 </template>
               </template>
             </v-autocomplete>
-            <!-- prepend-icon="mdi-database-search" -->
           </v-card-text>
           <v-divider></v-divider>
           <v-expand-transition>

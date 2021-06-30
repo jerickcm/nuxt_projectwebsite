@@ -43,14 +43,36 @@
             <v-chip-group
               v-model="selection"
               active-class="deep-purple accent-4 white--text"
-              column
-
-            >
+              column>
                  <span  class="pt-3">Tags: &zwnj;&zwnj;</span> <v-chip :to="`/blog/tags/${itm}`"  v-for="(itm, index) in item.tags" :key="index" color="blue" class="white--text">{{itm}}</v-chip>
             </v-chip-group>
-            <span>Author: {{ item.name }} </span><br />
-            <span>Date : {{ item.human_date }}</span
-            ><br />
+
+
+              <v-avatar v-if="item.profile_picture!=null"  class="d-inline-flex pa-2">
+                <img :src="item.profile_picture"  alt=""  >
+              </v-avatar>
+               <v-card v-else
+                class="d-inline-flex pa-2"
+                flat
+              >
+                <p>  Author: </p>
+
+              </v-card>
+              <v-card
+                class="d-inline-flex pa-2"
+                flat
+              >
+                <p>  {{ item.name }} </p>
+
+              </v-card>
+               <v-card
+                class="d-inline-flex pa-2"
+                flat
+              >
+
+                <p>  {{ item.human_date }}</p >
+              </v-card>
+
           </v-card-text>
         </v-card>
       </v-col>

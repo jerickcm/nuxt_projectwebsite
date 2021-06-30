@@ -52,9 +52,21 @@
                   >{{ itm }}</v-chip
                 >
               </v-chip-group>
-              <span>Author: {{ item.name }} </span><br />
-              <span>Date : {{ item.human_date }}</span
-              ><br />
+              <v-avatar
+                v-if="item.profile_picture != null"
+                class="d-inline-flex pa-2"
+              >
+                <img :src="item.profile_picture" alt="" />
+              </v-avatar>
+              <v-card v-else class="d-inline-flex pa-2" flat>
+                <p>Author:</p>
+              </v-card>
+              <v-card class="d-inline-flex pa-2" flat>
+                <p>{{ item.name }}</p>
+              </v-card>
+              <v-card class="d-inline-flex pa-2" flat>
+                <p>{{ item.human_date }}</p>
+              </v-card>
             </v-card-text>
           </v-card>
         </v-col>

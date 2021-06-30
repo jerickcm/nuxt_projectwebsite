@@ -159,68 +159,14 @@ installComponents_default()(component, {VCard: VCard["a" /* default */],VCardTex
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/dashboard/index.vue?vue&type=template&id=314b884c&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/dashboard/index.vue?vue&type=template&id=3ae811ed&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-container',{staticClass:"grey ligthen-3 pa-0 ma-0",attrs:{"fluid":"","min-height":"800vh"}},[_c('v-sheet',{staticClass:"blue ligthen-3 pa-5 pt-10 pb-10",attrs:{"min-height":"200vh"}},[_c('DashTitle',{attrs:{"Dashboard":"Dashboard","to":"/dashboard"}}),_vm._v(" "),_c('Dashboard',[_c('h2',{attrs:{"slot":"menu_name"},slot:"menu_name"},[_vm._v("Profile MENU")]),_vm._v(" "),_c('v-btn',{staticClass:"blue white--text",attrs:{"slot":"view_menu","to":"/profile/edit"},slot:"view_menu"},[_vm._v("Manage Profile")])],1)],1)],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./pages/dashboard/index.vue?vue&type=template&id=314b884c&
+// CONCATENATED MODULE: ./pages/dashboard/index.vue?vue&type=template&id=3ae811ed&
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/dashboard/index.vue?vue&type=script&lang=js&
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -261,15 +207,18 @@ var staticRenderFns = []
         payload.append('name', this.$auth.state['user'].name);
         payload.append('id', this.$auth.state['user'].sub);
         payload.append('social', this.$auth.state['strategy']);
+        payload.append('image', this.$auth.state['user'].picture);
       } else if (this.$auth.state['strategy'] == 'github') {
         payload.append('email', this.$auth.state['user'].email);
         payload.append('name', this.$auth.state['user'].login);
         payload.append('id', this.$auth.state['user'].id);
+        payload.append('image', this.$auth.state['user'].avatar_url);
       } else if (this.$auth.state['strategy'] == 'facebook') {
         payload.append('email', this.$auth.state['user'].email);
         payload.append('name', this.$auth.state['user'].name);
         payload.append('id', this.$auth.state['user'].id);
         payload.append('social', this.$auth.state['strategy']);
+        payload.append('image', this.$auth.state['user'].picture['data']['url']);
       }
 
       let response = await this.$axios.$post(`api/validate/account`, payload);
@@ -279,7 +228,7 @@ var staticRenderFns = []
       console.log(response.user);
       console.log(response.user['is_admin']);
       this.$auth.setUser(merged);
-      this.$auth.$storage.setCookie("is_admin", response.user['is_admin'], false);
+      this.$auth.$storage.setCookie('is_admin', response.user['is_admin'], false);
       console.log(this.$auth.$storage.getCookie('is_admin'));
       return {
         profile: response.data
