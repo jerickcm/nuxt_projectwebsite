@@ -19,24 +19,14 @@ export const navlist = {
       },
       {
         icons: 'mdi-comment-quote-outline',
-        label: 'Quotes',
+        label: 'QUOTES',
         link: '/quotes'
       },
       {
         icons: 'mdi-earth',
-        label: 'Reminders',
+        label: 'REMINDERS',
         link: '/world-reminders'
       }
-      // {
-      //   icons: 'mdi-cloud-check-outline',
-      //   label: 'TECHNOLOGY',
-      //   link: '/TUTORIALS'
-      // },
-      // {
-      //   icons: 'mdi-login-variant',
-      //   label: 'Login',
-      //   link: '/login'
-      // }
     ]
   })
 }

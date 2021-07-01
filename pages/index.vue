@@ -74,14 +74,17 @@
                 </v-chip-group>
 
                 <v-avatar
+                  size="37"
                   v-if="item.profile_picture != null"
                   class="d-inline-flex pa-2"
                 >
                   <img :src="item.profile_picture" alt="" />
                 </v-avatar>
-                <v-card v-else class="d-inline-flex pa-2" flat>
-                  <p>Author:</p>
-                </v-card>
+
+                <v-avatar v-else color="blue" size="37" class="white--text">
+                  {{ item.name.charAt(0).toUpperCase() }}
+                </v-avatar>
+
                 <v-card class="d-inline-flex pa-2" flat>
                   <p>{{ item.name }}</p>
                 </v-card>
@@ -192,7 +195,10 @@
                     >{{ itm }}</v-chip
                   >
                 </v-chip-group>
-                <span>Author: {{ item.name }} </span><br />
+                <v-avatar color="blue" size="37" class="white--text">
+                  {{ item.name.charAt(0).toUpperCase() }}
+                </v-avatar>
+                <span>{{ item.name }} </span><br />
                 <span>Date : {{ item.human_date }}</span
                 ><br />
               </v-card-text>
@@ -299,7 +305,10 @@
                     >{{ itm }}</v-chip
                   >
                 </v-chip-group>
-                <span>Author: {{ item.name }} </span><br />
+                <v-avatar color="blue" size="37" class="white--text">
+                  {{ item.name.charAt(0).toUpperCase() }}
+                </v-avatar>
+                <span> {{ item.name }} </span><br />
                 <span>Date : {{ item.human_date }}</span
                 ><br />
               </v-card-text>

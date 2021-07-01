@@ -21,11 +21,6 @@ export const nav_footer = {
         label: 'Terms oF Service',
         link: '/terms-of-service'
       }
-      // {
-      //   icon: 'mdi-card-account-details',
-      //   label: 'test',
-      //   link: '/test'
-      // }
     ]
   })
 }

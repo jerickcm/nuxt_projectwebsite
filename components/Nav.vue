@@ -120,7 +120,18 @@
               <v-icon v-else>mdi-magnify-minus</v-icon>
             </v-list-item-action>
             <v-list-item-content>
-              <v-list-item-title> Search</v-list-item-title>
+              <v-list-item-title> SEARCH</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item
+            v-if="$auth.user && $auth.loggedIn && $auth.user['is_admin'] == '1'"
+            to="/admin"
+          >
+            <v-list-item-action>
+              <v-icon>mdi-account-tie</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title> ADMIN</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
 
@@ -130,7 +141,7 @@
             </v-list-item-action>
             <v-list-item-content>
               <v-list-item-title class="blue--text">
-                Project Website
+                PROJECT WEBSITE
                 <v-icon color="blue">mdi-laptop</v-icon></v-list-item-title
               >
             </v-list-item-content>
@@ -151,7 +162,7 @@
             </v-list-item-action>
             <v-list-item-content>
               <v-list-item-title>
-                Login
+                LOGIN
               </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
@@ -161,7 +172,7 @@
               <v-icon>mdi-monitor-dashboard</v-icon>
             </v-list-item-action>
             <v-list-item-content>
-              <v-list-item-title> Dashboard</v-list-item-title>
+              <v-list-item-title> DASHBOARD</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
 
@@ -170,7 +181,7 @@
               <v-icon>mdi-information-variant</v-icon>
             </v-list-item-action>
             <v-list-item-content>
-              <v-list-item-title> About</v-list-item-title>
+              <v-list-item-title> ABOUT</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
 
@@ -179,7 +190,25 @@
               <v-icon>mdi-human-greeting-proximity </v-icon>
             </v-list-item-action>
             <v-list-item-content>
-              <v-list-item-title> Contact Us</v-list-item-title>
+              <v-list-item-title> CONTACT US</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+
+          <v-list-item to="/privacy-policy'">
+            <v-list-item-action>
+              <v-icon>mdi-account-key </v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title> PRIVACY POLICY</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+
+          <v-list-item to="/terms-of-service">
+            <v-list-item-action>
+              <v-icon>mdi-card-account-details </v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title> TERMS OF SERVICES</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
 

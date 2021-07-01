@@ -32,12 +32,31 @@
         >
           <v-icon>{{ item.icons }}</v-icon> {{ item.label }}
         </v-btn>
+
+        <v-menu open-on-hover top offset-y>
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn color="blue" dark v-bind="attrs" v-on="on">
+              ...
+            </v-btn>
+          </template>
+
+          <v-list>
+            <v-list-item
+              v-for="(item, index) in more"
+              :key="index"
+              :to="item.link"
+            >
+              <v-list-item-action>
+                <v-icon>{{ item.icon }} </v-icon>
+              </v-list-item-action>
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
       </div>
       <v-spacer />
       <v-spacer />
-      <div class="pt-6">
-        <!-- <v-text-field label="Search" placeholder="Input Search"></v-text-field> -->
-      </div>
+
       <v-spacer />
 
       <div class="hidden-sm-and-down">
@@ -143,6 +162,24 @@ export default {
   }),
   mixins: [greetMixins, navlist],
   data: () => ({
+    more: [
+      { title: 'ABOUT', link: '/about', icon: 'mdi-information-variant' },
+      {
+        title: 'CONTACT US',
+        link: '/contact-us',
+        icon: 'mdi-human-greeting-proximity'
+      },
+      {
+        title: 'PRIVACY POLICY',
+        link: '/privacy-policy',
+        icon: 'mdi-account-key'
+      },
+      {
+        title: 'Terms of Service',
+        link: '/terms-of-service',
+        icon: 'mdi-card-account-details'
+      }
+    ],
     search: false,
     dialog_login: false,
     myitems: [{ title: 'Dashboard', link: '/dashboard' }],

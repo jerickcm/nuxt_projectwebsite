@@ -20,9 +20,6 @@
               return-object
             >
               <template v-slot:selection="data">
-                <!-- <v-avatar left>
-                  <v-img :src="data.item.image"></v-img>
-                </v-avatar> -->
                 {{ data.item.title }}
               </template>
 
