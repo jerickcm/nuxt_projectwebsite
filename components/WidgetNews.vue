@@ -80,6 +80,8 @@
 <script>
 export default {
   data: () => ({
+        content:[],
+    selection:0,
     quote: '',
     author: '',
     loader: false

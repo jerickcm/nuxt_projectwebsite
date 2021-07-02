@@ -21,7 +21,7 @@
               class="nuxtlink"
               target="_blank"
               :to="{
-                path: '/post/' + item.slug
+                path: '/post/' + item.slug,
               }"
             >
               <v-img contain aspect-ratio="1.7" :src="item.image"> </v-img>
@@ -33,7 +33,7 @@
                   class="nuxtlink"
                   target="_blank"
                   :to="{
-                    path: '/post/' + item.slug
+                    path: '/post/' + item.slug,
                   }"
                 >
                   {{ item.title }}
@@ -84,9 +84,11 @@
 <script>
 export default {
   data: () => ({
+    content: [],
+    selection: 0,
     quote: '',
     author: '',
-    loader: false
+    loader: false,
   }),
   async fetch() {},
   async mounted() {
@@ -97,6 +99,6 @@ export default {
     this.loader = false
   },
   computed: {},
-  methods: {}
+  methods: {},
 }
 </script>
