@@ -41,3 +41,10 @@
      url(~assets/Bonida/Bonida-vmmYA.ttf)
        format('truetype');
  }
+
+ @font-face {
+  font-family: 'Roboto';
+   src: local('Roboto'),
+     url(~assets/Roboto/Roboto-Regular.ttf)
+       format('truetype');
+ }

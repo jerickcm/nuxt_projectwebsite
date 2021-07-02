@@ -34,7 +34,7 @@
             >
           </v-chip-group>
           <v-card-title>
-            <h1 class="blue--text">{{ posts['title'] }}</h1>
+            <h1 class="font-roboto black--text">{{ posts['title'] }}</h1>
           </v-card-title>
           <v-card-text class="">
             <span>Author : {{ posts['name'] }}</span> <br />

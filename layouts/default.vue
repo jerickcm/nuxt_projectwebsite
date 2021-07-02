@@ -334,6 +334,11 @@ export default {
 .font-Bonida {
   font-family: 'Bonida', sans-serif;
 }
+
+.font-roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
 .hand {
   cursor: pointer;
 }

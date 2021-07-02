@@ -8,8 +8,14 @@
     <v-row>
       <v-col>
         <v-card>
-          <v-img v-if="profile['details'].cover_photo" :src="profile['details'].cover_photo"></v-img>
-          <v-img v-if="profile['details'].profile_picture" :src="profile['details'].profile_picture"></v-img>
+          <v-img
+            v-if="profile['details'].cover_photo"
+            :src="profile['details'].cover_photo"
+          ></v-img>
+          <v-img
+            v-if="profile['details'].profile_picture"
+            :src="profile['details'].profile_picture"
+          ></v-img>
           <v-card-text>
             <span class="fs-1-5">{{ profile.name }}</span
             ><br />
@@ -21,18 +27,33 @@
             ><br />
             <span v-if="profile.email">Email: {{ profile.email }}</span
             ><br />
-            <span v-if="profile['details'].house_number"> Address No: {{ profile['details'].house_number }} </span>
+            <span v-if="profile['details'].house_number">
+              Address No: {{ profile['details'].house_number }}
+            </span>
             <br />
-            <span v-if="profile['details'].street"> Address street: {{ profile['details'].street }} </span>
+            <span v-if="profile['details'].street">
+              Address street: {{ profile['details'].street }}
+            </span>
             <br />
-            <span v-if="profile['details'].city"> Address City: {{ profile['details'].city }} </span>
+            <span v-if="profile['details'].city">
+              Address City: {{ profile['details'].city }}
+            </span>
             <br />
-            <span v-if="profile['details'].province"> Address province: {{ profile['details'].province }} </span>
+            <span v-if="profile['details'].province">
+              Address province: {{ profile['details'].province }}
+            </span>
             <br />
-            <span v-if="profile['details'].country"> Address country: {{ profile['details'].country }} </span>
+            <span v-if="profile['details'].country">
+              Address country: {{ profile['details'].country }}
+            </span>
             <br />
           </v-card-text>
         </v-card>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col>
+        <WidgetBlogtags />
       </v-col>
     </v-row>
   </v-container>

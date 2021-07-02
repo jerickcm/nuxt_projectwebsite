@@ -20,6 +20,7 @@
     "juice": "^8.0.0",
     "nprogress": "^0.2.0",
     "nuxt": "^2.15.3",
+    "nuxt-social-meta": "^1.0.0",
     "vuelidate": "^0.7.6",
     "vuex": "^3.6.2"
   },
@@ -30,4 +31,3 @@
     "@nuxtjs/vuetify": "^1.11.3"
   }
 }
-
