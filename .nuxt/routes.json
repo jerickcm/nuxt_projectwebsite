@@ -384,5 +384,19 @@
     "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\_username\\\\index.vue",
     "chunkName": "pages/_username/index",
     "_name": "_fd03a442"
+  },
+  {
+    "name": "username-following",
+    "path": "/:username/following",
+    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\_username\\\\following.vue",
+    "chunkName": "pages/_username/following",
+    "_name": "_57943d9e"
+  },
+  {
+    "name": "username-skel",
+    "path": "/:username/skel",
+    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\_username\\\\skel.vue",
+    "chunkName": "pages/_username/skel",
+    "_name": "_65b93202"
   }
 ]

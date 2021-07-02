@@ -53,6 +53,8 @@ const _4dedd228 = () => interopDefault(import('..\\pages\\post\\_id.vue' /* webp
 const _21ac0c16 = () => interopDefault(import('..\\pages\\world-reminders\\_id.vue' /* webpackChunkName: "pages/world-reminders/_id" */))
 const _75950860 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
 const _fd03a442 = () => interopDefault(import('..\\pages\\_username\\index.vue' /* webpackChunkName: "pages/_username/index" */))
+const _57943d9e = () => interopDefault(import('..\\pages\\_username\\following.vue' /* webpackChunkName: "pages/_username/following" */))
+const _65b93202 = () => interopDefault(import('..\\pages\\_username\\skel.vue' /* webpackChunkName: "pages/_username/skel" */))
 
 const emptyFn = () => {}
 
@@ -261,6 +263,14 @@ export const routerOptions = {
     path: "/:username",
     component: _fd03a442,
     name: "username"
+  }, {
+    path: "/:username/following",
+    component: _57943d9e,
+    name: "username-following"
+  }, {
+    path: "/:username/skel",
+    component: _65b93202,
+    name: "username-skel"
   }],
 
   fallback: false
