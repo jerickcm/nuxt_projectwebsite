@@ -66,18 +66,13 @@ export default {
   head: () => ({
     title: 'Dashboard'
   }),
-
   data: () => ({}),
-  async asyncData({ $axios, error, params, $auth }) {},
   computed: {
     email() {
       return this.$auth.state['user'].email
     }
   },
   async created() {
-    console.log(this.$auth.state['user'].email)
-    console.log(this.$auth.state['strategy'])
-
     if (this.$auth.state['strategy'] == 'google') {
       await this.$axios.$get('/sanctum/csrf-cookie')
 
@@ -89,6 +84,47 @@ export default {
 
       return { profile: response.data }
     }
-  }
+  },
+//  async fetch() {
+//     // async fetch() {
+//     await this.$axios.$get('/sanctum/csrf-cookie')
+
+//     if (this.$auth.state['strategy'] == 'laravelSanctum') {
+//     } else {
+//       let payload = new FormData()
+//       if (this.$auth.state['strategy'] == 'google') {
+//         payload.append('email', this.$auth.state['user'].email)
+//         payload.append('name', this.$auth.state['user'].name)
+//         payload.append('id', this.$auth.state['user'].sub)
+//         payload.append('social', this.$auth.state['strategy'])
+//         payload.append('image', this.$auth.state['user'].picture)
+//       } else if (this.$auth.state['strategy'] == 'github') {
+//         payload.append('email', this.$auth.state['user'].email)
+//         payload.append('name', this.$auth.state['user'].login)
+//         payload.append('id', this.$auth.state['user'].id)
+//         payload.append('image', this.$auth.state['user'].avatar_url)
+//       } else if (this.$auth.state['strategy'] == 'facebook') {
+//         payload.append('email', this.$auth.state['user'].email)
+//         payload.append('name', this.$auth.state['user'].name)
+//         payload.append('id', this.$auth.state['user'].id)
+//         payload.append('social', this.$auth.state['strategy'])
+//         payload.append('image', this.$auth.state['user'].picture['data']['url'])
+//       }
+
+//       let response = await this.$axios.$post(`api/validate/account`, payload)
+//       let merged = { ...this.$auth.user, ...response.user }
+//       console.log(response.user)
+//       console.log(response.user['is_admin'])
+//       this.$auth.setUser(merged)
+
+//       this.$auth.$storage.setCookie(
+//         'is_admin',
+//         response.user['is_admin'],
+//         false
+//       )
+//       console.log(this.$auth.$storage.getCookie('is_admin'))
+//       return { profile: response.data }
+//     }
+//   }
 }
 </script>

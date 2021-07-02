@@ -82,7 +82,7 @@ var external_vue_default = /*#__PURE__*/__webpack_require__.n(external_vue_);
 var external_vuelidate_ = __webpack_require__(76);
 
 // EXTERNAL MODULE: external "vuelidate/lib/validators"
-var validators_ = __webpack_require__(50);
+var validators_ = __webpack_require__(48);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/admin/quotes/create.vue?vue&type=script&lang=js&
 //
@@ -306,7 +306,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 /* harmony default export */ var create = __webpack_exports__["default"] = (component.exports);
 
 /* nuxt-component-imports */
-installComponents_default()(component, {Template: __webpack_require__(49).default})
+installComponents_default()(component, {Template: __webpack_require__(47).default})
 
 
 /* vuetify-loader */

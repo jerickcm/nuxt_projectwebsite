@@ -104,13 +104,13 @@
         </v-dialog>
       </v-col>
     </v-row>
-    <v-row>
+    <!-- <v-row>
       <v-col class="pa-2 ma-2 ml-5">
         <v-avatar :size="50" class="text-center black">
           <v-img class="text-center" src="/images/cartoon-darken.jpg"></v-img>
         </v-avatar>
       </v-col>
-    </v-row>
+    </v-row> -->
     <v-row>
       <v-col>
         <v-list>
@@ -137,13 +137,12 @@
 
           <v-list-item to="/">
             <v-list-item-action>
-              <v-icon color="blue">mdi-code-json</v-icon>
+              <v-icon >mdi-laptop</v-icon>
             </v-list-item-action>
             <v-list-item-content>
               <v-list-item-title class="blue--text">
-                PROJECT WEBSITE
-                <v-icon color="blue">mdi-laptop</v-icon></v-list-item-title
-              >
+                Homepage
+              </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
 

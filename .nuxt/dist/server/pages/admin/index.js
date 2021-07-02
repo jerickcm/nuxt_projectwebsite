@@ -171,12 +171,12 @@ installComponents_default()(component, {VCard: VCard["a" /* default */],VCardTex
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/admin/index.vue?vue&type=template&id=986507c4&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/admin/index.vue?vue&type=template&id=51da4c16&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-container',{staticClass:"grey ligthen-3 pa-0 ma-0",attrs:{"fluid":"","min-height":"800vh"}},[_c('v-sheet',{staticClass:"blue ligthen-3 pa-5 pt-10 pb-10",attrs:{"min-height":"200vh"}},[_c('DashTitle',{attrs:{"Dashboard":"Dashboard","to":"/dashboard"}}),_vm._v(" "),_c('Dashboard',[_c('h2',{attrs:{"slot":"menu_name"},slot:"menu_name"},[_vm._v("POST MENU")]),_vm._v(" "),_c('v-btn',{staticClass:"green white--text",attrs:{"slot":"create_menu","to":"admin/post/create"},slot:"create_menu"},[_vm._v("Create Post")]),_vm._v(" "),_c('v-btn',{staticClass:"blue white--text",attrs:{"slot":"view_menu","to":"admin/post/manage"},slot:"view_menu"},[_vm._v("Manage Post")])],1),_vm._v(" "),_c('Dashboard',[_c('h2',{attrs:{"slot":"menu_name"},slot:"menu_name"},[_vm._v("BLOG MENU")]),_vm._v(" "),_c('v-btn',{staticClass:"green white--text",attrs:{"slot":"create_menu","to":"admin/blog/create"},slot:"create_menu"},[_vm._v("Create BLOG")]),_vm._v(" "),_c('v-btn',{staticClass:"blue white--text",attrs:{"slot":"view_menu","to":"admin/blog/manage"},slot:"view_menu"},[_vm._v("Manage BLOG")])],1),_vm._v(" "),_c('Dashboard',[_c('h2',{attrs:{"slot":"menu_name"},slot:"menu_name"},[_vm._v("NEWS MENU")]),_vm._v(" "),_c('v-btn',{staticClass:"green white--text",attrs:{"slot":"create_menu","to":"admin/news/create"},slot:"create_menu"},[_vm._v("Create NEWS")]),_vm._v(" "),_c('v-btn',{staticClass:"blue white--text",attrs:{"slot":"view_menu","to":"admin/news/manage"},slot:"view_menu"},[_vm._v("Manage NEWS")])],1),_vm._v(" "),_c('Dashboard',[_c('h2',{attrs:{"slot":"menu_name"},slot:"menu_name"},[_vm._v("QUOTES MENU")]),_vm._v(" "),_c('v-btn',{staticClass:"green white--text",attrs:{"slot":"create_menu","to":"admin/quotes/create"},slot:"create_menu"},[_vm._v("Create QUOTES")]),_vm._v(" "),_c('v-btn',{staticClass:"blue white--text",attrs:{"slot":"view_menu","to":"admin/quotes/manage"},slot:"view_menu"},[_vm._v("Manage QUOTES")])],1),_vm._v(" "),_c('Dashboard',[_c('h2',{attrs:{"slot":"menu_name"},slot:"menu_name"},[_vm._v("World Reminders MENU")]),_vm._v(" "),_c('v-btn',{staticClass:"green white--text",attrs:{"slot":"create_menu","to":"admin/world-reminders/create"},slot:"create_menu"},[_vm._v("Create World Reminders")]),_vm._v(" "),_c('v-btn',{staticClass:"blue white--text",attrs:{"slot":"view_menu","to":"admin/world-reminders/manage"},slot:"view_menu"},[_vm._v("Manage World Reminders")])],1)],1)],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./pages/admin/index.vue?vue&type=template&id=986507c4&
+// CONCATENATED MODULE: ./pages/admin/index.vue?vue&type=template&id=51da4c16&
 
 // EXTERNAL MODULE: ./mixins/admin_pages.js
 var admin_pages = __webpack_require__(266);
@@ -250,14 +250,6 @@ var admin_pages = __webpack_require__(266);
     title: 'Dashboard'
   }),
   data: () => ({}),
-
-  async asyncData({
-    $axios,
-    error,
-    params,
-    $auth
-  }) {},
-
   computed: {
     email() {
       return this.$auth.state['user'].email;
@@ -266,9 +258,6 @@ var admin_pages = __webpack_require__(266);
   },
 
   async created() {
-    console.log(this.$auth.state['user'].email);
-    console.log(this.$auth.state['strategy']);
-
     if (this.$auth.state['strategy'] == 'google') {
       await this.$axios.$get('/sanctum/csrf-cookie');
       let payload = new FormData();
@@ -279,7 +268,45 @@ var admin_pages = __webpack_require__(266);
         profile: response.data
       };
     }
-  }
+  } //  async fetch() {
+  //     // async fetch() {
+  //     await this.$axios.$get('/sanctum/csrf-cookie')
+  //     if (this.$auth.state['strategy'] == 'laravelSanctum') {
+  //     } else {
+  //       let payload = new FormData()
+  //       if (this.$auth.state['strategy'] == 'google') {
+  //         payload.append('email', this.$auth.state['user'].email)
+  //         payload.append('name', this.$auth.state['user'].name)
+  //         payload.append('id', this.$auth.state['user'].sub)
+  //         payload.append('social', this.$auth.state['strategy'])
+  //         payload.append('image', this.$auth.state['user'].picture)
+  //       } else if (this.$auth.state['strategy'] == 'github') {
+  //         payload.append('email', this.$auth.state['user'].email)
+  //         payload.append('name', this.$auth.state['user'].login)
+  //         payload.append('id', this.$auth.state['user'].id)
+  //         payload.append('image', this.$auth.state['user'].avatar_url)
+  //       } else if (this.$auth.state['strategy'] == 'facebook') {
+  //         payload.append('email', this.$auth.state['user'].email)
+  //         payload.append('name', this.$auth.state['user'].name)
+  //         payload.append('id', this.$auth.state['user'].id)
+  //         payload.append('social', this.$auth.state['strategy'])
+  //         payload.append('image', this.$auth.state['user'].picture['data']['url'])
+  //       }
+  //       let response = await this.$axios.$post(`api/validate/account`, payload)
+  //       let merged = { ...this.$auth.user, ...response.user }
+  //       console.log(response.user)
+  //       console.log(response.user['is_admin'])
+  //       this.$auth.setUser(merged)
+  //       this.$auth.$storage.setCookie(
+  //         'is_admin',
+  //         response.user['is_admin'],
+  //         false
+  //       )
+  //       console.log(this.$auth.$storage.getCookie('is_admin'))
+  //       return { profile: response.data }
+  //     }
+  //   }
+
 
 });
 // CONCATENATED MODULE: ./pages/admin/index.vue?vue&type=script&lang=js&

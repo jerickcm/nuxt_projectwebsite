@@ -580,7 +580,7 @@ var VSelect = __webpack_require__(15);
 var VIcon = __webpack_require__(14);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VBtn/index.js
-var VBtn = __webpack_require__(47);
+var VBtn = __webpack_require__(46);
 
 // CONCATENATED MODULE: ./node_modules/vuetify/lib/components/VDataIterator/VDataFooter.js
  // Components
@@ -1724,7 +1724,7 @@ var VSimpleTable = __webpack_require__(274);
 
 }));
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/mixins/loadable/index.js
-var loadable = __webpack_require__(51);
+var loadable = __webpack_require__(50);
 
 // CONCATENATED MODULE: ./node_modules/vuetify/lib/components/VDataTable/VDataTable.js
  // Components
@@ -2365,6 +2365,17 @@ module.exports.__inject__ = function (context) {
 
 /***/ }),
 
+/***/ 46:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _VBtn__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(238);
+
+
+/* harmony default export */ __webpack_exports__["a"] = (_VBtn__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"]);
+
+/***/ }),
+
 /***/ 461:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2388,17 +2399,6 @@ ___CSS_LOADER_EXPORT___.push([module.i, "ul.clean[data-v-4806f31c]{list-style:no
 // Exports
 module.exports = ___CSS_LOADER_EXPORT___;
 
-
-/***/ }),
-
-/***/ 47:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _VBtn__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(238);
-
-
-/* harmony default export */ __webpack_exports__["a"] = (_VBtn__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"]);
 
 /***/ }),
 
@@ -2431,7 +2431,7 @@ var admin_pages = __webpack_require__(266);
 var external_vuelidate_ = __webpack_require__(76);
 
 // EXTERNAL MODULE: external "vuelidate/lib/validators"
-var validators_ = __webpack_require__(50);
+var validators_ = __webpack_require__(48);
 
 // EXTERNAL MODULE: external "nprogress"
 var external_nprogress_ = __webpack_require__(9);
@@ -2763,7 +2763,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 /* harmony default export */ var logs = __webpack_exports__["default"] = (component.exports);
 
 /* nuxt-component-imports */
-installComponents_default()(component, {Template: __webpack_require__(49).default})
+installComponents_default()(component, {Template: __webpack_require__(47).default})
 
 
 /* vuetify-loader */

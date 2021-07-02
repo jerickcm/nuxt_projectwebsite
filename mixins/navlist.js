@@ -3,23 +3,23 @@ export const navlist = {
     fixed: false,
     navlist: [
       {
-        icons: 'mdi-newspaper-variant-multiple-outline',
-        label: 'NEWS',
+        icons: 'mdi-card-account-details-star-outline',
+        label: ' NEWS ',
         link: '/news'
       },
       {
-        icons: 'mdi-post-outline',
-        label: 'POST',
+        icons: 'mdi-garage-alert-variant',
+        label: ' POST ',
         link: '/post'
       },
       {
-        icons: 'mdi-blogger',
-        label: 'BLOG',
+        icons: 'mdi-notebook',
+        label: ' BLOG ',
         link: '/blog'
       },
       {
         icons: 'mdi-comment-quote-outline',
-        label: 'QUOTES',
+        label: ' QUOTES ',
         link: '/quotes'
       },
       {

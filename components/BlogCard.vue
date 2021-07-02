@@ -1,17 +1,13 @@
 <template>
   <v-sheet class="ma-0 pa-0">
     <v-row class="ma-0 pa-0">
-      <v-col
-
-      >
+      <v-col>
         <h1>Blog</h1>
         <p>Relevent Personal Blogs about programming and events</p>
       </v-col>
     </v-row>
     <v-row v-for="(item, index) in content" :key="index" class="ma-0 pa-0">
-      <v-col
-
-      >
+      <v-col>
         <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
 
           <nuxt-link
@@ -48,7 +44,7 @@
             </v-chip-group>
 
 
-              <v-avatar v-if="item.profile_picture!=null"  class="d-inline-flex pa-2">
+              <v-avatar size="37" v-if="item.profile_picture!=null"  class="d-inline-flex pa-2">
                 <img :src="item.profile_picture"  alt=""  >
               </v-avatar>
                <v-card v-else
@@ -107,9 +103,7 @@
       </v-col>
     </v-row>
     <v-row class="ma-0 pa-0">
-      <v-col
-
-      >
+      <v-col>
         <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
           <v-btn
             class="white--text"
@@ -129,9 +123,7 @@
 
 <script>
 export default {
-  head: {
 
-  },
   props: ['content', 'length', 'loading'],
   data: () => ({
     selection:''
@@ -140,9 +132,6 @@ export default {
   mounted() {},
   computed: {},
   methods: {
-    image_default(event){
-       console.log('Image failed to load');
-    },
     getnextarticle() {
       this.$emit('next-article')
     },

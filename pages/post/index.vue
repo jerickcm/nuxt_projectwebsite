@@ -35,26 +35,20 @@
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 export default {
-
   head: () => ({
-
     title: 'Post',
-    meta: [{ hid: 'Posts', name: 'Posts', content: 'Post Article Page' }]
+    meta: [{ hid: 'Posts', name: 'Posts', content: 'Post Article Page' }],
   }),
   data: () => ({
-     selection: 0,
+    selection: 0,
     content: [],
     length: null,
     loading: false,
-    page: 2
+    page: 2,
   }),
-   created() {
-
-  },
+  created() {},
   mounted() {},
-  transition: {
-
-  },
+  transition: {},
   auth: false,
   // async fetch() {
   //   await this.$axios.$get('/sanctum/csrf-cookie')
@@ -81,14 +75,14 @@ export default {
       try {
         this.$axios
           .$get(`api/post/list/${this.page}`)
-          .then(res => {
+          .then((res) => {
             this.length = res.data.length
             this.content = [...this.content, ...res.data]
             NProgress.done()
             this.page = this.page + 1
             this.loading = false
           })
-          .catch(error => {
+          .catch((error) => {
             this.loading = false
             NProgress.done()
           })
@@ -97,8 +91,8 @@ export default {
         this.loading = false
         console.log('error')
       }
-    }
-  }
+    },
+  },
 }
 </script>
 <style scoped>

@@ -2,10 +2,10 @@
   <v-container class=" ">
     <v-row>
       <v-col>
-        <h1 color="dark">Project Website - Research and Development</h1>
+        <h1 color="dark" class="font-roboto">INHINYERU.com - Research and Development</h1>
         <p>
-          Latest Code fixes, Tutorials and Reviews, News about technology and
-          Programming also includes Programming quotes and world event
+          This website features are latest code fixes, tutorials and reviews, news about technology and
+          programming also includes programming quotes and world event
           anniversaries. May also include personal blogs and top 10 - 100
           reviews of the authors favorite things and current researches.
         </p>
@@ -44,7 +44,7 @@
               </nuxt-link>
 
               <v-card-title>
-                <h2 class="title1 blue--text fs-1 cardtitle">
+                <h2 color="dark" class="title1 fs-1 cardtitle">
                   <nuxt-link
                     class="nuxtlink"
                     target="_blank"
@@ -168,7 +168,7 @@
               </nuxt-link>
 
               <v-card-title>
-                <h2 class="title1 blue--text fs-1 cardtitle">
+                <h2  color="dark"  class="title1 fs-1 cardtitle">
                   <nuxt-link
                     target="_blank"
                     class="nuxtlink"
@@ -278,7 +278,7 @@
               </nuxt-link>
 
               <v-card-title>
-                <h2 class="title1 blue--text fs-1 cardtitle">
+                <h2  color="dark"  class="title1 fs-1 cardtitle">
                   <nuxt-link
                     target="_blank"
                     class="nuxtlink"
