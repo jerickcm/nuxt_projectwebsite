@@ -57,7 +57,6 @@ export default {
   },
   async created() {},
   auth: false,
-
   watch: {
     lenght: function (val) {
       if (val < 10) {

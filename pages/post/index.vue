@@ -35,46 +35,41 @@
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 export default {
-  created() {
-    setTimeout(function() {
-      this.$nuxt.$loading.finish()
-    }, 1000)
-  },
-  transition: {
-    beforeEnter(el) {
-      this.$nextTick(() => {
-        this.$nuxt.$loading.start()
-      })
-    }
-  },
-  auth: false,
+
   head: () => ({
-    selection: '',
-    // content: '',
-    // length: '',
+
     title: 'Post',
     meta: [{ hid: 'Posts', name: 'Posts', content: 'Post Article Page' }]
   }),
   data: () => ({
+     selection: 0,
+    content: [],
+    length: null,
     loading: false,
     page: 2
   }),
+   created() {
 
+  },
+  mounted() {},
+  transition: {
+
+  },
+  auth: false,
   // async fetch() {
   //   await this.$axios.$get('/sanctum/csrf-cookie')
   //   const res = await this.$axios.$get(`api/post/list/1`)
   //   this.content = res.data
   //   this.length = res.data.length
   // },
-  async asyncData({ $axios, error, params }) {
-    await $axios.$get('/sanctum/csrf-cookie')
-    const res = await $axios.$get(`api/post/list/1`)
-    return {
-      content: res.data,
-      length: res.data.length
-    }
+  async fetch() {
+    this.loading = true
+    await this.$axios.$get('/sanctum/csrf-cookie')
+    const res = await this.$axios.$get(`api/post/page/1/item/10`)
+    this.content = res.data
+    this.length = res.data.length
+    this.loading = false
   },
-  mounted() {},
   components: {},
   watch: {},
   methods: {
