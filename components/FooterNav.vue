@@ -37,7 +37,7 @@
       <v-card-text>
         <v-btn
           v-for="(item, i) in footerlist"
-          to="item.link"
+          :to="item.link"
           :key="i"
           plain
           text
