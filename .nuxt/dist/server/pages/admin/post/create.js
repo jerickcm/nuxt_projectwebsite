@@ -700,7 +700,7 @@ var VImg = __webpack_require__(72);
 var VRow = __webpack_require__(251);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSelect/VSelect.js + 5 modules
-var VSelect = __webpack_require__(15);
+var VSelect = __webpack_require__(16);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSheet/VSheet.js
 var VSheet = __webpack_require__(19);

@@ -562,10 +562,10 @@ var external_vue_default = /*#__PURE__*/__webpack_require__.n(external_vue_);
 var VDataFooter = __webpack_require__(270);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSelect/VSelect.js + 5 modules
-var VSelect = __webpack_require__(15);
+var VSelect = __webpack_require__(16);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VIcon/index.js
-var VIcon = __webpack_require__(14);
+var VIcon = __webpack_require__(15);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VBtn/index.js
 var VBtn = __webpack_require__(46);
@@ -2396,7 +2396,7 @@ var VSheet = __webpack_require__(36);
 var VBtn = __webpack_require__(46);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VIcon/index.js
-var VIcon = __webpack_require__(14);
+var VIcon = __webpack_require__(15);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/mixins/toggleable/index.js
 var toggleable = __webpack_require__(13);

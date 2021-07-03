@@ -389,7 +389,7 @@ var touch = __webpack_require__(109);
 var components_VBtn = __webpack_require__(46);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VIcon/index.js
-var VIcon = __webpack_require__(14);
+var VIcon = __webpack_require__(15);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VItemGroup/VItemGroup.js
 var VItemGroup = __webpack_require__(59);
@@ -1066,7 +1066,7 @@ const baseMixins = Object(mixins["a" /* default */])(bootable["a" /* default */]
 var VImg = __webpack_require__(72);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/mixins/routable/index.js
-var routable = __webpack_require__(16);
+var routable = __webpack_require__(17);
 
 // CONCATENATED MODULE: ./node_modules/vuetify/lib/components/VCarousel/VCarouselItem.js
 // Extensions

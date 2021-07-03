@@ -298,7 +298,7 @@ var VChipGroup = __webpack_require__(259);
 var VSlideGroup = __webpack_require__(261);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VIcon/index.js
-var VIcon = __webpack_require__(14);
+var VIcon = __webpack_require__(15);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/transitions/index.js + 2 modules
 var transitions = __webpack_require__(26);
