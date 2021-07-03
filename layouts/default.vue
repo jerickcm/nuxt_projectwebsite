@@ -161,6 +161,10 @@ const dev_front = process.env.DEV_FRONT
 const prod_front = process.env.PROD_FRONT
 const front = process.env.NODE_ENV === 'development' ? dev_front : prod_front
 
+const dev_fb_id = process.env.DEV_FB
+const prod_fb_id = process.env.PROD_FB
+const fb_id = process.env.NODE_ENV === 'development' ? dev_fb_id : prod_fb_id
+
 export default {
   head() {
     return {
@@ -211,6 +215,12 @@ export default {
           hid: 'og:image:alt',
           property: 'og:image:alt',
           content: this.title
+        },
+        { hid: 'fb:app_id', name: 'fb:app_id', content: fb_id },
+        {
+          hid: 'twitter:site',
+          name: 'twitter:site',
+          content: 'https://twitter.com/InhinyeruC'
         }
       ]
     }
