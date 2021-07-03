@@ -2,7 +2,7 @@
   <v-sheet class="ma-0 pa-0">
     <v-row class="ma-0 pa-0">
       <v-col xs="12" sm="12" md="8" lg="8" xl="8">
-        <h1>Quotes</h1>
+        <h1 class="fs-1-3">Quotes</h1>
         <p>Memorable quotes from technology and science dicipline</p>
       </v-col>
     </v-row>

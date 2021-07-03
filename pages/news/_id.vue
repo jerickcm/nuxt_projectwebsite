@@ -18,7 +18,7 @@
           v-if="pageload"
         ></v-skeleton-loader>
         <v-sheet v-else shaped tile class="pa-1 ma-1">
-          <h1 class="blue--text">{{ posts['title'] }}</h1>
+          <h1 class="fs-1-3 blue--text">{{ posts['title'] }}</h1>
           <v-img
             v-if="posts['image'] != null"
             height="250"

@@ -2,7 +2,7 @@
   <v-sheet class="ma-0 pa-0">
     <v-row class="ma-0 pa-0">
       <v-col>
-        <h1>Post</h1>
+        <h1 class="fs-1-3">Post</h1>
         <p>Technical posts mostly dev ops and site updates</p>
       </v-col>
     </v-row>

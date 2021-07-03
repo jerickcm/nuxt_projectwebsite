@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <h1>Website Terms and Conditions of Use</h1>
+    <h1 class="fs-1-3">Website Terms and Conditions of Use</h1>
 
     <h2>1. Terms</h2>
 

@@ -2,7 +2,7 @@
   <v-sheet>
     <v-row class="">
       <v-col class="ma-2">
-        <h1>News</h1>
+        <h1 class="fs-1-3">News</h1>
         <p>Technological News</p>
       </v-col>
     </v-row>

@@ -2,7 +2,7 @@
   <v-container class=" ">
     <v-row>
       <v-col>
-        <h1 color="dark" class="font-roboto">
+        <h1 color="dark" class="fs-1-3 font-roboto">
           INHINYERU.com - Research and Development
         </h1>
         <p>

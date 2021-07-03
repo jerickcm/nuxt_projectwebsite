@@ -41,7 +41,9 @@
             >
           </v-chip-group>
           <v-card-title>
-            <h1 class="font-roboto" color="dark">{{ posts['title'] }}</h1>
+            <h1 class="fs-1-3 font-roboto" color="dark">
+              {{ posts['title'] }}
+            </h1>
           </v-card-title>
           <v-card-text class="">
             <span>Author : {{ posts['name'] }}</span> <br />
@@ -76,58 +78,58 @@ export default {
           hid: 'Blog',
           name: 'Blog',
           content: 'Blog' + this.title
-        },
-        {
-          hid: 'twitter:title',
-          name: 'twitter:title',
-          content: this.title
-        },
-        {
-          hid: 'twitter:description',
-          name: 'twitter:description',
-          content: this.title
-        },
-        {
-          hid: 'twitter:image',
-          name: 'twitter:image',
-          content: this.image
-        },
-        {
-          hid: 'twitter:image:alt',
-          name: 'twitter:image:alt',
-          content: this.title
-        },
-        {
-          hid: 'og:title',
-          property: 'og:title',
-          content: this.title
-        },
-        {
-          hid: 'og:description',
-          property: 'og:description',
-          content: this.title
-        },
-        {
-          hid: 'og:image',
-          property: 'og:image',
-          content: this.image
-        },
-        {
-          hid: 'og:image:secure_url',
-          property: 'og:image:secure_url',
-          content: this.image
-        },
-        {
-          hid: 'og:image:alt',
-          property: 'og:image:alt',
-          content: this.title
-        },
-        { hid: 'fb:app_id', name: 'fb:app_id', content: fb_id },
-        {
-          hid: 'twitter:site',
-          name: 'twitter:site',
-          content: 'https://twitter.com/InhinyeruC'
         }
+        // {
+        //   hid: 'twitter:title',
+        //   name: 'twitter:title',
+        //   content: this.title
+        // },
+        // {
+        //   hid: 'twitter:description',
+        //   name: 'twitter:description',
+        //   content: this.title
+        // },
+        // {
+        //   hid: 'twitter:image',
+        //   name: 'twitter:image',
+        //   content: this.image
+        // },
+        // {
+        //   hid: 'twitter:image:alt',
+        //   name: 'twitter:image:alt',
+        //   content: this.title
+        // },
+        // {
+        //   hid: 'og:title',
+        //   property: 'og:title',
+        //   content: this.title
+        // },
+        // {
+        //   hid: 'og:description',
+        //   property: 'og:description',
+        //   content: this.title
+        // },
+        // {
+        //   hid: 'og:image',
+        //   property: 'og:image',
+        //   content: this.image
+        // },
+        // {
+        //   hid: 'og:image:secure_url',
+        //   property: 'og:image:secure_url',
+        //   content: this.image
+        // },
+        // {
+        //   hid: 'og:image:alt',
+        //   property: 'og:image:alt',
+        //   content: this.title
+        // },
+        // { hid: 'fb:app_id', name: 'fb:app_id', content: fb_id },
+        // {
+        //   hid: 'twitter:site',
+        //   name: 'twitter:site',
+        //   content: 'https://twitter.com/InhinyeruC'
+        // }
       ]
     }
   },

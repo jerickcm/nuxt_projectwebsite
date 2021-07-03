@@ -2,7 +2,7 @@
   <v-sheet class="ma-0 pa-0">
     <v-row class="ma-0 pa-0">
       <v-col>
-        <h1>Blog</h1>
+        <h1 class="fs-1-3">Blog</h1>
         <p>Relevent Personal Blogs about programming and events</p>
       </v-col>
     </v-row>

@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <h1>Privacy Policy</h1>
+    <h1 class="fs-1-3">Privacy Policy</h1>
     <p>Last updated: June 20, 2021</p>
     <p>
       This Privacy Policy describes Our policies and procedures on the
