@@ -55,17 +55,18 @@ export default {
   },
   middleware: 'auth',
   auth: false,
-  head: () => ({
-    title: 'World Reminders',
-    meta: [
-      {
-        hid: 'World Reminders',
-        name: 'World Reminders',
-        content: 'World Reminders'
-      }
-    ]
-  }),
-
+  head() {
+    return {
+      title: 'World Reminders ',
+      meta: [
+        {
+          hid: 'World Reminders ',
+          name: 'World Reminders ',
+          content: 'Memorable quotes from technology and science dicipline'
+        }
+      ]
+    }
+  },
   data: () => ({
     loading: false,
     page: 2

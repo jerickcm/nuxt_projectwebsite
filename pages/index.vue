@@ -429,10 +429,19 @@ export default {
   },
   middleware: 'auth',
   auth: false,
-  head: () => ({
-    title: 'Homepage ',
-    meta: [{ hid: 'Homepage', name: 'Homepage', content: 'Homepage' }]
-  }),
+  head() {
+    return {
+      title: 'Homepage ',
+      meta: [
+        {
+          hid: 'Homepage ',
+          name: 'Homepage ',
+          content:
+            'This website features are latest code fixes, tutorials and reviews, news about technology and programming also includes programming quotes and world event anniversaries. May also include personal blogs and top 10 - 100 reviews of the authors favorite things and current researches.'
+        }
+      ]
+    }
+  },
   data: () => ({
     blogs_load: false,
     news_load: false,

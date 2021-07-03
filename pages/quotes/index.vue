@@ -50,10 +50,18 @@ export default {
   },
   middleware: 'auth',
   auth: false,
-  head: () => ({
-    title: 'Quotes',
-    meta: [{ hid: 'Quotes', name: 'Quotes', content: 'Quotes Article Page' }]
-  }),
+  head() {
+    return {
+      title: 'Quotes ',
+      meta: [
+        {
+          hid: 'Quotes ',
+          name: 'Quotes ',
+          content: 'Memorable quotes from technology and science dicipline'
+        }
+      ]
+    }
+  },
 
   data: () => ({
     loading: false,

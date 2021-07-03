@@ -36,20 +36,27 @@
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 export default {
-  head: () => ({
-    title: 'Blog',
-    meta: [{ hid: 'Blog', name: 'Blog', content: 'Blog Article Page' }],
-  }),
-
+  head() {
+    return {
+      title: 'Blog ',
+      meta: [
+        {
+          hid: 'Blog ',
+          name: 'Blog ',
+          content: 'Relevent Personal Blogs about programming and events'
+        }
+      ]
+    }
+  },
   data: () => ({
     selection: 0,
     content: [],
     length: null,
     loading: false,
-    page: 2,
+    page: 2
   }),
 
-   async fetch() {
+  async fetch() {
     this.loading = true
     await this.$axios.$get('/sanctum/csrf-cookie')
     const res = await this.$axios.$get(`api/blog/page/1/item/10`)
@@ -57,14 +64,7 @@ export default {
     this.length = res.data.length
     this.loading = false
   },
-  // async fetch() {
-  //   // this.loading = true
-  //   await this.$axios.$get('/sanctum/csrf-cookie')
-  //   const res = await $axios.$get(`api/blog/page/1/item/10`)
-  //   this.content = res.data
-  //   this.length = res.data.length
-  //   // this.loading = false
-  // },
+
   mounted() {},
   created() {
     // setTimeout(function() {
@@ -100,14 +100,14 @@ export default {
       try {
         this.$axios
           .$get(`api/blog/page/${this.page}/item/${10}`)
-          .then((res) => {
+          .then(res => {
             this.length = res.data.length
             this.content = [...this.content, ...res.data]
             NProgress.done()
             this.page = this.page + 1
             this.loading = false
           })
-          .catch((error) => {
+          .catch(error => {
             this.loading = false
             NProgress.done()
           })
@@ -116,8 +116,8 @@ export default {
         this.loading = false
         console.log('error')
       }
-    },
-  },
+    }
+  }
 }
 </script>
 <style scoped>

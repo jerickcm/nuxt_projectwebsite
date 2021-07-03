@@ -96,9 +96,12 @@ import { required, email, minLength } from 'vuelidate/lib/validators'
 Vue.use(Vuelidate)
 
 export default {
-  head: () => ({
-    title: 'Login'
-  }),
+  head() {
+    return {
+      title: 'Log-in ',
+      meta: [{ hid: 'Log-in ', name: 'Log-in ', content: 'Log-in' }]
+    }
+  },
   data: () => ({
     alert: 'd-none',
     error_msg: '',

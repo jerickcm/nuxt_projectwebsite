@@ -73,22 +73,29 @@
   </v-container>
 </template>
 <script>
-import Vue from "vue";
-import { Vuelidate, validationMixin } from "vuelidate";
+import Vue from 'vue'
+import { Vuelidate, validationMixin } from 'vuelidate'
 
-import {
-  required,
-  maxLength,
-  email,
-  minLength
-} from "vuelidate/lib/validators";
+import { required, maxLength, email, minLength } from 'vuelidate/lib/validators'
 
-import NProgress from "nprogress";
-import "nprogress/nprogress.css";
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 
-Vue.use(Vuelidate);
+Vue.use(Vuelidate)
 
 export default {
+  head() {
+    return {
+      title: 'Registration Page ',
+      meta: [
+        {
+          hid: 'Registration Page ',
+          name: 'Registration Page',
+          content: 'Registration Page'
+        }
+      ]
+    }
+  },
   mixins: [validationMixin],
 
   validations: {
@@ -98,46 +105,46 @@ export default {
   },
 
   data: () => ({
-    alert: "d-none",
-    error_msg: "",
+    alert: 'd-none',
+    error_msg: '',
     loading: false,
     form: {
-      name: "",
-      email: "",
-      password: ""
+      name: '',
+      email: '',
+      password: ''
     },
-    name: "",
-    email: "",
-    password: "",
+    name: '',
+    email: '',
+    password: '',
     show1: false,
     rules: {
-      required: value => !!value || "Required.",
-      min: v => v.length >= 6 || "Min 6 characters",
+      required: value => !!value || 'Required.',
+      min: v => v.length >= 6 || 'Min 6 characters',
       emailMatch: () => `The email and password you entered don't match`
     }
   }),
 
   computed: {
     nameErrors() {
-      const errors = [];
-      if (!this.$v.name.$dirty) return errors;
+      const errors = []
+      if (!this.$v.name.$dirty) return errors
       !this.$v.name.maxLength &&
-        errors.push("Name must be at most 10 characters long");
-      !this.$v.name.required && errors.push("Name is required.");
-      return errors;
+        errors.push('Name must be at most 10 characters long')
+      !this.$v.name.required && errors.push('Name is required.')
+      return errors
     },
     emailErrors() {
-      const errors = [];
-      if (!this.$v.email.$dirty) return errors;
-      !this.$v.email.email && errors.push("Must be valid e-mail");
-      !this.$v.email.required && errors.push("E-mail is required");
-      return errors;
+      const errors = []
+      if (!this.$v.email.$dirty) return errors
+      !this.$v.email.email && errors.push('Must be valid e-mail')
+      !this.$v.email.required && errors.push('E-mail is required')
+      return errors
     },
     passwordErrors() {
-      const passerrors = [];
-      if (!this.$v.password.$dirty) return passerrors;
-      !this.$v.password.required && passerrors.push("Password is required");
-      return passerrors;
+      const passerrors = []
+      if (!this.$v.password.$dirty) return passerrors
+      !this.$v.password.required && passerrors.push('Password is required')
+      return passerrors
     }
   },
 
@@ -146,11 +153,10 @@ export default {
       // this.$v.email.$touch();
       // this.$v.password.$touch();
       // this.$v.name.$touch();
-      this.$v.$touch();
+      this.$v.$touch()
       if (!this.$v.$invalid) {
         // this.alert = "d-none";
         // this.loading = true;
-
         // this.form.email = this.email;
         // this.form.password = this.password;
         // this.form.name = this.name;
@@ -172,19 +178,19 @@ export default {
       }
     },
     clear() {
-      this.$v.$reset();
-      this.form.name = "";
-      this.form.email = "";
-      this.form.password = "";
+      this.$v.$reset()
+      this.form.name = ''
+      this.form.email = ''
+      this.form.password = ''
 
-      this.name = "";
-      this.email = "";
-      this.password = "";
-      this.select = null;
-      this.alert = "d-none";
-       this.error_msg ="";
-      this.$v.$reset();
+      this.name = ''
+      this.email = ''
+      this.password = ''
+      this.select = null
+      this.alert = 'd-none'
+      this.error_msg = ''
+      this.$v.$reset()
     }
   }
-};
+}
 </script>

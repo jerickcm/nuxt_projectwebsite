@@ -76,20 +76,24 @@
         </v-col>
       </v-row>
     </v-parallax>
-        <v-row>
-       <v-col>
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-            <ins class="adsbygoogle"
-            style="display:block"
-            data-ad-client="ca-pub-3213536425475125"
-            data-ad-slot="3715096457"
-            data-ad-format="auto"
-            data-full-width-responsive="true"></ins>
-
-          </v-col>
+    <v-row>
+      <v-col>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+        ></script>
+        <script>
+          ;(adsbygoogle = window.adsbygoogle || []).push({})
+        </script>
+        <ins
+          class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-3213536425475125"
+          data-ad-slot="3715096457"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        ></ins>
+      </v-col>
     </v-row>
   </v-container>
 </template>
@@ -97,8 +101,13 @@
 export default {
   middleware: 'auth',
   auth: false,
-  head: () => ({
-    title: 'Contact Us',
-  }),
+  head() {
+    return {
+      title: 'Contact Us ',
+      meta: [
+        { hid: 'Contact Us ', name: 'Contact Us ', content: 'Contact Us ' }
+      ]
+    }
+  }
 }
 </script>

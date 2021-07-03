@@ -515,12 +515,12 @@ var console = __webpack_require__(3);
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/register.vue?vue&type=template&id=1142054c&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/register.vue?vue&type=template&id=1cf27d72&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-container',{staticClass:"ma-0 pa-0",attrs:{"fluid":""}},[_c('v-parallax',{attrs:{"height":"1500","src":"/images/register.jpg"}},[_c('v-row',{attrs:{"center":""}},[_c('v-col',{staticClass:"col-md-6 offset-md-3  pt-10",attrs:{"cols":"12","sm":"6"}},[_c('strong',{staticClass:"ma-2 pa-2 mt-10 pt-10 text-h6"},[_vm._v("Registration : ")]),_vm._v(" "),_c('v-card',{staticClass:"ma-2",attrs:{"elevation":"2","loading":_vm.loading,"tile":""}},[_c('v-alert',{class:_vm.alert,attrs:{"prominent":"","text":"","type":"error","id":"alert"}},[_vm._v(_vm._s(_vm.error_msg))]),_vm._v(" "),_c('form',{staticClass:"pa-2"},[_c('v-text-field',{staticClass:"ma-2 pa-2",attrs:{"error-messages":_vm.nameErrors,"counter":25,"label":"Name","required":""},on:{"input":function($event){return _vm.$v.name.$touch()},"blur":function($event){return _vm.$v.name.$touch()}},model:{value:(_vm.name),callback:function ($$v) {_vm.name=$$v},expression:"name"}}),_vm._v(" "),_c('v-text-field',{staticClass:"ma-2 pa-2",attrs:{"error-messages":_vm.emailErrors,"label":"E-mail","required":""},on:{"input":function($event){return _vm.$v.email.$touch()},"blur":function($event){return _vm.$v.email.$touch()}},model:{value:(_vm.email),callback:function ($$v) {_vm.email=$$v},expression:"email"}}),_vm._v(" "),_c('v-text-field',{staticClass:"ma-2 pa-2",attrs:{"append-icon":_vm.show1 ? 'mdi-eye' : 'mdi-eye-off',"rules":[_vm.rules.required, _vm.rules.min],"type":_vm.show1 ? 'text' : 'password',"name":"input-10-1","label":"Password","hint":"At least 6 characters","counter":"","error-messages":_vm.passwordErrors},on:{"input":function($event){return _vm.$v.password.$touch()},"blur":function($event){return _vm.$v.password.$touch()},"click:append":function($event){_vm.show1 = !_vm.show1}},model:{value:(_vm.password),callback:function ($$v) {_vm.password=$$v},expression:"password"}}),_vm._v(" "),_c('v-btn',{staticClass:"mr-4 ma-2 pa-2",attrs:{"depressed":"","color":"primary"},on:{"click":_vm.register}},[_vm._v("\n              Register\n            ")]),_vm._v(" "),_c('v-btn',{staticClass:"mr-4 ma-2 pa-2",attrs:{"depressed":"","color":"primary"},on:{"click":_vm.clear}},[_vm._v("\n              clear\n            ")])],1)],1)],1)],1)],1)],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./pages/register.vue?vue&type=template&id=1142054c&
+// CONCATENATED MODULE: ./pages/register.vue?vue&type=template&id=1cf27d72&
 
 // EXTERNAL MODULE: external "vue"
 var external_vue_ = __webpack_require__(1);
@@ -620,6 +620,17 @@ var nprogress = __webpack_require__(58);
 
 external_vue_default.a.use(external_vuelidate_["Vuelidate"]);
 /* harmony default export */ var registervue_type_script_lang_js_ = ({
+  head() {
+    return {
+      title: 'Registration Page ',
+      meta: [{
+        hid: 'Registration Page ',
+        name: 'Registration Page',
+        content: 'Registration Page'
+      }]
+    };
+  },
+
   mixins: [external_vuelidate_["validationMixin"]],
   validations: {
     name: {
@@ -636,21 +647,21 @@ external_vue_default.a.use(external_vuelidate_["Vuelidate"]);
     }
   },
   data: () => ({
-    alert: "d-none",
-    error_msg: "",
+    alert: 'd-none',
+    error_msg: '',
     loading: false,
     form: {
-      name: "",
-      email: "",
-      password: ""
+      name: '',
+      email: '',
+      password: ''
     },
-    name: "",
-    email: "",
-    password: "",
+    name: '',
+    email: '',
+    password: '',
     show1: false,
     rules: {
-      required: value => !!value || "Required.",
-      min: v => v.length >= 6 || "Min 6 characters",
+      required: value => !!value || 'Required.',
+      min: v => v.length >= 6 || 'Min 6 characters',
       emailMatch: () => `The email and password you entered don't match`
     }
   }),
@@ -658,23 +669,23 @@ external_vue_default.a.use(external_vuelidate_["Vuelidate"]);
     nameErrors() {
       const errors = [];
       if (!this.$v.name.$dirty) return errors;
-      !this.$v.name.maxLength && errors.push("Name must be at most 10 characters long");
-      !this.$v.name.required && errors.push("Name is required.");
+      !this.$v.name.maxLength && errors.push('Name must be at most 10 characters long');
+      !this.$v.name.required && errors.push('Name is required.');
       return errors;
     },
 
     emailErrors() {
       const errors = [];
       if (!this.$v.email.$dirty) return errors;
-      !this.$v.email.email && errors.push("Must be valid e-mail");
-      !this.$v.email.required && errors.push("E-mail is required");
+      !this.$v.email.email && errors.push('Must be valid e-mail');
+      !this.$v.email.required && errors.push('E-mail is required');
       return errors;
     },
 
     passwordErrors() {
       const passerrors = [];
       if (!this.$v.password.$dirty) return passerrors;
-      !this.$v.password.required && passerrors.push("Password is required");
+      !this.$v.password.required && passerrors.push('Password is required');
       return passerrors;
     }
 
@@ -711,15 +722,15 @@ external_vue_default.a.use(external_vuelidate_["Vuelidate"]);
 
     clear() {
       this.$v.$reset();
-      this.form.name = "";
-      this.form.email = "";
-      this.form.password = "";
-      this.name = "";
-      this.email = "";
-      this.password = "";
+      this.form.name = '';
+      this.form.email = '';
+      this.form.password = '';
+      this.name = '';
+      this.email = '';
+      this.password = '';
       this.select = null;
-      this.alert = "d-none";
-      this.error_msg = "";
+      this.alert = 'd-none';
+      this.error_msg = '';
       this.$v.$reset();
     }
 
@@ -773,7 +784,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "4b0e1554"
+  "2317b4dc"
   
 )
 

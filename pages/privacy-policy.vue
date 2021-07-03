@@ -530,16 +530,18 @@
 </template>
 <script>
 export default {
-  head: () => ({
-    title: 'Privacy Policy',
-    meta: [
-      {
-        hid: 'Privacy Policy',
-        name: 'Privacy Policy',
-        content: 'Privacy Policy'
-      }
-    ]
-  }),
+  head() {
+    return {
+      title: 'Privacy Policy ',
+      meta: [
+        {
+          hid: 'Privacy Policy ',
+          name: 'Privacy Policy',
+          content: 'Privacy Policy'
+        }
+      ]
+    }
+  },
   auth: false
 }
 </script>

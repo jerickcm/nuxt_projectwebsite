@@ -32,11 +32,10 @@
           <v-icon>{{ item.icons }}</v-icon> {{ item.label }}
         </v-btn>
 
-        <v-menu  open-on-hover top offset-y>
+        <v-menu open-on-hover top offset-y>
           <template v-slot:activator="{ on, attrs }">
-            <v-btn
-                icon  v-bind="attrs" v-on="on">
-                 <v-icon color="blue">mdi-chevron-down</v-icon>
+            <v-btn icon v-bind="attrs" v-on="on">
+              <v-icon color="blue">mdi-chevron-down</v-icon>
             </v-btn>
           </template>
 
@@ -154,64 +153,129 @@ import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 import { greetMixins } from '~/mixins/greeting.js'
 import { navlist } from '~/mixins/navlist.js'
+const dev = process.env.DEV_API
+const prod = process.env.PROD_API
+const api = process.env.NODE_ENV === 'development' ? dev : prod
+
+const dev_front = process.env.DEV_FRONT
+const prod_front = process.env.PROD_FRONT
+const front = process.env.NODE_ENV === 'development' ? dev_front : prod_front
 
 export default {
-  head: () => ({
-    titleTemplate: '%s | Project Website',
-    meta: [{ hid: 'description', name: 'description', content: 'Content' }]
-  }),
+  head() {
+    return {
+      titleTemplate: '%s | Project Website',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Content' },
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: this.title
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: this.description
+        },
+        {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          content: this.image
+        },
+        {
+          hid: 'twitter:image:alt',
+          name: 'twitter:image:alt',
+          content: this.title
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: this.title
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: this.description
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: this.image
+        },
+        {
+          hid: 'og:image:secure_url',
+          property: 'og:image:secure_url',
+          content: this.image
+        },
+        {
+          hid: 'og:image:alt',
+          property: 'og:image:alt',
+          content: this.title
+        }
+      ]
+    }
+  },
   mixins: [greetMixins, navlist],
-  data: () => ({
-    more: [
-      { title: 'ABOUT', link: '/about', icon: 'mdi-information-variant' },
-      {
-        title: 'CONTACT US',
-        link: '/contact-us',
-        icon: 'mdi-human-greeting-proximity'
-      },
-      {
-        title: 'PRIVACY POLICY',
-        link: '/privacy-policy',
-        icon: 'mdi-account-key'
-      },
-      {
-        title: 'Terms of Service',
-        link: '/terms-of-service',
-        icon: 'mdi-card-account-details'
-      }
-    ],
-    search: false,
-    dialog_login: false,
-    myitems: [{ title: 'Dashboard', link: '/dashboard' }],
-    menu: [{ icon: 'Dashboard', title: 'Dashboard' }],
-    top_nav: [
-      { label: 'Main', link: '/' },
-      { label: 'Dashboard', link: 'dashboard' },
-      { label: 'Login', link: 'login' },
-      { label: 'Register', link: 'register' },
-      { label: 'about', link: 'about' },
-      { label: 'contact', link: 'contact' }
-    ],
-    value: 'recent',
-    clipped: false,
-    drawer: false,
-    miniVariant: false,
-    togglePaneValue: false,
-    fixed: false,
-    items: [
-      {
-        icon: 'mdi-home-import-outline',
-        title: 'Home',
-        to: '/'
-      }
-    ],
-    right: false,
-    left: true,
-    leftDrawer: false,
-    rightDrawer: false,
-    title: 'Project Website'
-  }),
-
+  data() {
+    return {
+      title: 'Inhinyeru.com',
+      front: '',
+      description:
+        'This website features are latest code fixes, tutorials and reviews, news about technology and programming also includes programming quotes and world event anniversaries. May also include personal blogs and top 10 - 100 reviews of the authors favorite things and current researches.',
+      image: this.front + '/images/default.jpg',
+      more: [
+        { title: 'ABOUT', link: '/about', icon: 'mdi-information-variant' },
+        {
+          title: 'CONTACT US',
+          link: '/contact-us',
+          icon: 'mdi-human-greeting-proximity'
+        },
+        {
+          title: 'PRIVACY POLICY',
+          link: '/privacy-policy',
+          icon: 'mdi-account-key'
+        },
+        {
+          title: 'Terms of Service',
+          link: '/terms-of-service',
+          icon: 'mdi-card-account-details'
+        }
+      ],
+      search: false,
+      dialog_login: false,
+      myitems: [{ title: 'Dashboard', link: '/dashboard' }],
+      menu: [{ icon: 'Dashboard', title: 'Dashboard' }],
+      top_nav: [
+        { label: 'Main', link: '/' },
+        { label: 'Dashboard', link: 'dashboard' },
+        { label: 'Login', link: 'login' },
+        { label: 'Register', link: 'register' },
+        { label: 'about', link: 'about' },
+        { label: 'contact', link: 'contact' }
+      ],
+      value: 'recent',
+      clipped: false,
+      drawer: false,
+      miniVariant: false,
+      togglePaneValue: false,
+      fixed: false,
+      items: [
+        {
+          icon: 'mdi-home-import-outline',
+          title: 'Home',
+          to: '/'
+        }
+      ],
+      right: false,
+      left: true,
+      leftDrawer: false,
+      rightDrawer: false,
+      title: 'Project Website'
+    }
+  },
+  async mounted() {
+    this.front = front
+  },
   computed: {},
   methods: {
     searchme() {

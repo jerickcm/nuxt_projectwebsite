@@ -3,7 +3,7 @@
     <v-row class="ma-0 pa-0">
       <v-col>
         <h1>Post</h1>
-        <p>Technological post ment to help user</p>
+        <p>Technical posts mostly dev ops and site updates</p>
       </v-col>
     </v-row>
     <v-row v-for="(item, index) in content" :key="index" class="ma-0 pa-0">
