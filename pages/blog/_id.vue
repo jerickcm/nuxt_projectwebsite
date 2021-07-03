@@ -18,7 +18,14 @@
           v-if="pageload"
         ></v-skeleton-loader>
         <v-sheet v-else shaped tile class="pa-1 ma-1">
-          <v-img height="250" :src="posts['image']"> </v-img>
+          <v-img
+            v-if="posts['image'] != null"
+            height="250"
+            :src="posts['image']"
+          >
+          </v-img>
+          <v-img v-else contain aspect-ratio="1.7" src="/images/default.jpg">
+          </v-img>
           <v-chip-group
             v-model="selection"
             active-class="deep-purple accent-4 white--text"
@@ -92,7 +99,8 @@ export default {
       pageload: false,
       slug: params.slug,
       title: response.data[0].title,
-      tags: response.data[0].tags
+      tags: response.data[0].tags,
+      image: response.data[0].image
     }
   },
   computed: {

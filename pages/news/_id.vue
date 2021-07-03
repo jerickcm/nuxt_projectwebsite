@@ -19,8 +19,14 @@
         ></v-skeleton-loader>
         <v-sheet v-else shaped tile class="pa-1 ma-1">
           <h1 class="blue--text">{{ posts['title'] }}</h1>
-
-          <v-img height="250" :src="posts['image']"> </v-img>
+          <v-img
+            v-if="posts['image'] != null"
+            height="250"
+            :src="posts['image']"
+          >
+          </v-img>
+          <v-img v-else contain aspect-ratio="1.7" src="/images/default.jpg">
+          </v-img>
           <v-card-title>
             <h2>Title : {{ posts['title'] }}</h2>
           </v-card-title>
@@ -79,7 +85,8 @@ export default {
       posts: response.data[0],
       pageload: false,
       slug: params.slug,
-      title: response.data[0].title
+      title: response.data[0].title,
+      image: response.data[0].image
     }
   },
   async created() {},

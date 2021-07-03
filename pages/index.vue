@@ -2,12 +2,15 @@
   <v-container class=" ">
     <v-row>
       <v-col>
-        <h1 color="dark" class="font-roboto">INHINYERU.com - Research and Development</h1>
+        <h1 color="dark" class="font-roboto">
+          INHINYERU.com - Research and Development
+        </h1>
         <p>
-          This website features are latest code fixes, tutorials and reviews, news about technology and
-          programming also includes programming quotes and world event
-          anniversaries. May also include personal blogs and top 10 - 100
-          reviews of the authors favorite things and current researches.
+          This website features are latest code fixes, tutorials and reviews,
+          news about technology and programming also includes programming quotes
+          and world event anniversaries. May also include personal blogs and top
+          10 - 100 reviews of the authors favorite things and current
+          researches.
         </p>
       </v-col>
     </v-row>
@@ -40,7 +43,20 @@
                   path: 'blog/' + item.slug
                 }"
               >
-                <v-img contain aspect-ratio="1.7" :src="item.image"> </v-img>
+                <v-img
+                  v-if="item.image != null"
+                  contain
+                  aspect-ratio="1.7"
+                  :src="item.image"
+                >
+                </v-img>
+                <v-img
+                  v-else
+                  contain
+                  aspect-ratio="1.7"
+                  src="/images/default.jpg"
+                >
+                </v-img>
               </nuxt-link>
 
               <v-card-title>
@@ -159,16 +175,24 @@
                 }"
               >
                 <v-img
+                  v-if="item.image != null"
                   contain
                   aspect-ratio="1.7"
                   height="250"
                   :src="item.image"
                 >
                 </v-img>
+                <v-img
+                  v-else
+                  contain
+                  aspect-ratio="1.7"
+                  src="/images/default.jpg"
+                >
+                </v-img>
               </nuxt-link>
 
               <v-card-title>
-                <h2  color="dark"  class="title1 fs-1 cardtitle">
+                <h2 color="dark" class="title1 fs-1 cardtitle">
                   <nuxt-link
                     target="_blank"
                     class="nuxtlink"
@@ -269,16 +293,25 @@
                 }"
               >
                 <v-img
+                  v-if="item.image != null"
                   contain
                   aspect-ratio="1.7"
                   height="250"
                   :src="item.image"
                 >
                 </v-img>
+
+                <v-img
+                  v-else
+                  contain
+                  aspect-ratio="1.7"
+                  src="/images/default.jpg"
+                >
+                </v-img>
               </nuxt-link>
 
               <v-card-title>
-                <h2  color="dark"  class="title1 fs-1 cardtitle">
+                <h2 color="dark" class="title1 fs-1 cardtitle">
                   <nuxt-link
                     target="_blank"
                     class="nuxtlink"

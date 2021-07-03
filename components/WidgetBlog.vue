@@ -20,7 +20,20 @@
                 path: 'blog/' + item.slug
               }"
             >
-              <v-img contain aspect-ratio="1.7" :src="item.image"> </v-img>
+              <v-img
+                v-if="item.image != null"
+                contain
+                aspect-ratio="1.7"
+                :src="item.image"
+              >
+              </v-img>
+              <v-img
+                v-else
+                contain
+                aspect-ratio="1.7"
+                src="/images/default.jpg"
+              >
+              </v-img>
             </nuxt-link>
 
             <v-card-title>
@@ -92,8 +105,8 @@
 <script>
 export default {
   data: () => ({
-    content:[],
-    selection:0,
+    content: [],
+    selection: 0,
     quote: '',
     author: '',
     loader: false

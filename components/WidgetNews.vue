@@ -20,7 +20,20 @@
                 path: 'news/' + item.slug
               }"
             >
-              <v-img contain aspect-ratio="1.7" height="250" :src="item.image">
+              <v-img
+                v-if="item.image != null"
+                contain
+                aspect-ratio="1.7"
+                height="250"
+                :src="item.image"
+              >
+              </v-img>
+              <v-img
+                v-else
+                contain
+                aspect-ratio="1.7"
+                src="/images/default.jpg"
+              >
               </v-img>
             </nuxt-link>
 
@@ -80,8 +93,8 @@
 <script>
 export default {
   data: () => ({
-        content:[],
-    selection:0,
+    content: [],
+    selection: 0,
     quote: '',
     author: '',
     loader: false

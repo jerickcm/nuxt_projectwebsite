@@ -20,7 +20,10 @@
               path: 'news/' + item.slug
             }"
           >
-            <v-img height="250" :src="item.image"> </v-img>
+            <v-img v-if="item.image != null" height="250" :src="item.image">
+            </v-img>
+            <v-img v-else contain aspect-ratio="1.7" src="/images/default.jpg">
+            </v-img>
           </nuxt-link>
           <v-card-title>
             <nuxt-link

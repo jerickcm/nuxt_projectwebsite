@@ -17,12 +17,14 @@
             }"
           >
 
-              <v-img
+              <v-img  v-if="item.image != null"
                gradient="to top right, rgba(0,0,201,.1), rgba(0,0,72,.2)"
               contain :src="item.image"
 
               min-height="250"
               > </v-img>
+                <v-img v-else contain aspect-ratio="1.7" src="/images/default.jpg">
+            </v-img>
 
           </nuxt-link>
 
