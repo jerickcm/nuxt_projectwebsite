@@ -222,7 +222,8 @@ export default {
       front: '',
       description:
         'This website features are latest code fixes, tutorials and reviews, news about technology and programming also includes programming quotes and world event anniversaries. May also include personal blogs and top 10 - 100 reviews of the authors favorite things and current researches.',
-      image: this.front + '/images/default.jpg',
+      // image: this.front + '/images/default.jpg',
+      image: 'https://www.inhinyeru.com/images/default.jpg',
       more: [
         { title: 'ABOUT', link: '/about', icon: 'mdi-information-variant' },
         {
