@@ -3,16 +3,6 @@
     <v-card color="dark" flat tile class=" text-center" width="100%">
       <v-card-text>
         <v-btn
-          v-for="(icon, index) in social"
-          :key="index"
-          class="mx-4 white--text"
-          icon
-        >
-          <v-icon size="24px" class="white--text">
-            {{ icon.icon }}
-          </v-icon>
-        </v-btn>
-        <v-btn
           target="_blank"
           href="https://twitter.com/InhinyeruC"
           class="mx-4 white--text"
@@ -97,6 +87,18 @@
         {{ new Date().getFullYear() }} —
         <strong>Inhinyeru.com</strong>
       </v-card-text>
+
+      <v-btn
+        v-scroll="onScroll"
+        v-show="gototop"
+        fixed
+        bottom
+        right
+        color="primary"
+        @click="toTop"
+      >
+        <v-icon>mdi-arrow-up-bold-hexagon-outline</v-icon>
+      </v-btn>
     </v-card>
   </v-footer>
 </template>
@@ -106,12 +108,7 @@ import { nav_footer } from '~/mixins/nav_footer.js'
 export default {
   mixins: [nav_footer],
   data: () => ({
-    social: [
-      // { icon: '', link: 'https://twitter.com/InhinyeruC' },
-      // { icon: 'mdi-twitter', link: 'https://twitter.com/InhinyeruC' },
-      { icon: 'mdi-linkedin', link: 'https://twitter.com/InhinyeruC' },
-      { icon: 'mdi-instagram', link: 'https://twitter.com/InhinyeruC' }
-    ],
+    gototop: false,
     selectedItem: 1,
     items: [
       { text: 'Real-Time', icon: 'mdi-clock' },
@@ -121,6 +118,14 @@ export default {
   }),
   computed: {},
   methods: {
+    onScroll(e) {
+      if (typeof window === 'undefined') return
+      const top = window.pageYOffset || e.target.scrollTop || 0
+      this.gototop = top > 20
+    },
+    toTop() {
+      this.$vuetify.goTo(0)
+    },
     darkMode() {
       this.$vuetify.theme.dark = !this.$vuetify.theme.dark
     }
