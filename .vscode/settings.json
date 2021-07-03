@@ -1,0 +1,32 @@
+{
+  "vetur.validation.template":false,
+  "eslint.validate" : [{"language":"vue","autoFix":true,},{   "language":"html","autoFix":true, },{ "language":"javascript","autoFix":true,}],
+  "eslint.autoFixOnSave":true,
+  "vetur.completion.userScaffoldSnippets":false,
+  "editor.formatOnSave":true,
+
+  "workbench.colorTheme": "FlatUI Dark",
+  "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+  },
+  "vetur.format.defaultFormatter.html": "none",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "[vue]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "glassit.alpha": 245,
+  "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.bracketSpacing": false,
+  "prettier.arrowParens": "avoid",
+  "prettier.embeddedLanguageFormatting": "off",
+  "prettier.enable": false,
+  "prettier.htmlWhitespaceSensitivity": "ignore",
+  "prettier.proseWrap": "never",
+  "prettier.quoteProps": "preserve",
+  "prettier.semi": false,
+  "prettier.useEditorConfig": false,
+  "references.preferredLocation": "view"
+}
