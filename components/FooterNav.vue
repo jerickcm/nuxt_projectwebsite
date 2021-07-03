@@ -22,6 +22,17 @@
             mdi-twitter
           </v-icon>
         </v-btn>
+
+        <v-btn
+          target="_blank"
+          href="https://www.facebook.com/inhinyeru"
+          class="mx-4 white--text"
+          icon
+        >
+          <v-icon size="24px" class="white--text">
+            mdi-facebook
+          </v-icon>
+        </v-btn>
       </v-card-text>
       <v-card-text>
         <v-btn
@@ -96,7 +107,7 @@ export default {
   mixins: [nav_footer],
   data: () => ({
     social: [
-      { icon: 'mdi-facebook', link: 'https://twitter.com/InhinyeruC' },
+      // { icon: '', link: 'https://twitter.com/InhinyeruC' },
       // { icon: 'mdi-twitter', link: 'https://twitter.com/InhinyeruC' },
       { icon: 'mdi-linkedin', link: 'https://twitter.com/InhinyeruC' },
       { icon: 'mdi-instagram', link: 'https://twitter.com/InhinyeruC' }
