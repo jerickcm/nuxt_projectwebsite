@@ -1,69 +1,46 @@
 <template>
-  <v-container class=" ">
+  <v-container fluid class="">
     <v-row>
-      <v-col>
-        <h1 color="dark" class="fs-1-3 font-roboto">
-          INHINYERU.com - Research and Development
-        </h1>
-        <p>
-          This website features are latest code fixes, tutorials and reviews,
-          news about technology and programming also includes programming quotes
-          and world event anniversaries. May also include personal blogs and top
-          10 - 100 reviews of the authors favorite things and current
-          researches.
-        </p>
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-container fluid>
+      <v-container>
         <v-row>
           <v-col>
-            <h2 color="dark">Blogs</h2>
+            <v-card color="blue lighten-5" class=" pa-2">
+              <h1 class="blue--text text--darken-5 fs-1-3 font-roboto ">
+                INHINYERU.com - Research and Development
+              </h1>
+              <p class="blue--text text--darken-4">
+                This website features are latest code fixes, tutorials and
+                reviews, news about technology and programming also includes
+                programming quotes and world event anniversaries. May also
+                include personal blogs and top 10 - 100 reviews of the authors
+                favorite things and current researches.
+              </p>
+            </v-card>
           </v-col>
         </v-row>
-        <v-row
-          color="blue"
-          v-for="(i, ind) in Math.ceil(content.length / 3)"
-          :key="ind"
-        >
-          <v-col
-            xs="12"
-            sm="12"
-            md="12"
-            lg="4"
-            xl="4"
-            cols="12"
-            v-for="(item, indx) in content.slice((i - 1) * 3, i * 3)"
-            :key="indx"
-          >
-            <v-card outlined shaped tile class="pa-2 ma-0">
-              <nuxt-link
-                class="nuxtlink"
-                target="_blank"
-                :to="{
-                  path: 'blog/' + item.slug
-                }"
+        <v-row>
+          <v-container fluid>
+            <v-row>
+              <v-col>
+                <h2 color="dark">Blogs</h2>
+              </v-col>
+            </v-row>
+            <v-row
+              color="blue"
+              v-for="(i, ind) in Math.ceil(content.length / 3)"
+              :key="ind"
+            >
+              <v-col
+                xs="12"
+                sm="12"
+                md="12"
+                lg="4"
+                xl="4"
+                cols="12"
+                v-for="(item, indx) in content.slice((i - 1) * 3, i * 3)"
+                :key="indx"
               >
-                <v-img
-                  contain
-                  v-if="item.image != null"
-                  aspect-ratio="2.3"
-                  :src="item.image"
-                >
-                </v-img>
-
-                <v-img
-                  contain
-                  v-else
-                  aspect-ratio="2.3"
-                  lazy-src="https://picsum.photos/id/11/10/6"
-                  src="/images/default.jpg"
-                >
-                </v-img>
-              </nuxt-link>
-
-              <v-card-title class="pa-0 ma-0">
-                <h2 color="dark" class="title1 fs-1 cardtitle">
+                <v-card outlined shaped tile class="pa-2 ma-0">
                   <nuxt-link
                     class="nuxtlink"
                     target="_blank"
@@ -71,112 +48,113 @@
                       path: 'blog/' + item.slug
                     }"
                   >
-                    {{ item.title }}
+                    <v-img
+                      contain
+                      v-if="item.image != null"
+                      aspect-ratio="2.3"
+                      :src="item.image"
+                    >
+                    </v-img>
+
+                    <v-img
+                      contain
+                      v-else
+                      aspect-ratio="2.3"
+                      src="/images/default.jpg"
+                    >
+                    </v-img>
                   </nuxt-link>
-                </h2>
-              </v-card-title>
-              <v-card-text class="">
-                <v-chip-group
-                  v-model="selection"
-                  active-class="deep-purple accent-4 white--text"
-                  column
-                >
-                  <span class="pt-3">Tags: &zwnj;&zwnj;</span>
-                  <v-chip
-                    :to="`/blog/tags/${itm}`"
-                    v-for="(itm, index) in item.tags"
-                    :key="index"
-                    color="blue"
-                    class="white--text"
-                    >{{ itm }}</v-chip
-                  >
-                </v-chip-group>
 
-                <v-avatar
-                  size="37"
-                  v-if="item.profile_picture != null"
-                  class="d-inline-flex mt-3"
-                >
-                  <img :src="item.profile_picture" alt="" />
-                </v-avatar>
+                  <v-card-title class="pa-0 ma-0  height-2">
+                    <h2 color="dark" class="title1 fs-1 line-clamp-2">
+                      <nuxt-link
+                        class="nuxtlink"
+                        target="_blank"
+                        :to="{
+                          path: 'blog/' + item.slug
+                        }"
+                      >
+                        {{ item.title }}
+                      </nuxt-link>
+                    </h2>
+                  </v-card-title>
+                  <v-card-text class="pa-0 ma-0">
+                    <v-chip-group
+                      v-model="selection"
+                      active-class="deep-purple accent-4 white--text"
+                      column
+                    >
+                      <v-chip
+                        :to="`/blog/tags/${itm}`"
+                        v-for="(itm, index) in item.tags"
+                        :key="index"
+                        color="blue"
+                        class="white--text"
+                        >{{ itm }}</v-chip
+                      >
+                    </v-chip-group>
 
-                <v-avatar
-                  v-else
-                  color="blue"
-                  size="37"
-                  class=" white--text d-inline-flex  mt-3"
-                >
-                  {{ item.name.charAt(0).toUpperCase() }}
-                </v-avatar>
+                    <v-avatar
+                      size="37"
+                      v-if="item.profile_picture != null"
+                      class="d-inline-flex mt-3"
+                    >
+                      <img :src="item.profile_picture" alt="" />
+                    </v-avatar>
 
-                <v-card flat class="d-inline-flex d-flex flex-column ">
-                  <v-card flat>{{ item.name }}</v-card>
-                  <v-card flat>{{ item.human_date }}</v-card>
+                    <v-avatar
+                      v-else
+                      color="blue"
+                      size="37"
+                      class=" white--text d-inline-flex  mt-3"
+                    >
+                      {{ item.name.charAt(0).toUpperCase() }}
+                    </v-avatar>
+
+                    <v-card flat class="d-inline-flex d-flex flex-column ">
+                      <v-card flat>{{ item.name }}</v-card>
+                      <v-card flat>{{ item.human_date }}</v-card>
+                    </v-card>
+                  </v-card-text>
                 </v-card>
-              </v-card-text>
-            </v-card>
-          </v-col>
+              </v-col>
+            </v-row>
+            <v-row v-if="blogs_load">
+              <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
+                <SkeletonCard />
+              </v-col>
+              <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
+                <SkeletonCard />
+              </v-col>
+              <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
+                <SkeletonCard />
+              </v-col>
+            </v-row>
+          </v-container>
         </v-row>
-        <v-row v-if="blogs_load">
-          <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
-            <SkeletonCard />
-          </v-col>
-          <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
-            <SkeletonCard />
-          </v-col>
-          <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
-            <SkeletonCard />
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-row>
-    <v-row>
-      <v-container fluid>
         <v-row>
-          <v-col>
-            <h2 color="dark">News</h2>
-          </v-col>
-        </v-row>
-        <v-row
-          color="blue"
-          v-for="(i, ind) in Math.ceil(news.length / 3)"
-          :key="ind"
-        >
-          <v-col
-            xs="12"
-            sm="12"
-            md="4"
-            lg="4"
-            xl="4"
-            v-for="(item, indx) in news.slice((i - 1) * 3, i * 3)"
-            :key="indx"
-          >
-            <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
-              <nuxt-link
-                target="_blank"
-                class="nuxtlink"
-                :to="{
-                  path: 'news/' + item.slug
-                }"
+          <v-container fluid>
+            <v-row>
+              <v-col>
+                <h2 color="dark">News</h2>
+              </v-col>
+            </v-row>
+            <v-row
+              color="blue"
+              v-for="(i, ind) in Math.ceil(news.length / 3)"
+              :key="ind"
+            >
+              <v-col
+                xs="12"
+                sm="12"
+                md="4"
+                lg="4"
+                xl="4"
+                cols="12"
+                v-for="(item, indx) in news.slice((i - 1) * 3, i * 3)"
+                :key="indx"
               >
-                <v-img
-                  v-if="item.image != null"
-                  contain
-                  aspect-ratio="2.3"
-                  :src="item.image"
-                >
-                </v-img>
-                <v-img
-                  v-else
-                  contain
-                  aspect-ratio="2.3"
-                  src="/images/default.jpg"
-                >
-                </v-img>
-              </nuxt-link>
-
-              <v-card-title class="pa-0 ma-0">
-                <h2 color="dark" class="title1 fs-1 cardtitle">
+                <v-card outlined shaped tile class="pa-2 ma-0">
                   <nuxt-link
                     target="_blank"
                     class="nuxtlink"
@@ -184,96 +162,113 @@
                       path: 'news/' + item.slug
                     }"
                   >
-                    {{ item.title }}
+                    <v-img
+                      v-if="item.image != null"
+                      contain
+                      aspect-ratio="2.3"
+                      :src="item.image"
+                    >
+                    </v-img>
+                    <v-img
+                      v-else
+                      contain
+                      aspect-ratio="2.3"
+                      src="/images/default.jpg"
+                    >
+                    </v-img>
                   </nuxt-link>
-                </h2>
-              </v-card-title>
-              <v-card-text class="">
-                <v-chip-group
-                  v-model="selection"
-                  active-class="deep-purple accent-4 white--text"
-                  column
-                >
-                  <span class="pt-3">Tags: &zwnj;&zwnj;</span>
-                  <v-chip
-                    v-for="(itm, index) in item.tags"
-                    :key="index"
-                    color="blue"
-                    class="white--text"
-                    >{{ itm }}</v-chip
-                  >
-                </v-chip-group>
-                <v-avatar color="blue" size="37" class="white--text">
-                  {{ item.name.charAt(0).toUpperCase() }}
-                </v-avatar>
-                <span>{{ item.name }} </span><br />
-                <span>Date : {{ item.human_date }}</span
-                ><br />
-              </v-card-text>
-            </v-card>
-          </v-col>
+
+                  <v-card-title class="pa-0 ma-0  adj-title">
+                    <h2 color="dark" class="title1 fs-1 line-clamp-2 ">
+                      <nuxt-link
+                        target="_blank"
+                        class="nuxtlink"
+                        :to="{
+                          path: 'news/' + item.slug
+                        }"
+                      >
+                        {{ item.title }}
+                      </nuxt-link>
+                    </h2>
+                  </v-card-title>
+
+                  <v-card-text class="pa-0 ma-0">
+                    <v-chip-group
+                      v-model="selection"
+                      active-class="deep-purple accent-4 white--text"
+                      column
+                    >
+                      <v-chip
+                        :to="`/blog/tags/${itm}`"
+                        v-for="(itm, index) in item.tags"
+                        :key="index"
+                        color="blue"
+                        class="white--text"
+                        >{{ itm }}</v-chip
+                      >
+                    </v-chip-group>
+
+                    <v-avatar
+                      size="37"
+                      v-if="item.profile_picture != null"
+                      class="d-inline-flex mt-3"
+                    >
+                      <img :src="item.profile_picture" alt="" />
+                    </v-avatar>
+
+                    <v-avatar
+                      v-else
+                      color="blue"
+                      size="37"
+                      class=" white--text d-inline-flex  mt-3"
+                    >
+                      {{ item.name.charAt(0).toUpperCase() }}
+                    </v-avatar>
+
+                    <v-card flat class="d-inline-flex d-flex flex-column ">
+                      <v-card flat>{{ item.name }}</v-card>
+                      <v-card flat>{{ item.human_date }}</v-card>
+                    </v-card>
+                  </v-card-text>
+                </v-card>
+              </v-col>
+            </v-row>
+            <v-row v-if="news_load">
+              <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
+                <SkeletonCard />
+              </v-col>
+              <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
+                <SkeletonCard />
+              </v-col>
+              <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
+                <SkeletonCard />
+              </v-col>
+            </v-row>
+          </v-container>
         </v-row>
-        <v-row v-if="news_load">
-          <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
-            <SkeletonCard />
-          </v-col>
-          <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
-            <SkeletonCard />
-          </v-col>
-          <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
-            <SkeletonCard />
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-row>
-    <v-row>
-      <v-container>
         <v-row>
-          <v-col>
-            <h2 color="dark">Post</h2>
-          </v-col>
-        </v-row>
-        <v-row
-          color="blue"
-          v-for="(i, ind) in Math.ceil(posts.length / 3)"
-          :key="ind"
-        >
-          <v-col
-            xs="12"
-            sm="12"
-            md="4"
-            lg="4"
-            xl="4"
-            v-for="(item, indx) in posts.slice((i - 1) * 3, i * 3)"
-            :key="indx"
-          >
-            <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
-              <nuxt-link
-                target="_blank"
-                class="nuxtlink"
-                :to="{
-                  path: 'post/' + item.slug
-                }"
+          <v-container>
+            <v-row>
+              <v-col>
+                <h2 color="dark">Post</h2>
+              </v-col>
+            </v-row>
+            <v-row
+              color="blue"
+              v-for="(i, ind) in Math.ceil(posts.length / 3)"
+              :key="ind"
+            >
+              <v-col
+                xs="12"
+                sm="12"
+                md="4"
+                lg="4"
+                xl="4"
+                cols="12"
+                v-for="(item, indx) in posts.slice((i - 1) * 3, i * 3)"
+                :key="indx"
               >
-                <v-img
-                  v-if="item.image != null"
-                  contain
-                  aspect-ratio="2.3"
-                  :src="item.image"
-                >
-                </v-img>
-
-                <v-img
-                  v-else
-                  contain
-                  aspect-ratio="2.3"
-                  src="/images/default.jpg"
-                >
-                </v-img>
-              </nuxt-link>
-
-              <v-card-title class="pa-0 ma-0">
-                <h2 color="dark" class="title1 fs-1 cardtitle">
+                <v-card outlined shaped tile class="pa-2 ma-0 ">
                   <nuxt-link
                     target="_blank"
                     class="nuxtlink"
@@ -281,54 +276,112 @@
                       path: 'post/' + item.slug
                     }"
                   >
-                    {{ item.title }}
+                    <v-img
+                      v-if="item.image != null"
+                      contain
+                      aspect-ratio="2.3"
+                      :src="item.image"
+                    >
+                    </v-img>
+
+                    <v-img
+                      v-else
+                      contain
+                      aspect-ratio="2.3"
+                      src="/images/default.jpg"
+                    >
+                    </v-img>
                   </nuxt-link>
-                </h2>
-              </v-card-title>
-              <v-card-text class="">
-                <v-chip-group
-                  v-model="selection"
-                  active-class="deep-purple accent-4 white--text"
-                  column
-                >
-                  <span class="pt-3">Tags: &zwnj;&zwnj;</span>
-                  <v-chip
-                    v-for="(itm, index) in item.tags"
-                    :key="index"
-                    color="blue"
-                    class="white--text"
-                    >{{ itm }}</v-chip
-                  >
-                </v-chip-group>
-                <v-avatar color="blue" size="37" class="white--text">
-                  {{ item.name.charAt(0).toUpperCase() }}
-                </v-avatar>
-                <span> {{ item.name }} </span><br />
-                <span>Date : {{ item.human_date }}</span
-                ><br />
-              </v-card-text>
-            </v-card>
-          </v-col>
-        </v-row>
-        <v-row v-if="posts_load">
-          <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
-            <SkeletonCard />
-          </v-col>
-          <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
-            <SkeletonCard />
-          </v-col>
-          <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
-            <SkeletonCard />
-          </v-col>
+
+                  <v-card-title class="pa-0 ma-0  adj-title">
+                    <h2 color="dark" class="title1 fs-1 line-clamp-2 ">
+                      <nuxt-link
+                        target="_blank"
+                        class="nuxtlink"
+                        :to="{
+                          path: 'post/' + item.slug
+                        }"
+                      >
+                        {{ item.title }}
+                      </nuxt-link>
+                    </h2>
+                  </v-card-title>
+                  <v-card-text class="pa-0 ma-0">
+                    <v-chip-group
+                      v-model="selection"
+                      active-class="deep-purple accent-4 white--text"
+                      column
+                    >
+                      <v-chip
+                        :to="`/blog/tags/${itm}`"
+                        v-for="(itm, index) in item.tags"
+                        :key="index"
+                        color="blue"
+                        class="white--text"
+                        >{{ itm }}</v-chip
+                      >
+                    </v-chip-group>
+
+                    <v-avatar
+                      size="37"
+                      v-if="item.profile_picture != null"
+                      class="d-inline-flex mt-3"
+                    >
+                      <img :src="item.profile_picture" alt="" />
+                    </v-avatar>
+
+                    <v-avatar
+                      v-else
+                      color="blue"
+                      size="37"
+                      class=" white--text d-inline-flex  mt-3"
+                    >
+                      {{ item.name.charAt(0).toUpperCase() }}
+                    </v-avatar>
+
+                    <v-card flat class="d-inline-flex d-flex flex-column ">
+                      <v-card flat>{{ item.name }}</v-card>
+                      <v-card flat>{{ item.human_date }}</v-card>
+                    </v-card>
+                  </v-card-text>
+                </v-card>
+              </v-col>
+            </v-row>
+            <v-row v-if="posts_load">
+              <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
+                <SkeletonCard />
+              </v-col>
+              <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
+                <SkeletonCard />
+              </v-col>
+              <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
+                <SkeletonCard />
+              </v-col>
+            </v-row>
+          </v-container>
         </v-row>
       </v-container>
     </v-row>
+
     <v-row>
-      <v-col xs="12" sm="12" lg="12" class="">
-        <v-sheet class="" elevation="2">
-          <v-container class="">
+      <v-col xs="12" sm="12" md="12" lg="12" cols="12" class=" pa-0">
+        <Contact />
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col
+        xs="12"
+        sm="12"
+        md="12"
+        lg="12"
+        xl="12"
+        cols="12"
+        class="ma-0 pa-0"
+      >
+        <v-sheet color="brown lighten-2">
+          <v-container fluid>
             <v-row>
-              <v-col cols="12" sm="12" lg="12">
+              <v-col xs="12" sm="12" md="12" lg="12" xl="12" cols="12">
                 <v-progress-linear
                   v-if="LoadingStatus"
                   color="blue accent-5"
@@ -341,6 +394,7 @@
                   v-for="message in MessageOfTheDay"
                   :key="message.author"
                   class="text-center "
+                  color="brown lighten-2"
                 >
                   <span
                     class="text-center mt-5 dont-break-out"
@@ -491,9 +545,11 @@ export default {
   color: rgb(66, 77, 238);
   text-decoration: none;
 }
-.cardtitle {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+
+.adj-title {
+  min-height: 2rem;
+  line-height: 1rem;
+  margin: 0px;
+  padding: 0px;
 }
 </style>

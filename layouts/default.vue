@@ -180,7 +180,7 @@ const fb_id = process.env.NODE_ENV === 'development' ? dev_fb_id : prod_fb_id
 export default {
   head() {
     return {
-      titleTemplate: '%s | Project Website',
+      titleTemplate: '%s | Inhinyeru.com',
       meta: [
         { hid: 'description', name: 'description', content: 'Content' },
         {
@@ -433,5 +433,19 @@ export default {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 </style>
