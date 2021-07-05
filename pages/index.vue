@@ -21,10 +21,16 @@
         <v-row>
           <v-container fluid>
             <v-row>
-              <v-col>
-                <h2 color="dark">Blogs</h2>
+              <v-col class=" mb-0 pb-0">
+                <hr color="orange" class="hr-orange" />
               </v-col>
             </v-row>
+            <v-row>
+              <v-col class="ma-0 mt-0 pt-0">
+                <h2 color="dark" class="ma-0 mt-0 pt-0">Blogs</h2>
+              </v-col>
+            </v-row>
+
             <v-row
               color="blue"
               v-for="(i, ind) in Math.ceil(content.length / 3)"
@@ -65,7 +71,7 @@
                     </v-img>
                   </nuxt-link>
 
-                  <v-card-title class="pa-0 ma-0  height-2">
+                  <v-card-title class="pa-0 ma-0  adj-title">
                     <h2 color="dark" class="title1 fs-1 line-clamp-2">
                       <nuxt-link
                         class="nuxtlink"
@@ -135,8 +141,13 @@
         <v-row>
           <v-container fluid>
             <v-row>
-              <v-col>
-                <h2 color="dark">News</h2>
+              <v-col class=" mb-0 pb-0">
+                <hr color="blue" class="hr-blue" />
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col class="ma-0 mt-0 pt-0">
+                <h2 color="dark" class="ma-0 mt-0 pt-0">News</h2>
               </v-col>
             </v-row>
             <v-row
@@ -249,8 +260,13 @@
         <v-row>
           <v-container>
             <v-row>
-              <v-col>
-                <h2 color="dark">Post</h2>
+              <v-col class=" mb-0 pb-0">
+                <hr color="red" class="hr-red" />
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col class="ma-0 mt-0 pt-0">
+                <h2 color="dark" class="ma-0 mt-0 pt-0">Post</h2>
               </v-col>
             </v-row>
             <v-row
@@ -551,5 +567,17 @@ export default {
   line-height: 1rem;
   margin: 0px;
   padding: 0px;
+}
+.hr-green {
+  border: 3px solid green;
+}
+.hr-blue {
+  border: 3px solid blue;
+}
+.hr-red {
+  border: 3px solid red;
+}
+.hr-orange {
+  border: 3px solid orange;
 }
 </style>
