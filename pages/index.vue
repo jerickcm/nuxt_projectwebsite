@@ -92,20 +92,23 @@
                 <v-avatar
                   size="37"
                   v-if="item.profile_picture != null"
-                  class="d-inline-flex pa-2"
+                  class="d-inline-flex"
                 >
                   <img :src="item.profile_picture" alt="" />
                 </v-avatar>
 
-                <v-avatar v-else color="blue" size="37" class="white--text">
+                <v-avatar
+                  v-else
+                  color="blue"
+                  size="37"
+                  class=" white--text d-inline-flex"
+                >
                   {{ item.name.charAt(0).toUpperCase() }}
                 </v-avatar>
 
-                <v-card class="d-inline-flex pa-2" flat>
-                  <p>{{ item.name }}</p>
-                </v-card>
-                <v-card class="d-inline-flex pa-2" flat>
-                  <p>{{ item.human_date }}</p>
+                <v-card flat class="d-inline-flex d-flex flex-column ">
+                  <v-card flat>{{ item.name }}</v-card>
+                  <v-card flat>{{ item.human_date }}</v-card>
                 </v-card>
               </v-card-text>
             </v-card>
