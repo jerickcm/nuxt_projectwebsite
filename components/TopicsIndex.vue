@@ -219,59 +219,66 @@
           </nuxt-link>
         </label>
       </v-card>
-      <v-card
-        width="18%"
-        v-for="(item, indx) in laravel.slice((i - 1) * 5, i * 5)"
-        :key="indx"
-        class="mr-1 ml-1"
-      >
-        <v-img
-          contain
-          v-if="item.image != null"
-          :src="item.image"
-          class="align-end"
-          aspect-ratio="2.5"
-          gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-          :height="height"
-        >
-          <nuxt-link
-            class="nuxtlink"
-            target="_blank"
-            :to="{
-              path: 'blog/' + item.slug
-            }"
-          >
-            <v-card-title
-              color="blue"
-              class="fs-1 white--text pa-0 ma-0 pl-1"
-              >{{ item.title }}</v-card-title
-            >
-          </nuxt-link>
-        </v-img>
 
-        <v-img
-          v-else
-          contain
-          class="white--text align-end"
-          :height="height"
-          aspect-ratio="2.3"
-          gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-          src="/images/default.jpg"
-        >
-          <nuxt-link
-            class="nuxtlink"
-            target="_blank"
-            :to="{
-              path: 'blog/' + item.slug
-            }"
+      <v-sheet class="pa-0 ma-0" max-width="93%">
+        <v-slide-group multiple show-arrows class="pa-0 ma-0">
+          <v-slide-item
+            class="pa-0 ma-0"
+            v-for="(item, indx) in laravel.slice((i - 1) * 5, i * 5)"
+            :key="indx"
           >
-            <v-card-title
-              class="fs-1 white--text pa-0 ma-0 pl-1"
-              v-text="item.title"
-            ></v-card-title>
-          </nuxt-link>
-        </v-img>
-      </v-card>
+            <v-card height="200px" width="450px" class="mr-1 ml-1">
+              <v-img
+                contain
+                v-if="item.image != null"
+                :src="item.image"
+                class="align-end"
+                aspect-ratio="1"
+                gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+                :height="height"
+                width="100%"
+              >
+                <nuxt-link
+                  class="nuxtlink"
+                  target="_blank"
+                  :to="{
+                    path: 'blog/' + item.slug
+                  }"
+                >
+                  <v-card-title
+                    color="blue"
+                    class="fs-1 white--text pa-0 ma-0 pl-1"
+                    >{{ item.title }}</v-card-title
+                  >
+                </nuxt-link>
+              </v-img>
+
+              <v-img
+                v-else
+                contain
+                width="100%"
+                class="white--text align-end"
+                :height="height"
+                aspect-ratio="1"
+                gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+                src="/images/default.jpg"
+              >
+                <nuxt-link
+                  class="nuxtlink"
+                  target="_blank"
+                  :to="{
+                    path: 'blog/' + item.slug
+                  }"
+                >
+                  <v-card-title
+                    class="fs-1 white--text pa-0 ma-0 pl-1"
+                    v-text="item.title"
+                  ></v-card-title>
+                </nuxt-link>
+              </v-img>
+            </v-card>
+          </v-slide-item> </v-slide-group
+      ></v-sheet>
     </v-row>
 
     <v-row
@@ -317,7 +324,6 @@
             class="align-end"
             aspect-ratio="2.5"
             gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-            :height="height"
           >
             <nuxt-link
               class="nuxtlink"
@@ -337,7 +343,6 @@
             contain
             v-else
             class="white--text align-end"
-            :height="height"
             aspect-ratio="2.3"
             gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
             src="/images/default.jpg"
@@ -390,59 +395,65 @@
           </nuxt-link>
         </label>
       </v-card>
-      <v-card
-        width="18%"
-        v-for="(item, indx) in vue.slice((i - 1) * 5, i * 5)"
-        :key="indx"
-        class="mr-1 ml-1"
-      >
-        <v-img
-          contain
-          v-if="item.image != null"
-          :src="item.image"
-          class="align-end"
-          aspect-ratio="2.5"
-          gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-          :height="height"
-        >
-          <nuxt-link
-            class="nuxtlink"
-            target="_blank"
-            :to="{
-              path: 'blog/' + item.slug
-            }"
+      <v-sheet class="pa-0 ma-0" max-width="93%">
+        <v-slide-group multiple show-arrows class="pa-0 ma-0">
+          <v-slide-item
+            class="pa-0 ma-0"
+            v-for="(item, indx) in laravel.slice((i - 1) * 5, i * 5)"
+            :key="indx"
           >
-            <v-card-title
-              color="blue"
-              class="fs-1 white--text pa-0 ma-0 pl-1"
-              >{{ item.title }}</v-card-title
-            >
-          </nuxt-link>
-        </v-img>
+            <v-card height="200px" width="450px" class="mr-1 ml-1">
+              <v-img
+                contain
+                v-if="item.image != null"
+                :src="item.image"
+                class="align-end"
+                aspect-ratio="1"
+                gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+                :height="height"
+                width="100%"
+              >
+                <nuxt-link
+                  class="nuxtlink"
+                  target="_blank"
+                  :to="{
+                    path: 'blog/' + item.slug
+                  }"
+                >
+                  <v-card-title
+                    color="blue"
+                    class="fs-1 white--text pa-0 ma-0 pl-1"
+                    >{{ item.title }}</v-card-title
+                  >
+                </nuxt-link>
+              </v-img>
 
-        <v-img
-          contain
-          v-else
-          class="white--text align-end"
-          :height="height"
-          aspect-ratio="2.3"
-          gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-          src="/images/default.jpg"
-        >
-          <nuxt-link
-            class="nuxtlink"
-            target="_blank"
-            :to="{
-              path: 'blog/' + item.slug
-            }"
-          >
-            <v-card-title
-              class="fs-1 white--text pa-0 ma-0 pl-1"
-              v-text="item.title"
-            ></v-card-title>
-          </nuxt-link>
-        </v-img>
-      </v-card>
+              <v-img
+                v-else
+                contain
+                width="100%"
+                class="white--text align-end"
+                :height="height"
+                aspect-ratio="1"
+                gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+                src="/images/default.jpg"
+              >
+                <nuxt-link
+                  class="nuxtlink"
+                  target="_blank"
+                  :to="{
+                    path: 'blog/' + item.slug
+                  }"
+                >
+                  <v-card-title
+                    class="fs-1 white--text pa-0 ma-0 pl-1"
+                    v-text="item.title"
+                  ></v-card-title>
+                </nuxt-link>
+              </v-img>
+            </v-card>
+          </v-slide-item> </v-slide-group
+      ></v-sheet>
     </v-row>
 
     <v-row
@@ -485,7 +496,6 @@
             class="align-end"
             aspect-ratio="2.5"
             gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-            :height="height"
           >
             <nuxt-link
               class="nuxtlink"
@@ -505,7 +515,6 @@
             contain
             v-else
             class="white--text align-end"
-            :height="height"
             aspect-ratio="2.3"
             gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
             src="/images/default.jpg"
