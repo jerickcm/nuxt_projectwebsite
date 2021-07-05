@@ -1,4 +1,4 @@
-exports.ids = [21,13];
+exports.ids = [22,14];
 exports.modules = {
 
 /***/ 258:
@@ -785,7 +785,7 @@ var colorable = __webpack_require__(7);
 
 /***/ }),
 
-/***/ 314:
+/***/ 315:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1016,7 +1016,7 @@ installComponents_default()(component, {VAvatar: VAvatar["a" /* default */],VCar
 
 /***/ }),
 
-/***/ 513:
+/***/ 517:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1194,7 +1194,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 /* harmony default export */ var _username = __webpack_exports__["default"] = (component.exports);
 
 /* nuxt-component-imports */
-installComponents_default()(component, {WidgetBlogtags: __webpack_require__(314).default})
+installComponents_default()(component, {WidgetBlogtags: __webpack_require__(315).default})
 
 
 /* vuetify-loader */

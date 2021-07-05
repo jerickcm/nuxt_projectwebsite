@@ -21,6 +21,7 @@ You can directly use them in pages and other components without the need to impo
 - `<Search>` | `<search>` (components/Search.vue)
 - `<SkeletonCard>` | `<skeleton-card>` (components/SkeletonCard.vue)
 - `<Template>` | `<template>` (components/Template.vue)
+- `<TopicsIndex>` | `<topics-index>` (components/TopicsIndex.vue)
 - `<VuetifyLogo>` | `<vuetify-logo>` (components/VuetifyLogo.vue)
 - `<WidgetBlog>` | `<widget-blog>` (components/WidgetBlog.vue)
 - `<WidgetBlogtags>` | `<widget-blogtags>` (components/WidgetBlogtags.vue)

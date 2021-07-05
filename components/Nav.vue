@@ -137,7 +137,7 @@
 
           <v-list-item to="/">
             <v-list-item-action>
-              <v-icon >mdi-laptop</v-icon>
+              <v-icon>mdi-laptop</v-icon>
             </v-list-item-action>
             <v-list-item-content>
               <v-list-item-title class="blue--text">
@@ -184,14 +184,14 @@
             </v-list-item-content>
           </v-list-item>
 
-          <v-list-item to="/contact-us">
+          <!-- <v-list-item to="/contact-us">
             <v-list-item-action>
               <v-icon>mdi-human-greeting-proximity </v-icon>
             </v-list-item-action>
             <v-list-item-content>
               <v-list-item-title> CONTACT US</v-list-item-title>
             </v-list-item-content>
-          </v-list-item>
+          </v-list-item> -->
 
           <v-list-item to="/privacy-policy'">
             <v-list-item-action>

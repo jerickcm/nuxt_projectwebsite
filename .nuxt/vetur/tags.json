@@ -44,6 +44,9 @@
   "Template": {
     "description": "Auto imported from components/Template.vue"
   },
+  "TopicsIndex": {
+    "description": "Auto imported from components/TopicsIndex.vue"
+  },
   "VuetifyLogo": {
     "description": "Auto imported from components/VuetifyLogo.vue"
   },

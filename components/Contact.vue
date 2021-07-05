@@ -18,8 +18,6 @@
           <div>
             <v-text-field
               class="ma-2 pa-2"
-              v-model="Name"
-              :error-messages="emailErrors"
               label="Name"
               name="name"
               id="name"
@@ -29,16 +27,12 @@
           <div>
             <v-text-field
               class="ma-2 pa-2"
-              v-model="Email"
-              :error-messages="emailErrors"
               label="Email:"
               name="email"
               id="email"
               required
               type="email"
             ></v-text-field>
-            <!-- @input="$v.email.$touch()"
-                  @blur="$v.email.$touch()" -->
           </div>
           <div>
             <v-textarea

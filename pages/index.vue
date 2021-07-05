@@ -19,6 +19,9 @@
           </v-col>
         </v-row>
         <v-row>
+          <TopicsIndex />
+        </v-row>
+        <v-row>
           <v-container fluid>
             <v-row>
               <v-col class=" mb-0 pb-0">
@@ -27,10 +30,11 @@
             </v-row>
             <v-row>
               <v-col class="ma-0 mt-0 pt-0">
-                <h2 color="dark" class="ma-0 mt-0 pt-0">Blogs</h2>
+                <h2 class="ma-0 mt-0 pt-0 orange--text text--darken-5">
+                  Blogs
+                </h2>
               </v-col>
             </v-row>
-
             <v-row
               color="blue"
               v-for="(i, ind) in Math.ceil(content.length / 3)"
@@ -147,7 +151,7 @@
             </v-row>
             <v-row>
               <v-col class="ma-0 mt-0 pt-0">
-                <h2 color="dark" class="ma-0 mt-0 pt-0">News</h2>
+                <h2 class="ma-0 mt-0 pt-0 blue--text ">News</h2>
               </v-col>
             </v-row>
             <v-row
@@ -266,7 +270,7 @@
             </v-row>
             <v-row>
               <v-col class="ma-0 mt-0 pt-0">
-                <h2 color="dark" class="ma-0 mt-0 pt-0">Post</h2>
+                <h2 class="ma-0 mt-0 pt-0 red--text text-darken-5">Post</h2>
               </v-col>
             </v-row>
             <v-row
@@ -461,6 +465,7 @@ export default {
     content: [],
     news: [],
     posts: [],
+    nuxt: [],
     selectedItem: 0,
     show: true,
     title: '',
@@ -472,6 +477,11 @@ export default {
     this.blogs_load = true
     this.news_load = true
     this.posts_load = true
+
+    // await this.$axios.$get('/sanctum/csrf-cookie')
+    // const nuxt = await this.$axios.$get(`api/blog/page/1/item/5/tags/nuxt`)
+    // const nuxt = await this.$axios.$get(`api/blog/page/1/item/5`)
+    // this.nuxt = nuxt.data
 
     await this.$axios.$get('/sanctum/csrf-cookie')
     const res = await this.$axios.$get(`api/blog/page/1/item/3`)
@@ -568,9 +578,7 @@ export default {
   margin: 0px;
   padding: 0px;
 }
-.hr-green {
-  border: 3px solid green;
-}
+
 .hr-blue {
   border: 3px solid blue;
 }
@@ -579,5 +587,8 @@ export default {
 }
 .hr-orange {
   border: 3px solid orange;
+}
+.hr-black {
+  border: 3px solid black;
 }
 </style>

@@ -131,18 +131,6 @@
     <v-main>
       <Search v-if="search" />
       <nuxt />
-      <!-- <v-container>
-        <v-row class="">
-          <v-col xs="12" sm="12" md="12" lg="12" xl="12" class="">
-            <rssapp-carousel id="hJvlUMwMqpBx1m23"></rssapp-carousel>
-            <script
-              src="https://widget.rss.app/v1/carousel.js"
-              type="text/javascript"
-              async
-            ></script>
-          </v-col>
-        </v-row>
-      </v-container> -->
     </v-main>
 
     <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
@@ -248,11 +236,11 @@ export default {
       image: 'https://www.inhinyeru.com/images/default.jpg',
       more: [
         { title: 'ABOUT', link: '/about', icon: 'mdi-information-variant' },
-        {
-          title: 'CONTACT US',
-          link: '/contact-us',
-          icon: 'mdi-human-greeting-proximity'
-        },
+        // {
+        //   title: 'CONTACT US',
+        //   link: '/contact-us',
+        //   icon: 'mdi-human-greeting-proximity'
+        // },
         {
           title: 'PRIVACY POLICY',
           link: '/privacy-policy',
@@ -273,8 +261,8 @@ export default {
         { label: 'Dashboard', link: 'dashboard' },
         { label: 'Login', link: 'login' },
         { label: 'Register', link: 'register' },
-        { label: 'about', link: 'about' },
-        { label: 'contact', link: 'contact' }
+        { label: 'about', link: 'about' }
+        // { label: 'contact', link: 'contact' }
       ],
       value: 'recent',
       clipped: false,

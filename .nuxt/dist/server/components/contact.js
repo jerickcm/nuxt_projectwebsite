@@ -1,13 +1,13 @@
 exports.ids = [2];
 exports.modules = {
 
-/***/ 345:
+/***/ 348:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(346);
+var content = __webpack_require__(349);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -15,7 +15,7 @@ __webpack_require__(5).default("5c8fbe94", content, true)
 
 /***/ }),
 
-/***/ 346:
+/***/ 349:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -29,19 +29,19 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 394:
+/***/ 398:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/Contact.vue?vue&type=template&id=a6b8a462&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-sheet',{staticClass:"pa-2 pt-5",attrs:{"color":"blue"}},[_c('v-container',[_c('v-card',{attrs:{"outlined":""}},[_c('v-sheet',{staticClass:"ma-1 pa-1"},[_c('h1',{staticClass:"blue--text"},[_vm._v("Contact Us")])]),_vm._v(" "),_c('v-sheet',{staticClass:"ma-1 pa-1"},[_c('h2',{staticClass:"green--text"},[_vm._v("\n          For all inquiries please contact us below\n        ")])]),_vm._v(" "),_c('form',{attrs:{"action":"mailto:jmangaluz@gmail.com","method":"get","enctype":"text/plain"}},[_c('div',[_c('v-text-field',{staticClass:"ma-2 pa-2",attrs:{"error-messages":_vm.emailErrors,"label":"Name","name":"name","id":"name","required":""},model:{value:(_vm.Name),callback:function ($$v) {_vm.Name=$$v},expression:"Name"}})],1),_vm._v(" "),_c('div',[_c('v-text-field',{staticClass:"ma-2 pa-2",attrs:{"error-messages":_vm.emailErrors,"label":"Email:","name":"email","id":"email","required":"","type":"email"},model:{value:(_vm.Email),callback:function ($$v) {_vm.Email=$$v},expression:"Email"}})],1),_vm._v(" "),_c('div',[_c('v-textarea',{staticClass:"ma-2 pa-2",attrs:{"outlined":"","name":"input-7-4","label":"Comments","value":"Send your comments to us."}})],1),_vm._v(" "),_c('div',{staticClass:"ma-2 pa-2"},[_c('v-btn',{staticClass:"white--text",attrs:{"color":"green","type":"submit","name":"submit","value":"Send"}},[_vm._v("Send")]),_vm._v(" "),_c('v-btn',{staticClass:"white--text",attrs:{"color":"blue","type":"reset","name":"reset","value":"Clear Form"}},[_vm._v("Clear Form")])],1)])],1)],1)],1)}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/Contact.vue?vue&type=template&id=427ac5a2&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-sheet',{staticClass:"pa-2 pt-5",attrs:{"color":"blue"}},[_c('v-container',[_c('v-card',{attrs:{"outlined":""}},[_c('v-sheet',{staticClass:"ma-1 pa-1"},[_c('h1',{staticClass:"blue--text"},[_vm._v("Contact Us")])]),_vm._v(" "),_c('v-sheet',{staticClass:"ma-1 pa-1"},[_c('h2',{staticClass:"green--text"},[_vm._v("\n          For all inquiries please contact us below\n        ")])]),_vm._v(" "),_c('form',{attrs:{"action":"mailto:jmangaluz@gmail.com","method":"get","enctype":"text/plain"}},[_c('div',[_c('v-text-field',{staticClass:"ma-2 pa-2",attrs:{"label":"Name","name":"name","id":"name","required":""}})],1),_vm._v(" "),_c('div',[_c('v-text-field',{staticClass:"ma-2 pa-2",attrs:{"label":"Email:","name":"email","id":"email","required":"","type":"email"}})],1),_vm._v(" "),_c('div',[_c('v-textarea',{staticClass:"ma-2 pa-2",attrs:{"outlined":"","name":"input-7-4","label":"Comments","value":"Send your comments to us."}})],1),_vm._v(" "),_c('div',{staticClass:"ma-2 pa-2"},[_c('v-btn',{staticClass:"white--text",attrs:{"color":"green","type":"submit","name":"submit","value":"Send"}},[_vm._v("Send")]),_vm._v(" "),_c('v-btn',{staticClass:"white--text",attrs:{"color":"blue","type":"reset","name":"reset","value":"Clear Form"}},[_vm._v("Clear Form")])],1)])],1)],1)],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./components/Contact.vue?vue&type=template&id=a6b8a462&
+// CONCATENATED MODULE: ./components/Contact.vue?vue&type=template&id=427ac5a2&
 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__(11);
@@ -66,7 +66,7 @@ var VSheet = __webpack_require__(19);
 var VTextField = __webpack_require__(29);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/src/components/VTextarea/VTextarea.sass
-var VTextarea = __webpack_require__(345);
+var VTextarea = __webpack_require__(348);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/util/mixins.js
 var mixins = __webpack_require__(2);
