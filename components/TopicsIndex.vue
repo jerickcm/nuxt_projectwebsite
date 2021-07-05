@@ -399,7 +399,7 @@
         <v-slide-group multiple show-arrows class="pa-0 ma-0">
           <v-slide-item
             class="pa-0 ma-0"
-            v-for="(item, indx) in laravel.slice((i - 1) * 5, i * 5)"
+            v-for="(item, indx) in vue.slice((i - 1) * 5, i * 5)"
             :key="indx"
           >
             <v-card height="200px" width="450px" class="mr-1 ml-1">
