@@ -131,7 +131,7 @@
     <v-main>
       <Search v-if="search" />
       <nuxt />
-      <v-container>
+      <!-- <v-container>
         <v-row class="">
           <v-col xs="12" sm="12" md="12" lg="12" xl="12" class="">
             <rssapp-carousel id="hJvlUMwMqpBx1m23"></rssapp-carousel>
@@ -142,7 +142,7 @@
             ></script>
           </v-col>
         </v-row>
-      </v-container>
+      </v-container> -->
     </v-main>
 
     <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>

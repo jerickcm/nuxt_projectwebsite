@@ -14,6 +14,7 @@ const components = {
   QuotesCard: () => import('../..\\components\\QuotesCard.vue' /* webpackChunkName: "components/quotes-card" */).then(c => wrapFunctional(c.default || c)),
   QuoteWidget: () => import('../..\\components\\QuoteWidget.vue' /* webpackChunkName: "components/quote-widget" */).then(c => wrapFunctional(c.default || c)),
   Search: () => import('../..\\components\\Search.vue' /* webpackChunkName: "components/search" */).then(c => wrapFunctional(c.default || c)),
+  SkeletonCard: () => import('../..\\components\\SkeletonCard.vue' /* webpackChunkName: "components/skeleton-card" */).then(c => wrapFunctional(c.default || c)),
   Template: () => import('../..\\components\\Template.vue' /* webpackChunkName: "components/template" */).then(c => wrapFunctional(c.default || c)),
   VuetifyLogo: () => import('../..\\components\\VuetifyLogo.vue' /* webpackChunkName: "components/vuetify-logo" */).then(c => wrapFunctional(c.default || c)),
   WidgetBlog: () => import('../..\\components\\WidgetBlog.vue' /* webpackChunkName: "components/widget-blog" */).then(c => wrapFunctional(c.default || c)),

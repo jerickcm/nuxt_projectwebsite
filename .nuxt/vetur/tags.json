@@ -35,6 +35,9 @@
   "Search": {
     "description": "Auto imported from components/Search.vue"
   },
+  "SkeletonCard": {
+    "description": "Auto imported from components/SkeletonCard.vue"
+  },
   "Template": {
     "description": "Auto imported from components/Template.vue"
   },

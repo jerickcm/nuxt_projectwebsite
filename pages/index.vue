@@ -15,7 +15,7 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-container>
+      <v-container fluid>
         <v-row>
           <v-col>
             <h2 color="dark">Blogs</h2>
@@ -29,13 +29,14 @@
           <v-col
             xs="12"
             sm="12"
-            md="4"
+            md="12"
             lg="4"
             xl="4"
+            cols="12"
             v-for="(item, indx) in content.slice((i - 1) * 3, i * 3)"
             :key="indx"
           >
-            <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
+            <v-card outlined shaped tile class="pa-2 ma-0">
               <nuxt-link
                 class="nuxtlink"
                 target="_blank"
@@ -44,22 +45,24 @@
                 }"
               >
                 <v-img
-                  v-if="item.image != null"
                   contain
-                  aspect-ratio="1.7"
+                  v-if="item.image != null"
+                  aspect-ratio="2.3"
                   :src="item.image"
                 >
                 </v-img>
+
                 <v-img
-                  v-else
                   contain
-                  aspect-ratio="1.7"
+                  v-else
+                  aspect-ratio="2.3"
+                  lazy-src="https://picsum.photos/id/11/10/6"
                   src="/images/default.jpg"
                 >
                 </v-img>
               </nuxt-link>
 
-              <v-card-title>
+              <v-card-title class="pa-0 ma-0">
                 <h2 color="dark" class="title1 fs-1 cardtitle">
                   <nuxt-link
                     class="nuxtlink"
@@ -92,7 +95,7 @@
                 <v-avatar
                   size="37"
                   v-if="item.profile_picture != null"
-                  class="d-inline-flex"
+                  class="d-inline-flex mt-3"
                 >
                   <img :src="item.profile_picture" alt="" />
                 </v-avatar>
@@ -101,7 +104,7 @@
                   v-else
                   color="blue"
                   size="37"
-                  class=" white--text d-inline-flex"
+                  class=" white--text d-inline-flex  mt-3"
                 >
                   {{ item.name.charAt(0).toUpperCase() }}
                 </v-avatar>
@@ -115,41 +118,20 @@
           </v-col>
         </v-row>
         <v-row v-if="blogs_load">
-          <v-col xs="12" sm="12" md="4" lg="4" xl="4">
-            <v-skeleton-loader
-              elevation="2"
-              outlined
-              shaped
-              tile
-              class="pa-2 ma-2"
-              type="card"
-            ></v-skeleton-loader>
+          <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
+            <SkeletonCard />
           </v-col>
-          <v-col xs="12" sm="12" md="4" lg="4" xl="4">
-            <v-skeleton-loader
-              elevation="2"
-              outlined
-              shaped
-              tile
-              class="pa-2 ma-2"
-              type="card"
-            ></v-skeleton-loader>
+          <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
+            <SkeletonCard />
           </v-col>
-          <v-col xs="12" sm="12" md="4" lg="4" xl="4">
-            <v-skeleton-loader
-              elevation="2"
-              outlined
-              shaped
-              tile
-              class="pa-2 ma-2"
-              type="card"
-            ></v-skeleton-loader>
+          <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
+            <SkeletonCard />
           </v-col>
         </v-row>
       </v-container>
     </v-row>
     <v-row>
-      <v-container>
+      <v-container fluid>
         <v-row>
           <v-col>
             <h2 color="dark">News</h2>
@@ -180,21 +162,20 @@
                 <v-img
                   v-if="item.image != null"
                   contain
-                  aspect-ratio="1.7"
-                  height="250"
+                  aspect-ratio="2.3"
                   :src="item.image"
                 >
                 </v-img>
                 <v-img
                   v-else
                   contain
-                  aspect-ratio="1.7"
+                  aspect-ratio="2.3"
                   src="/images/default.jpg"
                 >
                 </v-img>
               </nuxt-link>
 
-              <v-card-title>
+              <v-card-title class="pa-0 ma-0">
                 <h2 color="dark" class="title1 fs-1 cardtitle">
                   <nuxt-link
                     target="_blank"
@@ -233,35 +214,14 @@
           </v-col>
         </v-row>
         <v-row v-if="news_load">
-          <v-col xs="12" sm="12" md="4" lg="4" xl="4">
-            <v-skeleton-loader
-              elevation="2"
-              outlined
-              shaped
-              tile
-              class="pa-2 ma-2"
-              type="card"
-            ></v-skeleton-loader>
+          <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
+            <SkeletonCard />
           </v-col>
-          <v-col xs="12" sm="12" md="4" lg="4" xl="4">
-            <v-skeleton-loader
-              elevation="2"
-              outlined
-              shaped
-              tile
-              class="pa-2 ma-2"
-              type="card"
-            ></v-skeleton-loader>
+          <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
+            <SkeletonCard />
           </v-col>
-          <v-col xs="12" sm="12" md="4" lg="4" xl="4">
-            <v-skeleton-loader
-              elevation="2"
-              outlined
-              shaped
-              tile
-              class="pa-2 ma-2"
-              type="card"
-            ></v-skeleton-loader>
+          <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
+            <SkeletonCard />
           </v-col>
         </v-row>
       </v-container>
@@ -298,8 +258,7 @@
                 <v-img
                   v-if="item.image != null"
                   contain
-                  aspect-ratio="1.7"
-                  height="250"
+                  aspect-ratio="2.3"
                   :src="item.image"
                 >
                 </v-img>
@@ -307,13 +266,13 @@
                 <v-img
                   v-else
                   contain
-                  aspect-ratio="1.7"
+                  aspect-ratio="2.3"
                   src="/images/default.jpg"
                 >
                 </v-img>
               </nuxt-link>
 
-              <v-card-title>
+              <v-card-title class="pa-0 ma-0">
                 <h2 color="dark" class="title1 fs-1 cardtitle">
                   <nuxt-link
                     target="_blank"
@@ -352,35 +311,14 @@
           </v-col>
         </v-row>
         <v-row v-if="posts_load">
-          <v-col xs="12" sm="12" md="4" lg="4" xl="4">
-            <v-skeleton-loader
-              elevation="2"
-              outlined
-              shaped
-              tile
-              class="pa-2 ma-2"
-              type="card"
-            ></v-skeleton-loader>
+          <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
+            <SkeletonCard />
           </v-col>
-          <v-col xs="12" sm="12" md="4" lg="4" xl="4">
-            <v-skeleton-loader
-              elevation="2"
-              outlined
-              shaped
-              tile
-              class="pa-2 ma-2"
-              type="card"
-            ></v-skeleton-loader>
+          <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
+            <SkeletonCard />
           </v-col>
-          <v-col xs="12" sm="12" md="4" lg="4" xl="4">
-            <v-skeleton-loader
-              elevation="2"
-              outlined
-              shaped
-              tile
-              class="pa-2 ma-2"
-              type="card"
-            ></v-skeleton-loader>
+          <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
+            <SkeletonCard />
           </v-col>
         </v-row>
       </v-container>

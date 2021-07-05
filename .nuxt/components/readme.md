@@ -18,6 +18,7 @@ You can directly use them in pages and other components without the need to impo
 - `<QuotesCard>` | `<quotes-card>` (components/QuotesCard.vue)
 - `<QuoteWidget>` | `<quote-widget>` (components/QuoteWidget.vue)
 - `<Search>` | `<search>` (components/Search.vue)
+- `<SkeletonCard>` | `<skeleton-card>` (components/SkeletonCard.vue)
 - `<Template>` | `<template>` (components/Template.vue)
 - `<VuetifyLogo>` | `<vuetify-logo>` (components/VuetifyLogo.vue)
 - `<WidgetBlog>` | `<widget-blog>` (components/WidgetBlog.vue)
