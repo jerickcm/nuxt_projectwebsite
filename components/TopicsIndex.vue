@@ -5,6 +5,7 @@
         <hr color="green" class="hr-green" />
       </v-col>
     </v-row>
+
     <v-row>
       <v-col class="ma-0 mt-0 pt-0">
         <h2 color="green" class="green--text ma-0 mt-0 pt-0 ">
@@ -19,14 +20,17 @@
       class="mt-2 pt-2 hidden-sm-and-down"
     >
       <!--  -->
-      <v-hover v-slot="{ hover }" open-delay="200">
+      <v-hover
+        v-slot="{ hover }"
+        open-delay="200"
+        class="ml-5 mr-3 d-flex align-center flex-column "
+      >
         <v-card
           :elevation="hover ? 16 : 2"
           :class="{ 'on-hover': hover }"
-          class="ml-2 d-flex align-center flex-column "
           color="green"
           :height="height"
-          width="5%"
+          :width="slider_left"
         >
           <label class="justify-center pa- white--text ">Nuxt</label><br />
           <div>
@@ -51,10 +55,9 @@
           </label>
         </v-card>
       </v-hover>
-      <v-sheet class="pa-0 ma-0" max-width="93%">
-        <v-slide-group multiple show-arrows class="pa-0 ma-0">
+      <v-sheet :width="slider_right" :max-width="slider_right">
+        <v-slide-group multiple show-arrows>
           <v-slide-item
-            class="pa-0 ma-0"
             v-for="(item, indx) in nuxt.slice((i - 1) * 5, i * 5)"
             :key="indx"
           >
@@ -62,8 +65,8 @@
               <v-card
                 :elevation="hover ? 16 : 2"
                 :class="{ 'on-hover': hover }"
-                height="200px"
-                width="450px"
+                :height="height"
+                :width="width"
                 class="mr-1 ml-1"
               >
                 <v-img
@@ -227,14 +230,17 @@
       :key="ind + 30"
       class="mt-4 pt-4 hidden-sm-and-down"
     >
-      <v-hover v-slot="{ hover }" open-delay="200">
+      <v-hover
+        v-slot="{ hover }"
+        open-delay="200"
+        class="ml-5 mr-3 d-flex align-center flex-column"
+      >
         <v-card
           :elevation="hover ? 16 : 2"
           :class="{ 'on-hover': hover }"
-          class="ml-2 d-flex align-center flex-column"
           color="orange lighten-2"
           :height="height"
-          width="5%"
+          :width="slider_left"
         >
           <label class="justify-center pa- white--text ">Laravel</label>
           <br />
@@ -260,10 +266,9 @@
           </label>
         </v-card>
       </v-hover>
-      <v-sheet class="pa-0 ma-0" max-width="93%">
-        <v-slide-group multiple show-arrows class="pa-0 ma-0">
+      <v-sheet :width="slider_right" :max-width="slider_right">
+        <v-slide-group multiple show-arrows>
           <v-slide-item
-            class="pa-0 ma-0"
             v-for="(item, indx) in laravel.slice((i - 1) * 5, i * 5)"
             :key="indx"
           >
@@ -271,8 +276,8 @@
               <v-card
                 :elevation="hover ? 16 : 2"
                 :class="{ 'on-hover': hover }"
-                height="200px"
-                width="450px"
+                :height="height"
+                :width="width"
                 class="mr-1 ml-1"
               >
                 <v-img
@@ -447,14 +452,17 @@
       :key="ind + 30"
       class="mt-4 pt-4 hidden-sm-and-down"
     >
-      <v-hover v-slot="{ hover }" open-delay="200">
+      <v-hover
+        v-slot="{ hover }"
+        open-delay="200"
+        class="ml-5 mr-3 d-flex align-center flex-column"
+      >
         <v-card
           :elevation="hover ? 16 : 2"
           :class="{ 'on-hover': hover }"
-          class="ml-2 d-flex align-center flex-column"
           color="green"
           :height="height"
-          width="5%"
+          :width="slider_left"
         >
           <label class="justify-center pa- white--text ">Vue</label><br />
           <div>
@@ -478,10 +486,9 @@
           </label>
         </v-card>
       </v-hover>
-      <v-sheet class="pa-0 ma-0" max-width="93%">
-        <v-slide-group multiple show-arrows class="pa-0 ma-0">
+      <v-sheet :width="slider_right" :max-width="slider_right">
+        <v-slide-group multiple show-arrows>
           <v-slide-item
-            class="pa-0 ma-0"
             v-for="(item, indx) in vue.slice((i - 1) * 5, i * 5)"
             :key="indx"
           >
@@ -489,8 +496,8 @@
               <v-card
                 :elevation="hover ? 16 : 2"
                 :class="{ 'on-hover': hover }"
-                height="200px"
-                width="450px"
+                :height="height"
+                :width="width"
                 class="mr-1 ml-1"
               >
                 <v-img
@@ -662,7 +669,10 @@ export default {
     load_nuxt: false,
     load_laravel: false,
     load_vue: false,
-    height: '200px'
+    height: '17vh',
+    width: '28vh',
+    slider_right: '90%',
+    slider_left: '6%'
   }),
   async fetch() {
     this.load_component = true
