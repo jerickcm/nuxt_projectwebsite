@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid v-if="load_nuxt == false">
+  <v-container fluid v-if="load_component == false">
     <v-row>
       <v-col class=" mb-0 pb-0">
         <hr color="green" class="hr-green" />
@@ -655,6 +655,7 @@
 <script>
 export default {
   data: () => ({
+    load_component: true,
     nuxt: [],
     laravel: [],
     vue: [],
@@ -664,6 +665,7 @@ export default {
     height: '200px'
   }),
   async fetch() {
+    this.load_component = true
     this.load_nuxt = true
     await this.$axios.$get('/sanctum/csrf-cookie')
     const nuxt = await this.$axios.$get(`api/blog/page/1/item/5/tags/nuxt`)
@@ -683,6 +685,7 @@ export default {
     const vue = await this.$axios.$get(`api/blog/page/1/item/5/tags/vue3`)
     this.load_vue = false
     this.vue = vue.data
+    this.load_component = false
   }
 }
 </script>

@@ -12,7 +12,6 @@
         </h2>
       </v-col>
     </v-row>
-    <!-- Tags -->
     <v-row>
       <v-col>
         <v-card flat>
@@ -27,15 +26,13 @@
                 :to="`/blog/tags/${itm.name}`"
                 color="blue"
                 class="white--text"
-                >{{ itm.name }} ></v-chip
+                >{{ itm.name }}</v-chip
               >
             </v-chip-group>
           </v-card-text>
         </v-card>
       </v-col>
     </v-row>
-
-    <!-- Tags -->
   </v-container>
 </template>
 <script>
