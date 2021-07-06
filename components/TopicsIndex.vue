@@ -14,9 +14,94 @@
       </v-col>
     </v-row>
     <!-- Nuxt -->
+    <v-row>
+      <v-col>
+      <v-sheet
+    class="mx-auto"
+    max-width="90%"
+  >
+    <v-slide-group    
+      class="pa-4"
+      center-active
+      show-arrows
+    >
+      <v-slide-item
+        v-for="(item, indx) in nuxt"
+            :key="indx"
+        v-slot="{ active, toggle }"
+      >
+      
+
+        <v-card
+                :elevation="hover ? 16 : 2"
+                :class="{ 'on-hover': hover }"
+                :height="height"
+                :width="width"
+                class="mr-1 ml-1"
+              >
+                <v-img
+                  contain
+                  v-if="item.image != null"
+                  :src="item.image"
+                  class="align-end"
+                  aspect-ratio="1"
+                  gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+                  :height="height"
+                  width="100%"
+                >
+                  <nuxt-link
+                    class="nuxtlink"
+                    target="_blank"
+                    :to="{
+                      path: 'blog/' + item.slug
+                    }"
+                  >
+                    <v-card-title
+                      color="blue"
+                      class="fs-1 white--text pa-0 ma-0 pl-1"
+                    >
+                      {{ item.title
+                      }}<v-icon small color="white"
+                        >mdi-arrow-top-right-thick</v-icon
+                      >
+                    </v-card-title>
+                  </nuxt-link>
+                </v-img>
+
+                <v-img
+                  v-else
+                  contain
+                  width="100%"
+                  class="white--text align-end"
+                  :height="height"
+                  aspect-ratio="1"
+                  gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+                  src="/images/default.jpg"
+                >
+                  <nuxt-link
+                    class="nuxtlink"
+                    target="_blank"
+                    :to="{
+                      path: 'blog/' + item.slug
+                    }"
+                  >
+                    <v-card-title class="fs-1 white--text pa-0 ma-0 pl-1"
+                      >{{ item.title
+                      }}<v-icon small color="white"
+                        >mdi-arrow-top-right-thick</v-icon
+                      ></v-card-title
+                    >
+                  </nuxt-link>
+                </v-img>
+              </v-card>
+
+      </v-slide-item>
+    </v-slide-group>
+  </v-sheet>
+      </v-col>
+    </v-row>
     <v-row
-      v-for="(i, ind) in Math.ceil(nuxt.length / 5)"
-      :key="ind + 10"
+    
       class="mt-2 pt-2 hidden-sm-and-down"
     >
       <!-- 
@@ -60,7 +145,7 @@
       <v-sheet :width="slider_right" :max-width="slider_right">
         <v-slide-group multiple show-arrows>
           <v-slide-item
-            v-for="(item, indx) in nuxt.slice((i - 1) * 5, i * 5)"
+            v-for="(item, indx) in nuxt"
             :key="indx"
           >
             <v-hover v-slot="{ hover }" open-delay="200">
