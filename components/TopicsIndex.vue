@@ -17,10 +17,10 @@
             class="ml-5 mr-3 d-flex align-center flex-column "
           >
             <v-card
-            
+               color="green"
               :elevation="hover ? 16 : 2"
               :class="{ 'on-hover': hover }"
-              color="green"
+           
               :height="height"
               :width="slider_left"
             >
@@ -48,24 +48,47 @@
             </v-card>
           </v-hover>
 
-              <v-hover v-slot="{ hover }" open-delay="200" v-for="(item, indx) in nuxt"
-                :key="indx">
-
-            <v-card
+            <v-hover v-slot="{ hover }" open-delay="200" v-for="(item, indx) in nuxt"
+                :key="indx"
+                class="pa-1"
+                >
+                <div 
+                    :elevation="hover ? 16 : 2"
+                    :class="{ 'on-hover': hover }"
+                    height="200px"
+                    width="200px"
+                    class=" mr-1 ml-1 cover"
+                 >
+                  <img 
+                    height="200px"
+                    width="100%"
+                    :max-height="height"
+                 v-if="item.image != null" src="/images/default.jpg" ></img> 
+                  <img 
+                   
+                     width="100%"
+                     height="200px"
+                     :max-height="height"
+                v-else  src="/images/default.jpg"> </img>             
+                </div>
+<!--
+              <v-card            
+               :elevation="hover ? 16 : 2"
+                    :class="{ 'on-hover': hover }"
+                    max-width="400"
+                    :height="height"
+                    :width="width"
                
-                max-width="400"
-                :elevation="hover ? 16 : 2"
-                :class="{ 'on-hover': hover }"
-                :height="height"
-                :width="width"
-                class="mx-auto mr-1 ml-1"
-              >
+                class=" mr-1 ml-1"
+                >
                 <v-img
-                  contain
+                :max-height="height"
+                  style=" background-size:100% 100%;"
+                  
                   v-if="item.image != null"
                   :src="item.image"
                   class="align-end"
-                  aspect-ratio="1"
+           
                   gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
                   :height="height"
                   width="100%"
@@ -115,6 +138,7 @@
                   </nuxt-link>
                 </v-img>
               </v-card>
+-->
             </v-hover> 
           </v-sheet>
          
@@ -160,9 +184,9 @@
         v-for="(item, indx) in nuxt"
         :key="indx"
       >
-        <v-card  class="mr-1 ml-1">
+        <v-card  class="mr-1 ml-1 cover">
           <v-img
-            contain
+            
             v-if="item.image != null"
             :src="item.image"
             class="align-end"
@@ -185,7 +209,7 @@
             </nuxt-link>
           </v-img>
           <v-img
-            contain
+            
             v-else
             class="white--text align-end"
             aspect-ratio="2.3"
@@ -681,5 +705,9 @@ export default {
 
 .show-btns {
   color: rgba(255, 255, 255, 1) !important;
+}
+
+.cover {
+  object-fit: cover;
 }
 </style>
