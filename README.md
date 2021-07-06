@@ -38,3 +38,4 @@ pm2 start npm --name "nuxt ssr" -- start
 material design for v-icon
 https://materialdesignicons.com/
 
+arrow-top-right

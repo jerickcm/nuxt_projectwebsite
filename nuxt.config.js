@@ -32,11 +32,11 @@ const google_id =
 // const axios = require('axios');
 // const  response ;
 export default {
+  ssr: true,
   dev: process.env.NODE_ENV !== 'production',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s | P.Website',
-    title: '',
+    titleTemplate: '%s | Inhinyeru.com',
     htmlAttrs: {
       lang: 'en'
     },

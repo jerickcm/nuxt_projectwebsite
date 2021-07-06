@@ -11,6 +11,7 @@
           <v-icon size="24px" class="white--text">
             mdi-twitter
           </v-icon>
+          <v-icon small color="white">mdi-arrow-top-right-thick</v-icon>
         </v-btn>
 
         <v-btn
@@ -22,6 +23,7 @@
           <v-icon size="24px" class="white--text">
             mdi-facebook
           </v-icon>
+          <v-icon small color="white">mdi-arrow-top-right-thick</v-icon>
         </v-btn>
       </v-card-text>
       <v-card-text>
@@ -60,14 +62,22 @@
       </v-card-text>
       <v-card-text class="d-flex justify-center mb-6">
         <div class="ma-2 ">
-          <label for="" class="white--text mb-5 fs-0-6">DNS by:</label>
+          <label for="" class="white--text mb-5 fs-0-6"
+            >DNS by:<v-icon small color="white"
+              >mdi-arrow-top-right-thick</v-icon
+            ></label
+          >
           <a href="https://domains.google/" class="pt-5 mt-5">
             <v-img style="width:99px" src="/images/google domain.svg"></v-img>
           </a>
         </div>
 
         <div class="ma-2">
-          <label for="" class="white--text fs-0-6">Secured by:</label>
+          <label for="" class="white--text fs-0-6"
+            >Secured by:<v-icon small color="white"
+              >mdi-arrow-top-right-thick</v-icon
+            ></label
+          >
           <a href="https://letsencrypt.org/">
             <v-img
               style="width:99px"

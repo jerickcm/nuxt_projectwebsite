@@ -18,7 +18,6 @@
         <v-card flat>
           <v-card-text>
             <v-chip-group
-              v-model="selection"
               column
               active-class="deep-purple accent-4 white--text"
             >
@@ -28,7 +27,10 @@
                 :to="`/blog/tags/${itm.name}`"
                 color="blue"
                 class="white--text"
-                >{{ itm.name }}</v-chip
+                >{{ itm.name
+                }}<v-icon small color="white"
+                  >mdi-arrow-top-right-thick</v-icon
+                ></v-chip
               >
             </v-chip-group>
           </v-card-text>
