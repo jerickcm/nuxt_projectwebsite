@@ -1,7 +1,7 @@
 exports.ids = [48,3,4];
 exports.modules = {
 
-/***/ 313:
+/***/ 312:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -81,7 +81,7 @@ installComponents_default()(component, {VBtn: VBtn["a" /* default */],VCard: VCa
 
 /***/ }),
 
-/***/ 314:
+/***/ 313:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -152,7 +152,7 @@ installComponents_default()(component, {VCard: VCard["a" /* default */],VCardTex
 
 /***/ }),
 
-/***/ 502:
+/***/ 500:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -277,7 +277,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 /* harmony default export */ var dashboard = __webpack_exports__["default"] = (component.exports);
 
 /* nuxt-component-imports */
-installComponents_default()(component, {DashTitle: __webpack_require__(313).default,Dashboard: __webpack_require__(314).default})
+installComponents_default()(component, {DashTitle: __webpack_require__(312).default,Dashboard: __webpack_require__(313).default})
 
 
 /* vuetify-loader */

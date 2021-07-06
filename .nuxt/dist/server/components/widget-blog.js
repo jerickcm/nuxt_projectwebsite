@@ -39,469 +39,11 @@ var content = __webpack_require__(262);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
-__webpack_require__(5).default("8f7a87bc", content, true)
-
-/***/ }),
-
-/***/ 262:
-/***/ (function(module, exports, __webpack_require__) {
-
-// Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(4);
-var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
-// Module
-___CSS_LOADER_EXPORT___.push([module.i, ".v-slide-group{display:flex}.v-slide-group:not(.v-slide-group--has-affixes)>.v-slide-group__next,.v-slide-group:not(.v-slide-group--has-affixes)>.v-slide-group__prev{display:none}.v-slide-group.v-item-group>.v-slide-group__next,.v-slide-group.v-item-group>.v-slide-group__prev{cursor:pointer}.v-slide-item{display:inline-flex;flex:0 1 auto}.v-slide-group__next,.v-slide-group__prev{align-items:center;display:flex;flex:0 1 52px;justify-content:center;min-width:52px}.v-slide-group__content{display:flex;flex:1 0 auto;position:relative;transition:.3s cubic-bezier(.25,.8,.5,1);white-space:nowrap}.v-slide-group__wrapper{contain:content;display:flex;flex:1 1 auto;overflow:hidden}.v-slide-group__next--disabled,.v-slide-group__prev--disabled{pointer-events:none}", ""]);
-// Exports
-module.exports = ___CSS_LOADER_EXPORT___;
-
-
-/***/ }),
-
-/***/ 263:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BaseSlideGroup; });
-/* harmony import */ var _src_components_VSlideGroup_VSlideGroup_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(261);
-/* harmony import */ var _src_components_VSlideGroup_VSlideGroup_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_src_components_VSlideGroup_VSlideGroup_sass__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _VIcon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(14);
-/* harmony import */ var _transitions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(26);
-/* harmony import */ var _VItemGroup_VItemGroup__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(59);
-/* harmony import */ var _mixins_mobile__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(76);
-/* harmony import */ var _directives_resize__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(38);
-/* harmony import */ var _directives_touch__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(109);
-/* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(2);
-// Styles
- // Components
-
-
- // Extensions
-
- // Mixins
-
- // Directives
-
-
- // Utilities
-
-
-const BaseSlideGroup = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_7__[/* default */ "a"])(_VItemGroup_VItemGroup__WEBPACK_IMPORTED_MODULE_3__[/* BaseItemGroup */ "a"], _mixins_mobile__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"]).extend({
-  name: 'base-slide-group',
-  directives: {
-    Resize: _directives_resize__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"],
-    Touch: _directives_touch__WEBPACK_IMPORTED_MODULE_6__[/* default */ "a"]
-  },
-  props: {
-    activeClass: {
-      type: String,
-      default: 'v-slide-item--active'
-    },
-    centerActive: Boolean,
-    nextIcon: {
-      type: String,
-      default: '$next'
-    },
-    prevIcon: {
-      type: String,
-      default: '$prev'
-    },
-    showArrows: {
-      type: [Boolean, String],
-      validator: v => typeof v === 'boolean' || ['always', 'desktop', 'mobile'].includes(v)
-    }
-  },
-  data: () => ({
-    internalItemsLength: 0,
-    isOverflowing: false,
-    resizeTimeout: 0,
-    startX: 0,
-    isSwipingHorizontal: false,
-    isSwiping: false,
-    scrollOffset: 0,
-    widths: {
-      content: 0,
-      wrapper: 0
-    }
-  }),
-  computed: {
-    canTouch() {
-      return typeof window !== 'undefined';
-    },
-
-    __cachedNext() {
-      return this.genTransition('next');
-    },
-
-    __cachedPrev() {
-      return this.genTransition('prev');
-    },
-
-    classes() {
-      return { ..._VItemGroup_VItemGroup__WEBPACK_IMPORTED_MODULE_3__[/* BaseItemGroup */ "a"].options.computed.classes.call(this),
-        'v-slide-group': true,
-        'v-slide-group--has-affixes': this.hasAffixes,
-        'v-slide-group--is-overflowing': this.isOverflowing
-      };
-    },
-
-    hasAffixes() {
-      switch (this.showArrows) {
-        // Always show arrows on desktop & mobile
-        case 'always':
-          return true;
-        // Always show arrows on desktop
-
-        case 'desktop':
-          return !this.isMobile;
-        // Show arrows on mobile when overflowing.
-        // This matches the default 2.2 behavior
-
-        case true:
-          return this.isOverflowing || Math.abs(this.scrollOffset) > 0;
-        // Always show on mobile
-
-        case 'mobile':
-          return this.isMobile || this.isOverflowing || Math.abs(this.scrollOffset) > 0;
-        // https://material.io/components/tabs#scrollable-tabs
-        // Always show arrows when
-        // overflowed on desktop
-
-        default:
-          return !this.isMobile && (this.isOverflowing || Math.abs(this.scrollOffset) > 0);
-      }
-    },
-
-    hasNext() {
-      if (!this.hasAffixes) return false;
-      const {
-        content,
-        wrapper
-      } = this.widths; // Check one scroll ahead to know the width of right-most item
-
-      return content > Math.abs(this.scrollOffset) + wrapper;
-    },
-
-    hasPrev() {
-      return this.hasAffixes && this.scrollOffset !== 0;
-    }
-
-  },
-  watch: {
-    internalValue: 'setWidths',
-    // When overflow changes, the arrows alter
-    // the widths of the content and wrapper
-    // and need to be recalculated
-    isOverflowing: 'setWidths',
-
-    scrollOffset(val) {
-      this.$refs.content.style.transform = `translateX(${-val}px)`;
-    }
-
-  },
-
-  beforeUpdate() {
-    this.internalItemsLength = (this.$children || []).length;
-  },
-
-  updated() {
-    if (this.internalItemsLength === (this.$children || []).length) return;
-    this.setWidths();
-  },
-
-  methods: {
-    // Always generate next for scrollable hint
-    genNext() {
-      const slot = this.$scopedSlots.next ? this.$scopedSlots.next({}) : this.$slots.next || this.__cachedNext;
-      return this.$createElement('div', {
-        staticClass: 'v-slide-group__next',
-        class: {
-          'v-slide-group__next--disabled': !this.hasNext
-        },
-        on: {
-          click: () => this.onAffixClick('next')
-        },
-        key: 'next'
-      }, [slot]);
-    },
-
-    genContent() {
-      return this.$createElement('div', {
-        staticClass: 'v-slide-group__content',
-        ref: 'content'
-      }, this.$slots.default);
-    },
-
-    genData() {
-      return {
-        class: this.classes,
-        directives: [{
-          name: 'resize',
-          value: this.onResize
-        }]
-      };
-    },
-
-    genIcon(location) {
-      let icon = location;
-
-      if (this.$vuetify.rtl && location === 'prev') {
-        icon = 'next';
-      } else if (this.$vuetify.rtl && location === 'next') {
-        icon = 'prev';
-      }
-
-      const upperLocation = `${location[0].toUpperCase()}${location.slice(1)}`;
-      const hasAffix = this[`has${upperLocation}`];
-      if (!this.showArrows && !hasAffix) return null;
-      return this.$createElement(_VIcon__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"], {
-        props: {
-          disabled: !hasAffix
-        }
-      }, this[`${icon}Icon`]);
-    },
-
-    // Always generate prev for scrollable hint
-    genPrev() {
-      const slot = this.$scopedSlots.prev ? this.$scopedSlots.prev({}) : this.$slots.prev || this.__cachedPrev;
-      return this.$createElement('div', {
-        staticClass: 'v-slide-group__prev',
-        class: {
-          'v-slide-group__prev--disabled': !this.hasPrev
-        },
-        on: {
-          click: () => this.onAffixClick('prev')
-        },
-        key: 'prev'
-      }, [slot]);
-    },
-
-    genTransition(location) {
-      return this.$createElement(_transitions__WEBPACK_IMPORTED_MODULE_2__[/* VFadeTransition */ "c"], [this.genIcon(location)]);
-    },
-
-    genWrapper() {
-      return this.$createElement('div', {
-        staticClass: 'v-slide-group__wrapper',
-        directives: [{
-          name: 'touch',
-          value: {
-            start: e => this.overflowCheck(e, this.onTouchStart),
-            move: e => this.overflowCheck(e, this.onTouchMove),
-            end: e => this.overflowCheck(e, this.onTouchEnd)
-          }
-        }],
-        ref: 'wrapper'
-      }, [this.genContent()]);
-    },
-
-    calculateNewOffset(direction, widths, rtl, currentScrollOffset) {
-      const sign = rtl ? -1 : 1;
-      const newAbosluteOffset = sign * currentScrollOffset + (direction === 'prev' ? -1 : 1) * widths.wrapper;
-      return sign * Math.max(Math.min(newAbosluteOffset, widths.content - widths.wrapper), 0);
-    },
-
-    onAffixClick(location) {
-      this.$emit(`click:${location}`);
-      this.scrollTo(location);
-    },
-
-    onResize() {
-      /* istanbul ignore next */
-      if (this._isDestroyed) return;
-      this.setWidths();
-    },
-
-    onTouchStart(e) {
-      const {
-        content
-      } = this.$refs;
-      this.startX = this.scrollOffset + e.touchstartX;
-      content.style.setProperty('transition', 'none');
-      content.style.setProperty('willChange', 'transform');
-    },
-
-    onTouchMove(e) {
-      if (!this.canTouch) return;
-
-      if (!this.isSwiping) {
-        // only calculate disableSwipeHorizontal during the first onTouchMove invoke
-        // in order to ensure disableSwipeHorizontal value is consistent between onTouchStart and onTouchEnd
-        const diffX = e.touchmoveX - e.touchstartX;
-        const diffY = e.touchmoveY - e.touchstartY;
-        this.isSwipingHorizontal = Math.abs(diffX) > Math.abs(diffY);
-        this.isSwiping = true;
-      }
-
-      if (this.isSwipingHorizontal) {
-        // sliding horizontally
-        this.scrollOffset = this.startX - e.touchmoveX; // temporarily disable window vertical scrolling
-
-        document.documentElement.style.overflowY = 'hidden';
-      }
-    },
-
-    onTouchEnd() {
-      if (!this.canTouch) return;
-      const {
-        content,
-        wrapper
-      } = this.$refs;
-      const maxScrollOffset = content.clientWidth - wrapper.clientWidth;
-      content.style.setProperty('transition', null);
-      content.style.setProperty('willChange', null);
-
-      if (this.$vuetify.rtl) {
-        /* istanbul ignore else */
-        if (this.scrollOffset > 0 || !this.isOverflowing) {
-          this.scrollOffset = 0;
-        } else if (this.scrollOffset <= -maxScrollOffset) {
-          this.scrollOffset = -maxScrollOffset;
-        }
-      } else {
-        /* istanbul ignore else */
-        if (this.scrollOffset < 0 || !this.isOverflowing) {
-          this.scrollOffset = 0;
-        } else if (this.scrollOffset >= maxScrollOffset) {
-          this.scrollOffset = maxScrollOffset;
-        }
-      }
-
-      this.isSwiping = false; // rollback whole page scrolling to default
-
-      document.documentElement.style.removeProperty('overflow-y');
-    },
-
-    overflowCheck(e, fn) {
-      e.stopPropagation();
-      this.isOverflowing && fn(e);
-    },
-
-    scrollIntoView
-    /* istanbul ignore next */
-    () {
-      if (!this.selectedItem && this.items.length) {
-        const lastItemPosition = this.items[this.items.length - 1].$el.getBoundingClientRect();
-        const wrapperPosition = this.$refs.wrapper.getBoundingClientRect();
-
-        if (this.$vuetify.rtl && wrapperPosition.right < lastItemPosition.right || !this.$vuetify.rtl && wrapperPosition.left > lastItemPosition.left) {
-          this.scrollTo('prev');
-        }
-      }
-
-      if (!this.selectedItem) {
-        return;
-      }
-
-      if (this.selectedIndex === 0 || !this.centerActive && !this.isOverflowing) {
-        this.scrollOffset = 0;
-      } else if (this.centerActive) {
-        this.scrollOffset = this.calculateCenteredOffset(this.selectedItem.$el, this.widths, this.$vuetify.rtl);
-      } else if (this.isOverflowing) {
-        this.scrollOffset = this.calculateUpdatedOffset(this.selectedItem.$el, this.widths, this.$vuetify.rtl, this.scrollOffset);
-      }
-    },
-
-    calculateUpdatedOffset(selectedElement, widths, rtl, currentScrollOffset) {
-      const clientWidth = selectedElement.clientWidth;
-      const offsetLeft = rtl ? widths.content - selectedElement.offsetLeft - clientWidth : selectedElement.offsetLeft;
-
-      if (rtl) {
-        currentScrollOffset = -currentScrollOffset;
-      }
-
-      const totalWidth = widths.wrapper + currentScrollOffset;
-      const itemOffset = clientWidth + offsetLeft;
-      const additionalOffset = clientWidth * 0.4;
-
-      if (offsetLeft <= currentScrollOffset) {
-        currentScrollOffset = Math.max(offsetLeft - additionalOffset, 0);
-      } else if (totalWidth <= itemOffset) {
-        currentScrollOffset = Math.min(currentScrollOffset - (totalWidth - itemOffset - additionalOffset), widths.content - widths.wrapper);
-      }
-
-      return rtl ? -currentScrollOffset : currentScrollOffset;
-    },
-
-    calculateCenteredOffset(selectedElement, widths, rtl) {
-      const {
-        offsetLeft,
-        clientWidth
-      } = selectedElement;
-
-      if (rtl) {
-        const offsetCentered = widths.content - offsetLeft - clientWidth / 2 - widths.wrapper / 2;
-        return -Math.min(widths.content - widths.wrapper, Math.max(0, offsetCentered));
-      } else {
-        const offsetCentered = offsetLeft + clientWidth / 2 - widths.wrapper / 2;
-        return Math.min(widths.content - widths.wrapper, Math.max(0, offsetCentered));
-      }
-    },
-
-    scrollTo
-    /* istanbul ignore next */
-    (location) {
-      this.scrollOffset = this.calculateNewOffset(location, {
-        // Force reflow
-        content: this.$refs.content ? this.$refs.content.clientWidth : 0,
-        wrapper: this.$refs.wrapper ? this.$refs.wrapper.clientWidth : 0
-      }, this.$vuetify.rtl, this.scrollOffset);
-    },
-
-    setWidths
-    /* istanbul ignore next */
-    () {
-      window.requestAnimationFrame(() => {
-        const {
-          content,
-          wrapper
-        } = this.$refs;
-        this.widths = {
-          content: content ? content.clientWidth : 0,
-          wrapper: wrapper ? wrapper.clientWidth : 0
-        }; // https://github.com/vuetifyjs/vuetify/issues/13212
-        // We add +1 to the wrappers width to prevent an issue where the `clientWidth`
-        // gets calculated wrongly by the browser if using a different zoom-level.
-
-        this.isOverflowing = this.widths.wrapper + 1 < this.widths.content;
-        this.scrollIntoView();
-      });
-    }
-
-  },
-
-  render(h) {
-    return h('div', this.genData(), [this.genPrev(), this.genWrapper(), this.genNext()]);
-  }
-
-});
-/* harmony default export */ __webpack_exports__["b"] = (BaseSlideGroup.extend({
-  name: 'v-slide-group',
-
-  provide() {
-    return {
-      slideGroup: this
-    };
-  }
-
-}));
-
-/***/ }),
-
-/***/ 264:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(265);
-if(content.__esModule) content = content.default;
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
 __webpack_require__(5).default("3c0eddd7", content, true)
 
 /***/ }),
 
-/***/ 265:
+/***/ 262:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -515,7 +57,35 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 268:
+/***/ 263:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(264);
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+__webpack_require__(5).default("8f7a87bc", content, true)
+
+/***/ }),
+
+/***/ 264:
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(4);
+var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+___CSS_LOADER_EXPORT___.push([module.i, ".v-slide-group{display:flex}.v-slide-group:not(.v-slide-group--has-affixes)>.v-slide-group__next,.v-slide-group:not(.v-slide-group--has-affixes)>.v-slide-group__prev{display:none}.v-slide-group.v-item-group>.v-slide-group__next,.v-slide-group.v-item-group>.v-slide-group__prev{cursor:pointer}.v-slide-item{display:inline-flex;flex:0 1 auto}.v-slide-group__next,.v-slide-group__prev{align-items:center;display:flex;flex:0 1 52px;justify-content:center;min-width:52px}.v-slide-group__content{display:flex;flex:1 0 auto;position:relative;transition:.3s cubic-bezier(.25,.8,.5,1);white-space:nowrap}.v-slide-group__wrapper{contain:content;display:flex;flex:1 1 auto;overflow:hidden}.v-slide-group__next--disabled,.v-slide-group__prev--disabled{pointer-events:none}", ""]);
+// Exports
+module.exports = ___CSS_LOADER_EXPORT___;
+
+
+/***/ }),
+
+/***/ 267:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -716,15 +286,456 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 281:
+/***/ 280:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _src_components_VChipGroup_VChipGroup_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(264);
-/* harmony import */ var _src_components_VChipGroup_VChipGroup_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_src_components_VChipGroup_VChipGroup_sass__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _VSlideGroup_VSlideGroup__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(263);
-/* harmony import */ var _mixins_colorable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7);
-/* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2);
+
+// EXTERNAL MODULE: ./node_modules/vuetify/src/components/VChipGroup/VChipGroup.sass
+var VChipGroup = __webpack_require__(261);
+
+// EXTERNAL MODULE: ./node_modules/vuetify/src/components/VSlideGroup/VSlideGroup.sass
+var VSlideGroup = __webpack_require__(263);
+
+// EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VIcon/index.js
+var VIcon = __webpack_require__(14);
+
+// EXTERNAL MODULE: ./node_modules/vuetify/lib/components/transitions/index.js + 2 modules
+var transitions = __webpack_require__(26);
+
+// EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VItemGroup/VItemGroup.js
+var VItemGroup = __webpack_require__(59);
+
+// EXTERNAL MODULE: ./node_modules/vuetify/lib/mixins/mobile/index.js
+var mobile = __webpack_require__(76);
+
+// EXTERNAL MODULE: ./node_modules/vuetify/lib/directives/resize/index.js
+var resize = __webpack_require__(38);
+
+// EXTERNAL MODULE: ./node_modules/vuetify/lib/directives/touch/index.js
+var touch = __webpack_require__(110);
+
+// EXTERNAL MODULE: ./node_modules/vuetify/lib/util/mixins.js
+var mixins = __webpack_require__(2);
+
+// CONCATENATED MODULE: ./node_modules/vuetify/lib/components/VSlideGroup/VSlideGroup.js
+// Styles
+ // Components
+
+
+ // Extensions
+
+ // Mixins
+
+ // Directives
+
+
+ // Utilities
+
+
+const BaseSlideGroup = Object(mixins["a" /* default */])(VItemGroup["a" /* BaseItemGroup */], mobile["a" /* default */]).extend({
+  name: 'base-slide-group',
+  directives: {
+    Resize: resize["a" /* default */],
+    Touch: touch["a" /* default */]
+  },
+  props: {
+    activeClass: {
+      type: String,
+      default: 'v-slide-item--active'
+    },
+    centerActive: Boolean,
+    nextIcon: {
+      type: String,
+      default: '$next'
+    },
+    prevIcon: {
+      type: String,
+      default: '$prev'
+    },
+    showArrows: {
+      type: [Boolean, String],
+      validator: v => typeof v === 'boolean' || ['always', 'desktop', 'mobile'].includes(v)
+    }
+  },
+  data: () => ({
+    internalItemsLength: 0,
+    isOverflowing: false,
+    resizeTimeout: 0,
+    startX: 0,
+    isSwipingHorizontal: false,
+    isSwiping: false,
+    scrollOffset: 0,
+    widths: {
+      content: 0,
+      wrapper: 0
+    }
+  }),
+  computed: {
+    canTouch() {
+      return typeof window !== 'undefined';
+    },
+
+    __cachedNext() {
+      return this.genTransition('next');
+    },
+
+    __cachedPrev() {
+      return this.genTransition('prev');
+    },
+
+    classes() {
+      return { ...VItemGroup["a" /* BaseItemGroup */].options.computed.classes.call(this),
+        'v-slide-group': true,
+        'v-slide-group--has-affixes': this.hasAffixes,
+        'v-slide-group--is-overflowing': this.isOverflowing
+      };
+    },
+
+    hasAffixes() {
+      switch (this.showArrows) {
+        // Always show arrows on desktop & mobile
+        case 'always':
+          return true;
+        // Always show arrows on desktop
+
+        case 'desktop':
+          return !this.isMobile;
+        // Show arrows on mobile when overflowing.
+        // This matches the default 2.2 behavior
+
+        case true:
+          return this.isOverflowing || Math.abs(this.scrollOffset) > 0;
+        // Always show on mobile
+
+        case 'mobile':
+          return this.isMobile || this.isOverflowing || Math.abs(this.scrollOffset) > 0;
+        // https://material.io/components/tabs#scrollable-tabs
+        // Always show arrows when
+        // overflowed on desktop
+
+        default:
+          return !this.isMobile && (this.isOverflowing || Math.abs(this.scrollOffset) > 0);
+      }
+    },
+
+    hasNext() {
+      if (!this.hasAffixes) return false;
+      const {
+        content,
+        wrapper
+      } = this.widths; // Check one scroll ahead to know the width of right-most item
+
+      return content > Math.abs(this.scrollOffset) + wrapper;
+    },
+
+    hasPrev() {
+      return this.hasAffixes && this.scrollOffset !== 0;
+    }
+
+  },
+  watch: {
+    internalValue: 'setWidths',
+    // When overflow changes, the arrows alter
+    // the widths of the content and wrapper
+    // and need to be recalculated
+    isOverflowing: 'setWidths',
+
+    scrollOffset(val) {
+      this.$refs.content.style.transform = `translateX(${-val}px)`;
+    }
+
+  },
+
+  beforeUpdate() {
+    this.internalItemsLength = (this.$children || []).length;
+  },
+
+  updated() {
+    if (this.internalItemsLength === (this.$children || []).length) return;
+    this.setWidths();
+  },
+
+  methods: {
+    // Always generate next for scrollable hint
+    genNext() {
+      const slot = this.$scopedSlots.next ? this.$scopedSlots.next({}) : this.$slots.next || this.__cachedNext;
+      return this.$createElement('div', {
+        staticClass: 'v-slide-group__next',
+        class: {
+          'v-slide-group__next--disabled': !this.hasNext
+        },
+        on: {
+          click: () => this.onAffixClick('next')
+        },
+        key: 'next'
+      }, [slot]);
+    },
+
+    genContent() {
+      return this.$createElement('div', {
+        staticClass: 'v-slide-group__content',
+        ref: 'content'
+      }, this.$slots.default);
+    },
+
+    genData() {
+      return {
+        class: this.classes,
+        directives: [{
+          name: 'resize',
+          value: this.onResize
+        }]
+      };
+    },
+
+    genIcon(location) {
+      let icon = location;
+
+      if (this.$vuetify.rtl && location === 'prev') {
+        icon = 'next';
+      } else if (this.$vuetify.rtl && location === 'next') {
+        icon = 'prev';
+      }
+
+      const upperLocation = `${location[0].toUpperCase()}${location.slice(1)}`;
+      const hasAffix = this[`has${upperLocation}`];
+      if (!this.showArrows && !hasAffix) return null;
+      return this.$createElement(VIcon["a" /* default */], {
+        props: {
+          disabled: !hasAffix
+        }
+      }, this[`${icon}Icon`]);
+    },
+
+    // Always generate prev for scrollable hint
+    genPrev() {
+      const slot = this.$scopedSlots.prev ? this.$scopedSlots.prev({}) : this.$slots.prev || this.__cachedPrev;
+      return this.$createElement('div', {
+        staticClass: 'v-slide-group__prev',
+        class: {
+          'v-slide-group__prev--disabled': !this.hasPrev
+        },
+        on: {
+          click: () => this.onAffixClick('prev')
+        },
+        key: 'prev'
+      }, [slot]);
+    },
+
+    genTransition(location) {
+      return this.$createElement(transitions["c" /* VFadeTransition */], [this.genIcon(location)]);
+    },
+
+    genWrapper() {
+      return this.$createElement('div', {
+        staticClass: 'v-slide-group__wrapper',
+        directives: [{
+          name: 'touch',
+          value: {
+            start: e => this.overflowCheck(e, this.onTouchStart),
+            move: e => this.overflowCheck(e, this.onTouchMove),
+            end: e => this.overflowCheck(e, this.onTouchEnd)
+          }
+        }],
+        ref: 'wrapper'
+      }, [this.genContent()]);
+    },
+
+    calculateNewOffset(direction, widths, rtl, currentScrollOffset) {
+      const sign = rtl ? -1 : 1;
+      const newAbosluteOffset = sign * currentScrollOffset + (direction === 'prev' ? -1 : 1) * widths.wrapper;
+      return sign * Math.max(Math.min(newAbosluteOffset, widths.content - widths.wrapper), 0);
+    },
+
+    onAffixClick(location) {
+      this.$emit(`click:${location}`);
+      this.scrollTo(location);
+    },
+
+    onResize() {
+      /* istanbul ignore next */
+      if (this._isDestroyed) return;
+      this.setWidths();
+    },
+
+    onTouchStart(e) {
+      const {
+        content
+      } = this.$refs;
+      this.startX = this.scrollOffset + e.touchstartX;
+      content.style.setProperty('transition', 'none');
+      content.style.setProperty('willChange', 'transform');
+    },
+
+    onTouchMove(e) {
+      if (!this.canTouch) return;
+
+      if (!this.isSwiping) {
+        // only calculate disableSwipeHorizontal during the first onTouchMove invoke
+        // in order to ensure disableSwipeHorizontal value is consistent between onTouchStart and onTouchEnd
+        const diffX = e.touchmoveX - e.touchstartX;
+        const diffY = e.touchmoveY - e.touchstartY;
+        this.isSwipingHorizontal = Math.abs(diffX) > Math.abs(diffY);
+        this.isSwiping = true;
+      }
+
+      if (this.isSwipingHorizontal) {
+        // sliding horizontally
+        this.scrollOffset = this.startX - e.touchmoveX; // temporarily disable window vertical scrolling
+
+        document.documentElement.style.overflowY = 'hidden';
+      }
+    },
+
+    onTouchEnd() {
+      if (!this.canTouch) return;
+      const {
+        content,
+        wrapper
+      } = this.$refs;
+      const maxScrollOffset = content.clientWidth - wrapper.clientWidth;
+      content.style.setProperty('transition', null);
+      content.style.setProperty('willChange', null);
+
+      if (this.$vuetify.rtl) {
+        /* istanbul ignore else */
+        if (this.scrollOffset > 0 || !this.isOverflowing) {
+          this.scrollOffset = 0;
+        } else if (this.scrollOffset <= -maxScrollOffset) {
+          this.scrollOffset = -maxScrollOffset;
+        }
+      } else {
+        /* istanbul ignore else */
+        if (this.scrollOffset < 0 || !this.isOverflowing) {
+          this.scrollOffset = 0;
+        } else if (this.scrollOffset >= maxScrollOffset) {
+          this.scrollOffset = maxScrollOffset;
+        }
+      }
+
+      this.isSwiping = false; // rollback whole page scrolling to default
+
+      document.documentElement.style.removeProperty('overflow-y');
+    },
+
+    overflowCheck(e, fn) {
+      e.stopPropagation();
+      this.isOverflowing && fn(e);
+    },
+
+    scrollIntoView
+    /* istanbul ignore next */
+    () {
+      if (!this.selectedItem && this.items.length) {
+        const lastItemPosition = this.items[this.items.length - 1].$el.getBoundingClientRect();
+        const wrapperPosition = this.$refs.wrapper.getBoundingClientRect();
+
+        if (this.$vuetify.rtl && wrapperPosition.right < lastItemPosition.right || !this.$vuetify.rtl && wrapperPosition.left > lastItemPosition.left) {
+          this.scrollTo('prev');
+        }
+      }
+
+      if (!this.selectedItem) {
+        return;
+      }
+
+      if (this.selectedIndex === 0 || !this.centerActive && !this.isOverflowing) {
+        this.scrollOffset = 0;
+      } else if (this.centerActive) {
+        this.scrollOffset = this.calculateCenteredOffset(this.selectedItem.$el, this.widths, this.$vuetify.rtl);
+      } else if (this.isOverflowing) {
+        this.scrollOffset = this.calculateUpdatedOffset(this.selectedItem.$el, this.widths, this.$vuetify.rtl, this.scrollOffset);
+      }
+    },
+
+    calculateUpdatedOffset(selectedElement, widths, rtl, currentScrollOffset) {
+      const clientWidth = selectedElement.clientWidth;
+      const offsetLeft = rtl ? widths.content - selectedElement.offsetLeft - clientWidth : selectedElement.offsetLeft;
+
+      if (rtl) {
+        currentScrollOffset = -currentScrollOffset;
+      }
+
+      const totalWidth = widths.wrapper + currentScrollOffset;
+      const itemOffset = clientWidth + offsetLeft;
+      const additionalOffset = clientWidth * 0.4;
+
+      if (offsetLeft <= currentScrollOffset) {
+        currentScrollOffset = Math.max(offsetLeft - additionalOffset, 0);
+      } else if (totalWidth <= itemOffset) {
+        currentScrollOffset = Math.min(currentScrollOffset - (totalWidth - itemOffset - additionalOffset), widths.content - widths.wrapper);
+      }
+
+      return rtl ? -currentScrollOffset : currentScrollOffset;
+    },
+
+    calculateCenteredOffset(selectedElement, widths, rtl) {
+      const {
+        offsetLeft,
+        clientWidth
+      } = selectedElement;
+
+      if (rtl) {
+        const offsetCentered = widths.content - offsetLeft - clientWidth / 2 - widths.wrapper / 2;
+        return -Math.min(widths.content - widths.wrapper, Math.max(0, offsetCentered));
+      } else {
+        const offsetCentered = offsetLeft + clientWidth / 2 - widths.wrapper / 2;
+        return Math.min(widths.content - widths.wrapper, Math.max(0, offsetCentered));
+      }
+    },
+
+    scrollTo
+    /* istanbul ignore next */
+    (location) {
+      this.scrollOffset = this.calculateNewOffset(location, {
+        // Force reflow
+        content: this.$refs.content ? this.$refs.content.clientWidth : 0,
+        wrapper: this.$refs.wrapper ? this.$refs.wrapper.clientWidth : 0
+      }, this.$vuetify.rtl, this.scrollOffset);
+    },
+
+    setWidths
+    /* istanbul ignore next */
+    () {
+      window.requestAnimationFrame(() => {
+        const {
+          content,
+          wrapper
+        } = this.$refs;
+        this.widths = {
+          content: content ? content.clientWidth : 0,
+          wrapper: wrapper ? wrapper.clientWidth : 0
+        }; // https://github.com/vuetifyjs/vuetify/issues/13212
+        // We add +1 to the wrappers width to prevent an issue where the `clientWidth`
+        // gets calculated wrongly by the browser if using a different zoom-level.
+
+        this.isOverflowing = this.widths.wrapper + 1 < this.widths.content;
+        this.scrollIntoView();
+      });
+    }
+
+  },
+
+  render(h) {
+    return h('div', this.genData(), [this.genPrev(), this.genWrapper(), this.genNext()]);
+  }
+
+});
+/* harmony default export */ var VSlideGroup_VSlideGroup = (BaseSlideGroup.extend({
+  name: 'v-slide-group',
+
+  provide() {
+    return {
+      slideGroup: this
+    };
+  }
+
+}));
+// EXTERNAL MODULE: ./node_modules/vuetify/lib/mixins/colorable/index.js
+var colorable = __webpack_require__(7);
+
+// CONCATENATED MODULE: ./node_modules/vuetify/lib/components/VChipGroup/VChipGroup.js
 // Styles
  // Extensions
 
@@ -735,7 +746,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /* @vue/component */
 
-/* harmony default export */ __webpack_exports__["a"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(_VSlideGroup_VSlideGroup__WEBPACK_IMPORTED_MODULE_1__[/* BaseSlideGroup */ "a"], _mixins_colorable__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"]).extend({
+/* harmony default export */ var VChipGroup_VChipGroup = __webpack_exports__["a"] = (Object(mixins["a" /* default */])(BaseSlideGroup, colorable["a" /* default */]).extend({
   name: 'v-chip-group',
 
   provide() {
@@ -749,7 +760,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
   },
   computed: {
     classes() {
-      return { ..._VSlideGroup_VSlideGroup__WEBPACK_IMPORTED_MODULE_1__[/* BaseSlideGroup */ "a"].options.computed.classes.call(this),
+      return { ...BaseSlideGroup.options.computed.classes.call(this),
         'v-chip-group': true,
         'v-chip-group--column': this.column
       };
@@ -765,7 +776,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
   },
   methods: {
     genData() {
-      return this.setTextColor(this.color, { ..._VSlideGroup_VSlideGroup__WEBPACK_IMPORTED_MODULE_1__[/* BaseSlideGroup */ "a"].options.methods.genData.call(this)
+      return this.setTextColor(this.color, { ...BaseSlideGroup.options.methods.genData.call(this)
       });
     }
 
@@ -774,7 +785,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 290:
+/***/ 289:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -940,8 +951,8 @@ var components_VCard = __webpack_require__(25);
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VChip/VChip.js
 var VChip = __webpack_require__(100);
 
-// EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VChipGroup/VChipGroup.js
-var VChipGroup = __webpack_require__(281);
+// EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VChipGroup/VChipGroup.js + 1 modules
+var VChipGroup = __webpack_require__(280);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VCol.js
 var VCol = __webpack_require__(252);
@@ -959,7 +970,7 @@ var VRow = __webpack_require__(253);
 var VSheet = __webpack_require__(19);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSkeletonLoader/VSkeletonLoader.js
-var VSkeletonLoader = __webpack_require__(268);
+var VSkeletonLoader = __webpack_require__(267);
 
 // CONCATENATED MODULE: ./components/WidgetBlog.vue
 

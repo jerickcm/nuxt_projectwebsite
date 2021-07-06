@@ -1,7 +1,7 @@
 exports.ids = [59];
 exports.modules = {
 
-/***/ 506:
+/***/ 504:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
