@@ -19,7 +19,7 @@
       :key="ind + 10"
       class="mt-2 pt-2 hidden-sm-and-down"
     >
-      <!--  -->
+      <!-- 
       <v-hover
         v-slot="{ hover }"
         open-delay="200"
@@ -55,6 +55,8 @@
           </label>
         </v-card>
       </v-hover>
+
+      -->
       <v-sheet :width="slider_right" :max-width="slider_right">
         <v-slide-group multiple show-arrows>
           <v-slide-item
@@ -452,6 +454,8 @@
       :key="ind + 30"
       class="mt-4 pt-4 hidden-sm-and-down"
     >
+
+      <!--
       <v-hover
         v-slot="{ hover }"
         open-delay="200"
@@ -486,7 +490,9 @@
           </label>
         </v-card>
       </v-hover>
-      <v-sheet :width="slider_right" :max-width="slider_right">
+      -->
+
+      <v-sheet  class="mx-auto" :width="slider_right" :max-width="slider_right">
         <v-slide-group multiple show-arrows>
           <v-slide-item
             v-for="(item, indx) in vue.slice((i - 1) * 5, i * 5)"
@@ -559,6 +565,41 @@
           </v-slide-item>
         </v-slide-group></v-sheet
       >
+
+      <v-hover
+        v-slot="{ hover }"
+        open-delay="200"
+        class="ml-5 mr-3 d-flex align-center flex-column"
+      >
+        <v-card
+          :elevation="hover ? 16 : 2"
+          :class="{ 'on-hover': hover }"
+          color="green"
+          :height="height"
+          :width="slider_left"
+        >
+          <label class="justify-center pa- white--text ">Vue</label><br />
+          <div>
+            <v-img
+              class="justify-center"
+              src="/icons/vue-js.svg"
+              width="25px"
+            ></v-img>
+          </div>
+          <label class="justify-center pa-2 mt-auto">
+            <nuxt-link
+              class="white--text nuxtlink"
+              target="_blank"
+              :to="{
+                path: 'blog/tags/vue3'
+              }"
+              >More<v-icon small color="white"
+                >mdi-arrow-top-right-thick</v-icon
+              >
+            </nuxt-link>
+          </label>
+        </v-card>
+      </v-hover>
     </v-row>
 
     <v-row
