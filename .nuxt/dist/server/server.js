@@ -4554,11 +4554,12 @@ const VCardTitle = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_1__[/* createSi
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, "c", function() { return /* binding */ VFadeTransition; });
-__webpack_require__.d(__webpack_exports__, "d", function() { return /* binding */ VSlideXTransition; });
+__webpack_require__.d(__webpack_exports__, "d", function() { return /* binding */ VScaleTransition; });
+__webpack_require__.d(__webpack_exports__, "e", function() { return /* binding */ VSlideXTransition; });
 __webpack_require__.d(__webpack_exports__, "a", function() { return /* binding */ VExpandTransition; });
 __webpack_require__.d(__webpack_exports__, "b", function() { return /* binding */ VExpandXTransition; });
 
-// UNUSED EXPORTS: VCarouselTransition, VCarouselReverseTransition, VTabTransition, VTabReverseTransition, VMenuTransition, VFabTransition, VDialogTransition, VDialogBottomTransition, VDialogTopTransition, VScaleTransition, VScrollXTransition, VScrollXReverseTransition, VScrollYTransition, VScrollYReverseTransition, VSlideXReverseTransition, VSlideYTransition, VSlideYReverseTransition
+// UNUSED EXPORTS: VCarouselTransition, VCarouselReverseTransition, VTabTransition, VTabReverseTransition, VMenuTransition, VFabTransition, VDialogTransition, VDialogBottomTransition, VDialogTopTransition, VScrollXTransition, VScrollXReverseTransition, VScrollYTransition, VScrollYReverseTransition, VSlideXReverseTransition, VSlideYTransition, VSlideYReverseTransition
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/util/mergeData.js
 var mergeData = __webpack_require__(12);
@@ -11216,7 +11217,7 @@ const baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_8__[/* default *
     },
 
     computedTransition() {
-      return this.indeterminate ? _transitions__WEBPACK_IMPORTED_MODULE_1__[/* VFadeTransition */ "c"] : _transitions__WEBPACK_IMPORTED_MODULE_1__[/* VSlideXTransition */ "d"];
+      return this.indeterminate ? _transitions__WEBPACK_IMPORTED_MODULE_1__[/* VFadeTransition */ "c"] : _transitions__WEBPACK_IMPORTED_MODULE_1__[/* VSlideXTransition */ "e"];
     },
 
     isReversed() {
