@@ -20,6 +20,7 @@ You can directly use them in pages and other components without the need to impo
 - `<QuoteWidget>` | `<quote-widget>` (components/QuoteWidget.vue)
 - `<Search>` | `<search>` (components/Search.vue)
 - `<SkeletonCard>` | `<skeleton-card>` (components/SkeletonCard.vue)
+- `<TagsIndex>` | `<tags-index>` (components/TagsIndex.vue)
 - `<Template>` | `<template>` (components/Template.vue)
 - `<TopicsIndex>` | `<topics-index>` (components/TopicsIndex.vue)
 - `<VuetifyLogo>` | `<vuetify-logo>` (components/VuetifyLogo.vue)

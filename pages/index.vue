@@ -1,6 +1,6 @@
 <template>
   <v-container fluid class="">
-    <v-row>
+    <v-row class="mb-5 pb-5">
       <v-container>
         <v-row>
           <v-col>
@@ -380,10 +380,13 @@
             </v-row>
           </v-container>
         </v-row>
+        <v-row>
+          <TagsIndex />
+        </v-row>
       </v-container>
     </v-row>
 
-    <v-row>
+    <v-row class="d-none">
       <v-col xs="12" sm="12" md="12" lg="12" cols="12" class=" pa-0">
         <Contact />
       </v-col>
@@ -477,11 +480,6 @@ export default {
     this.blogs_load = true
     this.news_load = true
     this.posts_load = true
-
-    // await this.$axios.$get('/sanctum/csrf-cookie')
-    // const nuxt = await this.$axios.$get(`api/blog/page/1/item/5/tags/nuxt`)
-    // const nuxt = await this.$axios.$get(`api/blog/page/1/item/5`)
-    // this.nuxt = nuxt.data
 
     await this.$axios.$get('/sanctum/csrf-cookie')
     const res = await this.$axios.$get(`api/blog/page/1/item/3`)

@@ -1,4 +1,4 @@
-exports.ids = [67,20];
+exports.ids = [68,21];
 exports.modules = {
 
 /***/ 258:
@@ -274,7 +274,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 315:
+/***/ 316:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -498,7 +498,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "3ed8c480",
-  "7da4ba14"
+  "21c1934c"
   
 )
 
@@ -517,7 +517,7 @@ installComponents_default()(component, {VBtn: VBtn["a" /* default */],VCol: VCol
 
 /***/ }),
 
-/***/ 517:
+/***/ 521:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -660,14 +660,14 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "4e2c837b"
+  "17a7da7e"
   
 )
 
 /* harmony default export */ var _id = __webpack_exports__["default"] = (component.exports);
 
 /* nuxt-component-imports */
-installComponents_default()(component, {WorldRemindersCard: __webpack_require__(315).default})
+installComponents_default()(component, {WorldRemindersCard: __webpack_require__(316).default})
 
 
 /* vuetify-loader */

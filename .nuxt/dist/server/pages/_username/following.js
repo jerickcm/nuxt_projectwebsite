@@ -1,7 +1,7 @@
-exports.ids = [21];
+exports.ids = [22];
 exports.modules = {
 
-/***/ 492:
+/***/ 496:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -20,7 +20,7 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
   false,
   null,
   null,
-  "7e6c10fe"
+  "66c986c7"
   
 )
 

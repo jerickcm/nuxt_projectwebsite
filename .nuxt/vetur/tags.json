@@ -41,6 +41,9 @@
   "SkeletonCard": {
     "description": "Auto imported from components/SkeletonCard.vue"
   },
+  "TagsIndex": {
+    "description": "Auto imported from components/TagsIndex.vue"
+  },
   "Template": {
     "description": "Auto imported from components/Template.vue"
   },

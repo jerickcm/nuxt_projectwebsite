@@ -1,11 +1,11 @@
-exports.ids = [59];
+exports.ids = [60];
 exports.modules = {
 
-/***/ 333:
+/***/ 334:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(URL) {/* harmony import */ var _mixins_reservedusernames_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(441);
+/* WEBPACK VAR INJECTION */(function(URL) {/* harmony import */ var _mixins_reservedusernames_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(445);
 //
 //
 //
@@ -164,7 +164,7 @@ exports.modules = {
 
 /***/ }),
 
-/***/ 441:
+/***/ 445:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -177,7 +177,7 @@ const usernames = {
 
 /***/ }),
 
-/***/ 528:
+/***/ 532:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -192,7 +192,7 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./pages/profile/edit.vue?vue&type=template&id=133dc010&scoped=true&
 
 // EXTERNAL MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/profile/edit.vue?vue&type=script&lang=js&
-var editvue_type_script_lang_js_ = __webpack_require__(333);
+var editvue_type_script_lang_js_ = __webpack_require__(334);
 
 // CONCATENATED MODULE: ./pages/profile/edit.vue?vue&type=script&lang=js&
  /* harmony default export */ var profile_editvue_type_script_lang_js_ = (editvue_type_script_lang_js_["a" /* default */]); 
@@ -242,7 +242,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "133dc010",
-  "cf6ecdd4"
+  "43c10c90"
   
 )
 

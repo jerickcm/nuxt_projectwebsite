@@ -1,4 +1,4 @@
-exports.ids = [18];
+exports.ids = [19];
 exports.modules = {
 
 /***/ 258:
@@ -69,7 +69,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 /* harmony import */ var _VItemGroup_VItemGroup__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(59);
 /* harmony import */ var _mixins_mobile__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(76);
 /* harmony import */ var _directives_resize__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(38);
-/* harmony import */ var _directives_touch__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(110);
+/* harmony import */ var _directives_touch__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(109);
 /* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(2);
 // Styles
  // Components
@@ -774,7 +774,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 399:
+/***/ 402:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -965,7 +965,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "18369232"
+  "8393bd10"
   
 )
 

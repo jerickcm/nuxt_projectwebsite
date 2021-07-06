@@ -14,6 +14,7 @@ export { default as QuotesCard } from '../..\\components\\QuotesCard.vue'
 export { default as QuoteWidget } from '../..\\components\\QuoteWidget.vue'
 export { default as Search } from '../..\\components\\Search.vue'
 export { default as SkeletonCard } from '../..\\components\\SkeletonCard.vue'
+export { default as TagsIndex } from '../..\\components\\TagsIndex.vue'
 export { default as Template } from '../..\\components\\Template.vue'
 export { default as TopicsIndex } from '../..\\components\\TopicsIndex.vue'
 export { default as VuetifyLogo } from '../..\\components\\VuetifyLogo.vue'
@@ -40,6 +41,7 @@ export const LazyQuotesCard = import('../..\\components\\QuotesCard.vue' /* webp
 export const LazyQuoteWidget = import('../..\\components\\QuoteWidget.vue' /* webpackChunkName: "components/quote-widget" */).then(c => wrapFunctional(c.default || c))
 export const LazySearch = import('../..\\components\\Search.vue' /* webpackChunkName: "components/search" */).then(c => wrapFunctional(c.default || c))
 export const LazySkeletonCard = import('../..\\components\\SkeletonCard.vue' /* webpackChunkName: "components/skeleton-card" */).then(c => wrapFunctional(c.default || c))
+export const LazyTagsIndex = import('../..\\components\\TagsIndex.vue' /* webpackChunkName: "components/tags-index" */).then(c => wrapFunctional(c.default || c))
 export const LazyTemplate = import('../..\\components\\Template.vue' /* webpackChunkName: "components/template" */).then(c => wrapFunctional(c.default || c))
 export const LazyTopicsIndex = import('../..\\components\\TopicsIndex.vue' /* webpackChunkName: "components/topics-index" */).then(c => wrapFunctional(c.default || c))
 export const LazyVuetifyLogo = import('../..\\components\\VuetifyLogo.vue' /* webpackChunkName: "components/vuetify-logo" */).then(c => wrapFunctional(c.default || c))

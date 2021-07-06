@@ -14,6 +14,7 @@
     </v-row>
     <!-- Nuxt -->
     <v-row
+      v-if="load_nuxt == false"
       v-for="(i, ind) in Math.ceil(nuxt.length / 5)"
       :key="ind + 10"
       class="mt-2 pt-2 hidden-sm-and-down"
@@ -108,6 +109,7 @@
     </v-row>
 
     <v-row
+      v-if="load_nuxt == false"
       class="hidden-md-and-up"
       v-for="(i, ind) in Math.ceil(nuxt.length / 5)"
       :key="ind"
@@ -190,6 +192,7 @@
     <!-- Nuxt -->
     <!-- Laravel -->
     <v-row
+      v-if="load_laravel == false"
       v-for="(i, ind) in Math.ceil(laravel.length / 5)"
       :key="ind + 30"
       class="mt-4 pt-4 hidden-sm-and-down"
@@ -282,6 +285,7 @@
     </v-row>
 
     <v-row
+      v-if="load_laravel == false"
       class="hidden-md-and-up"
       v-for="(i, ind) in Math.ceil(laravel.length / 5)"
       :key="ind + 40"
@@ -366,6 +370,7 @@
     <!-- Laravel -->
     <!-- Vue -->
     <v-row
+      v-if="load_vue == false"
       v-for="(i, ind) in Math.ceil(vue.length / 5)"
       :key="ind + 30"
       class="mt-4 pt-4 hidden-sm-and-down"
@@ -457,6 +462,7 @@
     </v-row>
 
     <v-row
+      v-if="load_vue == false"
       class="hidden-md-and-up"
       v-for="(i, ind) in Math.ceil(vue.length / 5)"
       :key="ind + 40"
@@ -544,21 +550,30 @@ export default {
     nuxt: [],
     laravel: [],
     vue: [],
+    load_nuxt: false,
+    load_laravel: false,
+    load_vue: false,
     height: '200px'
   }),
   async fetch() {
+    this.load_nuxt = true
     await this.$axios.$get('/sanctum/csrf-cookie')
     const nuxt = await this.$axios.$get(`api/blog/page/1/item/5/tags/nuxt`)
+    this.load_nuxt = false
     this.nuxt = nuxt.data
 
+    this.load_laravel = true
     await this.$axios.$get('/sanctum/csrf-cookie')
     const laravel = await this.$axios.$get(
       `api/blog/page/1/item/5/tags/Laravel`
     )
+    this.load_laravel = false
     this.laravel = laravel.data
 
+    this.load_vue = true
     await this.$axios.$get('/sanctum/csrf-cookie')
     const vue = await this.$axios.$get(`api/blog/page/1/item/5/tags/vue3`)
+    this.load_vue = false
     this.vue = vue.data
   }
 }
