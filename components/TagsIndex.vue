@@ -27,10 +27,7 @@
                 :to="`/blog/tags/${itm.name}`"
                 color="blue"
                 class="white--text"
-                >{{ itm.name
-                }}<v-icon small color="white"
-                  >mdi-arrow-top-right-thick</v-icon
-                ></v-chip
+                >{{ itm.name }} ></v-chip
               >
             </v-chip-group>
           </v-card-text>

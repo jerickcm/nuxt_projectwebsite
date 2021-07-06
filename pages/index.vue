@@ -111,10 +111,7 @@
                           :key="index"
                           color="blue"
                           class="white--text"
-                          >{{ itm
-                          }}<v-icon small color="white"
-                            >mdi-arrow-top-right-thick</v-icon
-                          ></v-chip
+                          >{{ itm }}</v-chip
                         >
                       </v-chip-group>
 
@@ -245,10 +242,7 @@
                           :key="index"
                           color="blue"
                           class="white--text"
-                          >{{ itm
-                          }}<v-icon small color="white"
-                            >mdi-arrow-top-right-thick</v-icon
-                          ></v-chip
+                          >{{ itm }}</v-chip
                         >
                       </v-chip-group>
 
@@ -379,11 +373,8 @@
                           :key="index"
                           color="blue"
                           class="white--text"
-                          >{{ itm
-                          }}<v-icon small color="white"
-                            >mdi-arrow-top-right-thick</v-icon
-                          ></v-chip
-                        >
+                          >{{ itm }}
+                        </v-chip>
                       </v-chip-group>
 
                       <v-avatar
