@@ -7,24 +7,23 @@
     </v-row>
 
     <!-- Nuxt -->
-    
-    <v-row class="mt-2 pt-2 hidden-sm-and-down"  >
+
+    <v-row class="mt-2 pt-2 hidden-sm-and-down">
       <v-col>
-        <v-sheet class="d-flex "> 
-          <v-hover       
+        <v-sheet class="d-flex ">
+          <v-hover
             v-slot="{ hover }"
             open-delay="200"
             class="ml-5 mr-3 d-flex align-center flex-column "
           >
             <v-card
-               color="green"
               :elevation="hover ? 16 : 2"
               :class="{ 'on-hover': hover }"
-           
+              color="green"
               :height="height"
               :width="slider_left"
             >
-              <label class="justify-center pa- white--text ">Nuxt</label><br />
+              <label class="justify-center  white--text ">Nuxt</label><br />
               <div>
                 <v-img
                   class="justify-center"
@@ -48,106 +47,313 @@
             </v-card>
           </v-hover>
 
-            <v-hover v-slot="{ hover }" open-delay="200" v-for="(item, indx) in nuxt"
-                :key="indx"
-                class="pa-1"
+          <v-hover
+            v-slot="{ hover }"
+            open-delay="200"
+            v-for="(item, indx) in nuxt"
+            :key="indx"
+          >
+            <v-card
+              max-width="400"
+              :elevation="hover ? 16 : 2"
+              :class="{ 'on-hover': hover }"
+              :height="height"
+              :width="width"
+              class="mx-auto mr-1 ml-1"
+            >
+              <v-img
+                contain
+                v-if="item.image != null"
+                :src="item.image"
+                class="align-end"
+                aspect-ratio="1"
+                gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+                :height="height"
+                width="100%"
+              >
+                <nuxt-link
+                  class="nuxtlink"
+                  target="_blank"
+                  :to="{
+                    path: 'blog/' + item.slug
+                  }"
                 >
-                <div 
-                    :elevation="hover ? 16 : 2"
-                    :class="{ 'on-hover': hover }"
-                    height="200px"
-                    width="200px"
-                    class=" mr-1 ml-1 cover"
-                 >
-                  <img 
-                    height="200px"
-                    width="100%"
-                    :max-height="height"
-                 v-if="item.image != null" src="/images/default.jpg" ></img> 
-                  <img 
-                   
-                     width="100%"
-                     height="200px"
-                     :max-height="height"
-                v-else  src="/images/default.jpg"> </img>             
-                </div>
-<!--
-              <v-card            
-               :elevation="hover ? 16 : 2"
-                    :class="{ 'on-hover': hover }"
-                    max-width="400"
-                    :height="height"
-                    :width="width"
-               
-                class=" mr-1 ml-1"
-                >
-                <v-img
-                :max-height="height"
-                  style=" background-size:100% 100%;"
-                  
-                  v-if="item.image != null"
-                  :src="item.image"
-                  class="align-end"
-           
-                  gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-                  :height="height"
-                  width="100%"
-                >
-                  <nuxt-link
-                    class="nuxtlink"
-                    target="_blank"
-                    :to="{
-                      path: 'blog/' + item.slug
-                    }"
+                  <v-card-title
+                    color="blue"
+                    class="fs-1 white--text pa-0 ma-0 pl-1"
                   >
-                    <v-card-title
-                      color="blue"
-                      class="fs-1 white--text pa-0 ma-0 pl-1"
+                    {{ item.title
+                    }}<v-icon small color="white"
+                      >mdi-arrow-top-right-thick</v-icon
                     >
-                      {{ item.title
-                      }}<v-icon small color="white"
-                        >mdi-arrow-top-right-thick</v-icon
-                      >
-                    </v-card-title>
-                  </nuxt-link>
-                </v-img>
+                  </v-card-title>
+                </nuxt-link>
+              </v-img>
 
-                <v-img
-                  v-else
-                  contain
-                  width="100%"
-                  class="white--text align-end"
-                  :height="height"
-                  aspect-ratio="1"
-                  gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-                  src="/images/default.jpg"
+              <v-img
+                v-else
+                contain
+                width="100%"
+                class="white--text align-end"
+                :height="height"
+                aspect-ratio="1"
+                gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+                src="/images/default.jpg"
+              >
+                <nuxt-link
+                  class="nuxtlink"
+                  target="_blank"
+                  :to="{
+                    path: 'blog/' + item.slug
+                  }"
                 >
-                  <nuxt-link
-                    class="nuxtlink"
-                    target="_blank"
-                    :to="{
-                      path: 'blog/' + item.slug
-                    }"
+                  <v-card-title class="fs-1 white--text pa-0 ma-0 pl-1"
+                    >{{ item.title
+                    }}<v-icon small color="white"
+                      >mdi-arrow-top-right-thick</v-icon
+                    ></v-card-title
                   >
-                    <v-card-title class="fs-1 white--text pa-0 ma-0 pl-1"
-                      >{{ item.title
-                      }}<v-icon small color="white"
-                        >mdi-arrow-top-right-thick</v-icon
-                      ></v-card-title
+                </nuxt-link>
+              </v-img>
+            </v-card>
+          </v-hover>
+        </v-sheet>
+      </v-col>
+    </v-row>
+    <!-- Nuxt -->
+
+    <!-- Laravel -->
+    <v-row class="mt-2 pt-2 hidden-sm-and-down">
+      <v-col>
+        <v-sheet class="d-flex ">
+          <v-hover
+            v-slot="{ hover }"
+            open-delay="200"
+            class="ml-5 mr-3 d-flex align-center flex-column "
+          >
+            <v-card
+              :elevation="hover ? 16 : 2"
+              :class="{ 'on-hover': hover }"
+              color="orange"
+              :height="height"
+              :width="slider_left"
+            >
+              <label class="justify-center  white--text ">Laravel</label><br />
+              <div>
+                <v-img
+                  class="justify-center"
+                  src="/icons/laravel.svg"
+                  width="25px"
+                ></v-img>
+              </div>
+
+              <label class="justify-center pa-2 mt-auto">
+                <nuxt-link
+                  class="white--text nuxtlink"
+                  target="_blank"
+                  :to="{
+                    path: 'blog/tags/Laravel'
+                  }"
+                  >More<v-icon small color="white"
+                    >mdi-arrow-top-right-thick</v-icon
+                  >
+                </nuxt-link>
+              </label>
+            </v-card>
+          </v-hover>
+
+          <v-hover
+            v-slot="{ hover }"
+            open-delay="200"
+            v-for="(item, indx) in laravel"
+            :key="indx"
+          >
+            <v-card
+              max-width="400"
+              :elevation="hover ? 16 : 2"
+              :class="{ 'on-hover': hover }"
+              :height="height"
+              :width="width"
+              class="mx-auto mr-1 ml-1"
+            >
+              <v-img
+                contain
+                v-if="item.image != null"
+                :src="item.image"
+                class="align-end"
+                aspect-ratio="1"
+                gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+                :height="height"
+                width="100%"
+              >
+                <nuxt-link
+                  class="nuxtlink"
+                  target="_blank"
+                  :to="{
+                    path: 'blog/' + item.slug
+                  }"
+                >
+                  <v-card-title
+                    color="blue"
+                    class="fs-1 white--text pa-0 ma-0 pl-1"
+                  >
+                    {{ item.title
+                    }}<v-icon small color="white"
+                      >mdi-arrow-top-right-thick</v-icon
                     >
-                  </nuxt-link>
-                </v-img>
-              </v-card>
--->
-            </v-hover> 
-          </v-sheet>
-         
-        </v-col>         
+                  </v-card-title>
+                </nuxt-link>
+              </v-img>
+
+              <v-img
+                v-else
+                contain
+                width="100%"
+                class="white--text align-end"
+                :height="height"
+                aspect-ratio="1"
+                gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+                src="/images/default.jpg"
+              >
+                <nuxt-link
+                  class="nuxtlink"
+                  target="_blank"
+                  :to="{
+                    path: 'blog/' + item.slug
+                  }"
+                >
+                  <v-card-title class="fs-1 white--text pa-0 ma-0 pl-1"
+                    >{{ item.title
+                    }}<v-icon small color="white"
+                      >mdi-arrow-top-right-thick</v-icon
+                    ></v-card-title
+                  >
+                </nuxt-link>
+              </v-img>
+            </v-card>
+          </v-hover>
+        </v-sheet>
+      </v-col>
     </v-row>
 
-    <v-row  class="hidden-md-and-up"
-      :key="ind"
-    >
+    <!-- Laravel -->
+    <!-- Vue -->
+    <v-row class="mt-2 pt-2 hidden-sm-and-down">
+      <v-col>
+        <v-sheet class="d-flex ">
+          <v-hover
+            v-slot="{ hover }"
+            open-delay="200"
+            class="ml-5 mr-3 d-flex align-center flex-column "
+          >
+            <v-card
+              :elevation="hover ? 16 : 2"
+              :class="{ 'on-hover': hover }"
+              color="green"
+              :height="height"
+              :width="slider_left"
+            >
+              <label class="justify-center  white--text ">Vue</label><br />
+              <div>
+                <v-img
+                  class="justify-center"
+                  src="/icons/vue-js.svg"
+                  width="25px"
+                ></v-img>
+              </div>
+
+              <label class="justify-center pa-2 mt-auto">
+                <nuxt-link
+                  class="white--text nuxtlink"
+                  target="_blank"
+                  :to="{
+                    path: 'blog/tags/vue3'
+                  }"
+                  >More<v-icon small color="white"
+                    >mdi-arrow-top-right-thick</v-icon
+                  >
+                </nuxt-link>
+              </label>
+            </v-card>
+          </v-hover>
+
+          <v-hover
+            v-slot="{ hover }"
+            open-delay="200"
+            v-for="(item, indx) in vue"
+            :key="indx"
+          >
+            <v-card
+              max-width="400"
+              :elevation="hover ? 16 : 2"
+              :class="{ 'on-hover': hover }"
+              :height="height"
+              :width="width"
+              class="mx-auto mr-1 ml-1"
+            >
+              <v-img
+                contain
+                v-if="item.image != null"
+                :src="item.image"
+                class="align-end"
+                aspect-ratio="1"
+                gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+                :height="height"
+                width="100%"
+              >
+                <nuxt-link
+                  class="nuxtlink"
+                  target="_blank"
+                  :to="{
+                    path: 'blog/' + item.slug
+                  }"
+                >
+                  <v-card-title
+                    color="blue"
+                    class="fs-1 white--text pa-0 ma-0 pl-1"
+                  >
+                    {{ item.title
+                    }}<v-icon small color="white"
+                      >mdi-arrow-top-right-thick</v-icon
+                    >
+                  </v-card-title>
+                </nuxt-link>
+              </v-img>
+
+              <v-img
+                v-else
+                contain
+                width="100%"
+                class="white--text align-end"
+                :height="height"
+                aspect-ratio="1"
+                gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+                src="/images/default.jpg"
+              >
+                <nuxt-link
+                  class="nuxtlink"
+                  target="_blank"
+                  :to="{
+                    path: 'blog/' + item.slug
+                  }"
+                >
+                  <v-card-title class="fs-1 white--text pa-0 ma-0 pl-1"
+                    >{{ item.title
+                    }}<v-icon small color="white"
+                      >mdi-arrow-top-right-thick</v-icon
+                    ></v-card-title
+                  >
+                </nuxt-link>
+              </v-img>
+            </v-card>
+          </v-hover>
+        </v-sheet>
+      </v-col>
+    </v-row>
+
+    <!-- Vue -->
+
+    <v-row class="hidden-md-and-up" :key="ind">
       <v-col xs="12" sm="12" md="12" lg="4" xl="4" cols="12">
         <v-hover v-slot="{ hover }" open-delay="200">
           <v-card
@@ -184,9 +390,9 @@
         v-for="(item, indx) in nuxt"
         :key="indx"
       >
-        <v-card  class="mr-1 ml-1 cover">
+        <v-card class="mr-1 ml-1 cover">
           <v-img
-            
+            contain
             v-if="item.image != null"
             :src="item.image"
             class="align-end"
@@ -209,7 +415,6 @@
             </nuxt-link>
           </v-img>
           <v-img
-            
             v-else
             class="white--text align-end"
             aspect-ratio="2.3"
@@ -235,123 +440,7 @@
       </v-col>
     </v-row>
 
-    <!-- Nuxt -->
-
-    <!-- Laravel -->
-    <v-row class="mt-2 pt-2 hidden-sm-and-down"  >
-      <v-col>
-        <v-sheet class="d-flex "> 
-          <v-hover       
-            v-slot="{ hover }"
-            open-delay="200"
-            class="ml-5 mr-3 d-flex align-center flex-column "
-          >
-            <v-card
-            
-              :elevation="hover ? 16 : 2"
-              :class="{ 'on-hover': hover }"
-              color="orange"
-              :height="height"
-              :width="slider_left"
-            >
-              <label class="justify-center  white--text ">Laravel</label><br />
-              <div>
-                <v-img
-                  class="justify-center"
-                  src="/icons/laravel.svg"
-                  width="25px"
-                ></v-img>
-              </div>
-
-              <label class="justify-center pa-2 mt-auto">
-                <nuxt-link
-                  class="white--text nuxtlink"
-                  target="_blank"
-                  :to="{
-                    path: 'blog/tags/Laravel'
-                  }"
-                  >More<v-icon small color="white"
-                    >mdi-arrow-top-right-thick</v-icon
-                  >
-                </nuxt-link>
-              </label>
-            </v-card>
-          </v-hover>
-
-              <v-hover v-slot="{ hover }" open-delay="200" v-for="(item, indx) in laravel"
-                :key="indx">
-
-            <v-card
-               
-                max-width="400"
-                :elevation="hover ? 16 : 2"
-                :class="{ 'on-hover': hover }"
-                :height="height"
-                :width="width"
-                class="mx-auto mr-1 ml-1"
-              >
-                <v-img
-                  contain
-                  v-if="item.image != null"
-                  :src="item.image"
-                  class="align-end"
-                  aspect-ratio="1"
-                  gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-                  :height="height"
-                  width="100%"
-                >
-                  <nuxt-link
-                    class="nuxtlink"
-                    target="_blank"
-                    :to="{
-                      path: 'blog/' + item.slug
-                    }"
-                  >
-                    <v-card-title
-                      color="blue"
-                      class="fs-1 white--text pa-0 ma-0 pl-1"
-                    >
-                      {{ item.title
-                      }}<v-icon small color="white"
-                        >mdi-arrow-top-right-thick</v-icon
-                      >
-                    </v-card-title>
-                  </nuxt-link>
-                </v-img>
-
-                <v-img
-                  v-else
-                  contain
-                  width="100%"
-                  class="white--text align-end"
-                  :height="height"
-                  aspect-ratio="1"
-                  gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-                  src="/images/default.jpg"
-                >
-                  <nuxt-link
-                    class="nuxtlink"
-                    target="_blank"
-                    :to="{
-                      path: 'blog/' + item.slug
-                    }"
-                  >
-                    <v-card-title class="fs-1 white--text pa-0 ma-0 pl-1"
-                      >{{ item.title
-                      }}<v-icon small color="white"
-                        >mdi-arrow-top-right-thick</v-icon
-                      ></v-card-title
-                    >
-                  </nuxt-link>
-                </v-img>
-              </v-card>
-            </v-hover> 
-          </v-sheet>
-         
-        </v-col>         
-    </v-row>
-
-    <v-row  class="hidden-md-and-up" >
+    <v-row class="hidden-md-and-up">
       <v-col xs="12" sm="12" md="12" lg="4" xl="4" cols="12">
         <v-hover v-slot="{ hover }" open-delay="200">
           <v-card
@@ -438,125 +527,7 @@
         </v-card>
       </v-col>
     </v-row>
-    <!-- Laravel -->
-    <!-- Vue -->
-    <v-row class="mt-2 pt-2 hidden-sm-and-down"  >
-      <v-col>
-        <v-sheet class="d-flex "> 
-          <v-hover       
-            v-slot="{ hover }"
-            open-delay="200"
-            class="ml-5 mr-3 d-flex align-center flex-column "
-          >
-            <v-card
-            
-              :elevation="hover ? 16 : 2"
-              :class="{ 'on-hover': hover }"
-              color="green"
-              :height="height"
-              :width="slider_left"
-            >
-              <label class="justify-center  white--text ">Vue</label><br />
-              <div>
-                <v-img
-                  class="justify-center"
-                  src="/icons/vue-js.svg"
-                  width="25px"
-                ></v-img>
-              </div>
-
-              <label class="justify-center pa-2 mt-auto">
-                <nuxt-link
-                  class="white--text nuxtlink"
-                  target="_blank"
-                  :to="{
-                    path: 'blog/tags/vue3'
-                  }"
-                  >More<v-icon small color="white"
-                    >mdi-arrow-top-right-thick</v-icon
-                  >
-                </nuxt-link>
-              </label>
-            </v-card>
-          </v-hover>
-
-              <v-hover v-slot="{ hover }" open-delay="200" v-for="(item, indx) in vue"
-                :key="indx">
-
-            <v-card
-               
-                max-width="400"
-                :elevation="hover ? 16 : 2"
-                :class="{ 'on-hover': hover }"
-                :height="height"
-                :width="width"
-                class="mx-auto mr-1 ml-1"
-              >
-                <v-img
-                  contain
-                  v-if="item.image != null"
-                  :src="item.image"
-                  class="align-end"
-                  aspect-ratio="1"
-                  gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-                  :height="height"
-                  width="100%"
-                >
-                  <nuxt-link
-                    class="nuxtlink"
-                    target="_blank"
-                    :to="{
-                      path: 'blog/' + item.slug
-                    }"
-                  >
-                    <v-card-title
-                      color="blue"
-                      class="fs-1 white--text pa-0 ma-0 pl-1"
-                    >
-                      {{ item.title
-                      }}<v-icon small color="white"
-                        >mdi-arrow-top-right-thick</v-icon
-                      >
-                    </v-card-title>
-                  </nuxt-link>
-                </v-img>
-
-                <v-img
-                  v-else
-                  contain
-                  width="100%"
-                  class="white--text align-end"
-                  :height="height"
-                  aspect-ratio="1"
-                  gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-                  src="/images/default.jpg"
-                >
-                  <nuxt-link
-                    class="nuxtlink"
-                    target="_blank"
-                    :to="{
-                      path: 'blog/' + item.slug
-                    }"
-                  >
-                    <v-card-title class="fs-1 white--text pa-0 ma-0 pl-1"
-                      >{{ item.title
-                      }}<v-icon small color="white"
-                        >mdi-arrow-top-right-thick</v-icon
-                      ></v-card-title
-                    >
-                  </nuxt-link>
-                </v-img>
-              </v-card>
-            </v-hover> 
-          </v-sheet>
-         
-        </v-col>         
-    </v-row>
-
-    <v-row
-      class="hidden-md-and-up"
-   
-    >
+    <v-row class="hidden-md-and-up">
       <v-col xs="12" sm="12" md="12" lg="4" xl="4" cols="12">
         <v-hover v-slot="{ hover }" open-delay="200">
           <v-card
@@ -643,7 +614,6 @@
         </v-card>
       </v-col>
     </v-row>
-    <!-- Vue -->
   </v-container>
 </template>
 <script>

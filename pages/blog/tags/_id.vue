@@ -50,10 +50,18 @@ export default {
   },
   middleware: 'auth',
   auth: false,
-  head: () => ({
-    title: 'Blog',
-    meta: [{ hid: 'Blog', name: 'Blog', content: 'Blog Article Page' }]
-  }),
+  head() {
+    return {
+      title: 'Blog ',
+      meta: [
+        {
+          hid: 'Blog ',
+          name: 'Blog ',
+          content: 'Relevent Personal Blogs about programming and events'
+        }
+      ]
+    }
+  },
   async asyncData({ $axios, error, params }) {
     await $axios.$get('/sanctum/csrf-cookie')
     const res = await $axios.$get(`api/blog/page/1/item/10/tags/${params.id}`)

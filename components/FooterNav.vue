@@ -67,7 +67,7 @@
               >mdi-arrow-top-right-thick</v-icon
             ></label
           >
-          <a href="https://domains.google/" class="pt-5 mt-5">
+          <a href="https://domains.google/" target="_blank" class="pt-5 mt-5">
             <v-img style="width:99px" src="/images/google domain.svg"></v-img>
           </a>
         </div>
@@ -78,7 +78,7 @@
               >mdi-arrow-top-right-thick</v-icon
             ></label
           >
-          <a href="https://letsencrypt.org/">
+          <a href="https://letsencrypt.org/" target="_blank">
             <v-img
               style="width:99px"
               src="/images/letsencrypt-logo-horizontal.svg"
