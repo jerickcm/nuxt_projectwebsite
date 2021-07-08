@@ -10,6 +10,16 @@
           >Manage Profile</v-btn
         >
       </Dashboard>
+
+      <Dashboard>
+        <h2 slot="menu_name">BLOG MENU</h2>
+        <v-btn to="/blog/create" slot="create_menu" class="green white--text"
+          >Create BLOG</v-btn
+        >
+        <v-btn to="/blog/manage" slot="view_menu" class="blue white--text"
+          >Manage BLOG</v-btn
+        >
+      </Dashboard>
     </v-sheet>
   </v-container>
 </template>
@@ -26,7 +36,6 @@ export default {
     }
   },
   async created() {
-    // async fetch() {
     await this.$axios.$get('/sanctum/csrf-cookie')
 
     if (this.$auth.state['strategy'] == 'laravelSanctum') {

@@ -60,7 +60,34 @@
                   </template></v-col
                 >
               </v-row>
-
+              <v-row>
+                <v-col cols="12">
+                  <v-combobox
+                    v-model="form_tags"
+                    :items="items"
+                    label="Tags"
+                    multiple
+                    chips
+                  >
+                    <template v-slot:selection="data">
+                      <v-chip
+                        :key="JSON.stringify(data.item)"
+                        v-bind="data.attrs"
+                        :input-value="data.selected"
+                        :disabled="data.disabled"
+                        @click:close="data.parent.selectItem(data.item)"
+                      >
+                        <v-avatar
+                          class="accent white--text"
+                          left
+                          v-text="data.item.slice(0, 1).toUpperCase()"
+                        ></v-avatar>
+                        {{ data.item }}
+                      </v-chip>
+                    </template>
+                  </v-combobox>
+                </v-col>
+              </v-row>
               <v-row>
                 <v-col lg="4">
                   <input
@@ -86,6 +113,7 @@
                 </v-col>
                 <v-spacer></v-spacer>
               </v-row>
+
               <v-row
                 ><v-col class="">
                   <label for class="black--text">Content</label> <br />
@@ -118,7 +146,11 @@
         </v-dialog>
 
         <v-card-title>
-          Post Table
+          Blog Table
+          <v-spacer></v-spacer>
+          <v-spacer></v-spacer>
+          <v-spacer></v-spacer>
+          <v-spacer></v-spacer>
           <v-spacer></v-spacer>
           <v-text-field
             v-model="search"
@@ -128,6 +160,8 @@
             hide-details
             @change="getDataFromApi"
           ></v-text-field>
+          <v-spacer></v-spacer>
+          <v-btn color="primary" to="/blog/create">Create</v-btn>
         </v-card-title>
         <v-data-table
           :headers="headers"
@@ -188,6 +222,7 @@
 </template>
 <script>
 import juice from 'juice'
+import { admin } from '~/mixins/admin_pages.js'
 import ckeditor5const from '~/mixins/ckeditor5const'
 import { validationMixin } from 'vuelidate'
 import { required } from 'vuelidate/lib/validators'
@@ -201,14 +236,15 @@ const url = process.env.NODE_ENV === 'development' ? dev : prod
 
 var timezone = process.env.TIMEZONE
 export default {
-  middleware: 'auth',
-  mixins: [validationMixin],
+  mixins: [validationMixin, admin],
 
   head: () => ({
-    title: 'Post Datatable'
+    title: 'Blog Datatable'
   }),
 
   data: () => ({
+    form_tags: [],
+    items: [],
     headers: [
       {
         text: 'No',
@@ -304,6 +340,13 @@ export default {
       val || this.closeDelete()
     }
   },
+  async fetch() {
+    await this.$axios.$get('/sanctum/csrf-cookie')
+    let response = await this.$axios.$get('api/blog/tags/data')
+    for (const [key, value] of Object.entries(response.data)) {
+      this.items = [...this.items, value.name]
+    }
+  },
   mounted() {
     this.getDataFromApi()
   },
@@ -346,7 +389,7 @@ export default {
       this.form_title = this.tabledata[this.tabledata.indexOf(item)].title
       this.form_image = this.tabledata[this.tabledata.indexOf(item)].image
       this.form_content = this.tabledata[this.tabledata.indexOf(item)].content
-
+      this.form_tags = this.tabledata[this.tabledata.indexOf(item)].tags
       this.form_publish = this.tabledata[
         this.tabledata.indexOf(item)
       ].publishvalue
@@ -370,6 +413,7 @@ export default {
         ckeditor5const.styles
       )
 
+      payload.append('tags', this.form_tags)
       payload.append('post_id', this.tabledata[this.editedIndex].id)
       payload.append('title', this.form_title)
       payload.append('content', this.form_content)
@@ -378,13 +422,13 @@ export default {
 
       try {
         this.$axios
-          // .$post('api/post/update', payload, {
           .$post(`api/blog/update/${table_id}`, payload, {
             headers: {
               'Content-Type': 'multipart/form-data'
             }
           })
           .then(res => {
+            this.tabledata[this.editedIndex].tags = this.form_tags
             this.tabledata[this.editedIndex].title = this.form_title
             this.tabledata[this.editedIndex].content = this.form_content
             this.tabledata[this.editedIndex].publish =
@@ -399,7 +443,7 @@ export default {
             this.dialog = false
             this.form_publish = ''
             this.image_preview = ''
-
+            this.$fetch()
             NProgress.done()
           })
           .catch(error => {
@@ -457,7 +501,8 @@ export default {
               publishvalue: value.publish,
               image: value.image,
               created_at: value.human_date,
-              ckeditor_log: value.ckeditor_log
+              ckeditor_log: value.ckeditor_log,
+              tags: value.tags
             })
             rowcount++
           }

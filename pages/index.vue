@@ -33,7 +33,7 @@
                 <nuxt-link to="/blog">
                   <h2 class="ma-0 mt-0 pt-0 orange--text text--darken-5">
                     Blogs<v-icon color="orange" large>mdi-menu-right</v-icon>
-                    ({{ blog_content }})
+                    ({{ blog_content }} articles)
                   </h2>
                 </nuxt-link>
               </v-col>
@@ -166,7 +166,9 @@
             </v-row>
             <v-row>
               <v-col class="ma-0 mt-0 pt-0">
-                <h2 class="ma-0 mt-0 pt-0 blue--text ">News</h2>
+                <h2 class="ma-0 mt-0 pt-0 blue--text ">
+                  News ({{ news_content }} articles)
+                </h2>
               </v-col>
             </v-row>
             <v-row
@@ -297,7 +299,9 @@
             </v-row>
             <v-row>
               <v-col class="ma-0 mt-0 pt-0">
-                <h2 class="ma-0 mt-0 pt-0 red--text text-darken-5">Post</h2>
+                <h2 class="ma-0 mt-0 pt-0 red--text text-darken-5">
+                  Post ({{ posts_content }} articles)
+                </h2>
               </v-col>
             </v-row>
             <v-row
@@ -515,7 +519,9 @@ export default {
     model: 6,
     rounded: ['0', 'sm', 'md', 'lg', 'xl', 'pill', 'circle'],
     links: [],
-    blog_content: 0
+    blog_content: 0,
+    posts_content: 0,
+    news_content: 0
   }),
   async fetch() {
     this.blogs_load = true
@@ -527,15 +533,17 @@ export default {
     this.blogs_load = false
     this.content = res.data
     this.blog_content = res.total
+
     await this.$axios.$get('/sanctum/csrf-cookie')
     const news = await this.$axios.$get(`api/news/page/1/item/3`)
     this.news_load = false
     this.news = news.data
-
+    this.news_content = news.total
     await this.$axios.$get('/sanctum/csrf-cookie')
     const posts = await this.$axios.$get(`api/post/page/1/item/3`)
     this.posts_load = false
     this.posts = posts.data
+    this.posts_content = posts.total
   },
   layout: 'default',
   methods: {

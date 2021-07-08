@@ -159,14 +159,24 @@ installComponents_default()(component, {VCard: VCard["a" /* default */],VCardTex
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/dashboard/index.vue?vue&type=template&id=3ae811ed&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-container',{staticClass:"grey ligthen-3 pa-0 ma-0",attrs:{"fluid":"","min-height":"800vh"}},[_c('v-sheet',{staticClass:"blue ligthen-3 pa-5 pt-10 pb-10",attrs:{"min-height":"200vh"}},[_c('DashTitle',{attrs:{"Dashboard":"Dashboard","to":"/dashboard"}}),_vm._v(" "),_c('Dashboard',[_c('h2',{attrs:{"slot":"menu_name"},slot:"menu_name"},[_vm._v("Profile MENU")]),_vm._v(" "),_c('v-btn',{staticClass:"blue white--text",attrs:{"slot":"view_menu","to":"/profile/edit"},slot:"view_menu"},[_vm._v("Manage Profile")])],1)],1)],1)}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/dashboard/index.vue?vue&type=template&id=1a4454fc&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-container',{staticClass:"grey ligthen-3 pa-0 ma-0",attrs:{"fluid":"","min-height":"800vh"}},[_c('v-sheet',{staticClass:"blue ligthen-3 pa-5 pt-10 pb-10",attrs:{"min-height":"200vh"}},[_c('DashTitle',{attrs:{"Dashboard":"Dashboard","to":"/dashboard"}}),_vm._v(" "),_c('Dashboard',[_c('h2',{attrs:{"slot":"menu_name"},slot:"menu_name"},[_vm._v("Profile MENU")]),_vm._v(" "),_c('v-btn',{staticClass:"blue white--text",attrs:{"slot":"view_menu","to":"/profile/edit"},slot:"view_menu"},[_vm._v("Manage Profile")])],1),_vm._v(" "),_c('Dashboard',[_c('h2',{attrs:{"slot":"menu_name"},slot:"menu_name"},[_vm._v("BLOG MENU")]),_vm._v(" "),_c('v-btn',{staticClass:"green white--text",attrs:{"slot":"create_menu","to":"/blog/create"},slot:"create_menu"},[_vm._v("Create BLOG")]),_vm._v(" "),_c('v-btn',{staticClass:"blue white--text",attrs:{"slot":"view_menu","to":"/blog/manage"},slot:"view_menu"},[_vm._v("Manage BLOG")])],1)],1)],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./pages/dashboard/index.vue?vue&type=template&id=3ae811ed&
+// CONCATENATED MODULE: ./pages/dashboard/index.vue?vue&type=template&id=1a4454fc&
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/dashboard/index.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -196,7 +206,6 @@ var staticRenderFns = []
   },
 
   async created() {
-    // async fetch() {
     await this.$axios.$get('/sanctum/csrf-cookie');
 
     if (this.$auth.state['strategy'] == 'laravelSanctum') {} else {
