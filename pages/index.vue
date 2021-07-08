@@ -30,9 +30,12 @@
             </v-row>
             <v-row>
               <v-col class="ma-0 mt-0 pt-0">
-                <h2 class="ma-0 mt-0 pt-0 orange--text text--darken-5">
-                  Blogs
-                </h2>
+                <nuxt-link to="/blog">
+                  <h2 class="ma-0 mt-0 pt-0 orange--text text--darken-5">
+                    Blogs<v-icon color="orange" large>mdi-menu-right</v-icon>
+                    ({{ blog_content }})
+                  </h2>
+                </nuxt-link>
               </v-col>
             </v-row>
             <v-row
@@ -511,7 +514,8 @@ export default {
     title: '',
     model: 6,
     rounded: ['0', 'sm', 'md', 'lg', 'xl', 'pill', 'circle'],
-    links: []
+    links: [],
+    blog_content: 0
   }),
   async fetch() {
     this.blogs_load = true
@@ -522,7 +526,7 @@ export default {
     const res = await this.$axios.$get(`api/blog/page/1/item/3`)
     this.blogs_load = false
     this.content = res.data
-
+    this.blog_content = res.total
     await this.$axios.$get('/sanctum/csrf-cookie')
     const news = await this.$axios.$get(`api/news/page/1/item/3`)
     this.news_load = false
