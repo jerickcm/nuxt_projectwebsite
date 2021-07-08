@@ -79,57 +79,6 @@ export default {
           name: 'Blog',
           content: 'Blog' + this.title
         }
-        // {
-        //   hid: 'twitter:title',
-        //   name: 'twitter:title',
-        //   content: this.title
-        // },
-        // {
-        //   hid: 'twitter:description',
-        //   name: 'twitter:description',
-        //   content: this.title
-        // },
-        // {
-        //   hid: 'twitter:image',
-        //   name: 'twitter:image',
-        //   content: this.image
-        // },
-        // {
-        //   hid: 'twitter:image:alt',
-        //   name: 'twitter:image:alt',
-        //   content: this.title
-        // },
-        // {
-        //   hid: 'og:title',
-        //   property: 'og:title',
-        //   content: this.title
-        // },
-        // {
-        //   hid: 'og:description',
-        //   property: 'og:description',
-        //   content: this.title
-        // },
-        // {
-        //   hid: 'og:image',
-        //   property: 'og:image',
-        //   content: this.image
-        // },
-        // {
-        //   hid: 'og:image:secure_url',
-        //   property: 'og:image:secure_url',
-        //   content: this.image
-        // },
-        // {
-        //   hid: 'og:image:alt',
-        //   property: 'og:image:alt',
-        //   content: this.title
-        // },
-        // { hid: 'fb:app_id', name: 'fb:app_id', content: fb_id },
-        // {
-        //   hid: 'twitter:site',
-        //   name: 'twitter:site',
-        //   content: 'https://twitter.com/InhinyeruC'
-        // }
       ]
     }
   },
@@ -145,15 +94,19 @@ export default {
     pageload: true
   }),
   async asyncData({ $axios, error, params }) {
-    await $axios.$get('/sanctum/csrf-cookie')
-    let response = await $axios.$get(`api/blog/${params.id}`)
-    return {
-      posts: response.data[0],
-      pageload: false,
-      slug: params.slug,
-      title: response.data[0].title,
-      tags: response.data[0].tags,
-      image: response.data[0].image
+    try {
+      await $axios.$get('/sanctum/csrf-cookie')
+      let response = await $axios.$get(`api/blog/${params.id}`)
+      return {
+        posts: response.data[0],
+        pageload: false,
+        slug: params.slug,
+        title: response.data[0].title,
+        tags: response.data[0].tags,
+        image: response.data[0].image
+      }
+    } catch (err) {
+      error({ statusCode: 500, message: 'Page not found' })
     }
   },
   computed: {

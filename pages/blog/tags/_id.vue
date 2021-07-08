@@ -63,11 +63,15 @@ export default {
     }
   },
   async asyncData({ $axios, error, params }) {
-    await $axios.$get('/sanctum/csrf-cookie')
-    const res = await $axios.$get(`api/blog/page/1/item/10/tags/${params.id}`)
-    return {
-      content: res.data,
-      length: res.data.length
+    try {
+      await $axios.$get('/sanctum/csrf-cookie')
+      const res = await $axios.$get(`api/blog/page/1/item/10/tags/${params.id}`)
+      return {
+        content: res.data,
+        length: res.data.length
+      }
+    } catch (err) {
+      error({ statusCode: 500, message: 'Page not found' })
     }
   },
   data: () => ({

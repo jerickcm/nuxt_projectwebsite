@@ -12,10 +12,12 @@
             v-if="profile['details'].cover_photo"
             :src="profile['details'].cover_photo"
           ></v-img>
-          <v-img
-            v-if="profile['details'].profile_picture"
-            :src="profile['details'].profile_picture"
-          ></v-img>
+          <v-avatar width="37">
+            <v-img
+              v-if="profile['details'].profile_picture"
+              :src="profile['details'].profile_picture"
+            ></v-img>
+          </v-avatar>
           <v-card-text>
             <span class="fs-1-5">{{ profile.name }}</span
             ><br />
@@ -61,7 +63,12 @@
 
 <script>
 export default {
-  auth: false,
+  // props: {
+  //   error: {
+  //     type: Object,
+  //     default: null
+  //   }
+  // },
   head() {
     return {
       title: 'Profile ' + this.username,
@@ -74,20 +81,34 @@ export default {
       ]
     }
   },
+
   data() {
     return {
+      pageNotFound: '404 Not Found',
+      otherError: 'An error occurred',
       loading: false,
-      profile: [],
-      pp: 'test'
+      profile: []
     }
   },
   async watch() {},
   async asyncData({ $axios, error, params }) {
-    await $axios.$get('/sanctum/csrf-cookie')
-    let response = await $axios.$get(
-      `api/user_details/username/${params.username}`
-    )
-    return { profile: response.user }
+    try {
+      await $axios.$get('/sanctum/csrf-cookie')
+      let response = await $axios.$get(
+        `api/user_details/username/${params.username}`
+      )
+      return { profile: response.user }
+    } catch (error1) {
+      // console.log(this.error.statusCode)
+      error({ statusCode: 500, message: 'Page not found' })
+    }
+  },
+  async afetch() {
+    // await this.$axios.$get('/sanctum/csrf-cookie')
+    // let response = await this.$axios.$get(
+    //   `api/user_details/username/${this.$route.params.username}`
+    // )
+    // this.profile = response.user
   },
   computed: {
     username() {
@@ -98,7 +119,9 @@ export default {
     }
   },
   methods: {},
-  mounted() {},
+  async mounted() {
+    // return { profile: response.user }
+  },
   components: {},
   watch: {}
 }

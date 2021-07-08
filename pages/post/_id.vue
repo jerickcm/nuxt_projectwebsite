@@ -80,14 +80,18 @@ export default {
     console.log('mounted')
   },
   async asyncData({ $axios, error, params }) {
-    await $axios.$get('/sanctum/csrf-cookie')
-    let response = await $axios.$get(`api/post/slug/${params.id}`)
-    return {
-      posts: response.data[0],
-      pageload: false,
-      slug: params.slug,
-      title: response.data[0].title,
-      image: response.data[0].image
+    try {
+      await $axios.$get('/sanctum/csrf-cookie')
+      let response = await $axios.$get(`api/post/slug/${params.id}`)
+      return {
+        posts: response.data[0],
+        pageload: false,
+        slug: params.slug,
+        title: response.data[0].title,
+        image: response.data[0].image
+      }
+    } catch (err) {
+      error({ statusCode: 500, message: 'Page not found' })
     }
   },
   async created() {},
