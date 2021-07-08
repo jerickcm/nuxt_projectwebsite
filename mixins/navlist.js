@@ -16,17 +16,17 @@ export const navlist = {
         icons: 'mdi-notebook',
         label: 'ARTICLES',
         link: '/blog'
-      },
+      }
       // {
       //   icons: 'mdi-comment-quote-outline',
       //   label: ' QUOTES ',
       //   link: '/quotes'
       // },
-      {
-        icons: 'mdi-earth',
-        label: 'REMINDERS',
-        link: '/world-reminders'
-      }
+      // {
+      //   icons: 'mdi-earth',
+      //   label: 'REMINDERS',
+      //   link: '/world-reminders'
+      // }
     ]
   })
 }

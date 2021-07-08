@@ -53,13 +53,13 @@ export default function (ctx, inject) {
     "authorization": "https://facebook.com/v2.12/dialog/oauth",
     "userInfo": "https://graph.facebook.com/v6.0/me?fields=id,name,picture{url},email"
   },
-  "clientId": "141292091328620",
+  "clientId": "134187988811148",
   "name": "facebook"
 }))
 
   // github
   $auth.registerStrategy('github', new Oauth2Scheme($auth, {
-  "clientId": "b916f0145cfe505852e1",
+  "clientId": "9dc2d0876cb49c4b4027",
   "name": "github",
   "endpoints": {
     "authorization": "https://github.com/login/oauth/authorize",
@@ -95,7 +95,7 @@ export default function (ctx, inject) {
 
   // laravelSanctum
   $auth.registerStrategy('laravelSanctum', new CookieScheme($auth, {
-  "url": "https://backend.inhinyeru.com",
+  "url": "http://localhost:3001",
   "endpoints": {
     "csrf": {
       "withCredentials": true,
@@ -104,7 +104,7 @@ export default function (ctx, inject) {
         "Content-Type": "application/json",
         "Accept": "application/json"
       },
-      "url": "https://backend.inhinyeru.com/sanctum/csrf-cookie"
+      "url": "http://localhost:3001/sanctum/csrf-cookie"
     },
     "login": {
       "withCredentials": true,
@@ -113,7 +113,7 @@ export default function (ctx, inject) {
         "Content-Type": "application/json",
         "Accept": "application/json"
       },
-      "url": "https://backend.inhinyeru.com/api/login"
+      "url": "http://localhost:3001/api/login"
     },
     "logout": {
       "withCredentials": true,
@@ -122,7 +122,7 @@ export default function (ctx, inject) {
         "Content-Type": "application/json",
         "Accept": "application/json"
       },
-      "url": "https://backend.inhinyeru.com/api/logout"
+      "url": "http://localhost:3001/api/logout"
     },
     "user": {
       "withCredentials": true,
@@ -131,7 +131,7 @@ export default function (ctx, inject) {
         "Content-Type": "application/json",
         "Accept": "application/json"
       },
-      "url": "https://backend.inhinyeru.com/api/user"
+      "url": "http://localhost:3001/api/user"
     }
   },
   "name": "laravelSanctum",

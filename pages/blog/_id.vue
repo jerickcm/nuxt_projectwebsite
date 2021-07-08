@@ -47,8 +47,8 @@
           </v-card-title>
           <v-card-text class="">
             <span>Author : {{ posts['name'] }}</span> <br />
-            <span>Email : {{ posts['email'] }}</span
-            ><br />
+            <!-- <span>Email : {{ posts['email'] }}</span> -->
+            <br />
             <span>Date : {{ posts['human_date'] }}</span>
             <v-sheet
               v-html="posts['content']"
