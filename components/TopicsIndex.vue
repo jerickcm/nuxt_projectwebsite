@@ -6,6 +6,14 @@
       </v-col>
     </v-row>
 
+    <v-row>
+      <v-col class="ma-0 mt-0 pt-0">
+        <h2 class="ma-0 mt-0 pt-0 green--text text--darken-5">
+          Featured Topics
+        </h2>
+      </v-col>
+    </v-row>
+
     <!-- Nuxt -->
 
     <v-row class="mt-2 pt-2 hidden-sm-and-down">
@@ -80,7 +88,7 @@
                 >
                   <v-card-title
                     color="blue"
-                    class="fs-1 white--text pa-0 ma-0 pl-1"
+                    class="lh-1 fs-1 white--text pa-0 ma-0 pl-1 "
                   >
                     {{ item.title
                     }}<v-icon small color="white"
@@ -107,7 +115,7 @@
                     path: 'blog/' + item.slug
                   }"
                 >
-                  <v-card-title class="fs-1 white--text pa-0 ma-0 pl-1"
+                  <v-card-title class="lh-1 fs-1 white--text pa-0 ma-0 pl-1"
                     >{{ item.title
                     }}<v-icon small color="white"
                       >mdi-arrow-top-right-thick</v-icon
@@ -195,7 +203,7 @@
                 >
                   <v-card-title
                     color="blue"
-                    class="fs-1 white--text pa-0 ma-0 pl-1"
+                    class="lh-1 fs-1 white--text pa-0 ma-0 pl-1"
                   >
                     {{ item.title
                     }}<v-icon small color="white"
@@ -222,7 +230,7 @@
                     path: 'blog/' + item.slug
                   }"
                 >
-                  <v-card-title class="fs-1 white--text pa-0 ma-0 pl-1"
+                  <v-card-title class="lh-1 fs-1 white--text pa-0 ma-0 pl-1"
                     >{{ item.title
                     }}<v-icon small color="white"
                       >mdi-arrow-top-right-thick</v-icon
@@ -310,7 +318,7 @@
                 >
                   <v-card-title
                     color="blue"
-                    class="fs-1 white--text pa-0 ma-0 pl-1"
+                    class="lh-1 fs-1 white--text pa-0 ma-0 pl-1"
                   >
                     {{ item.title
                     }}<v-icon small color="white"
@@ -337,7 +345,7 @@
                     path: 'blog/' + item.slug
                   }"
                 >
-                  <v-card-title class="fs-1 white--text pa-0 ma-0 pl-1"
+                  <v-card-title class="lh-1 fs-1 white--text pa-0 ma-0 pl-1"
                     >{{ item.title
                     }}<v-icon small color="white"
                       >mdi-arrow-top-right-thick</v-icon
@@ -353,7 +361,7 @@
 
     <!-- Vue -->
 
-    <v-row class="hidden-md-and-up" :key="ind">
+    <v-row class="hidden-md-and-up">
       <v-col xs="12" sm="12" md="12" lg="4" xl="4" cols="12">
         <v-hover v-slot="{ hover }" open-delay="200">
           <v-card
@@ -527,6 +535,7 @@
         </v-card>
       </v-col>
     </v-row>
+
     <v-row class="hidden-md-and-up">
       <v-col xs="12" sm="12" md="12" lg="4" xl="4" cols="12">
         <v-hover v-slot="{ hover }" open-delay="200">

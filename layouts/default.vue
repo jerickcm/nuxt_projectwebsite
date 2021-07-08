@@ -436,4 +436,7 @@ export default {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+.lh-1 {
+  line-height: 1;
+}
 </style>

@@ -9,11 +9,14 @@
                 INHINYERU.com - Research and Development
               </h1>
               <p class="blue--text text--darken-4">
-                This website features are latest code fixes, tutorials and
-                reviews, news about technology and programming also includes
-                programming quotes and world event anniversaries. May also
-                include personal blogs and top 10 - 100 reviews of the authors
-                favorite things and current researches.
+                This website is a build and blog website, where authors
+                encounter problems and its solutions in coding shared with the
+                development community of students , enthusiast and
+                professionals. This website features are latest code fixes,
+                tutorials and reviews, news about technology and programming
+                also includes programming quotes and world event anniversaries.
+                May also include personal blogs and top 10 - 100 reviews of the
+                authors favorite things and current researches.
               </p>
             </v-card>
           </v-col>

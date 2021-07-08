@@ -8,7 +8,7 @@
     <v-row>
       <v-col class="ma-0 mt-0 pt-0">
         <h2 color="brown" class="brown--text ma-0 mt-0 pt-0 ">
-          Tags
+          Tags ({{ total_tags }})
         </h2>
       </v-col>
     </v-row>
@@ -40,6 +40,7 @@ export default {
   data: () => ({
     tags: [],
     load_tags: false,
+    total_tags: 0,
     height: '200px'
   }),
   async mounted() {
@@ -48,6 +49,7 @@ export default {
     const tags = await this.$axios.$get(`api/tags`)
     this.load_tags = false
     this.tags = tags.data
+    this.total_tags = tags.total
   },
   async fetch() {}
 }

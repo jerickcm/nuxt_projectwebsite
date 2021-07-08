@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row class="">
-      <v-col xs="12" sm="12" md="12" lg="8" xl="8" class="">
+      <v-col xs="12" sm="12" md="12" lg="8" xl="8" class="" cols="12">
         <BlogCard
           :content="content"
           :length="length"
@@ -9,7 +9,7 @@
           @next-article="nextArticle"
         />
       </v-col>
-      <v-col xs="12" sm="12" md="12" lg="4" xl="4" class="">
+      <v-col xs="12" sm="12" md="12" lg="4" xl="4" class="" cols="12">
         <v-container>
           <v-row>
             <v-col>
