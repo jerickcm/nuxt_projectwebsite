@@ -41,112 +41,9 @@
                 </nuxt-link>
               </v-col>
             </v-row>
-            <v-row
-              color="blue"
-              v-for="(i, ind) in Math.ceil(content.length / 3)"
-              :key="ind"
-            >
-              <v-col
-                xs="12"
-                sm="12"
-                md="12"
-                lg="4"
-                xl="4"
-                cols="12"
-                v-for="(item, indx) in content.slice((i - 1) * 3, i * 3)"
-                :key="indx"
-              >
-                <v-hover v-slot="{ hover }" open-delay="200">
-                  <v-card
-                    :elevation="hover ? 16 : 2"
-                    :class="{ 'on-hover': hover }"
-                    outlined
-                    shaped
-                    tile
-                    class="pa-2 ma-0"
-                  >
-                    <nuxt-link
-                      class="nuxtlink"
-                      target="_blank"
-                      :to="{
-                        path: 'blog/' + item.slug
-                      }"
-                    >
-                      <v-img
-                        contain
-                        v-if="item.image != null"
-                        aspect-ratio="2.3"
-                        :src="item.image"
-                      >
-                      </v-img>
 
-                      <v-img
-                        contain
-                        v-else
-                        aspect-ratio="2.3"
-                        src="/images/default.jpg"
-                      >
-                      </v-img>
-                    </nuxt-link>
+            <IndexWidget :content="content" path="/blog" />
 
-                    <v-card-title class="pa-0 ma-0  adj-title">
-                      <h2 color="dark" class="title1 fs-1 line-clamp-2">
-                        <nuxt-link
-                          class="nuxtlink"
-                          target="_blank"
-                          :to="{
-                            path: 'blog/' + item.slug
-                          }"
-                        >
-                          {{ item.title
-                          }}<v-icon small color="blue"
-                            >mdi-arrow-top-right-thick</v-icon
-                          >
-                        </nuxt-link>
-                      </h2>
-                    </v-card-title>
-                    <v-card-text class="pa-0 ma-0">
-                      <v-chip-group
-                        v-model="selection"
-                        active-class="deep-purple accent-4 white--text"
-                        column
-                      >
-                        <v-chip
-                          :to="`/blog/tags/${itm}`"
-                          v-for="(itm, index) in item.tags"
-                          :key="index"
-                          color="blue"
-                          class="white--text"
-                          >{{ itm }}</v-chip
-                        >
-                      </v-chip-group>
-
-                      <v-avatar
-                        size="37"
-                        v-if="item.profile_picture != null"
-                        class="d-inline-flex mt-3"
-                      >
-                        <img :src="item.profile_picture" alt="" />
-                      </v-avatar>
-
-                      <v-avatar
-                        v-else
-                        color="blue"
-                        size="37"
-                        class=" white--text d-inline-flex  mt-3"
-                      >
-                        {{ item.name.charAt(0).toUpperCase() }}
-                      </v-avatar>
-
-                      <v-card flat class="d-inline-flex d-flex flex-column ">
-                        <v-card flat>{{ item.name }}</v-card>
-                        <v-card flat>{{ item.human_date }}</v-card>
-                      </v-card>
-                    </v-card-text>
-                  </v-card>
-                </v-hover>
-              </v-col>
-            </v-row>
             <v-row v-if="blogs_load">
               <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
                 <SkeletonCard />
@@ -174,112 +71,8 @@
                 </h2>
               </v-col>
             </v-row>
-            <v-row
-              color="blue"
-              v-for="(i, ind) in Math.ceil(news.length / 3)"
-              :key="ind"
-            >
-              <v-col
-                xs="12"
-                sm="12"
-                md="4"
-                lg="4"
-                xl="4"
-                cols="12"
-                v-for="(item, indx) in news.slice((i - 1) * 3, i * 3)"
-                :key="indx"
-              >
-                <v-hover v-slot="{ hover }" open-delay="200">
-                  <v-card
-                    :elevation="hover ? 16 : 2"
-                    :class="{ 'on-hover': hover }"
-                    outlined
-                    shaped
-                    tile
-                    class="pa-2 ma-0"
-                  >
-                    <nuxt-link
-                      target="_blank"
-                      class="nuxtlink"
-                      :to="{
-                        path: 'news/' + item.slug
-                      }"
-                    >
-                      <v-img
-                        v-if="item.image != null"
-                        contain
-                        aspect-ratio="2.3"
-                        :src="item.image"
-                      >
-                      </v-img>
-                      <v-img
-                        v-else
-                        contain
-                        aspect-ratio="2.3"
-                        src="/images/default.jpg"
-                      >
-                      </v-img>
-                    </nuxt-link>
+            <IndexWidget :content="news" path="/news" />
 
-                    <v-card-title class="pa-0 ma-0  adj-title">
-                      <h2 color="dark" class="title1 fs-1 line-clamp-2 ">
-                        <nuxt-link
-                          target="_blank"
-                          class="nuxtlink"
-                          :to="{
-                            path: 'news/' + item.slug
-                          }"
-                        >
-                          {{ item.title
-                          }}<v-icon small color="blue"
-                            >mdi-arrow-top-right-thick</v-icon
-                          >
-                        </nuxt-link>
-                      </h2>
-                    </v-card-title>
-
-                    <v-card-text class="pa-0 ma-0">
-                      <v-chip-group
-                        v-model="selection"
-                        active-class="deep-purple accent-4 white--text"
-                        column
-                      >
-                        <v-chip
-                          :to="`/blog/tags/${itm}`"
-                          v-for="(itm, index) in item.tags"
-                          :key="index"
-                          color="blue"
-                          class="white--text"
-                          >{{ itm }}</v-chip
-                        >
-                      </v-chip-group>
-
-                      <v-avatar
-                        size="37"
-                        v-if="item.profile_picture != null"
-                        class="d-inline-flex mt-3"
-                      >
-                        <img :src="item.profile_picture" alt="" />
-                      </v-avatar>
-
-                      <v-avatar
-                        v-else
-                        color="blue"
-                        size="37"
-                        class=" white--text d-inline-flex  mt-3"
-                      >
-                        {{ item.name.charAt(0).toUpperCase() }}
-                      </v-avatar>
-
-                      <v-card flat class="d-inline-flex d-flex flex-column ">
-                        <v-card flat>{{ item.name }}</v-card>
-                        <v-card flat>{{ item.human_date }}</v-card>
-                      </v-card>
-                    </v-card-text>
-                  </v-card>
-                </v-hover>
-              </v-col>
-            </v-row>
             <v-row v-if="news_load">
               <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
                 <SkeletonCard />
@@ -307,112 +100,8 @@
                 </h2>
               </v-col>
             </v-row>
-            <v-row
-              color="blue"
-              v-for="(i, ind) in Math.ceil(posts.length / 3)"
-              :key="ind"
-            >
-              <v-col
-                xs="12"
-                sm="12"
-                md="4"
-                lg="4"
-                xl="4"
-                cols="12"
-                v-for="(item, indx) in posts.slice((i - 1) * 3, i * 3)"
-                :key="indx"
-              >
-                <v-hover v-slot="{ hover }" open-delay="200">
-                  <v-card
-                    :elevation="hover ? 16 : 2"
-                    :class="{ 'on-hover': hover }"
-                    outlined
-                    shaped
-                    tile
-                    class="pa-2 ma-0 "
-                  >
-                    <nuxt-link
-                      target="_blank"
-                      class="nuxtlink"
-                      :to="{
-                        path: 'post/' + item.slug
-                      }"
-                    >
-                      <v-img
-                        v-if="item.image != null"
-                        contain
-                        aspect-ratio="2.3"
-                        :src="item.image"
-                      >
-                      </v-img>
+            <IndexWidget :content="posts" path="/post" />
 
-                      <v-img
-                        v-else
-                        contain
-                        aspect-ratio="2.3"
-                        src="/images/default.jpg"
-                      >
-                      </v-img>
-                    </nuxt-link>
-
-                    <v-card-title class="pa-0 ma-0  adj-title">
-                      <h2 color="dark" class="title1 fs-1 line-clamp-2 ">
-                        <nuxt-link
-                          target="_blank"
-                          class="nuxtlink"
-                          :to="{
-                            path: 'post/' + item.slug
-                          }"
-                        >
-                          {{ item.title
-                          }}<v-icon small color="blue"
-                            >mdi-arrow-top-right-thick</v-icon
-                          >
-                        </nuxt-link>
-                      </h2>
-                    </v-card-title>
-                    <v-card-text class="pa-0 ma-0">
-                      <v-chip-group
-                        v-model="selection"
-                        active-class="deep-purple accent-4 white--text"
-                        column
-                      >
-                        <v-chip
-                          :to="`/blog/tags/${itm}`"
-                          v-for="(itm, index) in item.tags"
-                          :key="index"
-                          color="blue"
-                          class="white--text"
-                          >{{ itm }}
-                        </v-chip>
-                      </v-chip-group>
-
-                      <v-avatar
-                        size="37"
-                        v-if="item.profile_picture != null"
-                        class="d-inline-flex mt-3"
-                      >
-                        <img :src="item.profile_picture" alt="" />
-                      </v-avatar>
-
-                      <v-avatar
-                        v-else
-                        color="blue"
-                        size="37"
-                        class=" white--text d-inline-flex  mt-3"
-                      >
-                        {{ item.name.charAt(0).toUpperCase() }}
-                      </v-avatar>
-
-                      <v-card flat class="d-inline-flex d-flex flex-column ">
-                        <v-card flat>{{ item.name }}</v-card>
-                        <v-card flat>{{ item.human_date }}</v-card>
-                      </v-card>
-                    </v-card-text>
-                  </v-card>
-                </v-hover>
-              </v-col>
-            </v-row>
             <v-row v-if="posts_load">
               <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
                 <SkeletonCard />
@@ -597,23 +286,6 @@ export default {
   font-family: 'Barlow-Regular', sans-serif;
 }
 
-.bounce-enter-active {
-  animation: bounce-in 0.5s;
-}
-.bounce-leave-active {
-  animation: bounce-in 0.5s reverse;
-}
-@keyframes bounce-in {
-  0% {
-    transform: scale(0);
-  }
-  50% {
-    transform: scale(1.5);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 .title1 {
   text-decoration: none;
 }
@@ -640,17 +312,5 @@ export default {
 }
 .hr-black {
   border: 3px solid black;
-}
-
-.v-card {
-  /* transition: opacity 0.4s ease-in-out; */
-}
-
-.v-card:not(.on-hover) {
-  /* opacity: 0.6; */
-}
-
-.show-btns {
-  /* color: rgba(255, 255, 255, 1) !important; */
 }
 </style>

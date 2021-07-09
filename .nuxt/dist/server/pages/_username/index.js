@@ -1,4 +1,4 @@
-exports.ids = [23,15];
+exports.ids = [26,18];
 exports.modules = {
 
 /***/ 258:
@@ -785,7 +785,7 @@ var colorable = __webpack_require__(7);
 
 /***/ }),
 
-/***/ 314:
+/***/ 321:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1016,23 +1016,21 @@ installComponents_default()(component, {VAvatar: VAvatar["a" /* default */],VCar
 
 /***/ }),
 
-/***/ 508:
+/***/ 520:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/_username/index.vue?vue&type=template&id=4d35f0c4&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-container',[_c('v-row',[_c('v-col',[_c('h1',[_vm._v("Profile Username : "+_vm._s(_vm.username))])])],1),_vm._v(" "),_c('v-row',[_c('v-col',[_c('v-card',[(_vm.profile['details'].cover_photo)?_c('v-img',{staticClass:"ml-2 mt-2",attrs:{"src":_vm.profile['details'].cover_photo}}):_c('v-avatar',{staticClass:"ml-2 mt-2 white--text",attrs:{"color":"grey"}},[_vm._v("\n          "+_vm._s(_vm.profile.name.charAt(0).toUpperCase())+"\n        ")]),_vm._v(" "),_c('v-avatar',{attrs:{"width":"37"}},[(_vm.profile['details'].profile_picture)?_c('v-img',{attrs:{"src":_vm.profile['details'].profile_picture}}):_vm._e()],1),_vm._v(" "),_c('v-card-text',[_c('span',{staticClass:"fs-1-5"},[_vm._v(_vm._s(_vm.profile.name))]),_c('br'),_vm._v(" "),_c('span',{staticClass:"fs-1-5"},[_c('span',{staticClass:"font-Bonida"},[_vm._v(_vm._s(_vm.allibataname))])]),_c('br'),_vm._v(" "),(_vm.username)?_c('span',[_vm._v("Username: "+_vm._s(_vm.username))]):_vm._e(),_c('br'),_vm._v(" "),(_vm.profile.email)?_c('span',[_vm._v("Email: "+_vm._s(_vm.profile.email))]):_vm._e(),_c('br'),_vm._v(" "),(_vm.profile['details'].house_number)?_c('span',[_vm._v("\n            Address No: "+_vm._s(_vm.profile['details'].house_number)+"\n          ")]):_vm._e(),_vm._v(" "),_c('br'),_vm._v(" "),(_vm.profile['details'].street)?_c('span',[_vm._v("\n            Address street: "+_vm._s(_vm.profile['details'].street)+"\n          ")]):_vm._e(),_vm._v(" "),_c('br'),_vm._v(" "),(_vm.profile['details'].city)?_c('span',[_vm._v("\n            Address City: "+_vm._s(_vm.profile['details'].city)+"\n          ")]):_vm._e(),_vm._v(" "),_c('br'),_vm._v(" "),(_vm.profile['details'].province)?_c('span',[_vm._v("\n            Address province: "+_vm._s(_vm.profile['details'].province)+"\n          ")]):_vm._e(),_vm._v(" "),_c('br'),_vm._v(" "),(_vm.profile['details'].country)?_c('span',[_vm._v("\n            Address country: "+_vm._s(_vm.profile['details'].country)+"\n          ")]):_vm._e(),_vm._v(" "),_c('br')])],1)],1)],1),_vm._v(" "),_c('v-row',[_c('v-col',[_c('WidgetBlogtags')],1)],1)],1)}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/_username/index.vue?vue&type=template&id=70561f1e&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-container',[_c('v-row',[_c('v-col',[_c('h1',[_vm._v("Profile Username : "+_vm._s(_vm.username))])])],1),_vm._v(" "),_c('v-row',[_c('v-col',[_c('v-card',[(_vm.profile['details'].cover_photo)?_c('v-img',{staticClass:"ml-2 mt-2",attrs:{"src":_vm.profile['details'].cover_photo}}):_vm._e(),_vm._v(" "),(_vm.profile['details'].profile_picture)?_c('v-avatar',{attrs:{"width":"37"}},[_c('v-img',{attrs:{"src":_vm.profile['details'].profile_picture}})],1):_c('v-avatar',{staticClass:"ml-2 mt-2 white--text",attrs:{"color":"grey"}},[_vm._v("\n          "+_vm._s(_vm.profile.name.charAt(0).toUpperCase())+"\n        ")]),_vm._v(" "),_c('v-card-text',[_c('span',{staticClass:"fs-1-5"},[_vm._v(_vm._s(_vm.profile.name))]),_c('br'),_vm._v(" "),_c('span',{staticClass:"fs-1-5"},[_c('span',{staticClass:"font-Bonida"},[_vm._v(_vm._s(_vm.allibataname))])]),_c('br'),_vm._v(" "),(_vm.username)?_c('span',[_vm._v("Username: "+_vm._s(_vm.username))]):_vm._e(),_c('br'),_vm._v(" "),(_vm.profile.email)?_c('span',[_vm._v("Email: "+_vm._s(_vm.profile.email))]):_vm._e(),_c('br'),_vm._v(" "),(_vm.profile['details'].house_number)?_c('span',[_vm._v("\n            Address No: "+_vm._s(_vm.profile['details'].house_number)+"\n          ")]):_vm._e(),_vm._v(" "),_c('br'),_vm._v(" "),(_vm.profile['details'].street)?_c('span',[_vm._v("\n            Address street: "+_vm._s(_vm.profile['details'].street)+"\n          ")]):_vm._e(),_vm._v(" "),_c('br'),_vm._v(" "),(_vm.profile['details'].city)?_c('span',[_vm._v("\n            Address City: "+_vm._s(_vm.profile['details'].city)+"\n          ")]):_vm._e(),_vm._v(" "),_c('br'),_vm._v(" "),(_vm.profile['details'].province)?_c('span',[_vm._v("\n            Address province: "+_vm._s(_vm.profile['details'].province)+"\n          ")]):_vm._e(),_vm._v(" "),_c('br'),_vm._v(" "),(_vm.profile['details'].country)?_c('span',[_vm._v("\n            Address country: "+_vm._s(_vm.profile['details'].country)+"\n          ")]):_vm._e(),_vm._v(" "),_c('br')])],1)],1)],1),_vm._v(" "),_c('v-row',[_c('v-col',[_c('WidgetBlogtags')],1)],1)],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./pages/_username/index.vue?vue&type=template&id=4d35f0c4&
+// CONCATENATED MODULE: ./pages/_username/index.vue?vue&type=template&id=70561f1e&
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/_username/index.vue?vue&type=script&lang=js&
-//
-//
 //
 //
 //
@@ -1226,7 +1224,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 /* harmony default export */ var _username = __webpack_exports__["default"] = (component.exports);
 
 /* nuxt-component-imports */
-installComponents_default()(component, {WidgetBlogtags: __webpack_require__(314).default})
+installComponents_default()(component, {WidgetBlogtags: __webpack_require__(321).default})
 
 
 /* vuetify-loader */

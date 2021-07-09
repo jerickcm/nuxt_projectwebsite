@@ -439,4 +439,18 @@ export default {
 .lh-1 {
   line-height: 1;
 }
+.tempoup {
+  transition: transform 250ms;
+}
+
+.tempoup:hover {
+  transform: translateY(-10px);
+}
+.nuxtlink {
+  text-decoration: none;
+}
+
+.v-application a {
+  color: blue;
+}
 </style>

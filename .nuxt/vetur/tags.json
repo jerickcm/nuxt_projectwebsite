@@ -20,6 +20,9 @@
   "FooterNav": {
     "description": "Auto imported from components/FooterNav.vue"
   },
+  "IndexWidget": {
+    "description": "Auto imported from components/IndexWidget.vue"
+  },
   "Nav": {
     "description": "Auto imported from components/Nav.vue"
   },
@@ -46,6 +49,12 @@
   },
   "Template": {
     "description": "Auto imported from components/Template.vue"
+  },
+  "Topic": {
+    "description": "Auto imported from components/Topic.vue"
+  },
+  "TopicM": {
+    "description": "Auto imported from components/TopicM.vue"
   },
   "TopicsIndex": {
     "description": "Auto imported from components/TopicsIndex.vue"
