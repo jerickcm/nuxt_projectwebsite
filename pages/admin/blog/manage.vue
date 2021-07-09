@@ -21,6 +21,7 @@
                 <v-btn dark text @click="SaveEdited"> Save </v-btn>
               </v-toolbar-items>
             </v-toolbar>
+
             <v-card-text>
               <v-row>
                 <v-col>

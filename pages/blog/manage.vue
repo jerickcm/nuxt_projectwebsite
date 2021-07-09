@@ -222,7 +222,7 @@
 </template>
 <script>
 import juice from 'juice'
-import { admin } from '~/mixins/admin_pages.js'
+
 import ckeditor5const from '~/mixins/ckeditor5const'
 import { validationMixin } from 'vuelidate'
 import { required } from 'vuelidate/lib/validators'
@@ -236,7 +236,7 @@ const url = process.env.NODE_ENV === 'development' ? dev : prod
 
 var timezone = process.env.TIMEZONE
 export default {
-  mixins: [validationMixin, admin],
+  mixins: [validationMixin],
 
   head: () => ({
     title: 'Blog Datatable'

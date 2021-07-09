@@ -4,7 +4,9 @@
       <form class="white pa-5" action="">
         <v-row
           ><v-col>
-            <v-btn color="primary" depressed to="/dashboard"> BACK </v-btn>
+            <v-btn color="primary" depressed to="/blog/manage">
+              BACK
+            </v-btn>
           </v-col></v-row
         >
         <v-row>
@@ -44,6 +46,34 @@
               </p>
             </template></v-col
           >
+        </v-row>
+        <v-row>
+          <v-col cols="12">
+            <v-combobox
+              v-model="tags"
+              :items="items"
+              label="Tags"
+              multiple
+              chips
+            >
+              <template v-slot:selection="data">
+                <v-chip
+                  :key="JSON.stringify(data.item)"
+                  v-bind="data.attrs"
+                  :input-value="data.selected"
+                  :disabled="data.disabled"
+                  @click:close="data.parent.selectItem(data.item)"
+                >
+                  <v-avatar
+                    class="accent white--text"
+                    left
+                    v-text="data.item.slice(0, 1).toUpperCase()"
+                  ></v-avatar>
+                  {{ data.item }}
+                </v-chip>
+              </template>
+            </v-combobox>
+          </v-col>
         </v-row>
         <v-row>
           <v-col lg="4">
@@ -104,6 +134,7 @@
 
 <script>
 import juice from 'juice'
+
 import ckeditor5const from '~/mixins/ckeditor5const'
 
 import Vue from 'vue'
@@ -119,11 +150,13 @@ var timezone = process.env.TIMEZONE
 
 export default {
   head: () => ({
-    title: 'Create Post'
+    title: 'Create Blog'
   }),
-  middleware: 'auth',
   mixins: [validationMixin],
   data: () => ({
+    tags: [],
+    items: [],
+
     image_id: '',
     url_backend: '',
     form_content: '',
@@ -152,6 +185,14 @@ export default {
   },
   components: {
     'ckeditor-nuxt': () => import('@coderzero8/ck5-nuxt')
+  },
+  async mounted() {},
+  async fetch() {
+    await this.$axios.$get('/sanctum/csrf-cookie')
+    let response = await this.$axios.$get('api/blog/tags/data')
+    for (const [key, value] of Object.entries(response.data)) {
+      this.items = [...this.items, value.name]
+    }
   },
   async created() {
     this.timezone = timezone
@@ -205,6 +246,7 @@ export default {
       return false
     },
     onSubmit() {
+      // console.log(this.tags)
       if (this.form_title && this.form_content && this.form_publish) {
         this.$axios.$get('/sanctum/csrf-cookie')
         this.$toast.success('Sending')
@@ -215,6 +257,8 @@ export default {
         )
 
         let payload = new FormData()
+
+        payload.append('tags', this.tags)
         payload.append('ckeditor_log', this.image_id)
         payload.append('publish', this.form_publish)
         payload.append('title', this.form_title)
@@ -229,6 +273,7 @@ export default {
           })
           .then(res => {
             this.$toast.success('Done.')
+            this.$fetch()
             // redirect('/dashboard')
           })
           .catch(error => {
