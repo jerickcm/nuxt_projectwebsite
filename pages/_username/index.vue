@@ -14,16 +14,14 @@
             :src="profile['details'].cover_photo"
           ></v-img>
 
+          <v-avatar width="37" v-if="profile['details'].profile_picture">
+            <v-img :src="profile['details'].profile_picture"></v-img>
+          </v-avatar>
+
           <v-avatar v-else class="ml-2 mt-2 white--text" color="grey">
             {{ profile.name.charAt(0).toUpperCase() }}
           </v-avatar>
 
-          <v-avatar width="37">
-            <v-img
-              v-if="profile['details'].profile_picture"
-              :src="profile['details'].profile_picture"
-            ></v-img>
-          </v-avatar>
           <v-card-text>
             <span class="fs-1-5">{{ profile.name }}</span
             ><br />
