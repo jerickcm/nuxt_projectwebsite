@@ -101,7 +101,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 46:
+/***/ 47:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -386,7 +386,7 @@ var VWindow = __webpack_require__(404);
 var touch = __webpack_require__(110);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VBtn/index.js
-var components_VBtn = __webpack_require__(46);
+var components_VBtn = __webpack_require__(47);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VIcon/index.js
 var VIcon = __webpack_require__(15);
@@ -913,7 +913,7 @@ var console = __webpack_require__(3);
 var bootable = __webpack_require__(61);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/mixins/groupable/index.js
-var groupable = __webpack_require__(40);
+var groupable = __webpack_require__(41);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/util/mixins.js
 var mixins = __webpack_require__(2);
@@ -1066,7 +1066,7 @@ const baseMixins = Object(mixins["a" /* default */])(bootable["a" /* default */]
 var VImg = __webpack_require__(73);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/mixins/routable/index.js
-var routable = __webpack_require__(17);
+var routable = __webpack_require__(18);
 
 // CONCATENATED MODULE: ./node_modules/vuetify/lib/components/VCarousel/VCarouselItem.js
 // Extensions
@@ -1138,7 +1138,7 @@ var VContainer = __webpack_require__(257);
 var VRow = __webpack_require__(253);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSheet/VSheet.js
-var VSheet = __webpack_require__(19);
+var VSheet = __webpack_require__(20);
 
 // CONCATENATED MODULE: ./pages/about.vue
 
@@ -1167,7 +1167,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 /* harmony default export */ var about = __webpack_exports__["default"] = (component.exports);
 
 /* nuxt-component-imports */
-installComponents_default()(component, {Template: __webpack_require__(48).default})
+installComponents_default()(component, {Template: __webpack_require__(49).default})
 
 
 /* vuetify-loader */

@@ -216,8 +216,11 @@ export default {
           footer: '#000000',
           light: '#555353',
           cstmblue: '#1C0745',
-          title: '#0000FF'
+          title: '#0000FF',
+          cstmblue: '#00F',
+          cstmbluetext: '#FFF'
         },
+
         light: {
           dark: '#000000',
           primary: colors.purple,
@@ -231,8 +234,12 @@ export default {
           footer: '#ffffff',
           light: '#ADA8A8',
           cstmblue: '#0B8FC6',
-          title: '#0000FF'
+          title: '#0000FF',
+          cstmblue: '#FFF',
+          cstmbluetext: '#00F'
         }
+
+        // white FFF
       }
     }
   },

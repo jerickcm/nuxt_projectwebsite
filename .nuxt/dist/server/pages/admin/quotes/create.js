@@ -82,7 +82,7 @@ var external_vue_default = /*#__PURE__*/__webpack_require__.n(external_vue_);
 var external_vuelidate_ = __webpack_require__(77);
 
 // EXTERNAL MODULE: external "vuelidate/lib/validators"
-var validators_ = __webpack_require__(49);
+var validators_ = __webpack_require__(50);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/admin/quotes/create.vue?vue&type=script&lang=js&
 //
@@ -271,10 +271,10 @@ var VContainer = __webpack_require__(257);
 var VRow = __webpack_require__(253);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSelect/VSelect.js + 5 modules
-var VSelect = __webpack_require__(16);
+var VSelect = __webpack_require__(17);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSheet/VSheet.js
-var VSheet = __webpack_require__(19);
+var VSheet = __webpack_require__(20);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VTextField/VTextField.js + 3 modules
 var VTextField = __webpack_require__(29);
@@ -306,7 +306,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 /* harmony default export */ var create = __webpack_exports__["default"] = (component.exports);
 
 /* nuxt-component-imports */
-installComponents_default()(component, {Template: __webpack_require__(48).default})
+installComponents_default()(component, {Template: __webpack_require__(49).default})
 
 
 /* vuetify-loader */

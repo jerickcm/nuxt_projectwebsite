@@ -27,9 +27,7 @@
               <v-img
                 v-if="item.image != null"
                 gradient="to top right, rgba(0,0,201,.1), rgba(0,0,72,.2)"
-                contain
                 :src="item.image"
-                min-height="250"
                 max-height="300"
                 aspect-ratio="1.4"
               >
@@ -37,7 +35,6 @@
               <v-img
                 gradient="to top right, rgba(0,0,201,.1), rgba(0,0,72,.2)"
                 v-else
-                contain
                 aspect-ratio="1.9"
                 max-height="300"
                 src="/images/default.jpg"
@@ -125,7 +122,7 @@
         </v-card>
       </v-col>
     </v-row>
-    <v-row class="ma-0 pa-0">
+    <v-row class="ma-0 pa-0 mb-3">
       <v-col cols="12" class="pa-0 ma-0 pt-2">
         <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
           <v-btn

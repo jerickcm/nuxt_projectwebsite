@@ -310,7 +310,7 @@ var VItemGroup = __webpack_require__(59);
 var mobile = __webpack_require__(76);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/directives/resize/index.js
-var resize = __webpack_require__(38);
+var resize = __webpack_require__(39);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/directives/touch/index.js
 var touch = __webpack_require__(110);
@@ -950,7 +950,7 @@ var VAvatar = __webpack_require__(95);
 var VCard = __webpack_require__(93);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VCard/index.js
-var components_VCard = __webpack_require__(24);
+var components_VCard = __webpack_require__(16);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VChip/VChip.js
 var VChip = __webpack_require__(100);
@@ -971,7 +971,7 @@ var VImg = __webpack_require__(73);
 var VRow = __webpack_require__(253);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSheet/VSheet.js
-var VSheet = __webpack_require__(19);
+var VSheet = __webpack_require__(20);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSkeletonLoader/VSkeletonLoader.js
 var VSkeletonLoader = __webpack_require__(278);
@@ -1011,7 +1011,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 
 
-installComponents_default()(component, {VAvatar: VAvatar["a" /* default */],VCard: VCard["a" /* default */],VCardText: components_VCard["b" /* VCardText */],VCardTitle: components_VCard["c" /* VCardTitle */],VChip: VChip["a" /* default */],VChipGroup: VChipGroup["a" /* default */],VCol: VCol["a" /* default */],VContainer: VContainer["a" /* default */],VImg: VImg["a" /* default */],VRow: VRow["a" /* default */],VSheet: VSheet["a" /* default */],VSkeletonLoader: VSkeletonLoader["a" /* default */]})
+installComponents_default()(component, {VAvatar: VAvatar["a" /* default */],VCard: VCard["a" /* default */],VCardText: components_VCard["c" /* VCardText */],VCardTitle: components_VCard["d" /* VCardTitle */],VChip: VChip["a" /* default */],VChipGroup: VChipGroup["a" /* default */],VCol: VCol["a" /* default */],VContainer: VContainer["a" /* default */],VImg: VImg["a" /* default */],VRow: VRow["a" /* default */],VSheet: VSheet["a" /* default */],VSkeletonLoader: VSkeletonLoader["a" /* default */]})
 
 
 /***/ }),
@@ -1023,14 +1023,20 @@ installComponents_default()(component, {VAvatar: VAvatar["a" /* default */],VCar
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/_username/index.vue?vue&type=template&id=65796af4&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-container',[_c('v-row',[_c('v-col',[_c('h1',[_vm._v("Profile Username : "+_vm._s(_vm.username))])])],1),_vm._v(" "),_c('v-row',[_c('v-col',[_c('v-card',[(_vm.profile['details'].cover_photo)?_c('v-img',{attrs:{"src":_vm.profile['details'].cover_photo}}):_vm._e(),_vm._v(" "),_c('v-avatar',{attrs:{"width":"37"}},[(_vm.profile['details'].profile_picture)?_c('v-img',{attrs:{"src":_vm.profile['details'].profile_picture}}):_vm._e()],1),_vm._v(" "),_c('v-card-text',[_c('span',{staticClass:"fs-1-5"},[_vm._v(_vm._s(_vm.profile.name))]),_c('br'),_vm._v(" "),_c('span',{staticClass:"fs-1-5"},[_c('span',{staticClass:"font-Bonida"},[_vm._v(_vm._s(_vm.allibataname))])]),_c('br'),_vm._v(" "),(_vm.username)?_c('span',[_vm._v("Username: "+_vm._s(_vm.username))]):_vm._e(),_c('br'),_vm._v(" "),(_vm.profile.email)?_c('span',[_vm._v("Email: "+_vm._s(_vm.profile.email))]):_vm._e(),_c('br'),_vm._v(" "),(_vm.profile['details'].house_number)?_c('span',[_vm._v("\n            Address No: "+_vm._s(_vm.profile['details'].house_number)+"\n          ")]):_vm._e(),_vm._v(" "),_c('br'),_vm._v(" "),(_vm.profile['details'].street)?_c('span',[_vm._v("\n            Address street: "+_vm._s(_vm.profile['details'].street)+"\n          ")]):_vm._e(),_vm._v(" "),_c('br'),_vm._v(" "),(_vm.profile['details'].city)?_c('span',[_vm._v("\n            Address City: "+_vm._s(_vm.profile['details'].city)+"\n          ")]):_vm._e(),_vm._v(" "),_c('br'),_vm._v(" "),(_vm.profile['details'].province)?_c('span',[_vm._v("\n            Address province: "+_vm._s(_vm.profile['details'].province)+"\n          ")]):_vm._e(),_vm._v(" "),_c('br'),_vm._v(" "),(_vm.profile['details'].country)?_c('span',[_vm._v("\n            Address country: "+_vm._s(_vm.profile['details'].country)+"\n          ")]):_vm._e(),_vm._v(" "),_c('br')])],1)],1)],1),_vm._v(" "),_c('v-row',[_c('v-col',[_c('WidgetBlogtags')],1)],1)],1)}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/_username/index.vue?vue&type=template&id=4d35f0c4&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-container',[_c('v-row',[_c('v-col',[_c('h1',[_vm._v("Profile Username : "+_vm._s(_vm.username))])])],1),_vm._v(" "),_c('v-row',[_c('v-col',[_c('v-card',[(_vm.profile['details'].cover_photo)?_c('v-img',{staticClass:"ml-2 mt-2",attrs:{"src":_vm.profile['details'].cover_photo}}):_c('v-avatar',{staticClass:"ml-2 mt-2 white--text",attrs:{"color":"grey"}},[_vm._v("\n          "+_vm._s(_vm.profile.name.charAt(0).toUpperCase())+"\n        ")]),_vm._v(" "),_c('v-avatar',{attrs:{"width":"37"}},[(_vm.profile['details'].profile_picture)?_c('v-img',{attrs:{"src":_vm.profile['details'].profile_picture}}):_vm._e()],1),_vm._v(" "),_c('v-card-text',[_c('span',{staticClass:"fs-1-5"},[_vm._v(_vm._s(_vm.profile.name))]),_c('br'),_vm._v(" "),_c('span',{staticClass:"fs-1-5"},[_c('span',{staticClass:"font-Bonida"},[_vm._v(_vm._s(_vm.allibataname))])]),_c('br'),_vm._v(" "),(_vm.username)?_c('span',[_vm._v("Username: "+_vm._s(_vm.username))]):_vm._e(),_c('br'),_vm._v(" "),(_vm.profile.email)?_c('span',[_vm._v("Email: "+_vm._s(_vm.profile.email))]):_vm._e(),_c('br'),_vm._v(" "),(_vm.profile['details'].house_number)?_c('span',[_vm._v("\n            Address No: "+_vm._s(_vm.profile['details'].house_number)+"\n          ")]):_vm._e(),_vm._v(" "),_c('br'),_vm._v(" "),(_vm.profile['details'].street)?_c('span',[_vm._v("\n            Address street: "+_vm._s(_vm.profile['details'].street)+"\n          ")]):_vm._e(),_vm._v(" "),_c('br'),_vm._v(" "),(_vm.profile['details'].city)?_c('span',[_vm._v("\n            Address City: "+_vm._s(_vm.profile['details'].city)+"\n          ")]):_vm._e(),_vm._v(" "),_c('br'),_vm._v(" "),(_vm.profile['details'].province)?_c('span',[_vm._v("\n            Address province: "+_vm._s(_vm.profile['details'].province)+"\n          ")]):_vm._e(),_vm._v(" "),_c('br'),_vm._v(" "),(_vm.profile['details'].country)?_c('span',[_vm._v("\n            Address country: "+_vm._s(_vm.profile['details'].country)+"\n          ")]):_vm._e(),_vm._v(" "),_c('br')])],1)],1)],1),_vm._v(" "),_c('v-row',[_c('v-col',[_c('WidgetBlogtags')],1)],1)],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./pages/_username/index.vue?vue&type=template&id=65796af4&
+// CONCATENATED MODULE: ./pages/_username/index.vue?vue&type=template&id=4d35f0c4&
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/_username/index.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -1184,7 +1190,7 @@ var VAvatar = __webpack_require__(95);
 var VCard = __webpack_require__(93);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VCard/index.js
-var components_VCard = __webpack_require__(24);
+var components_VCard = __webpack_require__(16);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VCol.js
 var VCol = __webpack_require__(252);
@@ -1232,7 +1238,7 @@ installComponents_default()(component, {WidgetBlogtags: __webpack_require__(314)
 
 
 
-installComponents_default()(component, {VAvatar: VAvatar["a" /* default */],VCard: VCard["a" /* default */],VCardText: components_VCard["b" /* VCardText */],VCol: VCol["a" /* default */],VContainer: VContainer["a" /* default */],VImg: VImg["a" /* default */],VRow: VRow["a" /* default */]})
+installComponents_default()(component, {VAvatar: VAvatar["a" /* default */],VCard: VCard["a" /* default */],VCardText: components_VCard["c" /* VCardText */],VCol: VCol["a" /* default */],VContainer: VContainer["a" /* default */],VImg: VImg["a" /* default */],VRow: VRow["a" /* default */]})
 
 
 /***/ })

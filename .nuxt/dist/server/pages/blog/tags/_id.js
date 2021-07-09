@@ -310,7 +310,7 @@ var VItemGroup = __webpack_require__(59);
 var mobile = __webpack_require__(76);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/directives/resize/index.js
-var resize = __webpack_require__(38);
+var resize = __webpack_require__(39);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/directives/touch/index.js
 var touch = __webpack_require__(110);
@@ -798,7 +798,7 @@ if(content.locals) module.exports = content.locals;
 // add CSS to SSR context
 var add = __webpack_require__(5).default
 module.exports.__inject__ = function (context) {
-  add("4b7edc61", content, true, context)
+  add("d1b051c8", content, true, context)
 };
 
 /***/ }),
@@ -807,7 +807,7 @@ module.exports.__inject__ = function (context) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _mixins_delayable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(39);
+/* harmony import */ var _mixins_delayable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(40);
 /* harmony import */ var _mixins_toggleable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(13);
 /* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2);
 /* harmony import */ var _util_console__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
@@ -1066,7 +1066,7 @@ var VAvatar = __webpack_require__(95);
 var VCard = __webpack_require__(93);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VCard/index.js
-var components_VCard = __webpack_require__(24);
+var components_VCard = __webpack_require__(16);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VChip/VChip.js
 var VChip = __webpack_require__(100);
@@ -1093,7 +1093,7 @@ var VImg = __webpack_require__(73);
 var VRow = __webpack_require__(253);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSheet/VSheet.js
-var VSheet = __webpack_require__(19);
+var VSheet = __webpack_require__(20);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSkeletonLoader/VSkeletonLoader.js
 var VSkeletonLoader = __webpack_require__(278);
@@ -1135,7 +1135,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 
 
-installComponents_default()(component, {VAvatar: VAvatar["a" /* default */],VCard: VCard["a" /* default */],VCardText: components_VCard["b" /* VCardText */],VCardTitle: components_VCard["c" /* VCardTitle */],VChip: VChip["a" /* default */],VChipGroup: VChipGroup["a" /* default */],VCol: VCol["a" /* default */],VContainer: VContainer["a" /* default */],VHover: VHover["a" /* default */],VIcon: VIcon["a" /* default */],VImg: VImg["a" /* default */],VRow: VRow["a" /* default */],VSheet: VSheet["a" /* default */],VSkeletonLoader: VSkeletonLoader["a" /* default */]})
+installComponents_default()(component, {VAvatar: VAvatar["a" /* default */],VCard: VCard["a" /* default */],VCardText: components_VCard["c" /* VCardText */],VCardTitle: components_VCard["d" /* VCardTitle */],VChip: VChip["a" /* default */],VChipGroup: VChipGroup["a" /* default */],VCol: VCol["a" /* default */],VContainer: VContainer["a" /* default */],VHover: VHover["a" /* default */],VIcon: VIcon["a" /* default */],VImg: VImg["a" /* default */],VRow: VRow["a" /* default */],VSheet: VSheet["a" /* default */],VSkeletonLoader: VSkeletonLoader["a" /* default */]})
 
 
 /***/ }),
@@ -1324,7 +1324,7 @@ var VAvatar = __webpack_require__(95);
 var VCard = __webpack_require__(93);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VCard/index.js
-var components_VCard = __webpack_require__(24);
+var components_VCard = __webpack_require__(16);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VChip/VChip.js
 var VChip = __webpack_require__(100);
@@ -1351,7 +1351,7 @@ var VImg = __webpack_require__(73);
 var VRow = __webpack_require__(253);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSheet/VSheet.js
-var VSheet = __webpack_require__(19);
+var VSheet = __webpack_require__(20);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSkeletonLoader/VSkeletonLoader.js
 var VSkeletonLoader = __webpack_require__(278);
@@ -1393,7 +1393,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 
 
-installComponents_default()(component, {VAvatar: VAvatar["a" /* default */],VCard: VCard["a" /* default */],VCardText: components_VCard["b" /* VCardText */],VCardTitle: components_VCard["c" /* VCardTitle */],VChip: VChip["a" /* default */],VChipGroup: VChipGroup["a" /* default */],VCol: VCol["a" /* default */],VContainer: VContainer["a" /* default */],VHover: VHover["a" /* default */],VIcon: VIcon["a" /* default */],VImg: VImg["a" /* default */],VRow: VRow["a" /* default */],VSheet: VSheet["a" /* default */],VSkeletonLoader: VSkeletonLoader["a" /* default */]})
+installComponents_default()(component, {VAvatar: VAvatar["a" /* default */],VCard: VCard["a" /* default */],VCardText: components_VCard["c" /* VCardText */],VCardTitle: components_VCard["d" /* VCardTitle */],VChip: VChip["a" /* default */],VChipGroup: VChipGroup["a" /* default */],VCol: VCol["a" /* default */],VContainer: VContainer["a" /* default */],VHover: VHover["a" /* default */],VIcon: VIcon["a" /* default */],VImg: VImg["a" /* default */],VRow: VRow["a" /* default */],VSheet: VSheet["a" /* default */],VSkeletonLoader: VSkeletonLoader["a" /* default */]})
 
 
 /***/ }),
@@ -1403,9 +1403,9 @@ installComponents_default()(component, {VAvatar: VAvatar["a" /* default */],VCar
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BlogCard_vue_vue_type_style_index_0_id_79f09a84_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(285);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BlogCard_vue_vue_type_style_index_0_id_79f09a84_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BlogCard_vue_vue_type_style_index_0_id_79f09a84_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BlogCard_vue_vue_type_style_index_0_id_79f09a84_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BlogCard_vue_vue_type_style_index_0_id_79f09a84_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BlogCard_vue_vue_type_style_index_0_id_69bd828d_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(285);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BlogCard_vue_vue_type_style_index_0_id_69bd828d_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BlogCard_vue_vue_type_style_index_0_id_69bd828d_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BlogCard_vue_vue_type_style_index_0_id_69bd828d_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BlogCard_vue_vue_type_style_index_0_id_69bd828d_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
@@ -1417,7 +1417,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(4);
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".transparent[data-v-79f09a84]{background-color:#00f!important;opacity:.25;border-color:transparent!important}.nuxtlink[data-v-79f09a84]{text-decoration:none}", ""]);
+___CSS_LOADER_EXPORT___.push([module.i, ".transparent[data-v-69bd828d]{background-color:#00f!important;opacity:.25;border-color:transparent!important}.nuxtlink[data-v-69bd828d]{text-decoration:none}", ""]);
 // Exports
 module.exports = ___CSS_LOADER_EXPORT___;
 
@@ -1431,23 +1431,20 @@ module.exports = ___CSS_LOADER_EXPORT___;
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/BlogCard.vue?vue&type=template&id=79f09a84&scoped=true&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/BlogCard.vue?vue&type=template&id=69bd828d&scoped=true&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-sheet',{staticClass:"ma-0 pa-0"},[_c('v-row',{staticClass:"ma-0 pa-0"},[_c('v-col',{staticClass:"pa-0 ma-0 mt-2 pt-2",attrs:{"cols":"12"}},[_c('h1',{staticClass:"fs-1-3"},[_vm._v("Blog")]),_vm._v(" "),_c('p',[_vm._v("Relevent Personal Blogs about programming and events")])])],1),_vm._v(" "),_vm._l((_vm.content),function(item,index){return _c('v-row',{key:index,staticClass:"ma-0 pa-0"},[_c('v-col',{staticClass:"pa-0 ma-0 pt-3 pb-3",attrs:{"cols":"12"}},[_c('v-hover',{attrs:{"open-delay":"200"},scopedSlots:_vm._u([{key:"default",fn:function(ref){
 var hover = ref.hover;
 return [_c('v-card',{staticClass:"pa-2 ma-0",class:{ 'on-hover': hover },attrs:{"elevation":"2","outlined":"","shaped":"","tile":"","elevation":hover ? 16 : 2}},[_c('nuxt-link',{staticClass:"nuxtlink",attrs:{"to":{
               path: '/blog/' + item.slug
-            }}},[(item.image != null)?_c('v-img',{attrs:{"gradient":"to top right, rgba(0,0,201,.1), rgba(0,0,72,.2)","contain":"","src":item.image,"min-height":"250","max-height":"300","aspect-ratio":"1.4"}}):_c('v-img',{attrs:{"gradient":"to top right, rgba(0,0,201,.1), rgba(0,0,72,.2)","contain":"","aspect-ratio":"1.9","max-height":"300","src":"/images/default.jpg"}})],1),_vm._v(" "),_c('v-card-title',{staticClass:"pa-0 ma-0  adj-title"},[_c('h2',{staticClass:"title1 fs-1 line-clamp-2",attrs:{"color":"dark"}},[_c('nuxt-link',{staticClass:"nuxtlink",attrs:{"target":"_blank","to":{
+            }}},[(item.image != null)?_c('v-img',{attrs:{"gradient":"to top right, rgba(0,0,201,.1), rgba(0,0,72,.2)","src":item.image,"max-height":"300","aspect-ratio":"1.4"}}):_c('v-img',{attrs:{"gradient":"to top right, rgba(0,0,201,.1), rgba(0,0,72,.2)","aspect-ratio":"1.9","max-height":"300","src":"/images/default.jpg"}})],1),_vm._v(" "),_c('v-card-title',{staticClass:"pa-0 ma-0  adj-title"},[_c('h2',{staticClass:"title1 fs-1 line-clamp-2",attrs:{"color":"dark"}},[_c('nuxt-link',{staticClass:"nuxtlink",attrs:{"target":"_blank","to":{
                   path: 'blog/' + item.slug
-                }}},[_vm._v("\n                "+_vm._s(item.title)),_c('v-icon',{attrs:{"small":"","color":"blue"}},[_vm._v("mdi-arrow-top-right-thick")])],1)],1)]),_vm._v(" "),_c('v-card-text',{},[_c('v-chip-group',{attrs:{"active-class":"deep-purple accent-4 white--text","column":""},model:{value:(_vm.selection),callback:function ($$v) {_vm.selection=$$v},expression:"selection"}},[_c('span',{staticClass:"pt-3"},[_vm._v("Tags: ‌‌")]),_vm._v(" "),_vm._l((item.tags),function(itm,index){return _c('v-chip',{key:index,staticClass:"white--text",attrs:{"to":("/blog/tags/" + itm),"color":"blue"}},[_vm._v(_vm._s(itm))])})],2),_vm._v(" "),(item.profile_picture != null)?_c('v-avatar',{staticClass:"d-inline-flex mt-3",attrs:{"size":"37"}},[_c('img',{attrs:{"src":item.profile_picture,"alt":""}})]):_c('v-avatar',{staticClass:" white--text d-inline-flex  mt-3",attrs:{"color":"blue","size":"37"}},[_vm._v("\n              "+_vm._s(item.name.charAt(0).toUpperCase())+"\n            ")]),_vm._v(" "),_c('v-card',{staticClass:"d-inline-flex d-flex flex-column ",attrs:{"flat":""}},[_c('v-card',{attrs:{"flat":""}},[_vm._v(_vm._s(item.name))]),_vm._v(" "),_c('v-card',{attrs:{"flat":""}},[_vm._v(_vm._s(item.human_date))])],1)],1)],1)]}}],null,true)})],1)],1)}),_vm._v(" "),_vm._l((10),function(index){return (_vm.loading)?_c('v-row',{key:index + "b"},[_c('v-col',{staticClass:"pa-0 ma-0 pt-2",attrs:{"cols":"12"}},[_c('v-skeleton-loader',{staticClass:"pa-2 ma-2",attrs:{"elevation":"2","outlined":"","shaped":"","tile":"","type":"card"}})],1)],1):_vm._e()}),_vm._v(" "),(!(_vm.length == 10))?_c('v-row',{staticClass:"ma-0 pa-0"},[_c('v-col',{staticClass:"pa-0 ma-0 pt-2",attrs:{"cols":"12"}},[_c('v-card',{staticClass:"pa-2 ma-0",attrs:{"elevation":"2","outlined":"","shaped":"","tile":""}},[_c('label',{staticClass:"grey--text",attrs:{"for":""}},[_vm._v("Nothing Follows")])])],1)],1):_vm._e(),_vm._v(" "),_c('v-row',{staticClass:"ma-0 pa-0"},[_c('v-col',{staticClass:"pa-0 ma-0 pt-2",attrs:{"cols":"12"}},[_c('v-card',{staticClass:"pa-2 ma-0",attrs:{"elevation":"2","outlined":"","shaped":"","tile":""}},[_c('v-btn',{staticClass:"white--text",class:_vm.length == 10 ? 'green' : 'grey',attrs:{"disabled":_vm.length == 10 ? false : true},on:{"click":_vm.getnextarticle}},[_vm._v("\n          Next Article\n        ")])],1)],1)],1)],2)}
+                }}},[_vm._v("\n                "+_vm._s(item.title)),_c('v-icon',{attrs:{"small":"","color":"blue"}},[_vm._v("mdi-arrow-top-right-thick")])],1)],1)]),_vm._v(" "),_c('v-card-text',{},[_c('v-chip-group',{attrs:{"active-class":"deep-purple accent-4 white--text","column":""},model:{value:(_vm.selection),callback:function ($$v) {_vm.selection=$$v},expression:"selection"}},[_c('span',{staticClass:"pt-3"},[_vm._v("Tags: ‌‌")]),_vm._v(" "),_vm._l((item.tags),function(itm,index){return _c('v-chip',{key:index,staticClass:"white--text",attrs:{"to":("/blog/tags/" + itm),"color":"blue"}},[_vm._v(_vm._s(itm))])})],2),_vm._v(" "),(item.profile_picture != null)?_c('v-avatar',{staticClass:"d-inline-flex mt-3",attrs:{"size":"37"}},[_c('img',{attrs:{"src":item.profile_picture,"alt":""}})]):_c('v-avatar',{staticClass:" white--text d-inline-flex  mt-3",attrs:{"color":"blue","size":"37"}},[_vm._v("\n              "+_vm._s(item.name.charAt(0).toUpperCase())+"\n            ")]),_vm._v(" "),_c('v-card',{staticClass:"d-inline-flex d-flex flex-column ",attrs:{"flat":""}},[_c('v-card',{attrs:{"flat":""}},[_vm._v(_vm._s(item.name))]),_vm._v(" "),_c('v-card',{attrs:{"flat":""}},[_vm._v(_vm._s(item.human_date))])],1)],1)],1)]}}],null,true)})],1)],1)}),_vm._v(" "),_vm._l((10),function(index){return (_vm.loading)?_c('v-row',{key:index + "b"},[_c('v-col',{staticClass:"pa-0 ma-0 pt-2",attrs:{"cols":"12"}},[_c('v-skeleton-loader',{staticClass:"pa-2 ma-2",attrs:{"elevation":"2","outlined":"","shaped":"","tile":"","type":"card"}})],1)],1):_vm._e()}),_vm._v(" "),(!(_vm.length == 10))?_c('v-row',{staticClass:"ma-0 pa-0"},[_c('v-col',{staticClass:"pa-0 ma-0 pt-2",attrs:{"cols":"12"}},[_c('v-card',{staticClass:"pa-2 ma-0",attrs:{"elevation":"2","outlined":"","shaped":"","tile":""}},[_c('label',{staticClass:"grey--text",attrs:{"for":""}},[_vm._v("Nothing Follows")])])],1)],1):_vm._e(),_vm._v(" "),_c('v-row',{staticClass:"ma-0 pa-0 mb-3"},[_c('v-col',{staticClass:"pa-0 ma-0 pt-2",attrs:{"cols":"12"}},[_c('v-card',{staticClass:"pa-2 ma-0",attrs:{"elevation":"2","outlined":"","shaped":"","tile":""}},[_c('v-btn',{staticClass:"white--text",class:_vm.length == 10 ? 'green' : 'grey',attrs:{"disabled":_vm.length == 10 ? false : true},on:{"click":_vm.getnextarticle}},[_vm._v("\n          Next Article\n        ")])],1)],1)],1)],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./components/BlogCard.vue?vue&type=template&id=79f09a84&scoped=true&
+// CONCATENATED MODULE: ./components/BlogCard.vue?vue&type=template&id=69bd828d&scoped=true&
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/BlogCard.vue?vue&type=script&lang=js&
-//
-//
-//
 //
 //
 //
@@ -1626,7 +1623,7 @@ var VBtn = __webpack_require__(240);
 var VCard = __webpack_require__(93);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VCard/index.js
-var components_VCard = __webpack_require__(24);
+var components_VCard = __webpack_require__(16);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VChip/VChip.js
 var VChip = __webpack_require__(100);
@@ -1650,7 +1647,7 @@ var VImg = __webpack_require__(73);
 var VRow = __webpack_require__(253);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSheet/VSheet.js
-var VSheet = __webpack_require__(19);
+var VSheet = __webpack_require__(20);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSkeletonLoader/VSkeletonLoader.js
 var VSkeletonLoader = __webpack_require__(278);
@@ -1674,7 +1671,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   staticRenderFns,
   false,
   injectStyles,
-  "79f09a84",
+  "69bd828d",
   "5a259826"
   
 )
@@ -1697,7 +1694,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 
 
-installComponents_default()(component, {VAvatar: VAvatar["a" /* default */],VBtn: VBtn["a" /* default */],VCard: VCard["a" /* default */],VCardText: components_VCard["b" /* VCardText */],VCardTitle: components_VCard["c" /* VCardTitle */],VChip: VChip["a" /* default */],VChipGroup: VChipGroup["a" /* default */],VCol: VCol["a" /* default */],VHover: VHover["a" /* default */],VIcon: VIcon["a" /* default */],VImg: VImg["a" /* default */],VRow: VRow["a" /* default */],VSheet: VSheet["a" /* default */],VSkeletonLoader: VSkeletonLoader["a" /* default */]})
+installComponents_default()(component, {VAvatar: VAvatar["a" /* default */],VBtn: VBtn["a" /* default */],VCard: VCard["a" /* default */],VCardText: components_VCard["c" /* VCardText */],VCardTitle: components_VCard["d" /* VCardTitle */],VChip: VChip["a" /* default */],VChipGroup: VChipGroup["a" /* default */],VCol: VCol["a" /* default */],VHover: VHover["a" /* default */],VIcon: VIcon["a" /* default */],VImg: VImg["a" /* default */],VRow: VRow["a" /* default */],VSheet: VSheet["a" /* default */],VSkeletonLoader: VSkeletonLoader["a" /* default */]})
 
 
 /***/ }),
@@ -1788,7 +1785,7 @@ var installComponents_default = /*#__PURE__*/__webpack_require__.n(installCompon
 var VCard = __webpack_require__(93);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VCard/index.js
-var components_VCard = __webpack_require__(24);
+var components_VCard = __webpack_require__(16);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VCol.js
 var VCol = __webpack_require__(252);
@@ -1800,7 +1797,7 @@ var VContainer = __webpack_require__(257);
 var VRow = __webpack_require__(253);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSheet/VSheet.js
-var VSheet = __webpack_require__(19);
+var VSheet = __webpack_require__(20);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSkeletonLoader/VSkeletonLoader.js
 var VSkeletonLoader = __webpack_require__(278);
@@ -1835,7 +1832,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 
 
-installComponents_default()(component, {VCard: VCard["a" /* default */],VCardText: components_VCard["b" /* VCardText */],VCol: VCol["a" /* default */],VContainer: VContainer["a" /* default */],VRow: VRow["a" /* default */],VSheet: VSheet["a" /* default */],VSkeletonLoader: VSkeletonLoader["a" /* default */]})
+installComponents_default()(component, {VCard: VCard["a" /* default */],VCardText: components_VCard["c" /* VCardText */],VCol: VCol["a" /* default */],VContainer: VContainer["a" /* default */],VRow: VRow["a" /* default */],VSheet: VSheet["a" /* default */],VSkeletonLoader: VSkeletonLoader["a" /* default */]})
 
 
 /***/ }),

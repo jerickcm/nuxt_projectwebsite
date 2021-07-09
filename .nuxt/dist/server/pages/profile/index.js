@@ -105,7 +105,7 @@ var VIcon = __webpack_require__(65);
 var VRow = __webpack_require__(253);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSheet/VSheet.js
-var VSheet = __webpack_require__(19);
+var VSheet = __webpack_require__(20);
 
 // CONCATENATED MODULE: ./pages/profile/index.vue
 

@@ -574,13 +574,13 @@ var external_vue_default = /*#__PURE__*/__webpack_require__.n(external_vue_);
 var VDataFooter = __webpack_require__(270);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSelect/VSelect.js + 5 modules
-var VSelect = __webpack_require__(16);
+var VSelect = __webpack_require__(17);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VIcon/index.js
 var VIcon = __webpack_require__(15);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VBtn/index.js
-var VBtn = __webpack_require__(46);
+var VBtn = __webpack_require__(47);
 
 // CONCATENATED MODULE: ./node_modules/vuetify/lib/components/VDataIterator/VDataFooter.js
  // Components
@@ -1150,7 +1150,7 @@ var VChip = __webpack_require__(107);
 var VSimpleCheckbox = __webpack_require__(109);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/directives/ripple/index.js
-var ripple = __webpack_require__(21);
+var ripple = __webpack_require__(22);
 
 // CONCATENATED MODULE: ./node_modules/vuetify/lib/components/VDataTable/mixins/header.js
 
@@ -2391,7 +2391,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 46:
+/***/ 47:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2431,7 +2431,7 @@ var admin_pages = __webpack_require__(267);
 var external_vuelidate_ = __webpack_require__(77);
 
 // EXTERNAL MODULE: external "vuelidate/lib/validators"
-var validators_ = __webpack_require__(49);
+var validators_ = __webpack_require__(50);
 
 // EXTERNAL MODULE: external "nprogress"
 var external_nprogress_ = __webpack_require__(9);
@@ -2716,7 +2716,7 @@ var VBtn = __webpack_require__(240);
 var VCard = __webpack_require__(93);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VCard/index.js
-var components_VCard = __webpack_require__(24);
+var components_VCard = __webpack_require__(16);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VContainer.js + 1 modules
 var VContainer = __webpack_require__(257);
@@ -2728,7 +2728,7 @@ var VDataTable = __webpack_require__(284);
 var VDialog = __webpack_require__(256);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSheet/VSheet.js
-var VSheet = __webpack_require__(19);
+var VSheet = __webpack_require__(20);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VSpacer.js
 var VSpacer = __webpack_require__(255);
@@ -2763,7 +2763,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 /* harmony default export */ var logs = __webpack_exports__["default"] = (component.exports);
 
 /* nuxt-component-imports */
-installComponents_default()(component, {Template: __webpack_require__(48).default})
+installComponents_default()(component, {Template: __webpack_require__(49).default})
 
 
 /* vuetify-loader */
@@ -2778,7 +2778,7 @@ installComponents_default()(component, {Template: __webpack_require__(48).defaul
 
 
 
-installComponents_default()(component, {VBtn: VBtn["a" /* default */],VCard: VCard["a" /* default */],VCardActions: components_VCard["a" /* VCardActions */],VCardTitle: components_VCard["c" /* VCardTitle */],VContainer: VContainer["a" /* default */],VDataTable: VDataTable["a" /* default */],VDialog: VDialog["a" /* default */],VSheet: VSheet["a" /* default */],VSpacer: VSpacer["a" /* default */],VTextField: VTextField["a" /* default */]})
+installComponents_default()(component, {VBtn: VBtn["a" /* default */],VCard: VCard["a" /* default */],VCardActions: components_VCard["a" /* VCardActions */],VCardTitle: components_VCard["d" /* VCardTitle */],VContainer: VContainer["a" /* default */],VDataTable: VDataTable["a" /* default */],VDialog: VDialog["a" /* default */],VSheet: VSheet["a" /* default */],VSpacer: VSpacer["a" /* default */],VTextField: VTextField["a" /* default */]})
 
 
 /***/ })

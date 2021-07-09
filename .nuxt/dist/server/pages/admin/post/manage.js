@@ -914,13 +914,13 @@ var external_vue_default = /*#__PURE__*/__webpack_require__.n(external_vue_);
 var VDataFooter = __webpack_require__(270);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSelect/VSelect.js + 5 modules
-var VSelect = __webpack_require__(16);
+var VSelect = __webpack_require__(17);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VIcon/index.js
 var VIcon = __webpack_require__(15);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VBtn/index.js
-var VBtn = __webpack_require__(46);
+var VBtn = __webpack_require__(47);
 
 // CONCATENATED MODULE: ./node_modules/vuetify/lib/components/VDataIterator/VDataFooter.js
  // Components
@@ -1490,7 +1490,7 @@ var VChip = __webpack_require__(107);
 var VSimpleCheckbox = __webpack_require__(109);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/directives/ripple/index.js
-var ripple = __webpack_require__(21);
+var ripple = __webpack_require__(22);
 
 // CONCATENATED MODULE: ./node_modules/vuetify/lib/components/VDataTable/mixins/header.js
 
@@ -2697,7 +2697,7 @@ function searchTableItems(items, search, headersWithCustomFilters, headersWithou
 /* harmony import */ var _mixins_ckeditor5const__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(261);
 /* harmony import */ var vuelidate__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(77);
 /* harmony import */ var vuelidate__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vuelidate__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(49);
+/* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(50);
 /* harmony import */ var vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var nprogress__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9);
 /* harmony import */ var nprogress__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(nprogress__WEBPACK_IMPORTED_MODULE_5__);
@@ -3241,7 +3241,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 46:
+/***/ 47:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3297,7 +3297,7 @@ var VBtn = __webpack_require__(240);
 var VCard = __webpack_require__(93);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VCard/index.js
-var components_VCard = __webpack_require__(24);
+var components_VCard = __webpack_require__(16);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VCol.js
 var VCol = __webpack_require__(252);
@@ -3321,10 +3321,10 @@ var VImg = __webpack_require__(73);
 var VRow = __webpack_require__(253);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSelect/VSelect.js + 5 modules
-var VSelect = __webpack_require__(16);
+var VSelect = __webpack_require__(17);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSheet/VSheet.js
-var VSheet = __webpack_require__(19);
+var VSheet = __webpack_require__(20);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VSpacer.js
 var VSpacer = __webpack_require__(255);
@@ -3333,7 +3333,7 @@ var VSpacer = __webpack_require__(255);
 var VTextField = __webpack_require__(29);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VToolbar/VToolbar.js
-var VToolbar = __webpack_require__(20);
+var VToolbar = __webpack_require__(21);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VToolbar/index.js
 var components_VToolbar = __webpack_require__(108);
@@ -3365,7 +3365,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 /* harmony default export */ var manage = __webpack_exports__["default"] = (component.exports);
 
 /* nuxt-component-imports */
-installComponents_default()(component, {Template: __webpack_require__(48).default})
+installComponents_default()(component, {Template: __webpack_require__(49).default})
 
 
 /* vuetify-loader */
@@ -3389,7 +3389,7 @@ installComponents_default()(component, {Template: __webpack_require__(48).defaul
 
 
 
-installComponents_default()(component, {VBtn: VBtn["a" /* default */],VCard: VCard["a" /* default */],VCardActions: components_VCard["a" /* VCardActions */],VCardText: components_VCard["b" /* VCardText */],VCardTitle: components_VCard["c" /* VCardTitle */],VCol: VCol["a" /* default */],VContainer: VContainer["a" /* default */],VDataTable: VDataTable["a" /* default */],VDialog: VDialog["a" /* default */],VIcon: VIcon["a" /* default */],VImg: VImg["a" /* default */],VRow: VRow["a" /* default */],VSelect: VSelect["a" /* default */],VSheet: VSheet["a" /* default */],VSpacer: VSpacer["a" /* default */],VTextField: VTextField["a" /* default */],VToolbar: VToolbar["a" /* default */],VToolbarItems: components_VToolbar["a" /* VToolbarItems */],VToolbarTitle: components_VToolbar["b" /* VToolbarTitle */]})
+installComponents_default()(component, {VBtn: VBtn["a" /* default */],VCard: VCard["a" /* default */],VCardActions: components_VCard["a" /* VCardActions */],VCardText: components_VCard["c" /* VCardText */],VCardTitle: components_VCard["d" /* VCardTitle */],VCol: VCol["a" /* default */],VContainer: VContainer["a" /* default */],VDataTable: VDataTable["a" /* default */],VDialog: VDialog["a" /* default */],VIcon: VIcon["a" /* default */],VImg: VImg["a" /* default */],VRow: VRow["a" /* default */],VSelect: VSelect["a" /* default */],VSheet: VSheet["a" /* default */],VSpacer: VSpacer["a" /* default */],VTextField: VTextField["a" /* default */],VToolbar: VToolbar["a" /* default */],VToolbarItems: components_VToolbar["a" /* VToolbarItems */],VToolbarTitle: components_VToolbar["b" /* VToolbarTitle */]})
 
 
 /***/ })

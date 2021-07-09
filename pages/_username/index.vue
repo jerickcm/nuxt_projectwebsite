@@ -9,9 +9,15 @@
       <v-col>
         <v-card>
           <v-img
+            class="ml-2 mt-2"
             v-if="profile['details'].cover_photo"
             :src="profile['details'].cover_photo"
           ></v-img>
+
+          <v-avatar v-else class="ml-2 mt-2 white--text" color="grey">
+            {{ profile.name.charAt(0).toUpperCase() }}
+          </v-avatar>
+
           <v-avatar width="37">
             <v-img
               v-if="profile['details'].profile_picture"

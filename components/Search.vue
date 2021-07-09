@@ -29,10 +29,23 @@
                 </template>
                 <template v-else>
                   <v-list-item-avatar v-if="data.item.user">
-                    <v-img :src="data.item.image" />
+                    <v-img
+                      v-if="data.item.image != null"
+                      :src="data.item.image"
+                    >
+                    </v-img>
+                    <v-avatar v-else class="white--text" color="grey">
+                      {{ data.item.title.charAt(0).toUpperCase() }}
+                    </v-avatar>
                   </v-list-item-avatar>
                   <v-list-item-avatar tile v-else>
-                    <v-img :src="data.item.image" />
+                    <v-img
+                      v-if="data.item.image != null"
+                      :src="data.item.image"
+                    />
+                    <v-avatar tile v-else class="white--text" color="grey">
+                      {{ data.item.title.charAt(0).toUpperCase() }}
+                    </v-avatar>
                   </v-list-item-avatar>
 
                   <v-list-item-content>
@@ -47,44 +60,88 @@
           <v-divider></v-divider>
           <v-expand-transition>
             <v-list v-if="model">
-              <v-list-item>
-                <p>Page :</p>
+              <v-list-item v-if="model.user">
+                <v-card class="mx-auto" max-width="350" outlined>
+                  <v-list-item three-line>
+                    <v-list-item-content>
+                      <div class="text-overline mb-4">
+                        Profile
+                      </div>
+                      <v-list-item-title class="text-h5 mb-1">
+                        {{ model.title }}
+                      </v-list-item-title>
+                      <v-list-item-subtitle>user profile</v-list-item-subtitle>
+                    </v-list-item-content>
+
+                    <v-list-item-avatar tile size="80">
+                      <v-avatar v-if="model.image != null" width="37">
+                        <v-img :src="model.image"></v-img>
+                      </v-avatar>
+                      <v-avatar v-else class="white--text" color="grey">
+                        {{ model.title.charAt(0).toUpperCase() }}
+                      </v-avatar>
+                    </v-list-item-avatar>
+                  </v-list-item>
+
+                  <v-card-actions>
+                    <v-btn outlined rounded text>
+                      <nuxt-link
+                        color="blue"
+                        class="nostyle blue--text"
+                        target="_blank"
+                        :to="{
+                          path: model.page + model.slug
+                        }"
+                      >
+                        visit profile
+                        <v-icon small color="blue"
+                          >mdi-arrow-top-right-thick</v-icon
+                        >
+                      </nuxt-link>
+                    </v-btn>
+                  </v-card-actions>
+                </v-card>
               </v-list-item>
-              <v-list-item v-if="model.image">
-                <v-img
-                  contain
-                  gradient="to top right, rgba(100,115,201,.33), rgba(25,32,72,.7)"
-                  aspect-ratio="1.4"
-                  :alt="model.title"
-                  color="grey"
-                  :src="model.image"
-                  max-height="200"
-                  max-width="450"
-                ></v-img>
-              </v-list-item>
-              <v-list-item>
-                <v-icon v-if="model.icon">{{ model.icon }}</v-icon
-                >&zwnj;&zwnj; &zwnj;&zwnj;
-                <h2>
-                  <nuxt-link
-                    color="blue"
-                    class="nostyle blue--text"
-                    target="_blank"
-                    :to="{
-                      path: model.page + model.slug
-                    }"
-                  >
-                    {{ model.title }}
-                  </nuxt-link>
-                </h2>
+              <v-list-item v-else>
+                <v-card class="mx-auto" max-width="344">
+                  <v-img v-if="model.image != null" :src="model.image"></v-img>
+                  <v-img v-else src="/images/default.jpg"></v-img>
+
+                  <v-card-title class="fs-1">
+                    <v-icon v-if="model.icon">{{ model.icon }}</v-icon>
+                    <h2>
+                      {{ model.title }}
+                    </h2>
+                  </v-card-title>
+
+                  <v-card-subtitle> </v-card-subtitle>
+
+                  <v-card-actions>
+                    <v-btn outlined rounded text>
+                      <nuxt-link
+                        color="blue"
+                        class="nostyle blue--text"
+                        target="_blank"
+                        :to="{
+                          path: model.page + model.slug
+                        }"
+                      >
+                        visit page
+                        <v-icon small color="blue"
+                          >mdi-arrow-top-right-thick</v-icon
+                        >
+                      </nuxt-link>
+                    </v-btn>
+                  </v-card-actions>
+                </v-card>
               </v-list-item>
             </v-list>
           </v-expand-transition>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn :disabled="!model" color="primary" @click="model = null">
-              Clear
-              <v-icon right color="white">
+            <v-btn :disabled="!model" color="cstmblue" @click="model = null">
+              <label for="" color="cstmbluetext">Clear</label>
+              <v-icon right color="cstmbluetext">
                 mdi-close-circle
               </v-icon>
             </v-btn>
