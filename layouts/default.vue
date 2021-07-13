@@ -129,7 +129,10 @@
     </v-app-bar>
 
     <v-main>
-      <Search v-if="search" />
+      <v-container class="fix">
+        <Search v-if="search" />
+      </v-container>
+
       <nuxt />
     </v-main>
 
@@ -452,5 +455,19 @@ export default {
 
 .v-application a {
   color: blue;
+}
+/* .fix {
+  position: fixed;
+  left: 50%;
+  top: 400;
+  margin-left: -45vh;
+  width: '90vh';
+
+} */
+.fix {
+  z-index: 2;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
 }
 </style>
