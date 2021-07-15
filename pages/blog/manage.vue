@@ -295,6 +295,7 @@ export default {
     form_publish: { required }
   },
   async created() {
+    await this.$axios.$get('/sanctum/csrf-cookie')
     this.timezone = timezone
     this.editorConfig = {
       simpleUpload: {

@@ -4,7 +4,7 @@
       <form class="white pa-5" action="">
         <v-row
           ><v-col>
-            <v-btn color="primary" depressed to="/blog/manage">
+            <v-btn color="primary" depressed to="/api/blog/manage">
               BACK
             </v-btn>
           </v-col></v-row
@@ -150,7 +150,7 @@ var timezone = process.env.TIMEZONE
 
 export default {
   head: () => ({
-    title: 'Create Blog'
+    title: 'Create Post'
   }),
   mixins: [validationMixin],
   data: () => ({
