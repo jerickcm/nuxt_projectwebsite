@@ -121,6 +121,7 @@
       </v-container>
     </v-row>
 
+    <!--
     <v-row class="d-none">
       <v-col xs="12" sm="12" md="12" lg="12" cols="12" class=" pa-0">
         <Contact />
@@ -170,6 +171,8 @@
         </v-sheet>
       </v-col>
     </v-row>
+
+    -->
   </v-container>
 </template>
 <script>
@@ -180,7 +183,7 @@ export default {
     color: 'orange',
     height: '5px'
   },
-  middleware: 'auth',
+  // middleware: 'auth',
   auth: false,
   head() {
     return {
@@ -239,18 +242,18 @@ export default {
   },
   layout: 'default',
   methods: {
-    ...mapActions('messageoftheday', ['fetchQuote'])
+    // ...mapActions('messageoftheday', ['fetchQuote'])
   },
   computed: {
-    ...mapGetters('messageoftheday', ['MessageOfTheDay', 'LoadingStatus'])
+    // ...mapGetters('messageoftheday', ['MessageOfTheDay', 'LoadingStatus'])
   },
   async mounted() {
-    await this.$axios.$get('/sanctum/csrf-cookie')
-    try {
-      this.fetchQuote()
-    } catch (error) {
-      console.log(error)
-    }
+    // await this.$axios.$get('/sanctum/csrf-cookie')
+    // try {
+    //   this.fetchQuote()
+    // } catch (error) {
+    //   console.log(error)
+    // }
   }
 }
 </script>

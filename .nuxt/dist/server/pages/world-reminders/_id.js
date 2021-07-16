@@ -1,13 +1,13 @@
 exports.ids = [68,24];
 exports.modules = {
 
-/***/ 258:
+/***/ 257:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(259);
+var content = __webpack_require__(258);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -15,7 +15,7 @@ __webpack_require__(5).default("5f757930", content, true)
 
 /***/ }),
 
-/***/ 259:
+/***/ 258:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -29,11 +29,11 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 278:
+/***/ 277:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _src_components_VSkeletonLoader_VSkeletonLoader_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(258);
+/* harmony import */ var _src_components_VSkeletonLoader_VSkeletonLoader_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(257);
 /* harmony import */ var _src_components_VSkeletonLoader_VSkeletonLoader_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_src_components_VSkeletonLoader_VSkeletonLoader_sass__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _mixins_elevatable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(57);
 /* harmony import */ var _mixins_measurable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(37);
@@ -230,13 +230,13 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 287:
+/***/ 286:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(308);
+var content = __webpack_require__(307);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -248,19 +248,19 @@ module.exports.__inject__ = function (context) {
 
 /***/ }),
 
-/***/ 307:
+/***/ 306:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_WorldRemindersCard_vue_vue_type_style_index_0_id_3ed8c480_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(287);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_WorldRemindersCard_vue_vue_type_style_index_0_id_3ed8c480_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(286);
 /* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_WorldRemindersCard_vue_vue_type_style_index_0_id_3ed8c480_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_WorldRemindersCard_vue_vue_type_style_index_0_id_3ed8c480_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_WorldRemindersCard_vue_vue_type_style_index_0_id_3ed8c480_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_WorldRemindersCard_vue_vue_type_style_index_0_id_3ed8c480_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ 308:
+/***/ 307:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -274,7 +274,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 320:
+/***/ 319:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -461,22 +461,22 @@ var installComponents = __webpack_require__(10);
 var installComponents_default = /*#__PURE__*/__webpack_require__.n(installComponents);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VBtn/VBtn.js + 2 modules
-var VBtn = __webpack_require__(240);
+var VBtn = __webpack_require__(239);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VCol.js
-var VCol = __webpack_require__(252);
+var VCol = __webpack_require__(251);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VContainer.js + 1 modules
-var VContainer = __webpack_require__(257);
+var VContainer = __webpack_require__(256);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VRow.js
-var VRow = __webpack_require__(253);
+var VRow = __webpack_require__(252);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSheet/VSheet.js
 var VSheet = __webpack_require__(20);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSkeletonLoader/VSkeletonLoader.js
-var VSkeletonLoader = __webpack_require__(278);
+var VSkeletonLoader = __webpack_require__(277);
 
 // CONCATENATED MODULE: ./components/WorldRemindersCard.vue
 
@@ -484,7 +484,7 @@ var VSkeletonLoader = __webpack_require__(278);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(307)
+  var style0 = __webpack_require__(306)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -498,7 +498,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "3ed8c480",
-  "21c1934c"
+  "7da4ba14"
   
 )
 
@@ -517,7 +517,7 @@ installComponents_default()(component, {VBtn: VBtn["a" /* default */],VCol: VCol
 
 /***/ }),
 
-/***/ 518:
+/***/ 516:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -644,13 +644,13 @@ var installComponents = __webpack_require__(10);
 var installComponents_default = /*#__PURE__*/__webpack_require__.n(installComponents);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VCol.js
-var VCol = __webpack_require__(252);
+var VCol = __webpack_require__(251);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VContainer.js + 1 modules
-var VContainer = __webpack_require__(257);
+var VContainer = __webpack_require__(256);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VRow.js
-var VRow = __webpack_require__(253);
+var VRow = __webpack_require__(252);
 
 // CONCATENATED MODULE: ./pages/world-reminders/_id.vue
 
@@ -667,14 +667,14 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "17a7da7e"
+  "4e2c837b"
   
 )
 
 /* harmony default export */ var _id = __webpack_exports__["default"] = (component.exports);
 
 /* nuxt-component-imports */
-installComponents_default()(component, {WorldRemindersCard: __webpack_require__(320).default})
+installComponents_default()(component, {WorldRemindersCard: __webpack_require__(319).default})
 
 
 /* vuetify-loader */

@@ -1,7 +1,7 @@
 exports.ids = [3];
 exports.modules = {
 
-/***/ 316:
+/***/ 315:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -42,7 +42,7 @@ var installComponents = __webpack_require__(10);
 var installComponents_default = /*#__PURE__*/__webpack_require__.n(installComponents);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VBtn/VBtn.js + 2 modules
-var VBtn = __webpack_require__(240);
+var VBtn = __webpack_require__(239);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VCard/VCard.js
 var VCard = __webpack_require__(93);
@@ -65,7 +65,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "26305d4a"
+  "3dbe5461"
   
 )
 

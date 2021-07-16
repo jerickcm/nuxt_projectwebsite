@@ -1,11 +1,11 @@
 exports.ids = [61];
 exports.modules = {
 
-/***/ 335:
+/***/ 334:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(URL) {/* harmony import */ var _mixins_reservedusernames_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(440);
+/* WEBPACK VAR INJECTION */(function(URL) {/* harmony import */ var _mixins_reservedusernames_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(435);
 //
 //
 //
@@ -160,11 +160,11 @@ exports.modules = {
 
   }
 });
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(242)["URL"]))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(241)["URL"]))
 
 /***/ }),
 
-/***/ 440:
+/***/ 435:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -177,7 +177,7 @@ const usernames = {
 
 /***/ }),
 
-/***/ 532:
+/***/ 530:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -192,7 +192,7 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./pages/profile/edit.vue?vue&type=template&id=133dc010&scoped=true&
 
 // EXTERNAL MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/profile/edit.vue?vue&type=script&lang=js&
-var editvue_type_script_lang_js_ = __webpack_require__(335);
+var editvue_type_script_lang_js_ = __webpack_require__(334);
 
 // CONCATENATED MODULE: ./pages/profile/edit.vue?vue&type=script&lang=js&
  /* harmony default export */ var profile_editvue_type_script_lang_js_ = (editvue_type_script_lang_js_["a" /* default */]); 
@@ -204,22 +204,22 @@ var installComponents = __webpack_require__(10);
 var installComponents_default = /*#__PURE__*/__webpack_require__.n(installComponents);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VBtn/VBtn.js + 2 modules
-var VBtn = __webpack_require__(240);
+var VBtn = __webpack_require__(239);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VCard/VCard.js
 var VCard = __webpack_require__(93);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VCol.js
-var VCol = __webpack_require__(252);
+var VCol = __webpack_require__(251);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VContainer.js + 1 modules
-var VContainer = __webpack_require__(257);
+var VContainer = __webpack_require__(256);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VImg/VImg.js + 2 modules
 var VImg = __webpack_require__(73);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VRow.js
-var VRow = __webpack_require__(253);
+var VRow = __webpack_require__(252);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VTextField/VTextField.js + 3 modules
 var VTextField = __webpack_require__(29);
@@ -242,7 +242,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "133dc010",
-  "43c10c90"
+  "cf6ecdd4"
   
 )
 

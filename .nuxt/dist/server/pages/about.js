@@ -1,13 +1,13 @@
 exports.ids = [28];
 exports.modules = {
 
-/***/ 360:
+/***/ 357:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(413);
+var content = __webpack_require__(408);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -19,19 +19,19 @@ module.exports.__inject__ = function (context) {
 
 /***/ }),
 
-/***/ 412:
+/***/ 407:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_about_vue_vue_type_style_index_0_id_de28c6e0_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(360);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_about_vue_vue_type_style_index_0_id_de28c6e0_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(357);
 /* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_about_vue_vue_type_style_index_0_id_de28c6e0_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_about_vue_vue_type_style_index_0_id_de28c6e0_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_about_vue_vue_type_style_index_0_id_de28c6e0_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_about_vue_vue_type_style_index_0_id_de28c6e0_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ 413:
+/***/ 408:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -45,13 +45,13 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 414:
+/***/ 409:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(415);
+var content = __webpack_require__(410);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -59,7 +59,7 @@ __webpack_require__(5).default("2d62e390", content, true)
 
 /***/ }),
 
-/***/ 415:
+/***/ 410:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -73,13 +73,13 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 416:
+/***/ 411:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(417);
+var content = __webpack_require__(412);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -87,7 +87,7 @@ __webpack_require__(5).default("0d135400", content, true)
 
 /***/ }),
 
-/***/ 417:
+/***/ 412:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -105,14 +105,14 @@ module.exports = ___CSS_LOADER_EXPORT___;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _VBtn__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(240);
+/* harmony import */ var _VBtn__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(239);
 
 
 /* harmony default export */ __webpack_exports__["a"] = (_VBtn__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"]);
 
 /***/ }),
 
-/***/ 497:
+/***/ 495:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -374,16 +374,16 @@ var installComponents = __webpack_require__(10);
 var installComponents_default = /*#__PURE__*/__webpack_require__.n(installComponents);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VBtn/VBtn.js + 2 modules
-var VBtn = __webpack_require__(240);
+var VBtn = __webpack_require__(239);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/src/components/VCarousel/VCarousel.sass
-var VCarousel = __webpack_require__(414);
+var VCarousel = __webpack_require__(409);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/src/components/VWindow/VWindow.sass
-var VWindow = __webpack_require__(416);
+var VWindow = __webpack_require__(411);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/directives/touch/index.js
-var touch = __webpack_require__(110);
+var touch = __webpack_require__(109);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VBtn/index.js
 var components_VBtn = __webpack_require__(47);
@@ -664,8 +664,8 @@ var VItemGroup = __webpack_require__(59);
   }
 
 }));
-// EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VProgressLinear/index.js
-var VProgressLinear = __webpack_require__(111);
+// EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VProgressLinear/index.js + 1 modules
+var VProgressLinear = __webpack_require__(120);
 
 // CONCATENATED MODULE: ./node_modules/vuetify/lib/mixins/button-group/index.js
 // Extensions
@@ -1129,13 +1129,13 @@ const VCarouselItem_baseMixins = Object(mixins["a" /* default */])(VWindowItem, 
   }
 }));
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VCol.js
-var VCol = __webpack_require__(252);
+var VCol = __webpack_require__(251);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VContainer.js + 1 modules
-var VContainer = __webpack_require__(257);
+var VContainer = __webpack_require__(256);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VRow.js
-var VRow = __webpack_require__(253);
+var VRow = __webpack_require__(252);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSheet/VSheet.js
 var VSheet = __webpack_require__(20);
@@ -1146,7 +1146,7 @@ var VSheet = __webpack_require__(20);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(412)
+  var style0 = __webpack_require__(407)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -1160,7 +1160,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "de28c6e0",
-  "abcef02c"
+  "068133b8"
   
 )
 

@@ -1,7 +1,7 @@
 exports.ids = [51,3,4];
 exports.modules = {
 
-/***/ 316:
+/***/ 315:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -42,7 +42,7 @@ var installComponents = __webpack_require__(10);
 var installComponents_default = /*#__PURE__*/__webpack_require__.n(installComponents);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VBtn/VBtn.js + 2 modules
-var VBtn = __webpack_require__(240);
+var VBtn = __webpack_require__(239);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VCard/VCard.js
 var VCard = __webpack_require__(93);
@@ -65,7 +65,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "26305d4a"
+  "3dbe5461"
   
 )
 
@@ -81,7 +81,7 @@ installComponents_default()(component, {VBtn: VBtn["a" /* default */],VCard: VCa
 
 /***/ }),
 
-/***/ 317:
+/***/ 316:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -136,7 +136,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "d5f4f1ee"
+  "3447ebe2"
   
 )
 
@@ -152,7 +152,7 @@ installComponents_default()(component, {VCard: VCard["a" /* default */],VCardTex
 
 /***/ }),
 
-/***/ 500:
+/***/ 498:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -256,10 +256,10 @@ var installComponents = __webpack_require__(10);
 var installComponents_default = /*#__PURE__*/__webpack_require__.n(installComponents);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VBtn/VBtn.js + 2 modules
-var VBtn = __webpack_require__(240);
+var VBtn = __webpack_require__(239);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VContainer.js + 1 modules
-var VContainer = __webpack_require__(257);
+var VContainer = __webpack_require__(256);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSheet/VSheet.js
 var VSheet = __webpack_require__(20);
@@ -279,14 +279,14 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "776ef927"
+  "4168d6e1"
   
 )
 
 /* harmony default export */ var dashboard = __webpack_exports__["default"] = (component.exports);
 
 /* nuxt-component-imports */
-installComponents_default()(component, {DashTitle: __webpack_require__(316).default,Dashboard: __webpack_require__(317).default})
+installComponents_default()(component, {DashTitle: __webpack_require__(315).default,Dashboard: __webpack_require__(316).default})
 
 
 /* vuetify-loader */

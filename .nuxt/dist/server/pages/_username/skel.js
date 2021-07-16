@@ -1,7 +1,7 @@
 exports.ids = [27];
 exports.modules = {
 
-/***/ 521:
+/***/ 519:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -136,13 +136,13 @@ var installComponents_default = /*#__PURE__*/__webpack_require__.n(installCompon
 var VCard = __webpack_require__(93);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VCol.js
-var VCol = __webpack_require__(252);
+var VCol = __webpack_require__(251);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VContainer.js + 1 modules
-var VContainer = __webpack_require__(257);
+var VContainer = __webpack_require__(256);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VRow.js
-var VRow = __webpack_require__(253);
+var VRow = __webpack_require__(252);
 
 // CONCATENATED MODULE: ./pages/_username/skel.vue
 
@@ -159,7 +159,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "2f39d98e"
+  "3939963f"
   
 )
 
