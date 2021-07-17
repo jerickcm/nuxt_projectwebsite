@@ -57,6 +57,7 @@
             </v-row>
           </v-container>
         </v-row>
+        <!--
         <v-row>
           <v-container fluid>
             <v-row>
@@ -118,6 +119,8 @@
         <v-row>
           <TagsIndex />
         </v-row>
+
+        -->
       </v-container>
     </v-row>
 

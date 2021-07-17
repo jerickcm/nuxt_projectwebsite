@@ -42,7 +42,7 @@ var installComponents = __webpack_require__(10);
 var installComponents_default = /*#__PURE__*/__webpack_require__.n(installComponents);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VBtn/VBtn.js + 2 modules
-var VBtn = __webpack_require__(239);
+var VBtn = __webpack_require__(240);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VCard/VCard.js
 var VCard = __webpack_require__(93);
@@ -256,10 +256,10 @@ var installComponents = __webpack_require__(10);
 var installComponents_default = /*#__PURE__*/__webpack_require__.n(installComponents);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VBtn/VBtn.js + 2 modules
-var VBtn = __webpack_require__(239);
+var VBtn = __webpack_require__(240);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VContainer.js + 1 modules
-var VContainer = __webpack_require__(256);
+var VContainer = __webpack_require__(257);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSheet/VSheet.js
 var VSheet = __webpack_require__(20);

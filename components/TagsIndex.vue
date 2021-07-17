@@ -13,6 +13,17 @@
       </v-col>
     </v-row>
     <v-row>
+      <v-col class="ma-0 mt-0 pt-0">
+        <v-progress-linear
+          v-if="load_tags"
+          color="blue accent-5"
+          indeterminate
+          rounded
+          height="6"
+        ></v-progress-linear>
+      </v-col>
+    </v-row>
+    <v-row v-if="load_tags == false">
       <v-col>
         <v-card flat>
           <v-card-text>

@@ -1,13 +1,13 @@
 exports.ids = [28];
 exports.modules = {
 
-/***/ 357:
+/***/ 355:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(408);
+var content = __webpack_require__(406);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -19,15 +19,43 @@ module.exports.__inject__ = function (context) {
 
 /***/ }),
 
-/***/ 407:
+/***/ 405:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_about_vue_vue_type_style_index_0_id_de28c6e0_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(357);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_about_vue_vue_type_style_index_0_id_de28c6e0_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(355);
 /* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_about_vue_vue_type_style_index_0_id_de28c6e0_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_about_vue_vue_type_style_index_0_id_de28c6e0_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_about_vue_vue_type_style_index_0_id_de28c6e0_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_about_vue_vue_type_style_index_0_id_de28c6e0_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
+
+/***/ }),
+
+/***/ 406:
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(4);
+var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+___CSS_LOADER_EXPORT___.push([module.i, "ul.clean[data-v-de28c6e0]{list-style:none!important;list-style-type:none!important}", ""]);
+// Exports
+module.exports = ___CSS_LOADER_EXPORT___;
+
+
+/***/ }),
+
+/***/ 407:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(408);
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+__webpack_require__(5).default("2d62e390", content, true)
 
 /***/ }),
 
@@ -38,7 +66,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(4);
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, "ul.clean[data-v-de28c6e0]{list-style:none!important;list-style-type:none!important}", ""]);
+___CSS_LOADER_EXPORT___.push([module.i, ".v-carousel{overflow:hidden;position:relative;width:100%}.v-carousel__controls{align-items:center;background:rgba(0,0,0,.3);bottom:0;display:flex;height:50px;justify-content:center;list-style-type:none;position:absolute;width:100%;z-index:1}.v-carousel__controls>.v-item-group{flex:0 1 auto}.v-carousel__controls__item{margin:0 8px}.v-carousel__controls__item .v-icon{opacity:.5}.v-carousel__controls__item--active .v-icon{opacity:1;vertical-align:middle}.v-carousel__controls__item:hover{background:none}.v-carousel__controls__item:hover .v-icon{opacity:.8}.v-carousel__progress{margin:0;position:absolute;bottom:0;left:0;right:0}.v-carousel .v-window-item{display:block;height:inherit;text-decoration:none}.v-carousel--hide-delimiter-background .v-carousel__controls{background:transparent}.v-carousel--vertical-delimiters .v-carousel__controls{height:100%!important;width:50px}", ""]);
 // Exports
 module.exports = ___CSS_LOADER_EXPORT___;
 
@@ -55,39 +83,11 @@ var content = __webpack_require__(410);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
-__webpack_require__(5).default("2d62e390", content, true)
-
-/***/ }),
-
-/***/ 410:
-/***/ (function(module, exports, __webpack_require__) {
-
-// Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(4);
-var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
-// Module
-___CSS_LOADER_EXPORT___.push([module.i, ".v-carousel{overflow:hidden;position:relative;width:100%}.v-carousel__controls{align-items:center;background:rgba(0,0,0,.3);bottom:0;display:flex;height:50px;justify-content:center;list-style-type:none;position:absolute;width:100%;z-index:1}.v-carousel__controls>.v-item-group{flex:0 1 auto}.v-carousel__controls__item{margin:0 8px}.v-carousel__controls__item .v-icon{opacity:.5}.v-carousel__controls__item--active .v-icon{opacity:1;vertical-align:middle}.v-carousel__controls__item:hover{background:none}.v-carousel__controls__item:hover .v-icon{opacity:.8}.v-carousel__progress{margin:0;position:absolute;bottom:0;left:0;right:0}.v-carousel .v-window-item{display:block;height:inherit;text-decoration:none}.v-carousel--hide-delimiter-background .v-carousel__controls{background:transparent}.v-carousel--vertical-delimiters .v-carousel__controls{height:100%!important;width:50px}", ""]);
-// Exports
-module.exports = ___CSS_LOADER_EXPORT___;
-
-
-/***/ }),
-
-/***/ 411:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(412);
-if(content.__esModule) content = content.default;
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
 __webpack_require__(5).default("0d135400", content, true)
 
 /***/ }),
 
-/***/ 412:
+/***/ 410:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -105,7 +105,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _VBtn__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(239);
+/* harmony import */ var _VBtn__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(240);
 
 
 /* harmony default export */ __webpack_exports__["a"] = (_VBtn__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"]);
@@ -374,16 +374,16 @@ var installComponents = __webpack_require__(10);
 var installComponents_default = /*#__PURE__*/__webpack_require__.n(installComponents);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VBtn/VBtn.js + 2 modules
-var VBtn = __webpack_require__(239);
+var VBtn = __webpack_require__(240);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/src/components/VCarousel/VCarousel.sass
-var VCarousel = __webpack_require__(409);
+var VCarousel = __webpack_require__(407);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/src/components/VWindow/VWindow.sass
-var VWindow = __webpack_require__(411);
+var VWindow = __webpack_require__(409);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/directives/touch/index.js
-var touch = __webpack_require__(109);
+var touch = __webpack_require__(110);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VBtn/index.js
 var components_VBtn = __webpack_require__(47);
@@ -664,8 +664,8 @@ var VItemGroup = __webpack_require__(59);
   }
 
 }));
-// EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VProgressLinear/index.js + 1 modules
-var VProgressLinear = __webpack_require__(120);
+// EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VProgressLinear/index.js
+var VProgressLinear = __webpack_require__(111);
 
 // CONCATENATED MODULE: ./node_modules/vuetify/lib/mixins/button-group/index.js
 // Extensions
@@ -1129,13 +1129,13 @@ const VCarouselItem_baseMixins = Object(mixins["a" /* default */])(VWindowItem, 
   }
 }));
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VCol.js
-var VCol = __webpack_require__(251);
+var VCol = __webpack_require__(252);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VContainer.js + 1 modules
-var VContainer = __webpack_require__(256);
+var VContainer = __webpack_require__(257);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VRow.js
-var VRow = __webpack_require__(252);
+var VRow = __webpack_require__(253);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSheet/VSheet.js
 var VSheet = __webpack_require__(20);
@@ -1146,7 +1146,7 @@ var VSheet = __webpack_require__(20);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(407)
+  var style0 = __webpack_require__(405)
 if (style0.__inject__) style0.__inject__(context)
 
 }

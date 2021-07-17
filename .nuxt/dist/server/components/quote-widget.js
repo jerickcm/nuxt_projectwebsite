@@ -1,13 +1,13 @@
 exports.ids = [9];
 exports.modules = {
 
-/***/ 257:
+/***/ 258:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(258);
+var content = __webpack_require__(259);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -15,7 +15,7 @@ __webpack_require__(5).default("5f757930", content, true)
 
 /***/ }),
 
-/***/ 258:
+/***/ 259:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -29,11 +29,11 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 277:
+/***/ 278:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _src_components_VSkeletonLoader_VSkeletonLoader_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(257);
+/* harmony import */ var _src_components_VSkeletonLoader_VSkeletonLoader_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(258);
 /* harmony import */ var _src_components_VSkeletonLoader_VSkeletonLoader_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_src_components_VSkeletonLoader_VSkeletonLoader_sass__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _mixins_elevatable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(57);
 /* harmony import */ var _mixins_measurable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(37);
@@ -230,7 +230,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 397:
+/***/ 396:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -301,19 +301,19 @@ var VCard = __webpack_require__(93);
 var components_VCard = __webpack_require__(16);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VCol.js
-var VCol = __webpack_require__(251);
+var VCol = __webpack_require__(252);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VContainer.js + 1 modules
-var VContainer = __webpack_require__(256);
+var VContainer = __webpack_require__(257);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VRow.js
-var VRow = __webpack_require__(252);
+var VRow = __webpack_require__(253);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSheet/VSheet.js
 var VSheet = __webpack_require__(20);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSkeletonLoader/VSkeletonLoader.js
-var VSkeletonLoader = __webpack_require__(277);
+var VSkeletonLoader = __webpack_require__(278);
 
 // CONCATENATED MODULE: ./components/QuoteWidget.vue
 

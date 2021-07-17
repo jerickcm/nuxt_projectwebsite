@@ -1,7 +1,7 @@
 exports.ids = [31,3,4];
 exports.modules = {
 
-/***/ 266:
+/***/ 267:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -54,7 +54,7 @@ var installComponents = __webpack_require__(10);
 var installComponents_default = /*#__PURE__*/__webpack_require__.n(installComponents);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VBtn/VBtn.js + 2 modules
-var VBtn = __webpack_require__(239);
+var VBtn = __webpack_require__(240);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VCard/VCard.js
 var VCard = __webpack_require__(93);
@@ -179,7 +179,7 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./pages/admin/index.vue?vue&type=template&id=51da4c16&
 
 // EXTERNAL MODULE: ./mixins/admin_pages.js
-var admin_pages = __webpack_require__(266);
+var admin_pages = __webpack_require__(267);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/admin/index.vue?vue&type=script&lang=js&
 //
@@ -319,10 +319,10 @@ var installComponents = __webpack_require__(10);
 var installComponents_default = /*#__PURE__*/__webpack_require__.n(installComponents);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VBtn/VBtn.js + 2 modules
-var VBtn = __webpack_require__(239);
+var VBtn = __webpack_require__(240);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VGrid/VContainer.js + 1 modules
-var VContainer = __webpack_require__(256);
+var VContainer = __webpack_require__(257);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSheet/VSheet.js
 var VSheet = __webpack_require__(20);
