@@ -24,38 +24,9 @@
         <v-row>
           <TopicsIndex />
         </v-row>
+
         <v-row>
-          <v-container fluid>
-            <v-row>
-              <v-col class=" mb-0 pb-0">
-                <hr color="orange" class="hr-orange" />
-              </v-col>
-            </v-row>
-            <v-row>
-              <v-col class="ma-0 mt-0 pt-0">
-                <nuxt-link to="/blog">
-                  <h2 class="ma-0 mt-0 pt-0 orange--text text--darken-5">
-                    Blogs<v-icon color="orange" large>mdi-menu-right</v-icon>
-                    ({{ blog_content }} articles)
-                  </h2>
-                </nuxt-link>
-              </v-col>
-            </v-row>
-
-            <IndexWidget :content="content" path="/blog" />
-
-            <v-row v-if="blogs_load">
-              <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
-                <SkeletonCard />
-              </v-col>
-              <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
-                <SkeletonCard />
-              </v-col>
-              <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
-                <SkeletonCard />
-              </v-col>
-            </v-row>
-          </v-container>
+          <BlogsIndex />
         </v-row>
         <!--
         <v-row>
@@ -179,7 +150,7 @@
   </v-container>
 </template>
 <script>
-import { mapGetters, mapActions } from 'vuex'
+// import { mapGetters, mapActions } from 'vuex'
 
 export default {
   loading: {
@@ -223,25 +194,24 @@ export default {
   }),
   async fetch() {
     this.blogs_load = true
-    this.news_load = true
-    this.posts_load = true
+    // this.news_load = true
+    // this.posts_load = true
 
     await this.$axios.$get('/sanctum/csrf-cookie')
     const res = await this.$axios.$get(`api/blog/page/1/item/3`)
     this.blogs_load = false
     this.content = res.data
     this.blog_content = res.total
-
-    await this.$axios.$get('/sanctum/csrf-cookie')
-    const news = await this.$axios.$get(`api/news/page/1/item/3`)
-    this.news_load = false
-    this.news = news.data
-    this.news_content = news.total
-    await this.$axios.$get('/sanctum/csrf-cookie')
-    const posts = await this.$axios.$get(`api/post/page/1/item/3`)
-    this.posts_load = false
-    this.posts = posts.data
-    this.posts_content = posts.total
+    // await this.$axios.$get('/sanctum/csrf-cookie')
+    // const news = await this.$axios.$get(`api/news/page/1/item/3`)
+    // this.news_load = false
+    // this.news = news.data
+    // this.news_content = news.total
+    // await this.$axios.$get('/sanctum/csrf-cookie')
+    // const posts = await this.$axios.$get(`api/post/page/1/item/3`)
+    // this.posts_load = false
+    // this.posts = posts.data
+    // this.posts_content = posts.total
   },
   layout: 'default',
   methods: {

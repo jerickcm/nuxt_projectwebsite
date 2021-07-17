@@ -5,6 +5,9 @@
   "BlogCard": {
     "description": "Auto imported from components/BlogCard.vue"
   },
+  "BlogsIndex": {
+    "description": "Auto imported from components/BlogsIndex.vue"
+  },
   "Contact": {
     "description": "Auto imported from components/Contact.vue"
   },

@@ -8,6 +8,7 @@ You can directly use them in pages and other components without the need to impo
 
 - `<AdminNav>` | `<admin-nav>` (components/AdminNav.vue)
 - `<BlogCard>` | `<blog-card>` (components/BlogCard.vue)
+- `<BlogsIndex>` | `<blogs-index>` (components/BlogsIndex.vue)
 - `<Contact>` | `<contact>` (components/Contact.vue)
 - `<Dashboard>` | `<dashboard>` (components/Dashboard.vue)
 - `<DashTitle>` | `<dash-title>` (components/DashTitle.vue)

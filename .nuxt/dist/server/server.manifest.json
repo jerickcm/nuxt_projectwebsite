@@ -2,6 +2,7 @@
   "entry": "server.js",
   "files": {
     "components/blog-card.js": "components/blog-card.js",
+    "components/blogs-index.js": "components/blogs-index.js",
     "components/contact.js": "components/contact.js",
     "components/dash-title.js": "components/dash-title.js",
     "components/dashboard.js": "components/dashboard.js",
@@ -76,6 +77,7 @@
   },
   "maps": {
     "components/blog-card.js": "components/blog-card.js.map",
+    "components/blogs-index.js": "components/blogs-index.js.map",
     "components/contact.js": "components/contact.js.map",
     "components/dash-title.js": "components/dash-title.js.map",
     "components/dashboard.js": "components/dashboard.js.map",
