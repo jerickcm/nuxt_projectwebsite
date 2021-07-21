@@ -49,6 +49,10 @@
             <!-- <span>Email : {{ posts['email'] }}</span> -->
             <br />
             <span>Date : {{ posts['human_date'] }}</span>
+            <!-- <textarea
+              v-html="posts['content']"
+              class="ck-content mt-5 "
+            ></textarea> -->
             <v-sheet
               v-html="posts['content']"
               class="ck-content mt-5 "
