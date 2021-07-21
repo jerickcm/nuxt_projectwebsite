@@ -28,125 +28,8 @@
         <v-row>
           <BlogsIndex />
         </v-row>
-        <!--
-        <v-row>
-          <v-container fluid>
-            <v-row>
-              <v-col class=" mb-0 pb-0">
-                <hr color="blue" class="hr-blue" />
-              </v-col>
-            </v-row>
-            <v-row>
-              <v-col class="ma-0 mt-0 pt-0">
-                <h2 class="ma-0 mt-0 pt-0 blue--text ">
-                  News ({{ news_content }} articles)
-                </h2>
-              </v-col>
-            </v-row>
-            <IndexWidget :content="news" path="/news" />
-
-            <v-row v-if="news_load">
-              <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
-                <SkeletonCard />
-              </v-col>
-              <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
-                <SkeletonCard />
-              </v-col>
-              <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
-                <SkeletonCard />
-              </v-col>
-            </v-row>
-          </v-container>
-        </v-row>
-        <v-row>
-          <v-container>
-            <v-row>
-              <v-col class=" mb-0 pb-0">
-                <hr color="red" class="hr-red" />
-              </v-col>
-            </v-row>
-            <v-row>
-              <v-col class="ma-0 mt-0 pt-0">
-                <h2 class="ma-0 mt-0 pt-0 red--text text-darken-5">
-                  Post ({{ posts_content }} articles)
-                </h2>
-              </v-col>
-            </v-row>
-            <IndexWidget :content="posts" path="/post" />
-
-            <v-row v-if="posts_load">
-              <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
-                <SkeletonCard />
-              </v-col>
-              <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
-                <SkeletonCard />
-              </v-col>
-              <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
-                <SkeletonCard />
-              </v-col>
-            </v-row>
-          </v-container>
-        </v-row>
-        <v-row>
-          <TagsIndex />
-        </v-row>
-
-        -->
       </v-container>
     </v-row>
-
-    <!--
-    <v-row class="d-none">
-      <v-col xs="12" sm="12" md="12" lg="12" cols="12" class=" pa-0">
-        <Contact />
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col
-        xs="12"
-        sm="12"
-        md="12"
-        lg="12"
-        xl="12"
-        cols="12"
-        class="ma-0 pa-0"
-      >
-        <v-sheet color="brown lighten-2">
-          <v-container fluid>
-            <v-row>
-              <v-col xs="12" sm="12" md="12" lg="12" xl="12" cols="12">
-                <v-progress-linear
-                  v-if="LoadingStatus"
-                  color="blue accent-5"
-                  indeterminate
-                  rounded
-                  height="6"
-                ></v-progress-linear>
-                <v-sheet
-                  v-if="!LoadingStatus"
-                  v-for="message in MessageOfTheDay"
-                  :key="message.author"
-                  class="text-center "
-                  color="brown lighten-2"
-                >
-                  <span
-                    class="text-center mt-5 dont-break-out"
-                    :class="{
-                      'fs-0.5': $vuetify.breakpoint.smAndDown,
-                      'fs-1.5': $vuetify.breakpoint.mdAndUp
-                    }"
-                  >
-                    " {{ message.message }} " - {{ message.author }}
-                  </span>
-                </v-sheet>
-              </v-col>
-            </v-row>
-          </v-container>
-        </v-sheet>
-      </v-col>
-    </v-row>
-
-    -->
   </v-container>
 </template>
 <script>
@@ -197,11 +80,11 @@ export default {
     // this.news_load = true
     // this.posts_load = true
 
-    await this.$axios.$get('/sanctum/csrf-cookie')
-    const res = await this.$axios.$get(`api/blog/page/1/item/3`)
-    this.blogs_load = false
-    this.content = res.data
-    this.blog_content = res.total
+    // await this.$axios.$get('/sanctum/csrf-cookie')
+    // const res = await this.$axios.$get(`api/blog/page/1/item/3`)
+    // this.blogs_load = false
+    // this.content = res.data
+    // this.blog_content = res.total
     // await this.$axios.$get('/sanctum/csrf-cookie')
     // const news = await this.$axios.$get(`api/news/page/1/item/3`)
     // this.news_load = false

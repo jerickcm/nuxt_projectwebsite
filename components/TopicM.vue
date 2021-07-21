@@ -43,7 +43,7 @@
           :src="item.image"
           class="align-end"
           aspect-ratio="2.5"
-          gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+          gradient="to bottom, rgba(0,0,0,.1), rgba(0,255,0,.3)"
         >
           <nuxt-link
             class="nuxtlink"
@@ -64,7 +64,7 @@
           v-else
           class="white--text align-end"
           aspect-ratio="2.3"
-          gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+          gradient="to bottom, rgba(0,0,0,.1), rgba(0,255,0,.3)"
           src="/images/default.jpg"
         >
           <nuxt-link

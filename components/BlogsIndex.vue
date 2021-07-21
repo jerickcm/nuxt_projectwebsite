@@ -55,9 +55,10 @@ export default {
     posts_content: 0,
     news_content: 0
   }),
-  async fetch() {
+  async mounted() {
+    // async fetch() {
     this.blogs_load = true
-    await this.$axios.$get('/sanctum/csrf-cookie')
+    // await this.$axios.$get('/sanctum/csrf-cookie')
     const res = await this.$axios.$get(`api/blog/page/1/item/3`)
     this.blogs_load = false
     this.content = res.data

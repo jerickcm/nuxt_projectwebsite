@@ -1,5 +1,6 @@
 <template>
-  <v-container fluid v-if="load_component == false">
+  <!-- v-if="load_component == false" -->
+  <v-container fluid>
     <v-row>
       <v-col class=" mb-0 pb-0">
         <hr color="green" class="hr-green" />
@@ -99,16 +100,18 @@ export default {
     slider_right: '90%',
     slider_left: '9%'
   }),
-  async fetch() {
-    this.load_component = true
+  // async fetch() {
+  async mounted() {
+    // async created() {
+    // this.load_component = true
     this.load_nuxt = true
-    await this.$axios.$get('/sanctum/csrf-cookie')
+    // await this.$axios.$get('/sanctum/csrf-cookie')
     const nuxt = await this.$axios.$get(`api/blog/page/1/item/5/tags/nuxt`)
     this.load_nuxt = false
     this.nuxt = nuxt.data
 
     this.load_laravel = true
-    await this.$axios.$get('/sanctum/csrf-cookie')
+    // await this.$axios.$get('/sanctum/csrf-cookie')
     const laravel = await this.$axios.$get(
       `api/blog/page/1/item/5/tags/Laravel`
     )
@@ -116,11 +119,11 @@ export default {
     this.laravel = laravel.data
 
     this.load_vue = true
-    await this.$axios.$get('/sanctum/csrf-cookie')
+    // await this.$axios.$get('/sanctum/csrf-cookie')
     const vue = await this.$axios.$get(`api/blog/page/1/item/5/tags/vue3`)
     this.load_vue = false
     this.vue = vue.data
-    this.load_component = false
+    // this.load_component = false
   }
 }
 </script>

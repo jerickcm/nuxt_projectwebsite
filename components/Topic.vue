@@ -60,7 +60,7 @@
               :src="item.image"
               class="align-end"
               aspect-ratio="1"
-              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.3)"
+              gradient="to bottom, rgba(0,0,0,.0), rgba(0,0,0,.5)"
               :height="height"
               width="100%"
             >
@@ -90,7 +90,7 @@
               class="white--text align-end"
               :height="height"
               aspect-ratio="1"
-              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.3)"
+              gradient="to bottom, rgba(0,0,0,.0), rgba(0,0,0,.5)"
               src="/images/default.jpg"
             >
               <nuxt-link
