@@ -1,13 +1,13 @@
 exports.ids = [3];
 exports.modules = {
 
-/***/ 484:
+/***/ 487:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(485);
+var content = __webpack_require__(488);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -15,7 +15,7 @@ __webpack_require__(5).default("5c8fbe94", content, true)
 
 /***/ }),
 
-/***/ 485:
+/***/ 488:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -66,7 +66,7 @@ var VSheet = __webpack_require__(20);
 var VTextField = __webpack_require__(29);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/src/components/VTextarea/VTextarea.sass
-var VTextarea = __webpack_require__(484);
+var VTextarea = __webpack_require__(487);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/util/mixins.js
 var mixins = __webpack_require__(2);

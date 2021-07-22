@@ -56,7 +56,7 @@ export default {
   }),
   async mounted() {
     this.load_tags = true
-    await this.$axios.$get('/sanctum/csrf-cookie')
+    // await this.$axios.$get('/sanctum/csrf-cookie')
     const tags = await this.$axios.$get(`api/tags`)
     this.load_tags = false
     this.tags = tags.data

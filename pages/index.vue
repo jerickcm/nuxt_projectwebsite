@@ -28,6 +28,9 @@
         <v-row>
           <BlogsIndex />
         </v-row>
+        <v-row>
+          <TagsIndex />
+        </v-row>
       </v-container>
     </v-row>
   </v-container>

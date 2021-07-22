@@ -1,6 +1,6 @@
 {
-  "name": "Project-website",
-  "version": "1.0.2",
+  "name": "Inhinyeru.com",
+  "version": "1.0.3",
   "private": true,
   "scripts": {
     "dev2": "nuxt",

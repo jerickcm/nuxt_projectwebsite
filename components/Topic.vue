@@ -1,7 +1,7 @@
 <template>
   <v-row class="mt-2 pt-2 hidden-sm-and-down">
     <v-col>
-      <v-sheet class="d-flex ">
+      <v-sheet class="d-flex " v-if="loader == false">
         <v-hover
           v-slot="{ hover }"
           open-delay="200"
@@ -52,7 +52,7 @@
             :class="{ 'on-hover': hover }"
             :height="height"
             :width="width"
-            class="mx-auto mr-1 ml-1   tempoup"
+            class="mx-auto mr-1 ml-1 tempoup"
           >
             <v-img
               contain
@@ -125,7 +125,8 @@ export default {
     'image',
     'tag',
     'color',
-    'title'
+    'title',
+    'loader'
   ]
 }
 </script>
