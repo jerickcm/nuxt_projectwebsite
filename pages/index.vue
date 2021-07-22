@@ -3,11 +3,22 @@
     <v-row class="mb-5 pb-5">
       <v-container>
         <v-row>
-          <v-col>
+          <v-col class=" mb-0 pb-0">
+            <hr color="blue" class="hr-blue" />
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col class="ma-0 mt-0 pt-0">
+            <h1
+              class="ma-0 mt-0 pt-0 blue--text text--darken-5 text--darken-5 font-roboto fs-1-5"
+            >
+              Description
+            </h1>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col class="ma-0 mt-0 pt-0">
             <v-card color="blue lighten-5" class=" pa-2">
-              <h1 class="blue--text text--darken-5 fs-1-3 font-roboto ">
-                INHINYERU.com - Research and Development
-              </h1>
               <p class="blue--text text--darken-4">
                 This website is a build and blog website, where authors
                 encounter problems and its solutions in coding shared with the
@@ -32,6 +43,70 @@
           <TagsIndex />
         </v-row>
       </v-container>
+    </v-row>
+    <v-row fluid class="blue mt-0">
+      <v-col justify="center" align="center" class="blue">
+        <v-row justify="center" align="center" class="pt-4">
+          <v-col justify="center" align="center">
+            <h3>Our Services</h3>
+          </v-col>
+        </v-row>
+
+        <v-row justify="center" align="center" class="lg-5">
+          <v-col cols="12" xs="12" sm="12" md="3" lg="3" xl="3">
+            <ul class="clean">
+              <li class="white--text">
+                <b>Branding</b>
+              </li>
+              <li class="dark--text">&nbsp;</li>
+              <li class="dark--text">Naming</li>
+              <li class="dark--text">Brand Creation</li>
+              <li class="dark--text">Logo Development</li>
+              <li class="dark--text">&nbsp;</li>
+              <li class="dark--text">&nbsp;</li>
+            </ul>
+          </v-col>
+          <v-col cols="12" xs="12" sm="12" md="3" lg="3" xl="3">
+            <ul class="clean">
+              <li class="white--text">
+                <strong>Digital</strong>
+              </li>
+              <li class="dark--text">&nbsp;</li>
+              <li class="dark--text">Web Design & Development</li>
+              <li class="dark--text">Application Development</li>
+              <li class="dark--text">Mobile Application Development</li>
+              <li class="dark--text">Content Management System</li>
+              <li class="dark--text">&nbsp;</li>
+            </ul>
+          </v-col>
+          <v-col cols="12" xs="12" sm="12" md="3" lg="3" xl="3">
+            <ul class="clean">
+              <li class="white--text">
+                <strong>Print</strong>
+              </li>
+              <li class="dark--text">&nbsp;</li>
+              <li class="dark--text">Package Design</li>
+              <li class="dark--text">Brochures</li>
+              <li class="dark--text">Posters</li>
+              <li class="dark--text">&nbsp;</li>
+              <li class="dark--text">&nbsp;</li>
+            </ul>
+          </v-col>
+          <v-col cols="12" xs="12" sm="12" md="3" lg="3" xl="3">
+            <ul class="clean">
+              <li class="white--text">
+                <strong>Strategy</strong>
+              </li>
+              <li class="dark--text">&nbsp;</li>
+              <li class="dark--text">Brand Analysis</li>
+              <li class="dark--text">Focus Group</li>
+              <li class="dark--text">Web Analytics</li>
+              <li class="dark--text">Search Engine Optimization</li>
+              <li class="dark--text">&nbsp;</li>
+            </ul>
+          </v-col>
+        </v-row>
+      </v-col>
     </v-row>
   </v-container>
 </template>
@@ -174,5 +249,9 @@ export default {
 }
 .hr-black {
   border: 3px solid black;
+}
+ul.clean {
+  list-style: none !important;
+  list-style-type: none !important;
 }
 </style>

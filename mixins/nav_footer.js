@@ -1,11 +1,11 @@
 export const nav_footer = {
   data: () => ({
     footerlist: [
-      {
-        icon: 'mdi-information-variant',
-        label: 'ABOUT',
-        link: '/about'
-      },
+      // {
+      //   icon: 'mdi-information-variant',
+      //   label: 'ABOUT',
+      //   link: '/about'
+      // },
       // {
       //   icon: 'mdi-human-greeting-proximity',
       //   label: 'CONTACT US',

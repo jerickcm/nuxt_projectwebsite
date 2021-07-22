@@ -1016,7 +1016,7 @@ installComponents_default()(component, {VAvatar: VAvatar["a" /* default */],VCar
 
 /***/ }),
 
-/***/ 523:
+/***/ 514:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

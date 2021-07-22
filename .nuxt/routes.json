@@ -1,13 +1,5 @@
 [
   {
-    "name": "about",
-    "path": "/about",
-    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\about.vue",
-    "chunkName": "pages/about",
-    "url": "/about",
-    "_name": "_55dd2d9b"
-  },
-  {
     "name": "admin",
     "path": "/admin",
     "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\admin\\\\index.vue",
