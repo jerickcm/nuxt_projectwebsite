@@ -48,7 +48,7 @@
                   class="nuxtlink"
                   target="_blank"
                   :to="{
-                    path: 'blog/' + item.slug
+                    path: '/blog/' + item.slug
                   }"
                 >
                   {{ item.title

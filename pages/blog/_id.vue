@@ -25,34 +25,38 @@
             <v-img src="/images/default.jpg"> </v-img>
           </v-card>
 
-          <v-chip-group
-            v-model="selection"
-            active-class="deep-purple accent-4 white--text"
-            column
-          >
-            <span class="pt-2">Tags: &zwnj;&zwnj;</span
-            ><v-chip
-              v-for="(itm, index) in posts['tags']"
-              :key="index"
-              color="blue"
-              class="white--text"
-              >{{ itm }}</v-chip
-            >
-          </v-chip-group>
           <v-card-title>
             <h1 class="fs-1-3 font-roboto" color="dark">
               {{ posts['title'] }}
             </h1>
           </v-card-title>
           <v-card-text class="">
-            <span>Author : {{ posts['name'] }}</span> <br />
-            <!-- <span>Email : {{ posts['email'] }}</span> -->
+            <span><b>Author :</b> {{ posts['name'] }}</span>
+
             <br />
-            <span>Date : {{ posts['human_date'] }}</span>
-            <!-- <textarea
-              v-html="posts['content']"
-              class="ck-content mt-5 "
-            ></textarea> -->
+            <span>
+              <b>Originally Published on :</b> {{ posts['created'] }}
+            </span>
+            -
+            <span> <b>Last Validated on :</b> {{ posts['updated'] }} </span>
+            <br />
+            <v-icon>mdi-eye</v-icon> {{ posts['pageview'] }}
+
+            <!--  -->
+            <v-chip-group
+              v-model="selection"
+              active-class="deep-purple accent-4 white--text"
+              column
+            >
+              <span class="pt-2">Tags: &zwnj;&zwnj;</span
+              ><v-chip
+                v-for="(itm, index) in posts['tags']"
+                :key="index"
+                color="blue"
+                class="white--text"
+                >{{ itm }}</v-chip
+              >
+            </v-chip-group>
             <v-sheet
               v-html="posts['content']"
               class="ck-content mt-5 "
@@ -99,7 +103,7 @@ export default {
   }),
   async asyncData({ $axios, error, params }) {
     try {
-      await $axios.$get('/sanctum/csrf-cookie')
+      // await $axios.$get('/sanctum/csrf-cookie')
       let response = await $axios.$get(`api/blog/${params.id}`)
       return {
         posts: response.data[0],

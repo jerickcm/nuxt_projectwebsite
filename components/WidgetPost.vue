@@ -26,7 +26,7 @@
                 target="_blank"
                 class="nuxtlink"
                 :to="{
-                  path: 'post/' + item.slug
+                  path: '/post/' + item.slug
                 }"
               >
                 <v-img
@@ -52,7 +52,7 @@
                     target="_blank"
                     class="nuxtlink"
                     :to="{
-                      path: 'post/' + item.slug
+                      path: '/post/' + item.slug
                     }"
                   >
                     {{ item.title
