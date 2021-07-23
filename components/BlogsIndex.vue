@@ -9,10 +9,8 @@
       <v-col class="ma-0 mt-0 pt-0">
         <nuxt-link to="/blog">
           <h2 class="ma-0 mt-0 pt-0 orange--text text--darken-5">
-            Blogs<v-icon color="orange" large>mdi-menu-right</v-icon> ({{
-              blog_content
-            }}
-            articles)
+            Blogs<v-icon color="orange" large>mdi-menu-right</v-icon>
+            <span v-if="blog_content"> ({{ blog_content }} articles)</span>
           </h2>
         </nuxt-link>
       </v-col>

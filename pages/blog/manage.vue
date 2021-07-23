@@ -409,10 +409,10 @@ export default {
       let payload = new FormData()
       let table_id = this.tabledata[this.editedIndex].id
 
-      this.form_content = juice.inlineContent(
-        this.form_content,
-        ckeditor5const.styles
-      )
+      // this.form_content = juice.inlineContent(
+      //   this.form_content,
+      //   ckeditor5const.styles
+      // )
 
       payload.append('tags', this.form_tags)
       payload.append('post_id', this.tabledata[this.editedIndex].id)

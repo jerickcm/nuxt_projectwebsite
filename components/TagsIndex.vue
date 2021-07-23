@@ -8,7 +8,7 @@
     <v-row>
       <v-col class="ma-0 mt-0 pt-0">
         <h2 color="brown" class="brown--text ma-0 mt-0 pt-0 ">
-          Tags ({{ total_tags }})
+          Tags <span v-if="total_tags"> ({{ total_tags }})</span>
         </h2>
       </v-col>
     </v-row>

@@ -54,15 +54,15 @@
             :width="width"
             class="mx-auto mr-1 ml-1 tempoup"
           >
+            <!-- width="100%" -->
+            <!-- contain -->
             <v-img
-              contain
               v-if="item.image != null"
               :src="item.image"
               class="align-end"
               aspect-ratio="1"
               gradient="to bottom, rgba(0,0,0,.0), rgba(0,0,0,.5)"
               :height="height"
-              width="100%"
             >
               <nuxt-link
                 class="nuxtlink"
@@ -82,11 +82,10 @@
                 </v-card-title>
               </nuxt-link>
             </v-img>
-
+            <!-- width="100%" -->
+            <!-- contain -->
             <v-img
               v-else
-              contain
-              width="100%"
               class="white--text align-end"
               :height="height"
               aspect-ratio="1"

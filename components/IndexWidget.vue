@@ -68,25 +68,25 @@
             </v-chip-group>
 
             <v-avatar
-              size="37"
               v-if="item.profile_picture != null"
-              class="d-inline-flex mt-3"
+              size="40"
+              class="d-inline-flex mt-4"
             >
-              <img :src="item.profile_picture" alt="" />
+              <img :src="item.profile_picture" alt="Profile Picture" />
             </v-avatar>
 
             <v-avatar
               v-else
               color="blue"
-              size="37"
+              size="40"
               class=" white--text d-inline-flex  mt-3"
             >
               {{ item.name.charAt(0).toUpperCase() }}
             </v-avatar>
 
             <v-card flat class="d-inline-flex d-flex flex-column ">
-              <v-card flat>{{ item.name }}</v-card>
-              <v-card flat>{{ item.human_date }}</v-card>
+              <v-card flat><b>Author:</b> {{ item.name }}</v-card>
+              <v-card flat><b>Published:</b> {{ item.human_date }}</v-card>
             </v-card>
           </v-card-text>
         </v-card>

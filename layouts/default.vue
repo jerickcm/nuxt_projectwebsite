@@ -238,7 +238,7 @@ export default {
       // image: this.front + '/images/default.jpg',
       image: 'https://www.inhinyeru.com/images/default.jpg',
       more: [
-        { title: 'ABOUT', link: '/about', icon: 'mdi-information-variant' },
+        // { title: 'ABOUT', link: '/about', icon: 'mdi-information-variant' },
         // {
         //   title: 'CONTACT US',
         //   link: '/contact-us',
