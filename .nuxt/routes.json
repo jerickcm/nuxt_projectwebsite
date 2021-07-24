@@ -8,6 +8,14 @@
     "_name": "_508874f6"
   },
   {
+    "name": "blog",
+    "path": "/blog",
+    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\blog\\\\index.vue",
+    "chunkName": "pages/blog/index",
+    "url": "/blog",
+    "_name": "_0c00337e"
+  },
+  {
     "name": "dashboard",
     "path": "/dashboard",
     "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\dashboard\\\\index.vue",
@@ -296,7 +304,7 @@
   },
   {
     "name": "blog-id",
-    "path": "/blog/:id?",
+    "path": "/blog/:id",
     "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\blog\\\\_id.vue",
     "chunkName": "pages/blog/_id",
     "_name": "_7060fd66"
