@@ -29,6 +29,24 @@
         </v-row>
         <v-row>
           <v-col>
+            <v-textarea
+              v-model="form_headline"
+              label="Headline"
+              @blur="$v.form_headline.$touch()"
+              @input="$v.form_headline.$touch()"
+            ></v-textarea>
+            <template v-if="$v.form_headline.$error">
+              <div
+                v-if="!$v.form_headline.required"
+                class="errorMessage red--text"
+              >
+                Headline is required.
+              </div>
+            </template>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col>
             <v-select
               v-model="form_publish"
               :items="publishselection"
@@ -161,6 +179,7 @@ export default {
     url_backend: '',
     form_content: '',
     form_title: '',
+    form_headline: '',
     form_publish: '',
     token: null,
     publishselection: [
@@ -181,6 +200,7 @@ export default {
   validations: {
     form_content: { required },
     form_title: { required },
+    form_headline: { required },
     form_publish: { required }
   },
   components: {
@@ -262,6 +282,7 @@ export default {
         payload.append('ckeditor_log', this.image_id)
         payload.append('publish', this.form_publish)
         payload.append('title', this.form_title)
+        payload.append('headline', this.form_headline)
         payload.append('content', this.form_content)
         payload.append('image', this.image)
         payload.append('image_name', this.image_name)

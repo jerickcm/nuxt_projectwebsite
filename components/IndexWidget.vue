@@ -4,8 +4,8 @@
       xs="12"
       sm="12"
       md="12"
-      lg="4"
-      xl="4"
+      lg="6"
+      xl="6"
       cols="12"
       v-for="(item, indx) in content"
       :key="indx"
@@ -17,7 +17,7 @@
           outlined
           shaped
           tile
-          class="pa-2 ma-0 tempoup"
+          class="  tempoup"
         >
           <nuxt-link
             class="nuxtlink"
@@ -27,32 +27,15 @@
             }"
           >
             <v-img
-              contain
               v-if="item.image != null"
               aspect-ratio="2.3"
               :src="item.image"
             >
             </v-img>
 
-            <v-img contain v-else aspect-ratio="2.3" src="/images/default.jpg">
-            </v-img>
+            <v-img v-else aspect-ratio="2.3" src="/images/default.jpg"> </v-img>
           </nuxt-link>
-
-          <v-card-title color="blue" class="pa-0 ma-0  adj-title">
-            <h2 color="blue" class="title1 fs-1 line-clamp-2">
-              <nuxt-link
-                class="nuxtlink"
-                target="_blank"
-                :to="{
-                  path: path + '/' + item.slug
-                }"
-              >
-                {{ item.title
-                }}<v-icon small color="blue">mdi-arrow-top-right-thick</v-icon>
-              </nuxt-link>
-            </h2>
-          </v-card-title>
-          <v-card-text class="pa-0 ma-0">
+          <v-card-subtitle class="pa-0 ma-0 ml-1">
             <v-chip-group
               active-class="deep-purple accent-4 white--text"
               column
@@ -66,7 +49,26 @@
                 >{{ itm }}
               </v-chip>
             </v-chip-group>
-
+          </v-card-subtitle>
+          <v-card-title color="blue" class="pa-1 ma-0  adj-title">
+            <h2 color="black" class="title1 fs-1 line-clamp-2">
+              <nuxt-link
+                color="black"
+                class="nuxtlink"
+                target="_blank"
+                :to="{
+                  path: path + '/' + item.slug
+                }"
+              >
+                {{ item.title
+                }}<v-icon small color="blue">mdi-arrow-top-right-thick</v-icon>
+              </nuxt-link>
+            </h2>
+          </v-card-title>
+          <v-card-subtitle class="pa-1 ma-0  adj-title" v-if="item.headline">
+            <p class="mb-0  line-clamp-1">{{ item.headline }}</p>
+          </v-card-subtitle>
+          <v-card-text class="pa-1 ma-0">
             <v-avatar
               v-if="item.profile_picture != null"
               size="40"
@@ -89,6 +91,23 @@
               <v-card flat><b>Published:</b> {{ item.human_date }}</v-card>
             </v-card>
           </v-card-text>
+
+          <v-card-actions>
+            <v-btn outlined rounded text>
+              <nuxt-link
+                color="blue"
+                class="nostyle blue--text"
+                style="text-decoration:none"
+                target="_blank"
+                :to="{
+                  path: path + '/' + item.slug
+                }"
+              >
+                visit page
+                <v-icon small color="blue">mdi-arrow-top-right-thick</v-icon>
+              </nuxt-link>
+            </v-btn>
+          </v-card-actions>
         </v-card>
       </v-hover>
     </v-col>

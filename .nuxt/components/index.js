@@ -2,12 +2,14 @@ import { wrapFunctional } from './utils'
 
 export { default as AdminNav } from '../..\\components\\AdminNav.vue'
 export { default as BlogCard } from '../..\\components\\BlogCard.vue'
-export { default as BlogsIndex } from '../..\\components\\BlogsIndex.vue'
 export { default as Contact } from '../..\\components\\Contact.vue'
 export { default as Dashboard } from '../..\\components\\Dashboard.vue'
 export { default as DashTitle } from '../..\\components\\DashTitle.vue'
 export { default as EventCard } from '../..\\components\\EventCard.vue'
 export { default as FooterNav } from '../..\\components\\FooterNav.vue'
+export { default as IndexBlogs } from '../..\\components\\IndexBlogs.vue'
+export { default as IndexDescription } from '../..\\components\\IndexDescription.vue'
+export { default as IndexTopics } from '../..\\components\\IndexTopics.vue'
 export { default as IndexWidget } from '../..\\components\\IndexWidget.vue'
 export { default as Nav } from '../..\\components\\Nav.vue'
 export { default as NewsCard } from '../..\\components\\NewsCard.vue'
@@ -20,7 +22,6 @@ export { default as TagsIndex } from '../..\\components\\TagsIndex.vue'
 export { default as Template } from '../..\\components\\Template.vue'
 export { default as Topic } from '../..\\components\\Topic.vue'
 export { default as TopicM } from '../..\\components\\TopicM.vue'
-export { default as TopicsIndex } from '../..\\components\\TopicsIndex.vue'
 export { default as VuetifyLogo } from '../..\\components\\VuetifyLogo.vue'
 export { default as WidgetBlog } from '../..\\components\\WidgetBlog.vue'
 export { default as WidgetBlogtags } from '../..\\components\\WidgetBlogtags.vue'
@@ -33,12 +34,14 @@ export { default as WorldRemindersCard } from '../..\\components\\WorldReminders
 
 export const LazyAdminNav = import('../..\\components\\AdminNav.vue' /* webpackChunkName: "components/admin-nav" */).then(c => wrapFunctional(c.default || c))
 export const LazyBlogCard = import('../..\\components\\BlogCard.vue' /* webpackChunkName: "components/blog-card" */).then(c => wrapFunctional(c.default || c))
-export const LazyBlogsIndex = import('../..\\components\\BlogsIndex.vue' /* webpackChunkName: "components/blogs-index" */).then(c => wrapFunctional(c.default || c))
 export const LazyContact = import('../..\\components\\Contact.vue' /* webpackChunkName: "components/contact" */).then(c => wrapFunctional(c.default || c))
 export const LazyDashboard = import('../..\\components\\Dashboard.vue' /* webpackChunkName: "components/dashboard" */).then(c => wrapFunctional(c.default || c))
 export const LazyDashTitle = import('../..\\components\\DashTitle.vue' /* webpackChunkName: "components/dash-title" */).then(c => wrapFunctional(c.default || c))
 export const LazyEventCard = import('../..\\components\\EventCard.vue' /* webpackChunkName: "components/event-card" */).then(c => wrapFunctional(c.default || c))
 export const LazyFooterNav = import('../..\\components\\FooterNav.vue' /* webpackChunkName: "components/footer-nav" */).then(c => wrapFunctional(c.default || c))
+export const LazyIndexBlogs = import('../..\\components\\IndexBlogs.vue' /* webpackChunkName: "components/index-blogs" */).then(c => wrapFunctional(c.default || c))
+export const LazyIndexDescription = import('../..\\components\\IndexDescription.vue' /* webpackChunkName: "components/index-description" */).then(c => wrapFunctional(c.default || c))
+export const LazyIndexTopics = import('../..\\components\\IndexTopics.vue' /* webpackChunkName: "components/index-topics" */).then(c => wrapFunctional(c.default || c))
 export const LazyIndexWidget = import('../..\\components\\IndexWidget.vue' /* webpackChunkName: "components/index-widget" */).then(c => wrapFunctional(c.default || c))
 export const LazyNav = import('../..\\components\\Nav.vue' /* webpackChunkName: "components/nav" */).then(c => wrapFunctional(c.default || c))
 export const LazyNewsCard = import('../..\\components\\NewsCard.vue' /* webpackChunkName: "components/news-card" */).then(c => wrapFunctional(c.default || c))
@@ -51,7 +54,6 @@ export const LazyTagsIndex = import('../..\\components\\TagsIndex.vue' /* webpac
 export const LazyTemplate = import('../..\\components\\Template.vue' /* webpackChunkName: "components/template" */).then(c => wrapFunctional(c.default || c))
 export const LazyTopic = import('../..\\components\\Topic.vue' /* webpackChunkName: "components/topic" */).then(c => wrapFunctional(c.default || c))
 export const LazyTopicM = import('../..\\components\\TopicM.vue' /* webpackChunkName: "components/topic-m" */).then(c => wrapFunctional(c.default || c))
-export const LazyTopicsIndex = import('../..\\components\\TopicsIndex.vue' /* webpackChunkName: "components/topics-index" */).then(c => wrapFunctional(c.default || c))
 export const LazyVuetifyLogo = import('../..\\components\\VuetifyLogo.vue' /* webpackChunkName: "components/vuetify-logo" */).then(c => wrapFunctional(c.default || c))
 export const LazyWidgetBlog = import('../..\\components\\WidgetBlog.vue' /* webpackChunkName: "components/widget-blog" */).then(c => wrapFunctional(c.default || c))
 export const LazyWidgetBlogtags = import('../..\\components\\WidgetBlogtags.vue' /* webpackChunkName: "components/widget-blogtags" */).then(c => wrapFunctional(c.default || c))

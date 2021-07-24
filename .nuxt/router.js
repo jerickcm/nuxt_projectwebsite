@@ -5,7 +5,6 @@ import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
 const _508874f6 = () => interopDefault(import('..\\pages\\admin\\index.vue' /* webpackChunkName: "pages/admin/index" */))
-const _0c00337e = () => interopDefault(import('..\\pages\\blog\\index.vue' /* webpackChunkName: "pages/blog/index" */))
 const _6c1f47c0 = () => interopDefault(import('..\\pages\\dashboard\\index.vue' /* webpackChunkName: "pages/dashboard/index" */))
 const _3f3cab77 = () => interopDefault(import('..\\pages\\login.vue' /* webpackChunkName: "pages/login" */))
 const _361520f9 = () => interopDefault(import('..\\pages\\privacy-policy.vue' /* webpackChunkName: "pages/privacy-policy" */))
@@ -66,10 +65,6 @@ export const routerOptions = {
     path: "/admin",
     component: _508874f6,
     name: "admin"
-  }, {
-    path: "/blog",
-    component: _0c00337e,
-    name: "blog"
   }, {
     path: "/dashboard",
     component: _6c1f47c0,
@@ -215,7 +210,7 @@ export const routerOptions = {
     component: _75c57aed,
     name: "blog-tags-id"
   }, {
-    path: "/blog/:id",
+    path: "/blog/:id?",
     component: _7060fd66,
     name: "blog-id"
   }, {

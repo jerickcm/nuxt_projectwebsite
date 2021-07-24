@@ -4,43 +4,67 @@
       <v-container>
         <v-row>
           <v-col class=" mb-0 pb-0">
-            <hr color="blue" class="hr-blue" />
+            <v-container>
+              <v-row>
+                <v-col
+                  xs="12"
+                  sm="12"
+                  md="12"
+                  lg="8"
+                  xl="8"
+                  cols="12"
+                  class="pa-0 ma-0"
+                >
+                  <v-container>
+                    <v-row>
+                      <v-col class="ma-0 mt-0 pt-0">
+                        <IndexDescription />
+                      </v-col>
+                    </v-row>
+                    <v-row>
+                      <v-col class="ma-0 mt-0 pt-0">
+                        <IndexTopics
+                          :nuxt="nuxt"
+                          :laravel="laravel"
+                          :vue="vue"
+                          :load_nuxt="load_nuxt"
+                          :load_laravel="load_laravel"
+                          :load_vue="load_vue"
+                          :show_nuxt="show_nuxt"
+                          :show_laravel="show_laravel"
+                          :show_vue="show_vue"
+                        />
+                      </v-col>
+                    </v-row>
+                    <v-row>
+                      <v-col class="ma-0 mt-0 pt-0">
+                        <IndexBlogs
+                          :blogs_load="blogs_load"
+                          :blogs_content="blogs_content"
+                          :blogs_total="blogs_total"
+                        />
+                      </v-col>
+                    </v-row>
+                  </v-container>
+                </v-col>
+                <v-col
+                  xs="12"
+                  sm="12"
+                  md="12"
+                  lg="4"
+                  xl="4"
+                  cols="12"
+                  class="pa-0 ma-0"
+                >
+                  <TagsIndex
+                    :tags="tags"
+                    :load_tags="load_tags"
+                    :total_tags="total_tags"
+                  />
+                </v-col>
+              </v-row>
+            </v-container>
           </v-col>
-        </v-row>
-        <v-row>
-          <v-col class="ma-0 mt-0 pt-0">
-            <h1
-              class="ma-0 mt-0 pt-0 blue--text text--darken-5 text--darken-5 font-roboto fs-1-5"
-            >
-              Description
-            </h1>
-          </v-col>
-        </v-row>
-        <v-row>
-          <v-col class="ma-0 mt-0 pt-0">
-            <v-card color="blue lighten-5" class=" pa-2">
-              <p class="blue--text text--darken-4 justify-content text-justify">
-                This website is a build and blog website, where authors
-                encounter problems and its solutions in coding shared with the
-                development community of students , enthusiast and
-                professionals. This website features are latest code fixes,
-                tutorials and reviews, news about technology and programming
-                also includes programming quotes and world event anniversaries.
-                May also include personal blogs and top 10 - 100 reviews of the
-                authors favorite things and current researches.
-              </p>
-            </v-card>
-          </v-col>
-        </v-row>
-        <v-row>
-          <TopicsIndex />
-        </v-row>
-
-        <v-row>
-          <BlogsIndex />
-        </v-row>
-        <v-row>
-          <TagsIndex />
         </v-row>
       </v-container>
     </v-row>
@@ -116,12 +140,7 @@
 // import { mapGetters, mapActions } from 'vuex'
 
 export default {
-  loading: {
-    color: 'orange',
-    height: '5px'
-  },
-  // middleware: 'auth',
-  auth: false,
+  props: [],
   head() {
     return {
       title: 'Homepage ',
@@ -151,46 +170,68 @@ export default {
     model: 6,
     rounded: ['0', 'sm', 'md', 'lg', 'xl', 'pill', 'circle'],
     links: [],
-    blog_content: 0,
+
     posts_content: 0,
-    news_content: 0
+    news_content: 0,
+
+    tags: [],
+    load_tags: false,
+    total_tags: 0,
+    height: '200px',
+    blogs_load: false,
+    blogs_content: [],
+    blogs_total: 0,
+
+    nuxt: [],
+    laravel: [],
+    vue: [],
+    load_nuxt: false,
+    load_laravel: false,
+    load_vue: false,
+
+    show_nuxt: false,
+    show_laravel: false,
+    show_vue: false
   }),
+
   async fetch() {
     this.blogs_load = true
-    // this.news_load = true
-    // this.posts_load = true
+    const blogs = await this.$axios.$get(`api/blog/page/1/item/10`)
+    this.blogs_load = false
+    this.blogs_content = blogs.data
+    this.blogs_total = blogs.total
 
-    // await this.$axios.$get('/sanctum/csrf-cookie')
-    // const res = await this.$axios.$get(`api/blog/page/1/item/3`)
-    // this.blogs_load = false
-    // this.content = res.data
-    // this.blog_content = res.total
-    // await this.$axios.$get('/sanctum/csrf-cookie')
-    // const news = await this.$axios.$get(`api/news/page/1/item/3`)
-    // this.news_load = false
-    // this.news = news.data
-    // this.news_content = news.total
-    // await this.$axios.$get('/sanctum/csrf-cookie')
-    // const posts = await this.$axios.$get(`api/post/page/1/item/3`)
-    // this.posts_load = false
-    // this.posts = posts.data
-    // this.posts_content = posts.total
+    this.load_nuxt = true
+    const nuxt = await this.$axios.$get(`api/blog/page/1/item/5/tags/nuxt`)
+    this.load_nuxt = false
+    this.nuxt = nuxt.data
+    this.show_nuxt = true
+
+    this.load_laravel = true
+
+    const laravel = await this.$axios.$get(
+      `api/blog/page/1/item/5/tags/Laravel`
+    )
+    this.load_laravel = false
+    this.laravel = laravel.data
+    this.show_laravel = true
+    this.load_vue = true
+
+    const vue = await this.$axios.$get(`api/blog/page/1/item/5/tags/vue3`)
+    this.load_vue = false
+    this.vue = vue.data
+    this.show_vue = true
+
+    this.load_tags = true
+    const tags = await this.$axios.$get(`api/tags`)
+    this.load_tags = false
+    this.tags = tags.data
+    this.total_tags = tags.total
   },
   layout: 'default',
-  methods: {
-    // ...mapActions('messageoftheday', ['fetchQuote'])
-  },
-  computed: {
-    // ...mapGetters('messageoftheday', ['MessageOfTheDay', 'LoadingStatus'])
-  },
-  async mounted() {
-    // await this.$axios.$get('/sanctum/csrf-cookie')
-    // try {
-    //   this.fetchQuote()
-    // } catch (error) {
-    //   console.log(error)
-    // }
-  }
+  methods: {},
+  computed: {},
+  async mounted() {}
 }
 </script>
 <style scoped>
@@ -259,5 +300,12 @@ ul.clean {
 .text-justify {
   text-align: justify;
   text-justify: inter-word;
+}
+.hr-brown {
+  border: 3px solid brown;
+}
+.tag-border {
+  border-right: 0.4rem solid #add8e6;
+  border-top: 0.4rem solid #add8e6;
 }
 </style>

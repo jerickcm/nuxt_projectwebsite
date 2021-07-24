@@ -5,9 +5,6 @@
   "BlogCard": {
     "description": "Auto imported from components/BlogCard.vue"
   },
-  "BlogsIndex": {
-    "description": "Auto imported from components/BlogsIndex.vue"
-  },
   "Contact": {
     "description": "Auto imported from components/Contact.vue"
   },
@@ -22,6 +19,15 @@
   },
   "FooterNav": {
     "description": "Auto imported from components/FooterNav.vue"
+  },
+  "IndexBlogs": {
+    "description": "Auto imported from components/IndexBlogs.vue"
+  },
+  "IndexDescription": {
+    "description": "Auto imported from components/IndexDescription.vue"
+  },
+  "IndexTopics": {
+    "description": "Auto imported from components/IndexTopics.vue"
   },
   "IndexWidget": {
     "description": "Auto imported from components/IndexWidget.vue"
@@ -58,9 +64,6 @@
   },
   "TopicM": {
     "description": "Auto imported from components/TopicM.vue"
-  },
-  "TopicsIndex": {
-    "description": "Auto imported from components/TopicsIndex.vue"
   },
   "VuetifyLogo": {
     "description": "Auto imported from components/VuetifyLogo.vue"

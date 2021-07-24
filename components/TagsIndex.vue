@@ -1,10 +1,5 @@
 <template>
-  <v-container fluid>
-    <v-row>
-      <v-col class=" mb-0 pb-0">
-        <hr color="brown" class="hr-brown" />
-      </v-col>
-    </v-row>
+  <v-container fluid class="tag-border">
     <v-row>
       <v-col class="ma-0 mt-0 pt-0">
         <h2 color="brown" class="brown--text ma-0 mt-0 pt-0 ">
@@ -12,8 +7,9 @@
         </h2>
       </v-col>
     </v-row>
-    <v-row>
-      <v-col class="ma-0 mt-0 pt-0">
+
+    <v-row v-if="load_tags == false">
+      <v-col class="pa-0 ">
         <v-progress-linear
           v-if="load_tags"
           color="blue accent-5"
@@ -21,12 +17,8 @@
           rounded
           height="6"
         ></v-progress-linear>
-      </v-col>
-    </v-row>
-    <v-row v-if="load_tags == false">
-      <v-col>
         <v-card flat>
-          <v-card-text>
+          <v-card-text class="pa-0 ma-0">
             <v-chip-group
               column
               active-class="deep-purple accent-4 white--text"
@@ -48,20 +40,9 @@
 </template>
 <script>
 export default {
-  data: () => ({
-    tags: [],
-    load_tags: false,
-    total_tags: 0,
-    height: '200px'
-  }),
-  async mounted() {
-    this.load_tags = true
-    // await this.$axios.$get('/sanctum/csrf-cookie')
-    const tags = await this.$axios.$get(`api/tags`)
-    this.load_tags = false
-    this.tags = tags.data
-    this.total_tags = tags.total
-  },
+  props: ['tags', 'load_tags', 'total_tags'],
+  data: () => ({}),
+  async mounted() {},
   async fetch() {}
 }
 </script>
@@ -69,8 +50,11 @@ export default {
 .nuxtlink {
   text-decoration: none !important;
 }
-
 .hr-brown {
   border: 3px solid brown;
 }
+/* .tag-border {
+  border-right: 0.4rem solid brown;
+  border-top: 0.4rem solid brown;
+} */
 </style>

@@ -24,25 +24,7 @@
           <v-card flat v-else>
             <v-img src="/images/default.jpg"> </v-img>
           </v-card>
-
-          <v-card-title>
-            <h1 class="fs-1-3 font-roboto" color="dark">
-              {{ posts['title'] }}
-            </h1>
-          </v-card-title>
-          <v-card-text class="">
-            <span><b>Author :</b> {{ posts['name'] }}</span>
-
-            <br />
-            <span>
-              <b>Originally Published on :</b> {{ posts['created'] }}
-            </span>
-            -
-            <span> <b>Last Validated on :</b> {{ posts['updated'] }} </span>
-            <br />
-            <v-icon>mdi-eye</v-icon> {{ posts['pageview'] }}
-
-            <!--  -->
+          <v-card-subtitle class="pa-0 ma-0 ml-1">
             <v-chip-group
               v-model="selection"
               active-class="deep-purple accent-4 white--text"
@@ -57,6 +39,28 @@
                 >{{ itm }}</v-chip
               >
             </v-chip-group>
+          </v-card-subtitle>
+          <v-card-title>
+            <h1 class="fs-1-3 font-roboto" color="dark">
+              {{ posts['title'] }}
+            </h1>
+          </v-card-title>
+
+          <v-card-text class="">
+            <span><b>Author :</b> {{ posts['name'] }}</span>
+
+            <br />
+            <span>
+              <b>Originally Published on :</b> {{ posts['created'] }}
+            </span>
+            -
+            <span> <b>Last Validated on :</b> {{ posts['updated'] }} </span>
+            <br />
+            <v-icon>mdi-eye</v-icon> {{ posts['pageview'] }}
+            <br />
+            <br />
+            <v-sheet v-html="posts['headline']"></v-sheet>
+
             <v-sheet
               v-html="posts['content']"
               class="ck-content mt-5 "
@@ -93,6 +97,7 @@ export default {
     selection: '',
     posts: {
       content: [],
+      headline: '',
       image: '',
       date: '',
       author: ''
@@ -103,13 +108,13 @@ export default {
   }),
   async asyncData({ $axios, error, params }) {
     try {
-      // await $axios.$get('/sanctum/csrf-cookie')
       let response = await $axios.$get(`api/blog/${params.id}`)
       return {
         posts: response.data[0],
         pageload: false,
         slug: params.slug,
         title: response.data[0].title,
+        headlines: response.data[0].headline,
         tags: response.data[0].tags,
         image: response.data[0].image
       }

@@ -42,6 +42,24 @@
               </v-row>
               <v-row>
                 <v-col>
+                  <v-textarea
+                    v-model="form_headline"
+                    label="Headline"
+                    @blur="$v.form_headline.$touch()"
+                    @input="$v.form_headline.$touch()"
+                  ></v-textarea>
+                  <template v-if="$v.form_headline.$error">
+                    <div
+                      v-if="!$v.form_headline.required"
+                      class="errorMessage red--text"
+                    >
+                      Headline is required.
+                    </div>
+                  </template>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col>
                   <v-select
                     v-model="form_publish"
                     :items="publishselection"
@@ -262,6 +280,7 @@ export default {
     ],
     form_content: '',
     form_title: '',
+    form_headline: '',
     form_publish: '',
     dialog: false,
     dialogDelete: false,
@@ -292,6 +311,7 @@ export default {
   validations: {
     form_content: { required },
     form_title: { required },
+    form_headline: { required },
     form_publish: { required }
   },
   async created() {
@@ -388,6 +408,7 @@ export default {
     editItem(item) {
       this.image_id = this.tabledata[this.tabledata.indexOf(item)].ckeditor_log
       this.form_title = this.tabledata[this.tabledata.indexOf(item)].title
+      this.form_headline = this.tabledata[this.tabledata.indexOf(item)].headline
       this.form_image = this.tabledata[this.tabledata.indexOf(item)].image
       this.form_content = this.tabledata[this.tabledata.indexOf(item)].content
       this.form_tags = this.tabledata[this.tabledata.indexOf(item)].tags
@@ -417,6 +438,7 @@ export default {
       payload.append('tags', this.form_tags)
       payload.append('post_id', this.tabledata[this.editedIndex].id)
       payload.append('title', this.form_title)
+      payload.append('headline', this.form_headline)
       payload.append('content', this.form_content)
       payload.append('publish', this.form_publish)
       payload.append('image', this.form_image)
@@ -432,6 +454,7 @@ export default {
             this.tabledata[this.editedIndex].tags = this.form_tags
             this.tabledata[this.editedIndex].title = this.form_title
             this.tabledata[this.editedIndex].content = this.form_content
+            this.tabledata[this.editedIndex].headline = this.form_headline
             this.tabledata[this.editedIndex].publish =
               this.form_publish == 1 ? 'Draft' : 'Publish'
 
@@ -497,6 +520,7 @@ export default {
               id: value.id,
               slug: value.slug,
               title: value.title,
+              headline: value.headline,
               content: value.content,
               publish: value.publish == 1 ? 'Draft' : 'Publish',
               publishvalue: value.publish,
