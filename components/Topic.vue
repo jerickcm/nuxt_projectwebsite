@@ -1,6 +1,6 @@
 <template>
   <v-row class="mt-2 pt-2 hidden-sm-and-down">
-    <v-col>
+    <v-col class="ml-0 pl-0  mb-0 pb-0">
       <v-sheet class="d-flex " v-if="loader == false">
         <v-hover
           v-slot="{ hover }"

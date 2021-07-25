@@ -1,8 +1,8 @@
 <template>
   <v-container fluid class="tag-border">
     <v-row>
-      <v-col class="ma-0 mt-0 pt-0">
-        <h2 color="brown" class="brown--text ma-0 mt-0 pt-0 ">
+      <v-col class="ml-0 pl-0  mb-0 pb-0">
+        <h2 color="blue" class="blue--text ma-0 mt-0 pt-0 ">
           Tags <span v-if="total_tags"> ({{ total_tags }})</span>
         </h2>
       </v-col>

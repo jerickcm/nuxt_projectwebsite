@@ -1,14 +1,14 @@
 <template>
   <v-container fluid class="tag-border">
     <v-row>
-      <v-col class="ma-0 mt-0 pt-0">
+      <v-col class="ml-0 pl-0  mb-0 pb-0">
         <h2 class="ma-0 mt-0 pt-0 green--text text--darken-5">
           Featured Topics
         </h2>
       </v-col>
     </v-row>
     <v-row v-if="load_nuxt">
-      <v-col class="ma-0 mt-0 pt-0">
+      <v-col class="ml-0 pl-0  mb-0 pb-0">
         <v-progress-linear
           color="blue accent-5"
           indeterminate
@@ -31,7 +31,7 @@
       title="Nuxt"
     />
     <v-row v-if="load_laravel">
-      <v-col class="ma-0 mt-0 pt-0">
+      <v-col class="ml-0 pl-0  mb-0 pb-0">
         <v-progress-linear
           color="blue accent-5"
           indeterminate

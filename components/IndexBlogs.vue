@@ -1,7 +1,7 @@
 <template>
   <v-container fluid class="tag-border">
     <v-row>
-      <v-col class="ma-0 mt-0 pt-0">
+      <v-col class="ml-0 pl-0  mb-0 pb-0">
         <nuxt-link to="/blog">
           <h2 class="ma-0 mt-0 pt-0 orange--text text--darken-5">
             Blogs<v-icon color="orange" large>mdi-menu-right</v-icon>

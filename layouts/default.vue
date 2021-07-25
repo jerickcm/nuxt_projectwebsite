@@ -416,6 +416,9 @@ export default {
 .font-roboto {
   font-family: 'Roboto', sans-serif;
 }
+.font-ptsans {
+  font-family: 'Ptsans', sans-serif;
+}
 
 .hand {
   cursor: pointer;

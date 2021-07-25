@@ -187,7 +187,8 @@ export default {
       }
     },
     redirect: {
-      login: '/login',
+      // login: '/login',
+      login: '/',
       // login: "/",
       logout: '/',
       // callback: '/login',

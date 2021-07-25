@@ -7,10 +7,8 @@ import scrollBehavior from './router.scrollBehavior.js'
 const _508874f6 = () => interopDefault(import('..\\pages\\admin\\index.vue' /* webpackChunkName: "pages/admin/index" */))
 const _0c00337e = () => interopDefault(import('..\\pages\\blog\\index.vue' /* webpackChunkName: "pages/blog/index" */))
 const _6c1f47c0 = () => interopDefault(import('..\\pages\\dashboard\\index.vue' /* webpackChunkName: "pages/dashboard/index" */))
-const _3f3cab77 = () => interopDefault(import('..\\pages\\login.vue' /* webpackChunkName: "pages/login" */))
 const _361520f9 = () => interopDefault(import('..\\pages\\privacy-policy.vue' /* webpackChunkName: "pages/privacy-policy" */))
 const _4ab6786b = () => interopDefault(import('..\\pages\\profile\\index.vue' /* webpackChunkName: "pages/profile/index" */))
-const _98f2b3f6 = () => interopDefault(import('..\\pages\\register.vue' /* webpackChunkName: "pages/register" */))
 const _0f035527 = () => interopDefault(import('..\\pages\\terms-of-service.vue' /* webpackChunkName: "pages/terms-of-service" */))
 const _d27b53a4 = () => interopDefault(import('..\\pages\\world-reminders\\index.vue' /* webpackChunkName: "pages/world-reminders/index" */))
 const _c88af200 = () => interopDefault(import('..\\pages\\blog\\create.vue' /* webpackChunkName: "pages/blog/create" */))
@@ -75,10 +73,6 @@ export const routerOptions = {
     component: _6c1f47c0,
     name: "dashboard"
   }, {
-    path: "/login",
-    component: _3f3cab77,
-    name: "login"
-  }, {
     path: "/privacy-policy",
     component: _361520f9,
     name: "privacy-policy"
@@ -86,10 +80,6 @@ export const routerOptions = {
     path: "/profile",
     component: _4ab6786b,
     name: "profile"
-  }, {
-    path: "/register",
-    component: _98f2b3f6,
-    name: "register"
   }, {
     path: "/terms-of-service",
     component: _0f035527,

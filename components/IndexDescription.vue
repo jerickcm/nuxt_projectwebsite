@@ -1,9 +1,7 @@
 <template>
-  <v-container class="tag-border"
-    style=""
-  >
+  <v-container class="tag-border" style="">
     <v-row>
-      <v-col
+      <v-col class="ml-0 pl-0  mb-0 pb-0"
         ><h1
           class="ma-0 mt-0 pt-0 blue--text text--darken-5 text--darken-5 font-roboto fs-1-5"
         >
@@ -12,7 +10,7 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col>
+      <v-col class="ml-0 pl-0  mb-0 pb-0">
         <v-card color="blue lighten-5" class=" pa-2">
           <p class="blue--text text--darken-4 justify-content text-justify">
             This website is a build and blog website, where authors encounter

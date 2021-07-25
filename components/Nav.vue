@@ -39,7 +39,7 @@
                   </v-btn>
                 </v-col>
               </v-row>
-              <v-row>
+              <!-- <v-row>
                 <v-col class="text-center">
                   <v-btn
                     class="white--text pa-2"
@@ -52,7 +52,7 @@
                     acebook
                   </v-btn></v-col
                 >
-              </v-row>
+              </v-row> -->
             </v-container>
 
             <form class="pa-2">

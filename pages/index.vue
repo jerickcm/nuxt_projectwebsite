@@ -15,7 +15,7 @@
                   cols="12"
                   class="pa-0 ma-0"
                 >
-                  <v-container>
+                  <v-container class="mr-0 pr-0">
                     <v-row>
                       <v-col class="ma-0 mt-0 pt-0">
                         <IndexDescription />
@@ -56,11 +56,33 @@
                   cols="12"
                   class="pa-0 ma-0"
                 >
-                  <TagsIndex
-                    :tags="tags"
-                    :load_tags="load_tags"
-                    :total_tags="total_tags"
-                  />
+                  <v-container class="mr-0 pr-0">
+                    <v-row>
+                      <v-col class="ma-0 mt-0 pt-0">
+                        <BlogList
+                          :blogs_in_random="blogs_in_random"
+                          title="Random Blogs"
+                        />
+                      </v-col>
+                    </v-row>
+                    <v-row>
+                      <v-col class="ma-0 mt-0 pt-0">
+                        <TagsIndex
+                          :tags="tags"
+                          :load_tags="load_tags"
+                          :total_tags="total_tags"
+                        />
+                      </v-col>
+                    </v-row>
+                    <v-row>
+                      <v-col class="ma-0 mt-0 pt-0">
+                        <BlogList
+                          :blogs_in_random="blogs_in_latest"
+                          title="Latest Blogs"
+                        />
+                      </v-col>
+                    </v-row>
+                  </v-container>
                 </v-col>
               </v-row>
             </v-container>
@@ -191,7 +213,9 @@ export default {
 
     show_nuxt: false,
     show_laravel: false,
-    show_vue: false
+    show_vue: false,
+    blogs_in_random: [],
+    blogs_in_latest: []
   }),
 
   async fetch() {
@@ -227,6 +251,12 @@ export default {
     this.load_tags = false
     this.tags = tags.data
     this.total_tags = tags.total
+
+    const BlogsRandom = await this.$axios.$get(`api/blog/index/10`)
+    this.blogs_in_random = BlogsRandom.data
+
+    const Blogslatest = await this.$axios.$get(`api/blog/latest/10`)
+    this.blogs_in_latest = Blogslatest.data
   },
   layout: 'default',
   methods: {},
@@ -234,6 +264,7 @@ export default {
   async mounted() {}
 }
 </script>
+
 <style scoped>
 .dont-break-out {
   /* These are technically the same, but use both */

@@ -49,3 +49,10 @@
      url(~assets/Roboto/Roboto-Regular.ttf)
        format('truetype');
  }
+
+ @font-face {
+  font-family: 'Ptsans';
+   src: local('Ptsans'),
+     url(~assets/Ptsans/PTSans-Regular.ttf)
+       format('truetype');
+ }
