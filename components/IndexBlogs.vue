@@ -5,7 +5,7 @@
         <nuxt-link to="/blog">
           <h2 class="ma-0 mt-0 pt-0 orange--text text--darken-5">
             Blogs<v-icon color="orange" large>mdi-menu-right</v-icon>
-            <span v-if="blogs_total"> ({{ blogs_total }} articles)</span>
+            <!-- <span v-if="blogs_total"> ({{ blogs_total }} articles)</span> -->
           </h2>
         </nuxt-link>
       </v-col>
@@ -14,14 +14,138 @@
     <IndexWidget :content="blogs_content" path="/blog" />
 
     <v-row v-if="blogs_load">
-      <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
+      <v-col
+        xs="12"
+        sm="12"
+        md="6"
+        lg="6"
+        xl="6"
+        cols="12"
+        class="ml-0 pl-0  mb-0 pb-0"
+      >
         <SkeletonCard />
       </v-col>
-      <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
+      <v-col
+        xs="12"
+        sm="12"
+        md="6"
+        lg="6"
+        xl="6"
+        cols="12"
+        class="ml-0 pl-0  mb-0 pb-0"
+      >
         <SkeletonCard />
       </v-col>
-      <v-col xs="12" sm="12" md="4" lg="4" xl="4" cols="12">
+      <v-col
+        xs="12"
+        sm="12"
+        md="6"
+        lg="6"
+        xl="6"
+        cols="12"
+        class="ml-0 pl-0  mb-0 pb-0"
+      >
         <SkeletonCard />
+      </v-col>
+      <v-col
+        xs="12"
+        sm="12"
+        md="6"
+        lg="6"
+        xl="6"
+        cols="12"
+        class="ml-0 pl-0  mb-0 pb-0"
+      >
+        <SkeletonCard />
+      </v-col>
+      <v-col
+        xs="12"
+        sm="12"
+        md="6"
+        lg="6"
+        xl="6"
+        cols="12"
+        class="ml-0 pl-0  mb-0 pb-0"
+      >
+        <SkeletonCard />
+      </v-col>
+      <v-col
+        xs="12"
+        sm="12"
+        md="6"
+        lg="6"
+        xl="6"
+        cols="12"
+        class="ml-0 pl-0  mb-0 pb-0"
+      >
+        <SkeletonCard />
+      </v-col>
+      <v-col
+        xs="12"
+        sm="12"
+        md="6"
+        lg="6"
+        xl="6"
+        cols="12"
+        class="ml-0 pl-0  mb-0 pb-0"
+      >
+        <SkeletonCard />
+      </v-col>
+      <v-col
+        xs="12"
+        sm="12"
+        md="6"
+        lg="6"
+        xl="6"
+        cols="12"
+        class="ml-0 pl-0  mb-0 pb-0"
+      >
+        <SkeletonCard />
+      </v-col>
+      <v-col
+        xs="12"
+        sm="12"
+        md="6"
+        lg="6"
+        xl="6"
+        cols="12"
+        class="ml-0 pl-0  mb-0 pb-0"
+      >
+        <SkeletonCard />
+      </v-col>
+      <v-col
+        xs="12"
+        sm="12"
+        md="6"
+        lg="6"
+        xl="6"
+        cols="12"
+        class="ml-0 pl-0  mb-0 pb-0"
+      >
+        <SkeletonCard />
+      </v-col>
+    </v-row>
+
+    <v-row class="ma-0 pa-0 mb-3">
+      <v-col
+        cols="12"
+        xs="12"
+        sm="12"
+        md="4"
+        lg="4"
+        xl="4"
+        class="pa-0 ma-0 pt-2"
+      >
+        <v-card flat class="pa-2 ma-0">
+          <v-btn
+            class="white--text"
+            @click="getnextarticle"
+            :disabled="blogs_total == 10 ? false : true"
+            :class="blogs_total == 10 ? 'green' : 'grey'"
+          >
+            Next Article
+          </v-btn>
+        </v-card>
       </v-col>
     </v-row>
   </v-container>
@@ -45,7 +169,12 @@ export default {
     posts_content: 0,
     news_content: 0
   }),
-  async mounted() {}
+  async mounted() {},
+  methods: {
+    getnextarticle() {
+      this.$emit('next-article')
+    }
+  }
 }
 </script>
 <style scoped>

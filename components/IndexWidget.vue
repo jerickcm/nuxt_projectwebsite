@@ -7,6 +7,7 @@
       lg="6"
       xl="6"
       cols="12"
+      class="pl-1 pt-1"
       v-for="(item, indx) in content"
       :key="indx"
     >

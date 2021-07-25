@@ -21,7 +21,8 @@
                         <IndexDescription />
                       </v-col>
                     </v-row>
-                    <v-row>
+
+                    <!-- <v-row>
                       <v-col class="ma-0 mt-0 pt-0">
                         <IndexTopics
                           :nuxt="nuxt"
@@ -35,13 +36,23 @@
                           :show_vue="show_vue"
                         />
                       </v-col>
-                    </v-row>
+                    </v-row> -->
                     <v-row>
                       <v-col class="ma-0 mt-0 pt-0">
                         <IndexBlogs
                           :blogs_load="blogs_load"
                           :blogs_content="blogs_content"
                           :blogs_total="blogs_total"
+                          @next-article="nextArticle"
+                        />
+                      </v-col>
+                    </v-row>
+                    <v-row>
+                      <v-col class="ma-0 mt-0 pt-0">
+                        <TagsIndex
+                          :tags="tags"
+                          :load_tags="load_tags"
+                          :total_tags="total_tags"
                         />
                       </v-col>
                     </v-row>
@@ -215,52 +226,74 @@ export default {
     show_laravel: false,
     show_vue: false,
     blogs_in_random: [],
-    blogs_in_latest: []
+    blogs_in_latest: [],
+    page: 2
   }),
 
   async fetch() {},
   layout: 'default',
-  methods: {},
+  methods: {
+    async nextArticle() {
+      this.blogs_load = true
+      try {
+        this.$axios
+          .$get(`api/blog/page/${this.page}/item/${10}`)
+          .then(res => {
+            this.blogs_total = res.data.length
+            this.blogs_content = [...this.blogs_content, ...res.data]
+            this.page = this.page + 1
+            this.blogs_load = false
+          })
+          .catch(error => {
+            this.blogs_load = false
+          })
+          .finally(() => {})
+      } catch (error) {
+        this.blogs_load = false
+        console.log('error')
+      }
+    }
+  },
   computed: {},
-  async mounted() {
+  async fetch() {
     this.blogs_load = true
     const blogs = await this.$axios.$get(`api/blog/page/1/item/10`)
     this.blogs_load = false
     this.blogs_content = blogs.data
-    this.blogs_total = blogs.total
+    this.blogs_total = blogs.data.length
 
-    this.load_nuxt = true
-    const nuxt = await this.$axios.$get(`api/blog/page/1/item/5/tags/nuxt`)
-    this.load_nuxt = false
-    this.nuxt = nuxt.data
-    this.show_nuxt = true
+    // this.load_nuxt = true
+    // const nuxt = await this.$axios.$get(`api/blog/page/1/item/5/tags/nuxt`)
+    // this.load_nuxt = false
+    // this.nuxt = nuxt.data
+    // this.show_nuxt = true
 
-    this.load_laravel = true
+    // this.load_laravel = true
 
-    const laravel = await this.$axios.$get(
-      `api/blog/page/1/item/5/tags/Laravel`
-    )
-    this.load_laravel = false
-    this.laravel = laravel.data
-    this.show_laravel = true
-    this.load_vue = true
+    // const laravel = await this.$axios.$get(
+    //   `api/blog/page/1/item/5/tags/Laravel`
+    // )
+    // this.load_laravel = false
+    // this.laravel = laravel.data
+    // this.show_laravel = true
+    // this.load_vue = true
 
-    const vue = await this.$axios.$get(`api/blog/page/1/item/5/tags/vue3`)
-    this.load_vue = false
-    this.vue = vue.data
-    this.show_vue = true
-
-    this.load_tags = true
-    const tags = await this.$axios.$get(`api/tags`)
-    this.load_tags = false
-    this.tags = tags.data
-    this.total_tags = tags.total
+    // const vue = await this.$axios.$get(`api/blog/page/1/item/5/tags/vue3`)
+    // this.load_vue = false
+    // this.vue = vue.data
+    // this.show_vue = true
 
     const BlogsRandom = await this.$axios.$get(`api/blog/index/10`)
     this.blogs_in_random = BlogsRandom.data
 
     const Blogslatest = await this.$axios.$get(`api/blog/latest/10`)
     this.blogs_in_latest = Blogslatest.data
+
+    this.load_tags = true
+    const tags = await this.$axios.$get(`api/tags`)
+    this.load_tags = false
+    this.tags = tags.data
+    this.total_tags = tags.total
   }
 }
 </script>

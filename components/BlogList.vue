@@ -24,8 +24,8 @@
                   class=" pa-1 ma-1 cover back"
                   :class="hover ? '' : ''"
                 >
+                  <!-- two-line -->
                   <v-list-item-content
-                    two-line
                     dark
                     :elevation="hover ? 1 : 2"
                     :class="{ 'on-hover': hover }"
@@ -38,10 +38,13 @@
                         path: 'blog/' + item.slug
                       }"
                     >
+                      <!-- v-text="" -->
                       <v-list-item-title
                         class="font-ptsans"
-                        v-text="item['title']"
-                      ></v-list-item-title>
+                        style="    white-space: pre-line!important;"
+                      >
+                        <span>{{ item['title'] }} </span></v-list-item-title
+                      >
                     </nuxt-link>
                   </v-list-item-content>
                 </v-list-item>

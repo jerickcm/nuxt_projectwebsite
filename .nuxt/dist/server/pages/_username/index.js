@@ -85,7 +85,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 280:
+/***/ 279:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -785,7 +785,7 @@ var colorable = __webpack_require__(7);
 
 /***/ }),
 
-/***/ 329:
+/***/ 324:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -974,7 +974,7 @@ var VRow = __webpack_require__(255);
 var VSheet = __webpack_require__(20);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSkeletonLoader/VSkeletonLoader.js
-var VSkeletonLoader = __webpack_require__(280);
+var VSkeletonLoader = __webpack_require__(279);
 
 // CONCATENATED MODULE: ./components/WidgetBlogtags.vue
 
@@ -1016,7 +1016,7 @@ installComponents_default()(component, {VAvatar: VAvatar["a" /* default */],VCar
 
 /***/ }),
 
-/***/ 515:
+/***/ 514:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1224,7 +1224,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 /* harmony default export */ var _username = __webpack_exports__["default"] = (component.exports);
 
 /* nuxt-component-imports */
-installComponents_default()(component, {WidgetBlogtags: __webpack_require__(329).default})
+installComponents_default()(component, {WidgetBlogtags: __webpack_require__(324).default})
 
 
 /* vuetify-loader */
