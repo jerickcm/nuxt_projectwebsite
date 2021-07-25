@@ -218,7 +218,11 @@ export default {
     blogs_in_latest: []
   }),
 
-  async fetch() {
+  async fetch() {},
+  layout: 'default',
+  methods: {},
+  computed: {},
+  async mounted() {
     this.blogs_load = true
     const blogs = await this.$axios.$get(`api/blog/page/1/item/10`)
     this.blogs_load = false
@@ -257,11 +261,7 @@ export default {
 
     const Blogslatest = await this.$axios.$get(`api/blog/latest/10`)
     this.blogs_in_latest = Blogslatest.data
-  },
-  layout: 'default',
-  methods: {},
-  computed: {},
-  async mounted() {}
+  }
 }
 </script>
 
