@@ -35,7 +35,7 @@
                       :class="hover ? 'white--text' : 'black--text'"
                       style="text-decoration:none"
                       :to="{
-                        path: 'blog/' + item.slug
+                        path: '/blog/' + item.slug
                       }"
                     >
                       <!-- v-text="" -->
