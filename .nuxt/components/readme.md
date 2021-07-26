@@ -24,6 +24,7 @@ You can directly use them in pages and other components without the need to impo
 - `<QuotesCard>` | `<quotes-card>` (components/QuotesCard.vue)
 - `<QuoteWidget>` | `<quote-widget>` (components/QuoteWidget.vue)
 - `<Search>` | `<search>` (components/Search.vue)
+- `<Services>` | `<services>` (components/Services.vue)
 - `<SkeletonCard>` | `<skeleton-card>` (components/SkeletonCard.vue)
 - `<TagsIndex>` | `<tags-index>` (components/TagsIndex.vue)
 - `<Template>` | `<template>` (components/Template.vue)

@@ -193,7 +193,7 @@
             </v-list-item-content>
           </v-list-item> -->
 
-          <v-list-item to="/privacy-policy'">
+          <v-list-item to="/privacy-policy">
             <v-list-item-action>
               <v-icon>mdi-account-key </v-icon>
             </v-list-item-action>
