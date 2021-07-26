@@ -24,6 +24,7 @@ const components = {
   SkeletonCard: () => import('../..\\components\\SkeletonCard.vue' /* webpackChunkName: "components/skeleton-card" */).then(c => wrapFunctional(c.default || c)),
   TagsIndex: () => import('../..\\components\\TagsIndex.vue' /* webpackChunkName: "components/tags-index" */).then(c => wrapFunctional(c.default || c)),
   Template: () => import('../..\\components\\Template.vue' /* webpackChunkName: "components/template" */).then(c => wrapFunctional(c.default || c)),
+  Tools: () => import('../..\\components\\Tools.vue' /* webpackChunkName: "components/tools" */).then(c => wrapFunctional(c.default || c)),
   Topic: () => import('../..\\components\\Topic.vue' /* webpackChunkName: "components/topic" */).then(c => wrapFunctional(c.default || c)),
   TopicM: () => import('../..\\components\\TopicM.vue' /* webpackChunkName: "components/topic-m" */).then(c => wrapFunctional(c.default || c)),
   VuetifyLogo: () => import('../..\\components\\VuetifyLogo.vue' /* webpackChunkName: "components/vuetify-logo" */).then(c => wrapFunctional(c.default || c)),

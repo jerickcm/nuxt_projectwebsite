@@ -28,6 +28,9 @@
   "devDependencies": {
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/toast": "^3.3.1",
-    "@nuxtjs/vuetify": "^1.11.3"
+    "@nuxtjs/vuetify": "^1.11.3",
+    "node-sass": "^6.0.1",
+    "sass-loader": "^10.2.0",
+    "scss-loader": "^0.0.1"
   }
 }

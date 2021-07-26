@@ -14,6 +14,7 @@ const _d27b53a4 = () => interopDefault(import('..\\pages\\world-reminders\\index
 const _c88af200 = () => interopDefault(import('..\\pages\\blog\\create.vue' /* webpackChunkName: "pages/blog/create" */))
 const _426db22e = () => interopDefault(import('..\\pages\\blog\\manage.vue' /* webpackChunkName: "pages/blog/manage" */))
 const _12dae1ae = () => interopDefault(import('..\\pages\\blog\\view.vue' /* webpackChunkName: "pages/blog/view" */))
+const _1100b655 = () => interopDefault(import('..\\pages\\cryptography\\atbash.vue' /* webpackChunkName: "pages/cryptography/atbash" */))
 const _0f2a4220 = () => interopDefault(import('..\\pages\\dash\\create.vue' /* webpackChunkName: "pages/dash/create" */))
 const _2e582319 = () => interopDefault(import('..\\pages\\dash\\view.vue' /* webpackChunkName: "pages/dash/view" */))
 const _12b8be9e = () => interopDefault(import('..\\pages\\news\\create.vue' /* webpackChunkName: "pages/news/create" */))
@@ -100,6 +101,10 @@ export const routerOptions = {
     path: "/blog/view",
     component: _12dae1ae,
     name: "blog-view"
+  }, {
+    path: "/cryptography/atbash",
+    component: _1100b655,
+    name: "cryptography-atbash"
   }, {
     path: "/dash/create",
     component: _0f2a4220,

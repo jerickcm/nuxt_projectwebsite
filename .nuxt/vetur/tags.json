@@ -65,6 +65,9 @@
   "Template": {
     "description": "Auto imported from components/Template.vue"
   },
+  "Tools": {
+    "description": "Auto imported from components/Tools.vue"
+  },
   "Topic": {
     "description": "Auto imported from components/Topic.vue"
   },

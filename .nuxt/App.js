@@ -7,6 +7,10 @@ import NuxtLoading from './components/nuxt-loading.vue'
 
 import '..\\layouts\\global.css'
 
+import '..\\assets\\css\\main.css'
+
+import '..\\assets\\css\\main.scss'
+
 import _77068119 from '..\\layouts\\admin.vue'
 import _6f6c098b from '..\\layouts\\default.vue'
 import _777ba69c from '..\\layouts\\index.vue'

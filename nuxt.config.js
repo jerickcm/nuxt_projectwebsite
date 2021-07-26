@@ -51,7 +51,14 @@ export default {
     API_URL: api
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['~layouts/global.css'],
+  css: [
+    '~layouts/global.css',
+    // 'bulma',
+    // CSS file in the project
+    '~/assets/css/main.css',
+    // SCSS file in the project
+    '~/assets/css/main.scss'
+  ],
   // loading: { color: '39b982' },
   loading: {
     color: 'green',
@@ -196,13 +203,11 @@ export default {
     }
   },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
       dark: false,
-
       themes: {
         dark: {
           dark: '#000000',
@@ -221,7 +226,6 @@ export default {
           cstmblue: '#00F',
           cstmbluetext: '#FFF'
         },
-
         light: {
           dark: '#000000',
           primary: colors.purple,

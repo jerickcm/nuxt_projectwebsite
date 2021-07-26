@@ -22,6 +22,7 @@ export { default as Services } from '../..\\components\\Services.vue'
 export { default as SkeletonCard } from '../..\\components\\SkeletonCard.vue'
 export { default as TagsIndex } from '../..\\components\\TagsIndex.vue'
 export { default as Template } from '../..\\components\\Template.vue'
+export { default as Tools } from '../..\\components\\Tools.vue'
 export { default as Topic } from '../..\\components\\Topic.vue'
 export { default as TopicM } from '../..\\components\\TopicM.vue'
 export { default as VuetifyLogo } from '../..\\components\\VuetifyLogo.vue'
@@ -56,6 +57,7 @@ export const LazyServices = import('../..\\components\\Services.vue' /* webpackC
 export const LazySkeletonCard = import('../..\\components\\SkeletonCard.vue' /* webpackChunkName: "components/skeleton-card" */).then(c => wrapFunctional(c.default || c))
 export const LazyTagsIndex = import('../..\\components\\TagsIndex.vue' /* webpackChunkName: "components/tags-index" */).then(c => wrapFunctional(c.default || c))
 export const LazyTemplate = import('../..\\components\\Template.vue' /* webpackChunkName: "components/template" */).then(c => wrapFunctional(c.default || c))
+export const LazyTools = import('../..\\components\\Tools.vue' /* webpackChunkName: "components/tools" */).then(c => wrapFunctional(c.default || c))
 export const LazyTopic = import('../..\\components\\Topic.vue' /* webpackChunkName: "components/topic" */).then(c => wrapFunctional(c.default || c))
 export const LazyTopicM = import('../..\\components\\TopicM.vue' /* webpackChunkName: "components/topic-m" */).then(c => wrapFunctional(c.default || c))
 export const LazyVuetifyLogo = import('../..\\components\\VuetifyLogo.vue' /* webpackChunkName: "components/vuetify-logo" */).then(c => wrapFunctional(c.default || c))
