@@ -153,10 +153,6 @@
   </v-container>
 </template>
 <script>
-const dev_front = process.env.DEV_FRONT
-const prod_front = process.env.PROD_FRONT
-const front = process.env.NODE_ENV === 'development' ? dev_front : prod_front
-
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 export default {
@@ -177,7 +173,7 @@ export default {
         {
           hid: 'twitter:description',
           name: 'twitter:description',
-          content: this.description
+          content: this.headline
         },
         {
           hid: 'twitter:image',
@@ -214,7 +210,6 @@ export default {
           property: 'og:image:alt',
           content: this.title
         },
-        { hid: 'fb:app_id', name: 'fb:app_id', content: fb_id },
         {
           hid: 'twitter:site',
           name: 'twitter:site',
@@ -283,6 +278,10 @@ export default {
     blogs_in_latest: []
   }),
   async asyncData({ $axios, error, params }) {
+    const dev_front = process.env.DEV_FRONT
+    const prod_front = process.env.PROD_FRONT
+    const front =
+      process.env.NODE_ENV === 'development' ? dev_front : prod_front
     try {
       let response = await $axios.$get(`api/blog/${params.id}`)
       let image_hid
