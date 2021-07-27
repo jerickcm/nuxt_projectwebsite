@@ -170,6 +170,7 @@ export default {
         this.$axios
           .$get(`api/blog/page/${this.page}/item/${10}`)
           .then(res => {
+
             this.length = res.data.length
             this.content = [...this.content, ...res.data]
             NProgress.done()

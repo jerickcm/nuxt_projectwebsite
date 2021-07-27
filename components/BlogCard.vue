@@ -185,7 +185,8 @@
 export default {
   props: ['content', 'length', 'loading'],
   data: () => ({
-    selection: ''
+    selection: '',
+    path: '/blog'
   }),
   async created() {},
   mounted() {},

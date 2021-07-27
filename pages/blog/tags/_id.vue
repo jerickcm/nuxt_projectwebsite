@@ -190,14 +190,16 @@ export default {
   methods: {
     async nextArticle() {
       this.loading = true
-      await this.$axios.$get('/sanctum/csrf-cookie')
+
       NProgress.start()
       NProgress.inc()
+
       try {
         this.$axios
-          .$get(`api/blog/page/${this.page}/item/${10}/tags/${params.id}`)
+          .$get(`api/blog/page/${this.page}/item/${10}/tags/${this.id}`)
           .then(res => {
             this.length = res.data.length
+            console.log(res.data)
             this.content = [...this.content, ...res.data]
             NProgress.done()
             this.page = this.page + 1

@@ -94,11 +94,6 @@
                         </v-sheet>
                       </v-col>
                     </v-row>
-                    <!-- <v-row>
-                      <v-col>
-                        <WidgetBlogtags />
-                      </v-col>
-                    </v-row> -->
                   </v-container>
                 </v-col>
                 <v-col
@@ -286,7 +281,7 @@ export default {
       let response = await $axios.$get(`api/blog/${params.id}`)
       let image_hid
       if (response.data[0].image == null) {
-        image_hid = front + '/images/adefltu.jpg'
+        image_hid = front + '/images/default.jpg'
       } else {
         image_hid = response.data[0].image
       }
