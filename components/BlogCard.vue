@@ -146,7 +146,7 @@
     </v-row>
 
     <v-row v-if="loading" v-for="index in 10" :key="index + `b`">
-      <v-col cols="12" class="pa-0 ma-0 pt-2">
+      <v-col cols="12" class="pa-0 ma-0 pt-2 pr-2">
         <v-skeleton-loader
           elevation="2"
           outlined
@@ -158,14 +158,14 @@
       </v-col>
     </v-row>
     <v-row class="ma-0 pa-0" v-if="!(length == 10)">
-      <v-col cols="12" class="pa-0 ma-0 pt-2">
+      <v-col cols="12" class="pa-0 ma-0 pt-2 pr-2">
         <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
           <label for="" class="grey--text">Nothing Follows</label>
         </v-card>
       </v-col>
     </v-row>
     <v-row class="ma-0 pa-0 mb-3">
-      <v-col cols="12" class="pa-0 ma-0 pt-2">
+      <v-col cols="12" class="pa-0 ma-0 pt-2 pr-2">
         <v-card elevation="2" outlined shaped tile class="pa-2 ma-0">
           <v-btn
             class="white--text"

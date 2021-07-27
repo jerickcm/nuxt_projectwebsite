@@ -34,7 +34,12 @@
                       :src="data.item.image"
                     >
                     </v-img>
-                    <v-avatar v-else class="white--text" color="grey">
+                    <v-avatar v-else class="white--text" color="green">
+                      {{ data.item.title.charAt(0).toUpperCase() }}
+                    </v-avatar>
+                  </v-list-item-avatar>
+                  <v-list-item-avatar tile v-else-if="data.item.tag">
+                    <v-avatar rounded class="white--text" color="blue">
                       {{ data.item.title.charAt(0).toUpperCase() }}
                     </v-avatar>
                   </v-list-item-avatar>
@@ -102,6 +107,49 @@
                   </v-card-actions>
                 </v-card>
               </v-list-item>
+
+              <v-list-item v-else-if="model.tag">
+                <v-card class="mx-auto" max-width="350" outlined>
+                  <v-list-item three-line>
+                    <v-list-item-content>
+                      <div class="text-overline mb-4">
+                        Tag
+                      </div>
+                      <v-list-item-title class="text-h5 mb-1">
+                        {{ model.slug }}
+                      </v-list-item-title>
+                      <v-list-item-subtitle
+                        >Tagged Blog Article</v-list-item-subtitle
+                      >
+                    </v-list-item-content>
+
+                    <v-list-item-avatar tile size="80">
+                      <v-avatar class="white--text" color="grey">
+                        {{ model.title.charAt(0).toUpperCase() }}
+                      </v-avatar>
+                    </v-list-item-avatar>
+                  </v-list-item>
+
+                  <v-card-actions>
+                    <v-btn outlined rounded text>
+                      <nuxt-link
+                        color="blue"
+                        class="nostyle blue--text"
+                        target="_blank"
+                        :to="{
+                          path: model.page + model.slug
+                        }"
+                      >
+                        visit tag
+                        <v-icon small color="blue"
+                          >mdi-arrow-top-right-thick</v-icon
+                        >
+                      </nuxt-link>
+                    </v-btn>
+                  </v-card-actions>
+                </v-card>
+              </v-list-item>
+
               <v-list-item v-else>
                 <v-card class="mx-auto" max-width="344">
                   <v-img v-if="model.image != null" :src="model.image"></v-img>
