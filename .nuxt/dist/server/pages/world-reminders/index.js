@@ -1,4 +1,4 @@
-exports.ids = [73,22,24,26,28,29];
+exports.ids = [74,22,24,26,28,29];
 exports.modules = {
 
 /***/ 264:
@@ -85,7 +85,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 283:
+/***/ 288:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -313,7 +313,7 @@ var mobile = __webpack_require__(76);
 var resize = __webpack_require__(38);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/directives/touch/index.js
-var touch = __webpack_require__(111);
+var touch = __webpack_require__(110);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/util/mixins.js
 var mixins = __webpack_require__(2);
@@ -1110,7 +1110,7 @@ var VRow = __webpack_require__(259);
 var VSheet = __webpack_require__(20);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSkeletonLoader/VSkeletonLoader.js
-var VSkeletonLoader = __webpack_require__(283);
+var VSkeletonLoader = __webpack_require__(288);
 
 // CONCATENATED MODULE: ./components/WorldRemindersCard.vue
 
@@ -1157,7 +1157,7 @@ installComponents_default()(component, {VBtn: VBtn["a" /* default */],VCol: VCol
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(433);
+var content = __webpack_require__(434);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -1169,7 +1169,7 @@ module.exports.__inject__ = function (context) {
 
 /***/ }),
 
-/***/ 415:
+/***/ 416:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1259,7 +1259,7 @@ var VRow = __webpack_require__(259);
 var VSheet = __webpack_require__(20);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSkeletonLoader/VSkeletonLoader.js
-var VSkeletonLoader = __webpack_require__(283);
+var VSkeletonLoader = __webpack_require__(288);
 
 // CONCATENATED MODULE: ./components/WidgetQuote.vue
 
@@ -1297,7 +1297,7 @@ installComponents_default()(component, {VCard: VCard["a" /* default */],VCardTex
 
 /***/ }),
 
-/***/ 416:
+/***/ 417:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1511,7 +1511,7 @@ var VRow = __webpack_require__(259);
 var VSheet = __webpack_require__(20);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSkeletonLoader/VSkeletonLoader.js
-var VSkeletonLoader = __webpack_require__(283);
+var VSkeletonLoader = __webpack_require__(288);
 
 // CONCATENATED MODULE: ./components/WidgetNews.vue
 
@@ -1555,7 +1555,7 @@ installComponents_default()(component, {VAvatar: VAvatar["a" /* default */],VCar
 
 /***/ }),
 
-/***/ 417:
+/***/ 418:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1769,7 +1769,7 @@ var VRow = __webpack_require__(259);
 var VSheet = __webpack_require__(20);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSkeletonLoader/VSkeletonLoader.js
-var VSkeletonLoader = __webpack_require__(283);
+var VSkeletonLoader = __webpack_require__(288);
 
 // CONCATENATED MODULE: ./components/WidgetPost.vue
 
@@ -1813,7 +1813,7 @@ installComponents_default()(component, {VAvatar: VAvatar["a" /* default */],VCar
 
 /***/ }),
 
-/***/ 418:
+/***/ 419:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1998,7 +1998,7 @@ var VRow = __webpack_require__(259);
 var VSheet = __webpack_require__(20);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSkeletonLoader/VSkeletonLoader.js
-var VSkeletonLoader = __webpack_require__(283);
+var VSkeletonLoader = __webpack_require__(288);
 
 // CONCATENATED MODULE: ./components/WidgetBlog.vue
 
@@ -2040,7 +2040,7 @@ installComponents_default()(component, {VAvatar: VAvatar["a" /* default */],VCar
 
 /***/ }),
 
-/***/ 432:
+/***/ 433:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2052,7 +2052,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 433:
+/***/ 434:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -2066,7 +2066,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 524:
+/***/ 527:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2239,7 +2239,7 @@ var VRow = __webpack_require__(259);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(432)
+  var style0 = __webpack_require__(433)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -2260,7 +2260,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 /* harmony default export */ var world_reminders = __webpack_exports__["default"] = (component.exports);
 
 /* nuxt-component-imports */
-installComponents_default()(component, {WorldRemindersCard: __webpack_require__(338).default,WidgetQuote: __webpack_require__(415).default,WidgetNews: __webpack_require__(416).default,WidgetPost: __webpack_require__(417).default,WidgetBlog: __webpack_require__(418).default})
+installComponents_default()(component, {WorldRemindersCard: __webpack_require__(338).default,WidgetQuote: __webpack_require__(416).default,WidgetNews: __webpack_require__(417).default,WidgetPost: __webpack_require__(418).default,WidgetBlog: __webpack_require__(419).default})
 
 
 /* vuetify-loader */

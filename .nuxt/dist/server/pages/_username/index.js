@@ -85,7 +85,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 283:
+/***/ 288:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -313,7 +313,7 @@ var mobile = __webpack_require__(76);
 var resize = __webpack_require__(38);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/directives/touch/index.js
-var touch = __webpack_require__(111);
+var touch = __webpack_require__(110);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/util/mixins.js
 var mixins = __webpack_require__(2);
@@ -785,7 +785,7 @@ var colorable = __webpack_require__(8);
 
 /***/ }),
 
-/***/ 422:
+/***/ 423:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -974,7 +974,7 @@ var VRow = __webpack_require__(259);
 var VSheet = __webpack_require__(20);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSkeletonLoader/VSkeletonLoader.js
-var VSkeletonLoader = __webpack_require__(283);
+var VSkeletonLoader = __webpack_require__(288);
 
 // CONCATENATED MODULE: ./components/WidgetBlogtags.vue
 
@@ -1016,7 +1016,7 @@ installComponents_default()(component, {VAvatar: VAvatar["a" /* default */],VCar
 
 /***/ }),
 
-/***/ 538:
+/***/ 542:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1224,7 +1224,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 /* harmony default export */ var _username = __webpack_exports__["default"] = (component.exports);
 
 /* nuxt-component-imports */
-installComponents_default()(component, {WidgetBlogtags: __webpack_require__(422).default})
+installComponents_default()(component, {WidgetBlogtags: __webpack_require__(423).default})
 
 
 /* vuetify-loader */

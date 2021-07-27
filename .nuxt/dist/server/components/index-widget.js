@@ -84,7 +84,7 @@ var mobile = __webpack_require__(76);
 var resize = __webpack_require__(38);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/directives/touch/index.js
-var touch = __webpack_require__(111);
+var touch = __webpack_require__(110);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/util/mixins.js
 var mixins = __webpack_require__(2);

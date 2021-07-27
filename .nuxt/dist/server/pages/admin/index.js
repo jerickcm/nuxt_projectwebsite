@@ -1,7 +1,7 @@
 exports.ids = [35,4,5];
 exports.modules = {
 
-/***/ 274:
+/***/ 278:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -164,7 +164,7 @@ installComponents_default()(component, {VCard: VCard["a" /* default */],VCardTex
 
 /***/ }),
 
-/***/ 518:
+/***/ 521:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -179,7 +179,7 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./pages/admin/index.vue?vue&type=template&id=51da4c16&
 
 // EXTERNAL MODULE: ./mixins/admin_pages.js
-var admin_pages = __webpack_require__(274);
+var admin_pages = __webpack_require__(278);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/admin/index.vue?vue&type=script&lang=js&
 //

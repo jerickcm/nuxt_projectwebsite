@@ -88,6 +88,14 @@
     "_name": "_1100b655"
   },
   {
+    "name": "cryptography-rot13",
+    "path": "/cryptography/rot13",
+    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\cryptography\\\\rot13.vue",
+    "chunkName": "pages/cryptography/rot13",
+    "url": "/cryptography/rot13",
+    "_name": "_65e6a7db"
+  },
+  {
     "name": "dash-create",
     "path": "/dash/create",
     "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\dash\\\\create.vue",

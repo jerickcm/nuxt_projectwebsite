@@ -15,6 +15,7 @@ const _c88af200 = () => interopDefault(import('..\\pages\\blog\\create.vue' /* w
 const _426db22e = () => interopDefault(import('..\\pages\\blog\\manage.vue' /* webpackChunkName: "pages/blog/manage" */))
 const _12dae1ae = () => interopDefault(import('..\\pages\\blog\\view.vue' /* webpackChunkName: "pages/blog/view" */))
 const _1100b655 = () => interopDefault(import('..\\pages\\cryptography\\atbash.vue' /* webpackChunkName: "pages/cryptography/atbash" */))
+const _65e6a7db = () => interopDefault(import('..\\pages\\cryptography\\rot13.vue' /* webpackChunkName: "pages/cryptography/rot13" */))
 const _0f2a4220 = () => interopDefault(import('..\\pages\\dash\\create.vue' /* webpackChunkName: "pages/dash/create" */))
 const _2e582319 = () => interopDefault(import('..\\pages\\dash\\view.vue' /* webpackChunkName: "pages/dash/view" */))
 const _12b8be9e = () => interopDefault(import('..\\pages\\news\\create.vue' /* webpackChunkName: "pages/news/create" */))
@@ -105,6 +106,10 @@ export const routerOptions = {
     path: "/cryptography/atbash",
     component: _1100b655,
     name: "cryptography-atbash"
+  }, {
+    path: "/cryptography/rot13",
+    component: _65e6a7db,
+    name: "cryptography-rot13"
   }, {
     path: "/dash/create",
     component: _0f2a4220,

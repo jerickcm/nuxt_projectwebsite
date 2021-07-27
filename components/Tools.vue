@@ -7,7 +7,6 @@
         </h2>
       </v-col>
     </v-row>
-
     <v-row>
       <v-col class="pa-0 ">
         <v-card flat>
@@ -19,6 +18,15 @@
             >
               <ul>
                 <li><h4 color="blue">Atbash Cipher</h4></li>
+              </ul>
+            </nuxt-link>
+            <nuxt-link
+              class="nuxtlink green--text"
+              color="blue"
+              to="/cryptography/rot13"
+            >
+              <ul>
+                <li><h4 color="blue">ROT-13 Cipher</h4></li>
               </ul>
             </nuxt-link>
           </v-card-text>

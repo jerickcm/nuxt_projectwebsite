@@ -29,7 +29,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 283:
+/***/ 288:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -236,7 +236,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(439);
+var content = __webpack_require__(440);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -248,7 +248,7 @@ module.exports.__inject__ = function (context) {
 
 /***/ }),
 
-/***/ 438:
+/***/ 439:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -260,7 +260,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 439:
+/***/ 440:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -274,7 +274,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 525:
+/***/ 528:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -414,7 +414,7 @@ var VRow = __webpack_require__(259);
 var VSheet = __webpack_require__(20);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VSkeletonLoader/VSkeletonLoader.js
-var VSkeletonLoader = __webpack_require__(283);
+var VSkeletonLoader = __webpack_require__(288);
 
 // CONCATENATED MODULE: ./pages/blog/view.vue
 
@@ -422,7 +422,7 @@ var VSkeletonLoader = __webpack_require__(283);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(438)
+  var style0 = __webpack_require__(439)
 if (style0.__inject__) style0.__inject__(context)
 
 }
