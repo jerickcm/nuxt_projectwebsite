@@ -113,7 +113,17 @@ export default {
       '/news/create',
       '/quotes/create',
 
-      '/profile/edit'
+      '/profile/edit',
+      '/dash/create',
+      '/dash/view',
+      '/quotes/view',
+      '/world-reminders/create',
+      '/world-reminders/manage',
+      '/blog/view',
+      '/world-reminders',
+      '/profile',
+      '/dashboard',
+      '/admin'
     ],
     // trailingSlash: true,
     routes: async () => {
