@@ -189,391 +189,987 @@
                       <v-col style="">
                         <p>Es5 Code:</p>
                         <div>
-                 <figure class="table" style="float:left;">
-    <table style="background-color:hsl(0, 0%, 0%);">
-        <tbody>
-            <tr>
-                <td>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp; </span><span style="color:#9cdcfe;">methods:</span><span style="color:#d4d4d4;">&nbsp;{</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp; </span><span style="color:#dcdcaa;">clearfields</span><span style="color:#d4d4d4;">()&nbsp;{</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#569cd6;">this</span><span style="color:#d4d4d4;">.</span><span style="color:#9cdcfe;">atbash</span><span style="color:#d4d4d4;">&nbsp;=&nbsp;</span><span style="color:#ce9178;">''</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#569cd6;">this</span><span style="color:#d4d4d4;">.</span><span style="color:#9cdcfe;">atbash_result</span><span style="color:#d4d4d4;">&nbsp;=&nbsp;</span><span style="color:#ce9178;">''</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;},</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp; </span><span style="color:#dcdcaa;">convert</span><span style="color:#d4d4d4;">()&nbsp;{</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#569cd6;">var</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#9cdcfe;">result</span><span style="color:#d4d4d4;">&nbsp;=&nbsp;</span><span style="color:#ce9178;">''</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#569cd6;">var</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#9cdcfe;">str</span><span style="color:#d4d4d4;">&nbsp;=&nbsp;</span><span style="color:#569cd6;">this</span><span style="color:#d4d4d4;">.</span><span style="color:#9cdcfe;">atbash</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#9cdcfe;">str</span><span style="color:#d4d4d4;">.</span><span style="color:#dcdcaa;">split</span><span style="color:#d4d4d4;">(</span><span style="color:#ce9178;">''</span><span style="color:#d4d4d4;">).</span><span style="color:#dcdcaa;">map</span><span style="color:#d4d4d4;">(</span><span style="color:#9cdcfe;">letter</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#569cd6;">=&gt;</span><span style="color:#d4d4d4;">&nbsp;{</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#9cdcfe;">result</span><span style="color:#d4d4d4;">&nbsp;+=&nbsp;</span><span style="color:#569cd6;">this</span><span style="color:#d4d4d4;">.</span><span style="color:#dcdcaa;">switch_letter</span><span style="color:#d4d4d4;">(</span><span style="color:#9cdcfe;">letter</span><span style="color:#d4d4d4;">)</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#569cd6;">this</span><span style="color:#d4d4d4;">.</span><span style="color:#9cdcfe;">atbash_result</span><span style="color:#d4d4d4;">&nbsp;=&nbsp;</span><span style="color:#9cdcfe;">result</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;},</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp; </span><span style="color:#dcdcaa;">switch_letter</span><span style="color:#d4d4d4;">(</span><span style="color:#9cdcfe;">letter</span><span style="color:#d4d4d4;">)&nbsp;{</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">switch</span><span style="color:#d4d4d4;">&nbsp;(</span><span style="color:#9cdcfe;">letter</span><span style="color:#d4d4d4;">)&nbsp;{</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'a'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'n'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'A'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'N'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'b'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'o'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'B'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'O'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'C'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'P'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'c'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'p'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'D'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'Q'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'d'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'q'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'E'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'R'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'e'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'r'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'F'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'S'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'f'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'s'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'G'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'T'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'g'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'t'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'H'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'U'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'h'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'u'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'I'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'V'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'i'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'v'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'J'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'W'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'j'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'w'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'K'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'X'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'k'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'x'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'L'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'Y'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'l'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'y'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'M'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'Z'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'m'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'z'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'N'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'A'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'n'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'a'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'O'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'B'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'o'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'b'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'P'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'C'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'p'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'c'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'Q'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'D'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'q'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'d'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'R'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'E'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'r'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'e'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'S'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'F'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'s'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'f'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'T'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'G'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'t'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'g'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'U'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'H'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'u'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'h'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'V'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'I'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'v'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'i'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'W'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'J'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'w'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'j'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'X'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'K'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'x'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'k'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'Y'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'L'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'y'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'l'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'Z'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'M'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">case</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'z'</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#ce9178;">'m'</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">default</span><span style="color:#d4d4d4;">:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#6a9955;">//&nbsp;case&nbsp;letter:</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="color:#c586c0;">return</span><span style="color:#d4d4d4;">&nbsp;</span><span style="color:#9cdcfe;">letter</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;}</span>
-                    </p>
-                    <p>
-                        <span style="color:#d4d4d4;">&nbsp;&nbsp;},</span>
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</figure>F
+                          <figure class="table" style="float:left;">
+                            <table style="background-color:hsl(0, 0%, 0%);">
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    <p>
+                                      <span style="color:#d4d4d4;">&nbsp; </span
+                                      ><span style="color:#9cdcfe;"
+                                        >methods:</span
+                                      ><span style="color:#d4d4d4;"
+                                        >&nbsp;{</span
+                                      >
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#dcdcaa;"
+                                        >clearfields</span
+                                      ><span style="color:#d4d4d4;"
+                                        >()&nbsp;{</span
+                                      >
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#569cd6;">this</span
+                                      ><span style="color:#d4d4d4;">.</span
+                                      ><span style="color:#9cdcfe;">atbash</span
+                                      ><span style="color:#d4d4d4;"
+                                        >&nbsp;=&nbsp;</span
+                                      ><span style="color:#ce9178;">''</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#569cd6;">this</span
+                                      ><span style="color:#d4d4d4;">.</span
+                                      ><span style="color:#9cdcfe;"
+                                        >atbash_result</span
+                                      ><span style="color:#d4d4d4;"
+                                        >&nbsp;=&nbsp;</span
+                                      ><span style="color:#ce9178;">''</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;},</span
+                                      >
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#dcdcaa;"
+                                        >convert</span
+                                      ><span style="color:#d4d4d4;"
+                                        >()&nbsp;{</span
+                                      >
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#569cd6;">var</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#9cdcfe;">result</span
+                                      ><span style="color:#d4d4d4;"
+                                        >&nbsp;=&nbsp;</span
+                                      ><span style="color:#ce9178;">''</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#569cd6;">var</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#9cdcfe;">str</span
+                                      ><span style="color:#d4d4d4;"
+                                        >&nbsp;=&nbsp;</span
+                                      ><span style="color:#569cd6;">this</span
+                                      ><span style="color:#d4d4d4;">.</span
+                                      ><span style="color:#9cdcfe;"
+                                        >atbash</span
+                                      >
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#9cdcfe;">str</span
+                                      ><span style="color:#d4d4d4;">.</span
+                                      ><span style="color:#dcdcaa;">split</span
+                                      ><span style="color:#d4d4d4;">(</span
+                                      ><span style="color:#ce9178;">''</span
+                                      ><span style="color:#d4d4d4;">).</span
+                                      ><span style="color:#dcdcaa;">map</span
+                                      ><span style="color:#d4d4d4;">(</span
+                                      ><span style="color:#9cdcfe;">letter</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#569cd6;">=&gt;</span
+                                      ><span style="color:#d4d4d4;"
+                                        >&nbsp;{</span
+                                      >
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#9cdcfe;">result</span
+                                      ><span style="color:#d4d4d4;"
+                                        >&nbsp;+=&nbsp;</span
+                                      ><span style="color:#569cd6;">this</span
+                                      ><span style="color:#d4d4d4;">.</span
+                                      ><span style="color:#dcdcaa;"
+                                        >switch_letter</span
+                                      ><span style="color:#d4d4d4;">(</span
+                                      ><span style="color:#9cdcfe;">letter</span
+                                      ><span style="color:#d4d4d4;">)</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;})</span
+                                      >
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#569cd6;">this</span
+                                      ><span style="color:#d4d4d4;">.</span
+                                      ><span style="color:#9cdcfe;"
+                                        >atbash_result</span
+                                      ><span style="color:#d4d4d4;"
+                                        >&nbsp;=&nbsp;</span
+                                      ><span style="color:#9cdcfe;"
+                                        >result</span
+                                      >
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;},</span
+                                      >
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#dcdcaa;"
+                                        >switch_letter</span
+                                      ><span style="color:#d4d4d4;">(</span
+                                      ><span style="color:#9cdcfe;">letter</span
+                                      ><span style="color:#d4d4d4;"
+                                        >)&nbsp;{</span
+                                      >
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">switch</span
+                                      ><span style="color:#d4d4d4;"
+                                        >&nbsp;(</span
+                                      ><span style="color:#9cdcfe;">letter</span
+                                      ><span style="color:#d4d4d4;"
+                                        >)&nbsp;{</span
+                                      >
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'a'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'n'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'A'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'N'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'b'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'o'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'B'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'O'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'C'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'P'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'c'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'p'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'D'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'Q'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'d'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'q'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'E'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'R'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'e'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'r'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'F'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'S'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'f'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'s'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'G'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'T'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'g'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'t'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'H'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'U'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'h'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'u'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'I'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'V'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'i'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'v'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'J'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'W'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'j'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'w'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'K'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'X'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'k'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'x'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'L'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'Y'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'l'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'y'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'M'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'Z'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'m'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'z'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'N'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'A'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'n'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'a'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'O'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'B'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'o'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'b'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'P'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'C'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'p'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'c'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'Q'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'D'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'q'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'d'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'R'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'E'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'r'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'e'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'S'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'F'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'s'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'f'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'T'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'G'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'t'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'g'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'U'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'H'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'u'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'h'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'V'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'I'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'v'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'i'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'W'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'J'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'w'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'j'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'X'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'K'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'x'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'k'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'Y'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'L'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'y'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'l'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'Z'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'M'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">case</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'z'</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#ce9178;">'m'</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;"
+                                        >default</span
+                                      ><span style="color:#d4d4d4;">:</span>
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#6a9955;"
+                                        >//&nbsp;case&nbsp;letter:</span
+                                      >
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span
+                                      ><span style="color:#c586c0;">return</span
+                                      ><span style="color:#d4d4d4;">&nbsp;</span
+                                      ><span style="color:#9cdcfe;"
+                                        >letter</span
+                                      >
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</span
+                                      >
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;&nbsp;&nbsp;}</span
+                                      >
+                                    </p>
+                                    <p>
+                                      <span style="color:#d4d4d4;"
+                                        >&nbsp;&nbsp;},</span
+                                      >
+                                    </p>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </figure>
                         </div>
                       </v-col>
                     </v-row>
@@ -634,12 +1230,12 @@
 export default {
   head() {
     return {
-      title: 'Cryptography | Atbash ',
+      title: 'Cryptography | ROT-13 ',
       meta: [
         {
-          hid: 'Cryptography | Atbash ',
-          name: 'Cryptography | Atbash',
-          content: 'Cryptography | Atbash'
+          hid: 'Cryptography | ROT-13  ',
+          name: 'Cryptography | ROT-13 ',
+          content: 'Cryptography | ROT-13 '
         }
       ]
     }

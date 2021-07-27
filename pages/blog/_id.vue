@@ -153,6 +153,10 @@
   </v-container>
 </template>
 <script>
+const dev_front = process.env.DEV_FRONT
+const prod_front = process.env.PROD_FRONT
+const front = process.env.NODE_ENV === 'development' ? dev_front : prod_front
+
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 export default {
@@ -164,6 +168,57 @@ export default {
           hid: 'Blog',
           name: 'Blog',
           content: 'Blog' + this.title
+        },
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: this.title
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: this.description
+        },
+        {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          content: this.image
+        },
+        {
+          hid: 'twitter:image:alt',
+          name: 'twitter:image:alt',
+          content: this.title
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: this.title
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: this.headline
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: this.image
+        },
+        {
+          hid: 'og:image:secure_url',
+          property: 'og:image:secure_url',
+          content: this.image
+        },
+        {
+          hid: 'og:image:alt',
+          property: 'og:image:alt',
+          content: this.title
+        },
+        { hid: 'fb:app_id', name: 'fb:app_id', content: fb_id },
+        {
+          hid: 'twitter:site',
+          name: 'twitter:site',
+          content: 'https://twitter.com/InhinyeruC'
         }
       ]
     }
@@ -178,6 +233,7 @@ export default {
       author: ''
     },
     image: '',
+    headline: '',
     title: '',
     pageload: true,
     loading: false,
@@ -229,14 +285,20 @@ export default {
   async asyncData({ $axios, error, params }) {
     try {
       let response = await $axios.$get(`api/blog/${params.id}`)
+      let image_hid
+      if (response.data[0].image == null) {
+        image_hid = front + '/images/adefltu.jpg'
+      } else {
+        image_hid = response.data[0].image
+      }
       return {
         posts: response.data[0],
         pageload: false,
         slug: params.slug,
         title: response.data[0].title,
-        headlines: response.data[0].headline,
+        headline: response.data[0].headline,
         tags: response.data[0].tags,
-        image: response.data[0].image
+        image: image_hid
       }
     } catch (err) {
       error({ statusCode: 500, message: 'Page not found' })
