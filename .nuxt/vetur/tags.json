@@ -50,6 +50,9 @@
   "QuoteWidget": {
     "description": "Auto imported from components/QuoteWidget.vue"
   },
+  "RecommendedBlogs": {
+    "description": "Auto imported from components/RecommendedBlogs.vue"
+  },
   "Search": {
     "description": "Auto imported from components/Search.vue"
   },

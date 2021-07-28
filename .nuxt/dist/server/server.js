@@ -43,7 +43,7 @@ module.exports =
 /******/
 /******/ 		// "0" is the signal for "already loaded"
 /******/ 		if(installedChunks[chunkId] !== 0) {
-/******/ 			var chunk = require("./" + ({"1":"components/blog-card","2":"components/blog-list","3":"components/contact","4":"components/dash-title","5":"components/dashboard","6":"components/event-card","7":"components/index-blogs","8":"components/index-description","9":"components/index-topics","10":"components/index-widget","11":"components/news-card","12":"components/post-card","13":"components/quote-widget","14":"components/quotes-card","15":"components/services","16":"components/skeleton-card","17":"components/tags-index","18":"components/tools","19":"components/topic","20":"components/topic-m","21":"components/vuetify-logo","22":"components/widget-blog","23":"components/widget-blogtags","24":"components/widget-news","25":"components/widget-newstags","26":"components/widget-post","27":"components/widget-posttags","28":"components/widget-quote","29":"components/world-reminders-card","30":"pages/_username/following","31":"pages/_username/index","32":"pages/_username/skel","33":"pages/admin/blog/create","34":"pages/admin/blog/manage","35":"pages/admin/index","36":"pages/admin/news/create","37":"pages/admin/news/manage","38":"pages/admin/post/create","39":"pages/admin/post/manage","40":"pages/admin/quotes/create","41":"pages/admin/quotes/manage","42":"pages/admin/users/create","43":"pages/admin/users/logs","44":"pages/admin/users/manage","45":"pages/admin/world-reminders/create","46":"pages/admin/world-reminders/manage","47":"pages/blog/_id","48":"pages/blog/create","49":"pages/blog/index","50":"pages/blog/manage","51":"pages/blog/tags/_id","52":"pages/blog/view","53":"pages/cryptography/atbash","54":"pages/cryptography/rot13","55":"pages/dash/create","56":"pages/dash/view","57":"pages/dashboard/index","58":"pages/index","59":"pages/news/_id","60":"pages/news/create","61":"pages/news/manage","62":"pages/post/_id","63":"pages/post/create","64":"pages/post/manage","65":"pages/privacy-policy","66":"pages/profile/edit","67":"pages/profile/index","68":"pages/quotes/create","69":"pages/quotes/manage","70":"pages/quotes/view","71":"pages/terms-of-service","72":"pages/world-reminders/_id","73":"pages/world-reminders/create","74":"pages/world-reminders/index","75":"pages/world-reminders/manage"}[chunkId]||chunkId) + ".js");
+/******/ 			var chunk = require("./" + ({"1":"components/blog-card","2":"components/blog-list","3":"components/contact","4":"components/dash-title","5":"components/dashboard","6":"components/event-card","7":"components/index-blogs","8":"components/index-description","9":"components/index-topics","10":"components/index-widget","11":"components/news-card","12":"components/post-card","13":"components/quote-widget","14":"components/quotes-card","15":"components/recommended-blogs","16":"components/services","17":"components/skeleton-card","18":"components/tags-index","19":"components/tools","20":"components/topic","21":"components/topic-m","22":"components/vuetify-logo","23":"components/widget-blog","24":"components/widget-blogtags","25":"components/widget-news","26":"components/widget-newstags","27":"components/widget-post","28":"components/widget-posttags","29":"components/widget-quote","30":"components/world-reminders-card","31":"pages/_username/following","32":"pages/_username/index","33":"pages/_username/skel","34":"pages/admin/blog/create","35":"pages/admin/blog/manage","36":"pages/admin/index","37":"pages/admin/news/create","38":"pages/admin/news/manage","39":"pages/admin/post/create","40":"pages/admin/post/manage","41":"pages/admin/quotes/create","42":"pages/admin/quotes/manage","43":"pages/admin/users/create","44":"pages/admin/users/logs","45":"pages/admin/users/manage","46":"pages/admin/world-reminders/create","47":"pages/admin/world-reminders/manage","48":"pages/blog/_id","49":"pages/blog/create","50":"pages/blog/index","51":"pages/blog/manage","52":"pages/blog/tags/_id","53":"pages/blog/view","54":"pages/cryptography/atbash","55":"pages/cryptography/rot13","56":"pages/dash/create","57":"pages/dash/view","58":"pages/dashboard/index","59":"pages/index","60":"pages/news/_id","61":"pages/news/create","62":"pages/news/manage","63":"pages/post/_id","64":"pages/post/create","65":"pages/post/manage","66":"pages/privacy-policy","67":"pages/profile/edit","68":"pages/profile/index","69":"pages/quotes/create","70":"pages/quotes/manage","71":"pages/quotes/view","72":"pages/terms-of-service","73":"pages/world-reminders/_id","74":"pages/world-reminders/create","75":"pages/world-reminders/index","76":"pages/world-reminders/manage"}[chunkId]||chunkId) + ".js");
 /******/ 			var moreModules = chunk.modules, chunkIds = chunk.ids;
 /******/ 			for(var moduleId in moreModules) {
 /******/ 				modules[moduleId] = moreModules[moduleId];
@@ -5488,7 +5488,7 @@ const Intersect = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _delayable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(40);
+/* harmony import */ var _delayable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(39);
 /* harmony import */ var _toggleable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(13);
 /* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(2);
 /* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(0);
@@ -6068,16 +6068,6 @@ const Resize = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _VAvatar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(95);
-
-
-/* harmony default export */ __webpack_exports__["a"] = (_VAvatar__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"]);
-
-/***/ }),
-/* 40 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 
@@ -6130,6 +6120,16 @@ const Resize = {
 
   }
 }));
+
+/***/ }),
+/* 40 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _VAvatar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(95);
+
+
+/* harmony default export */ __webpack_exports__["a"] = (_VAvatar__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"]);
 
 /***/ }),
 /* 41 */
@@ -11256,7 +11256,7 @@ const baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_8__[/* default *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _VAvatar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(39);
+/* harmony import */ var _VAvatar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(40);
 // Components
 
 /* @vue/component */
@@ -11582,7 +11582,7 @@ const baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_8__[/* default *
 /* harmony import */ var _src_components_VMenu_VMenu_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_src_components_VMenu_VMenu_sass__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _VThemeProvider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(126);
 /* harmony import */ var _mixins_activatable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(29);
-/* harmony import */ var _mixins_delayable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(40);
+/* harmony import */ var _mixins_delayable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(39);
 /* harmony import */ var _mixins_dependent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(25);
 /* harmony import */ var _mixins_menuable__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(54);
 /* harmony import */ var _mixins_returnable__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(71);
@@ -12695,7 +12695,7 @@ var activatable = __webpack_require__(29);
 var colorable = __webpack_require__(8);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/mixins/delayable/index.js
-var delayable = __webpack_require__(40);
+var delayable = __webpack_require__(39);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/mixins/dependent/index.js
 var dependent = __webpack_require__(25);
@@ -15491,97 +15491,97 @@ function shouldScrollToTop(route) {
 
 
 
-const _508874f6 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/index */ 35).then(__webpack_require__.bind(null, 521)));
+const _508874f6 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/index */ 36).then(__webpack_require__.bind(null, 527)));
 
-const _0c00337e = () => interopDefault(__webpack_require__.e(/* import() | pages/blog/index */ 49).then(__webpack_require__.bind(null, 522)));
+const _0c00337e = () => interopDefault(__webpack_require__.e(/* import() | pages/blog/index */ 50).then(__webpack_require__.bind(null, 528)));
 
-const _6c1f47c0 = () => interopDefault(__webpack_require__.e(/* import() | pages/dashboard/index */ 57).then(__webpack_require__.bind(null, 523)));
+const _6c1f47c0 = () => interopDefault(__webpack_require__.e(/* import() | pages/dashboard/index */ 58).then(__webpack_require__.bind(null, 529)));
 
-const _361520f9 = () => interopDefault(__webpack_require__.e(/* import() | pages/privacy-policy */ 65).then(__webpack_require__.bind(null, 524)));
+const _361520f9 = () => interopDefault(__webpack_require__.e(/* import() | pages/privacy-policy */ 66).then(__webpack_require__.bind(null, 530)));
 
-const _4ab6786b = () => interopDefault(__webpack_require__.e(/* import() | pages/profile/index */ 67).then(__webpack_require__.bind(null, 525)));
+const _4ab6786b = () => interopDefault(__webpack_require__.e(/* import() | pages/profile/index */ 68).then(__webpack_require__.bind(null, 531)));
 
-const _0f035527 = () => interopDefault(__webpack_require__.e(/* import() | pages/terms-of-service */ 71).then(__webpack_require__.bind(null, 526)));
+const _0f035527 = () => interopDefault(__webpack_require__.e(/* import() | pages/terms-of-service */ 72).then(__webpack_require__.bind(null, 532)));
 
-const _d27b53a4 = () => interopDefault(__webpack_require__.e(/* import() | pages/world-reminders/index */ 74).then(__webpack_require__.bind(null, 527)));
+const _d27b53a4 = () => interopDefault(__webpack_require__.e(/* import() | pages/world-reminders/index */ 75).then(__webpack_require__.bind(null, 533)));
 
-const _c88af200 = () => interopDefault(__webpack_require__.e(/* import() | pages/blog/create */ 48).then(__webpack_require__.bind(null, 550)));
+const _c88af200 = () => interopDefault(__webpack_require__.e(/* import() | pages/blog/create */ 49).then(__webpack_require__.bind(null, 557)));
 
-const _426db22e = () => interopDefault(__webpack_require__.e(/* import() | pages/blog/manage */ 50).then(__webpack_require__.bind(null, 551)));
+const _426db22e = () => interopDefault(__webpack_require__.e(/* import() | pages/blog/manage */ 51).then(__webpack_require__.bind(null, 558)));
 
-const _12dae1ae = () => interopDefault(__webpack_require__.e(/* import() | pages/blog/view */ 52).then(__webpack_require__.bind(null, 528)));
+const _12dae1ae = () => interopDefault(__webpack_require__.e(/* import() | pages/blog/view */ 53).then(__webpack_require__.bind(null, 534)));
 
-const _1100b655 = () => interopDefault(__webpack_require__.e(/* import() | pages/cryptography/atbash */ 53).then(__webpack_require__.bind(null, 529)));
+const _1100b655 = () => interopDefault(__webpack_require__.e(/* import() | pages/cryptography/atbash */ 54).then(__webpack_require__.bind(null, 535)));
 
-const _65e6a7db = () => interopDefault(__webpack_require__.e(/* import() | pages/cryptography/rot13 */ 54).then(__webpack_require__.bind(null, 530)));
+const _65e6a7db = () => interopDefault(__webpack_require__.e(/* import() | pages/cryptography/rot13 */ 55).then(__webpack_require__.bind(null, 536)));
 
-const _0f2a4220 = () => interopDefault(__webpack_require__.e(/* import() | pages/dash/create */ 55).then(__webpack_require__.bind(null, 531)));
+const _0f2a4220 = () => interopDefault(__webpack_require__.e(/* import() | pages/dash/create */ 56).then(__webpack_require__.bind(null, 537)));
 
-const _2e582319 = () => interopDefault(__webpack_require__.e(/* import() | pages/dash/view */ 56).then(__webpack_require__.bind(null, 520)));
+const _2e582319 = () => interopDefault(__webpack_require__.e(/* import() | pages/dash/view */ 57).then(__webpack_require__.bind(null, 526)));
 
-const _12b8be9e = () => interopDefault(__webpack_require__.e(/* import() | pages/news/create */ 60).then(__webpack_require__.bind(null, 552)));
+const _12b8be9e = () => interopDefault(__webpack_require__.e(/* import() | pages/news/create */ 61).then(__webpack_require__.bind(null, 559)));
 
-const _39b2409a = () => interopDefault(__webpack_require__.e(/* import() | pages/news/manage */ 61).then(__webpack_require__.bind(null, 553)));
+const _39b2409a = () => interopDefault(__webpack_require__.e(/* import() | pages/news/manage */ 62).then(__webpack_require__.bind(null, 560)));
 
-const _b9353a04 = () => interopDefault(__webpack_require__.e(/* import() | pages/post/create */ 63).then(__webpack_require__.bind(null, 554)));
+const _b9353a04 = () => interopDefault(__webpack_require__.e(/* import() | pages/post/create */ 64).then(__webpack_require__.bind(null, 561)));
 
-const _3317fa32 = () => interopDefault(__webpack_require__.e(/* import() | pages/post/manage */ 64).then(__webpack_require__.bind(null, 555)));
+const _3317fa32 = () => interopDefault(__webpack_require__.e(/* import() | pages/post/manage */ 65).then(__webpack_require__.bind(null, 562)));
 
-const _d6211cfe = () => interopDefault(__webpack_require__.e(/* import() | pages/profile/edit */ 66).then(__webpack_require__.bind(null, 556)));
+const _d6211cfe = () => interopDefault(__webpack_require__.e(/* import() | pages/profile/edit */ 67).then(__webpack_require__.bind(null, 563)));
 
-const _5b7ea6d5 = () => interopDefault(__webpack_require__.e(/* import() | pages/quotes/create */ 68).then(__webpack_require__.bind(null, 532)));
+const _5b7ea6d5 = () => interopDefault(__webpack_require__.e(/* import() | pages/quotes/create */ 69).then(__webpack_require__.bind(null, 538)));
 
-const _c2e57284 = () => interopDefault(__webpack_require__.e(/* import() | pages/quotes/manage */ 69).then(__webpack_require__.bind(null, 557)));
+const _c2e57284 = () => interopDefault(__webpack_require__.e(/* import() | pages/quotes/manage */ 70).then(__webpack_require__.bind(null, 564)));
 
-const _71d2bf84 = () => interopDefault(__webpack_require__.e(/* import() | pages/quotes/view */ 70).then(__webpack_require__.bind(null, 533)));
+const _71d2bf84 = () => interopDefault(__webpack_require__.e(/* import() | pages/quotes/view */ 71).then(__webpack_require__.bind(null, 539)));
 
-const _693cba50 = () => interopDefault(__webpack_require__.e(/* import() | pages/world-reminders/create */ 73).then(__webpack_require__.bind(null, 558)));
+const _693cba50 = () => interopDefault(__webpack_require__.e(/* import() | pages/world-reminders/create */ 74).then(__webpack_require__.bind(null, 565)));
 
-const _a7694b8e = () => interopDefault(__webpack_require__.e(/* import() | pages/world-reminders/manage */ 75).then(__webpack_require__.bind(null, 559)));
+const _a7694b8e = () => interopDefault(__webpack_require__.e(/* import() | pages/world-reminders/manage */ 76).then(__webpack_require__.bind(null, 566)));
 
-const _36feb38a = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/blog/create */ 33).then(__webpack_require__.bind(null, 560)));
+const _36feb38a = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/blog/create */ 34).then(__webpack_require__.bind(null, 567)));
 
-const _278f4624 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/blog/manage */ 34).then(__webpack_require__.bind(null, 561)));
+const _278f4624 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/blog/manage */ 35).then(__webpack_require__.bind(null, 568)));
 
-const _3f69bfec = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/news/create */ 36).then(__webpack_require__.bind(null, 562)));
+const _3f69bfec = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/news/create */ 37).then(__webpack_require__.bind(null, 569)));
 
-const _fb0f4056 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/news/manage */ 37).then(__webpack_require__.bind(null, 563)));
+const _fb0f4056 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/news/manage */ 38).then(__webpack_require__.bind(null, 570)));
 
-const _27a8fb8e = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/post/create */ 38).then(__webpack_require__.bind(null, 564)));
+const _27a8fb8e = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/post/create */ 39).then(__webpack_require__.bind(null, 571)));
 
-const _2f3a2222 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/post/manage */ 39).then(__webpack_require__.bind(null, 565)));
+const _2f3a2222 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/post/manage */ 40).then(__webpack_require__.bind(null, 572)));
 
-const _e98c3960 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/quotes/create */ 40).then(__webpack_require__.bind(null, 534)));
+const _e98c3960 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/quotes/create */ 41).then(__webpack_require__.bind(null, 540)));
 
-const _636ef98e = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/quotes/manage */ 41).then(__webpack_require__.bind(null, 566)));
+const _636ef98e = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/quotes/manage */ 42).then(__webpack_require__.bind(null, 573)));
 
-const _66c03b37 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/users/create */ 42).then(__webpack_require__.bind(null, 567)));
+const _66c03b37 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/users/create */ 43).then(__webpack_require__.bind(null, 574)));
 
-const _f23e49ac = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/users/logs */ 43).then(__webpack_require__.bind(null, 535)));
+const _f23e49ac = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/users/logs */ 44).then(__webpack_require__.bind(null, 541)));
 
-const _ac6249c0 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/users/manage */ 44).then(__webpack_require__.bind(null, 568)));
+const _ac6249c0 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/users/manage */ 45).then(__webpack_require__.bind(null, 575)));
 
-const _51ae5835 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/world-reminders/create */ 45).then(__webpack_require__.bind(null, 569)));
+const _51ae5835 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/world-reminders/create */ 46).then(__webpack_require__.bind(null, 576)));
 
-const _d6860fc4 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/world-reminders/manage */ 46).then(__webpack_require__.bind(null, 570)));
+const _d6860fc4 = () => interopDefault(__webpack_require__.e(/* import() | pages/admin/world-reminders/manage */ 47).then(__webpack_require__.bind(null, 577)));
 
-const _75c57aed = () => interopDefault(__webpack_require__.e(/* import() | pages/blog/tags/_id */ 51).then(__webpack_require__.bind(null, 536)));
+const _75c57aed = () => interopDefault(__webpack_require__.e(/* import() | pages/blog/tags/_id */ 52).then(__webpack_require__.bind(null, 542)));
 
-const _7060fd66 = () => interopDefault(__webpack_require__.e(/* import() | pages/blog/_id */ 47).then(__webpack_require__.bind(null, 537)));
+const _7060fd66 = () => interopDefault(__webpack_require__.e(/* import() | pages/blog/_id */ 48).then(__webpack_require__.bind(null, 543)));
 
-const _f97ead56 = () => interopDefault(__webpack_require__.e(/* import() | pages/news/_id */ 59).then(__webpack_require__.bind(null, 538)));
+const _f97ead56 = () => interopDefault(__webpack_require__.e(/* import() | pages/news/_id */ 60).then(__webpack_require__.bind(null, 544)));
 
-const _4dedd228 = () => interopDefault(__webpack_require__.e(/* import() | pages/post/_id */ 62).then(__webpack_require__.bind(null, 539)));
+const _4dedd228 = () => interopDefault(__webpack_require__.e(/* import() | pages/post/_id */ 63).then(__webpack_require__.bind(null, 545)));
 
-const _21ac0c16 = () => interopDefault(__webpack_require__.e(/* import() | pages/world-reminders/_id */ 72).then(__webpack_require__.bind(null, 540)));
+const _21ac0c16 = () => interopDefault(__webpack_require__.e(/* import() | pages/world-reminders/_id */ 73).then(__webpack_require__.bind(null, 546)));
 
-const _75950860 = () => interopDefault(__webpack_require__.e(/* import() | pages/index */ 58).then(__webpack_require__.bind(null, 541)));
+const _75950860 = () => interopDefault(__webpack_require__.e(/* import() | pages/index */ 59).then(__webpack_require__.bind(null, 547)));
 
-const _fd03a442 = () => interopDefault(__webpack_require__.e(/* import() | pages/_username/index */ 31).then(__webpack_require__.bind(null, 542)));
+const _fd03a442 = () => interopDefault(__webpack_require__.e(/* import() | pages/_username/index */ 32).then(__webpack_require__.bind(null, 548)));
 
-const _57943d9e = () => interopDefault(__webpack_require__.e(/* import() | pages/_username/following */ 30).then(__webpack_require__.bind(null, 519)));
+const _57943d9e = () => interopDefault(__webpack_require__.e(/* import() | pages/_username/following */ 31).then(__webpack_require__.bind(null, 525)));
 
-const _65b93202 = () => interopDefault(__webpack_require__.e(/* import() | pages/_username/skel */ 32).then(__webpack_require__.bind(null, 543)));
+const _65b93202 = () => interopDefault(__webpack_require__.e(/* import() | pages/_username/skel */ 33).then(__webpack_require__.bind(null, 549)));
 
 const emptyFn = () => {};
 
@@ -18574,39 +18574,40 @@ function wrapFunctional(options) {
 
 const components = {
   AdminNav: () => Promise.resolve(/* import() */).then(__webpack_require__.bind(null, 243)).then(c => wrapFunctional(c.default || c)),
-  BlogCard: () => __webpack_require__.e(/* import() | components/blog-card */ 1).then(__webpack_require__.bind(null, 337)).then(c => wrapFunctional(c.default || c)),
+  BlogCard: () => __webpack_require__.e(/* import() | components/blog-card */ 1).then(__webpack_require__.bind(null, 338)).then(c => wrapFunctional(c.default || c)),
   BlogList: () => __webpack_require__.e(/* import() | components/blog-list */ 2).then(__webpack_require__.bind(null, 301)).then(c => wrapFunctional(c.default || c)),
-  Contact: () => __webpack_require__.e(/* import() | components/contact */ 3).then(__webpack_require__.bind(null, 571)).then(c => wrapFunctional(c.default || c)),
-  Dashboard: () => __webpack_require__.e(/* import() | components/dashboard */ 5).then(__webpack_require__.bind(null, 336)).then(c => wrapFunctional(c.default || c)),
-  DashTitle: () => __webpack_require__.e(/* import() | components/dash-title */ 4).then(__webpack_require__.bind(null, 335)).then(c => wrapFunctional(c.default || c)),
-  EventCard: () => __webpack_require__.e(/* import() | components/event-card */ 6).then(__webpack_require__.bind(null, 544)).then(c => wrapFunctional(c.default || c)),
+  Contact: () => __webpack_require__.e(/* import() | components/contact */ 3).then(__webpack_require__.bind(null, 578)).then(c => wrapFunctional(c.default || c)),
+  Dashboard: () => __webpack_require__.e(/* import() | components/dashboard */ 5).then(__webpack_require__.bind(null, 337)).then(c => wrapFunctional(c.default || c)),
+  DashTitle: () => __webpack_require__.e(/* import() | components/dash-title */ 4).then(__webpack_require__.bind(null, 336)).then(c => wrapFunctional(c.default || c)),
+  EventCard: () => __webpack_require__.e(/* import() | components/event-card */ 6).then(__webpack_require__.bind(null, 550)).then(c => wrapFunctional(c.default || c)),
   FooterNav: () => Promise.resolve(/* import() */).then(__webpack_require__.bind(null, 122)).then(c => wrapFunctional(c.default || c)),
-  IndexBlogs: () => __webpack_require__.e(/* import() | components/index-blogs */ 7).then(__webpack_require__.bind(null, 422)).then(c => wrapFunctional(c.default || c)),
-  IndexDescription: () => __webpack_require__.e(/* import() | components/index-description */ 8).then(__webpack_require__.bind(null, 426)).then(c => wrapFunctional(c.default || c)),
-  IndexTopics: () => __webpack_require__.e(/* import() | components/index-topics */ 9).then(__webpack_require__.bind(null, 545)).then(c => wrapFunctional(c.default || c)),
-  IndexWidget: () => __webpack_require__.e(/* import() | components/index-widget */ 10).then(__webpack_require__.bind(null, 339)).then(c => wrapFunctional(c.default || c)),
+  IndexBlogs: () => __webpack_require__.e(/* import() | components/index-blogs */ 7).then(__webpack_require__.bind(null, 427)).then(c => wrapFunctional(c.default || c)),
+  IndexDescription: () => __webpack_require__.e(/* import() | components/index-description */ 8).then(__webpack_require__.bind(null, 430)).then(c => wrapFunctional(c.default || c)),
+  IndexTopics: () => __webpack_require__.e(/* import() | components/index-topics */ 9).then(__webpack_require__.bind(null, 551)).then(c => wrapFunctional(c.default || c)),
+  IndexWidget: () => __webpack_require__.e(/* import() | components/index-widget */ 10).then(__webpack_require__.bind(null, 340)).then(c => wrapFunctional(c.default || c)),
   Nav: () => Promise.resolve(/* import() */).then(__webpack_require__.bind(null, 245)).then(c => wrapFunctional(c.default || c)),
-  NewsCard: () => __webpack_require__.e(/* import() | components/news-card */ 11).then(__webpack_require__.bind(null, 546)).then(c => wrapFunctional(c.default || c)),
-  PostCard: () => __webpack_require__.e(/* import() | components/post-card */ 12).then(__webpack_require__.bind(null, 547)).then(c => wrapFunctional(c.default || c)),
-  QuotesCard: () => __webpack_require__.e(/* import() | components/quotes-card */ 14).then(__webpack_require__.bind(null, 548)).then(c => wrapFunctional(c.default || c)),
-  QuoteWidget: () => __webpack_require__.e(/* import() | components/quote-widget */ 13).then(__webpack_require__.bind(null, 549)).then(c => wrapFunctional(c.default || c)),
+  NewsCard: () => __webpack_require__.e(/* import() | components/news-card */ 11).then(__webpack_require__.bind(null, 552)).then(c => wrapFunctional(c.default || c)),
+  PostCard: () => __webpack_require__.e(/* import() | components/post-card */ 12).then(__webpack_require__.bind(null, 553)).then(c => wrapFunctional(c.default || c)),
+  QuotesCard: () => __webpack_require__.e(/* import() | components/quotes-card */ 14).then(__webpack_require__.bind(null, 554)).then(c => wrapFunctional(c.default || c)),
+  QuoteWidget: () => __webpack_require__.e(/* import() | components/quote-widget */ 13).then(__webpack_require__.bind(null, 555)).then(c => wrapFunctional(c.default || c)),
+  RecommendedBlogs: () => __webpack_require__.e(/* import() | components/recommended-blogs */ 15).then(__webpack_require__.bind(null, 375)).then(c => wrapFunctional(c.default || c)),
   Search: () => Promise.resolve(/* import() */).then(__webpack_require__.bind(null, 244)).then(c => wrapFunctional(c.default || c)),
-  Services: () => __webpack_require__.e(/* import() | components/services */ 15).then(__webpack_require__.bind(null, 304)).then(c => wrapFunctional(c.default || c)),
-  SkeletonCard: () => __webpack_require__.e(/* import() | components/skeleton-card */ 16).then(__webpack_require__.bind(null, 340)).then(c => wrapFunctional(c.default || c)),
-  TagsIndex: () => __webpack_require__.e(/* import() | components/tags-index */ 17).then(__webpack_require__.bind(null, 302)).then(c => wrapFunctional(c.default || c)),
+  Services: () => __webpack_require__.e(/* import() | components/services */ 16).then(__webpack_require__.bind(null, 304)).then(c => wrapFunctional(c.default || c)),
+  SkeletonCard: () => __webpack_require__.e(/* import() | components/skeleton-card */ 17).then(__webpack_require__.bind(null, 341)).then(c => wrapFunctional(c.default || c)),
+  TagsIndex: () => __webpack_require__.e(/* import() | components/tags-index */ 18).then(__webpack_require__.bind(null, 302)).then(c => wrapFunctional(c.default || c)),
   Template: () => Promise.resolve(/* import() */).then(__webpack_require__.bind(null, 49)).then(c => wrapFunctional(c.default || c)),
-  Tools: () => __webpack_require__.e(/* import() | components/tools */ 18).then(__webpack_require__.bind(null, 303)).then(c => wrapFunctional(c.default || c)),
-  Topic: () => __webpack_require__.e(/* import() | components/topic */ 19).then(__webpack_require__.bind(null, 424)).then(c => wrapFunctional(c.default || c)),
-  TopicM: () => __webpack_require__.e(/* import() | components/topic-m */ 20).then(__webpack_require__.bind(null, 425)).then(c => wrapFunctional(c.default || c)),
-  VuetifyLogo: () => __webpack_require__.e(/* import() | components/vuetify-logo */ 21).then(__webpack_require__.bind(null, 572)).then(c => wrapFunctional(c.default || c)),
-  WidgetBlog: () => __webpack_require__.e(/* import() | components/widget-blog */ 22).then(__webpack_require__.bind(null, 419)).then(c => wrapFunctional(c.default || c)),
-  WidgetBlogtags: () => __webpack_require__.e(/* import() | components/widget-blogtags */ 23).then(__webpack_require__.bind(null, 423)).then(c => wrapFunctional(c.default || c)),
-  WidgetNews: () => __webpack_require__.e(/* import() | components/widget-news */ 24).then(__webpack_require__.bind(null, 417)).then(c => wrapFunctional(c.default || c)),
-  WidgetNewstags: () => __webpack_require__.e(/* import() | components/widget-newstags */ 25).then(__webpack_require__.bind(null, 420)).then(c => wrapFunctional(c.default || c)),
-  WidgetPost: () => __webpack_require__.e(/* import() | components/widget-post */ 26).then(__webpack_require__.bind(null, 418)).then(c => wrapFunctional(c.default || c)),
-  WidgetPosttags: () => __webpack_require__.e(/* import() | components/widget-posttags */ 27).then(__webpack_require__.bind(null, 421)).then(c => wrapFunctional(c.default || c)),
-  WidgetQuote: () => __webpack_require__.e(/* import() | components/widget-quote */ 28).then(__webpack_require__.bind(null, 416)).then(c => wrapFunctional(c.default || c)),
-  WorldRemindersCard: () => __webpack_require__.e(/* import() | components/world-reminders-card */ 29).then(__webpack_require__.bind(null, 338)).then(c => wrapFunctional(c.default || c))
+  Tools: () => __webpack_require__.e(/* import() | components/tools */ 19).then(__webpack_require__.bind(null, 303)).then(c => wrapFunctional(c.default || c)),
+  Topic: () => __webpack_require__.e(/* import() | components/topic */ 20).then(__webpack_require__.bind(null, 428)).then(c => wrapFunctional(c.default || c)),
+  TopicM: () => __webpack_require__.e(/* import() | components/topic-m */ 21).then(__webpack_require__.bind(null, 429)).then(c => wrapFunctional(c.default || c)),
+  VuetifyLogo: () => __webpack_require__.e(/* import() | components/vuetify-logo */ 22).then(__webpack_require__.bind(null, 579)).then(c => wrapFunctional(c.default || c)),
+  WidgetBlog: () => __webpack_require__.e(/* import() | components/widget-blog */ 23).then(__webpack_require__.bind(null, 424)).then(c => wrapFunctional(c.default || c)),
+  WidgetBlogtags: () => __webpack_require__.e(/* import() | components/widget-blogtags */ 24).then(__webpack_require__.bind(null, 556)).then(c => wrapFunctional(c.default || c)),
+  WidgetNews: () => __webpack_require__.e(/* import() | components/widget-news */ 25).then(__webpack_require__.bind(null, 422)).then(c => wrapFunctional(c.default || c)),
+  WidgetNewstags: () => __webpack_require__.e(/* import() | components/widget-newstags */ 26).then(__webpack_require__.bind(null, 425)).then(c => wrapFunctional(c.default || c)),
+  WidgetPost: () => __webpack_require__.e(/* import() | components/widget-post */ 27).then(__webpack_require__.bind(null, 423)).then(c => wrapFunctional(c.default || c)),
+  WidgetPosttags: () => __webpack_require__.e(/* import() | components/widget-posttags */ 28).then(__webpack_require__.bind(null, 426)).then(c => wrapFunctional(c.default || c)),
+  WidgetQuote: () => __webpack_require__.e(/* import() | components/widget-quote */ 29).then(__webpack_require__.bind(null, 421)).then(c => wrapFunctional(c.default || c)),
+  WorldRemindersCard: () => __webpack_require__.e(/* import() | components/world-reminders-card */ 30).then(__webpack_require__.bind(null, 339)).then(c => wrapFunctional(c.default || c))
 };
 
 for (const name in components) {

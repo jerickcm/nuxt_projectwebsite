@@ -1,148 +1,188 @@
 <template>
   <v-container fluid class="">
     <v-row class="mb-5 pb-5">
-      <v-container fluid>
-        <v-row>
-          <v-col class=" mb-0 pb-0">
-            <v-container fluid>
-              <v-row>
-                <v-col
-                  xs="12"
-                  sm="12"
-                  md="12"
-                  lg="8"
-                  xl="8"
-                  cols="12"
-                  class="pa-0 ma-0"
-                >
-                  <v-container
-                    class="mr-0 pr-0 tag-border"
-                    style="overflow-x: scroll;"
+      <v-col>
+        <v-container fluid>
+          <v-row>
+            <v-col class=" mb-0 pb-0">
+              <v-container fluid>
+                <v-row>
+                  <v-col
+                    xs="12"
+                    sm="12"
+                    md="12"
+                    lg="8"
+                    xl="8"
+                    cols="12"
+                    class="pa-0 ma-0"
                   >
-                    <v-row>
-                      <v-col
-                        xs="12"
-                        sm="12"
-                        md="12"
-                        lg="12"
-                        xl="12"
-                        cols="12"
-                        class="mb-0 pb-0"
-                      >
-                        <v-skeleton-loader
-                          elevation="2"
-                          outlined
-                          shaped
-                          tile
-                          class="pa-2 ma-2"
-                          type="card"
-                          v-if="pageload"
-                        ></v-skeleton-loader>
-                        <v-sheet v-else shaped tile class="pa-1 ma-1">
-                          <v-card flat v-if="posts['image'] != null">
-                            <v-img contain height="250" :src="posts['image']">
-                            </v-img>
-                          </v-card>
-                          <v-card flat v-else>
-                            <v-img src="/images/default.jpg"> </v-img>
-                          </v-card>
-                          <v-card-subtitle class="pa-0 ma-0 ml-1">
-                            <v-chip-group
-                              v-model="selection"
-                              active-class="deep-purple accent-4 white--text"
-                              column
-                            >
-                              <span class="pt-2">Tags: &zwnj;&zwnj;</span
-                              ><v-chip
-                                v-for="(itm, index) in posts['tags']"
-                                :key="index"
-                                color="blue"
-                                class="white--text"
-                                >{{ itm }}</v-chip
+                    <v-container>
+                      <v-row>
+                        <v-col class="pa-0 ma-0">
+                          <v-container
+                            class="mr-0 pr-0 tag-border"
+                            style="overflow-x: scroll;"
+                          >
+                            <v-row>
+                              <v-col
+                                xs="12"
+                                sm="12"
+                                md="12"
+                                lg="12"
+                                xl="12"
+                                cols="12"
+                                class="mb-0 pb-0"
                               >
-                            </v-chip-group>
-                          </v-card-subtitle>
-                          <v-card-title>
-                            <h1 class="fs-1-3 font-roboto" color="dark">
-                              {{ posts['title'] }}
-                            </h1>
-                          </v-card-title>
+                                <v-skeleton-loader
+                                  elevation="2"
+                                  outlined
+                                  shaped
+                                  tile
+                                  class="pa-2 ma-2"
+                                  type="card"
+                                  v-if="pageload"
+                                ></v-skeleton-loader>
+                                <v-sheet v-else shaped tile class="pa-1 ma-1">
+                                  <v-card flat v-if="posts['image'] != null">
+                                    <v-img
+                                      contain
+                                      height="250"
+                                      :src="posts['image']"
+                                    >
+                                    </v-img>
+                                  </v-card>
+                                  <v-card flat v-else>
+                                    <v-img src="/images/default.jpg"> </v-img>
+                                  </v-card>
+                                  <v-card-subtitle class="pa-0 ma-0 ml-1">
+                                    <v-chip-group
+                                      v-model="selection"
+                                      active-class="deep-purple accent-4 white--text"
+                                      column
+                                    >
+                                      <span class="pt-2"
+                                        >Tags: &zwnj;&zwnj;</span
+                                      ><v-chip
+                                        :to="`/blog/tags/${itm}`"
+                                        v-for="(itm, index) in posts['tags']"
+                                        :key="index"
+                                        color="blue"
+                                        class="white--text"
+                                        >{{ itm }}</v-chip
+                                      >
+                                    </v-chip-group>
+                                  </v-card-subtitle>
+                                  <v-card-title>
+                                    <h1 class="fs-1-3 font-roboto" color="dark">
+                                      {{ posts['title'] }}
+                                    </h1>
+                                  </v-card-title>
 
-                          <v-card-text class="">
-                            <span><b>Author :</b> {{ posts['name'] }}</span>
+                                  <v-card-text class="">
+                                    <span
+                                      ><b>Author :</b> {{ posts['name'] }}</span
+                                    >
 
-                            <br />
-                            <span>
-                              <b>Originally Published on :</b>
-                              {{ posts['created'] }}
-                            </span>
-                            -
-                            <span>
-                              <b>Last Validated on :</b> {{ posts['updated'] }}
-                            </span>
-                            <br />
-                            <v-icon>mdi-eye</v-icon> {{ posts['pageview'] }}
-                            <br />
-                            <br />
-                            <v-sheet v-html="posts['headline']"></v-sheet>
+                                    <br />
+                                    <span>
+                                      <b>Originally Published on :</b>
+                                      {{ posts['created'] }}
+                                    </span>
+                                    -
+                                    <span>
+                                      <b>Last Validated on :</b>
+                                      {{ posts['updated'] }}
+                                    </span>
+                                    <br />
+                                    <v-icon>mdi-eye</v-icon>
+                                    {{ posts['pageview'] }}
+                                    <br />
+                                    <br />
+                                    <v-sheet
+                                      v-html="posts['headline']"
+                                    ></v-sheet>
 
-                            <v-sheet
-                              v-html="posts['content']"
-                              class="ck-content mt-5 "
-                            ></v-sheet>
-                          </v-card-text>
-                        </v-sheet>
-                      </v-col>
-                    </v-row>
-                  </v-container>
-                </v-col>
-                <v-col
-                  xs="12"
-                  sm="12"
-                  md="12"
-                  lg="4"
-                  xl="4"
-                  cols="12"
-                  class="pa-0 ma-0"
-                >
-                  <v-container class="mr-0 pr-0">
-                    <v-row>
-                      <v-col class="ma-0 mt-0 pt-0">
-                        <BlogList
-                          :blogs_in_random="blogs_in_random"
-                          title="Random Blogs"
-                        />
-                      </v-col>
-                    </v-row>
-                    <v-row>
-                      <v-col class="ma-0 mt-0 pt-0">
-                        <TagsIndex
-                          :tags="tags"
-                          :load_tags="load_tags"
-                          :total_tags="total_tags"
-                        />
-                      </v-col>
-                    </v-row>
-                    <v-row>
-                      <v-col class="ma-0 mt-0 pt-0">
-                        <Tools />
-                      </v-col>
-                    </v-row>
-                    <v-row>
-                      <v-col class="ma-0 mt-0 pt-0">
-                        <BlogList
-                          :blogs_in_random="blogs_in_latest"
-                          title="Latest Blogs"
-                        />
-                      </v-col>
-                    </v-row>
-                  </v-container>
-                </v-col>
-              </v-row>
-            </v-container>
-          </v-col>
-        </v-row>
-      </v-container>
+                                    <v-sheet
+                                      v-html="posts['content']"
+                                      class="ck-content mt-5 "
+                                    ></v-sheet>
+                                  </v-card-text>
+                                </v-sheet>
+                              </v-col>
+                            </v-row> </v-container
+                        ></v-col>
+                      </v-row>
+                      <v-row>
+                        <v-col class="pa-0 ma-0 pt-5">
+                          <v-container>
+                            <v-row>
+                              <v-col
+                                xs="12"
+                                sm="12"
+                                md="12"
+                                lg="12"
+                                xl="12"
+                                cols="12"
+                                class="pa-0 ma-0"
+                              >
+                                <RecommendedBlogs
+                                  :related_blog="posts['related_blogs']"
+                                />
+                              </v-col>
+                            </v-row> </v-container
+                        ></v-col>
+                      </v-row>
+                    </v-container>
+                  </v-col>
+
+                  <v-col
+                    xs="12"
+                    sm="12"
+                    md="12"
+                    lg="4"
+                    xl="4"
+                    cols="12"
+                    class="pa-0 ma-0"
+                  >
+                    <v-container class="mr-0 pr-0">
+                      <v-row>
+                        <v-col class="ma-0 mt-0 pt-0">
+                          <BlogList
+                            :blogs_in_random="blogs_in_random"
+                            title="Random Blogs"
+                          />
+                        </v-col>
+                      </v-row>
+                      <v-row>
+                        <v-col class="ma-0 mt-0 pt-0">
+                          <TagsIndex
+                            :tags="tags"
+                            :load_tags="load_tags"
+                            :total_tags="total_tags"
+                          />
+                        </v-col>
+                      </v-row>
+                      <v-row>
+                        <v-col class="ma-0 mt-0 pt-0">
+                          <Tools />
+                        </v-col>
+                      </v-row>
+                      <v-row>
+                        <v-col class="ma-0 mt-0 pt-0">
+                          <BlogList
+                            :blogs_in_random="blogs_in_latest"
+                            title="Latest Blogs"
+                          />
+                        </v-col>
+                      </v-row>
+                    </v-container>
+                  </v-col>
+                </v-row>
+              </v-container>
+            </v-col>
+          </v-row>
+        </v-container>
+      </v-col>
     </v-row>
     <Services />
   </v-container>
@@ -150,6 +190,7 @@
 <script>
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
+import RecommendedBlogs from '~/components/RecommendedBlogs.vue'
 export default {
   head() {
     return {
@@ -317,7 +358,7 @@ export default {
     this.total_tags = tags.total
   },
   mounted() {},
-  components: {},
+  components: { RecommendedBlogs },
   watch: {},
   methods: {}
 }

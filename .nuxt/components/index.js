@@ -17,6 +17,7 @@ export { default as NewsCard } from '../..\\components\\NewsCard.vue'
 export { default as PostCard } from '../..\\components\\PostCard.vue'
 export { default as QuotesCard } from '../..\\components\\QuotesCard.vue'
 export { default as QuoteWidget } from '../..\\components\\QuoteWidget.vue'
+export { default as RecommendedBlogs } from '../..\\components\\RecommendedBlogs.vue'
 export { default as Search } from '../..\\components\\Search.vue'
 export { default as Services } from '../..\\components\\Services.vue'
 export { default as SkeletonCard } from '../..\\components\\SkeletonCard.vue'
@@ -52,6 +53,7 @@ export const LazyNewsCard = import('../..\\components\\NewsCard.vue' /* webpackC
 export const LazyPostCard = import('../..\\components\\PostCard.vue' /* webpackChunkName: "components/post-card" */).then(c => wrapFunctional(c.default || c))
 export const LazyQuotesCard = import('../..\\components\\QuotesCard.vue' /* webpackChunkName: "components/quotes-card" */).then(c => wrapFunctional(c.default || c))
 export const LazyQuoteWidget = import('../..\\components\\QuoteWidget.vue' /* webpackChunkName: "components/quote-widget" */).then(c => wrapFunctional(c.default || c))
+export const LazyRecommendedBlogs = import('../..\\components\\RecommendedBlogs.vue' /* webpackChunkName: "components/recommended-blogs" */).then(c => wrapFunctional(c.default || c))
 export const LazySearch = import('../..\\components\\Search.vue' /* webpackChunkName: "components/search" */).then(c => wrapFunctional(c.default || c))
 export const LazyServices = import('../..\\components\\Services.vue' /* webpackChunkName: "components/services" */).then(c => wrapFunctional(c.default || c))
 export const LazySkeletonCard = import('../..\\components\\SkeletonCard.vue' /* webpackChunkName: "components/skeleton-card" */).then(c => wrapFunctional(c.default || c))

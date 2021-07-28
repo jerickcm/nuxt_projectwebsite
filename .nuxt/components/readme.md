@@ -23,6 +23,7 @@ You can directly use them in pages and other components without the need to impo
 - `<PostCard>` | `<post-card>` (components/PostCard.vue)
 - `<QuotesCard>` | `<quotes-card>` (components/QuotesCard.vue)
 - `<QuoteWidget>` | `<quote-widget>` (components/QuoteWidget.vue)
+- `<RecommendedBlogs>` | `<recommended-blogs>` (components/RecommendedBlogs.vue)
 - `<Search>` | `<search>` (components/Search.vue)
 - `<Services>` | `<services>` (components/Services.vue)
 - `<SkeletonCard>` | `<skeleton-card>` (components/SkeletonCard.vue)
