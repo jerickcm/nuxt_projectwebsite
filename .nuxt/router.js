@@ -11,6 +11,10 @@ const _361520f9 = () => interopDefault(import('..\\pages\\privacy-policy.vue' /*
 const _4ab6786b = () => interopDefault(import('..\\pages\\profile\\index.vue' /* webpackChunkName: "pages/profile/index" */))
 const _0f035527 = () => interopDefault(import('..\\pages\\terms-of-service.vue' /* webpackChunkName: "pages/terms-of-service" */))
 const _d27b53a4 = () => interopDefault(import('..\\pages\\world-reminders\\index.vue' /* webpackChunkName: "pages/world-reminders/index" */))
+const _c0ec5cf0 = () => interopDefault(import('..\\pages\\arithmetic\\addition.vue' /* webpackChunkName: "pages/arithmetic/addition" */))
+const _645f06b9 = () => interopDefault(import('..\\pages\\arithmetic\\division.vue' /* webpackChunkName: "pages/arithmetic/division" */))
+const _0af24212 = () => interopDefault(import('..\\pages\\arithmetic\\multiplication.vue' /* webpackChunkName: "pages/arithmetic/multiplication" */))
+const _447b1698 = () => interopDefault(import('..\\pages\\arithmetic\\subtraction.vue' /* webpackChunkName: "pages/arithmetic/subtraction" */))
 const _c88af200 = () => interopDefault(import('..\\pages\\blog\\create.vue' /* webpackChunkName: "pages/blog/create" */))
 const _426db22e = () => interopDefault(import('..\\pages\\blog\\manage.vue' /* webpackChunkName: "pages/blog/manage" */))
 const _12dae1ae = () => interopDefault(import('..\\pages\\blog\\view.vue' /* webpackChunkName: "pages/blog/view" */))
@@ -90,6 +94,22 @@ export const routerOptions = {
     path: "/world-reminders",
     component: _d27b53a4,
     name: "world-reminders"
+  }, {
+    path: "/arithmetic/addition",
+    component: _c0ec5cf0,
+    name: "arithmetic-addition"
+  }, {
+    path: "/arithmetic/division",
+    component: _645f06b9,
+    name: "arithmetic-division"
+  }, {
+    path: "/arithmetic/multiplication",
+    component: _0af24212,
+    name: "arithmetic-multiplication"
+  }, {
+    path: "/arithmetic/subtraction",
+    component: _447b1698,
+    name: "arithmetic-subtraction"
   }, {
     path: "/blog/create",
     component: _c88af200,

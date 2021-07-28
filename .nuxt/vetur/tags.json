@@ -2,6 +2,9 @@
   "AdminNav": {
     "description": "Auto imported from components/AdminNav.vue"
   },
+  "Arithmetic": {
+    "description": "Auto imported from components/Arithmetic.vue"
+  },
   "BlogCard": {
     "description": "Auto imported from components/BlogCard.vue"
   },

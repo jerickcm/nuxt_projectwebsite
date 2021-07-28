@@ -58,6 +58,11 @@
                     </v-row>
                     <v-row>
                       <v-col class="ma-0 mt-0 pt-0">
+                        <Arithmetic />
+                      </v-col>
+                    </v-row>
+                    <v-row>
+                      <v-col class="ma-0 mt-0 pt-0">
                         <BlogList
                           :blogs_in_random="blogs_in_latest"
                           title="Latest Blogs"
@@ -170,7 +175,6 @@ export default {
         this.$axios
           .$get(`api/blog/page/${this.page}/item/${10}`)
           .then(res => {
-
             this.length = res.data.length
             this.content = [...this.content, ...res.data]
             NProgress.done()

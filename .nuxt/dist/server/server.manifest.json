@@ -1,6 +1,7 @@
 {
   "entry": "server.js",
   "files": {
+    "components/arithmetic.js": "components/arithmetic.js",
     "components/blog-card.js": "components/blog-card.js",
     "components/blog-list.js": "components/blog-list.js",
     "components/contact.js": "components/contact.js",
@@ -48,6 +49,10 @@
     "pages/admin/users/manage.js": "pages/admin/users/manage.js",
     "pages/admin/world-reminders/create.js": "pages/admin/world-reminders/create.js",
     "pages/admin/world-reminders/manage.js": "pages/admin/world-reminders/manage.js",
+    "pages/arithmetic/addition.js": "pages/arithmetic/addition.js",
+    "pages/arithmetic/division.js": "pages/arithmetic/division.js",
+    "pages/arithmetic/multiplication.js": "pages/arithmetic/multiplication.js",
+    "pages/arithmetic/subtraction.js": "pages/arithmetic/subtraction.js",
     "pages/blog/_id.js": "pages/blog/_id.js",
     "pages/blog/create.js": "pages/blog/create.js",
     "pages/blog/index.js": "pages/blog/index.js",
@@ -80,6 +85,7 @@
     "server.js": "server.js"
   },
   "maps": {
+    "components/arithmetic.js": "components/arithmetic.js.map",
     "components/blog-card.js": "components/blog-card.js.map",
     "components/blog-list.js": "components/blog-list.js.map",
     "components/contact.js": "components/contact.js.map",
@@ -127,6 +133,10 @@
     "pages/admin/users/manage.js": "pages/admin/users/manage.js.map",
     "pages/admin/world-reminders/create.js": "pages/admin/world-reminders/create.js.map",
     "pages/admin/world-reminders/manage.js": "pages/admin/world-reminders/manage.js.map",
+    "pages/arithmetic/addition.js": "pages/arithmetic/addition.js.map",
+    "pages/arithmetic/division.js": "pages/arithmetic/division.js.map",
+    "pages/arithmetic/multiplication.js": "pages/arithmetic/multiplication.js.map",
+    "pages/arithmetic/subtraction.js": "pages/arithmetic/subtraction.js.map",
     "pages/blog/_id.js": "pages/blog/_id.js.map",
     "pages/blog/create.js": "pages/blog/create.js.map",
     "pages/blog/index.js": "pages/blog/index.js.map",

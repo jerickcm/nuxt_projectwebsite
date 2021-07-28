@@ -193,6 +193,11 @@
                     </v-row>
                     <v-row>
                       <v-col class="ma-0 mt-0 pt-0">
+                        <Arithmetic />
+                      </v-col>
+                    </v-row>
+                    <v-row>
+                      <v-col class="ma-0 mt-0 pt-0">
                         <BlogList
                           :blogs_in_random="blogs_in_latest"
                           title="Latest Blogs"
