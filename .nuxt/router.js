@@ -10,6 +10,7 @@ const _6c1f47c0 = () => interopDefault(import('..\\pages\\dashboard\\index.vue' 
 const _361520f9 = () => interopDefault(import('..\\pages\\privacy-policy.vue' /* webpackChunkName: "pages/privacy-policy" */))
 const _4ab6786b = () => interopDefault(import('..\\pages\\profile\\index.vue' /* webpackChunkName: "pages/profile/index" */))
 const _0f035527 = () => interopDefault(import('..\\pages\\terms-of-service.vue' /* webpackChunkName: "pages/terms-of-service" */))
+const _7edce174 = () => interopDefault(import('..\\pages\\test.vue' /* webpackChunkName: "pages/test" */))
 const _d27b53a4 = () => interopDefault(import('..\\pages\\world-reminders\\index.vue' /* webpackChunkName: "pages/world-reminders/index" */))
 const _c0ec5cf0 = () => interopDefault(import('..\\pages\\arithmetic\\addition.vue' /* webpackChunkName: "pages/arithmetic/addition" */))
 const _645f06b9 = () => interopDefault(import('..\\pages\\arithmetic\\division.vue' /* webpackChunkName: "pages/arithmetic/division" */))
@@ -91,6 +92,10 @@ export const routerOptions = {
     path: "/terms-of-service",
     component: _0f035527,
     name: "terms-of-service"
+  }, {
+    path: "/test",
+    component: _7edce174,
+    name: "test"
   }, {
     path: "/world-reminders",
     component: _d27b53a4,

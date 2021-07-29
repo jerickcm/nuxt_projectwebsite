@@ -7,8 +7,7 @@
     </v-card-text>
   </v-card>
 </template>
-<script>
-export default {
 
-};
+<script>
+export default {}
 </script>

@@ -5,21 +5,23 @@
 
       <Dashboard>
         <h2 slot="menu_name">Profile MENU</h2>
-
-        <v-btn to="/profile/edit" slot="view_menu" class="blue white--text"
-          >Manage Profile</v-btn
-        >
+        <v-btn to="/profile/edit" slot="view_menu" class="blue white--text">
+          Manage Profile
+        </v-btn>
       </Dashboard>
+
 
       <Dashboard>
         <h2 slot="menu_name">BLOG MENU</h2>
-        <v-btn to="/blog/create" slot="create_menu" class="green white--text"
-          >Create BLOG</v-btn
-        >
-        <v-btn to="/blog/manage" slot="view_menu" class="blue white--text"
-          >Manage BLOG</v-btn
-        >
+        <v-btn to="/blog/create" slot="create_menu" class="green white--text">
+          Create BLOG
+        </v-btn>
+        <v-btn to="/blog/manage" slot="view_menu" class="blue white--text">
+          Manage BLOG
+        </v-btn>
       </Dashboard>
+
+
     </v-sheet>
   </v-container>
 </template>

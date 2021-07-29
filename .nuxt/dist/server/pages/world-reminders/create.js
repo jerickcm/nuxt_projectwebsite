@@ -1,4 +1,4 @@
-exports.ids = [80];
+exports.ids = [81];
 exports.modules = {
 
 /***/ 274:
@@ -1575,7 +1575,7 @@ var timezone = "Asia/Singapore";
 var VDatePickerTitle = __webpack_require__(320);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VIcon/index.js
-var VIcon = __webpack_require__(15);
+var VIcon = __webpack_require__(16);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/mixins/colorable/index.js
 var colorable = __webpack_require__(8);
@@ -3777,7 +3777,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 589:
+/***/ 590:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

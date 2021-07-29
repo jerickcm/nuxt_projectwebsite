@@ -190,27 +190,6 @@ export default {
     this.blogs_content = blogs.data
     this.blogs_total = blogs.data.length
 
-    // this.load_nuxt = true
-    // const nuxt = await this.$axios.$get(`api/blog/page/1/item/5/tags/nuxt`)
-    // this.load_nuxt = false
-    // this.nuxt = nuxt.data
-    // this.show_nuxt = true
-
-    // this.load_laravel = true
-
-    // const laravel = await this.$axios.$get(
-    //   `api/blog/page/1/item/5/tags/Laravel`
-    // )
-    // this.load_laravel = false
-    // this.laravel = laravel.data
-    // this.show_laravel = true
-    // this.load_vue = true
-
-    // const vue = await this.$axios.$get(`api/blog/page/1/item/5/tags/vue3`)
-    // this.load_vue = false
-    // this.vue = vue.data
-    // this.show_vue = true
-
     const BlogsRandom = await this.$axios.$get(`api/blog/index/10`)
     this.blogs_in_random = BlogsRandom.data
 

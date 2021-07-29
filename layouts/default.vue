@@ -132,6 +132,9 @@
       <v-container class="fix">
         <Search v-if="search" />
       </v-container>
+      <v-card class="d-none">
+        <a href="https://www.sparktraffic.com/?ref=1040051">Traffic Bot</a>
+      </v-card>
 
       <nuxt />
     </v-main>

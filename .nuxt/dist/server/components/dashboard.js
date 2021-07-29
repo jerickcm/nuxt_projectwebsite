@@ -8,14 +8,15 @@ exports.modules = {
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/Dashboard.vue?vue&type=template&id=1f949f06&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/Dashboard.vue?vue&type=template&id=1e328b5a&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',{staticClass:"pa-2 ma-2"},[_c('v-card-title',[_vm._t("menu_name")],2),_vm._v(" "),_c('v-card-text',[_vm._t("create_menu"),_vm._v(" "),_vm._t("view_menu")],2)],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./components/Dashboard.vue?vue&type=template&id=1f949f06&
+// CONCATENATED MODULE: ./components/Dashboard.vue?vue&type=template&id=1e328b5a&
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/Dashboard.vue?vue&type=script&lang=js&
+//
 //
 //
 //
@@ -39,7 +40,7 @@ var installComponents_default = /*#__PURE__*/__webpack_require__.n(installCompon
 var VCard = __webpack_require__(93);
 
 // EXTERNAL MODULE: ./node_modules/vuetify/lib/components/VCard/index.js
-var components_VCard = __webpack_require__(16);
+var components_VCard = __webpack_require__(15);
 
 // CONCATENATED MODULE: ./components/Dashboard.vue
 
