@@ -40,6 +40,7 @@ const _27a8fb8e = () => interopDefault(import('..\\pages\\admin\\post\\create.vu
 const _2f3a2222 = () => interopDefault(import('..\\pages\\admin\\post\\manage.vue' /* webpackChunkName: "pages/admin/post/manage" */))
 const _e98c3960 = () => interopDefault(import('..\\pages\\admin\\quotes\\create.vue' /* webpackChunkName: "pages/admin/quotes/create" */))
 const _636ef98e = () => interopDefault(import('..\\pages\\admin\\quotes\\manage.vue' /* webpackChunkName: "pages/admin/quotes/manage" */))
+const _4699501b = () => interopDefault(import('..\\pages\\admin\\tags\\manage.vue' /* webpackChunkName: "pages/admin/tags/manage" */))
 const _66c03b37 = () => interopDefault(import('..\\pages\\admin\\users\\create.vue' /* webpackChunkName: "pages/admin/users/create" */))
 const _f23e49ac = () => interopDefault(import('..\\pages\\admin\\users\\logs.vue' /* webpackChunkName: "pages/admin/users/logs" */))
 const _ac6249c0 = () => interopDefault(import('..\\pages\\admin\\users\\manage.vue' /* webpackChunkName: "pages/admin/users/manage" */))
@@ -210,6 +211,10 @@ export const routerOptions = {
     path: "/admin/quotes/manage",
     component: _636ef98e,
     name: "admin-quotes-manage"
+  }, {
+    path: "/admin/tags/manage",
+    component: _4699501b,
+    name: "admin-tags-manage"
   }, {
     path: "/admin/users/create",
     component: _66c03b37,

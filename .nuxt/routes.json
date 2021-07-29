@@ -288,6 +288,14 @@
     "_name": "_636ef98e"
   },
   {
+    "name": "admin-tags-manage",
+    "path": "/admin/tags/manage",
+    "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\admin\\\\tags\\\\manage.vue",
+    "chunkName": "pages/admin/tags/manage",
+    "url": "/admin/tags/manage",
+    "_name": "_4699501b"
+  },
+  {
     "name": "admin-users-create",
     "path": "/admin/users/create",
     "component": "C:\\\\docker\\\\nuxt_client\\\\pages\\\\admin\\\\users\\\\create.vue",

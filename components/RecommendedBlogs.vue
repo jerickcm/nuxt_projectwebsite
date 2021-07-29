@@ -50,7 +50,9 @@
                         class="font-ptsans"
                         style="white-space: pre-line!important;"
                       >
-                        <span>{{ item['title'] }} </span></v-list-item-title
+                        <span :data-id="item['id']"
+                          >{{ item['title'] }}
+                        </span></v-list-item-title
                       >
                     </nuxt-link>
                   </v-list-item-content>

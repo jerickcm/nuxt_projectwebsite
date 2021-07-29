@@ -1,10 +1,4 @@
 /*!
- * @license Copyright (c) 2003-2021, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md.
- */
-
-
-/*!
   * vue-router v3.5.2
   * (c) 2021 Evan You
   * @license MIT
@@ -76,4 +70,10 @@ PERFORMANCE OF THIS SOFTWARE.
  * @license Sizzle CSS Selector Engine - MIT
  * @param {String} selectorText from mensch
  * @api public
+ */
+
+
+/*!
+ * @license Copyright (c) 2003-2021, CKSource - Frederico Knabben. All rights reserved.
+ * For licensing, see LICENSE.md.
  */

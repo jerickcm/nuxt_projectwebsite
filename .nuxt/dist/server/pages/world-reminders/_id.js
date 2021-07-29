@@ -1,4 +1,4 @@
-exports.ids = [78,31];
+exports.ids = [79,31];
 exports.modules = {
 
 /***/ 268:
@@ -517,7 +517,7 @@ installComponents_default()(component, {VBtn: VBtn["a" /* default */],VCol: VCol
 
 /***/ }),
 
-/***/ 566:
+/***/ 570:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
