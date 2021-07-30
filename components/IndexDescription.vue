@@ -14,7 +14,7 @@
     </v-row>
     <v-row>
       <v-col class="ml-0 pl-0  mb-0 pb-0">
-        <v-card color="blue lighten-5" class=" pa-2">
+        <v-card color="blue lighten-5" class="pa-2">
           <p class="blue--text text--darken-4 justify-content text-justify">
             This website is a build and blog website, where authors encounter
             problems and its solutions in coding shared with the development
