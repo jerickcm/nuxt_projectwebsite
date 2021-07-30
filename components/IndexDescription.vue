@@ -28,7 +28,7 @@
             current researches.
           </p>
           <p class="blue--text text--darken-4 justify-content text-justify">
-            Inhinyeru is a dialect name derivered from Engineer this website
+            Inhinyeru is a dialect name derivered from Engineer, wherein website
             content is inspired by concepts of engineering.
           </p>
         </v-card>

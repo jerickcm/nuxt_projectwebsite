@@ -1,0 +1,419 @@
+<template>
+  <v-container fluid class="">
+    <v-row class="mb-5 pb-5">
+      <v-container>
+        <v-row>
+          <v-col class=" mb-0 pb-0">
+            <v-container>
+              <v-row>
+                <v-col
+                  xs="12"
+                  sm="12"
+                  md="12"
+                  lg="8"
+                  xl="8"
+                  cols="12"
+                  class="pa-0 ma-0"
+                >
+                  <v-container class="mb-2 mr-0 pr-0 tag-border">
+                    <v-row>
+                      <v-col>
+                        <h1>Factorial | Basic Math</h1>
+                        <p>Free Factorial Calculator online</p>
+                      </v-col>
+                    </v-row>
+                    <v-row>
+                      <v-col> </v-col>
+                    </v-row>
+                    <v-row>
+                      <v-col>
+                        <v-card class="pl-5 ml-5 pr-5 mr-5">
+                          <v-container>
+                            <v-row>
+                              <v-col class="text-center">
+                                <p style="font-size: 40px;">N! = ?</p>
+                              </v-col>
+                            </v-row>
+                            <v-row>
+                              <v-col
+                                class="text-center "
+                                xs="12"
+                                sm="12"
+                                md="12"
+                                lg="6"
+                                xl="6"
+                                offset-xs="0"
+                                offset-sm="0"
+                                offset-md="0"
+                                offset-lg="3"
+                                offset-xl="3"
+                                cols="12"
+                              >
+                                <v-text-field
+                                  :rules="rules"
+                                  counter="10"
+                                  outlined
+                                  v-model="number"
+                                  placeholder="Enter a Number"
+                                  label="N = "
+                                  height="50"
+                                  class=" black--text"
+                                  required
+                                  type="number"
+                                  style="font-size: 40px;"
+                                  hint="Enter an number to compute the value of its factorial"
+                                ></v-text-field>
+                              </v-col>
+                            </v-row>
+
+                            <v-row>
+                              <v-col
+                                class="text-center "
+                                xs="12"
+                                sm="12"
+                                md="12"
+                                lg="6"
+                                xl="6"
+                                offset-xs="0"
+                                offset-sm="0"
+                                offset-md="0"
+                                offset-lg="3"
+                                offset-xl="3"
+                                cols="12"
+                              >
+                                <v-btn
+                                  dark
+                                  color="blue"
+                                  @click="reset_factorial"
+                                  >Reset</v-btn
+                                >
+                                <v-btn
+                                  dark
+                                  color="blue"
+                                  @click="calculate_factorial"
+                                  >Calculate</v-btn
+                                >
+                              </v-col>
+                            </v-row>
+                            <v-row>
+                              <v-col
+                                class="text-center "
+                                xs="12"
+                                sm="12"
+                                md="12"
+                                lg="6"
+                                xl="6"
+                                offset-xs="0"
+                                offset-sm="0"
+                                offset-md="0"
+                                offset-lg="3"
+                                offset-xl="3"
+                                cols="12"
+                                v-if="show_solution"
+                              >
+                                <b>Solution:</b>
+                                <span
+                                  v-for="(data, index) in show_solution"
+                                  :key="index"
+                                >
+                                  {{ data.result }}
+                                  <span v-if="data.result != 1"> x</span>
+                                  <span v-else> = </span>
+                                </span>
+                              </v-col>
+                            </v-row>
+                            <v-row>
+                              <v-col
+                                class="text-center "
+                                xs="12"
+                                sm="12"
+                                md="12"
+                                lg="6"
+                                xl="6"
+                                offset-xs="0"
+                                offset-sm="0"
+                                offset-md="0"
+                                offset-lg="3"
+                                offset-xl="3"
+                                cols="12"
+                              >
+                                <v-text-field
+                                  outlined
+                                  v-model="result"
+                                  placeholder="Result"
+                                  label="Result"
+                                  height="50"
+                                  class=" black--text"
+                                  required
+                                  readonly
+                                  type="number"
+                                  style="font-size: 40px;"
+                                ></v-text-field>
+                              </v-col>
+                            </v-row>
+                          </v-container>
+                        </v-card>
+                      </v-col>
+                    </v-row>
+                    <v-row>
+                      <v-col style=""> </v-col>
+                    </v-row>
+                  </v-container>
+                </v-col>
+                <v-col
+                  xs="12"
+                  sm="12"
+                  md="12"
+                  lg="4"
+                  xl="4"
+                  cols="12"
+                  class="pa-0 ma-0"
+                >
+                  <v-container class="mr-0 pr-0">
+                    <v-row>
+                      <v-col class="ma-0 mt-0 pt-0">
+                        <Calculator />
+                      </v-col>
+                    </v-row>
+                    <v-row>
+                      <v-col class="ma-0 mt-0 pt-0">
+                        <Tools />
+                      </v-col>
+                    </v-row>
+                    <v-row>
+                      <v-col class="ma-0 mt-0 pt-0">
+                        <Arithmetic />
+                      </v-col>
+                    </v-row>
+
+                    <v-row>
+                      <v-col class="ma-0 mt-0 pt-0">
+                        <BlogList
+                          :blogs_in_random="blogs_in_random"
+                          title="Random Blogs"
+                        />
+                      </v-col>
+                    </v-row>
+                    <v-row>
+                      <v-col class="ma-0 mt-0 pt-0">
+                        <TagsIndex
+                          :tags="tags"
+                          :load_tags="load_tags"
+                          :total_tags="total_tags"
+                        />
+                      </v-col>
+                    </v-row>
+
+                    <v-row>
+                      <v-col class="ma-0 mt-0 pt-0">
+                        <BlogList
+                          :blogs_in_random="blogs_in_latest"
+                          title="Latest Blogs"
+                        />
+                      </v-col>
+                    </v-row>
+                  </v-container>
+                </v-col>
+              </v-row>
+            </v-container>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-row>
+    <Services />
+  </v-container>
+</template>
+<script>
+export default {
+  head() {
+    return {
+      title: 'Factorial | Basic Mathematics ',
+      meta: [
+        {
+          hid: 'Factorial | Basic Mathematics  ',
+          name: 'Factorial | Basic Mathematics ',
+          content: 'Factorial | Basic Mathematics '
+        }
+      ]
+    }
+  },
+  data: () => ({
+    rules: {
+      min: v => v.length >= 1 || 'Min 1 characters',
+      max: v => v.length >= 8 || 'Max 25 characters'
+    },
+
+    show_solution: [],
+    number: '',
+    result: '',
+    f: [],
+    result_check: '',
+    result_color: '',
+    refresh: '',
+    transparent: 'rgba(255, 255, 255, 0)',
+    blogs_load: false,
+    news_load: false,
+    posts_load: false,
+    selection: 0,
+    content: [],
+    news: [],
+    posts: [],
+    nuxt: [],
+    selectedItem: 0,
+    show: true,
+    title: '',
+    model: 6,
+    rounded: ['0', 'sm', 'md', 'lg', 'xl', 'pill', 'circle'],
+    links: [],
+
+    posts_content: 0,
+    news_content: 0,
+
+    tags: [],
+    load_tags: false,
+    total_tags: 0,
+    height: '200px',
+    blogs_load: false,
+    blogs_content: [],
+    blogs_total: 0,
+
+    nuxt: [],
+    laravel: [],
+    vue: [],
+    load_nuxt: false,
+    load_laravel: false,
+    load_vue: false,
+
+    show_nuxt: false,
+    show_laravel: false,
+    show_vue: false,
+    blogs_in_random: [],
+    blogs_in_latest: [],
+    page: 2,
+    index: 0
+  }),
+  mounted() {},
+  layout: 'default',
+  methods: {
+    factorial(n) {
+      if (n == 0 || n == 1) {
+        if (n == 1) {
+          this.show_solution[this.index] = { result: n }
+        }
+
+        return 1
+      }
+      if (this.f[n] > 0) {
+        return this.f[n]
+      }
+      // this.show_solution[n]['text'] = n + ' x ' + (n - 1) + ' = ' + n * (n - 1)
+
+      this.show_solution[this.index] = { result: n }
+      this.index = this.index + 1
+      return (this.f[n] = this.factorial(n - 1) * n)
+    },
+    calculate_factorial() {
+      this.index = 0
+      this.show_solution = []
+      this.f = []
+      this.result = this.factorial(this.number)
+    },
+    reset_factorial() {
+      this.number = ''
+      this.show_solution = []
+      this.result = ''
+    }
+  },
+  async fetch() {
+    const BlogsRandom = await this.$axios.$get(`api/blog/index/10`)
+    this.blogs_in_random = BlogsRandom.data
+
+    const Blogslatest = await this.$axios.$get(`api/blog/latest/10`)
+    this.blogs_in_latest = Blogslatest.data
+
+    this.load_tags = true
+    const tags = await this.$axios.$get(`api/tags`)
+    this.load_tags = false
+    this.tags = tags.data
+    this.total_tags = tags.total
+  }
+}
+</script>
+<style scoped>
+.dont-break-out {
+  /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+.font-lulu {
+  font-family: 'Lulu', sans-serif;
+}
+.font-halimun {
+  font-family: 'Halimun', sans-serif;
+}
+/* .font-kalamreg {
+  font-family: 'Kalam-Regular', sans-serif;
+  line-height: 1.2;
+} */
+.font-barlowreg {
+  font-family: 'Barlow-Regular', sans-serif;
+}
+
+.title1 {
+  text-decoration: none;
+}
+.v-application a {
+  color: rgb(66, 77, 238);
+  text-decoration: none;
+}
+
+.adj-title {
+  min-height: 2rem;
+  line-height: 1rem;
+  margin: 0px;
+  padding: 0px;
+}
+
+.hr-blue {
+  border: 3px solid blue;
+}
+.hr-red {
+  border: 3px solid red;
+}
+.hr-orange {
+  border: 3px solid orange;
+}
+.hr-black {
+  border: 3px solid black;
+}
+ul.clean {
+  list-style: none !important;
+  list-style-type: none !important;
+}
+.text-justify {
+  text-align: justify;
+  text-justify: inter-word;
+}
+.hr-brown {
+  border: 3px solid brown;
+}
+.tag-border {
+  border-right: 0.4rem solid #add8e6;
+  border-top: 0.4rem solid #add8e6;
+}
+input {
+  font-size: 40px;
+}
+</style>

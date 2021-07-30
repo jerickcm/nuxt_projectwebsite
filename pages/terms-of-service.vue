@@ -191,9 +191,15 @@
                         <Tools />
                       </v-col>
                     </v-row>
+
                     <v-row>
                       <v-col class="ma-0 mt-0 pt-0">
                         <Arithmetic />
+                      </v-col>
+                    </v-row>
+                    <v-row>
+                      <v-col class="ma-0 mt-0 pt-0">
+                        <Calculator />
                       </v-col>
                     </v-row>
                     <v-row>

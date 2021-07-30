@@ -10,7 +10,6 @@ const _6c1f47c0 = () => interopDefault(import('..\\pages\\dashboard\\index.vue' 
 const _361520f9 = () => interopDefault(import('..\\pages\\privacy-policy.vue' /* webpackChunkName: "pages/privacy-policy" */))
 const _4ab6786b = () => interopDefault(import('..\\pages\\profile\\index.vue' /* webpackChunkName: "pages/profile/index" */))
 const _0f035527 = () => interopDefault(import('..\\pages\\terms-of-service.vue' /* webpackChunkName: "pages/terms-of-service" */))
-const _7edce174 = () => interopDefault(import('..\\pages\\test.vue' /* webpackChunkName: "pages/test" */))
 const _d27b53a4 = () => interopDefault(import('..\\pages\\world-reminders\\index.vue' /* webpackChunkName: "pages/world-reminders/index" */))
 const _c0ec5cf0 = () => interopDefault(import('..\\pages\\arithmetic\\addition.vue' /* webpackChunkName: "pages/arithmetic/addition" */))
 const _645f06b9 = () => interopDefault(import('..\\pages\\arithmetic\\division.vue' /* webpackChunkName: "pages/arithmetic/division" */))
@@ -19,6 +18,7 @@ const _447b1698 = () => interopDefault(import('..\\pages\\arithmetic\\subtractio
 const _c88af200 = () => interopDefault(import('..\\pages\\blog\\create.vue' /* webpackChunkName: "pages/blog/create" */))
 const _426db22e = () => interopDefault(import('..\\pages\\blog\\manage.vue' /* webpackChunkName: "pages/blog/manage" */))
 const _12dae1ae = () => interopDefault(import('..\\pages\\blog\\view.vue' /* webpackChunkName: "pages/blog/view" */))
+const _1bb08df1 = () => interopDefault(import('..\\pages\\calculator\\factorial.vue' /* webpackChunkName: "pages/calculator/factorial" */))
 const _1100b655 = () => interopDefault(import('..\\pages\\cryptography\\atbash.vue' /* webpackChunkName: "pages/cryptography/atbash" */))
 const _65e6a7db = () => interopDefault(import('..\\pages\\cryptography\\rot13.vue' /* webpackChunkName: "pages/cryptography/rot13" */))
 const _0f2a4220 = () => interopDefault(import('..\\pages\\dash\\create.vue' /* webpackChunkName: "pages/dash/create" */))
@@ -54,8 +54,6 @@ const _4dedd228 = () => interopDefault(import('..\\pages\\post\\_id.vue' /* webp
 const _21ac0c16 = () => interopDefault(import('..\\pages\\world-reminders\\_id.vue' /* webpackChunkName: "pages/world-reminders/_id" */))
 const _75950860 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
 const _fd03a442 = () => interopDefault(import('..\\pages\\_username\\index.vue' /* webpackChunkName: "pages/_username/index" */))
-const _57943d9e = () => interopDefault(import('..\\pages\\_username\\following.vue' /* webpackChunkName: "pages/_username/following" */))
-const _65b93202 = () => interopDefault(import('..\\pages\\_username\\skel.vue' /* webpackChunkName: "pages/_username/skel" */))
 
 const emptyFn = () => {}
 
@@ -93,10 +91,6 @@ export const routerOptions = {
     component: _0f035527,
     name: "terms-of-service"
   }, {
-    path: "/test",
-    component: _7edce174,
-    name: "test"
-  }, {
     path: "/world-reminders",
     component: _d27b53a4,
     name: "world-reminders"
@@ -128,6 +122,10 @@ export const routerOptions = {
     path: "/blog/view",
     component: _12dae1ae,
     name: "blog-view"
+  }, {
+    path: "/calculator/factorial",
+    component: _1bb08df1,
+    name: "calculator-factorial"
   }, {
     path: "/cryptography/atbash",
     component: _1100b655,
@@ -268,14 +266,6 @@ export const routerOptions = {
     path: "/:username",
     component: _fd03a442,
     name: "username"
-  }, {
-    path: "/:username/following",
-    component: _57943d9e,
-    name: "username-following"
-  }, {
-    path: "/:username/skel",
-    component: _65b93202,
-    name: "username-skel"
   }],
 
   fallback: false

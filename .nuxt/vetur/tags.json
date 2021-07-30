@@ -11,6 +11,9 @@
   "BlogList": {
     "description": "Auto imported from components/BlogList.vue"
   },
+  "Calculator": {
+    "description": "Auto imported from components/Calculator.vue"
+  },
   "Contact": {
     "description": "Auto imported from components/Contact.vue"
   },

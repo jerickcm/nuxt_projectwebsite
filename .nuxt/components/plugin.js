@@ -6,6 +6,7 @@ const components = {
   Arithmetic: () => import('../..\\components\\Arithmetic.vue' /* webpackChunkName: "components/arithmetic" */).then(c => wrapFunctional(c.default || c)),
   BlogCard: () => import('../..\\components\\BlogCard.vue' /* webpackChunkName: "components/blog-card" */).then(c => wrapFunctional(c.default || c)),
   BlogList: () => import('../..\\components\\BlogList.vue' /* webpackChunkName: "components/blog-list" */).then(c => wrapFunctional(c.default || c)),
+  Calculator: () => import('../..\\components\\Calculator.vue' /* webpackChunkName: "components/calculator" */).then(c => wrapFunctional(c.default || c)),
   Contact: () => import('../..\\components\\Contact.vue' /* webpackChunkName: "components/contact" */).then(c => wrapFunctional(c.default || c)),
   Dashboard: () => import('../..\\components\\Dashboard.vue' /* webpackChunkName: "components/dashboard" */).then(c => wrapFunctional(c.default || c)),
   DashTitle: () => import('../..\\components\\DashTitle.vue' /* webpackChunkName: "components/dash-title" */).then(c => wrapFunctional(c.default || c)),

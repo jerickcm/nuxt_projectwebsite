@@ -10,6 +10,7 @@ You can directly use them in pages and other components without the need to impo
 - `<Arithmetic>` | `<arithmetic>` (components/Arithmetic.vue)
 - `<BlogCard>` | `<blog-card>` (components/BlogCard.vue)
 - `<BlogList>` | `<blog-list>` (components/BlogList.vue)
+- `<Calculator>` | `<calculator>` (components/Calculator.vue)
 - `<Contact>` | `<contact>` (components/Contact.vue)
 - `<Dashboard>` | `<dashboard>` (components/Dashboard.vue)
 - `<DashTitle>` | `<dash-title>` (components/DashTitle.vue)

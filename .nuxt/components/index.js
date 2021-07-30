@@ -4,6 +4,7 @@ export { default as AdminNav } from '../..\\components\\AdminNav.vue'
 export { default as Arithmetic } from '../..\\components\\Arithmetic.vue'
 export { default as BlogCard } from '../..\\components\\BlogCard.vue'
 export { default as BlogList } from '../..\\components\\BlogList.vue'
+export { default as Calculator } from '../..\\components\\Calculator.vue'
 export { default as Contact } from '../..\\components\\Contact.vue'
 export { default as Dashboard } from '../..\\components\\Dashboard.vue'
 export { default as DashTitle } from '../..\\components\\DashTitle.vue'
@@ -41,6 +42,7 @@ export const LazyAdminNav = import('../..\\components\\AdminNav.vue' /* webpackC
 export const LazyArithmetic = import('../..\\components\\Arithmetic.vue' /* webpackChunkName: "components/arithmetic" */).then(c => wrapFunctional(c.default || c))
 export const LazyBlogCard = import('../..\\components\\BlogCard.vue' /* webpackChunkName: "components/blog-card" */).then(c => wrapFunctional(c.default || c))
 export const LazyBlogList = import('../..\\components\\BlogList.vue' /* webpackChunkName: "components/blog-list" */).then(c => wrapFunctional(c.default || c))
+export const LazyCalculator = import('../..\\components\\Calculator.vue' /* webpackChunkName: "components/calculator" */).then(c => wrapFunctional(c.default || c))
 export const LazyContact = import('../..\\components\\Contact.vue' /* webpackChunkName: "components/contact" */).then(c => wrapFunctional(c.default || c))
 export const LazyDashboard = import('../..\\components\\Dashboard.vue' /* webpackChunkName: "components/dashboard" */).then(c => wrapFunctional(c.default || c))
 export const LazyDashTitle = import('../..\\components\\DashTitle.vue' /* webpackChunkName: "components/dash-title" */).then(c => wrapFunctional(c.default || c))
